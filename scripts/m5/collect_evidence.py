@@ -3,7 +3,7 @@ import json, shutil, hashlib
 from pathlib import Path
 root=Path(__file__).resolve().parents[2]
 docs=root/'docs/m5'
-def read(p): return json.loads(p.read_text())
+def read(p): return json.loads(p.read_text(encoding='utf-8-sig'))
 catalogue=read(root/'docs/audit/runtime-catalogue.json')
 qualified={f"{t['id']}.{p['name']}":p for t in catalogue for p in t['params']}
 rows=[]
@@ -44,6 +44,6 @@ for row in allrows:
     if 'default' in row: assert row['default']==original['default'],row['key']
     row['original_catalogue_constraint']=original
 out={'runtime_processing_types':len(catalogue),'qualified_slots':217,'m5_slots':128,'unique_editable_and_exercised_slots':217,'cases':allrows}
-(docs/'parameter-coverage-217.json').write_text(json.dumps(out,indent=2)+'\n')
+(docs/'parameter-coverage-217.json').write_text(json.dumps(out,indent=2)+'\n',encoding='utf8')
 archive=read(root/'docs/audit/archive-manifest.json') if (root/'docs/audit/archive-manifest.json').exists() else None
 print('Verified 128 M5 + 89 replayed slots = 217 unique runtime keys with original constraints.')

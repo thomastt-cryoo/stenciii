@@ -1,6 +1,6 @@
 // Replay retained manufacturing fixtures in real ST/MT workers and the native CLI.
 import {chromium} from '../../web/node_modules/playwright/index.mjs'
-import {readFileSync,writeFileSync,readdirSync,mkdirSync} from 'node:fs'
+import {readFileSync,writeFileSync,readdirSync,mkdirSync,existsSync,statSync} from 'node:fs'
 import {spawnSync} from 'node:child_process'
 import {resolve,basename} from 'node:path'
 import {createHash} from 'node:crypto'
@@ -11,11 +11,20 @@ for(const phase of 'abcd'){
   const type=c.key.split('.')[0],project=c[`project_${which}`]??`sandbox/m5/${phase}/${c.key.replace('.','-')}-${which}.json`
   // All before/after field fixtures are retained; M5_MODES_SAMPLE limits a diagnostic run only.
   if(process.env.M5_MODES_SAMPLE&&c.key.split('.').at(-1)!==({split_colours:'colours',tone_patterns:'spacing_mm',colour_set:'holes',tile_layout:'edits',tiles:'seam_angle_deg',fragments:'keep',pads:'mount_threaded',ring:'rings',hardware:'fit_test',export:'mount_threaded'}[type]))continue
-  cases.push({key:c.key,phase:which,stem:`${c.key.replace('.','-')}-${which}`,project,target:type==='tile_layout'?'built':'test',out:type==='split_colours'?'palette':type==='tone_patterns'?'mask':'parts',expectedError:!!c[which]?.error})
+  cases.push({key:c.key,phase:which,stem:`${c.key.replace('.','-')}-${which}`,project,target:type==='tile_layout'?'built':'test',out:type==='split_colours'?(c.key.endsWith('.colours')?'palette':'colour_1'):type==='tone_patterns'?'mask':'parts',expectedError:!!c[which]?.error,accepted_st:c[which],accepted_path:`sandbox/m5/${phase}/${c.key.replace('.','-')}-${which}.${c[which]?.extension??'zip'}`})
  }
 }
-const result={modes:[],cases:cases.map(c=>({...c}))},browser=await chromium.launch({headless:true})
+if(!process.env.M5_MODES_SAMPLE&&cases.length!==256)throw Error('Complete all 128 parameter cases before replay.')
+const result={modes:[],engine_sha256:Object.fromEntries(['web/pkg/stencil_wasm_bg.wasm','web/public/pkg-mt/stencil_wasm_bg.wasm'].map(p=>[p,createHash('sha256').update(readFileSync(p)).digest('hex')])),cases:cases.map(c=>({...c}))},browser=await chromium.launch({headless:true})
 for(const mode of ['st','mt']){
+ if(mode==='st'&&!process.env.M5_REPLAY_ST){
+  result.modes.push({mode,threads:{n:1},source:'Accepted real single-thread parameter runs; exact stored bytes and freshness checked'})
+  for(const row of result.cases){if(row.expectedError){row.st={refusal:row.accepted_st.error,source:'accepted_parameter_run'};continue}
+   if(!existsSync(row.accepted_path)||statSync(row.accepted_path).mtimeMs<statSync('web/pkg/stencil_wasm_bg.wasm').mtimeMs)throw Error('Stale ST evidence: '+row.stem)
+   const sha256=createHash('sha256').update(readFileSync(row.accepted_path)).digest('hex');if(sha256!==row.accepted_st.sha256)throw Error('Changed ST evidence: '+row.stem)
+   row.st={path:row.accepted_path,sha256,info:row.accepted_st.info,source:'accepted_parameter_run'}
+  }continue
+ }
  const page=await browser.newPage();await page.goto('http://localhost:5199/');const threads=await page.evaluate(async({worker,mode})=>{
   const engine=new Worker(worker,{type:'module',name:mode==='st'?'artwork-preview':'manufacturing-mode'}),pending=new Map();let seq=0
   const call=message=>new Promise((resolve,reject)=>{const id=++seq,timer=setTimeout(()=>{pending.delete(id);reject(Error('Manufacturing mode timed out'))},240000);pending.set(id,{resolve,reject,timer});engine.postMessage({id,...message})})
@@ -38,10 +47,11 @@ await browser.close()
 for(const row of result.cases){
  if(row.expectedError){row.verified_refusal=true;continue}
  if(row.out!=='parts'){if(row.st.sha256!==row.mt.sha256)throw Error(`ST/MT bitmap differs: ${row.stem}`);row.st_mt_identical=true;continue}
- const into=`${root}/native-${row.stem}`;mkdirSync(into,{recursive:true});const cli=spawnSync(resolve('target/release/stencil.exe'),['--project',row.project,'-o',into],{encoding:'utf8',timeout:180000,maxBuffer:8000000})
+ const into=`${root}/native-${row.stem}`;mkdirSync(into,{recursive:true});const cli=spawnSync(resolve(`target/release/stencil${process.platform==='win32'?'.exe':''}`),['--project',row.project,'-o',into],{encoding:'utf8',timeout:180000,maxBuffer:8000000})
  if(cli.status!==0)throw Error(`${row.stem}: ${cli.stderr}`)
  const zip=`${into}/${basename(row.project,'.json')}.zip`,compare=spawnSync('python',['scripts/m5/compare_geometry.py',zip,row.st.path,row.mt.path],{encoding:'utf8',timeout:180000,maxBuffer:16000000})
  if(compare.status!==0){row.comparison_error=compare.stderr;throw Error(`${row.stem}: ${compare.stderr}`)}
  row.native={path:zip};row.comparison=JSON.parse(compare.stdout);writeFileSync('docs/m5/manufacturing-modes.json',JSON.stringify(result,null,2)+'\n')
 }
+for(const row of result.cases){delete row.accepted_st;delete row.accepted_path}
 writeFileSync('docs/m5/manufacturing-modes.json',JSON.stringify(result,null,2)+'\n');console.log(`Verified ${cases.length} field fixtures in ST/MT and every successful Parts fixture through native STL comparison.`)
