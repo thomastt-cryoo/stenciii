@@ -4,7 +4,7 @@ import { compileRecipe, copy, operations, rawGraph, type ProjectDocument } from 
 import { validateRecipe } from './artwork'
 
 export const manufacturingTypes=['split_colours','tone_patterns','tile_layout','export','tiles','pads','ring','fragments','colour_set','hardware']
-export const implementedManufacturingTypes=['split_colours','tone_patterns','colour_set']
+export const implementedManufacturingTypes=['split_colours','tone_patterns','colour_set','tile_layout','tiles','fragments']
 export const isManufacturing=(type:string)=>implementedManufacturingTypes.includes(type)
 export const manufacturingNames:Record<string,string>={split_colours:'Separate colours',tone_patterns:'Apply tone patterns',colour_set:'Register colour plates',tile_layout:'Plan printable sections',tiles:'Split finished stencil',pads:'Pads & mounting holes',ring:'Expanded borders',hardware:'Screws, nuts & plates',fragments:'Remove tile fragments',export:'Legacy tiles & mounting'}
 const help:Record<string,string>={
@@ -69,4 +69,25 @@ export function addToneWorkflow(doc:ProjectDocument,source:[string,string],catal
 }
 export function editColourLayer(doc:ProjectDocument,id:string,change:Partial<Pick<ColourLayer,'name'|'visible'>>){
  const next=copy(doc),m=metadata(next),layer=m.colourLayers?.find((l:ColourLayer)=>l.plate===id);if(!layer)throw Error('This colour pass is no longer available.');Object.assign(layer,change);if(change.name)m.passNames={...m.passNames,[id]:change.name};return next
+}
+
+export function solidChoices(doc:ProjectDocument){const g=compileRecipe(doc);return g.nodes.filter(n=>n.type==='remesh'||['stencil','vector_stencil'].includes(n.type)&&!g.edges.some(e=>e.to[0]===n.id&&e.to[1]==='tiles'))}
+export function partsChoices(doc:ProjectDocument,catalogue:NodeType[]){const g=compileRecipe(doc);return g.nodes.filter(n=>catalogue.find(t=>t.id===n.type)?.outputs.some(p=>p.type==='parts')&&(!['stencil','vector_stencil'].includes(n.type)||g.edges.some(e=>e.to[0]===n.id&&e.to[1]==='tiles')))}
+export function createTiledWorkflow(doc:ProjectDocument,source:string,strategy:'before'|'after',maxX:number,maxY:number,catalogue:NodeType[]){
+ const g=compileRecipe(doc),base=g.nodes.find(n=>n.id===source);if(!base||!solidChoices(doc).some(n=>n.id===source))throw Error('Choose one compatible stencil solid before adding tiling.')
+ if(!Number.isFinite(maxX)||!Number.isFinite(maxY)||maxX<25||maxY<25||maxX>2000||maxY>2000)throw Error('Enter printable dimensions from 25 to 2000 mm. Individual operation settings retain their own engine ranges.')
+ const next=copy(doc),m=metadata(next);let output:string
+ if(strategy==='before'){
+  if(!['stencil','vector_stencil'].includes(base.type))throw Error('Planning before construction needs a stencil builder. For an optimized solid, use Split a finished stencil.')
+  const port=base.type==='stencil'?'mask':'shapes',input=g.edges.find(e=>e.to[0]===source&&e.to[1]===port);if(!input)throw Error('This stencil has no compatible artwork input for a new layout.')
+  const layout=appendOperation(next,'tile_layout',catalogue,{[port]:input.from},{width_mm:base.params.width_mm??200,margin_mm:base.params.margin_mm??8,max_x:maxX,max_y:maxY})
+  output=appendOperation(next,base.type,catalogue,{tiles:[layout,'tiles']},copy(base.params))
+ }else output=appendOperation(next,'tiles',catalogue,{solid:[source,'solid']},{max_x:maxX,max_y:maxY})
+ m.passNames={...m.passNames,[output]:strategy==='before'?'Tile-first sections':'Sections from finished stencil'}
+ m.manufacturingAssemblies=[...(m.manufacturingAssemblies??[]),{id:output,strategy,source}];validateRecipe(next,catalogue);return next
+}
+export function appendPartsProcessing(doc:ProjectDocument,source:string,type:string,catalogue:NodeType[]){
+ if(!partsChoices(doc,catalogue).some(n=>n.id===source))throw Error('Choose compatible generated parts first.')
+ if(!['fragments','pads','ring','hardware'].includes(type))throw Error('Choose a supported manufacturing operation.')
+ const next=copy(doc),id=appendOperation(next,type,catalogue,{parts:[source,'parts']}),m=metadata(next);m.passNames={...m.passNames,[id]:manufacturingNames[type]};validateRecipe(next,catalogue);return next
 }

@@ -10,10 +10,10 @@ const usePrefs = create<{ overlay: boolean; opacity: number; set: (p: Partial<{ 
 
 /** Lets the tile layout be edited by hand: the plate's seams and connector blocks are drawn over the preview. */
 export interface LayoutProps { info: LayoutInfo; edits: LayoutEdits; onCommit: (e: LayoutEdits) => void; onReset: () => void }
-interface Props { src: string; under?: string; kind: 'image' | 'mask'; layout?: LayoutProps }
+interface Props { src: string; under?: string; kind: 'image' | 'mask'; layout?: LayoutProps;fitHeight?:boolean }
 
 /** Zoomable, pannable raster view. A mask can be laid over the image it was derived from. */
-export default function ImageView({ src, under, kind, layout }: Props) {
+export default function ImageView({ src, under, kind, layout,fitHeight=false }: Props) {
   const [view, setView] = useState({ k: 1, x: 0, y: 0 })
   const { overlay, opacity, set: setPrefs } = usePrefs()
   const drag = useRef<{ x: number; y: number } | null>(null)
@@ -69,7 +69,7 @@ export default function ImageView({ src, under, kind, layout }: Props) {
     const g = c.getContext('2d')!
     g.imageSmoothingEnabled = false
     g.setTransform(dpr, 0, 0, dpr, 0, 0)
-    const bw = Math.min(box.w * 0.9, 900), bh = bw * top.naturalHeight / top.naturalWidth
+    const bw = Math.min(box.w * 0.9, fitHeight?box.h*.9*top.naturalWidth/top.naturalHeight:Infinity, 900), bh = bw * top.naturalHeight / top.naturalWidth
     g.translate(box.w / 2 + view.x, box.h / 2 + view.y)
     g.scale(view.k, view.k)
     g.fillStyle = '#fff'
@@ -81,14 +81,14 @@ export default function ImageView({ src, under, kind, layout }: Props) {
     } else if (kind === 'mask') g.fillRect(-bw / 2, -bh / 2, bw, bh)
     g.drawImage(top, -bw / 2, -bh / 2, bw, bh)
     if (layout) drawLayout(g, layout.info, bw, bh, view.k, live)
-  }, [imgs, box, view, opacity, showUnder, kind, layout, live])
+  }, [imgs, box, view, opacity, showUnder, kind, layout, live,fitHeight])
 
   /** Plate millimetres under a pointer, and the scale (px per mm at zoom 1). */
   const plateAt = (e: React.PointerEvent) => {
     const top = imgs.top, L = layout?.info
     if (!top || !L) return null
     const r = host.current!.getBoundingClientRect()
-    const bw = Math.min(box.w * 0.9, 900), bh = bw * top.naturalHeight / top.naturalWidth
+    const bw = Math.min(box.w * 0.9, fitHeight?box.h*.9*top.naturalWidth/top.naturalHeight:Infinity, 900), bh = bw * top.naturalHeight / top.naturalWidth
     const lx = (e.clientX - r.left - box.w / 2 - view.x) / view.k, ly = (e.clientY - r.top - box.h / 2 - view.y) / view.k
     return { x: ((lx + bw / 2) / bw) * L.width, y: L.height - ((ly + bh / 2) / bh) * L.height, mm: bw / L.width * view.k }
   }

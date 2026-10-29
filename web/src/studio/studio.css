@@ -332,3 +332,37 @@ h1 { font-size: 22px; line-height: 1.25; letter-spacing: -.6px; font-weight: 500
 .manufacturing-guide input[type=number], .colour-layer input:not([type=checkbox]) { padding:7px; border:1px solid var(--line); border-radius:6px; background:var(--input); color:var(--text); }
 .manufacturing-guide input[type=number] { width:90px; }
 .parts-toolbar a[aria-disabled=true] { opacity:.45; pointer-events:none; }
+
+.tile-layout-editor { margin:24px 0; }
+.tile-layout-editor p, .saved-layout-offsets p { font-size:12px; line-height:1.7; }
+.tile-layout-image { height:360px; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+.tile-layout-image .imgview { height:100%; display:flex; flex-direction:column; }
+.tile-layout-image .imgstage { flex:1; min-height:220px; position:relative; overflow:hidden; touch-action:none; }
+.tile-layout-image .imgcanvas { width:100%; height:100%; position:absolute; inset:0; }
+.tile-layout-image .imgbar { display:flex; flex-wrap:wrap; padding:8px; gap:8px; font-size:11px; }
+.tile-layout-editor fieldset { border:0; padding:12px 0; }
+.tile-layout-editor button, .saved-layout-offsets button { padding:8px 12px; border:1px solid var(--line); margin:6px; }
+.tile-layout-editor input[type=number] { width:110px; padding:7px; border:1px solid var(--line); border-radius:6px; color:var(--text); background:var(--input); }
+
+.parts-preview .v3 { height:100%; min-height:350px; position:relative; display:flex; flex-direction:column; }
+.parts-preview .v3options { position:absolute; right:12px; top:10px; z-index:3; max-width:290px; max-height:70%; overflow:auto; background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:10px; }
+.parts-preview .v3options summary { cursor:pointer; font-size:12px; }
+.parts-preview .v3bar { display:flex; flex-wrap:wrap; gap:10px; font-size:12px; margin-top:10px; }
+.parts-preview .v3bar label { display:flex; align-items:center; gap:5px; }
+.parts-preview .v3bar button, .parts-toolbar button { border:1px solid var(--line); padding:6px 9px; }
+.parts-preview .v3main { display:flex; height:100%; min-height:inherit; }
+.parts-preview .v3host { flex:1; min-width:0; height:100%; min-height:inherit; position:relative; }
+.parts-preview .v3host .viewer { width:100%; height:100%; position:absolute; inset:0; min-height:inherit; }
+.parts-preview .v3status, .parts-preview .v3dims { position:absolute; bottom:10px; left:10px; font-size:11px; background:var(--bg); padding:5px 8px; }
+.parts-preview .v3parts { width:190px; max-height:450px; overflow:auto; background:var(--bg); border-left:1px solid var(--line); font-size:11px; }
+.parts-preview .v3parts-head { display:flex; gap:8px; padding:8px; }
+.parts-preview .v3part { padding:8px; border-top:1px solid var(--line); }
+.parts-preview .v3part label { display:flex; align-items:center; gap:5px; overflow-wrap:anywhere; }
+.parts-preview .v3size { display:block; font-size:10px; color:var(--muted); }
+.parts-preview .v3part.off { opacity:.55; }
+.parts-preview .v3part i { width:6px; height:6px; flex-shrink:0; border-radius:50%; }
+.parts-preview .v3part a { margin-left:12px; }
+@media(max-width:650px){.parts-preview .v3parts{width:125px}.parts-preview .v3options{max-width:200px}.parts-toolbar select{max-width:210px}}
+
+.parts-preview .v3options { right:205px; }
+@media(max-width:650px){.parts-preview .v3options{right:135px;max-width:200px}}

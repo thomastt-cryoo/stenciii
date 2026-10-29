@@ -79,7 +79,7 @@ function coarse(src: THREE.BufferGeometry): THREE.BufferGeometry {
 // the camera survives regenerations so a finished run doesn't reset the user's view
 let savedCam: { pos: THREE.Vector3; target: THREE.Vector3 } | null = null
 
-export default function Viewer3D({ parts, plate }: { parts: Part[]; plate?: PlateMeta | null }) {
+export default function Viewer3D({ parts, plate, compact=false, theme, allowDownloads=true }: { parts: Part[]; plate?: PlateMeta | null; compact?:boolean; theme?:string; allowDownloads?:boolean }) {
   const host = useRef<HTMLDivElement>(null)
   const sc = useRef<Scene3D | null>(null)
   const [wire, setWire] = useState(false)
@@ -111,7 +111,7 @@ export default function Viewer3D({ parts, plate }: { parts: Part[]; plate?: Plat
     }
     renderer.localClippingEnabled = true
     const scene = new THREE.Scene()
-    scene.background = new THREE.Color(0x16191e)
+    scene.background = new THREE.Color(theme ? theme==='dark'?0x20201f:0xf7f7f5 : 0x16191e)
     const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 1e6)
     camera.up.set(0, 0, 1)
     scene.add(new THREE.HemisphereLight(0xffffff, 0x334455, 1.1))
@@ -183,10 +183,12 @@ export default function Viewer3D({ parts, plate }: { parts: Part[]; plate?: Plat
       sc.current = null
       cancelAnimationFrame(raf)
       ro.disconnect()
+      controls.dispose()
+      if(idle)window.clearTimeout(idle)
       renderer.dispose()
       el.replaceChildren()
     }
-  }, [urls])
+  }, [urls,theme])
 
   useEffect(() => {
     const s = sc.current
@@ -210,6 +212,11 @@ export default function Viewer3D({ parts, plate }: { parts: Part[]; plate?: Plat
     colSet.forEach((c) => { colX.set(c, acc); acc += colW.get(c)! + explode })
     acc = 0
     ;[...rowSet].reverse().forEach((r) => { rowY.set(r, acc); acc += rowH.get(r)! + explode })
+    if(compact&&plate&&plate.parts.length){
+      const lox=Math.min(...plate.parts.map(q=>q.origin[0])),loy=Math.min(...plate.parts.map(q=>q.origin[1]))
+      const xs=[...new Set(plate.parts.map(q=>q.origin[0]))].sort((a,b)=>a-b),ys=[...new Set(plate.parts.map(q=>q.origin[1]))].sort((a,b)=>a-b)
+      for(const p of plate.parts){const m=p.file.match(tileRe);if(!m)continue;colX.set(+m[2],p.origin[0]-lox+xs.indexOf(p.origin[0])*explode);rowY.set(+m[1],p.origin[1]-loy+ys.indexOf(p.origin[1])*explode)}
+    }
     // loose parts (joiner/extender plates, rods) lay out in a row below the tiles
     let ax = 0
     const ay = -15
@@ -262,7 +269,7 @@ export default function Viewer3D({ parts, plate }: { parts: Part[]; plate?: Plat
     if (tiles.length) {
       // assembled plate: tiles side by side without spacing
       const zmax = Math.max(...tiles.map((i) => s.boxes[i].getSize(new THREE.Vector3()).z))
-      let tw = [...colW.values()].reduce((a, b) => a + b, 0), th = [...rowH.values()].reduce((a, b) => a + b, 0)
+      let tw = compact&&plate?plate.w:[...colW.values()].reduce((a, b) => a + b, 0), th = compact&&plate?plate.h:[...rowH.values()].reduce((a, b) => a + b, 0)
       const slabs = parts.map((_, i) => i).filter(isSlab)
       if (slabs.length && plate) {
         // the margin slabs grow the assembled size on every side they reach past the plate
@@ -373,7 +380,7 @@ export default function Viewer3D({ parts, plate }: { parts: Part[]; plate?: Plat
   }
   return (
     <div className="v3">
-      <div className="v3bar">
+      <details className="v3options" open={compact?undefined:true}><summary>Assembly View Options</summary><div className="v3bar">
         <button onClick={() => view('iso')}>Iso</button>
         <button onClick={() => view('top')}>Top</button>
         <button onClick={() => view('bottom')}>Bottom</button>
@@ -387,7 +394,7 @@ export default function Viewer3D({ parts, plate }: { parts: Part[]; plate?: Plat
         {parts.length > 1 && <label>{tiled ? 'spacing (mm)' : 'explode'} <input type="range" min={0} max={tiled ? 150 : 12} step={tiled ? 1 : 0.25} value={explode} onChange={(e) => setExplode(+e.target.value)} /></label>}
         <span className="mut">{parts.length > 1 ? `${parts.length} parts` : ''}</span>
       </div>
-      <div className="v3main">
+      </details><div className="v3main">
         <div className="v3host">
           <div className="viewer" ref={host} />
           {status && <div className="v3status">{status}</div>}
@@ -402,7 +409,7 @@ export default function Viewer3D({ parts, plate }: { parts: Part[]; plate?: Plat
                   <i style={{ background: `#${colorOf(i).getHexString()}` }} />{p.name.replace(/\.stl$/, '')}</label>
                 {dims.parts[p.name] && <span className="v3size">{dims.parts[p.name]}</span>}
                 <button title="show only this part" onClick={() => setHidden(new Set(parts.filter((q) => q.name !== p.name).map((q) => q.name)))}>only</button>
-                <a className="btn" href={p.url} download={p.name.endsWith('.stl') ? p.name : `${p.name}.stl`} title="download this STL">⬇</a>
+                <a className="btn" href={allowDownloads?p.url:undefined} aria-disabled={!allowDownloads} onClick={e=>{if(!allowDownloads)e.preventDefault()}} download={p.name.endsWith('.stl') ? p.name : `${p.name}.stl`} title="download this STL">{compact?'Save STL':'⬇'}</a>
               </div>
             ))}
           </aside>

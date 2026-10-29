@@ -42,15 +42,15 @@ export default function Settings({ registry, doc, close, initialCategory, initia
         <h3>{query ? `${results.length} matching settings` : category}</h3>
         {!query && category === 'Artwork and image cleanup' && doc && <ArtworkWorkbench doc={doc} registry={registry} />}
         {!query && ['Size and print settings','Bridges and stencil geometry','Mesh optimization'].includes(category) && doc && <GeometryWorkbench doc={doc} registry={registry} category={category} />}
-        {!query && category === 'Colours and layers' && doc && <ManufacturingWorkbench doc={doc} registry={registry} category={category} />}
+        {!query && ['Colours and layers','Tiles and large stencils'].includes(category) && doc && <ManufacturingWorkbench doc={doc} registry={registry} category={category} />}
         {!query && category === 'Processing steps' && doc && <ProcessingSteps doc={doc} registry={registry} />}
         {!query && category === 'Presets and history' && doc && <Presets doc={doc} registry={registry} />}
-        {!query && !['Artwork and image cleanup', 'Processing steps', 'Presets and history', 'Size and print settings', 'Bridges and stencil geometry', 'Mesh optimization', 'Colours and layers'].includes(category) && <p className="section-note">{category === 'Compatibility' ? 'Imported workflows and unknown data are kept intact.' : 'Adjustable settings act on the named step in this project. Reference settings explain specialist tools; their editors belong to M5.'}</p>}
+        {!query && !['Artwork and image cleanup', 'Processing steps', 'Presets and history', 'Size and print settings', 'Bridges and stencil geometry', 'Mesh optimization', 'Colours and layers', 'Tiles and large stencils'].includes(category) && <p className="section-note">{category === 'Compatibility' ? 'Imported workflows and unknown data are kept intact.' : 'Adjustable settings act on the named step in this project. Reference settings explain specialist tools; their editors belong to M5.'}</p>}
         {category === 'Compatibility' && !query && <ol className="step-list">{ops.map((o, i) => <li key={i}><b>{registry.types.get(o.type === 'complexity' ? 'remesh' : o.type)?.label ?? 'Unavailable processing step'}</b><span>{o.id} · {Object.keys(o.params).length} saved values{!registry.types.has(o.type) && o.type !== 'complexity' ? ' · Cannot run in this engine version' : ''}</span></li>)}</ol>}
         {category === 'Compatibility' && !query && doc?.raw.stencilStudio?.previousProject && <div className="editor-actions"><button onClick={() => editor.command('Restore previous project copy', d => openDocument(d.raw.stencilStudio.previousProject))}>Restore previous project copy</button></div>}
         {category === 'Presets and history' && !query && <ol className="step-list">{editor.history().map((h, i) => <li key={i}>{h.replace(/_/g, ' ')}</li>)}</ol>}
         {!results.length && query && <p>No settings match “{query}”. Try a shorter name, such as bridge or thickness.</p>}
-        {(query || !doc || !['Artwork and image cleanup', 'Processing steps', 'Presets and history', 'Size and print settings', 'Bridges and stencil geometry', 'Mesh optimization', 'Colours and layers'].includes(category)) && results.map(s => {
+        {(query || !doc || !['Artwork and image cleanup', 'Processing steps', 'Presets and history', 'Size and print settings', 'Bridges and stencil geometry', 'Mesh optimization', 'Colours and layers', 'Tiles and large stencils'].includes(category)) && results.map(s => {
           const instances = registry.instances(s, ops)
           const p = s.parameter
           const adjustable = editable(s.type, p.name) && instances.some(o => !o.disabled)

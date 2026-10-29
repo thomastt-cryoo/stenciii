@@ -1,3 +1,4 @@
+import {isManufacturing} from './manufacturing'
 import type { GraphJson, NodeType } from '../api'
 import { compileRecipe, copy, editParameter, object, operations, rawGraph, type ObjectValue, type ProjectDocument } from './project'
 import { activeStyle, styleRecipe } from './recipes'
@@ -77,7 +78,7 @@ export function validateRecipe(doc: ProjectDocument, catalogue: NodeType[]) {
   return graph
 }
 export function insertionOptions(kind: string, catalogue: NodeType[]) {
-  return catalogue.filter(t => (isArtwork(t.id) || t.id === 'remesh') && t.inputs.length === 1 && t.inputs[0].type === kind).map(t => ({ type: t.id, pair: t.outputs[0].type === kind ? null : t.id === 'trace' ? 'shapes_to_mask' : t.id === 'shapes_to_mask' ? 'trace' : null })).filter(o => catalogue.find(t => t.id === o.type)!.outputs[0].type === kind || o.pair)
+  return catalogue.filter(t => (isArtwork(t.id) || isManufacturing(t.id) || t.id === 'remesh') && t.inputs.length === 1 && t.inputs[0].type === kind).map(t => ({ type: t.id, pair: t.outputs[0].type === kind ? null : t.id === 'trace' ? 'shapes_to_mask' : t.id === 'shapes_to_mask' ? 'trace' : null })).filter(o => catalogue.find(t => t.id === o.type)!.outputs[0].type === kind || o.pair)
 }
 const freshId = (g: ObjectValue, type: string, reserved: string[] = []) => { let id = `${type}-1`, i = 1; while (g.nodes.some((n: any) => n.id === id) || reserved.includes(id)) id = `${type}-${++i}`; return id }
 export function insertArtwork(doc: ProjectDocument, target: string, input: string, type: string, catalogue: NodeType[]) {
@@ -102,7 +103,7 @@ export function connectInput(doc: ProjectDocument, target: string, input: string
 }
 export function canBypass(doc: ProjectDocument, id: string, catalogue: NodeType[]) {
   const n = operations(doc).find(n => n.id === id), def = catalogue.find(t => t.id === (n?.type === 'complexity' ? 'remesh' : n?.type)), graph = compileRecipe(doc)
-  return !!n && (isArtwork(n.type) || ['remesh','complexity'].includes(n.type)) && def?.inputs.length === 1 && def.outputs[0].type === def.inputs[0].type && !graph.edges.some(e => e.from[0] === id && e.from[1] !== def.outputs[0].name)
+  return !!n && (isArtwork(n.type) || isManufacturing(n.type) || ['remesh','complexity'].includes(n.type)) && def?.inputs.length === 1 && def.outputs[0].type === def.inputs[0].type && !graph.edges.some(e => e.from[0] === id && e.from[1] !== def.outputs[0].name)
 }
 export function bypassArtwork(doc: ProjectDocument, id: string, catalogue: NodeType[], remove = false) {
   if (!canBypass(doc, id, catalogue)) throw Error('This step changes artwork format or supplies a diagnostic pass. Reconnect its consumers before removing it.')
@@ -125,7 +126,7 @@ export function enableArtwork(doc: ProjectDocument, id: string, catalogue: NodeT
 }
 export function removeArtwork(doc: ProjectDocument, id: string, catalogue: NodeType[]) {
   const graph = compileRecipe(doc), op = operations(doc).find(n => n.id === id)
-  if (!op || !(isArtwork(op.type) || ['remesh','complexity'].includes(op.type))) throw Error('Only artwork operations can be removed here.')
+  if (!op || !(isArtwork(op.type) || isManufacturing(op.type) || ['remesh','complexity'].includes(op.type))) throw Error('Choose a supported optional operation to remove.')
   if (graph.edges.some(e => e.from[0] === id)) return bypassArtwork(doc, id, catalogue, true)
   const next = copy(doc), g = rawGraph(next), node = rawNode(next, id), links = g.edges.filter((e: any) => endpoint(e, 'to')[0] === id)
   archive(next, 'Remove unused artwork step', [node, ...links]); g.nodes = g.nodes.filter((n: any) => n !== node); g.edges = g.edges.filter((e: any) => !links.includes(e)); validateRecipe(next, catalogue); return next
@@ -183,7 +184,7 @@ export function liveArtwork(doc: ProjectDocument) { try { return operations(doc)
 export type PreviewStage = { id: string; step: string; port: string; label: string; kind: string; url: string; info: ObjectValue }
 export function inputChoices(doc: ProjectDocument, id: string, port: string, catalogue: NodeType[]) {
   const g = compileRecipe(doc), target = g.nodes.find(n => n.id === id), kind = catalogue.find(t => t.id === target?.type)?.inputs.find(p => p.name === port)?.type
-  return g.nodes.flatMap(n => (catalogue.find(t => t.id === n.type)?.outputs ?? []).filter(p => p.type === kind && !(p.type==='solid' && ['stencil','vector_stencil'].includes(n.type) && g.edges.some(e=>e.to[0]===n.id&&e.to[1]==='tiles'))).map(p => ({ from: [n.id, p.name] as [string, string], label: `${artworkNames[n.type] ?? catalogue.find(t => t.id === n.type)?.label ?? 'Saved result'}${g.nodes.filter(o => o.type === n.type).length > 1 ? ` ${g.nodes.filter(o => o.type === n.type).findIndex(o => o.id === n.id) + 1}` : ''}${p.name === 'removed' || p.name === 'rounded' ? ' · Removed details' : ''}` }))).filter(choice => { try { connectInput(doc, id, port, choice.from, catalogue); return true } catch { return false } })
+  return g.nodes.flatMap(n => (catalogue.find(t => t.id === n.type)?.outputs ?? []).filter(p => p.type === kind && !(p.type==='parts' && ['stencil','vector_stencil'].includes(n.type) && !g.edges.some(e=>e.to[0]===n.id&&e.to[1]==='tiles')) && !(p.type==='solid' && ['stencil','vector_stencil'].includes(n.type) && g.edges.some(e=>e.to[0]===n.id&&e.to[1]==='tiles'))).map(p => ({ from: [n.id, p.name] as [string, string], label: `${artworkNames[n.type] ?? catalogue.find(t => t.id === n.type)?.label ?? 'Saved result'}${g.nodes.filter(o => o.type === n.type).length > 1 ? ` ${g.nodes.filter(o => o.type === n.type).findIndex(o => o.id === n.id) + 1}` : ''}${p.name === 'removed' || p.name === 'rounded' ? ' · Removed details' : ''}` }))).filter(choice => { try { connectInput(doc, id, port, choice.from, catalogue); return true } catch { return false } })
 }
 export function renamePass(doc: ProjectDocument, id: string, name: string) { const next = copy(doc), m = meta(next); if (m.passNames != null && !object(m.passNames)) throw Error('Saved pass names use an unsupported format. They are unchanged.'); m.passNames = { ...m.passNames, [id]: name }; return next }
 export function primaryInput(graph: GraphJson, id: string) { return graph.edges.find(e => e.to[0] === id) }

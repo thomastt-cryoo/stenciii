@@ -1,0 +1,982 @@
+{
+  "version": 2,
+  "stencilStudio": {
+    "schema": 2,
+    "name": "ten-colours",
+    "style": "standard",
+    "colourLayers": [
+      {
+        "plate": "vector_stencil-1",
+        "split": "split_colours-1",
+        "port": "colour_1",
+        "name": "Ink black",
+        "colour": "#000000",
+        "visible": false
+      },
+      {
+        "plate": "vector_stencil-2",
+        "split": "split_colours-1",
+        "port": "colour_2",
+        "name": "Colour 2",
+        "colour": "#191919",
+        "visible": true
+      },
+      {
+        "plate": "vector_stencil-3",
+        "split": "split_colours-1",
+        "port": "colour_3",
+        "name": "Colour 3",
+        "colour": "#323232",
+        "visible": true
+      },
+      {
+        "plate": "vector_stencil-4",
+        "split": "split_colours-1",
+        "port": "colour_4",
+        "name": "Colour 4",
+        "colour": "#4b4b4b",
+        "visible": true
+      },
+      {
+        "plate": "vector_stencil-5",
+        "split": "split_colours-1",
+        "port": "colour_5",
+        "name": "Colour 5",
+        "colour": "#646464",
+        "visible": true
+      },
+      {
+        "plate": "vector_stencil-6",
+        "split": "split_colours-1",
+        "port": "colour_6",
+        "name": "Colour 6",
+        "colour": "#7d7d7d",
+        "visible": true
+      },
+      {
+        "plate": "vector_stencil-7",
+        "split": "split_colours-1",
+        "port": "colour_7",
+        "name": "Colour 7",
+        "colour": "#969696",
+        "visible": true
+      },
+      {
+        "plate": "vector_stencil-8",
+        "split": "split_colours-1",
+        "port": "colour_8",
+        "name": "Colour 8",
+        "colour": "#afafaf",
+        "visible": true
+      },
+      {
+        "plate": "vector_stencil-9",
+        "split": "split_colours-1",
+        "port": "colour_9",
+        "name": "Colour 9",
+        "colour": "#c8c8c8",
+        "visible": true
+      },
+      {
+        "plate": "vector_stencil-10",
+        "split": "split_colours-1",
+        "port": "colour_10",
+        "name": "Colour 10",
+        "colour": "#e1e1e1",
+        "visible": true
+      }
+    ],
+    "passNames": {
+      "vector_stencil-1": "Ink black",
+      "vector_stencil-2": "Colour 2",
+      "vector_stencil-3": "Colour 3",
+      "vector_stencil-4": "Colour 4",
+      "vector_stencil-5": "Colour 5",
+      "vector_stencil-6": "Colour 6",
+      "vector_stencil-7": "Colour 7",
+      "vector_stencil-8": "Colour 8",
+      "vector_stencil-9": "Colour 9",
+      "vector_stencil-10": "Colour 10",
+      "colour_set-1": "Registration set 1 · 6 colours",
+      "colour_set-2": "Registration set 2 · 4 colours"
+    },
+    "colourAssemblies": [
+      {
+        "id": "colour_set-1",
+        "layers": [
+          "vector_stencil-1",
+          "vector_stencil-2",
+          "vector_stencil-3",
+          "vector_stencil-4",
+          "vector_stencil-5",
+          "vector_stencil-6"
+        ]
+      },
+      {
+        "id": "colour_set-2",
+        "layers": [
+          "vector_stencil-7",
+          "vector_stencil-8",
+          "vector_stencil-9",
+          "vector_stencil-10"
+        ]
+      }
+    ],
+    "colourGroups": [
+      "colour_set-1",
+      "colour_set-2"
+    ]
+  },
+  "images": {
+    "5172fc58cc73057b": {
+      "name": "ten-colours.svg",
+      "base64": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTIwIj48cmVjdCB4PSIwIiB3aWR0aD0iMjAiIGhlaWdodD0iMTIwIiBmaWxsPSJyZ2IoMCwwLDApIi8+PHJlY3QgeD0iMjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxMjAiIGZpbGw9InJnYigyNSwyNSwyNSkiLz48cmVjdCB4PSI0MCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjEyMCIgZmlsbD0icmdiKDUwLDUwLDUwKSIvPjxyZWN0IHg9IjYwIiB3aWR0aD0iMjAiIGhlaWdodD0iMTIwIiBmaWxsPSJyZ2IoNzUsNzUsNzUpIi8+PHJlY3QgeD0iODAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxMjAiIGZpbGw9InJnYigxMDAsMTAwLDEwMCkiLz48cmVjdCB4PSIxMDAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxMjAiIGZpbGw9InJnYigxMjUsMTI1LDEyNSkiLz48cmVjdCB4PSIxMjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxMjAiIGZpbGw9InJnYigxNTAsMTUwLDE1MCkiLz48cmVjdCB4PSIxNDAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxMjAiIGZpbGw9InJnYigxNzUsMTc1LDE3NSkiLz48cmVjdCB4PSIxNjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxMjAiIGZpbGw9InJnYigyMDAsMjAwLDIwMCkiLz48cmVjdCB4PSIxODAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxMjAiIGZpbGw9InJnYigyMjUsMjI1LDIyNSkiLz48cmVjdCB4PSIxOTAiIHk9IjEwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJibGFjayIvPjwvc3ZnPg=="
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "artwork",
+        "type": "source",
+        "params": {
+          "image_id": "5172fc58cc73057b",
+          "resolution": 650
+        }
+      },
+      {
+        "id": "framing",
+        "type": "transform",
+        "params": {
+          "crop_left": 0,
+          "crop_top": 0,
+          "crop_right": 0,
+          "crop_bottom": 0,
+          "turn": "0",
+          "angle": 0,
+          "flip_h": false,
+          "flip_v": false
+        }
+      },
+      {
+        "id": "paint",
+        "type": "threshold",
+        "params": {
+          "threshold": 256,
+          "invert": false
+        }
+      },
+      {
+        "id": "outlines",
+        "type": "trace",
+        "params": {
+          "smooth": 1.5,
+          "corner_deg": 60,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "cleanup",
+        "type": "remove_islands",
+        "params": {
+          "delete_specks": false,
+          "fill_holes": false,
+          "max_area": 50,
+          "keep_largest": 0
+        }
+      },
+      {
+        "id": "plate",
+        "type": "vector_stencil",
+        "params": {
+          "detail": 4,
+          "width_mm": 200,
+          "thickness_mm": 5,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 1,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1,
+          "tile_method": "per_tile"
+        }
+      },
+      {
+        "id": "split_colours-1",
+        "type": "split_colours",
+        "params": {
+          "invert": false,
+          "colours": 10,
+          "min_area": 0
+        }
+      },
+      {
+        "id": "trace-1",
+        "type": "trace",
+        "params": {
+          "smooth": 1.5,
+          "corner_deg": 60,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "vector_stencil-1",
+        "type": "vector_stencil",
+        "params": {
+          "detail": 4,
+          "width_mm": 200,
+          "thickness_mm": 5,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 1,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1,
+          "tile_method": "per_tile"
+        }
+      },
+      {
+        "id": "trace-2",
+        "type": "trace",
+        "params": {
+          "smooth": 1.5,
+          "corner_deg": 60,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "vector_stencil-2",
+        "type": "vector_stencil",
+        "params": {
+          "detail": 4,
+          "width_mm": 200,
+          "thickness_mm": 5,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 1,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1,
+          "tile_method": "per_tile"
+        }
+      },
+      {
+        "id": "trace-3",
+        "type": "trace",
+        "params": {
+          "smooth": 1.5,
+          "corner_deg": 60,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "vector_stencil-3",
+        "type": "vector_stencil",
+        "params": {
+          "detail": 4,
+          "width_mm": 200,
+          "thickness_mm": 5,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 1,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1,
+          "tile_method": "per_tile"
+        }
+      },
+      {
+        "id": "trace-4",
+        "type": "trace",
+        "params": {
+          "smooth": 1.5,
+          "corner_deg": 60,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "vector_stencil-4",
+        "type": "vector_stencil",
+        "params": {
+          "detail": 4,
+          "width_mm": 200,
+          "thickness_mm": 5,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 1,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1,
+          "tile_method": "per_tile"
+        }
+      },
+      {
+        "id": "trace-5",
+        "type": "trace",
+        "params": {
+          "smooth": 1.5,
+          "corner_deg": 60,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "vector_stencil-5",
+        "type": "vector_stencil",
+        "params": {
+          "detail": 4,
+          "width_mm": 200,
+          "thickness_mm": 5,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 1,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1,
+          "tile_method": "per_tile"
+        }
+      },
+      {
+        "id": "trace-6",
+        "type": "trace",
+        "params": {
+          "smooth": 1.5,
+          "corner_deg": 60,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "vector_stencil-6",
+        "type": "vector_stencil",
+        "params": {
+          "detail": 4,
+          "width_mm": 200,
+          "thickness_mm": 5,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 1,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1,
+          "tile_method": "per_tile"
+        }
+      },
+      {
+        "id": "trace-7",
+        "type": "trace",
+        "params": {
+          "smooth": 1.5,
+          "corner_deg": 60,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "vector_stencil-7",
+        "type": "vector_stencil",
+        "params": {
+          "detail": 4,
+          "width_mm": 200,
+          "thickness_mm": 5,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 1,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1,
+          "tile_method": "per_tile"
+        }
+      },
+      {
+        "id": "trace-8",
+        "type": "trace",
+        "params": {
+          "smooth": 1.5,
+          "corner_deg": 60,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "vector_stencil-8",
+        "type": "vector_stencil",
+        "params": {
+          "detail": 4,
+          "width_mm": 200,
+          "thickness_mm": 5,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 1,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1,
+          "tile_method": "per_tile"
+        }
+      },
+      {
+        "id": "trace-9",
+        "type": "trace",
+        "params": {
+          "smooth": 1.5,
+          "corner_deg": 60,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "vector_stencil-9",
+        "type": "vector_stencil",
+        "params": {
+          "detail": 4,
+          "width_mm": 200,
+          "thickness_mm": 5,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 1,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1,
+          "tile_method": "per_tile"
+        }
+      },
+      {
+        "id": "trace-10",
+        "type": "trace",
+        "params": {
+          "smooth": 1.5,
+          "corner_deg": 60,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "vector_stencil-10",
+        "type": "vector_stencil",
+        "params": {
+          "detail": 4,
+          "width_mm": 200,
+          "thickness_mm": 5,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 1,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1,
+          "tile_method": "per_tile"
+        }
+      },
+      {
+        "id": "colour_set-1",
+        "type": "colour_set",
+        "params": {
+          "holes": 3,
+          "hole_d": 4,
+          "inset": 0,
+          "pins": true,
+          "pin_clearance": 0.2,
+          "pin_length": 12
+        }
+      },
+      {
+        "id": "colour_set-2",
+        "type": "colour_set",
+        "params": {
+          "holes": 3,
+          "hole_d": 4,
+          "inset": 0,
+          "pins": true,
+          "pin_clearance": 0.2,
+          "pin_length": 12
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": [
+          "artwork",
+          "image"
+        ],
+        "to": [
+          "framing",
+          "image"
+        ]
+      },
+      {
+        "from": [
+          "framing",
+          "image"
+        ],
+        "to": [
+          "paint",
+          "image"
+        ]
+      },
+      {
+        "from": [
+          "paint",
+          "mask"
+        ],
+        "to": [
+          "outlines",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "outlines",
+          "shapes"
+        ],
+        "to": [
+          "cleanup",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "cleanup",
+          "shapes"
+        ],
+        "to": [
+          "plate",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "artwork",
+          "image"
+        ],
+        "to": [
+          "split_colours-1",
+          "image"
+        ]
+      },
+      {
+        "from": [
+          "split_colours-1",
+          "colour_1"
+        ],
+        "to": [
+          "trace-1",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "trace-1",
+          "shapes"
+        ],
+        "to": [
+          "vector_stencil-1",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "split_colours-1",
+          "colour_2"
+        ],
+        "to": [
+          "trace-2",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "trace-2",
+          "shapes"
+        ],
+        "to": [
+          "vector_stencil-2",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "split_colours-1",
+          "colour_3"
+        ],
+        "to": [
+          "trace-3",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "trace-3",
+          "shapes"
+        ],
+        "to": [
+          "vector_stencil-3",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "split_colours-1",
+          "colour_4"
+        ],
+        "to": [
+          "trace-4",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "trace-4",
+          "shapes"
+        ],
+        "to": [
+          "vector_stencil-4",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "split_colours-1",
+          "colour_5"
+        ],
+        "to": [
+          "trace-5",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "trace-5",
+          "shapes"
+        ],
+        "to": [
+          "vector_stencil-5",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "split_colours-1",
+          "colour_6"
+        ],
+        "to": [
+          "trace-6",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "trace-6",
+          "shapes"
+        ],
+        "to": [
+          "vector_stencil-6",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "split_colours-1",
+          "colour_7"
+        ],
+        "to": [
+          "trace-7",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "trace-7",
+          "shapes"
+        ],
+        "to": [
+          "vector_stencil-7",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "split_colours-1",
+          "colour_8"
+        ],
+        "to": [
+          "trace-8",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "trace-8",
+          "shapes"
+        ],
+        "to": [
+          "vector_stencil-8",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "split_colours-1",
+          "colour_9"
+        ],
+        "to": [
+          "trace-9",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "trace-9",
+          "shapes"
+        ],
+        "to": [
+          "vector_stencil-9",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "split_colours-1",
+          "colour_10"
+        ],
+        "to": [
+          "trace-10",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "trace-10",
+          "shapes"
+        ],
+        "to": [
+          "vector_stencil-10",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "vector_stencil-1",
+          "solid"
+        ],
+        "to": [
+          "colour_set-1",
+          "colour_1"
+        ]
+      },
+      {
+        "from": [
+          "vector_stencil-2",
+          "solid"
+        ],
+        "to": [
+          "colour_set-1",
+          "colour_2"
+        ]
+      },
+      {
+        "from": [
+          "vector_stencil-3",
+          "solid"
+        ],
+        "to": [
+          "colour_set-1",
+          "colour_3"
+        ]
+      },
+      {
+        "from": [
+          "vector_stencil-4",
+          "solid"
+        ],
+        "to": [
+          "colour_set-1",
+          "colour_4"
+        ]
+      },
+      {
+        "from": [
+          "vector_stencil-5",
+          "solid"
+        ],
+        "to": [
+          "colour_set-1",
+          "colour_5"
+        ]
+      },
+      {
+        "from": [
+          "vector_stencil-6",
+          "solid"
+        ],
+        "to": [
+          "colour_set-1",
+          "colour_6"
+        ]
+      },
+      {
+        "from": [
+          "vector_stencil-7",
+          "solid"
+        ],
+        "to": [
+          "colour_set-2",
+          "colour_1"
+        ]
+      },
+      {
+        "from": [
+          "vector_stencil-8",
+          "solid"
+        ],
+        "to": [
+          "colour_set-2",
+          "colour_2"
+        ]
+      },
+      {
+        "from": [
+          "vector_stencil-9",
+          "solid"
+        ],
+        "to": [
+          "colour_set-2",
+          "colour_3"
+        ]
+      },
+      {
+        "from": [
+          "vector_stencil-10",
+          "solid"
+        ],
+        "to": [
+          "colour_set-2",
+          "colour_4"
+        ]
+      }
+    ]
+  }
+}

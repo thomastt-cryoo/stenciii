@@ -68,6 +68,8 @@ export class ParameterRegistry {
     if (type === 'remesh' && key === 'decimate_mm' && !p.decimate) return inactive('Enable decimation to use this surface tolerance.')
     if (type==='tone_patterns' && /^(spacing|cover)_\d+$/.test(key) && ['solid','empty'].includes(String(p[`kind_${key.split('_').at(-1)}`]))) return inactive('Solid and empty tones do not use pattern spacing or coverage. The saved override is retained.')
     if (type === 'tone_patterns' && context.toneCount !== undefined && /_\d+$/.test(key) && Number(key.split('_').at(-1)) > context.toneCount - 2) return inactive('This intermediate tone is not present. Its override is retained.')
+    if(type==='tiles'&&['bridge_mm','bridges_per_island','raised_bridges','z_bridging'].includes(key)&&!p.bridge_islands)return inactive('Enable bridge repair to adjust supports for islands created by splitting.')
+    if(type==='tiles'&&key==='z_bridging'&&!p.raised_bridges)return inactive('Enable raised bridge repair to choose a height strategy.')
     if (type === 'pads') {
       if (['thread_clearance', 'long_edge'].includes(key) && p.pad_thread === 'none') return inactive('Choose a pad thread to add pads.')
       if (['mount_threaded', 'mount_clearance', 'hole_spacing', 'joiner_offset', 'extend'].includes(key) && p.mount_screw === 'none') return inactive('Choose a mounting screw to use this setting.')
@@ -91,6 +93,7 @@ export class ParameterRegistry {
     const p = this.types.get(type)?.params.find(p => p.name === name)
     if (!p) throw new Error('This setting is not available in this engine version.')
     if (['int', 'float'].includes(p.kind) && (typeof value !== 'number' || !Number.isFinite(value) || value < p.min! || value > p.max! || (p.kind === 'int' && !Number.isInteger(value)))) throw new Error(`Enter a value from ${p.min} to ${p.max}.`)
+    if(type==='tile_layout'&&name==='edits'&&value){let edits:any;try{edits=JSON.parse(String(value))}catch{throw Error('Saved layout offsets must contain valid JSON. Use the visual or numeric layout editor for ordinary changes.')}if(!edits||typeof edits!=='object'||Array.isArray(edits)||['seams','pockets'].some(k=>edits[k]!=null&&(typeof edits[k]!=='object'||Array.isArray(edits[k])||Object.values(edits[k]).some(v=>typeof v!=='number'||!Number.isFinite(v)))))throw Error('Seam and pocket offsets must be maps of finite millimetre values.')}
     if (p.kind === 'bool' && typeof value !== 'boolean') throw new Error('Choose on or off.')
     if (p.kind === 'choice' && !p.choices?.includes(String(value))) throw new Error('Choose one of the available options.')
     if (['string', 'text'].includes(p.kind) && typeof value !== 'string') throw new Error('Enter text for this setting.')
