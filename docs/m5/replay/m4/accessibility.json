@@ -1,0 +1,21 @@
+{
+  "geometry_dialog": [
+    {
+      "width": 1440,
+      "serious_or_critical": 0
+    },
+    {
+      "width": 800,
+      "serious_or_critical": 0
+    },
+    {
+      "width": 390,
+      "serious_or_critical": 0
+    }
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "external_processing": false
+}

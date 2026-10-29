@@ -1,0 +1,699 @@
+{
+  "st": {
+    "threads": {
+      "n": 1,
+      "why": "too few cores to share with the page",
+      "version": "2.9.4"
+    },
+    "info": {
+      "bytes": 157684,
+      "kind": "solid",
+      "stats": {
+        "bridge_mm": 1.2,
+        "bridge_pixels": 16,
+        "bridge_routes_mm": [
+          [
+            [
+              15.5,
+              21.25
+            ],
+            [
+              8.6,
+              21.25
+            ]
+          ],
+          [
+            [
+              74.656,
+              55.819
+            ],
+            [
+              74.65599999999999,
+              68.4
+            ]
+          ],
+          [
+            [
+              79.4393,
+              23.1431
+            ],
+            [
+              91.4,
+              23.143100000000004
+            ]
+          ],
+          [
+            [
+              16.0324,
+              49.1481
+            ],
+            [
+              8.6,
+              49.14810000000001
+            ]
+          ],
+          [
+            [
+              44.25,
+              55.8219
+            ],
+            [
+              44.25,
+              68.4
+            ]
+          ],
+          [
+            [
+              58.9231,
+              56.3676
+            ],
+            [
+              70.9555,
+              68.4
+            ]
+          ],
+          [
+            [
+              28.725,
+              21.25
+            ],
+            [
+              28.72500000000001,
+              8.6
+            ]
+          ],
+          [
+            [
+              15.5,
+              31.025
+            ],
+            [
+              8.599999999999998,
+              24.125000000000004
+            ]
+          ],
+          [
+            [
+              23.2625,
+              56.9719
+            ],
+            [
+              23.262499999999996,
+              68.4
+            ]
+          ],
+          [
+            [
+              27.3414,
+              55.777
+            ],
+            [
+              39.964400000000005,
+              68.4
+            ]
+          ],
+          [
+            [
+              49.4463,
+              53.2796
+            ],
+            [
+              91.4,
+              53.2796
+            ]
+          ],
+          [
+            [
+              50.6454,
+              48.6773
+            ],
+            [
+              91.4,
+              25.14762071928445
+            ]
+          ],
+          [
+            [
+              64.95,
+              48.85
+            ],
+            [
+              91.4,
+              41.76274386019678
+            ]
+          ],
+          [
+            [
+              55.75,
+              54.6
+            ],
+            [
+              59.4476988555495,
+              68.4
+            ]
+          ],
+          [
+            [
+              78.819,
+              51.656
+            ],
+            [
+              91.4,
+              55.02706878997596
+            ]
+          ],
+          [
+            [
+              77.025,
+              48.275
+            ],
+            [
+              91.4,
+              33.89999999999999
+            ]
+          ]
+        ],
+        "bridge_strip_width_mm": 1.2,
+        "bridge_strips": 16,
+        "bridges_per_island": 3,
+        "construction": "vector",
+        "first_layer_islands": 6,
+        "first_layer_taper_mm": 1,
+        "flip": false,
+        "grid_h": 0,
+        "grid_w": 0,
+        "height_mm": 77,
+        "islands_deleted": 0,
+        "islands_found": 6,
+        "islands_remaining": 0,
+        "layer_height_mm": 0.2,
+        "layers": 13,
+        "margin_mm": 4,
+        "min_first_layer_width_mm": 0,
+        "overhang_area_mm2": 305.22,
+        "overhang_check_deg": 45,
+        "plate_top_mm": 2.6,
+        "raised_bridges": true,
+        "stl_bytes": 157684,
+        "thickness_mm": 2.4,
+        "threshold": 0,
+        "triangles": 3152,
+        "watertight": true,
+        "width_mm": 100,
+        "z_bridging": "easy"
+      },
+      "tiles": []
+    },
+    "validation": {
+      "format": "binary STL",
+      "bytes": 157684,
+      "triangles": 3152,
+      "vertices": 1548,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          100,
+          77,
+          2.5999999046325684
+        ]
+      ],
+      "size_mm": [
+        100,
+        77,
+        2.5999999046325684
+      ],
+      "signed_volume_mm3": 9490.669796050599,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    }
+  },
+  "mt": {
+    "threads": {
+      "n": 4,
+      "why": "threaded",
+      "version": "2.9.4"
+    },
+    "info": {
+      "bytes": 157684,
+      "kind": "solid",
+      "stats": {
+        "bridge_mm": 1.2,
+        "bridge_pixels": 16,
+        "bridge_routes_mm": [
+          [
+            [
+              15.5,
+              21.25
+            ],
+            [
+              8.6,
+              21.25
+            ]
+          ],
+          [
+            [
+              74.656,
+              55.819
+            ],
+            [
+              74.65599999999999,
+              68.4
+            ]
+          ],
+          [
+            [
+              79.4393,
+              23.1431
+            ],
+            [
+              91.4,
+              23.143100000000004
+            ]
+          ],
+          [
+            [
+              16.0324,
+              49.1481
+            ],
+            [
+              8.6,
+              49.14810000000001
+            ]
+          ],
+          [
+            [
+              44.25,
+              55.8219
+            ],
+            [
+              44.25,
+              68.4
+            ]
+          ],
+          [
+            [
+              58.9231,
+              56.3676
+            ],
+            [
+              70.9555,
+              68.4
+            ]
+          ],
+          [
+            [
+              28.725,
+              21.25
+            ],
+            [
+              28.72500000000001,
+              8.6
+            ]
+          ],
+          [
+            [
+              15.5,
+              31.025
+            ],
+            [
+              8.599999999999998,
+              24.125000000000004
+            ]
+          ],
+          [
+            [
+              23.2625,
+              56.9719
+            ],
+            [
+              23.262499999999996,
+              68.4
+            ]
+          ],
+          [
+            [
+              27.3414,
+              55.777
+            ],
+            [
+              39.964400000000005,
+              68.4
+            ]
+          ],
+          [
+            [
+              49.4463,
+              53.2796
+            ],
+            [
+              91.4,
+              53.2796
+            ]
+          ],
+          [
+            [
+              50.6454,
+              48.6773
+            ],
+            [
+              91.4,
+              25.14762071928445
+            ]
+          ],
+          [
+            [
+              64.95,
+              48.85
+            ],
+            [
+              91.4,
+              41.76274386019678
+            ]
+          ],
+          [
+            [
+              55.75,
+              54.6
+            ],
+            [
+              59.4476988555495,
+              68.4
+            ]
+          ],
+          [
+            [
+              78.819,
+              51.656
+            ],
+            [
+              91.4,
+              55.02706878997596
+            ]
+          ],
+          [
+            [
+              77.025,
+              48.275
+            ],
+            [
+              91.4,
+              33.89999999999999
+            ]
+          ]
+        ],
+        "bridge_strip_width_mm": 1.2,
+        "bridge_strips": 16,
+        "bridges_per_island": 3,
+        "construction": "vector",
+        "first_layer_islands": 6,
+        "first_layer_taper_mm": 1,
+        "flip": false,
+        "grid_h": 0,
+        "grid_w": 0,
+        "height_mm": 77,
+        "islands_deleted": 0,
+        "islands_found": 6,
+        "islands_remaining": 0,
+        "layer_height_mm": 0.2,
+        "layers": 13,
+        "margin_mm": 4,
+        "min_first_layer_width_mm": 0,
+        "overhang_area_mm2": 305.22,
+        "overhang_check_deg": 45,
+        "plate_top_mm": 2.6,
+        "raised_bridges": true,
+        "stl_bytes": 157684,
+        "thickness_mm": 2.4,
+        "threshold": 0,
+        "triangles": 3152,
+        "watertight": true,
+        "width_mm": 100,
+        "z_bridging": "easy"
+      },
+      "tiles": []
+    },
+    "validation": {
+      "format": "binary STL",
+      "bytes": 157684,
+      "triangles": 3152,
+      "vertices": 1548,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          100,
+          77,
+          2.5999999046325684
+        ]
+      ],
+      "size_mm": [
+        100,
+        77,
+        2.5999999046325684
+      ],
+      "signed_volume_mm3": 9490.669796050599,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    }
+  },
+  "native": {
+    "stdout": "{\"bridge_mm\":1.2,\"bridge_pixels\":16,\"bridge_routes_mm\":[[[15.5,21.25],[8.6,21.25]],[[74.656,55.819],[74.65599999999999,68.4]],[[79.4393,23.1431],[91.4,23.143100000000004]],[[16.0324,49.1481],[8.6,49.14810000000001]],[[44.25,55.8219],[44.25,68.4]],[[58.9231,56.3676],[70.9555,68.4]],[[28.725,21.25],[28.72500000000001,8.6]],[[15.5,31.025],[8.599999999999998,24.125000000000004]],[[23.2625,56.9719],[23.262499999999996,68.4]],[[27.3414,55.777],[39.964400000000005,68.4]],[[49.4463,53.2796],[91.4,53.2796]],[[50.6454,48.6773],[91.4,25.14762071928445]],[[64.95,48.85],[91.4,41.76274386019678]],[[55.75,54.6],[59.4476988555495,68.4]],[[78.819,51.656],[91.4,55.02706878997596]],[[77.025,48.275],[91.4,33.89999999999999]]],\"bridge_strip_width_mm\":1.2,\"bridge_strips\":16,\"bridges_per_island\":3.0,\"construction\":\"vector\",\"first_layer_islands\":6,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":77.0,\"islands_deleted\":0,\"islands_found\":6,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":13,\"margin_mm\":4.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":305.22,\"overhang_check_deg\":45.0,\"plate_top_mm\":2.6,\"raised_bridges\":true,\"stl_bytes\":157684,\"thickness_mm\":2.4,\"threshold\":0,\"triangles\":3152,\"watertight\":true,\"width_mm\":100.0,\"z_bridging\":\"easy\"}\n",
+    "stderr": "verified: 6 islands found, 0 remaining, watertight true, 3152 triangles\nwrote sandbox/m5/spread/native.stl in 237 ms\n",
+    "stats": {
+      "bridge_mm": 1.2,
+      "bridge_pixels": 16,
+      "bridge_routes_mm": [
+        [
+          [
+            15.5,
+            21.25
+          ],
+          [
+            8.6,
+            21.25
+          ]
+        ],
+        [
+          [
+            74.656,
+            55.819
+          ],
+          [
+            74.65599999999999,
+            68.4
+          ]
+        ],
+        [
+          [
+            79.4393,
+            23.1431
+          ],
+          [
+            91.4,
+            23.143100000000004
+          ]
+        ],
+        [
+          [
+            16.0324,
+            49.1481
+          ],
+          [
+            8.6,
+            49.14810000000001
+          ]
+        ],
+        [
+          [
+            44.25,
+            55.8219
+          ],
+          [
+            44.25,
+            68.4
+          ]
+        ],
+        [
+          [
+            58.9231,
+            56.3676
+          ],
+          [
+            70.9555,
+            68.4
+          ]
+        ],
+        [
+          [
+            28.725,
+            21.25
+          ],
+          [
+            28.72500000000001,
+            8.6
+          ]
+        ],
+        [
+          [
+            15.5,
+            31.025
+          ],
+          [
+            8.599999999999998,
+            24.125000000000004
+          ]
+        ],
+        [
+          [
+            23.2625,
+            56.9719
+          ],
+          [
+            23.262499999999996,
+            68.4
+          ]
+        ],
+        [
+          [
+            27.3414,
+            55.777
+          ],
+          [
+            39.964400000000005,
+            68.4
+          ]
+        ],
+        [
+          [
+            49.4463,
+            53.2796
+          ],
+          [
+            91.4,
+            53.2796
+          ]
+        ],
+        [
+          [
+            50.6454,
+            48.6773
+          ],
+          [
+            91.4,
+            25.14762071928445
+          ]
+        ],
+        [
+          [
+            64.95,
+            48.85
+          ],
+          [
+            91.4,
+            41.76274386019678
+          ]
+        ],
+        [
+          [
+            55.75,
+            54.6
+          ],
+          [
+            59.4476988555495,
+            68.4
+          ]
+        ],
+        [
+          [
+            78.819,
+            51.656
+          ],
+          [
+            91.4,
+            55.02706878997596
+          ]
+        ],
+        [
+          [
+            77.025,
+            48.275
+          ],
+          [
+            91.4,
+            33.89999999999999
+          ]
+        ]
+      ],
+      "bridge_strip_width_mm": 1.2,
+      "bridge_strips": 16,
+      "bridges_per_island": 3,
+      "construction": "vector",
+      "first_layer_islands": 6,
+      "first_layer_taper_mm": 1,
+      "flip": false,
+      "grid_h": 0,
+      "grid_w": 0,
+      "height_mm": 77,
+      "islands_deleted": 0,
+      "islands_found": 6,
+      "islands_remaining": 0,
+      "layer_height_mm": 0.2,
+      "layers": 13,
+      "margin_mm": 4,
+      "min_first_layer_width_mm": 0,
+      "overhang_area_mm2": 305.22,
+      "overhang_check_deg": 45,
+      "plate_top_mm": 2.6,
+      "raised_bridges": true,
+      "stl_bytes": 157684,
+      "thickness_mm": 2.4,
+      "threshold": 0,
+      "triangles": 3152,
+      "watertight": true,
+      "width_mm": 100,
+      "z_bridging": "easy"
+    },
+    "validation": {
+      "format": "binary STL",
+      "bytes": 157684,
+      "triangles": 3152,
+      "vertices": 1548,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          100,
+          77,
+          2.5999999046325684
+        ]
+      ],
+      "size_mm": [
+        100,
+        77,
+        2.5999999046325684
+      ],
+      "signed_volume_mm3": 9490.669796050599,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    }
+  }
+}

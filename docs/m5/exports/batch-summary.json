@@ -1,0 +1,18 @@
+{
+  "recipe": "M5 tiles",
+  "source": "source",
+  "items": [
+    {
+      "name": "first.svg",
+      "status": "Verified"
+    },
+    {
+      "name": "broken.svg",
+      "status": "not a readable png/jpg/bmp/svg image"
+    },
+    {
+      "name": "second.svg",
+      "status": "Verified"
+    }
+  ]
+}

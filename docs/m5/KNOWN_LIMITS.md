@@ -9,6 +9,6 @@ The app validates actual stored STL coordinates, faces, edge consistency, orient
 - Mesh optimization accepts solids before splitting; it does not optimize arbitrary hardware or Parts collections. Lower hardware segment detail when verification exceeds its budget.
 - Physical printing, fresh-machine offline installation, macOS/Linux desktop launch and Firefox/Safari testing have not been performed in this Windows session. Linux source and browser checks are delegated to the repository's normal CI.
 
-The exact M4 one-pass Spread discrepancy was reproduced and repaired using deterministic candidate ties. The measured native, single-thread and multithread fixture agrees. Broader replay results must be read from the final evidence; this does not establish universal equivalence for every possible input.
+The exact M4 one-pass Spread discrepancy was reproduced and repaired using deterministic candidate ties. The measured native, single-thread and multithread fixture agrees. Broader replay validates all 191 successful Parts fixtures in all three engines, all 64 ST/MT bitmap fixtures match, and one expected constraint refusal is preserved. Exact oriented triangles still differ in 43 ST/MT and 83 native/ST leaf comparisons (87 distinct fixtures overall). All measured bounds match and the largest absolute volume delta is about 5.1e-11 mm³. These comparisons are retained in [ENGINE_PARITY.md](ENGINE_PARITY.md) and the complete machine evidence; universal triangle equivalence is not claimed.
 
 M6 has not been started.

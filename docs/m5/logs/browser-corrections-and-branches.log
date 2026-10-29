@@ -1,0 +1,24 @@
+
+Running 15 tests using 1 worker
+
+(node:8280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+verified: 5 islands found, 0 remaining, watertight true, 3376 triangles
+wrote <workspace>\sandbox\m3\text-native.stl in 131 ms
+  ok  1 e2e\m3-editor.spec.ts:25:1 › multiline text, bundled fonts, actual artwork preview, bridged STL/SVG, CLI replay and persistence (7.4s)
+  ok  2 e2e\m3-editor.spec.ts:46:1 › processing list inserts, duplicates, reorders, disables, restores and inspects actual secondary results (2.6s)
+  ok  3 e2e\m3-editor.spec.ts:69:1 › direct crop handles, zoom/pan, keyboard pixels, rotations and undo match actual Rust image dimensions (3.3s)
+  ok  4 e2e\m3-editor.spec.ts:85:1 › operation presets preserve the legacy file format, import merges, scoped apply, rename/remove and defaults (2.8s)
+  ok  5 e2e\m3-editor.spec.ts:105:1 › named branched import stays connected, unknown fields survive artwork edits, and a full long chain exports (1.9s)
+  ok  6 e2e\m3-editor.spec.ts:116:1 › multiple image instances replace independently, reopen safely and preserve disabled identities (1.1s)
+  ok  7 e2e\m3-editor.spec.ts:128:1 › fourteen real preparation steps keep live output valid, SVGs inspectable, themes accessible and processing local (7.3s)
+  ok  8 e2e\m3-editor.spec.ts:149:1 › wide transparent artwork survives repeated rotations, crop panning and undo with identical prepared bytes (3.7s)
+  ok  9 e2e\m5b-editor.spec.ts:13:1 › both tiling strategies append separate safe passes and retain original topology, offsets and undo history (8ms)
+  ok 10 e2e\m5b-editor.spec.ts:21:1 › manual numeric, keyboard, seam dragging and pocket movement use actual layout limits and survive ZIP export/reopen (11.5s)
+  ok 11 e2e\m5d-branches.spec.ts:6:1 › shared and independent hardware branches export every assembly once with actual layout and outline auxiliaries (15.5s)
+  ok 12 e2e\m5d-export.spec.ts:10:1 › the unchanged export guard rejects the actual historical calibration defect and unsafe ZIP names (61ms)
+  ok 13 e2e\m5d-export.spec.ts:16:1 › complete manufacturing ZIP collects mounted tiles upstream of auxiliary hardware, with CRC, geometry and stale guards (18.8s)
+  ok 14 e2e\m5d-export.spec.ts:27:1 › offline local batch keeps the saved recipe, isolates a failed image and collects independently valid results (2.9s)
+  ok 15 e2e\m5d-export.spec.ts:32:1 › a basic saved recipe with a single Parts STL also works in local batch (1.9s)
+
+  15 passed (1.4m)

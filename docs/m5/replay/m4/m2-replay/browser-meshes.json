@@ -1,0 +1,105 @@
+{
+  "hashes": [
+    "dd860a0d80031899fbbf01f9be4eb4a5f75f28ed009ff26b77b8641686ff822b",
+    "01f56136652d011417873319b71327ee5ad54de96415a234c183866c545a51d3",
+    "ab55be9b67dc2ee4c06474f43e2141dd3876becf7899f1e63117ed85741a2b39"
+  ],
+  "evidence": [
+    {
+      "style": "standard",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 139284,
+        "triangles": 2784,
+        "vertices": 1388,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 146206.76338452316,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      }
+    },
+    {
+      "style": "smooth",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 305684,
+        "triangles": 6112,
+        "vertices": 3052,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 146235.20948296564,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      }
+    },
+    {
+      "style": "crisp",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 452684,
+        "triangles": 9052,
+        "vertices": 4524,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            162.9629669189453,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          162.9629669189453,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 145641.04095010902,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      }
+    }
+  ]
+}

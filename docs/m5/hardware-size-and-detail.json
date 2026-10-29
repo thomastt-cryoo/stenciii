@@ -1,0 +1,1486 @@
+[
+  {
+    "screw": "M3",
+    "segments": 48,
+    "validation": {
+      "format": "ZIP",
+      "bytes": 1916273,
+      "entries": [
+        {
+          "name": "bolt_M3x20.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            18
+          ],
+          "crc": 615350845,
+          "format": "binary STL",
+          "bytes": 1551584,
+          "triangles": 31030,
+          "vertices": 15517,
+          "bounds_mm": [
+            [
+              -2.7712812423706055,
+              -2.4000000953674316,
+              0
+            ],
+            [
+              2.7712812423706055,
+              2.4000000953674316,
+              22.100000381469727
+            ]
+          ],
+          "size_mm": [
+            5.542562484741211,
+            4.800000190734863,
+            22.100000381469727
+          ],
+          "signed_volume_mm3": 142.1021103346571,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "nut_M3.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            18
+          ],
+          "crc": 981379668,
+          "format": "binary STL",
+          "bytes": 202884,
+          "triangles": 4056,
+          "vertices": 2028,
+          "bounds_mm": [
+            [
+              -2.7712812423706055,
+              -2.4000000953674316,
+              0
+            ],
+            [
+              2.7712812423706055,
+              2.4000000953674316,
+              2.4000000953674316
+            ]
+          ],
+          "size_mm": [
+            5.542562484741211,
+            4.800000190734863,
+            2.4000000953674316
+          ],
+          "signed_volume_mm3": 31.80715602679961,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "joiner_plate_M3_30mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            18
+          ],
+          "crc": 3633060654,
+          "format": "binary STL",
+          "bytes": 32684,
+          "triangles": 652,
+          "vertices": 324,
+          "bounds_mm": [
+            [
+              -19.5,
+              -4.5,
+              0
+            ],
+            [
+              19.5,
+              4.5,
+              4
+            ]
+          ],
+          "size_mm": [
+            39,
+            9,
+            4
+          ],
+          "signed_volume_mm3": 1261.6340430233417,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "joiner_plate_4holes_M3_30x25mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            18
+          ],
+          "crc": 1662435478,
+          "format": "binary STL",
+          "bytes": 52684,
+          "triangles": 1052,
+          "vertices": 520,
+          "bounds_mm": [
+            [
+              -19.5,
+              -4.5,
+              0
+            ],
+            [
+              19.5,
+              29.5,
+              4
+            ]
+          ],
+          "size_mm": [
+            39,
+            34,
+            4
+          ],
+          "signed_volume_mm3": 5089.207663502384,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "fit_test_hex_d3mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            18
+          ],
+          "crc": 2640225596,
+          "format": "binary STL",
+          "bytes": 75784,
+          "triangles": 1514,
+          "vertices": 747,
+          "bounds_mm": [
+            [
+              0,
+              -6,
+              0
+            ],
+            [
+              64,
+              6,
+              6.031088829040527
+            ]
+          ],
+          "size_mm": [
+            64,
+            12,
+            6.031088829040527
+          ],
+          "signed_volume_mm3": 4120.407504078494,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        }
+      ]
+    }
+  },
+  {
+    "screw": "M4",
+    "segments": 48,
+    "validation": {
+      "format": "ZIP",
+      "bytes": 1474673,
+      "entries": [
+        {
+          "name": "bolt_M4x20.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            20
+          ],
+          "crc": 1847959633,
+          "format": "binary STL",
+          "bytes": 1109984,
+          "triangles": 22198,
+          "vertices": 11101,
+          "bounds_mm": [
+            [
+              -3.6950416564941406,
+              -3.200000047683716,
+              0
+            ],
+            [
+              3.6950416564941406,
+              3.200000047683716,
+              22.799999237060547
+            ]
+          ],
+          "size_mm": [
+            7.390083312988281,
+            6.400000095367432,
+            22.799999237060547
+          ],
+          "signed_volume_mm3": 275.1615151358435,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "nut_M4.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            20
+          ],
+          "crc": 2060185944,
+          "format": "binary STL",
+          "bytes": 202884,
+          "triangles": 4056,
+          "vertices": 2028,
+          "bounds_mm": [
+            [
+              -3.6950416564941406,
+              -3.200000047683716,
+              0
+            ],
+            [
+              3.6950416564941406,
+              3.200000047683716,
+              3.200000047683716
+            ]
+          ],
+          "size_mm": [
+            7.390083312988281,
+            6.400000095367432,
+            3.200000047683716
+          ],
+          "signed_volume_mm3": 78.03963848374417,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "joiner_plate_M4_30mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            20
+          ],
+          "crc": 3211774579,
+          "format": "binary STL",
+          "bytes": 32684,
+          "triangles": 652,
+          "vertices": 324,
+          "bounds_mm": [
+            [
+              -20,
+              -5,
+              0
+            ],
+            [
+              20,
+              5,
+              4
+            ]
+          ],
+          "size_mm": [
+            40,
+            10,
+            4
+          ],
+          "signed_volume_mm3": 1392.359483688909,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "joiner_plate_4holes_M4_30x25mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            20
+          ],
+          "crc": 4002479800,
+          "format": "binary STL",
+          "bytes": 52684,
+          "triangles": 1052,
+          "vertices": 520,
+          "bounds_mm": [
+            [
+              -20,
+              -5,
+              0
+            ],
+            [
+              20,
+              30,
+              4
+            ]
+          ],
+          "size_mm": [
+            40,
+            35,
+            4
+          ],
+          "signed_volume_mm3": 5271.064095202302,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "fit_test_hex_d3mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            20
+          ],
+          "crc": 2640225596,
+          "format": "binary STL",
+          "bytes": 75784,
+          "triangles": 1514,
+          "vertices": 747,
+          "bounds_mm": [
+            [
+              0,
+              -6,
+              0
+            ],
+            [
+              64,
+              6,
+              6.031088829040527
+            ]
+          ],
+          "size_mm": [
+            64,
+            12,
+            6.031088829040527
+          ],
+          "signed_volume_mm3": 4120.407504078494,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        }
+      ]
+    }
+  },
+  {
+    "screw": "M5",
+    "segments": 48,
+    "validation": {
+      "format": "ZIP",
+      "bytes": 1335473,
+      "entries": [
+        {
+          "name": "bolt_M5x20.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            20
+          ],
+          "crc": 322470113,
+          "format": "binary STL",
+          "bytes": 975584,
+          "triangles": 19510,
+          "vertices": 9757,
+          "bounds_mm": [
+            [
+              -4.618802070617676,
+              -4,
+              0
+            ],
+            [
+              4.618802070617676,
+              4,
+              23.5
+            ]
+          ],
+          "size_mm": [
+            9.237604141235352,
+            8,
+            23.5
+          ],
+          "signed_volume_mm3": 474.47664160471487,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "nut_M5.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            20
+          ],
+          "crc": 1663128817,
+          "format": "binary STL",
+          "bytes": 198084,
+          "triangles": 3960,
+          "vertices": 1980,
+          "bounds_mm": [
+            [
+              -4.618802070617676,
+              -4,
+              0
+            ],
+            [
+              4.618802070617676,
+              4,
+              4
+            ]
+          ],
+          "size_mm": [
+            9.237604141235352,
+            8,
+            4
+          ],
+          "signed_volume_mm3": 154.32499932446885,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "joiner_plate_M5_30mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            20
+          ],
+          "crc": 3830575780,
+          "format": "binary STL",
+          "bytes": 32684,
+          "triangles": 652,
+          "vertices": 324,
+          "bounds_mm": [
+            [
+              -20.5,
+              -5.5,
+              0
+            ],
+            [
+              20.5,
+              5.5,
+              4
+            ]
+          ],
+          "size_mm": [
+            41,
+            11,
+            4
+          ],
+          "signed_volume_mm3": 1516.8274682965105,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "joiner_plate_4holes_M5_30x25mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            20
+          ],
+          "crc": 1165839498,
+          "format": "binary STL",
+          "bytes": 52684,
+          "triangles": 1052,
+          "vertices": 520,
+          "bounds_mm": [
+            [
+              -20.5,
+              -5.5,
+              0
+            ],
+            [
+              20.5,
+              30.5,
+              4
+            ]
+          ],
+          "size_mm": [
+            41,
+            36,
+            4
+          ],
+          "signed_volume_mm3": 5434.132576496104,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "fit_test_hex_d3mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            20
+          ],
+          "crc": 2640225596,
+          "format": "binary STL",
+          "bytes": 75784,
+          "triangles": 1514,
+          "vertices": 747,
+          "bounds_mm": [
+            [
+              0,
+              -6,
+              0
+            ],
+            [
+              64,
+              6,
+              6.031088829040527
+            ]
+          ],
+          "size_mm": [
+            64,
+            12,
+            6.031088829040527
+          ],
+          "signed_volume_mm3": 4120.407504078494,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        }
+      ]
+    }
+  },
+  {
+    "screw": "M6",
+    "segments": 48,
+    "validation": {
+      "format": "ZIP",
+      "bytes": 1148273,
+      "entries": [
+        {
+          "name": "bolt_M6x20.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            22
+          ],
+          "crc": 3666152057,
+          "format": "binary STL",
+          "bytes": 783584,
+          "triangles": 15670,
+          "vertices": 7837,
+          "bounds_mm": [
+            [
+              -5.542562484741211,
+              -4.800000190734863,
+              0
+            ],
+            [
+              5.542562484741211,
+              4.800000190734863,
+              24.200000762939453
+            ]
+          ],
+          "size_mm": [
+            11.085124969482422,
+            9.600000381469727,
+            24.200000762939453
+          ],
+          "signed_volume_mm3": 735.3370773569778,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "nut_M6.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            22
+          ],
+          "crc": 2032690821,
+          "format": "binary STL",
+          "bytes": 202884,
+          "triangles": 4056,
+          "vertices": 2028,
+          "bounds_mm": [
+            [
+              -5.542562484741211,
+              -4.800000190734863,
+              0
+            ],
+            [
+              5.542562484741211,
+              4.800000190734863,
+              4.800000190734863
+            ]
+          ],
+          "size_mm": [
+            11.085124969482422,
+            9.600000381469727,
+            4.800000190734863
+          ],
+          "signed_volume_mm3": 270.41021526408736,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "joiner_plate_M6_30mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            22
+          ],
+          "crc": 2748772299,
+          "format": "binary STL",
+          "bytes": 32684,
+          "triangles": 652,
+          "vertices": 324,
+          "bounds_mm": [
+            [
+              -21,
+              -6,
+              0
+            ],
+            [
+              21,
+              6,
+              4
+            ]
+          ],
+          "size_mm": [
+            42,
+            12,
+            4
+          ],
+          "signed_volume_mm3": 1635.0380537042174,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "joiner_plate_4holes_M6_30x25mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            22
+          ],
+          "crc": 1604182540,
+          "format": "binary STL",
+          "bytes": 52684,
+          "triangles": 1052,
+          "vertices": 520,
+          "bounds_mm": [
+            [
+              -21,
+              -6,
+              0
+            ],
+            [
+              21,
+              31,
+              4
+            ]
+          ],
+          "size_mm": [
+            42,
+            37,
+            4
+          ],
+          "signed_volume_mm3": 5578.413103113135,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "fit_test_hex_d3mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            22
+          ],
+          "crc": 2640225596,
+          "format": "binary STL",
+          "bytes": 75784,
+          "triangles": 1514,
+          "vertices": 747,
+          "bounds_mm": [
+            [
+              0,
+              -6,
+              0
+            ],
+            [
+              64,
+              6,
+              6.031088829040527
+            ]
+          ],
+          "size_mm": [
+            64,
+            12,
+            6.031088829040527
+          ],
+          "signed_volume_mm3": 4120.407504078494,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        }
+      ]
+    }
+  },
+  {
+    "screw": "M8",
+    "segments": 48,
+    "validation": {
+      "format": "ZIP",
+      "bytes": 1009073,
+      "entries": [
+        {
+          "name": "bolt_M8x20.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            24
+          ],
+          "crc": 3245348428,
+          "format": "binary STL",
+          "bytes": 629984,
+          "triangles": 12598,
+          "vertices": 6301,
+          "bounds_mm": [
+            [
+              -7.390083312988281,
+              -6.400000095367432,
+              0
+            ],
+            [
+              7.390083312988281,
+              6.400000095367432,
+              25.600000381469727
+            ]
+          ],
+          "size_mm": [
+            14.780166625976562,
+            12.800000190734863,
+            25.600000381469727
+          ],
+          "signed_volume_mm3": 1516.087331772253,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "nut_M8.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            24
+          ],
+          "crc": 1698818079,
+          "format": "binary STL",
+          "bytes": 217284,
+          "triangles": 4344,
+          "vertices": 2172,
+          "bounds_mm": [
+            [
+              -7.390083312988281,
+              -6.400000095367432,
+              0
+            ],
+            [
+              7.390083312988281,
+              6.400000095367432,
+              6.400000095367432
+            ]
+          ],
+          "size_mm": [
+            14.780166625976562,
+            12.800000190734863,
+            6.400000095367432
+          ],
+          "signed_volume_mm3": 646.8320943688849,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "joiner_plate_M8_30mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            24
+          ],
+          "crc": 84345334,
+          "format": "binary STL",
+          "bytes": 32684,
+          "triangles": 652,
+          "vertices": 324,
+          "bounds_mm": [
+            [
+              -22,
+              -7,
+              0
+            ],
+            [
+              22,
+              7,
+              4
+            ]
+          ],
+          "size_mm": [
+            44,
+            14,
+            4
+          ],
+          "signed_volume_mm3": 1852.686965666511,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "joiner_plate_4holes_M8_30x25mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            24
+          ],
+          "crc": 2400275199,
+          "format": "binary STL",
+          "bytes": 52684,
+          "triangles": 1052,
+          "vertices": 520,
+          "bounds_mm": [
+            [
+              -22,
+              -7,
+              0
+            ],
+            [
+              22,
+              32,
+              4
+            ]
+          ],
+          "size_mm": [
+            44,
+            39,
+            4
+          ],
+          "signed_volume_mm3": 5810.610366571068,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "fit_test_hex_d3mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            24
+          ],
+          "crc": 2640225596,
+          "format": "binary STL",
+          "bytes": 75784,
+          "triangles": 1514,
+          "vertices": 747,
+          "bounds_mm": [
+            [
+              0,
+              -6,
+              0
+            ],
+            [
+              64,
+              6,
+              6.031088829040527
+            ]
+          ],
+          "size_mm": [
+            64,
+            12,
+            6.031088829040527
+          ],
+          "signed_volume_mm3": 4120.407504078494,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        }
+      ]
+    }
+  },
+  {
+    "screw": "M10",
+    "segments": 128,
+    "validation": {
+      "format": "ZIP",
+      "bytes": 4164281,
+      "entries": [
+        {
+          "name": "bolt_M10x20.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            26
+          ],
+          "crc": 1729230105,
+          "format": "binary STL",
+          "bytes": 2765984,
+          "triangles": 55318,
+          "vertices": 27661,
+          "bounds_mm": [
+            [
+              -9.237604141235352,
+              -8,
+              0
+            ],
+            [
+              9.237604141235352,
+              8,
+              27
+            ]
+          ],
+          "size_mm": [
+            18.475208282470703,
+            16,
+            27
+          ],
+          "signed_volume_mm3": 2798.53347890277,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "nut_M10.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            26
+          ],
+          "crc": 2768738870,
+          "format": "binary STL",
+          "bytes": 1140484,
+          "triangles": 22808,
+          "vertices": 11404,
+          "bounds_mm": [
+            [
+              -9.237604141235352,
+              -8,
+              0
+            ],
+            [
+              9.237604141235352,
+              8,
+              8
+            ]
+          ],
+          "size_mm": [
+            18.475208282470703,
+            16,
+            8
+          ],
+          "signed_volume_mm3": 1222.016996929796,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "joiner_plate_M10_30mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            26
+          ],
+          "crc": 3350108960,
+          "format": "binary STL",
+          "bytes": 64684,
+          "triangles": 1292,
+          "vertices": 644,
+          "bounds_mm": [
+            [
+              -23,
+              -8,
+              0
+            ],
+            [
+              23,
+              8,
+              4
+            ]
+          ],
+          "size_mm": [
+            46,
+            16,
+            4
+          ],
+          "signed_volume_mm3": 2043.6399548667769,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "joiner_plate_4holes_M10_30x25mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            26
+          ],
+          "crc": 2037290064,
+          "format": "binary STL",
+          "bytes": 116684,
+          "triangles": 2332,
+          "vertices": 1160,
+          "bounds_mm": [
+            [
+              -23,
+              -8,
+              0
+            ],
+            [
+              23,
+              33,
+              4
+            ]
+          ],
+          "size_mm": [
+            46,
+            41,
+            4
+          ],
+          "signed_volume_mm3": 5964.323451267707,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "fit_test_hex_d3mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            26
+          ],
+          "crc": 2640225596,
+          "format": "binary STL",
+          "bytes": 75784,
+          "triangles": 1514,
+          "vertices": 747,
+          "bounds_mm": [
+            [
+              0,
+              -6,
+              0
+            ],
+            [
+              64,
+              6,
+              6.031088829040527
+            ]
+          ],
+          "size_mm": [
+            64,
+            12,
+            6.031088829040527
+          ],
+          "signed_volume_mm3": 4120.407504078494,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        }
+      ]
+    }
+  },
+  {
+    "connector": "hex",
+    "segments": 128,
+    "validation": {
+      "format": "ZIP",
+      "bytes": 6965019,
+      "entries": [
+        {
+          "name": "bolt_M4x20.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            30
+          ],
+          "crc": 3253400991,
+          "format": "binary STL",
+          "bytes": 5889184,
+          "triangles": 117782,
+          "vertices": 58893,
+          "bounds_mm": [
+            [
+              -3.6950416564941406,
+              -3.200000047683716,
+              0
+            ],
+            [
+              3.6950416564941406,
+              3.200000047683716,
+              22.799999237060547
+            ]
+          ],
+          "size_mm": [
+            7.390083312988281,
+            6.400000095367432,
+            22.799999237060547
+          ],
+          "signed_volume_mm3": 292.3916267616487,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "nut_M4.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            30
+          ],
+          "crc": 1635659809,
+          "format": "binary STL",
+          "bytes": 999684,
+          "triangles": 19992,
+          "vertices": 9996,
+          "bounds_mm": [
+            [
+              -3.6950416564941406,
+              -3.200000047683716,
+              0
+            ],
+            [
+              3.6950416564941406,
+              3.200000047683716,
+              3.200000047683716
+            ]
+          ],
+          "size_mm": [
+            7.390083312988281,
+            6.400000095367432,
+            3.200000047683716
+          ],
+          "signed_volume_mm3": 74.73318118773314,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "fit_test_hex_d3mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            30
+          ],
+          "crc": 2640225596,
+          "format": "binary STL",
+          "bytes": 75784,
+          "triangles": 1514,
+          "vertices": 747,
+          "bounds_mm": [
+            [
+              0,
+              -6,
+              0
+            ],
+            [
+              64,
+              6,
+              6.031088829040527
+            ]
+          ],
+          "size_mm": [
+            64,
+            12,
+            6.031088829040527
+          ],
+          "signed_volume_mm3": 4120.407504078494,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        }
+      ]
+    }
+  },
+  {
+    "connector": "round",
+    "segments": 128,
+    "validation": {
+      "format": "ZIP",
+      "bytes": 7111423,
+      "entries": [
+        {
+          "name": "bolt_M4x20.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            36
+          ],
+          "crc": 3253400991,
+          "format": "binary STL",
+          "bytes": 5889184,
+          "triangles": 117782,
+          "vertices": 58893,
+          "bounds_mm": [
+            [
+              -3.6950416564941406,
+              -3.200000047683716,
+              0
+            ],
+            [
+              3.6950416564941406,
+              3.200000047683716,
+              22.799999237060547
+            ]
+          ],
+          "size_mm": [
+            7.390083312988281,
+            6.400000095367432,
+            22.799999237060547
+          ],
+          "signed_volume_mm3": 292.3916267616487,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "nut_M4.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            36
+          ],
+          "crc": 1635659809,
+          "format": "binary STL",
+          "bytes": 999684,
+          "triangles": 19992,
+          "vertices": 9996,
+          "bounds_mm": [
+            [
+              -3.6950416564941406,
+              -3.200000047683716,
+              0
+            ],
+            [
+              3.6950416564941406,
+              3.200000047683716,
+              3.200000047683716
+            ]
+          ],
+          "size_mm": [
+            7.390083312988281,
+            6.400000095367432,
+            3.200000047683716
+          ],
+          "signed_volume_mm3": 74.73318118773314,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        {
+          "name": "fit_test_round_d3mm.stl",
+          "date_time": [
+            2026,
+            10,
+            29,
+            23,
+            28,
+            36
+          ],
+          "crc": 99150314,
+          "format": "binary STL",
+          "bytes": 222184,
+          "triangles": 4442,
+          "vertices": 2211,
+          "bounds_mm": [
+            [
+              0,
+              -6,
+              0
+            ],
+            [
+              64,
+              6,
+              6.5
+            ]
+          ],
+          "size_mm": [
+            64,
+            12,
+            6.5
+          ],
+          "signed_volume_mm3": 4377.150413434216,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        }
+      ]
+    }
+  }
+]

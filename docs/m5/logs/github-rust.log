@@ -1,0 +1,818 @@
+﻿2026-10-29T18:55:12.0852828Z Current runner version: '2.338.0'
+2026-10-29T18:55:12.0871837Z ##[group]Runner Image Provisioner
+2026-10-29T18:55:12.0872525Z Hosted Compute Agent
+2026-10-29T18:55:12.0872994Z Version: 20261021.618
+2026-10-29T18:55:12.0873437Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-29T18:55:12.0873938Z Build Date: 2026-10-21T00:45:21Z
+2026-10-29T18:55:12.0874435Z Worker ID: {638a5e6b-cf20-4960-b337-14564d34a5b2}
+2026-10-29T18:55:12.0875164Z Region: centralus
+2026-10-29T18:55:12.0875701Z Cloud: Azure
+2026-10-29T18:55:12.0876090Z ##[endgroup]
+2026-10-29T18:55:12.0877111Z ##[group]Operating System
+2026-10-29T18:55:12.0877577Z Ubuntu
+2026-10-29T18:55:12.0877942Z 26.04.1
+2026-10-29T18:55:12.0878320Z LTS
+2026-10-29T18:55:12.0878735Z ##[endgroup]
+2026-10-29T18:55:12.0879120Z ##[group]Runner Image
+2026-10-29T18:55:12.0879551Z Image: ubuntu-26.04
+2026-10-29T18:55:12.0879945Z Version: 20261025.179.1
+2026-10-29T18:55:12.0880872Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+2026-10-29T18:55:12.0881928Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+2026-10-29T18:55:12.0882600Z ##[endgroup]
+2026-10-29T18:55:12.0883397Z ##[group]GITHUB_TOKEN Permissions
+2026-10-29T18:55:12.0885138Z Contents: read
+2026-10-29T18:55:12.0885559Z Metadata: read
+2026-10-29T18:55:12.0886308Z ##[endgroup]
+2026-10-29T18:55:12.0888204Z Secret source: Actions
+2026-10-29T18:55:12.0888829Z Cache mode: write
+2026-10-29T18:55:12.0889356Z Prepare workflow directory
+2026-10-29T18:55:12.1160503Z Prepare all required actions
+2026-10-29T18:55:12.1197005Z Getting action download info
+2026-10-29T18:55:12.3672401Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-29T18:55:12.4511090Z Download action repository 'dtolnay/rust-toolchain@stable' (SHA:b725eda525362e7cf34af9a7243cac1e3f01a7ec)
+2026-10-29T18:55:12.6093209Z Download action repository 'dtolnay/rust-toolchain@nightly' (SHA:2c76c034f9e32a5d6e2c104dc4df23a22476db04)
+2026-10-29T18:55:12.7607632Z Download action repository 'Swatinem/rust-cache@v2' (SHA:d1527c8f67ef9af357290475d4af4b0fab8f12e0)
+2026-10-29T18:55:13.3509157Z Complete job name: rust
+2026-10-29T18:55:13.4234535Z ##[group]Run actions/checkout@v4
+2026-10-29T18:55:13.4235487Z with:
+2026-10-29T18:55:13.4236042Z   repository: thomastt-cryoo/stenciii
+2026-10-29T18:55:13.4239317Z   token: ***
+2026-10-29T18:55:13.4239741Z   ssh-strict: true
+2026-10-29T18:55:13.4240194Z   ssh-user: git
+2026-10-29T18:55:13.4240621Z   persist-credentials: true
+2026-10-29T18:55:13.4241073Z   clean: true
+2026-10-29T18:55:13.4241556Z   sparse-checkout-cone-mode: true
+2026-10-29T18:55:13.4242017Z   fetch-depth: 1
+2026-10-29T18:55:13.4242455Z   fetch-tags: false
+2026-10-29T18:55:13.4242873Z   show-progress: true
+2026-10-29T18:55:13.4243288Z   lfs: false
+2026-10-29T18:55:13.4243717Z   submodules: false
+2026-10-29T18:55:13.4244147Z   set-safe-directory: true
+2026-10-29T18:55:13.4244624Z   allow-unsafe-pr-checkout: false
+2026-10-29T18:55:13.4245658Z ##[endgroup]
+2026-10-29T18:55:13.6897925Z Syncing repository: thomastt-cryoo/stenciii
+2026-10-29T18:55:13.6900288Z ##[group]Getting Git version info
+2026-10-29T18:55:13.6901150Z Working directory is '/home/runner/work/stenciii/stenciii'
+2026-10-29T18:55:13.6902304Z [command]/usr/bin/git version
+2026-10-29T18:55:13.6902785Z git version 2.56.0
+2026-10-29T18:55:13.6905264Z ##[endgroup]
+2026-10-29T18:55:13.6910622Z Temporarily overriding HOME='/home/runner/work/_temp/b7ea77a5-6c94-4063-abcc-6ab6aa158312' before making global git config changes
+2026-10-29T18:55:13.6912087Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-29T18:55:13.6913266Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/stenciii/stenciii
+2026-10-29T18:55:13.6975063Z Deleting the contents of '/home/runner/work/stenciii/stenciii'
+2026-10-29T18:55:13.6978792Z ##[group]Initializing the repository
+2026-10-29T18:55:13.6983369Z [command]/usr/bin/git init /home/runner/work/stenciii/stenciii
+2026-10-29T18:55:13.7089370Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-29T18:55:13.7091099Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-29T18:55:13.7092440Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-29T18:55:13.7093520Z hint: call:
+2026-10-29T18:55:13.7094084Z hint:
+2026-10-29T18:55:13.7094775Z hint: 	git config --global init.defaultBranch <name>
+2026-10-29T18:55:13.7095788Z hint:
+2026-10-29T18:55:13.7096630Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-29T18:55:13.7097929Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-29T18:55:13.7099006Z hint:
+2026-10-29T18:55:13.7099554Z hint: 	git branch -m <name>
+2026-10-29T18:55:13.7100138Z hint:
+2026-10-29T18:55:13.7100970Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-29T18:55:13.7105388Z Initialized empty Git repository in /home/runner/work/stenciii/stenciii/.git/
+2026-10-29T18:55:13.7115174Z [command]/usr/bin/git remote add origin https://github.com/thomastt-cryoo/stenciii
+2026-10-29T18:55:13.7158710Z ##[endgroup]
+2026-10-29T18:55:13.7159333Z ##[group]Disabling automatic garbage collection
+2026-10-29T18:55:13.7162337Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-29T18:55:13.7191151Z ##[endgroup]
+2026-10-29T18:55:13.7192151Z ##[group]Setting up auth
+2026-10-29T18:55:13.7196610Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-29T18:55:13.7220765Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-29T18:55:13.7587781Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-29T18:55:13.7613443Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-29T18:55:13.7796882Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-29T18:55:13.7820694Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-29T18:55:13.7996339Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-29T18:55:13.8040332Z ##[endgroup]
+2026-10-29T18:55:13.8041397Z ##[group]Fetching the repository
+2026-10-29T18:55:13.8048477Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +001f3d6d79167d83d366c16bf9a187da4e140fd4:refs/remotes/origin/main
+2026-10-29T18:55:16.6338576Z From https://github.com/thomastt-cryoo/stenciii
+2026-10-29T18:55:16.6339584Z  * [new ref]         001f3d6d79167d83d366c16bf9a187da4e140fd4 -> origin/main
+2026-10-29T18:55:16.6342036Z ##[endgroup]
+2026-10-29T18:55:16.6342700Z ##[group]Determining the checkout info
+2026-10-29T18:55:16.6343715Z ##[endgroup]
+2026-10-29T18:55:16.6351274Z [command]/usr/bin/git sparse-checkout disable
+2026-10-29T18:55:16.6398621Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-29T18:55:16.6424756Z ##[group]Checking out the ref
+2026-10-29T18:55:16.6428435Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-29T18:55:16.7292294Z Switched to a new branch 'main'
+2026-10-29T18:55:16.7300867Z branch 'main' set up to track 'origin/main'.
+2026-10-29T18:55:16.7303078Z ##[endgroup]
+2026-10-29T18:55:16.7342223Z [command]/usr/bin/git log -1 --format=%H
+2026-10-29T18:55:16.7361240Z 001f3d6d79167d83d366c16bf9a187da4e140fd4
+2026-10-29T18:55:16.7665672Z ##[group]Run dtolnay/rust-toolchain@stable
+2026-10-29T18:55:16.7666081Z with:
+2026-10-29T18:55:16.7666360Z   targets: wasm32-unknown-unknown
+2026-10-29T18:55:16.7666890Z   toolchain: stable
+2026-10-29T18:55:16.7667185Z ##[endgroup]
+2026-10-29T18:55:16.7731318Z ##[start-action display=Parse toolchain version;id=__dtolnay_rust-toolchain.parse]
+2026-10-29T18:55:16.7782340Z ##[group]Run if [[ -z $toolchain ]]; then
+2026-10-29T18:55:16.7782798Z if [[ -z $toolchain ]]; then
+2026-10-29T18:55:16.7783290Z   # GitHub does not enforce `required: true` inputs itself. https://github.com/actions/runner/issues/1070
+2026-10-29T18:55:16.7783840Z   echo "'toolchain' is a required input" >&2
+2026-10-29T18:55:16.7784168Z   exit 1
+2026-10-29T18:55:16.7784529Z elif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then
+2026-10-29T18:55:16.7785135Z   if [[ Linux == macOS ]]; then
+2026-10-29T18:55:16.7785772Z     echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT
+2026-10-29T18:55:16.7786260Z   else
+2026-10-29T18:55:16.7786680Z     echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT
+2026-10-29T18:55:16.7787186Z   fi
+2026-10-29T18:55:16.7787519Z elif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then
+2026-10-29T18:55:16.7788017Z   echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT
+2026-10-29T18:55:16.7788456Z elif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then
+2026-10-29T18:55:16.7788935Z   echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT
+2026-10-29T18:55:16.7789475Z else
+2026-10-29T18:55:16.7789732Z   delimiter=EOF
+2026-10-29T18:55:16.7790098Z   while [[ $toolchain == *$delimiter* ]]; do delimiter+=_; done
+2026-10-29T18:55:16.7790580Z   printf 'toolchain<<%s\n%s\n%s\n' "$delimiter" "$toolchain" "$delimiter" >> $GITHUB_OUTPUT
+2026-10-29T18:55:16.7790979Z fi
+2026-10-29T18:55:16.7814541Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:16.7815078Z env:
+2026-10-29T18:55:16.7815356Z   toolchain: stable
+2026-10-29T18:55:16.7815643Z ##[endgroup]
+2026-10-29T18:55:16.7904089Z ##[end-action id=__dtolnay_rust-toolchain.parse;outcome=success;conclusion=success;duration_ms=17]
+2026-10-29T18:55:16.7908348Z ##[start-action display=Set $CARGO_HOME;id=__dtolnay_rust-toolchain.__run]
+2026-10-29T18:55:16.7939313Z ##[group]Run echo CARGO_HOME=${CARGO_HOME:-"$HOME/.cargo"} >> $GITHUB_ENV
+2026-10-29T18:55:16.7939778Z echo CARGO_HOME=${CARGO_HOME:-"$HOME/.cargo"} >> $GITHUB_ENV
+2026-10-29T18:55:16.7956433Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:16.7956835Z ##[endgroup]
+2026-10-29T18:55:16.7999034Z ##[end-action id=__dtolnay_rust-toolchain.__run;outcome=success;conclusion=success;duration_ms=8]
+2026-10-29T18:55:16.8001766Z ##[start-action display=Install rustup if needed;id=__dtolnay_rust-toolchain.__run_2]
+2026-10-29T18:55:16.8029414Z ##[group]Run if ! command -v rustup &>/dev/null; then
+2026-10-29T18:55:16.8029907Z if ! command -v rustup &>/dev/null; then
+2026-10-29T18:55:16.8030553Z   curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://sh.rustup.rs | sh -s -- --default-toolchain none -y
+2026-10-29T18:55:16.8031162Z   echo "$CARGO_HOME/bin" >> $GITHUB_PATH
+2026-10-29T18:55:16.8031500Z fi
+2026-10-29T18:55:16.8047615Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:16.8047976Z env:
+2026-10-29T18:55:16.8048276Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:16.8048599Z ##[endgroup]
+2026-10-29T18:55:16.8086205Z ##[end-action id=__dtolnay_rust-toolchain.__run_2;outcome=success;conclusion=success;duration_ms=8]
+2026-10-29T18:55:16.8088640Z ##[start-action display=Install rustup if needed on windows;id=__dtolnay_rust-toolchain.__run_3]
+2026-10-29T18:55:16.8095934Z ##[end-action id=__dtolnay_rust-toolchain.__run_3;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-10-29T18:55:16.8108441Z ##[start-action display=rustup toolchain install stable;id=__dtolnay_rust-toolchain.__run_4]
+2026-10-29T18:55:16.8129823Z ##[group]Run set -f  # split targets and components on commas and whitespace, without glob expansion
+2026-10-29T18:55:16.8130500Z set -f  # split targets and components on commas and whitespace, without glob expansion
+2026-10-29T18:55:16.8130917Z flags=()
+2026-10-29T18:55:16.8131247Z for t in ${targets//,/ }; do flags+=(--target "$t"); done
+2026-10-29T18:55:16.8131640Z for c in ${components//,/ }; do flags+=(--component "$c"); done
+2026-10-29T18:55:16.8132147Z if [[ $toolchain == nightly && -n $components ]]; then flags+=(--allow-downgrade); fi
+2026-10-29T18:55:16.8132546Z log=$(mktemp)
+2026-10-29T18:55:16.8132830Z trap 'rm -f "$log"' EXIT
+2026-10-29T18:55:16.8133199Z for attempt in 1 2 3 4 5; do
+2026-10-29T18:55:16.8133690Z   if rustup toolchain install "$toolchain" "${flags[@]}" --profile minimal --no-self-update --force-non-host 2>&1 | tee "$log"; then
+2026-10-29T18:55:16.8134335Z     break
+2026-10-29T18:55:16.8134649Z   else
+2026-10-29T18:55:16.8135183Z     status=$?
+2026-10-29T18:55:16.8135523Z   fi
+2026-10-29T18:55:16.8135844Z   if [[ $attempt == 5 ]] || ! grep -Fq 'checksum failed for ' "$log" \
+2026-10-29T18:55:16.8136367Z       || ! grep -Fq 'this is likely due to an ongoing update of the official release server' "$log"; then
+2026-10-29T18:55:16.8136828Z     exit "$status"
+2026-10-29T18:55:16.8137117Z   fi
+2026-10-29T18:55:16.8137524Z   echo "Retrying rustup toolchain install in 30 seconds (retry $attempt of 4)" >&2
+2026-10-29T18:55:16.8137932Z   sleep 30
+2026-10-29T18:55:16.8138197Z done
+2026-10-29T18:55:16.8153588Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:16.8153985Z env:
+2026-10-29T18:55:16.8154300Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:16.8154623Z   toolchain: stable
+2026-10-29T18:55:16.8155086Z   targets: wasm32-unknown-unknown
+2026-10-29T18:55:16.8155406Z   components:
+2026-10-29T18:55:16.8155728Z   RUSTUP_PERMIT_COPY_RENAME: 1
+2026-10-29T18:55:16.8156085Z ##[endgroup]
+2026-10-29T18:55:18.0434711Z info: syncing channel updates for stable-x86_64-unknown-linux-gnu
+2026-10-29T18:55:18.4644606Z info: latest update on 2026-10-15 for version 1.99.1 (58cf8f9c3 2026-10-13)
+2026-10-29T18:55:18.5951870Z info: downloading component rust-std
+2026-10-29T18:55:20.4829028Z
+2026-10-29T18:55:20.4893818Z   stable-x86_64-unknown-linux-gnu updated - rustc 1.99.1 (58cf8f9c3 2026-10-13) (from rustc 1.99.1 (58cf8f9c3 2026-10-13))
+2026-10-29T18:55:20.4894280Z
+2026-10-29T18:55:20.4939588Z ##[end-action id=__dtolnay_rust-toolchain.__run_4;outcome=success;conclusion=success;duration_ms=3683]
+2026-10-29T18:55:20.4946429Z ##[start-action display=rustup default stable;id=__dtolnay_rust-toolchain.__run_5]
+2026-10-29T18:55:20.4964541Z ##[group]Run rustup default "$toolchain" --force-non-host
+2026-10-29T18:55:20.4965095Z rustup default "$toolchain" --force-non-host
+2026-10-29T18:55:20.4982535Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:20.4982847Z env:
+2026-10-29T18:55:20.4983111Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:20.4983419Z   toolchain: stable
+2026-10-29T18:55:20.4983653Z ##[endgroup]
+2026-10-29T18:55:20.5051310Z info: using existing install for stable-x86_64-unknown-linux-gnu
+2026-10-29T18:55:20.5061253Z info: default toolchain set to stable-x86_64-unknown-linux-gnu
+2026-10-29T18:55:20.5061540Z
+2026-10-29T18:55:20.5123256Z   stable-x86_64-unknown-linux-gnu unchanged - rustc 1.99.1 (58cf8f9c3 2026-10-13)
+2026-10-29T18:55:20.5123557Z
+2026-10-29T18:55:20.5135304Z ##[end-action id=__dtolnay_rust-toolchain.__run_5;outcome=success;conclusion=success;duration_ms=18]
+2026-10-29T18:55:20.5138918Z ##[start-action display=Create cachekey;id=__dtolnay_rust-toolchain.rustc-version]
+2026-10-29T18:55:20.5155162Z ##[group]Run DATE=$(rustc +"$toolchain" --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')
+2026-10-29T18:55:20.5155883Z DATE=$(rustc +"$toolchain" --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')
+2026-10-29T18:55:20.5156464Z HASH=$(rustc +"$toolchain" --version --verbose | sed -ne 's/^commit-hash: //p')
+2026-10-29T18:55:20.5156911Z echo "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT
+2026-10-29T18:55:20.5170487Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:20.5170827Z env:
+2026-10-29T18:55:20.5171068Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:20.5171340Z   toolchain: stable
+2026-10-29T18:55:20.5171572Z ##[endgroup]
+2026-10-29T18:55:20.5854183Z ##[end-action id=__dtolnay_rust-toolchain.rustc-version;outcome=success;conclusion=success;duration_ms=71]
+2026-10-29T18:55:20.5856978Z ##[start-action display=Disable incremental compilation;id=__dtolnay_rust-toolchain.__run_6]
+2026-10-29T18:55:20.5876725Z ##[group]Run if [ -z "${CARGO_INCREMENTAL+set}" ]; then
+2026-10-29T18:55:20.5877094Z if [ -z "${CARGO_INCREMENTAL+set}" ]; then
+2026-10-29T18:55:20.5877417Z   echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV
+2026-10-29T18:55:20.5877711Z fi
+2026-10-29T18:55:20.5892517Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:20.5892856Z env:
+2026-10-29T18:55:20.5893093Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:20.5893372Z ##[endgroup]
+2026-10-29T18:55:20.5928594Z ##[end-action id=__dtolnay_rust-toolchain.__run_6;outcome=success;conclusion=success;duration_ms=7]
+2026-10-29T18:55:20.5930706Z ##[start-action display=Enable colors in Cargo output;id=__dtolnay_rust-toolchain.__run_7]
+2026-10-29T18:55:20.5947109Z ##[group]Run if [ -z "${CARGO_TERM_COLOR+set}" ]; then
+2026-10-29T18:55:20.5947481Z if [ -z "${CARGO_TERM_COLOR+set}" ]; then
+2026-10-29T18:55:20.5947789Z   echo CARGO_TERM_COLOR=always >> $GITHUB_ENV
+2026-10-29T18:55:20.5948080Z fi
+2026-10-29T18:55:20.5960585Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:20.5960936Z env:
+2026-10-29T18:55:20.5961193Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:20.5961487Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:20.5961720Z ##[endgroup]
+2026-10-29T18:55:20.5993227Z ##[end-action id=__dtolnay_rust-toolchain.__run_7;outcome=success;conclusion=success;duration_ms=6]
+2026-10-29T18:55:20.5996928Z ##[start-action display=Enable Cargo sparse registry;id=__dtolnay_rust-toolchain.__run_8]
+2026-10-29T18:55:20.6015103Z ##[group]Run # implemented in 1.66, stabilized in 1.68, made default in 1.70
+2026-10-29T18:55:20.6015575Z # implemented in 1.66, stabilized in 1.68, made default in 1.70
+2026-10-29T18:55:20.6016142Z if [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol ]; then
+2026-10-29T18:55:20.6016746Z   if rustc +"$toolchain" --version --verbose | grep -q '^release: 1\.6[89]\.'; then
+2026-10-29T18:55:20.6017226Z     touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true
+2026-10-29T18:55:20.6017684Z     echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV
+2026-10-29T18:55:20.6018122Z   elif rustc +"$toolchain" --version --verbose | grep -q '^release: 1\.6[67]\.'; then
+2026-10-29T18:55:20.6018590Z     touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true
+2026-10-29T18:55:20.6019148Z     echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV
+2026-10-29T18:55:20.6019472Z   fi
+2026-10-29T18:55:20.6019703Z fi
+2026-10-29T18:55:20.6031500Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:20.6031930Z env:
+2026-10-29T18:55:20.6032190Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:20.6032451Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:20.6032697Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:20.6032931Z   toolchain: stable
+2026-10-29T18:55:20.6033137Z ##[endgroup]
+2026-10-29T18:55:20.6246404Z ##[end-action id=__dtolnay_rust-toolchain.__run_8;outcome=success;conclusion=success;duration_ms=24]
+2026-10-29T18:55:20.6249455Z ##[start-action display=Work around spurious network errors in curl 8.0;id=__dtolnay_rust-toolchain.__run_9]
+2026-10-29T18:55:20.6266401Z ##[group]Run # https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation
+2026-10-29T18:55:20.6267020Z # https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation
+2026-10-29T18:55:20.6267528Z if rustc +"$toolchain" --version --verbose | grep -q '^release: 1\.7[01]\.'; then
+2026-10-29T18:55:20.6267997Z   echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV
+2026-10-29T18:55:20.6268277Z fi
+2026-10-29T18:55:20.6280044Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:20.6280385Z env:
+2026-10-29T18:55:20.6280644Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:20.6280893Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:20.6281154Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:20.6281386Z   toolchain: stable
+2026-10-29T18:55:20.6281604Z ##[endgroup]
+2026-10-29T18:55:20.6402596Z ##[end-action id=__dtolnay_rust-toolchain.__run_9;outcome=success;conclusion=success;duration_ms=15]
+2026-10-29T18:55:20.6406844Z ##[start-action display=rustc +stable --version --verbose;id=__dtolnay_rust-toolchain.__run_10]
+2026-10-29T18:55:20.6422470Z ##[group]Run rustc +"$toolchain" --version --verbose
+2026-10-29T18:55:20.6422828Z rustc +"$toolchain" --version --verbose
+2026-10-29T18:55:20.6434092Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:20.6434419Z env:
+2026-10-29T18:55:20.6434654Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:20.6435141Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:20.6435400Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:20.6435827Z   toolchain: stable
+2026-10-29T18:55:20.6436062Z ##[endgroup]
+2026-10-29T18:55:20.6541557Z rustc 1.99.1 (58cf8f9c3 2026-10-13)
+2026-10-29T18:55:20.6541960Z binary: rustc
+2026-10-29T18:55:20.6542404Z commit-hash: 58cf8f9c35b355199727627d07ae34a4e2846d67
+2026-10-29T18:55:20.6542824Z commit-date: 2026-10-13
+2026-10-29T18:55:20.6543152Z host: x86_64-unknown-linux-gnu
+2026-10-29T18:55:20.6543458Z release: 1.99.1
+2026-10-29T18:55:20.6543706Z LLVM version: 23.1.1
+2026-10-29T18:55:20.6555006Z ##[end-action id=__dtolnay_rust-toolchain.__run_10;outcome=success;conclusion=success;duration_ms=14]
+2026-10-29T18:55:20.6710580Z ##[group]Run dtolnay/rust-toolchain@nightly
+2026-10-29T18:55:20.6710865Z with:
+2026-10-29T18:55:20.6711141Z   targets: wasm32-unknown-unknown
+2026-10-29T18:55:20.6711408Z   components: rust-src
+2026-10-29T18:55:20.6711698Z   toolchain: nightly
+2026-10-29T18:55:20.6711965Z env:
+2026-10-29T18:55:20.6712213Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:20.6712507Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:20.6712757Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:20.6713013Z ##[endgroup]
+2026-10-29T18:55:20.6724330Z ##[start-action display=Parse toolchain version;id=__dtolnay_rust-toolchain_2.parse]
+2026-10-29T18:55:20.6741298Z ##[group]Run if [[ -z $toolchain ]]; then
+2026-10-29T18:55:20.6741636Z if [[ -z $toolchain ]]; then
+2026-10-29T18:55:20.6742090Z   # GitHub does not enforce `required: true` inputs itself. https://github.com/actions/runner/issues/1070
+2026-10-29T18:55:20.6742529Z   echo "'toolchain' is a required input" >&2
+2026-10-29T18:55:20.6742916Z   exit 1
+2026-10-29T18:55:20.6743230Z elif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then
+2026-10-29T18:55:20.6743583Z   if [[ Linux == macOS ]]; then
+2026-10-29T18:55:20.6744186Z     echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT
+2026-10-29T18:55:20.6744599Z   else
+2026-10-29T18:55:20.6745210Z     echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT
+2026-10-29T18:55:20.6745615Z   fi
+2026-10-29T18:55:20.6745904Z elif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then
+2026-10-29T18:55:20.6746361Z   echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT
+2026-10-29T18:55:20.6746761Z elif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then
+2026-10-29T18:55:20.6747253Z   echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT
+2026-10-29T18:55:20.6747657Z else
+2026-10-29T18:55:20.6747885Z   delimiter=EOF
+2026-10-29T18:55:20.6748199Z   while [[ $toolchain == *$delimiter* ]]; do delimiter+=_; done
+2026-10-29T18:55:20.6748615Z   printf 'toolchain<<%s\n%s\n%s\n' "$delimiter" "$toolchain" "$delimiter" >> $GITHUB_OUTPUT
+2026-10-29T18:55:20.6749005Z fi
+2026-10-29T18:55:20.6761901Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:20.6762215Z env:
+2026-10-29T18:55:20.6762440Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:20.6762760Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:20.6762995Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:20.6763225Z   toolchain: nightly
+2026-10-29T18:55:20.6763443Z ##[endgroup]
+2026-10-29T18:55:20.6796329Z ##[end-action id=__dtolnay_rust-toolchain_2.parse;outcome=success;conclusion=success;duration_ms=7]
+2026-10-29T18:55:20.6798326Z ##[start-action display=Set $CARGO_HOME;id=__dtolnay_rust-toolchain_2.__run]
+2026-10-29T18:55:20.6814189Z ##[group]Run echo CARGO_HOME=${CARGO_HOME:-"$HOME/.cargo"} >> $GITHUB_ENV
+2026-10-29T18:55:20.6814630Z echo CARGO_HOME=${CARGO_HOME:-"$HOME/.cargo"} >> $GITHUB_ENV
+2026-10-29T18:55:20.6826618Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:20.6826938Z env:
+2026-10-29T18:55:20.6827164Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:20.6827428Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:20.6827690Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:20.6827965Z ##[endgroup]
+2026-10-29T18:55:20.6858687Z ##[end-action id=__dtolnay_rust-toolchain_2.__run;outcome=success;conclusion=success;duration_ms=5]
+2026-10-29T18:55:20.6860659Z ##[start-action display=Install rustup if needed;id=__dtolnay_rust-toolchain_2.__run_2]
+2026-10-29T18:55:20.6878215Z ##[group]Run if ! command -v rustup &>/dev/null; then
+2026-10-29T18:55:20.6878640Z if ! command -v rustup &>/dev/null; then
+2026-10-29T18:55:20.6879297Z   curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://sh.rustup.rs | sh -s -- --default-toolchain none -y
+2026-10-29T18:55:20.6879892Z   echo "$CARGO_HOME/bin" >> $GITHUB_PATH
+2026-10-29T18:55:20.6880178Z fi
+2026-10-29T18:55:20.6891628Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:20.6891974Z env:
+2026-10-29T18:55:20.6892234Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:20.6892514Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:20.6892752Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:20.6892990Z ##[endgroup]
+2026-10-29T18:55:20.6924139Z ##[end-action id=__dtolnay_rust-toolchain_2.__run_2;outcome=success;conclusion=success;duration_ms=6]
+2026-10-29T18:55:20.6926381Z ##[start-action display=Install rustup if needed on windows;id=__dtolnay_rust-toolchain_2.__run_3]
+2026-10-29T18:55:20.6930454Z ##[end-action id=__dtolnay_rust-toolchain_2.__run_3;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-10-29T18:55:20.6934129Z ##[start-action display=rustup toolchain install nightly;id=__dtolnay_rust-toolchain_2.__run_4]
+2026-10-29T18:55:20.6949725Z ##[group]Run set -f  # split targets and components on commas and whitespace, without glob expansion
+2026-10-29T18:55:20.6950381Z set -f  # split targets and components on commas and whitespace, without glob expansion
+2026-10-29T18:55:20.6950773Z flags=()
+2026-10-29T18:55:20.6951080Z for t in ${targets//,/ }; do flags+=(--target "$t"); done
+2026-10-29T18:55:20.6951431Z for c in ${components//,/ }; do flags+=(--component "$c"); done
+2026-10-29T18:55:20.6951848Z if [[ $toolchain == nightly && -n $components ]]; then flags+=(--allow-downgrade); fi
+2026-10-29T18:55:20.6952215Z log=$(mktemp)
+2026-10-29T18:55:20.6952489Z trap 'rm -f "$log"' EXIT
+2026-10-29T18:55:20.6952761Z for attempt in 1 2 3 4 5; do
+2026-10-29T18:55:20.6953227Z   if rustup toolchain install "$toolchain" "${flags[@]}" --profile minimal --no-self-update --force-non-host 2>&1 | tee "$log"; then
+2026-10-29T18:55:20.6953700Z     break
+2026-10-29T18:55:20.6953935Z   else
+2026-10-29T18:55:20.6954169Z     status=$?
+2026-10-29T18:55:20.6954406Z   fi
+2026-10-29T18:55:20.6954683Z   if [[ $attempt == 5 ]] || ! grep -Fq 'checksum failed for ' "$log" \
+2026-10-29T18:55:20.6955391Z       || ! grep -Fq 'this is likely due to an ongoing update of the official release server' "$log"; then
+2026-10-29T18:55:20.6955829Z     exit "$status"
+2026-10-29T18:55:20.6956084Z   fi
+2026-10-29T18:55:20.6956443Z   echo "Retrying rustup toolchain install in 30 seconds (retry $attempt of 4)" >&2
+2026-10-29T18:55:20.6956799Z   sleep 30
+2026-10-29T18:55:20.6957000Z done
+2026-10-29T18:55:20.6968618Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:20.6968984Z env:
+2026-10-29T18:55:20.6969216Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:20.6969500Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:20.6969813Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:20.6970059Z   toolchain: nightly
+2026-10-29T18:55:20.6970312Z   targets: wasm32-unknown-unknown
+2026-10-29T18:55:20.6970592Z   components: rust-src
+2026-10-29T18:55:20.6970843Z   RUSTUP_PERMIT_COPY_RENAME: 1
+2026-10-29T18:55:20.6971093Z ##[endgroup]
+2026-10-29T18:55:20.7057136Z info: syncing channel updates for nightly-x86_64-unknown-linux-gnu
+2026-10-29T18:55:20.8893280Z info: latest update on 2026-10-29 for version 1.101.0-nightly (92ffebece 2026-10-28)
+2026-10-29T18:55:20.8895935Z info: downloading 5 components
+2026-10-29T18:55:30.2329870Z
+2026-10-29T18:55:30.2386020Z   nightly-x86_64-unknown-linux-gnu installed - rustc 1.101.0-nightly (92ffebece 2026-10-28)
+2026-10-29T18:55:30.2386374Z
+2026-10-29T18:55:30.2455228Z ##[end-action id=__dtolnay_rust-toolchain_2.__run_4;outcome=success;conclusion=success;duration_ms=9551]
+2026-10-29T18:55:30.2462598Z ##[start-action display=rustup default nightly;id=__dtolnay_rust-toolchain_2.__run_5]
+2026-10-29T18:55:30.2484655Z ##[group]Run rustup default "$toolchain" --force-non-host
+2026-10-29T18:55:30.2485317Z rustup default "$toolchain" --force-non-host
+2026-10-29T18:55:30.2503779Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:30.2504258Z env:
+2026-10-29T18:55:30.2504607Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:30.2505060Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:30.2505411Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:30.2505758Z   toolchain: nightly
+2026-10-29T18:55:30.2506051Z ##[endgroup]
+2026-10-29T18:55:30.2576270Z info: using existing install for nightly-x86_64-unknown-linux-gnu
+2026-10-29T18:55:30.2586547Z info: default toolchain set to nightly-x86_64-unknown-linux-gnu
+2026-10-29T18:55:30.2586903Z
+2026-10-29T18:55:30.2639759Z   nightly-x86_64-unknown-linux-gnu unchanged - rustc 1.101.0-nightly (92ffebece 2026-10-28)
+2026-10-29T18:55:30.2644990Z
+2026-10-29T18:55:30.2651494Z ##[end-action id=__dtolnay_rust-toolchain_2.__run_5;outcome=success;conclusion=success;duration_ms=18]
+2026-10-29T18:55:30.2654584Z ##[start-action display=Create cachekey;id=__dtolnay_rust-toolchain_2.rustc-version]
+2026-10-29T18:55:30.2744383Z ##[group]Run DATE=$(rustc +"$toolchain" --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')
+2026-10-29T18:55:30.2745180Z DATE=$(rustc +"$toolchain" --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')
+2026-10-29T18:55:30.2745776Z HASH=$(rustc +"$toolchain" --version --verbose | sed -ne 's/^commit-hash: //p')
+2026-10-29T18:55:30.2746229Z echo "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT
+2026-10-29T18:55:30.2759590Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:30.2759925Z env:
+2026-10-29T18:55:30.2760199Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:30.2760454Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:30.2760735Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:30.2760969Z   toolchain: nightly
+2026-10-29T18:55:30.2761182Z ##[endgroup]
+2026-10-29T18:55:30.2996992Z ##[end-action id=__dtolnay_rust-toolchain_2.rustc-version;outcome=success;conclusion=success;duration_ms=34]
+2026-10-29T18:55:30.2999191Z ##[start-action display=Disable incremental compilation;id=__dtolnay_rust-toolchain_2.__run_6]
+2026-10-29T18:55:30.3022104Z ##[group]Run if [ -z "${CARGO_INCREMENTAL+set}" ]; then
+2026-10-29T18:55:30.3022462Z if [ -z "${CARGO_INCREMENTAL+set}" ]; then
+2026-10-29T18:55:30.3022780Z   echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV
+2026-10-29T18:55:30.3023082Z fi
+2026-10-29T18:55:30.3036088Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:30.3036397Z env:
+2026-10-29T18:55:30.3036611Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:30.3036910Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:30.3037158Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:30.3037387Z ##[endgroup]
+2026-10-29T18:55:30.3070004Z ##[end-action id=__dtolnay_rust-toolchain_2.__run_6;outcome=success;conclusion=success;duration_ms=7]
+2026-10-29T18:55:30.3072039Z ##[start-action display=Enable colors in Cargo output;id=__dtolnay_rust-toolchain_2.__run_7]
+2026-10-29T18:55:30.3087583Z ##[group]Run if [ -z "${CARGO_TERM_COLOR+set}" ]; then
+2026-10-29T18:55:30.3087901Z if [ -z "${CARGO_TERM_COLOR+set}" ]; then
+2026-10-29T18:55:30.3088220Z   echo CARGO_TERM_COLOR=always >> $GITHUB_ENV
+2026-10-29T18:55:30.3088514Z fi
+2026-10-29T18:55:30.3099921Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:30.3100218Z env:
+2026-10-29T18:55:30.3100431Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:30.3100692Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:30.3100917Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:30.3101176Z ##[endgroup]
+2026-10-29T18:55:30.3132548Z ##[end-action id=__dtolnay_rust-toolchain_2.__run_7;outcome=success;conclusion=success;duration_ms=5]
+2026-10-29T18:55:30.3136088Z ##[start-action display=Enable Cargo sparse registry;id=__dtolnay_rust-toolchain_2.__run_8]
+2026-10-29T18:55:30.3155363Z ##[group]Run # implemented in 1.66, stabilized in 1.68, made default in 1.70
+2026-10-29T18:55:30.3156040Z # implemented in 1.66, stabilized in 1.68, made default in 1.70
+2026-10-29T18:55:30.3156874Z if [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol ]; then
+2026-10-29T18:55:30.3157742Z   if rustc +"$toolchain" --version --verbose | grep -q '^release: 1\.6[89]\.'; then
+2026-10-29T18:55:30.3158483Z     touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true
+2026-10-29T18:55:30.3159167Z     echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV
+2026-10-29T18:55:30.3159805Z   elif rustc +"$toolchain" --version --verbose | grep -q '^release: 1\.6[67]\.'; then
+2026-10-29T18:55:30.3160518Z     touch "/home/runner/work/_temp"/.implicit_cargo_registries_crates_io_protocol || true
+2026-10-29T18:55:30.3161149Z     echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV
+2026-10-29T18:55:30.3161682Z   fi
+2026-10-29T18:55:30.3162010Z fi
+2026-10-29T18:55:30.3176323Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:30.3176753Z env:
+2026-10-29T18:55:30.3177089Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:30.3177475Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:30.3177783Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:30.3178107Z   toolchain: nightly
+2026-10-29T18:55:30.3178397Z ##[endgroup]
+2026-10-29T18:55:30.3381475Z ##[end-action id=__dtolnay_rust-toolchain_2.__run_8;outcome=success;conclusion=success;duration_ms=24]
+2026-10-29T18:55:30.3385093Z ##[start-action display=Work around spurious network errors in curl 8.0;id=__dtolnay_rust-toolchain_2.__run_9]
+2026-10-29T18:55:30.3403652Z ##[group]Run # https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation
+2026-10-29T18:55:30.3404537Z # https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation
+2026-10-29T18:55:30.3405549Z if rustc +"$toolchain" --version --verbose | grep -q '^release: 1\.7[01]\.'; then
+2026-10-29T18:55:30.3406136Z   echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV
+2026-10-29T18:55:30.3406611Z fi
+2026-10-29T18:55:30.3422513Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:30.3422997Z env:
+2026-10-29T18:55:30.3423289Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:30.3423650Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:30.3423964Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:30.3424299Z   toolchain: nightly
+2026-10-29T18:55:30.3424617Z ##[endgroup]
+2026-10-29T18:55:30.3573803Z ##[end-action id=__dtolnay_rust-toolchain_2.__run_9;outcome=success;conclusion=success;duration_ms=18]
+2026-10-29T18:55:30.3580831Z ##[start-action display=rustc +nightly --version --verbose;id=__dtolnay_rust-toolchain_2.__run_10]
+2026-10-29T18:55:30.3601946Z ##[group]Run rustc +"$toolchain" --version --verbose
+2026-10-29T18:55:30.3602404Z rustc +"$toolchain" --version --verbose
+2026-10-29T18:55:30.3749318Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T18:55:30.3749673Z env:
+2026-10-29T18:55:30.3749888Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:30.3750150Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:30.3750380Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:30.3750603Z   toolchain: nightly
+2026-10-29T18:55:30.3750796Z ##[endgroup]
+2026-10-29T18:55:30.3867835Z rustc 1.101.0-nightly (92ffebece 2026-10-28)
+2026-10-29T18:55:30.3868364Z binary: rustc
+2026-10-29T18:55:30.3869008Z commit-hash: 92ffebeceaa0a071066f233873c2438e73d70fe7
+2026-10-29T18:55:30.3869503Z commit-date: 2026-10-28
+2026-10-29T18:55:30.3869867Z host: x86_64-unknown-linux-gnu
+2026-10-29T18:55:30.3870562Z release: 1.101.0-nightly
+2026-10-29T18:55:30.3870947Z LLVM version: 23.1.4
+2026-10-29T18:55:30.3879775Z ##[end-action id=__dtolnay_rust-toolchain_2.__run_10;outcome=success;conclusion=success;duration_ms=29]
+2026-10-29T18:55:30.3943936Z ##[group]Run Swatinem/rust-cache@v2
+2026-10-29T18:55:30.3944231Z with:
+2026-10-29T18:55:30.3944437Z   workspaces: .
+2026-10-29T18:55:30.3944664Z   prefix-key: v0-rust
+2026-10-29T18:55:30.3945075Z   add-job-id-key: true
+2026-10-29T18:55:30.3945347Z   add-rust-environment-hash-key: true
+2026-10-29T18:55:30.3945659Z   cache-targets: true
+2026-10-29T18:55:30.3945901Z   cache-all-crates: false
+2026-10-29T18:55:30.3946174Z   cache-workspace-crates: false
+2026-10-29T18:55:30.3946440Z   save-if: true
+2026-10-29T18:55:30.3946664Z   cache-provider: github
+2026-10-29T18:55:30.3946957Z   cache-bin: true
+2026-10-29T18:55:30.3947189Z   lookup-only: false
+2026-10-29T18:55:30.3947424Z   cmd-format: {0}
+2026-10-29T18:55:30.3947632Z env:
+2026-10-29T18:55:30.3947852Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:30.3948134Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:30.3948389Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:30.3948637Z ##[endgroup]
+2026-10-29T18:55:30.7774282Z ##[group]Cache Configuration
+2026-10-29T18:55:30.7775161Z Cache Provider:
+2026-10-29T18:55:30.7775363Z     github
+2026-10-29T18:55:30.7775542Z Workspaces:
+2026-10-29T18:55:30.7775742Z     /home/runner/work/stenciii/stenciii
+2026-10-29T18:55:30.7775993Z Cache Paths:
+2026-10-29T18:55:30.7776179Z     /home/runner/.cargo/bin
+2026-10-29T18:55:30.7776403Z     /home/runner/.cargo/.crates.toml
+2026-10-29T18:55:30.7776664Z     /home/runner/.cargo/.crates2.json
+2026-10-29T18:55:30.7776906Z     /home/runner/.cargo/registry
+2026-10-29T18:55:30.7777154Z     /home/runner/.cargo/git
+2026-10-29T18:55:30.7777395Z     /home/runner/work/stenciii/stenciii/target
+2026-10-29T18:55:30.7777647Z Restore Key:
+2026-10-29T18:55:30.7777835Z     v0-rust-rust-Linux-x64-6c187f07
+2026-10-29T18:55:30.7778044Z Cache Key:
+2026-10-29T18:55:30.7778210Z     v0-rust-rust-Linux-x64-6c187f07-1e2ef152
+2026-10-29T18:55:30.7778442Z .. Prefix:
+2026-10-29T18:55:30.7778598Z   - v0-rust-rust-Linux-x64
+2026-10-29T18:55:30.7778829Z .. Environment considered:
+2026-10-29T18:55:30.7779059Z   - Rust Versions:
+2026-10-29T18:55:30.7779319Z     - 1.101.0-nightly x86_64-unknown-linux-gnu 92ffebeceaa0a071066f233873c2438e73d70fe7
+2026-10-29T18:55:30.7779680Z     - 1.99.1 x86_64-unknown-linux-gnu 58cf8f9c35b355199727627d07ae34a4e2846d67
+2026-10-29T18:55:30.7779931Z   - CARGO_HOME
+2026-10-29T18:55:30.7780083Z   - CARGO_INCREMENTAL
+2026-10-29T18:55:30.7780239Z   - CARGO_TERM_COLOR
+2026-10-29T18:55:30.7780394Z .. Lockfiles considered:
+2026-10-29T18:55:30.7780584Z   - /home/runner/work/stenciii/stenciii/Cargo.lock
+2026-10-29T18:55:30.7780857Z   - /home/runner/work/stenciii/stenciii/crates/stencil-cli/Cargo.toml
+2026-10-29T18:55:30.7781176Z   - /home/runner/work/stenciii/stenciii/crates/stencil-core/Cargo.toml
+2026-10-29T18:55:30.7781493Z   - /home/runner/work/stenciii/stenciii/crates/stencil-launcher/Cargo.toml
+2026-10-29T18:55:30.7781809Z   - /home/runner/work/stenciii/stenciii/crates/stencil-wasm/Cargo.toml
+2026-10-29T18:55:30.7782231Z ##[endgroup]
+2026-10-29T18:55:30.7782322Z
+2026-10-29T18:55:30.7782405Z ... Restoring cache ...
+2026-10-29T18:55:30.9271222Z Cache hit for: v0-rust-rust-Linux-x64-6c187f07-1e2ef152
+2026-10-29T18:55:31.8617075Z Received 75329089 of 75329089 (100.0%), 94.7 MBs/sec
+2026-10-29T18:55:31.8617405Z Cache Size: ~72 MB (75329089 B)
+2026-10-29T18:55:31.8675007Z [command]/usr/bin/tar -xf /home/runner/work/_temp/cc8bf2d3-b457-4297-bc5a-316d57288b17/cache.tzst -P -C /home/runner/work/stenciii/stenciii --use-compress-program unzstd
+2026-10-29T18:55:32.1603245Z Cache restored successfully
+2026-10-29T18:55:32.1630852Z Restored from cache key "v0-rust-rust-Linux-x64-6c187f07-1e2ef152" full match: true.
+2026-10-29T18:55:32.1737083Z ##[group]Run cargo test --release --workspace
+2026-10-29T18:55:32.1737358Z cargo test --release --workspace
+2026-10-29T18:55:32.1756290Z shell: /usr/bin/bash -e {0}
+2026-10-29T18:55:32.1756512Z env:
+2026-10-29T18:55:32.1756678Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:55:32.1756878Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:55:32.1757056Z   CARGO_TERM_COLOR: always
+2026-10-29T18:55:32.1757267Z   CACHE_ON_FAILURE: false
+2026-10-29T18:55:32.1757439Z ##[endgroup]
+2026-10-29T18:55:32.2029576Z     Updating crates.io index
+2026-10-29T18:55:32.5316867Z    Compiling stencil-core v2.9.4 (/home/runner/work/stenciii/stenciii/crates/stencil-core)
+2026-10-29T18:55:32.5340209Z    Compiling stencil-launcher v2.9.4 (/home/runner/work/stenciii/stenciii/crates/stencil-launcher)
+2026-10-29T18:55:52.6475344Z    Compiling stencil-wasm v2.9.4 (/home/runner/work/stenciii/stenciii/crates/stencil-wasm)
+2026-10-29T18:56:01.3247214Z    Compiling stencil-cli v2.9.4 (/home/runner/work/stenciii/stenciii/crates/stencil-cli)
+2026-10-29T18:56:57.9455560Z     Finished `release` profile [optimized] target(s) in 1m 25s
+2026-10-29T18:56:57.9517759Z      Running unittests src/main.rs (target/release/build/stencil-cli/e640f439ace071cb/out/stencil-e640f439ace071cb)
+2026-10-29T18:56:57.9526385Z
+2026-10-29T18:56:57.9526920Z running 0 tests
+2026-10-29T18:56:57.9528719Z      Running tests/cli.rs (target/release/build/stencil-cli/0fa0e7d83fb5d5c6/out/cli-0fa0e7d83fb5d5c6)
+2026-10-29T18:56:57.9529118Z
+2026-10-29T18:56:57.9529349Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-10-29T18:56:57.9529582Z
+2026-10-29T18:56:57.9537487Z
+2026-10-29T18:56:57.9537592Z running 13 tests
+2026-10-29T18:56:57.9615996Z test a_graph_without_output_is_reported ... ok
+2026-10-29T18:56:57.9668867Z test bad_input_fails_with_a_message ... ok
+2026-10-29T18:56:57.9780680Z test list_params_can_print_markdown ... ok
+2026-10-29T18:56:57.9815663Z test bad_overrides_are_rejected ... ok
+2026-10-29T18:56:57.9875329Z test list_params_shows_ranges ... ok
+2026-10-29T18:56:57.9969531Z test direct_seam_angle_changes_printable_geometry ... ok
+2026-10-29T18:56:58.0074263Z test runs_a_saved_project_in_studio_format ... ok
+2026-10-29T18:56:58.0129304Z test raster_svg_makes_an_stl ... ok
+2026-10-29T18:56:58.0215951Z test the_parameter_reference_is_up_to_date ... ok
+2026-10-29T18:56:58.0472290Z test overrides_layout_and_report_flags_work ... ok
+2026-10-29T18:56:58.0510082Z test vector_mode_makes_an_island_free_stl ... ok
+2026-10-29T18:56:58.0945425Z test sweep_and_batch_make_one_folder_per_run_and_a_summary ... ok
+2026-10-29T18:56:58.4165799Z test hardware_writes_parts_and_a_zip ... ok
+2026-10-29T18:56:58.4166068Z
+2026-10-29T18:56:58.4166331Z test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.46s
+2026-10-29T18:56:58.4166598Z
+2026-10-29T18:56:58.4168363Z      Running unittests src/lib.rs (target/release/build/stencil-core/787c0f42d71eae12/out/stencil_core-787c0f42d71eae12)
+2026-10-29T18:56:58.4180074Z
+2026-10-29T18:56:58.4180298Z running 153 tests
+2026-10-29T18:56:58.4192518Z test decimate::tests::a_plain_cube_is_left_alone ... ok
+2026-10-29T18:56:58.4193227Z test colour::tests::too_many_colours_for_tones_is_an_error ... ok
+2026-10-29T18:56:58.4193841Z test colour::tests::tones_make_darkest_solid_and_lightest_empty ... ok
+2026-10-29T18:56:58.4194479Z test colour::tests::reduce_gives_n_flat_colours_and_split_orders_them ... ok
+2026-10-29T18:56:58.4195256Z test decimate::tests::vertices_outside_the_z_range_are_frozen ... ok
+2026-10-29T18:56:58.4196526Z test graph::fragments::tests::keeps_only_the_biggest_solid_of_a_tile ... ok
+2026-10-29T18:56:58.4197083Z test graph::fragments::tests::keeps_the_requested_number_of_fragments ... ok
+2026-10-29T18:56:58.4197770Z test decimate::tests::collinear_vertices_and_flat_interiors_collapse_and_creases_stay ... ok
+2026-10-29T18:56:58.4306263Z test graph::tests::a_layout_made_from_the_wrong_source_is_refused_by_the_stencil ... ok
+2026-10-29T18:56:58.4565778Z test graph::tests::colour_set_rejects_mismatched_plates_and_small_margins ... ok
+2026-10-29T18:56:58.4884416Z test graph::tests::colour_set_drills_matching_holes_and_adds_pins ... ok
+2026-10-29T18:56:58.5366481Z test graph::tests::direct_legacy_seam_angle_changes_real_mesh_and_cache_without_changing_catalogue ... ok
+2026-10-29T18:56:58.7845896Z test graph::tests::hardware_node_makes_joiner_plates_to_the_size_asked ... ok
+2026-10-29T18:56:58.8947156Z test graph::tests::margin_expansion_refuses_a_plate_without_margin_or_holes ... ok
+2026-10-29T18:56:58.9553232Z test graph::tests::margin_expansion_gives_a_bolt_and_nut_that_fit_the_joint ... ok
+2026-10-29T18:56:58.9636222Z test graph::tests::morphology_node_runs_each_operation_and_reports_bad_input ... ok
+2026-10-29T18:56:59.0406213Z test graph::tests::margin_expansion_gap_shrinks_the_slabs_and_keeps_the_holes ... ok
+2026-10-29T18:56:59.2757297Z test graph::tests::margin_expansion_can_wrap_the_plate_in_several_rings ... ok
+2026-10-29T18:56:59.4616689Z test graph::tests::pad_thread_none_adds_no_pads_but_keeps_the_mounting_holes ... ok
+2026-10-29T18:56:59.8356803Z test graph::tests::margin_expansion_surrounds_the_plate_with_watertight_slabs ... ok
+2026-10-29T18:57:00.1817051Z test graph::tests::pads_node_makes_a_joiner_centred_on_the_seam_holes ... ok
+2026-10-29T18:57:00.1836031Z test graph::tests::picture_ids_are_stable_across_platforms ... ok
+2026-10-29T18:57:00.2885916Z test graph::tests::registration_rejects_equal_square_plates_with_different_automatic_insets ... ok
+2026-10-29T18:57:00.2935868Z test graph::tests::rejects_bad_connections_and_cycles ... ok
+2026-10-29T18:57:00.3496258Z test graph::tests::number_pockets_are_as_deep_as_asked ... ok
+2026-10-29T18:57:00.3996708Z test graph::tests::remesh_cuts_vertices_and_keeps_the_plate ... ok
+2026-10-29T18:57:00.5286351Z test graph::tests::remesh_interval_is_recorded_and_the_overhang_limit_holds ... ok
+2026-10-29T18:57:00.5976533Z test graph::tests::remesh_on_raised_bridges_is_valid_or_leaves_the_solid_alone ... ok
+2026-10-29T18:57:00.6126454Z test graph::tests::remesh_rejects_an_empty_interval ... ok
+2026-10-29T18:57:00.6306034Z test graph::tests::runs_caches_and_reruns_only_what_changed ... ok
+2026-10-29T18:57:00.6996262Z test graph::tests::shape_cleanup_nodes_feed_a_vector_stencil ... ok
+2026-10-29T18:57:00.7206195Z test graph::tests::smooth_node_scales_the_mask_and_feeds_the_stencil ... ok
+2026-10-29T18:57:00.7295815Z test graph::tests::stencil_node_applies_first_layer_width_and_taper ... ok
+2026-10-29T18:57:00.7325495Z test graph::tests::svg_pictures_run_through_the_graph ... ok
+2026-10-29T18:57:00.7385563Z test graph::tests::targets_limit_evaluation_and_errors_stay_local ... ok
+2026-10-29T18:57:00.7930134Z test graph::tests::text_node_makes_a_mask_that_becomes_an_island_free_stencil ... ok
+2026-10-29T18:57:00.9684273Z test graph::tests::tiles_a_real_stencil_into_watertight_parts_and_zip ... ok
+2026-10-29T18:57:00.9736756Z test graph::tests::remesh_rounds_towards_material ... ok
+2026-10-29T18:57:01.4626312Z test graph::tests::tiles_node_cuts_a_stencil_and_describes_the_plate ... ok
+2026-10-29T18:57:01.4686188Z test graph::tests::transform_node_crops_and_rotates_before_tracing ... ok
+2026-10-29T18:57:01.4715973Z test graph::tests::unreadable_and_oversized_pictures_are_refused ... ok
+2026-10-29T18:57:01.4806728Z test graph::tests::vector_polygon_path_builds_island_free_plate_and_detail_adds_triangles ... ok
+2026-10-29T18:57:02.1956152Z test graph::tests::pads_node_fits_pads_and_holes_clear_of_seams ... ok
+2026-10-29T18:57:02.3576435Z test hardware::tests::calibration_strips_have_valid_stored_faces_and_unchanged_fit_dimensions ... ok
+2026-10-29T18:57:02.3605801Z test hardware::tests::frame_layout_slides_off_seams_and_adds_edge_pads ... ok
+2026-10-29T18:57:02.4206134Z test graph::tests::mounting_pads_threads_and_hardware_nodes_run ... ok
+2026-10-29T18:57:02.4236987Z test hardware::tests::mounting_hole_bosses_connect_to_the_plate_and_keep_the_hole_open ... ok
+2026-10-29T18:57:02.6858353Z test hardware::tests::hand_sized_plate_clearance_is_diametral_for_plain_and_threaded_holes ... ok
+2026-10-29T18:57:03.3289746Z test hardware::tests::every_thread_size_cuts_a_watertight_hole_in_any_plate ... ok
+2026-10-29T18:57:03.8856698Z test hardware::tests::screws_nuts_plates_and_fit_test_build ... ok
+2026-10-29T18:57:03.8883107Z test hardware::tests::thread_solid_is_closed ... ok
+2026-10-29T18:57:03.8906551Z test imageinfo::tests::a_png_without_physical_size_has_no_dpi ... ok
+2026-10-29T18:57:03.8945881Z test imageinfo::tests::describes_a_png_with_its_resolution ... ok
+2026-10-29T18:57:03.9005568Z test imageinfo::tests::describes_an_svg ... ok
+2026-10-29T18:57:03.9035440Z test layered::tests::first_layer_flare_is_absent_above_its_taper ... ok
+2026-10-29T18:57:03.9065444Z test layered::tests::stepped_columns_have_closed_nonzero_faces ... ok
+2026-10-29T18:57:03.9095723Z test mesh::collinear::actual_split_ring_collinear_facets_repair_without_surface_or_topology_change ... ok
+2026-10-29T18:57:03.9125337Z test mesh::tests::box_boolean_roundtrip ... ok
+2026-10-29T18:57:03.9155393Z test mesh::tests::quantizing_drops_zero_thickness_fins ... ok
+2026-10-29T18:57:03.9185555Z test morphology::tests::erosion_does_not_eat_paint_from_the_picture_border ... ok
+2026-10-29T18:57:03.9215397Z test morphology::tests::erosion_removes_what_the_kernel_does_not_fit_in ... ok
+2026-10-29T18:57:03.9245355Z test morphology::tests::gradient_and_hats_are_set_differences ... ok
+2026-10-29T18:57:03.9275406Z test morphology::tests::hit_or_miss_corners_and_custom_patterns ... ok
+2026-10-29T18:57:03.9305435Z test morphology::tests::hit_or_miss_finds_endpoints_and_isolated_pixels ... ok
+2026-10-29T18:57:03.9306033Z test morphology::tests::junction_preset_marks_a_t ... ok
+2026-10-29T18:57:03.9335274Z test morphology::tests::kernels_have_the_expected_size ... ok
+2026-10-29T18:57:03.9365452Z test morphology::tests::opening_drops_specks_and_closing_fills_pinholes ... ok
+2026-10-29T18:57:03.9366001Z test morphology::tests::skeleton_of_a_bar_lies_inside_it ... ok
+2026-10-29T18:57:03.9395390Z test morphology::tests::square_dilation_grows_by_the_radius ... ok
+2026-10-29T18:57:03.9395907Z test morphology::tests::thinning_reduces_a_bar_to_a_line ... ok
+2026-10-29T18:57:03.9396353Z test par::tests::the_budget_never_takes_every_core ... ok
+2026-10-29T18:57:03.9396925Z test progress::tests::hook_sees_steps_until_removed ... ok
+2026-10-29T18:57:03.9397389Z test report::tests::a_clean_plate_is_ready_and_a_costly_layout_warns ... ok
+2026-10-29T18:57:03.9397925Z test report::tests::islands_left_block_and_a_thin_bridge_warns ... ok
+2026-10-29T18:57:03.9398409Z test ring::tests::a_seam_never_runs_through_a_screw_hole ... ok
+2026-10-29T18:57:03.9398885Z test ring::tests::a_second_ring_uses_holes_added_inside_the_first ... ok
+2026-10-29T18:57:03.9399416Z test ring::tests::a_slab_without_a_plate_hole_is_held_by_its_neighbours ... ok
+2026-10-29T18:57:03.9399990Z test ring::tests::four_sides_and_corners_are_joined_through_the_old_holes ... ok
+2026-10-29T18:57:03.9400471Z test ring::tests::no_margin_or_no_holes_is_refused ... ok
+2026-10-29T18:57:03.9400862Z test ring::tests::numbers_fit_clear_of_the_holes ... ok
+2026-10-29T18:57:03.9401273Z test ring::tests::wall_holes_run_round_the_outer_edge ... ok
+2026-10-29T18:57:03.9425546Z test segindex::tests::a_ray_finds_the_first_segment_it_crosses ... ok
+2026-10-29T18:57:03.9455385Z test segindex::tests::nearest_matches_a_scan ... ok
+2026-10-29T18:57:03.9456187Z test shape_edit::tests::a_paint_tip_loses_material_and_a_notch_is_left_unless_asked ... ok
+2026-10-29T18:57:03.9457066Z test shape_edit::tests::a_spike_is_rounded_and_a_square_corner_is_kept ... ok
+2026-10-29T18:57:03.9457547Z test shape_edit::tests::small_specks_and_holes_are_removed_with_their_contents ... ok
+2026-10-29T18:57:03.9457934Z test smooth::tests::rounds_corners_and_scales ... ok
+2026-10-29T18:57:03.9596317Z test tests::dead_end_tips_are_left_alone ... ok
+2026-10-29T18:57:03.9626630Z test tests::diagonal_pixels_stay_manifold ... ok
+2026-10-29T18:57:04.2226408Z test hardware::tests::the_bolt_tip_narrows_and_the_rest_is_untouched ... ok
+2026-10-29T18:57:04.2247433Z test tests::first_layer_taper_must_fit_in_the_stencil_thickness ... ok
+2026-10-29T18:57:04.2320570Z test tests::flip_has_no_overhang_and_same_height ... ok
+2026-10-29T18:57:04.2335700Z test tests::margin_error_quotes_values ... ok
+2026-10-29T18:57:04.2349706Z test tests::min_island_deletes_small_islands ... ok
+2026-10-29T18:57:04.2497259Z test tests::more_bridges_per_island_add_bridges_and_stay_island_free ... ok
+2026-10-29T18:57:04.2569691Z test tests::raised_bridges_keep_first_layer_islands ... ok
+2026-10-29T18:57:04.2911997Z test tests::raster_spread_pass_budget_changes_real_bridge_search ... ok
+2026-10-29T18:57:04.2965885Z test tests::ring_with_island_is_bridged_and_watertight ... ok
+2026-10-29T18:57:04.3085795Z test tests::first_layer_flare_tapers_without_changing_bridge_selection ... ok
+2026-10-29T18:57:04.3215651Z test tests::thin_rope_is_widened_by_minimum_contact ... ok
+2026-10-29T18:57:04.3265484Z test text::tests::empty_text_is_an_error ... ok
+2026-10-29T18:57:04.3295619Z test tests::spread_bridges_keep_the_count_and_stay_island_free ... ok
+2026-10-29T18:57:04.3485666Z test text::tests::renders_paint_inside_a_padded_canvas ... ok
+2026-10-29T18:57:04.3505745Z test thin::tests::a_first_layer_flare_does_not_close_an_existing_opening ... ok
+2026-10-29T18:57:04.3545526Z test thin::tests::distances_are_exact ... ok
+2026-10-29T18:57:04.3786264Z test tile_first::tests::a_plate_cut_from_the_whole_has_watertight_single_piece_tiles ... ok
+2026-10-29T18:57:04.3815998Z test tile_first::tests::a_pocket_edit_slides_it_along_its_seam_and_an_overlap_is_ignored ... ok
+2026-10-29T18:57:04.3955770Z test text::tests::two_lines_are_taller_than_one_and_fonts_differ ... ok
+2026-10-29T18:57:04.3975662Z test tile_first::tests::a_seam_edit_moves_the_seam_and_the_pockets_follow ... ok
+2026-10-29T18:57:04.4067046Z test tile_first::tests::a_seam_may_move_to_cover_less_paint_without_breaking_the_tile_limits ... ok
+2026-10-29T18:57:04.4093451Z test tile_first::tests::a_raster_plate_is_cut_into_tiles_that_each_have_no_islands ... ok
+2026-10-29T18:57:04.4125782Z test graph::tests::tiling_before_bridging_gives_island_free_tiles_that_pads_and_screws_accept ... ok
+2026-10-29T18:57:04.4135945Z test tile_first::tests::edits_stay_relative_to_the_automatic_layout_when_the_plate_changes ... ok
+2026-10-29T18:57:04.4136986Z test tile_first::tests::edits_that_break_a_rule_are_ignored_and_counted ... ok
+2026-10-29T18:57:04.4137784Z test tile_first::tests::fragments_no_thicker_than_rounding_are_dropped_but_real_pieces_stay ... ok
+2026-10-29T18:57:04.4138485Z test tile_first::tests::layout_edits_must_be_valid_json ... ok
+2026-10-29T18:57:04.4145821Z test tile_first::tests::a_small_plate_stays_whole ... ok
+2026-10-29T18:57:04.4150233Z test tile_first::tests::tiles_too_narrow_for_the_pockets_are_refused ... ok
+2026-10-29T18:57:04.4189348Z test tile_first::tests::a_vector_plate_is_cut_into_tiles_that_each_have_no_islands ... ok
+2026-10-29T18:57:04.4190314Z test tiles::tests::a_bevelled_seam_leans_and_the_tiles_still_fit_together ... ok
+2026-10-29T18:57:04.4191078Z test tiles::tests::a_bevelled_seam_clearance_is_measured_across_the_face ... ok
+2026-10-29T18:57:04.4191657Z test tiles::tests::rejects_thin_plates ... ok
+2026-10-29T18:57:04.4192188Z test tiles::tests::seam_angle_must_be_within_range ... ok
+2026-10-29T18:57:04.4205072Z test tiles::tests::seam_clearance_is_bounded ... ok
+2026-10-29T18:57:04.4215036Z test tiles::tests::seam_clearance_is_split_evenly_and_connector_rods_span_it ... ok
+2026-10-29T18:57:04.4215739Z test tiles::tests::a_seam_moves_off_a_slot_to_cross_more_material ... ok
+2026-10-29T18:57:04.4216311Z test tiles::tests::material_is_added_where_no_connector_fits ... ok
+2026-10-29T18:57:04.4217582Z test tiles::tests::splits_a_plate_and_drills_watertight_tiles ... ok
+2026-10-29T18:57:04.4236043Z test tiles::tests::tiles_are_checked_as_stored_in_the_file ... ok
+2026-10-29T18:57:04.4236818Z test tiles::tests::the_connector_depth_sets_the_pockets_and_the_rod ... ok
+2026-10-29T18:57:04.4255679Z test trace::tests::rasterising_at_higher_resolution_scales_the_area ... ok
+2026-10-29T18:57:04.4256443Z test trace::tests::ring_traces_to_two_loops_and_round_trips ... ok
+2026-10-29T18:57:04.4256992Z test trace::tests::square_keeps_four_sharp_corners ... ok
+2026-10-29T18:57:04.4257503Z test transform::tests::crops_margins ... ok
+2026-10-29T18:57:04.4257943Z test transform::tests::flips_mirror ... ok
+2026-10-29T18:57:04.4258299Z test transform::tests::free_rotation_grows_the_canvas_and_fills_white ... ok
+2026-10-29T18:57:04.4258793Z test vector_stencil::spread::symmetric_route_ranking_ignores_math_roundoff_and_has_stable_endpoint_ties ... ok
+2026-10-29T18:57:04.4259318Z test vector_stencil::tests::delete_islands_threshold_is_in_square_millimetres ... ok
+2026-10-29T18:57:04.4266653Z test transform::tests::quarter_turn_is_clockwise_and_four_is_identity ... ok
+2026-10-29T18:57:04.4340117Z test vector_stencil::tests::extra_bridges_leave_an_island_in_different_directions ... ok
+2026-10-29T18:57:04.4345821Z test vector_stencil::tests::invalid_first_layer_taper_intervals_cannot_produce_a_model ... ok
+2026-10-29T18:57:04.4375474Z test tiles::tests::tiles_get_their_own_bridges ... ok
+2026-10-29T18:57:04.4376090Z test vector_stencil::tests::rejects_degenerate_input ... ok
+2026-10-29T18:57:04.4745945Z test vector_stencil::tests::first_layer_flare_tapers_back_without_changing_bridge_selection ... ok
+2026-10-29T18:57:04.4936382Z test vector_stencil::tests::spread_bridges_never_cost_an_island_a_bridge ... ok
+2026-10-29T18:57:04.5135976Z test vector_stencil::tests::thin_rope_is_widened_by_minimum_contact ... ok
+2026-10-29T18:57:04.5515947Z test vector_stencil::tests::spread_passes_bridge_every_island_for_any_pass_count ... ok
+2026-10-29T18:57:04.5516752Z test zip::tests::crc_known_value ... ok
+2026-10-29T18:57:04.5517372Z test zip::tests::dos_stamp_is_the_given_local_time ... ok
+2026-10-29T18:57:04.5517951Z test zip::tests::entries_carry_the_current_time_not_1980 ... ok
+2026-10-29T18:57:04.5595412Z test vector_stencil::tests::vector_overhang_angle_measures_actual_layers_without_changing_mesh ... ok
+2026-10-29T18:57:04.7208169Z test vector_stencil::tests::random_shapes_always_build_island_free_watertight_plates ... ok
+2026-10-29T18:57:04.9327657Z test hardware::tests::pads_and_mounts_on_a_framed_plate ... ok
+2026-10-29T18:57:04.9328158Z
+2026-10-29T18:57:04.9328564Z test result: ok. 153 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 6.51s
+2026-10-29T18:57:04.9328880Z
+2026-10-29T18:57:04.9431448Z      Running tests/findings_parity.rs (target/release/build/stencil-core/89f21a733c629f3d/out/findings_parity-89f21a733c629f3d)
+2026-10-29T18:57:04.9440071Z
+2026-10-29T18:57:04.9440403Z running 1 test
+2026-10-29T18:57:04.9442861Z test findings_match_the_shared_cases ... ok
+2026-10-29T18:57:04.9443132Z
+2026-10-29T18:57:04.9443367Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-10-29T18:57:04.9443603Z
+2026-10-29T18:57:04.9444501Z      Running unittests src/main.rs (target/release/build/stencil-launcher/7bfe109febab8d84/out/stencil_studio-7bfe109febab8d84)
+2026-10-29T18:57:04.9452338Z
+2026-10-29T18:57:04.9452434Z running 0 tests
+2026-10-29T18:57:04.9452569Z
+2026-10-29T18:57:04.9453114Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-10-29T18:57:04.9453375Z
+2026-10-29T18:57:04.9455212Z      Running unittests src/lib.rs (target/release/build/stencil-wasm/2f6376e38d9c328c/out/stencil_wasm-2f6376e38d9c328c)
+2026-10-29T18:57:04.9462108Z
+2026-10-29T18:57:04.9462290Z running 0 tests
+2026-10-29T18:57:04.9462417Z
+2026-10-29T18:57:04.9462642Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-10-29T18:57:04.9462934Z
+2026-10-29T18:57:04.9463295Z    Doc-tests stencil_core
+2026-10-29T18:57:05.0656431Z
+2026-10-29T18:57:05.0657064Z running 0 tests
+2026-10-29T18:57:05.0657278Z
+2026-10-29T18:57:05.0657535Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-10-29T18:57:05.0657842Z
+2026-10-29T18:57:05.0722012Z ##[group]Run cargo build --release -p stencil-cli
+2026-10-29T18:57:05.0722328Z cargo build --release -p stencil-cli
+2026-10-29T18:57:05.0722896Z printf '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><rect width="60" height="60" fill="white"/><circle cx="30" cy="30" r="18" fill="none" stroke="black" stroke-width="6"/></svg>' > ring.svg
+2026-10-29T18:57:05.0723485Z ./target/release/stencil ring.svg --thickness 2 -o ring.stl
+2026-10-29T18:57:05.0723747Z test -s ring.stl
+2026-10-29T18:57:05.0740951Z shell: /usr/bin/bash -e {0}
+2026-10-29T18:57:05.0741141Z env:
+2026-10-29T18:57:05.0741314Z   CARGO_HOME: /home/runner/.cargo
+2026-10-29T18:57:05.0741513Z   CARGO_INCREMENTAL: 0
+2026-10-29T18:57:05.0741690Z   CARGO_TERM_COLOR: always
+2026-10-29T18:57:05.0741868Z   CACHE_ON_FAILURE: false
+2026-10-29T18:57:05.0742038Z ##[endgroup]
+2026-10-29T18:57:05.1185827Z    Compiling stencil-cli v2.9.4 (/home/runner/work/stenciii/stenciii/crates/stencil-cli)
+2026-10-29T18:57:37.1377236Z     Finished `release` profile [optimized] target(s) in 32.05s
+2026-10-29T18:57:37.3731069Z verified: 1 islands found, 0 remaining, watertight true, 11304 triangles
+2026-10-29T18:57:37.3753171Z wrote ring.stl in 226 ms
+2026-10-29T18:57:37.3846534Z Post job cleanup.
+2026-10-29T18:57:37.4776397Z Cache up-to-date.
+2026-10-29T18:57:37.4925541Z Post job cleanup.
+2026-10-29T18:57:37.5591714Z [command]/usr/bin/git version
+2026-10-29T18:57:37.5631220Z git version 2.56.0
+2026-10-29T18:57:37.5666666Z Temporarily overriding HOME='/home/runner/work/_temp/6708aec7-c30b-4f75-9a30-0674826360ba' before making global git config changes
+2026-10-29T18:57:37.5667516Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-29T18:57:37.5672022Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/stenciii/stenciii
+2026-10-29T18:57:37.5708994Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-29T18:57:37.5737150Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-29T18:57:37.5968060Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-29T18:57:37.5988603Z http.https://github.com/.extraheader
+2026-10-29T18:57:37.5997157Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-29T18:57:37.6024197Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-29T18:57:37.6245461Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-29T18:57:37.6277861Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-29T18:57:37.6612809Z Cleaning up orphan processes
+2026-10-29T18:57:37.6839416Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

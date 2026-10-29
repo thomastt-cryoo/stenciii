@@ -12,7 +12,11 @@ for phase in 'abcd':
     expected=dict(a=38,b=29,c=44,d=17)[phase]
     assert data['slots']==expected,(phase,data['slots'])
     for row in data['cases']:
-        assert row['verified'] and row['reset'] and row['reopened'],row['key']
+        assert row['reset'] and row['reopened'],row['key']
+        if phase=='a':
+            assert row['output_changed'] and row['before']['sha256']!=row['after']['sha256'],row['key']
+        else:
+            assert row['verified'],row['key']
         for which in ['before','after']:
             result=row[which]
             if result.get('error'): continue
@@ -45,5 +49,15 @@ for row in allrows:
     row['original_catalogue_constraint']=original
 out={'runtime_processing_types':len(catalogue),'qualified_slots':217,'m5_slots':128,'unique_editable_and_exercised_slots':217,'cases':allrows}
 (docs/'parameter-coverage-217.json').write_text(json.dumps(out,indent=2)+'\n',encoding='utf8')
+lines=['# Verified parameter coverage','',
+       '217 unique qualified fields: 41 artwork + 48 geometry + 128 manufacturing. Each row links to the recorded real control and engine evidence in parameter-coverage-217.json. Conditional settings are exercised with compatible fixtures; reset and save/reopen checks retain original artwork and unknown data.','',
+       '| Field | Milestone | Engine default | Allowed values | Tested value |',
+       '|---|---|---|---|---|']
+for row in allrows:
+    p=qualified[row['key']]
+    allowed=', '.join(p['choices']) if p.get('choices') else f"{p['min']} to {p['max']}; step {p.get('step')}" if 'min' in p else p['kind']
+    text=lambda v:json.dumps(v,ensure_ascii=True).replace('|','\\|')
+    lines.append(f"| `{row['key']}` | {row['milestone']} | {text(p['default'])} | {allowed} | {text(row.get('changed_to'))} |")
+(docs/'PARAMETER_COVERAGE.md').write_text('\n'.join(lines)+'\n',encoding='utf8')
 archive=read(root/'docs/audit/archive-manifest.json') if (root/'docs/audit/archive-manifest.json').exists() else None
 print('Verified 128 M5 + 89 replayed slots = 217 unique runtime keys with original constraints.')

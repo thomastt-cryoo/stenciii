@@ -1756,7 +1756,7 @@
       "reopened": true,
       "output_changed": true,
       "before": {
-        "sha256": "e0566609f26c17e6dec55c6dc3055403300b6869cba0603aa6b42370278e16ec",
+        "sha256": "a6134d00cef86f01cb76089c6f44333f8aab5fe7f2d16aafaa1b4f767d0f3a24",
         "info": {
           "files": {
             "colour_1.stl": 31084,
@@ -1769,7 +1769,105 @@
             "colours": 3,
             "registration": {
               "diameter_mm": 4,
-              "holes": 3
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
             }
           }
         },
@@ -1785,9 +1883,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                16
+                22,
+                46,
+                44
               ],
               "crc": 1584399271,
               "format": "binary STL",
@@ -1824,9 +1922,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                16
+                22,
+                46,
+                44
               ],
               "crc": 2160891668,
               "format": "binary STL",
@@ -1863,9 +1961,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                16
+                22,
+                46,
+                44
               ],
               "crc": 212679843,
               "format": "binary STL",
@@ -1902,9 +2000,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                16
+                22,
+                46,
+                44
               ],
               "crc": 3834699894,
               "format": "binary STL",
@@ -1939,7 +2037,7 @@
         }
       },
       "after": {
-        "sha256": "a2540b3c932c43947dec06029d83b0079bb72ba9bcde7a8f0956c2e93cb861eb",
+        "sha256": "00795a1c9483e60cbb7286e5d7a8dbdf4f67150847fe77bec36e972ce40142c6",
         "info": {
           "files": {
             "colour_1.stl": 21284,
@@ -1952,7 +2050,81 @@
             "colours": 3,
             "registration": {
               "diameter_mm": 4,
-              "holes": 2
+              "holes": 2,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
             }
           }
         },
@@ -1968,9 +2140,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                16
+                22,
+                46,
+                44
               ],
               "crc": 2724712883,
               "format": "binary STL",
@@ -2007,9 +2179,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                16
+                22,
+                46,
+                44
               ],
               "crc": 3559461878,
               "format": "binary STL",
@@ -2046,9 +2218,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                16
+                22,
+                46,
+                44
               ],
               "crc": 595037289,
               "format": "binary STL",
@@ -2085,9 +2257,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                16
+                22,
+                46,
+                44
               ],
               "crc": 3766137068,
               "format": "binary STL",
@@ -2139,7 +2311,7 @@
       "reopened": true,
       "output_changed": true,
       "before": {
-        "sha256": "b2c8941f8be370b3e5d2c8b77943331ea654e72226022b6ea10c16c53c072cfb",
+        "sha256": "b8fc8903e67215ef988b34b9623993372571a4b8ed916a48c0539b68fd024b39",
         "info": {
           "files": {
             "colour_1.stl": 31084,
@@ -2152,7 +2324,105 @@
             "colours": 3,
             "registration": {
               "diameter_mm": 4,
-              "holes": 3
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
             }
           }
         },
@@ -2168,9 +2438,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                18
+                22,
+                46,
+                46
               ],
               "crc": 1584399271,
               "format": "binary STL",
@@ -2207,9 +2477,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                18
+                22,
+                46,
+                46
               ],
               "crc": 2160891668,
               "format": "binary STL",
@@ -2246,9 +2516,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                18
+                22,
+                46,
+                46
               ],
               "crc": 212679843,
               "format": "binary STL",
@@ -2285,9 +2555,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                18
+                22,
+                46,
+                46
               ],
               "crc": 3834699894,
               "format": "binary STL",
@@ -2322,7 +2592,7 @@
         }
       },
       "after": {
-        "sha256": "0565613ef3f7f6a5865b4c97261fce74854b97423243b615d18fac053e6b4ce4",
+        "sha256": "7e3f7ce20891edce18ab16f2a9a66c03ebc69170144a66d7220a637cfb57d168",
         "info": {
           "files": {
             "colour_1.stl": 31084,
@@ -2335,7 +2605,105 @@
             "colours": 3,
             "registration": {
               "diameter_mm": 3.5,
-              "holes": 3
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
             }
           }
         },
@@ -2351,9 +2719,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                18
+                22,
+                46,
+                46
               ],
               "crc": 3041553241,
               "format": "binary STL",
@@ -2390,9 +2758,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                18
+                22,
+                46,
+                46
               ],
               "crc": 2263204228,
               "format": "binary STL",
@@ -2429,9 +2797,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                18
+                22,
+                46,
+                46
               ],
               "crc": 2442144538,
               "format": "binary STL",
@@ -2468,9 +2836,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                18
+                22,
+                46,
+                46
               ],
               "crc": 900667842,
               "format": "binary STL",
@@ -2522,7 +2890,7 @@
       "reopened": true,
       "output_changed": true,
       "before": {
-        "sha256": "529c2c57ca890c2b74cf152717e4946c19aadb90062ba5f69e763d2340809758",
+        "sha256": "063f9e37137b4d026692efa0d4bd61c9e58fc6c4d35c5066d82d7b73dbbc3876",
         "info": {
           "files": {
             "colour_1.stl": 31084,
@@ -2535,7 +2903,105 @@
             "colours": 3,
             "registration": {
               "diameter_mm": 4,
-              "holes": 3
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
             }
           }
         },
@@ -2551,9 +3017,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                22
+                22,
+                46,
+                48
               ],
               "crc": 1584399271,
               "format": "binary STL",
@@ -2590,9 +3056,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                22
+                22,
+                46,
+                48
               ],
               "crc": 2160891668,
               "format": "binary STL",
@@ -2629,9 +3095,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                22
+                22,
+                46,
+                48
               ],
               "crc": 212679843,
               "format": "binary STL",
@@ -2668,9 +3134,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                22
+                22,
+                46,
+                48
               ],
               "crc": 3834699894,
               "format": "binary STL",
@@ -2705,7 +3171,7 @@
         }
       },
       "after": {
-        "sha256": "7b11aad4bf0937ebe212a6a2510757a68681c4ca564023646341864998398f85",
+        "sha256": "c738a9a9c27ca21096180710140cf03f2d4cfe41de51f02e3d2f09bcaf00029c",
         "info": {
           "files": {
             "colour_1.stl": 31084,
@@ -2718,7 +3184,105 @@
             "colours": 3,
             "registration": {
               "diameter_mm": 4,
-              "holes": 3
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      62.5
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      62.5
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      62.5
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      62.5
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      62.5
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      62.5
+                    ]
+                  ]
+                }
+              ]
             }
           }
         },
@@ -2734,9 +3298,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                22
+                22,
+                46,
+                48
               ],
               "crc": 63344998,
               "format": "binary STL",
@@ -2773,9 +3337,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                22
+                22,
+                46,
+                48
               ],
               "crc": 2394543832,
               "format": "binary STL",
@@ -2812,9 +3376,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                22
+                22,
+                46,
+                48
               ],
               "crc": 292737620,
               "format": "binary STL",
@@ -2851,9 +3415,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                22
+                22,
+                46,
+                48
               ],
               "crc": 3834699894,
               "format": "binary STL",
@@ -2902,7 +3466,7 @@
       "reopened": true,
       "output_changed": true,
       "before": {
-        "sha256": "f483fee01ceafc64787dbeee1d2482687279f9c8c7b54c1292e0ed79c851d0d7",
+        "sha256": "e59754ac579b7bb7c04a34771ea0b5a534d1917eef429cc38db5b98bcddbf682",
         "info": {
           "files": {
             "colour_1.stl": 31084,
@@ -2915,7 +3479,105 @@
             "colours": 3,
             "registration": {
               "diameter_mm": 4,
-              "holes": 3
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
             }
           }
         },
@@ -2931,9 +3593,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                24
+                22,
+                46,
+                50
               ],
               "crc": 1584399271,
               "format": "binary STL",
@@ -2970,9 +3632,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                24
+                22,
+                46,
+                50
               ],
               "crc": 2160891668,
               "format": "binary STL",
@@ -3009,9 +3671,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                24
+                22,
+                46,
+                50
               ],
               "crc": 212679843,
               "format": "binary STL",
@@ -3048,9 +3710,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                24
+                22,
+                46,
+                50
               ],
               "crc": 3834699894,
               "format": "binary STL",
@@ -3085,7 +3747,7 @@
         }
       },
       "after": {
-        "sha256": "64c8dacc44a05d27985b85ae33f02ecc8ce184bfec9ace0fc0292670cd20da11",
+        "sha256": "89402f26183bf67eef3aecd1c2e9142cc94f37183759d02d72941f935bfe0568",
         "info": {
           "files": {
             "colour_1.stl": 31084,
@@ -3097,7 +3759,105 @@
             "colours": 3,
             "registration": {
               "diameter_mm": 4,
-              "holes": 3
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
             }
           }
         },
@@ -3113,9 +3873,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                24
+                22,
+                46,
+                50
               ],
               "crc": 1584399271,
               "format": "binary STL",
@@ -3152,9 +3912,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                24
+                22,
+                46,
+                50
               ],
               "crc": 2160891668,
               "format": "binary STL",
@@ -3191,9 +3951,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                24
+                22,
+                46,
+                50
               ],
               "crc": 212679843,
               "format": "binary STL",
@@ -3245,7 +4005,7 @@
       "reopened": true,
       "output_changed": true,
       "before": {
-        "sha256": "1d1dfabbf3b17bc6b037388b299d77444267a38954656ff9c6ca7d11da53ccdf",
+        "sha256": "8ccc8837f2444a59f21b12da19cc9eff0df575f2b1fd41ede7becb1e224d6dac",
         "info": {
           "files": {
             "colour_1.stl": 31084,
@@ -3258,7 +4018,105 @@
             "colours": 3,
             "registration": {
               "diameter_mm": 4,
-              "holes": 3
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
             }
           }
         },
@@ -3274,9 +4132,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                26
+                22,
+                46,
+                52
               ],
               "crc": 1584399271,
               "format": "binary STL",
@@ -3313,9 +4171,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                26
+                22,
+                46,
+                52
               ],
               "crc": 2160891668,
               "format": "binary STL",
@@ -3352,9 +4210,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                26
+                22,
+                46,
+                52
               ],
               "crc": 212679843,
               "format": "binary STL",
@@ -3391,9 +4249,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                26
+                22,
+                46,
+                52
               ],
               "crc": 3834699894,
               "format": "binary STL",
@@ -3428,7 +4286,7 @@
         }
       },
       "after": {
-        "sha256": "5318cd22d446e5ab0903bfca6c73a4f3cc7616f72ac29f8557f5080155a987a1",
+        "sha256": "6d2652c2b141e65c9d5cf3362dcdcdc6a7150f8b7d77b5096f7ffd727e3d66e9",
         "info": {
           "files": {
             "colour_1.stl": 31084,
@@ -3441,7 +4299,105 @@
             "colours": 3,
             "registration": {
               "diameter_mm": 4,
-              "holes": 3
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
             }
           }
         },
@@ -3457,9 +4413,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                26
+                22,
+                46,
+                52
               ],
               "crc": 1584399271,
               "format": "binary STL",
@@ -3496,9 +4452,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                26
+                22,
+                46,
+                52
               ],
               "crc": 2160891668,
               "format": "binary STL",
@@ -3535,9 +4491,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                26
+                22,
+                46,
+                52
               ],
               "crc": 212679843,
               "format": "binary STL",
@@ -3574,9 +4530,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                26
+                22,
+                46,
+                52
               ],
               "crc": 4046032707,
               "format": "binary STL",
@@ -3628,7 +4584,7 @@
       "reopened": true,
       "output_changed": true,
       "before": {
-        "sha256": "61333cb05c191b2055f2ec515bca24330b334a7edc1b3563b43cf662d89b203e",
+        "sha256": "c7c8c86263736dd03e9253c6fc5d9b86881f1224ad69b8b7f6adf80a90c68bce",
         "info": {
           "files": {
             "colour_1.stl": 31084,
@@ -3641,7 +4597,105 @@
             "colours": 3,
             "registration": {
               "diameter_mm": 4,
-              "holes": 3
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
             }
           }
         },
@@ -3657,9 +4711,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                28
+                22,
+                46,
+                52
               ],
               "crc": 1584399271,
               "format": "binary STL",
@@ -3696,9 +4750,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                28
+                22,
+                46,
+                52
               ],
               "crc": 2160891668,
               "format": "binary STL",
@@ -3735,9 +4789,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                28
+                22,
+                46,
+                52
               ],
               "crc": 212679843,
               "format": "binary STL",
@@ -3774,9 +4828,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                28
+                22,
+                46,
+                52
               ],
               "crc": 3834699894,
               "format": "binary STL",
@@ -3811,7 +4865,7 @@
         }
       },
       "after": {
-        "sha256": "065fe275ce0c689e355d4c430ceb62556759d6696517d05f0fd4f346a04edf41",
+        "sha256": "698ac44bc28a632f3c9b6225013b6a4138b210b4e52f7509ef590d353d42b69b",
         "info": {
           "files": {
             "colour_1.stl": 31084,
@@ -3824,7 +4878,105 @@
             "colours": 3,
             "registration": {
               "diameter_mm": 4,
-              "holes": 3
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
             }
           }
         },
@@ -3840,9 +4992,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                28
+                22,
+                46,
+                54
               ],
               "crc": 1584399271,
               "format": "binary STL",
@@ -3879,9 +5031,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                28
+                22,
+                46,
+                54
               ],
               "crc": 2160891668,
               "format": "binary STL",
@@ -3918,9 +5070,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                28
+                22,
+                46,
+                54
               ],
               "crc": 212679843,
               "format": "binary STL",
@@ -3957,9 +5109,9 @@
                 2026,
                 10,
                 29,
-                19,
-                25,
-                28
+                22,
+                46,
+                54
               ],
               "crc": 962330832,
               "format": "binary STL",

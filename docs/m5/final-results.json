@@ -1,0 +1,4388 @@
+{
+  "accepted_source_commit": "001f3d6d79167d83d366c16bf9a187da4e140fd4",
+  "qualified_parameter_slots": 217,
+  "m5_new_slots": 128,
+  "processing_types": 24,
+  "pinned_original_files": 107,
+  "rust_tests": 167,
+  "linux_ci_browser_tests": 176,
+  "windows_full_first_run": {
+    "passed": 173,
+    "failed": 2
+  },
+  "windows_corrected_targeted_passed": 15,
+  "windows_unique_tests_covered": 176,
+  "customer_production_browser_tests": 91,
+  "native_corpus": {
+    "cases": 48,
+    "valid": 46,
+    "expected_blank_refusals": 2
+  },
+  "manufacturing_modes": {
+    "field_fixtures": 256,
+    "bitmap_st_mt_cases": 64,
+    "valid_parts_native_st_mt_cases": 191,
+    "expected_constraint_refusals": 1,
+    "all_structural_checks_passed": true,
+    "st_mt_exact_triangle_mismatches": 43,
+    "native_leaf_exact_triangle_mismatches": 83,
+    "mismatch_details": [
+      {
+        "fixture": "tile_layout-width_mm-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c1.stl": {
+            "triangles": [
+              380,
+              380
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "tile_layout-segments-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              1928,
+              1928
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "tiles-reinforce-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              120,
+              120
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              120,
+              120
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-pad_thread-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-pad_height-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-pad_height-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              15714,
+              15714
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-thread_clearance-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-long_edge-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-long_edge-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              19214,
+              19214
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-mount_screw-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-mount_screw-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-mount_threaded-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-mount_threaded-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              35970,
+              35970
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-mount_clearance-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-mount_clearance-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-hole_spacing-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-hole_spacing-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-joiner_offset-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-joiner_offset-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-extend-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-extend-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-segments-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              13506,
+              13506
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "pads-segments-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              17570,
+              17570
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-width-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "ring_1_top_2.stl": {
+            "triangles": [
+              588,
+              588
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_1_bottom_2.stl": {
+            "triangles": [
+              584,
+              584
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "ring_1_top_2.stl": {
+            "triangles": [
+              588,
+              588
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-rings-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "ring_1_bottom_2.stl": {
+            "triangles": [
+              584,
+              584
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-rings-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "ring_1_corner_bl.stl": {
+            "triangles": [
+              446,
+              446
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_2_left_2.stl": {
+            "triangles": [
+              632,
+              632
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_2_right_3.stl": {
+            "triangles": [
+              556,
+              556
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_2_corner_tl.stl": {
+            "triangles": [
+              406,
+              406
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_2_left_1.stl": {
+            "triangles": [
+              642,
+              642
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_2_top_1.stl": {
+            "triangles": [
+              644,
+              644
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_2_right_2.stl": {
+            "triangles": [
+              616,
+              616
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_2_left_3.stl": {
+            "triangles": [
+              548,
+              548
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "ring_1_corner_bl.stl": {
+            "triangles": [
+              446,
+              446
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_2_left_2.stl": {
+            "triangles": [
+              632,
+              632
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_2_top_3.stl": {
+            "triangles": [
+              548,
+              548
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_2_corner_tl.stl": {
+            "triangles": [
+              406,
+              406
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_2_right_2.stl": {
+            "triangles": [
+              616,
+              616
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_2_left_3.stl": {
+            "triangles": [
+              548,
+              548
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-slab_length-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-slab_length-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "ring_1_bottom_1.stl": {
+            "triangles": [
+              780,
+              780
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "ring_1_top_1.stl": {
+            "triangles": [
+              784,
+              784
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_1_bottom_1.stl": {
+            "triangles": [
+              780,
+              780
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-gap-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_1_bottom_2.stl": {
+            "triangles": [
+              584,
+              584
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-gap-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "ring_1_bottom_2.stl": {
+            "triangles": [
+              584,
+              584
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "ring_1_bottom_2.stl": {
+            "triangles": [
+              584,
+              584
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_1_corner_br.stl": {
+            "triangles": [
+              380,
+              380
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-joiner_thickness-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-joiner_thickness-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": true,
+        "st_mt_differences": {
+          "ring_1_bottom_1.stl": {
+            "triangles": [
+              480,
+              480
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {}
+      },
+      {
+        "fixture": "ring-hardware-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": true,
+        "st_mt_differences": {
+          "ring_1_bottom_1.stl": {
+            "triangles": [
+              480,
+              480
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {}
+      },
+      {
+        "fixture": "ring-screw_length-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_1_bottom_2.stl": {
+            "triangles": [
+              584,
+              584
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-screw_length-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_1_bottom_1.stl": {
+            "triangles": [
+              480,
+              480
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-nut_clearance-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "ring_1_bottom_2.stl": {
+            "triangles": [
+              584,
+              584
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-nut_clearance-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "ring_1_bottom_2.stl": {
+            "triangles": [
+              584,
+              584
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-tip_taper-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-tip_taper-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "ring_1_bottom_2.stl": {
+            "triangles": [
+              584,
+              584
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_1_bottom_1.stl": {
+            "triangles": [
+              480,
+              480
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-tip_pitches-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_1_bottom_2.stl": {
+            "triangles": [
+              584,
+              584
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-number_parts-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_1_bottom_2.stl": {
+            "triangles": [
+              584,
+              584
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-number_parts-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-number_size-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "ring_1_bottom_2.stl": {
+            "triangles": [
+              584,
+              584
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-number_size-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "ring_1_bottom_2.stl": {
+            "triangles": [
+              584,
+              584
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_1_top_2.stl": {
+            "triangles": [
+              588,
+              588
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_1_top_2.stl": {
+            "triangles": [
+              588,
+              588
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-pocket_depth-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-pocket_depth-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-wall_holes-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "ring_1_bottom_1.stl": {
+            "triangles": [
+              380,
+              380
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-hole_spacing-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-hole_spacing-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "ring_1_bottom_2.stl": {
+            "triangles": [
+              684,
+              684
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-segments-before",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "ring-segments-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "ring_1_corner_tl.stl": {
+            "triangles": [
+              470,
+              470
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "ring_1_bottom_1.stl": {
+            "triangles": [
+              608,
+              608
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_1_corner_tl.stl": {
+            "triangles": [
+              470,
+              470
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "ring_nut_M4.stl": {
+            "triangles": [
+              2712,
+              2712
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              1306,
+              1306
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "hardware-length-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "bolt_M4x25.stl": {
+            "triangles": [
+              13846,
+              13846
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "hardware-segments-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "nut_M4.stl": {
+            "triangles": [
+              2712,
+              2712
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "bolt_M4x20.stl": {
+            "triangles": [
+              14806,
+              14806
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "nut_M4.stl": {
+            "triangles": [
+              2712,
+              2712
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-max_x-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-max_x-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              8632,
+              8632
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c3.stl": {
+            "triangles": [
+              616,
+              618
+            ],
+            "volume_delta_mm3": -1.4551915228366852e-11,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c3.stl": {
+            "triangles": [
+              618,
+              620
+            ],
+            "volume_delta_mm3": 2.1827872842550278e-11,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              572,
+              572
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c3.stl": {
+            "triangles": [
+              616,
+              616
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-max_y-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-max_y-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9916
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-seam_gap-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-seam_gap-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9744,
+              9742
+            ],
+            "volume_delta_mm3": 7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9738,
+              9738
+            ],
+            "volume_delta_mm3": 5.093170329928398e-11,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9690,
+              9690
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9744,
+              9742
+            ],
+            "volume_delta_mm3": 7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9738,
+              9738
+            ],
+            "volume_delta_mm3": 5.093170329928398e-11,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-connector-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9916
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-connector-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              10014,
+              10014
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              10206,
+              10204
+            ],
+            "volume_delta_mm3": -2.9103830456733704e-11,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              10206,
+              10206
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              10014,
+              10014
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              10206,
+              10204
+            ],
+            "volume_delta_mm3": -2.9103830456733704e-11,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c1.stl": {
+            "triangles": [
+              10012,
+              10012
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              10206,
+              10206
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-connector_d-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9916
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-connector_d-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9912,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9912,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-depth-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-depth-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9916
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-clearance-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9916
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-clearance-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9914,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9914
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-segments-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": true,
+        "st_mt_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {}
+      },
+      {
+        "fixture": "export-segments-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": true,
+        "st_mt_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              12674,
+              12674
+            ],
+            "volume_delta_mm3": 7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              12626,
+              12626
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              12676,
+              12674
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {}
+      },
+      {
+        "fixture": "export-pad_count-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9914
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-pad_count-after",
+        "st_mt_identical": true,
+        "native_leaf_identical": false,
+        "st_mt_differences": {},
+        "st_native_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              8780,
+              8780
+            ],
+            "volume_delta_mm3": 1.8189894035458565e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-pad_thread-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9916
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-pad_thread-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              5998,
+              5998
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              5996,
+              5994
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              5950,
+              5950
+            ],
+            "volume_delta_mm3": 1.8189894035458565e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              5998,
+              5996
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              5996,
+              5994
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              5950,
+              5950
+            ],
+            "volume_delta_mm3": -5.4569682106375694e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c1.stl": {
+            "triangles": [
+              5948,
+              5948
+            ],
+            "volume_delta_mm3": -3.637978807091713e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-pad_height-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9916
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-pad_height-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              11174,
+              11172
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              11128,
+              11128
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              11178,
+              11178
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              11174,
+              11172
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              11178,
+              11178
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-thread_clearance-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9916
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-thread_clearance-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9916
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-mount_screw-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9914
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-mount_screw-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9916
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9912,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-mount_clearance-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-mount_clearance-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": 7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": 7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": 7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-mount_threaded-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9914
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-mount_threaded-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              32188,
+              32188
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              32234,
+              32234
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              32238,
+              32238
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              32188,
+              32188
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              32234,
+              32234
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-mount_offset-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9916
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-mount_offset-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9814,
+              9814
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9814,
+              9814
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c1.stl": {
+            "triangles": [
+              9766,
+              9766
+            ],
+            "volume_delta_mm3": 3.637978807091713e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9768,
+              9768
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-mount_extend-before",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9914
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "fixture": "export-mount_extend-after",
+        "st_mt_identical": false,
+        "native_leaf_identical": false,
+        "st_mt_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9916
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        },
+        "st_native_differences": {
+          "stencil_r1c2.stl": {
+            "triangles": [
+              9914,
+              9912
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r2c2.stl": {
+            "triangles": [
+              9916,
+              9916
+            ],
+            "volume_delta_mm3": -7.275957614183426e-12,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          },
+          "stencil_r1c1.stl": {
+            "triangles": [
+              9868,
+              9868
+            ],
+            "volume_delta_mm3": 0.0,
+            "same_bounds": true,
+            "components": [
+              1,
+              1
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "production_build": {
+    "production_only": true,
+    "legacy_harness_emitted": false,
+    "regression_api_emitted": false,
+    "files": [
+      {
+        "path": "assets/BufferGeometryUtils-BYokyORa.js",
+        "bytes": 506260,
+        "sha256": "16bcb47b3142ea2999c5f2140c77e182515e2eabbf740b0633bbda36702adfdd"
+      },
+      {
+        "path": "assets/engine.worker-QuVHtXTj.js",
+        "bytes": 4350,
+        "sha256": "2ff4ffc44920b19a83dbc3f3a544c3939d90c1eeddbf935394b04e2756cfa3b4"
+      },
+      {
+        "path": "assets/index-Cwsnelht.css",
+        "bytes": 36188,
+        "sha256": "eb7094f89756f2f52a485ee27cd17fb46e1a50ebaa0e1a36797916ffc217c302"
+      },
+      {
+        "path": "assets/index-Db8ZTrP6.js",
+        "bytes": 500067,
+        "sha256": "4337878b3a195968e8d72af3c23a6a6827d340c7171e399127c5ebbcc1265c1b"
+      },
+      {
+        "path": "assets/meshAudit.worker-DYZaH-ut.js",
+        "bytes": 2454,
+        "sha256": "e6f293326d6fbe99e39f9cb78edfcc1615cebe6cec4fca3a7ceee53893ef615f"
+      },
+      {
+        "path": "assets/MeshPreview-DFNW4vJM.js",
+        "bytes": 9928,
+        "sha256": "60e2bc7f3a9ce9b105d54bd5c7b45defdf5684df61b0096717af7d8cc09d4123"
+      },
+      {
+        "path": "assets/stencil_wasm-Cvd80Ojq.js",
+        "bytes": 7028,
+        "sha256": "478bc4f8b844d77fb2fdd65198e1635ac71b0581dbd17d34a0b3bbf295a431d0"
+      },
+      {
+        "path": "assets/stencil_wasm_bg-Lm8yXMxL.wasm",
+        "bytes": 4241792,
+        "sha256": "298ea2271d93a75c00c053664b7b7f65910e1ce4148d0b5647c15d8b1bef04cf"
+      },
+      {
+        "path": "assets/Viewer3D-C_qTuI6h.js",
+        "bytes": 13479,
+        "sha256": "e4053801e88c4546dd5b81af4af13444e1f6dc1c3b8cfa61535efc578f4caf51"
+      },
+      {
+        "path": "assets/zip.worker-DDOehMQV.js",
+        "bytes": 1889,
+        "sha256": "98eda6b3bf805aad46c3c3e587c1250bb0179360e500b12ad93730288657181d"
+      },
+      {
+        "path": "index.html",
+        "bytes": 413,
+        "sha256": "204e67cb201fb329125659f9b6d45c609eeb6ff3c4a36d5b943fd9fc017619c6"
+      },
+      {
+        "path": "pkg-mt/.gitignore",
+        "bytes": 1,
+        "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+      },
+      {
+        "path": "pkg-mt/package.json",
+        "bytes": 268,
+        "sha256": "b499e085d253561f8090d9e20e2daf42cb440720132bde1e4421988cc9b3108b"
+      },
+      {
+        "path": "pkg-mt/snippets/wasm-bindgen-rayon-38edf6e439f6d70d/src/workerHelpers.js",
+        "bytes": 4562,
+        "sha256": "8a8c0844a50cfcef52c70273b61393d34946e03c3292cf475922f9e34e7614ba"
+      },
+      {
+        "path": "pkg-mt/stencil_wasm.d.ts",
+        "bytes": 5658,
+        "sha256": "4381249bf61a863dd21d2435303181560f2f590d71f8260e380983fdce268570"
+      },
+      {
+        "path": "pkg-mt/stencil_wasm.js",
+        "bytes": 23209,
+        "sha256": "da690f69bd1831dffee48bf8ed23fb58a68c6a418d5247809da0b8362bfda6c4"
+      },
+      {
+        "path": "pkg-mt/stencil_wasm_bg.wasm",
+        "bytes": 4444891,
+        "sha256": "1c95ac4163cdf417fc33ccdc4a760ef649ab85396d84e4a857d927d11015fcb4"
+      },
+      {
+        "path": "pkg-mt/stencil_wasm_bg.wasm.d.ts",
+        "bytes": 2664,
+        "sha256": "4eb054de80376d77b0b88327fe10d01a87116fe935f092972674e66c5e893bfe"
+      }
+    ],
+    "engine_builds": [
+      {
+        "path": "web/pkg/stencil_wasm_bg.wasm",
+        "bytes": 4241792,
+        "sha256": "298ea2271d93a75c00c053664b7b7f65910e1ce4148d0b5647c15d8b1bef04cf"
+      },
+      {
+        "path": "web/public/pkg-mt/stencil_wasm_bg.wasm",
+        "bytes": 4444891,
+        "sha256": "1c95ac4163cdf417fc33ccdc4a760ef649ab85396d84e4a857d927d11015fcb4"
+      }
+    ]
+  },
+  "embedded_windows_package": {
+    "url": "http://127.0.0.1:5210/",
+    "files": [
+      {
+        "path": "assets/BufferGeometryUtils-BYokyORa.js",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "assets/engine.worker-QuVHtXTj.js",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "assets/index-Cwsnelht.css",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "assets/index-Db8ZTrP6.js",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "assets/meshAudit.worker-DYZaH-ut.js",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "assets/MeshPreview-DFNW4vJM.js",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "assets/stencil_wasm-Cvd80Ojq.js",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "assets/stencil_wasm_bg-Lm8yXMxL.wasm",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "assets/Viewer3D-C_qTuI6h.js",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "assets/zip.worker-DDOehMQV.js",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "index.html",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "pkg-mt/.gitignore",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "pkg-mt/package.json",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "pkg-mt/snippets/wasm-bindgen-rayon-38edf6e439f6d70d/src/workerHelpers.js",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "pkg-mt/stencil_wasm.d.ts",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "pkg-mt/stencil_wasm.js",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "pkg-mt/stencil_wasm_bg.wasm",
+        "matches_production_sha256": true,
+        "status": 200
+      },
+      {
+        "path": "pkg-mt/stencil_wasm_bg.wasm.d.ts",
+        "matches_production_sha256": true,
+        "status": 200
+      }
+    ],
+    "coop": "same-origin",
+    "coep": "require-corp",
+    "test_entries_status": 404,
+    "binary_bytes": 16853504,
+    "binary_sha256": "1d793e5b46eef1e68dbbc09ebe90126c1ca87d4d6326825f7cb1d7ae46a2f1f8"
+  },
+  "source_worktree_note": "Production assets were built from accepted source with verification-only documentation/scripts pending; the embedded build label accurately records +dirty. No unpublished engine or app source changes.",
+  "github_ci": {
+    "source_commit": "001f3d6d79167d83d366c16bf9a187da4e140fd4",
+    "url": "https://github.com/thomastt-cryoo/stenciii/actions/runs/40935283394",
+    "jobs": [
+      {
+        "id": 123664072722,
+        "name": "rust",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 40935283394,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run dtolnay/rust-toolchain@stable",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run dtolnay/rust-toolchain@nightly",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run Swatinem/rust-cache@v2",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Run cargo test --release --workspace",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "CLI smoke test",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Post Run Swatinem/rust-cache@v2",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 13
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 14
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 15
+          }
+        ]
+      },
+      {
+        "id": 123665403637,
+        "name": "web",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 40935283394,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run dtolnay/rust-toolchain@stable",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run dtolnay/rust-toolchain@nightly",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run Swatinem/rust-cache@v2",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Install wasm-pack",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Build wasm",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Build threaded wasm",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Patch threaded worker helper",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "Build studio",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "Build native CLI for browser-to-native equivalence checks",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 12
+          },
+          {
+            "name": "End-to-end tests",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 13
+          },
+          {
+            "name": "Build single-binary studio",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 14
+          },
+          {
+            "name": "Run actions/upload-pages-artifact@v3",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 15
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 28
+          },
+          {
+            "name": "Post Run Swatinem/rust-cache@v2",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 29
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 30
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 31
+          }
+        ]
+      },
+      {
+        "id": 123676495469,
+        "name": "deploy",
+        "status": "completed",
+        "conclusion": "failure",
+        "run_id": 40935283394,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/deploy-pages@v4",
+            "status": "completed",
+            "conclusion": "failure",
+            "number": 2
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          }
+        ]
+      }
+    ]
+  },
+  "github_pages_deployment": "failed: HTTP 404, Pages not enabled",
+  "remaining_manufacturing_release_limit": "Certain complex/narrow raster tiles remain invalid and blocked; the additional ring probe retains four degenerate faces in stencil_r1c2.stl.",
+  "m6_started": false
+}

@@ -1,0 +1,537 @@
+{
+  "st": {
+    "threads": {
+      "n": 1,
+      "why": "too few cores to share with the page",
+      "version": "2.9.4"
+    },
+    "info": {
+      "bytes": 156684,
+      "kind": "solid",
+      "stats": {
+        "bridge_mm": 1.2,
+        "bridge_pixels": 16,
+        "bridge_routes_mm": [
+          [
+            [
+              15.5,
+              31.025
+            ],
+            [
+              8.6,
+              31.025
+            ]
+          ],
+          [
+            [
+              78.819,
+              51.656
+            ],
+            [
+              91.4,
+              51.656
+            ]
+          ],
+          [
+            [
+              78.9843,
+              22.9111
+            ],
+            [
+              91.4,
+              22.911100000000005
+            ]
+          ],
+          [
+            [
+              16.0324,
+              50.8519
+            ],
+            [
+              8.6,
+              50.8519
+            ]
+          ],
+          [
+            [
+              44.25,
+              55.8219
+            ],
+            [
+              44.25,
+              68.4
+            ]
+          ],
+          [
+            [
+              60.6269,
+              56.3676
+            ],
+            [
+              48.5945,
+              68.4
+            ]
+          ],
+          [
+            [
+              15.5,
+              21.25
+            ],
+            [
+              8.600000000000001,
+              28.15
+            ]
+          ],
+          [
+            [
+              28.725,
+              21.25
+            ],
+            [
+              28.725,
+              8.600000000000001
+            ]
+          ],
+          [
+            [
+              23.2625,
+              56.9719
+            ],
+            [
+              23.262499999999996,
+              68.4
+            ]
+          ],
+          [
+            [
+              27.3414,
+              55.777
+            ],
+            [
+              39.964400000000005,
+              68.4
+            ]
+          ],
+          [
+            [
+              37.8546,
+              49.5977
+            ],
+            [
+              8.600000000000001,
+              41.75895355510448
+            ]
+          ],
+          [
+            [
+              43.3981,
+              42.4824
+            ],
+            [
+              34.31933828237173,
+              8.600000000000001
+            ]
+          ],
+          [
+            [
+              63.8,
+              54.6
+            ],
+            [
+              55.83256628518316,
+              68.4
+            ]
+          ],
+          [
+            [
+              64.9899,
+              49.2653
+            ],
+            [
+              76.03732419586274,
+              68.4
+            ]
+          ],
+          [
+            [
+              77.6,
+              55.175
+            ],
+            [
+              91.4,
+              63.14243371481684
+            ]
+          ],
+          [
+            [
+              77.025,
+              48.275
+            ],
+            [
+              91.4,
+              44.4232303588026
+            ]
+          ]
+        ],
+        "bridge_strip_width_mm": 1.2,
+        "bridge_strips": 16,
+        "bridges_per_island": 3,
+        "construction": "vector",
+        "first_layer_islands": 6,
+        "first_layer_taper_mm": 1,
+        "flip": false,
+        "grid_h": 0,
+        "grid_w": 0,
+        "height_mm": 77,
+        "islands_deleted": 0,
+        "islands_found": 6,
+        "islands_remaining": 0,
+        "layer_height_mm": 0.2,
+        "layers": 13,
+        "margin_mm": 4,
+        "min_first_layer_width_mm": 0,
+        "overhang_area_mm2": 284.44,
+        "overhang_check_deg": 45,
+        "plate_top_mm": 2.6,
+        "raised_bridges": true,
+        "stl_bytes": 156684,
+        "thickness_mm": 2.4,
+        "threshold": 0,
+        "triangles": 3132,
+        "watertight": true,
+        "width_mm": 100,
+        "z_bridging": "easy"
+      },
+      "tiles": []
+    },
+    "validation": {
+      "format": "binary STL",
+      "bytes": 156684,
+      "triangles": 3132,
+      "vertices": 1542,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          100,
+          77,
+          2.5999999046325684
+        ]
+      ],
+      "size_mm": [
+        100,
+        77,
+        2.5999999046325684
+      ],
+      "signed_volume_mm3": 9461.707815812657,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    }
+  },
+  "mt": {
+    "threads": {
+      "n": 4,
+      "why": "threaded",
+      "version": "2.9.4"
+    },
+    "info": {
+      "bytes": 156684,
+      "kind": "solid",
+      "stats": {
+        "bridge_mm": 1.2,
+        "bridge_pixels": 16,
+        "bridge_strip_width_mm": 1.2,
+        "bridge_strips": 16,
+        "bridges_per_island": 3,
+        "construction": "vector",
+        "first_layer_islands": 6,
+        "first_layer_taper_mm": 1,
+        "flip": false,
+        "grid_h": 0,
+        "grid_w": 0,
+        "height_mm": 77,
+        "islands_deleted": 0,
+        "islands_found": 6,
+        "islands_remaining": 0,
+        "layer_height_mm": 0.2,
+        "layers": 13,
+        "margin_mm": 4,
+        "min_first_layer_width_mm": 0,
+        "overhang_area_mm2": 284.44,
+        "overhang_check_deg": 45,
+        "plate_top_mm": 2.6,
+        "raised_bridges": true,
+        "stl_bytes": 156684,
+        "thickness_mm": 2.4,
+        "threshold": 0,
+        "triangles": 3132,
+        "watertight": true,
+        "width_mm": 100,
+        "z_bridging": "easy"
+      },
+      "tiles": []
+    },
+    "validation": {
+      "format": "binary STL",
+      "bytes": 156684,
+      "triangles": 3132,
+      "vertices": 1542,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          100,
+          77,
+          2.5999999046325684
+        ]
+      ],
+      "size_mm": [
+        100,
+        77,
+        2.5999999046325684
+      ],
+      "signed_volume_mm3": 9461.707815812657,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    }
+  },
+  "native": {
+    "stdout": "{\"bridge_mm\":1.2,\"bridge_pixels\":16,\"bridge_routes_mm\":[[[15.5,31.025],[8.6,31.025]],[[78.819,51.656],[91.4,51.656]],[[78.9843,22.9111],[91.4,22.911100000000005]],[[16.0324,50.8519],[8.6,50.8519]],[[44.25,55.8219],[44.25,68.4]],[[60.6269,56.3676],[72.6593,68.4]],[[15.5,21.25],[8.600000000000001,28.15]],[[28.725,21.25],[28.725,8.600000000000001]],[[23.2625,56.9719],[23.262499999999996,68.4]],[[27.3414,55.777],[39.964400000000005,68.4]],[[38.5213,45.8259],[8.600000000000005,63.100970609503534]],[[43.3981,42.4824],[62.96011276079058,8.600000000000009]],[[56.9,55.75],[60.2895572842537,68.4]],[[54.6359,52.4797],[50.3700684717388,68.4]],[[77.025,48.275],[91.4,39.97558988039912]],[[75.369,55.819],[75.369,68.4]]],\"bridge_strip_width_mm\":1.2,\"bridge_strips\":16,\"bridges_per_island\":3.0,\"construction\":\"vector\",\"first_layer_islands\":6,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":77.0,\"islands_deleted\":0,\"islands_found\":6,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":13,\"margin_mm\":4.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":269.24,\"overhang_check_deg\":45.0,\"plate_top_mm\":2.6,\"raised_bridges\":true,\"stl_bytes\":157484,\"thickness_mm\":2.4,\"threshold\":0,\"triangles\":3148,\"watertight\":true,\"width_mm\":100.0,\"z_bridging\":\"easy\"}\n",
+    "stderr": "verified: 6 islands found, 0 remaining, watertight true, 3148 triangles\nwrote sandbox/m5/spread/native.stl in 1172 ms\n",
+    "stats": {
+      "bridge_mm": 1.2,
+      "bridge_pixels": 16,
+      "bridge_routes_mm": [
+        [
+          [
+            15.5,
+            31.025
+          ],
+          [
+            8.6,
+            31.025
+          ]
+        ],
+        [
+          [
+            78.819,
+            51.656
+          ],
+          [
+            91.4,
+            51.656
+          ]
+        ],
+        [
+          [
+            78.9843,
+            22.9111
+          ],
+          [
+            91.4,
+            22.911100000000005
+          ]
+        ],
+        [
+          [
+            16.0324,
+            50.8519
+          ],
+          [
+            8.6,
+            50.8519
+          ]
+        ],
+        [
+          [
+            44.25,
+            55.8219
+          ],
+          [
+            44.25,
+            68.4
+          ]
+        ],
+        [
+          [
+            60.6269,
+            56.3676
+          ],
+          [
+            72.6593,
+            68.4
+          ]
+        ],
+        [
+          [
+            15.5,
+            21.25
+          ],
+          [
+            8.600000000000001,
+            28.15
+          ]
+        ],
+        [
+          [
+            28.725,
+            21.25
+          ],
+          [
+            28.725,
+            8.600000000000001
+          ]
+        ],
+        [
+          [
+            23.2625,
+            56.9719
+          ],
+          [
+            23.262499999999996,
+            68.4
+          ]
+        ],
+        [
+          [
+            27.3414,
+            55.777
+          ],
+          [
+            39.964400000000005,
+            68.4
+          ]
+        ],
+        [
+          [
+            38.5213,
+            45.8259
+          ],
+          [
+            8.600000000000005,
+            63.100970609503534
+          ]
+        ],
+        [
+          [
+            43.3981,
+            42.4824
+          ],
+          [
+            62.96011276079058,
+            8.600000000000009
+          ]
+        ],
+        [
+          [
+            56.9,
+            55.75
+          ],
+          [
+            60.2895572842537,
+            68.4
+          ]
+        ],
+        [
+          [
+            54.6359,
+            52.4797
+          ],
+          [
+            50.3700684717388,
+            68.4
+          ]
+        ],
+        [
+          [
+            77.025,
+            48.275
+          ],
+          [
+            91.4,
+            39.97558988039912
+          ]
+        ],
+        [
+          [
+            75.369,
+            55.819
+          ],
+          [
+            75.369,
+            68.4
+          ]
+        ]
+      ],
+      "bridge_strip_width_mm": 1.2,
+      "bridge_strips": 16,
+      "bridges_per_island": 3,
+      "construction": "vector",
+      "first_layer_islands": 6,
+      "first_layer_taper_mm": 1,
+      "flip": false,
+      "grid_h": 0,
+      "grid_w": 0,
+      "height_mm": 77,
+      "islands_deleted": 0,
+      "islands_found": 6,
+      "islands_remaining": 0,
+      "layer_height_mm": 0.2,
+      "layers": 13,
+      "margin_mm": 4,
+      "min_first_layer_width_mm": 0,
+      "overhang_area_mm2": 269.24,
+      "overhang_check_deg": 45,
+      "plate_top_mm": 2.6,
+      "raised_bridges": true,
+      "stl_bytes": 157484,
+      "thickness_mm": 2.4,
+      "threshold": 0,
+      "triangles": 3148,
+      "watertight": true,
+      "width_mm": 100,
+      "z_bridging": "easy"
+    },
+    "validation": {
+      "format": "binary STL",
+      "bytes": 157484,
+      "triangles": 3148,
+      "vertices": 1546,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          100,
+          77,
+          2.5999999046325684
+        ]
+      ],
+      "size_mm": [
+        100,
+        77,
+        2.5999999046325684
+      ],
+      "signed_volume_mm3": 9440.243815134676,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    }
+  }
+}

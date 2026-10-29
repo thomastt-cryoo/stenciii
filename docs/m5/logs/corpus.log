@@ -1,0 +1,60 @@
+
+> stencil-studio@2.9.4 quality
+> playwright test --config playwright.quality.config.ts
+
+
+Running 1 test using 1 worker
+
+(node:25756) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+simple-logo-standard: valid mesh ┬╖ 154 ms
+simple-logo-smooth: valid mesh ┬╖ 234 ms
+simple-logo-crisp: valid mesh ┬╖ 131 ms
+detailed-logo-standard: valid mesh ┬╖ 72 ms
+detailed-logo-smooth: valid mesh ┬╖ 201 ms
+detailed-logo-crisp: valid mesh ┬╖ 184 ms
+line-illustration-standard: valid mesh ┬╖ 62 ms
+line-illustration-smooth: valid mesh ┬╖ 176 ms
+line-illustration-crisp: valid mesh ┬╖ 303 ms
+thin-lines-standard: valid mesh ┬╖ 63 ms
+thin-lines-smooth: valid mesh ┬╖ 139 ms
+thin-lines-crisp: valid mesh ┬╖ 96 ms
+lettering-standard: valid mesh ┬╖ 83 ms
+lettering-smooth: valid mesh ┬╖ 165 ms
+lettering-crisp: valid mesh ┬╖ 106 ms
+colour-graphic-standard: valid mesh ┬╖ 74 ms
+colour-graphic-smooth: valid mesh ┬╖ 137 ms
+colour-graphic-crisp: valid mesh ┬╖ 89 ms
+transparent-standard: valid mesh ┬╖ 128 ms
+transparent-smooth: valid mesh ┬╖ 215 ms
+transparent-crisp: valid mesh ┬╖ 185 ms
+low-contrast-standard: valid mesh ┬╖ 102 ms
+low-contrast-smooth: valid mesh ┬╖ 192 ms
+low-contrast-crisp: valid mesh ┬╖ 186 ms
+small-pixel-standard: valid mesh ┬╖ 104 ms
+small-pixel-smooth: valid mesh ┬╖ 168 ms
+small-pixel-crisp: valid mesh ┬╖ 151 ms
+high-resolution-standard: valid mesh ┬╖ 365 ms
+high-resolution-smooth: valid mesh ┬╖ 404 ms
+high-resolution-crisp: valid mesh ┬╖ 419 ms
+nearly-empty-standard: valid mesh ┬╖ 91 ms
+nearly-empty-smooth: valid mesh ┬╖ 171 ms
+nearly-empty-crisp: valid mesh ┬╖ 123 ms
+nearly-solid-standard: valid mesh ┬╖ 85 ms
+nearly-solid-smooth: valid mesh ┬╖ 343 ms
+nearly-solid-crisp: valid mesh ┬╖ 275 ms
+empty-standard: engine error ┬╖ 110 ms
+empty-smooth: engine error ┬╖ 197 ms
+empty-crisp: valid mesh ┬╖ 152 ms
+solid-standard: valid mesh ┬╖ 216 ms
+solid-smooth: valid mesh ┬╖ 224 ms
+solid-crisp: valid mesh ┬╖ 418 ms
+astronaut-standard: valid mesh ┬╖ 1477 ms
+astronaut-smooth: valid mesh ┬╖ 1929 ms
+astronaut-crisp: valid mesh ┬╖ 453 ms
+coins-standard: valid mesh ┬╖ 412 ms
+coins-smooth: valid mesh ┬╖ 701 ms
+coins-crisp: valid mesh ┬╖ 217 ms
+  ok 1 quality\quality.spec.ts:13:1 ΓÇ║ measure all styles on every representative input and independently validate every produced STL (52.0s)
+
+  1 passed (53.6s)

@@ -8,7 +8,7 @@ const root='sandbox/m5/modes';mkdirSync(root,{recursive:true});const worker='/as
 for(const phase of 'abcd'){
  const data=JSON.parse(readFileSync(`docs/m5/${phase}-coverage.json`,'utf8'))
  for(const c of data.cases)for(const which of ['before','after']){
-  const type=c.key.split('.')[0],project=c[`project_${which}`]??`sandbox/m5/${phase}/${c.key.replace('.','-')}-${which}.json`
+  const type=c.key.split('.')[0],originalProject=c[`project_${which}`]??`sandbox/m5/${phase}/${c.key.replace('.','-')}-${which}.json`,retained=`docs/m5/fixtures/${basename(originalProject)}`,project=existsSync(retained)?retained:originalProject
   // All before/after field fixtures are retained; M5_MODES_SAMPLE limits a diagnostic run only.
   if(process.env.M5_MODES_SAMPLE&&c.key.split('.').at(-1)!==({split_colours:'colours',tone_patterns:'spacing_mm',colour_set:'holes',tile_layout:'edits',tiles:'seam_angle_deg',fragments:'keep',pads:'mount_threaded',ring:'rings',hardware:'fit_test',export:'mount_threaded'}[type]))continue
   cases.push({key:c.key,phase:which,stem:`${c.key.replace('.','-')}-${which}`,project,target:type==='tile_layout'?'built':'test',out:type==='split_colours'?(c.key.endsWith('.colours')?'palette':'colour_1'):type==='tone_patterns'?'mask':'parts',expectedError:!!c[which]?.error,accepted_st:c[which],accepted_path:`sandbox/m5/${phase}/${c.key.replace('.','-')}-${which}.${c[which]?.extension??'zip'}`})
@@ -49,10 +49,11 @@ for(const row of result.cases){
  const into=`${root}/native-${row.stem}`;mkdirSync(into,{recursive:true});const cli=spawnSync(resolve(`target/release/stencil${process.platform==='win32'?'.exe':''}`),['--project',row.project,'--report','-o',into],{encoding:'utf8',timeout:180000,maxBuffer:8000000})
  if(row.expectedError){row.native={refusal:cli.stderr,exit_code:cli.status};row.verified_refusal=cli.status!==0&&/no room/.test(cli.stderr);if(!row.verified_refusal)result.failures.push({case:row.stem,error:'Native refusal did not match the recorded constraint'});continue}
  if(cli.status!==0){row.native={error:cli.stderr,exit_code:cli.status};result.failures.push({case:row.stem,error:cli.stderr});continue}
- const zip=`${into}/${basename(row.project,'.json')}.zip`,compare=spawnSync('python',['scripts/m5/compare_geometry.py',zip,row.st.path,row.mt.path],{encoding:'utf8',timeout:180000,maxBuffer:16000000})
+ const zip=`${into}/${basename(row.project,'.json')}.zip`,compare=spawnSync('python',['scripts/m5/compare_geometry.py',zip,row.st.path,row.mt.path,'--report-differences'],{encoding:'utf8',timeout:180000,maxBuffer:16000000})
  if(compare.status!==0){row.comparison_error=compare.stderr;result.failures.push({case:row.stem,error:compare.stderr});continue}
  row.native={path:zip};row.comparison=JSON.parse(compare.stdout);writeFileSync('docs/m5/manufacturing-modes.json',JSON.stringify(result,null,2)+'\n')
 }
 for(const row of result.cases){delete row.accepted_st;delete row.accepted_path}
 result.completed_cases=cases.length;result.all_structural_checks_passed=result.failures.length===0
+result.geometry_mismatches=result.cases.filter(c=>c.comparison&&(!c.comparison.st_mt_geometry_identical||!c.comparison.native_leaf_geometry_identical)).map(c=>c.stem)
 writeFileSync('docs/m5/manufacturing-modes.json',JSON.stringify(result,null,2)+'\n');console.log(`Completed ${cases.length} field fixtures; ${result.failures.length} unexpected refusal or validation failures. Read all comparison flags before claiming equivalence.`)
