@@ -1,3 +1,4 @@
+import PartsPreview from './PartsPreview'
 import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { controller, editor, useEditor } from './session'
 import { decodeBytes, operations, projectName, adjustmentRecipe as quickRecipe, quickRecipe as styleQuickRecipe } from './project'
@@ -27,19 +28,23 @@ export default function StudioApp() {
   const imageInput = useRef<HTMLInputElement>(null), projectInput = useRef<HTMLInputElement>(null)
   const recipe = doc && quickRecipe(doc), sources = doc ? operations(doc).filter(o => o.type === 'source') : []
   const allOps = doc ? operations(doc) : [], textSource = allOps.find(o => o.type === 'text'), textBuild = textSource && allOps.find(o => ['stencil','vector_stencil'].includes(o.type))
-  const previewOptions = allOps.flatMap(o => (registry?.types.get(o.type)?.outputs ?? []).filter(p => ['image','mask','shapes'].includes(p.type)).map(p => ({ step: o.id, port: p.name, label: `${artworkNames[o.type] ?? registry?.types.get(o.type)?.label ?? 'Saved artwork'}${allOps.filter(n => n.type === o.type).length > 1 ? ` ${allOps.filter(n=>n.type===o.type).findIndex(n=>n.id===o.id)+1}` : ''}${['removed','rounded'].includes(p.name) ? ' · Removed details' : ''}` })))
+  const previewOptions = allOps.flatMap(o => (registry?.types.get(o.type)?.outputs ?? []).filter(p => ['image','mask','shapes'].includes(p.type)).map(p => ({ step: o.id, port: p.name, label: `${artworkNames[o.type] ?? registry?.types.get(o.type)?.label ?? 'Saved artwork'}${allOps.filter(n => n.type === o.type).length > 1 ? ` ${allOps.filter(n=>n.type===o.type).findIndex(n=>n.id===o.id)+1}` : ''}${o.type==='split_colours' ? ' · '+p.name.replace('_',' ') : ['removed','rounded'].includes(p.name) ? ' · Removed details' : ''}` })))
   const style = doc && recipe ? activeStyle(doc) : 'standard', detail = doc && detailLevel(doc)
   const comparison = run.output?.value.comparison
   const asset = doc?.raw.images?.[String(sources[0]?.params.image_id)]
-  const result = run.output?.value.artifacts.find(a => a.id === selected) ?? run.output?.value.artifacts.filter(a=>!a.intermediate).at(-1) ?? run.output?.value.artifacts.at(-1)
+  const hiddenLayers=new Set<string>((doc?.raw.stencilStudio?.colourLayers??[]).filter((l:any)=>!l.visible).map((l:any)=>l.plate))
+  const visibleArtifacts=run.output?.value.artifacts.filter(a=>!hiddenLayers.has(a.step))??[]
+  const result=visibleArtifacts.find(a=>a.id===selected)??visibleArtifacts.filter(a=>!a.intermediate).at(-1)??visibleArtifacts.at(-1)
+  const colourAssembly=doc?.raw.stencilStudio?.colourAssemblies?.find((a:any)=>a.id===result?.step)
+  const hiddenFiles:string[]=colourAssembly?.layers.flatMap((id:string,i:number)=>hiddenLayers.has(id)?[`colour_${i+1}.stl`]:[])??[]
   const outline = result ? result.outline : run.output?.value.outline
-  const current = !!controller.exportable, meshUrl = result?.mesh ? result.url : ''
+  const current = !!controller.exportable, meshUrl = result?.mesh ? result.url : result?.parts?.find(p=>p.mesh)?.url ?? ''
   const findings = result?.findings ?? run.output?.value.findings ?? []
   const otherFindings=(run.output?.value.findings??[]).filter(f=>!findings.some(s=>s.level===f.level&&s.text===f.text))
   const warnings = findings.filter(f => f.level !== 'info'), blocked = findings.some(f => f.level === 'error')
   const canExport = current && !!result && !blocked
   useEffect(() => { void editor.initialize() }, [])
-  useEffect(() => { if (state.preview) { if(state.preview.port==='solid'){setView('3d');setSelected(`${state.preview.step}/solid`)}else setView('stage'); setSettings(null) } }, [state.preview])
+  useEffect(() => { if (state.preview) { if(state.preview.port==='solid'||registry?.types.get(allOps.find(o=>o.id===state.preview!.step)?.type??'')?.outputs.some(p=>p.name===state.preview!.port&&p.type==='parts')){setView('3d');setSelected(`${state.preview.step}/${state.preview.port}`)}else setView('stage'); setSettings(null) } }, [state.preview])
   useEffect(() => { document.documentElement.dataset.theme = theme; try { localStorage.setItem('stencil-studio.theme', theme) } catch {} }, [theme])
   useEffect(() => {
     let url = ''
@@ -94,13 +99,14 @@ export default function StudioApp() {
         : view === 'stage' && state.preview ? (previewOptions.some(o => o.step === state.preview!.step && o.port === state.preview!.port) ? <StageImage doc={doc} step={state.preview.step} port={state.preview.port} draft={state.interacting} zoom={zoom} fit={fit} /> : <p className="view-message">This step is disabled or was removed. Choose another preparation result.</p>)
         : view === 'original' && textSource && !assetUrl ? <StageImage doc={doc} step={textSource.id} port="mask" draft={state.interacting} zoom={zoom} fit={fit} />
         : view === 'original' ? (assetUrl ? <Artwork url={assetUrl} zoom={zoom} fit={fit} /> : <div className="empty-workspace"><h2>Your saved workflow is intact.</h2><p>{sources.length ? 'The original artwork is not embedded. You can save this project safely or choose a replacement.' : 'This project uses generated artwork or specialist processing.'}</p></div>)
+        : result?.kind==='parts' && result.parts?.length ? <PartsPreview artifact={result} hiddenFiles={hiddenFiles} current={current&&!blocked} theme={theme} flat={view!=='3d'} zoom={zoom} fit={fit} onZoom={setZoom}/>
         : meshUrl ? <Suspense fallback={<p className="view-message">Loading preview…</p>}><MeshPreview url={meshUrl} flat={view !== '3d'} zoom={zoom} fit={fit} theme={theme} onZoom={setZoom} comparison={view === 'compare' ? comparison : undefined} stats={result?.info.stats} /></Suspense> : null}
         {run.output && !current && view !== 'original' && view !== 'stage' && <div className="stale-label">{run.output.quality === 'draft' ? 'Draft preview · Export waits for full quality' : `Previous result · ${run.status === 'running' ? 'Updating' : 'Not current'}`}</div>}
         {drag && <div className="drop-overlay">Drop to open your artwork</div>}
       </section>
       <div className="preview-caption"><span>{doc ? view === 'stage' ? 'Actual preparation result · Before physical bridge corrections' : view === 'original' ? asset?.name ?? (textSource ? 'Original text artwork' : 'Original artwork') : view === 'stencil' || view === 'compare' ? `${view === 'compare' ? 'Prepared artwork aligned with STL' : 'Top projection of the generated STL'} · ${recipe?.build.params.raised_bridges !== false ? 'All heights, including raised bridges' : 'Bridges included'}` : 'Drag to orbit · Scroll to zoom' : 'Local processing. Your artwork stays with you.'}</span>{result?.mesh && view !== 'original' && view !== 'stage' && <span>{result.mesh.size.map(v => v.toFixed(1)).join(' × ')} mm</span>}</div>
       {current && outline && <a className="outline-export" href={outline.url} download={outline.filename}>Save traced outlines SVG <span>Artwork outlines before bridge corrections</span></a>}
-      {run.output && run.output.value.artifacts.length > 1 && <label className="output-choice">Preview output <select value={result?.id} onChange={e => setSelected(e.target.value)}>{run.output.value.artifacts.map(a => <option key={a.id} value={a.id}>{doc?.raw.stencilStudio?.passNames?.[a.step]??a.label}{a.intermediate?' · Before later processing':''}{run.output!.value.artifacts.filter(o=>o.label===a.label).length>1?` · ${run.output!.value.artifacts.filter(o=>o.label===a.label).findIndex(o=>o.id===a.id)+1}`:''}</option>)}</select></label>}
+      {run.output && run.output.value.artifacts.length > 1 && <label className="output-choice">Preview output <select value={result?.id} onChange={e => setSelected(e.target.value)}>{visibleArtifacts.map(a => <option key={a.id} value={a.id}>{doc?.raw.stencilStudio?.passNames?.[a.step]??a.label}{a.intermediate?' · Before later processing':''}{run.output!.value.artifacts.filter(o=>o.label===a.label).length>1?` · ${run.output!.value.artifacts.filter(o=>o.label===a.label).findIndex(o=>o.id===a.id)+1}`:''}</option>)}</select></label>}
       <section className="readiness" aria-label="Stencil readiness"><span className={`status-dot ${run.status}`} /><div><span className="readiness-verdict">{current ? !result || blocked ? 'Blocked' : warnings.length ? 'Check' : 'Ready' : run.status==='error' ? 'Blocked' : 'Updating'}</span><strong role="status" aria-live="polite">{state.loading ? 'Opening artwork…' : status}</strong><p>{run.status === 'running' ? `${run.activity} · ${Math.min(99, Math.round(run.progress * 100))}%` : current ? !result ? 'This saved workflow produces no STL. Its artwork and settings are preserved.' : result.mesh ? `${result.mesh.triangles.toLocaleString()} triangles · ${result.mesh.components} connected component${result.mesh.components===1?'':'s'} · ${result.mesh.closed?'Closed, oriented mesh independently checked':'Geometry requires review'}` : `${Object.keys(result.info.files ?? {}).length} files in the selected output` : run.output ? 'The preview updates automatically. Export is available when full quality is ready.' : doc ? 'Choose your settings, then make a full-quality stencil.' : 'No accounts. No uploads. Just your artwork.'}</p></div>{run.status === 'running' && <button onClick={() => editor.cancel()}>Cancel</button>}<p className="validation-limit">Geometry checks detect common mesh defects; they do not guarantee print success. Height cutaways are inspection views.</p></section>
       {(state.error || run.error) && <div className="error-message" role="alert">{(state.error ?? run.error)?.replace(/\bnodes?\b/gi, 'step').replace(/\bgraph\b/gi, 'workflow')}<button onClick={make} disabled={!doc}>Try again</button></div>}
       {state.notice && <p className="notice" role="status">{state.notice}</p>}

@@ -1,3 +1,5 @@
+import {isManufacturing} from './manufacturing'
+import {ManufacturingEditor} from './ManufacturingWorkbench'
 import { SettingControl } from './Controls'
 import { editor, useEditor } from './session'
 import { artworkHelp, artworkNames } from './artwork'
@@ -8,6 +10,7 @@ import { GeometryEditor } from './GeometryWorkbench'
 import SourceInformation from './SourceInformation'
 export default function OperationEditor({ op, registry }: { op: Operation; registry: ParameterRegistry }) {
   const doc = useEditor(s => s.doc), def = registry.types.get(op.type)
+  if (isManufacturing(op.type)) return <ManufacturingEditor op={op} registry={registry} />
   if (isGeometry(op.type)) return <GeometryEditor op={op} registry={registry} />
   if (!def) return <p>This specialist operation is preserved but is not available in this engine.</p>
   const stored = op.type === 'source' && doc?.raw.images?.[String(op.params.image_id)], asset = typeof stored?.base64 === 'string' ? stored : null

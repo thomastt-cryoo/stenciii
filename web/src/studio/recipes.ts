@@ -1,3 +1,4 @@
+import { isManufacturing } from './manufacturing'
 import type { GraphJson, NodeType } from '../api'
 import { copy, editParameter, object, projectName, quickRecipe, adjustmentRecipe, rawGraph, standardRecipe, type ProjectDocument } from './project'
 
@@ -125,5 +126,5 @@ export function draftRecipe(graph: GraphJson): GraphJson {
 
 /** Editable qualified fields; the runtime catalogue remains authoritative. */
 export function editable(type: string, _key: string) {
-  return ['source','text','transform','threshold','reduce','smooth','morphology','trace','round_corners','remove_islands','shapes_to_mask','stencil','vector_stencil','remesh','complexity'].includes(type)
+  return isManufacturing(type) || ['source','text','transform','threshold','reduce','smooth','morphology','trace','round_corners','remove_islands','shapes_to_mask','stencil','vector_stencil','remesh','complexity'].includes(type)
 }

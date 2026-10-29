@@ -8,16 +8,17 @@ export type { MeshCheck } from './meshAudit'
 import { activeStyle } from './recipes'
 import { artworkNames, type PreviewStage } from './artwork'
 
+export interface PartArtifact { name:string; url:string; mesh:MeshCheck|null; error?:string }
 export interface Artifact {
   id: string; step: string; label: string; kind: 'solid' | 'parts'; url: string; filename: string
-  info: Record<string, any>; findings: Badge[]; mesh: MeshCheck | null; outline?: Outline; intermediate?: boolean
+  info: Record<string, any>; findings: Badge[]; mesh: MeshCheck | null; outline?: Outline; intermediate?: boolean; parts?:PartArtifact[]
 }
 export interface ArtworkComparison { url: string; width: number; height: number; marginX: number; marginY: number; flip: boolean }
 export interface Outline { url: string; filename: string }
-export interface ArtifactSet { artifacts: Artifact[]; findings: Badge[]; comparison?: ArtworkComparison; outline?: Outline; outlines?: Record<string, Outline>; stages?: PreviewStage[] }
+export interface ArtifactSet { artifacts: Artifact[]; findings: Badge[]; comparison?: ArtworkComparison; outline?: Outline; outlines?: Record<string, Outline>; stages?: PreviewStage[]; owned?:string[] }
 export async function captureArtifacts(doc: ProjectDocument, runs: Record<string, NodeRun>): Promise<ArtifactSet> {
   const artifacts: Artifact[] = [], findings: Badge[] = []
-  const result: ArtifactSet = { artifacts, findings, stages: [], outlines: {} }
+  const result: ArtifactSet = { artifacts, findings, stages: [], outlines: {}, owned: [] }
   const recipe = quickRecipe(doc)
   const graph = compileRecipe(doc)
   const textSources = graph.nodes.filter(n=>n.type==='text'), builders = graph.nodes.filter(n=>['stencil','vector_stencil'].includes(n.type))
@@ -60,7 +61,8 @@ export async function captureArtifacts(doc: ProjectDocument, runs: Record<string
         const response = await fetch(sourceUrl)
         const blob = await response.blob()
         const files = Object.keys(info.files ?? {})
-        const solid = o.type === 'solid' || files.length === 1
+        const solid = o.type === 'solid' || files.length === 1 && /\.stl$/i.test(files[0])
+        const parts:PartArtifact[]=[]
         let mesh: MeshCheck | null = null
         if(solid)try{mesh=await auditMesh(await blob.arrayBuffer())}catch(error){
           if(n.type==='remesh')throw error
@@ -70,15 +72,19 @@ export async function captureArtifacts(doc: ProjectDocument, runs: Record<string
           const warning: Badge = { level: 'error', text: `${meshProblems(mesh).join('; ')} found. Export is blocked. Try another style or lower detail.` }
           checks.push(warning); findings.push(warning)
         }
-        if (!solid) for (const file of files.filter(f => /\.stl$/i.test(f))) {
-          const check = await auditMesh(await (await fetch(partUrl(run.key, out, file))).arrayBuffer())
-          if (meshProblems(check).length) { const bad: Badge = { level: 'error', text: `${file} has ${meshProblems(check).join('; ')}. Export is blocked.` }; checks.push(bad); findings.push(bad) }
+        if(o.type==='parts') for(const file of files){
+          const bytes=await(await fetch(partUrl(run.key,out,file))).blob(),url=URL.createObjectURL(bytes);result.owned!.push(url)
+          const part:PartArtifact={name:file,url,mesh:null};parts.push(part)
+          if(/\.stl$/i.test(file))try{
+            part.mesh=await auditMesh(await bytes.arrayBuffer())
+            if(meshProblems(part.mesh).length)throw Error(meshProblems(part.mesh).join('; '))
+          }catch(error){part.error=String(error instanceof Error?error.message:error);const bad:Badge={level:'error',text:`${file}: ${part.error}. This part blocks the complete export.`};checks.push(bad);findings.push(bad)}
         }
         if(mesh && ['stencil','vector_stencil','remesh'].includes(n.type) && mesh.components>1){const bad:Badge={level:'error',text:`${mesh.components} disconnected solid components found. Export is blocked.`};checks.push(bad);findings.push(bad)}
         if(n.type === 'remesh' && mesh && (!mesh.closed || mesh.components>1)) throw Error('Mesh optimization failed independent validation: '+meshProblems(mesh).join('; ')+'. The previous result is retained.')
         // Own this URL independently of the worker/cache. Later runs cannot revoke a displayed result.
         const url = URL.createObjectURL(blob)
-        artifacts.push({ id: `${n.id}/${out}`, step: n.id, label: n.type === 'vector_stencil' || n.type === 'stencil' ? 'Stencil plate' : n.type === 'remesh' ? 'Optimized stencil' : n.type.replace(/_/g, ' '), kind: o.type, url, filename: solid ? `${name}${artifacts.length ? `-${n.id}` : ''}.stl` : `${name}-${n.id}-parts.zip`, info, findings: checks, mesh, intermediate: graph.edges.some(e=>e.from[0]===n.id&&e.from[1]===out) })
+        artifacts.push({ id: `${n.id}/${out}`, step: n.id, label: n.type === 'vector_stencil' || n.type === 'stencil' ? 'Stencil plate' : n.type === 'remesh' ? 'Optimized stencil' : n.type.replace(/_/g, ' '), kind: o.type, url, filename: solid ? `${name}${artifacts.length ? `-${n.id}` : ''}.stl` : `${name}-${n.id}-parts.zip`, info, findings: checks, mesh, parts, intermediate: graph.edges.some(e=>e.from[0]===n.id&&e.from[1]===out) })
       }
     }
     const nearest = (id: string, seen = new Set<string>()): string[] => {
@@ -91,4 +97,4 @@ export async function captureArtifacts(doc: ProjectDocument, runs: Record<string
     return result
   } catch (e) { releaseArtifacts(result); throw e }
 }
-export function releaseArtifacts(value: ArtifactSet) { value.artifacts.forEach(a => URL.revokeObjectURL(a.url)); value.stages?.forEach(s => URL.revokeObjectURL(s.url)); if (value.comparison) URL.revokeObjectURL(value.comparison.url); if (value.outlines) Object.values(value.outlines).forEach(o=>URL.revokeObjectURL(o.url)); else if (value.outline) URL.revokeObjectURL(value.outline.url) }
+export function releaseArtifacts(value: ArtifactSet) { value.owned?.forEach(url=>URL.revokeObjectURL(url)); value.artifacts.forEach(a => URL.revokeObjectURL(a.url)); value.stages?.forEach(s => URL.revokeObjectURL(s.url)); if (value.comparison) URL.revokeObjectURL(value.comparison.url); if (value.outlines) Object.values(value.outlines).forEach(o=>URL.revokeObjectURL(o.url)); else if (value.outline) URL.revokeObjectURL(value.outline.url) }

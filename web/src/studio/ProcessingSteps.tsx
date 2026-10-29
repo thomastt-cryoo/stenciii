@@ -1,3 +1,4 @@
+import {isManufacturing} from './manufacturing'
 import { useState } from 'react'
 import type { ParameterRegistry } from './registry'
 import { compileRecipe, operations, type ProjectDocument } from './project'
@@ -17,14 +18,14 @@ function ValidSteps({ doc, registry }: { doc: ProjectDocument; registry: Paramet
   const action = (label: string, update: (doc: ProjectDocument) => ProjectDocument) => editor.command(label, update)
   const shared = (id: string) => passes.filter(p => p.steps.some(s => s.id === id)).length
   const movable = (id: string, direction: -1 | 1) => { try { moveArtwork(doc, id, direction, catalogue); return true } catch { return false } }
-  return <div className="processing-editor"><p className="section-note">Steps use compatible artwork formats. A shared adjustment affects every named pass that uses it. Manufacturing settings remain available as references.</p>
+  return <div className="processing-editor"><p className="section-note">Steps use compatible artwork formats. A shared adjustment affects every named pass that uses it. Choose a manufacturing step to edit its saved settings.</p>
     <label className="setting-choice"><span>Processing pass</span><select aria-label="Processing pass" value={pass.id} onChange={e => { setPass(e.target.value); setSelected('') }}>{passes.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}</select></label>
     <div className="pass-name"><input aria-label="Pass name" placeholder={pass.name} value={newName} onChange={e => setNewName(e.target.value)} /><button disabled={!newName.trim()} onClick={() => { action('Rename processing pass', d => renamePass(d, pass.id, newName.trim())); setNewName('') }}>Rename pass</button></div>
     <div className="editor-actions"><button disabled={pass.steps.some(s=>!isArtwork(s.type)&&!['stencil','vector_stencil','remesh','complexity'].includes(s.type))} onClick={()=>action('Duplicate artwork pass',d=>duplicatePass(d,pass.id,catalogue))}>Duplicate artwork pass</button></div>
     <ol className="processing-list">{pass.steps.map((op, index) => {
-      const def = registry.types.get(geometryType(op.type)), optional = canBypass(doc, op.id, catalogue), editable = isArtwork(op.type) || isGeometry(op.type)
+      const def = registry.types.get(geometryType(op.type)), optional = canBypass(doc, op.id, catalogue), editable = isArtwork(op.type) || isGeometry(op.type) || isManufacturing(op.type)
       return <li key={op.id} className={selected === op.id ? 'selected' : ''}>
-        <div className="step-heading"><button className="step-select" aria-expanded={selected === op.id} onClick={() => setSelected(selected === op.id ? '' : op.id)}><span className="step-number">{index + 1}</span><span>{artworkNames[op.type] ?? def?.label ?? 'Unavailable saved operation'}{shared(op.id) > 1 && <small>Shared by {shared(op.id)} passes</small>}</span></button>
+        <div className="step-heading"><button className="step-select" aria-expanded={selected === op.id} onClick={() => setSelected(selected === op.id ? '' : op.id)}><span className="step-number">{index + 1}</span><span>{doc.raw.stencilStudio?.passNames?.[op.id] ?? artworkNames[op.type] ?? def?.label ?? 'Unavailable saved operation'}{shared(op.id) > 1 && <small>Shared by {shared(op.id)} passes</small>}</span></button>
           {def?.outputs.filter(p => ['image','mask','shapes','solid'].includes(p.type) && !(p.type === 'solid' && graph.edges.some(e=>e.to[0]===op.id&&e.to[1]==='tiles'))).map(p => <button className="text-button" key={p.name} onClick={() => editor.preview(op.id, p.name)}>Preview{['removed','rounded'].includes(p.name) ? ' removed' : ''}</button>)}
         </div>
         {selected === op.id && <div className="step-body">

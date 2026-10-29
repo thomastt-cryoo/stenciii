@@ -1,3 +1,4 @@
+import {manufacturingHelp, manufacturingNames} from './manufacturing'
 import type { NodeType, ParamDef } from '../api'
 import mapping from '../../../docs/audit/parameter-mapping.json' with { type: 'json' }
 import type { Operation } from './project'
@@ -29,7 +30,7 @@ export class ParameterRegistry {
   constructor(catalogue: NodeType[]) {
     this.types = new Map(catalogue.map(t => [t.id, t]))
     const plan = new Map(mapping.map(p => [p.key, p]))
-    this.settings = catalogue.flatMap(t => t.params.map(p => ({ key: `${t.id}.${p.name}`, type: t.id, operationLabel: artworkNames[t.id] ?? t.label.replace(/\s*\(old\)$/, ''), parameter: p, category: categoryFor(t.id, p.name), dependency: plan.get(`${t.id}.${p.name}`)?.dependency ?? t.doc })))
+    this.settings = catalogue.flatMap(t => t.params.map(p => ({ key: `${t.id}.${p.name}`, type: t.id, operationLabel: manufacturingNames[t.id] ?? artworkNames[t.id] ?? t.label.replace(/\s*\(old\)$/, ''), parameter: p, category: categoryFor(t.id, p.name), dependency: plan.get(`${t.id}.${p.name}`)?.dependency ?? t.doc })))
   }
   defaults(type: string) { return Object.fromEntries((this.types.get(type)?.params ?? []).map(p => [p.name, p.default])) }
   search(query: string, category?: string) {
@@ -40,7 +41,7 @@ export class ParameterRegistry {
       const exact = [s.key, s.parameter.name, s.parameter.label, s.operationLabel].map(v => v.toLowerCase())
       return exact.includes(text) ? 0 : exact.some(v => v.startsWith(text)) ? 1 : words.every(w => exact.some(v => v.includes(w))) ? 2 : 3
     }
-    return this.settings.filter(s => (!category || s.category === category) && words.every(q => `${s.key} ${s.parameter.label} ${s.operationLabel} ${s.category} ${s.dependency} ${geometryHelp[s.key] ?? artworkHelp[s.key] ?? ''}`.toLowerCase().includes(q))).sort((a, b) => text ? score(a) - score(b) : 0)
+    return this.settings.filter(s => (!category || s.category === category) && words.every(q => `${s.key} ${s.parameter.label} ${s.operationLabel} ${s.category} ${s.dependency} ${manufacturingHelp[s.key] ?? geometryHelp[s.key] ?? artworkHelp[s.key] ?? ''}`.toLowerCase().includes(q))).sort((a, b) => text ? score(a) - score(b) : 0)
   }
   instances(setting: Setting, operations: Operation[]) { return operations.filter(o => (o.type === 'complexity' ? 'remesh' : o.type) === setting.type) }
   /** Availability is a projection only. Inactive values are never removed or reset. */
@@ -65,6 +66,7 @@ export class ParameterRegistry {
       if (['custom', 'rotate'].includes(key) && p.pattern !== 'custom') return inactive('Choose a custom pattern to use this setting.')
     }
     if (type === 'remesh' && key === 'decimate_mm' && !p.decimate) return inactive('Enable decimation to use this surface tolerance.')
+    if (type==='tone_patterns' && /^(spacing|cover)_\d+$/.test(key) && ['solid','empty'].includes(String(p[`kind_${key.split('_').at(-1)}`]))) return inactive('Solid and empty tones do not use pattern spacing or coverage. The saved override is retained.')
     if (type === 'tone_patterns' && context.toneCount !== undefined && /_\d+$/.test(key) && Number(key.split('_').at(-1)) > context.toneCount - 2) return inactive('This intermediate tone is not present. Its override is retained.')
     if (type === 'pads') {
       if (['thread_clearance', 'long_edge'].includes(key) && p.pad_thread === 'none') return inactive('Choose a pad thread to add pads.')
