@@ -4,7 +4,7 @@ import { compileRecipe, copy, operations, rawGraph, type ProjectDocument } from 
 import { validateRecipe } from './artwork'
 
 export const manufacturingTypes=['split_colours','tone_patterns','tile_layout','export','tiles','pads','ring','fragments','colour_set','hardware']
-export const implementedManufacturingTypes=['split_colours','tone_patterns','colour_set','tile_layout','tiles','fragments']
+export const implementedManufacturingTypes=['split_colours','tone_patterns','colour_set','tile_layout','tiles','fragments','pads','ring','hardware']
 export const isManufacturing=(type:string)=>implementedManufacturingTypes.includes(type)
 export const manufacturingNames:Record<string,string>={split_colours:'Separate colours',tone_patterns:'Apply tone patterns',colour_set:'Register colour plates',tile_layout:'Plan printable sections',tiles:'Split finished stencil',pads:'Pads & mounting holes',ring:'Expanded borders',hardware:'Screws, nuts & plates',fragments:'Remove tile fragments',export:'Legacy tiles & mounting'}
 const help:Record<string,string>={
@@ -22,6 +22,50 @@ const help:Record<string,string>={
  'colour_set.pins':'Include a real alignment pin STL with the registered plates. Requires registration holes.',
  'colour_set.pin_clearance':'Diametral clearance: subtracted from hole diameter to size the pin. Printer fit still needs physical calibration.',
  'colour_set.pin_length':'Length of the alignment pins in millimetres.',
+ 'pads.pad_thread':'Size of the real threaded mounting pads. None omits pads while allowing separately configured mounting holes. The margin must fit the thread diameter plus 4 mm.',
+ 'pads.pad_height':'Pad and mounting-boss height above the plate. When printed upside down, the original engine uses threaded holes instead of raised pads.',
+ 'pads.thread_clearance':'Radial thread fit allowance. A 0.2 mm radial allowance changes the mating diameter by 0.4 mm; this differs from ordinary-hole diametral clearance.',
+ 'pads.long_edge':'Add intermediate pads along edges longer than this distance. Zero leaves the corner pads without this additional spacing rule.',
+ 'pads.mount_screw':'Select the screw size for mounting holes and their specialized joiner/extender plates. None omits mounting holes.',
+ 'pads.mount_threaded':'Cut real threads in mounting holes instead of plain clearance holes.',
+ 'pads.mount_clearance':'Diametral hole allowance, added to the nominal screw diameter. For threaded holes the engine converts this to a radial thread allowance.',
+ 'pads.hole_spacing':'Distance between mounting holes along the frame band. Zero omits regularly spaced extra holes; seam joining can still place required holes.',
+ 'pads.joiner_offset':'Distance of mounting holes from either side of a seam. The engine moves colliding positions or refuses an impossible layout.',
+ 'pads.extend':'Distance between the two rows of an extender plate, not the outer plate length.',
+ 'pads.segments':'Round and thread detail. Higher values increase the actual STL triangle count and processing cost.',
+ 'ring.width':'Physical width added around the assembled stencil in each ring. Every slab must retain a screw hole.',
+ 'ring.rings':'Number of nested border rings. Each wraps the previous ring and has its own numbered slabs.',
+ 'ring.slab_length':'Maximum border slab length. The engine keeps corner pieces and requires a mounting hole in every slab.',
+ 'ring.gap':'Total fit gap between slabs and between the border and plate. The engine offsets slab edges while keeping joint hole positions fixed.',
+ 'ring.joiner_thickness':'Thickness of the specialized border joiner plates.',
+ 'ring.hardware':'Include the actual threaded bolt and nut models required for border joints. When off, supply suitable fasteners separately.',
+ 'ring.screw_length':'Bolt length in millimetres. Zero calculates enough length for joiner, slab and nut.',
+ 'ring.nut_clearance':'Radial female-thread allowance for the nut. Physical calibration is still required for your printer and material.',
+ 'ring.tip_taper':'Radial narrowing at the bolt tip; zero keeps a plain end.',
+ 'ring.tip_pitches':'Length of the bolt-tip narrowing in thread pitches. Used only when tip taper is above zero.',
+ 'ring.number_parts':'Cut a number into each slab. Its number matches the engine’s slab order and assembly file.',
+ 'ring.number_size':'Size of the recessed slab number. If there is no safe position, the engine reports the unnumbered slab.',
+ 'ring.pocket_depth':'Depth of the number pocket. Zero uses one source print layer; the cut must leave material below it.',
+ 'ring.wall_holes':'Add outer-ring wall mounting holes, because the original plate holes are now used by the border joints.',
+ 'ring.hole_spacing':'Spacing of wall mounting holes on the outer ring. Applies when wall holes are enabled.',
+ 'ring.segments':'Round and thread detail for border holes and accompanying hardware.',
+ 'hardware.extend':'Distance between the rows of the four-hole hand-sized plate and any extender matched to connected mounting parts.',
+ 'hardware.joiner_thickness':'Thickness of joiners matched to a connected mounting assembly. Hand-sized plates have their own independent thickness.',
+ 'hardware.plate':'Include independently sized two-hole and four-hole plates, alongside the screw and nut.',
+ 'hardware.plate_distance':'Centre-to-centre distance between the two holes in the hand-sized plate.',
+ 'hardware.plate_height':'Thickness of the hand-sized plates in millimetres.',
+ 'hardware.plate_padding':'Material padding around the holes and rounded plate ends.',
+ 'hardware.plate_threaded':'Cut real female threads in the hand-sized plates instead of plain clearance holes.',
+ 'hardware.plate_clearance':'Diametral allowance for the hand-sized plate holes; the engine halves it when constructing female threads.',
+ 'hardware.screw':'Metric screw size. M3, M4, M5, M6, M8 and M10 use the original real-thread generator.',
+ 'hardware.length':'Threaded bolt length in millimetres, excluding its head.',
+ 'hardware.nut_clearance':'Radial female-thread allowance in the nut. Test the printed fit before committing a complete assembly.',
+ 'hardware.tip_taper':'Radial bolt-tip narrowing. Zero keeps the nominal thread through the tip.',
+ 'hardware.tip_pitches':'Length of tip narrowing in thread pitches; inactive when taper is zero.',
+ 'hardware.fit_test':'Generate the real connector calibration strip, with holes of increasing clearance. Use the matching nominal tile connector rod for physical calibration. Every file is still independently checked.',
+ 'hardware.connector':'Shape of the calibration strip holes and matching connector rod.',
+ 'hardware.connector_d':'Nominal calibration connector diameter. This is separate from the metric screw size.',
+ 'hardware.segments':'Round and thread detail in the generated meshes. Higher detail uses more memory and time.',
 }
 for(let i=1;i<=8;i++){
  help[`tone_patterns.kind_${i}`]=`Pattern for intermediate tone ${i}. Auto inherits the default pattern; solid and empty explicitly replace this tone. This override is used only if that tone exists.`
@@ -73,6 +117,19 @@ export function editColourLayer(doc:ProjectDocument,id:string,change:Partial<Pic
 
 export function solidChoices(doc:ProjectDocument){const g=compileRecipe(doc);return g.nodes.filter(n=>n.type==='remesh'||['stencil','vector_stencil'].includes(n.type)&&!g.edges.some(e=>e.to[0]===n.id&&e.to[1]==='tiles'))}
 export function partsChoices(doc:ProjectDocument,catalogue:NodeType[]){const g=compileRecipe(doc);return g.nodes.filter(n=>catalogue.find(t=>t.id===n.type)?.outputs.some(p=>p.type==='parts')&&(!['stencil','vector_stencil'].includes(n.type)||g.edges.some(e=>e.to[0]===n.id&&e.to[1]==='tiles')))}
+export function tilePartChoices(doc:ProjectDocument,catalogue:NodeType[]){
+ const g=compileRecipe(doc),seen=new Set<string>(),compatible=(id:string):boolean=>{if(seen.has(id))return false;seen.add(id);const n=g.nodes.find(n=>n.id===id);if(!n)return false;if(['tiles','export'].includes(n.type)||['stencil','vector_stencil'].includes(n.type)&&g.edges.some(e=>e.to[0]===id&&e.to[1]==='tiles'))return true;if(!['pads','ring','fragments'].includes(n.type))return false;const parent=g.edges.find(e=>e.to[0]===id&&e.to[1]==='parts');return !!parent&&compatible(parent.from[0])}
+ return partsChoices(doc,catalogue).filter(n=>{seen.clear();return compatible(n.id)})
+}
+export function hasMountingInput(doc:ProjectDocument,id:string){
+ const g=compileRecipe(doc),seen=new Set<string>();let n=g.nodes.find(n=>n.id===id)
+ while(n&&!seen.has(n.id)){seen.add(n.id);if(n.type==='pads')return n.params.mount_screw!=='none';if(n.type==='export')return n.params.mount_screw!=null&&n.params.mount_screw!=='none';const edge=g.edges.find(e=>e.to[0]===n!.id&&e.to[1]==='parts');n=g.nodes.find(n=>n.id===edge?.from[0])}return false
+}
+export function createMountablePlate(doc:ProjectDocument,source:string,catalogue:NodeType[]){return createTiledWorkflow(doc,source,'after',2000,2000,catalogue)}
+export function createHardware(doc:ProjectDocument,source:string|undefined,catalogue:NodeType[]){
+ if(source&&!hasMountingInput(doc,source))throw Error('Choose parts with a mounting description, or create standalone hardware without an assembly input.')
+ const next=copy(doc),id=appendOperation(next,'hardware',catalogue,source?{parts:[source,'parts']}:{}),m=metadata(next);m.passNames={...m.passNames,[id]:source?'Hardware for mounting assembly':'Standalone screws, nuts & plates'};validateRecipe(next,catalogue);return next
+}
 export function createTiledWorkflow(doc:ProjectDocument,source:string,strategy:'before'|'after',maxX:number,maxY:number,catalogue:NodeType[]){
  const g=compileRecipe(doc),base=g.nodes.find(n=>n.id===source);if(!base||!solidChoices(doc).some(n=>n.id===source))throw Error('Choose one compatible stencil solid before adding tiling.')
  if(!Number.isFinite(maxX)||!Number.isFinite(maxY)||maxX<25||maxY<25||maxX>2000||maxY>2000)throw Error('Enter printable dimensions from 25 to 2000 mm. Individual operation settings retain their own engine ranges.')

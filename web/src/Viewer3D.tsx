@@ -96,7 +96,8 @@ export default function Viewer3D({ parts, plate, compact=false, theme, allowDown
   const urls = parts.map((p) => p.url).join('|')
   const tileRe = /_r(\d+)c(\d+)\.stl$/
   const isTile = (n: string) => tileRe.test(n)
-  const tiled = parts.some((p) => isTile(p.name))
+  const tiled = parts.some((p) => isTile(p.name)), registered=parts.some(p=>/^colour_\d+\.stl$/.test(p.name))
+  useEffect(()=>{setExplode(e=>Math.min(e,tiled?150:12));setHidden(h=>new Set([...h].filter(n=>parts.some(p=>p.name===n))))},[urls,tiled])
   const colorOf = (i: number) => (parts.length > 1 ? new THREE.Color().setHSL((i * 0.137) % 1, 0.55, 0.62) : new THREE.Color(0xffffff))
   useEffect(() => { setHidden(new Set()); setExplode(tiled ? 12 : 0) }, [urls])
 
@@ -219,10 +220,10 @@ export default function Viewer3D({ parts, plate, compact=false, theme, allowDown
     }
     // loose parts (joiner/extender plates, rods) lay out in a row below the tiles
     let ax = 0
-    const ay = -15
+    const ay = compact&&plate?Math.min(0,...s.boxes.map(b=>b.min.y))-20:-15
     const slabRe = /^ring_(\d+)_/
     const isSlab = (i: number) => !!(tiles.length && plate && slabRe.test(parts[i].name))
-    const loose = parts.map((_, i) => i).filter((i) => tiles.length && !info[i] && !isSlab(i)).sort((a, b) => parts[a].name.localeCompare(parts[b].name))
+    const loose = parts.map((_, i) => i).filter((i) => (tiles.length||compact&&registered) && !info[i] && !isSlab(i) && !/^colour_\d+\.stl$/.test(parts[i].name)).sort((a, b) => parts[a].name.localeCompare(parts[b].name))
         s.meshes.forEach((m, i) => {
       const mat = m.material as THREE.MeshStandardMaterial
       const g = s.geos[i]
@@ -239,6 +240,7 @@ export default function Viewer3D({ parts, plate, compact=false, theme, allowDown
       m.visible = !hidden.has(parts[i].name)
       const t = info[i]
       if (t) m.position.set(colX.get(+t[2])!, rowY.get(+t[1])!, 0)
+      else if(compact&&registered&&/^colour_(\d+)\.stl$/.test(parts[i].name))m.position.set(0,0,(Number(parts[i].name.match(/^colour_(\d+)/)![1])-1)*explode)
       else if (isSlab(i)) {
         // margin slabs are modelled in the plate frame: sit them round the tiles, moving outward with the spacing
         const pl = plate!
@@ -391,7 +393,7 @@ export default function Viewer3D({ parts, plate, compact=false, theme, allowDown
         <label>detail <select value={detail} onChange={(e) => setDetail(e.target.value as 'auto' | 'high' | 'low')}><option value="auto">auto</option><option value="high">high</option><option value="low">low</option></select></label>
         {plate && <label title="seams (yellow), connectors (blue), pads (green), holes (red), joiner plates (purple)"><input type="checkbox" checked={layout} onChange={(e) => setLayout(e.target.checked)} /> layout</label>}
         <label>layers up to <input type="range" min={0.01} max={1} step={0.01} value={clip} onChange={(e) => setClip(+e.target.value)} /></label>
-        {parts.length > 1 && <label>{tiled ? 'spacing (mm)' : 'explode'} <input type="range" min={0} max={tiled ? 150 : 12} step={tiled ? 1 : 0.25} value={explode} onChange={(e) => setExplode(+e.target.value)} /></label>}
+        {parts.length > 1 && <label>{tiled ? 'spacing (mm)' : compact&&registered?'layer spacing (mm)':'explode'} <input type="range" min={0} max={tiled ? 150 : 12} step={tiled ? 1 : 0.25} value={explode} onChange={(e) => setExplode(+e.target.value)} /></label>}
         <span className="mut">{parts.length > 1 ? `${parts.length} parts` : ''}</span>
       </div>
       </details><div className="v3main">

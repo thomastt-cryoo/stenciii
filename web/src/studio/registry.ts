@@ -21,7 +21,7 @@ export const categoryFor = (type: string, p: string) => {
   return categories[0]
 }
 export interface Setting { key: string; type: string; operationLabel: string; parameter: ParamDef; category: string; dependency: string }
-export interface WorkflowContext { hasLayout?: boolean; toneCount?: number }
+export interface WorkflowContext { hasLayout?: boolean; toneCount?: number;hasMounting?:boolean }
 
 /** The executed catalogue supplies every constraint. The audit only supplies routing/help. */
 export class ParameterRegistry {
@@ -75,11 +75,15 @@ export class ParameterRegistry {
       if (['mount_threaded', 'mount_clearance', 'hole_spacing', 'joiner_offset', 'extend'].includes(key) && p.mount_screw === 'none') return inactive('Choose a mounting screw to use this setting.')
     }
     if (type === 'ring') {
+      if(key==='tip_pitches'&&Number(p.tip_taper)===0)return inactive('Set bolt tip taper above zero to choose its length.')
       if (['screw_length', 'nut_clearance', 'tip_taper', 'tip_pitches'].includes(key) && !p.hardware) return inactive('Enable the bolt and nut to use this setting.')
       if (['number_size', 'pocket_depth'].includes(key) && !p.number_parts) return inactive('Enable slab numbering to use this setting.')
       if (key === 'hole_spacing' && !p.wall_holes) return inactive('Enable outer mounting holes to use this spacing.')
     }
     if (type === 'hardware') {
+      if(key==='joiner_thickness'&&context.hasMounting===false)return inactive('Connect a mounting assembly with seam joins to use its matched joiner thickness.')
+      if(key==='extend'&&!p.plate&&context.hasMounting===false)return inactive('Enable hand-sized plates or connect mounting parts to use the extra row spacing.')
+      if(key==='tip_pitches'&&Number(p.tip_taper)===0)return inactive('Set tip taper above zero to choose its length.')
       if (key.startsWith('plate_') && !p.plate) return inactive('Enable hand-sized plates to use this setting.')
       if (['connector', 'connector_d'].includes(key) && !p.fit_test) return inactive('Enable the connector fit-test strip to use this setting.')
     }

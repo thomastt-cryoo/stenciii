@@ -26,6 +26,17 @@ The layout editor uses original seam/pocket rules, actual engine PNG/metadata an
 
 Cumulative editable fields: 156. The remaining mounting, hardware and legacy families are still unclaimed. Full cross-phase regression and native/WASM comparisons follow in D.
 
-## M5C — next
+## M5C — checkpoint, repairs pending in D
 
 Mounting, expanded borders, screws/nuts/plates and their 44 fields. Existing fit-test degeneracy remains a tracked D repair and release blocker until independently revalidated.
+
+
+All 44 controls passed real value-change/reset/reopen and applicable engine execution checks in 8.1 minutes. The pre-repair coverage explicitly records four structurally invalid calibration-strip outputs: hardware.fit_test after, hardware.connector before/after, and hardware.connector_d before. Only these known fit-test failures were allowed in the diagnostic checkpoint; final strict verification will allow no invalid part. The default 3 mm hex strip has 24 degenerate facets, including collinear vertices along the top dimple contours. A 4 mm comparison strip validates. Original bytes are retained for the regression fixture.
+
+Both C editor tests passed (1.6 minutes): compatible mounting ancestry, independent hardware, reversible optional steps, real pads/border/hardware creation, scoped edits and undo/redo, the active fit-test export guard, explicit removal of the optional failed strip, save/reopen and original-image preservation. Real light/dark screenshots are saved. Cumulative editable controls: 200; this is editor coverage, not a claim of full manufacturing release readiness.
+
+Source review also found inconsistent clearance conversions in joiner routines (threaded versus ordinary holes). D will verify and reconcile those physical-unit contracts rather than silently presenting one generic clearance. The fit-test defect remains a release blocker until repaired and independently rechecked. No validator has been bypassed in the customer app.
+
+## M5D — in progress
+
+Complete legacy editing (17 fields), aggregate the correct actual upstream plates and auxiliary outputs, validate ZIP contents/CRC and identity, repair calibration geometry and direct CLI seam-angle routing, investigate the exact M4 Spread fixture, and run full local/production/native/WASM regressions. Review registration alignment and manufacturing metadata needed for accurate previews and quantities. Batch UI may be bounded; preserved CLI batch/sweeps remain mandatory. No M6 implementation.

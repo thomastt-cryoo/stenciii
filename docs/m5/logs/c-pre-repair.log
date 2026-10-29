@@ -1,0 +1,17 @@
+
+[WebServer] (node:6708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:27652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 1 test using 1 worker
+
+
+(node:9072) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/1] e2e\m5c-coverage.spec.ts:10:1 › M5C all 44 mounting, border and hardware slots edit, reset, reopen and change applicable real outputs
+  Slow test file: e2e\m5c-coverage.spec.ts (8.0m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  1 passed (8.1m)

@@ -1,0 +1,16 @@
+
+[WebServer] (node:5360) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10020) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+
+(node:19684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/2] e2e\m5c-editor.spec.ts:9:1 › mounting and hardware use compatible tile ancestry, preserve originals and restore optional manufacturing operations
+[2/2] e2e\m5c-editor.spec.ts:17:1 › mounting, border and matching hardware guides generate real parts and preserve scoped edits, history and saved artwork
+  2 passed (1.6m)
