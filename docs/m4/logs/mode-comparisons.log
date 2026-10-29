@@ -1,0 +1,1 @@
+{"fixtures": 96, "native_st_mt_equal": 95, "native_differences": ["vector_stencil-bridge_passes-after"], "st_mt_equal": 96, "independently_validated": 288, "rounding_mm": 0.0001}

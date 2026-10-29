@@ -1,0 +1,68 @@
+{
+  "date_dubai": "2026-10-29",
+  "approved_m3_base": "6191ce7cd4476a0c45ed9f2c0047fa8fa1e2d1cf",
+  "rust": {
+    "passed": 160,
+    "failed": 0,
+    "ignored": 0
+  },
+  "browser_runs": {
+    "full-browser": {
+      "passed": [
+        [
+          "156",
+          "11.7m"
+        ]
+      ],
+      "failed": [
+        "1"
+      ]
+    },
+    "production-tests": {
+      "passed": [
+        [
+          "71",
+          "7.9m"
+        ]
+      ],
+      "failed": []
+    }
+  },
+  "not_run": [
+    "Physical prints",
+    "macOS/Linux desktop launch",
+    "Firefox/Safari",
+    "Fresh-machine offline installation"
+  ],
+  "source": "893a88d5aeab06369a84d9e97f285890880d1a82",
+  "github": {
+    "run": 40880193435,
+    "rust_passed": 160,
+    "browser_passed": 157,
+    "browser_duration": "6.3m",
+    "rust_job": "success",
+    "web_job": "success",
+    "deploy": "failure: Pages not enabled, 404"
+  },
+  "selector_recheck": {
+    "passed": 1,
+    "assertions_retained": true
+  },
+  "native_st_mt_comparison": {
+    "fixtures": 96,
+    "native_st_mt_equal": 95,
+    "native_differences": [
+      "vector_stencil-bridge_passes-after"
+    ],
+    "st_mt_equal": 96,
+    "independently_validated": 288,
+    "rounding_mm": 0.0001
+  },
+  "known_corrections_and_limitations": [
+    "Initial complete local run: 156 passed, one ambiguous readiness paragraph locator. Corrected selector retains actual geometry change and original restoration; isolated and production replays and full CI pass.",
+    "Raster bridge_passes now reaches the actual fallback search instead of fixed four levels.",
+    "Vector overhang diagnostic measures real layered geometry instead of always zero; STL stays unchanged by diagnostic angle.",
+    "First-layer reinforcement correctly rejects zero/too-large taper; no speculative extrusion change was retained.",
+    "Strict mode comparison detects one native/WASM one-pass vector Spread difference. All 288 output artifacts independently validate, 95/96 agree across all modes, and ST/MT agree for every case. Exact cause remains unresolved."
+  ]
+}

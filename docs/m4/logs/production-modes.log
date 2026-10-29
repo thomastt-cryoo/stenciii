@@ -1,0 +1,18 @@
+file:///<workspace>/scripts/m4/verify_modes.mjs:43
+ if(compare.status!==0)throw Error(`${row.stem}: ${compare.stderr}`)
+                             ^
+
+Error: vector_stencil-bridge_passes-after: Traceback (most recent call last):
+
+  File "<workspace>\scripts\m4\compare_geometry.py", line 25, in <module>
+
+    assert all(r['geometry_hashes']==records[0]['geometry_hashes'] for r in records),'Native/ST/MT geometry differs'
+
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+AssertionError: Native/ST/MT geometry differs
+
+
+    at file:///<workspace>/scripts/m4/verify_modes.mjs:43:30
+
+Node.js v26.3.0

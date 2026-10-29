@@ -1,0 +1,113 @@
+{
+  "fixture": "docs/m4/fixtures/vector_stencil-bridge_passes-after.json",
+  "qualified_setting": "vector_stencil.bridge_passes",
+  "value": 1,
+  "placement": "spread",
+  "native_repeats": [
+    {
+      "triangles": 3148,
+      "sha256": "2ac0a3166a10259b5d60365e27bda0faf582b60f86d98c99f2f571a6217a0686"
+    },
+    {
+      "triangles": 3148,
+      "sha256": "2ac0a3166a10259b5d60365e27bda0faf582b60f86d98c99f2f571a6217a0686"
+    },
+    {
+      "triangles": 3148,
+      "sha256": "2ac0a3166a10259b5d60365e27bda0faf582b60f86d98c99f2f571a6217a0686"
+    }
+  ],
+  "mode_validation": {
+    "native": {
+      "format": "binary STL",
+      "bytes": 157484,
+      "triangles": 3148,
+      "vertices": 1546,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          100.0,
+          77.0,
+          2.5999999046325684
+        ]
+      ],
+      "size_mm": [
+        100.0,
+        77.0,
+        2.5999999046325684
+      ],
+      "signed_volume_mm3": 9440.243815134676,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "st": {
+      "format": "binary STL",
+      "bytes": 156684,
+      "triangles": 3132,
+      "vertices": 1542,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          100.0,
+          77.0,
+          2.5999999046325684
+        ]
+      ],
+      "size_mm": [
+        100.0,
+        77.0,
+        2.5999999046325684
+      ],
+      "signed_volume_mm3": 9461.707815812657,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "mt": {
+      "format": "binary STL",
+      "bytes": 156684,
+      "triangles": 3132,
+      "vertices": 1542,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          100.0,
+          77.0,
+          2.5999999046325684
+        ]
+      ],
+      "size_mm": [
+        100.0,
+        77.0,
+        2.5999999046325684
+      ],
+      "signed_volume_mm3": 9461.707815812657,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    }
+  },
+  "cause_status": "Reproduced deterministic native/WASM placement difference; exact numerical cause is unresolved. Floating-point tie sensitivity is a hypothesis, not a confirmed diagnosis.",
+  "native_volume_difference_percent": -0.22685123125563145,
+  "all_independently_valid": true,
+  "status": "Known cross-platform geometry parity limitation; strict equivalence command correctly fails for this fixture."
+}

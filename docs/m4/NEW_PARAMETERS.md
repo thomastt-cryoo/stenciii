@@ -1,0 +1,33 @@
+# Newly editable geometry fields
+
+- `stencil.flip`
+- `stencil.bridge_spacing`
+- `stencil.bridge_min_angle_deg`
+- `stencil.bridge_max_length`
+- `stencil.bridge_passes`
+- `stencil.z_bridging`
+- `stencil.max_overhang_deg`
+- `stencil.min_island_mm2`
+- `stencil.min_contact_mm`
+- `stencil.min_first_layer_width_mm`
+- `stencil.first_layer_taper_mm`
+- `vector_stencil.flip`
+- `vector_stencil.bridge_spacing`
+- `vector_stencil.bridge_min_angle_deg`
+- `vector_stencil.bridge_max_length`
+- `vector_stencil.bridge_passes`
+- `vector_stencil.z_bridging`
+- `vector_stencil.max_overhang_deg`
+- `vector_stencil.min_island_mm2`
+- `vector_stencil.min_contact_mm`
+- `vector_stencil.min_first_layer_width_mm`
+- `vector_stencil.first_layer_taper_mm`
+- `vector_stencil.tile_method`
+- `remesh.layer_from`
+- `remesh.layer_to`
+- `remesh.tolerance_mm`
+- `remesh.smoothing`
+- `remesh.keep_material`
+- `remesh.max_overhang_deg`
+- `remesh.decimate`
+- `remesh.decimate_mm`
