@@ -1,15 +1,16 @@
 import { api, artifactUrl, partUrl, type NodeRun } from '../api'
 import { badgesFor, type Badge } from '../badges'
-import { compileRecipe, projectName, quickRecipe, type ProjectDocument } from './project'
+import { compileRecipe, projectName, adjustmentRecipe as quickRecipe, type ProjectDocument } from './project'
 import { activeStyle } from './recipes'
+import { artworkNames, type PreviewStage } from './artwork'
 
 export interface Artifact {
   id: string; step: string; label: string; kind: 'solid' | 'parts'; url: string; filename: string
-  info: Record<string, any>; findings: Badge[]; mesh: MeshCheck | null
+  info: Record<string, any>; findings: Badge[]; mesh: MeshCheck | null; outline?: Outline
 }
 export interface ArtworkComparison { url: string; width: number; height: number; marginX: number; marginY: number; flip: boolean }
 export interface Outline { url: string; filename: string }
-export interface ArtifactSet { artifacts: Artifact[]; findings: Badge[]; comparison?: ArtworkComparison; outline?: Outline }
+export interface ArtifactSet { artifacts: Artifact[]; findings: Badge[]; comparison?: ArtworkComparison; outline?: Outline; outlines?: Record<string, Outline>; stages?: PreviewStage[] }
 export interface MeshCheck { triangles: number; size: number[]; degenerate: number }
 
 /** Inspect real float32 output; invalid facets block export instead of being silently repaired. */
@@ -31,9 +32,12 @@ export function inspectStl(bytes: ArrayBuffer): MeshCheck {
 
 export async function captureArtifacts(doc: ProjectDocument, runs: Record<string, NodeRun>): Promise<ArtifactSet> {
   const artifacts: Artifact[] = [], findings: Badge[] = []
-  const result: ArtifactSet = { artifacts, findings }
+  const result: ArtifactSet = { artifacts, findings, stages: [], outlines: {} }
   const recipe = quickRecipe(doc)
   const graph = compileRecipe(doc)
+  const textSources = graph.nodes.filter(n=>n.type==='text'), builders = graph.nodes.filter(n=>['stencil','vector_stencil'].includes(n.type))
+  const compareBuilder = recipe?.build ?? (textSources.length === 1 && builders.length === 1 ? builders[0] : null)
+  const compareSource = recipe ? graph.edges.find(e=>e.to[0]===recipe.threshold.id)?.from[0] : textSources.length === 1 ? textSources[0].id : null
   const base = projectName(doc).replace(/[^a-z0-9 ._-]/gi, '_').slice(0, 80) || 'stencil'
   const name = `${base}-${recipe ? activeStyle(doc) : 'custom'}`
   try {
@@ -48,18 +52,22 @@ export async function captureArtifacts(doc: ProjectDocument, runs: Record<string
         const auxiliary = ['removed', 'rounded'].includes(out) && !graph.edges.some(e => e.from[0] === n.id && e.from[1] === out)
         const checks = auxiliary ? [] : badgesFor(n.type, n.params, info)
         findings.push(...checks)
-        if (recipe && n.id === (recipe.transform ?? recipe.source).id && o.type === 'image') {
+        if (['image', 'mask', 'shapes'].includes(o.type)) {
+          const url = artifactUrl(run.key, out)
+          if (url) result.stages!.push({ id: `${n.id}/${out}`, step: n.id, port: out, label: `${artworkNames[n.type] ?? n.type}${['removed', 'rounded'].includes(out) ? ' · Removed details' : ''}`, kind: o.type, url: URL.createObjectURL(await (await fetch(url)).blob()), info })
+        }
+        if (compareBuilder && n.id === compareSource && ['image','mask'].includes(o.type) && !graph.nodes.some(n=>n.type==='shapes_to_mask')) {
           const sourceUrl = artifactUrl(run.key, out)
           if (sourceUrl) {
-            const width = Number(recipe.build.params.width_mm ?? 200), margin = Number(recipe.build.params.margin_mm ?? 8)
+            const width = Number(compareBuilder.params.width_mm ?? 200), margin = Number(compareBuilder.params.margin_mm ?? 8), vector = compareBuilder.type === 'vector_stencil'
             const gridMargin = Math.ceil(margin / (width / info.width))
             const scale = width / (info.width + 2 * gridMargin)
-            result.comparison = { url: URL.createObjectURL(await (await fetch(sourceUrl)).blob()), width: recipe.vector ? width - 2 * margin : info.width * scale, height: recipe.vector ? (width - 2 * margin) * info.height / info.width : info.height * scale, marginX: recipe.vector ? margin : gridMargin * scale, marginY: recipe.vector ? margin : gridMargin * scale, flip: !!recipe.build.params.flip }
+            result.comparison = { url: URL.createObjectURL(await (await fetch(sourceUrl)).blob()), width: vector ? width - 2 * margin : info.width * scale, height: vector ? (width - 2 * margin) * info.height / info.width : info.height * scale, marginX: vector ? margin : gridMargin * scale, marginY: vector ? margin : gridMargin * scale, flip: !!compareBuilder.params.flip }
           }
         }
-        if (recipe?.trace?.id === n.id && o.type === 'shapes' && out === 'shapes') {
+        if (n.type === 'trace' && o.type === 'shapes' && out === 'shapes') {
           const sourceUrl = artifactUrl(run.key, out)
-          if (sourceUrl) result.outline = { url: URL.createObjectURL(await (await fetch(sourceUrl)).blob()), filename: `${name}-traced-outlines.svg` }
+          if (sourceUrl) { const outline = { url: URL.createObjectURL(await (await fetch(sourceUrl)).blob()), filename: `${name}-${n.id}-traced-outlines.svg` }; result.outlines![n.id] = outline; result.outline = outline }
         }
         if (o.type !== 'solid' && o.type !== 'parts') continue
         const sourceUrl = artifactUrl(run.key, out)
@@ -82,8 +90,14 @@ export async function captureArtifacts(doc: ProjectDocument, runs: Record<string
         artifacts.push({ id: `${n.id}/${out}`, step: n.id, label: n.type === 'vector_stencil' || n.type === 'stencil' ? 'Stencil plate' : n.type.replace(/_/g, ' '), kind: o.type, url, filename: solid ? `${name}${artifacts.length ? `-${n.id}` : ''}.stl` : `${name}-${n.id}-parts.zip`, info, findings: checks, mesh })
       }
     }
+    const nearest = (id: string, seen = new Set<string>()): string[] => {
+      if (seen.has(id)) return []; seen.add(id)
+      if (result.outlines![id]) return [id]
+      return [...new Set(graph.edges.filter(e=>e.to[0]===id).flatMap(e=>nearest(e.from[0],seen)))]
+    }
+    for (const artifact of artifacts) { const traces = nearest(artifact.step); if (traces.length === 1) artifact.outline = result.outlines![traces[0]] }
     result.findings = findings.filter((f, i, a) => a.findIndex(x => x.level === f.level && x.text === f.text) === i)
     return result
   } catch (e) { releaseArtifacts(result); throw e }
 }
-export function releaseArtifacts(value: ArtifactSet) { value.artifacts.forEach(a => URL.revokeObjectURL(a.url)); if (value.comparison) URL.revokeObjectURL(value.comparison.url); if (value.outline) URL.revokeObjectURL(value.outline.url) }
+export function releaseArtifacts(value: ArtifactSet) { value.artifacts.forEach(a => URL.revokeObjectURL(a.url)); value.stages?.forEach(s => URL.revokeObjectURL(s.url)); if (value.comparison) URL.revokeObjectURL(value.comparison.url); if (value.outlines) Object.values(value.outlines).forEach(o=>URL.revokeObjectURL(o.url)); else if (value.outline) URL.revokeObjectURL(value.outline.url) }

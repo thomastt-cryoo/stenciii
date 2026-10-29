@@ -3,19 +3,21 @@ import { api } from '../api'
 import { captureArtifacts, releaseArtifacts, type ArtifactSet } from './artifacts'
 import { RunController, type RunState } from './runController'
 import { ParameterRegistry } from './registry'
-import { ProjectCommands, compileRecipe, copy, decodeBytes, editParameter, encodeBytes, object, openDocument, operations, projectName, quickRecipe, signature, type ProjectDocument } from './project'
+import { ProjectCommands, adjustmentRecipe, compileRecipe, copy, decodeBytes, editParameter, encodeBytes, object, openDocument, operations, projectName, quickRecipe, signature, type ProjectDocument } from './project'
 import { styleRecipe, switchStyle, setDetail, draftRecipe, pixelCleanup, type Style } from './recipes'
 import { LivePreview } from './livePreview'
 import type { Quality } from './runController'
+import { liveArtwork, textRecipe, editMany } from './artwork'
 
 export const AUTOSAVE = 'stencil-studio.project.v1'
 interface State {
   doc: ProjectDocument | null; registry: ParameterRegistry | null; run: RunState<ArtifactSet>
   loading: boolean; error: string | null; notice: string | null; canUndo: boolean; canRedo: boolean
+  preview: { step: string; port: string } | null; cropStep: string | null; interacting: boolean
 }
 const commands = new ProjectCommands()
 export const controller = new RunController<ArtifactSet>({ cancel: () => api.cancel(), run: (g, step) => api.run(g, undefined, step) }, run => useEditor.setState({ run }), releaseArtifacts)
-export const useEditor = create<State>(() => ({ doc: null, registry: null, run: controller.state, loading: true, error: null, notice: null, canUndo: false, canRedo: false }))
+export const useEditor = create<State>(() => ({ doc: null, registry: null, run: controller.state, loading: true, error: null, notice: null, canUndo: false, canRedo: false, preview: null, cropStep: null, interacting: false }))
 let fileEpoch = 0
 let initialization: Promise<void> | null = null
 let gesture = false
@@ -29,7 +31,7 @@ function sync() {
 }
 function invalidate(reset = false) { controller.invalidate(commands.current ? signature(commands.current) : '', reset); sync() }
 function error(e: unknown) { useEditor.setState({ error: String(e instanceof Error ? e.message : e) }) }
-function changed() { invalidate(); if (commands.current && quickRecipe(commands.current)) live.change() }
+function changed() { invalidate(); if (commands.current && liveArtwork(commands.current)) live.change() }
 
 export const editor = {
   initialize() {
@@ -43,12 +45,12 @@ export const editor = {
     })()
     return initialization
   },
-  newProject() { fileEpoch++; live.stop(true); commands.reset(null); useEditor.setState({ error: null, notice: null, loading: false }); invalidate(true) },
+  newProject() { fileEpoch++; live.stop(true); gesture = false; commands.reset(null); useEditor.setState({ error: null, notice: null, loading: false, preview: null, cropStep: null, interacting: false }); invalidate(true) },
   async open(value: unknown) {
     fileEpoch++
     const doc = openDocument(value)
     live.stop(true)
-    commands.reset(doc); useEditor.setState({ error: null, notice: null, loading: false }); invalidate(true)
+    gesture = false; commands.reset(doc); useEditor.setState({ error: null, notice: null, loading: false, preview: null, cropStep: null, interacting: false }); invalidate(true)
     // Always run on open, including the exact same JSON after New. No signature-only deduplication.
     await editor.make()
   },
@@ -57,7 +59,7 @@ export const editor = {
     useEditor.setState({ error: null })
     try { const raw = JSON.parse(await file.text()); if (mine === fileEpoch) await editor.open(raw) } catch (e) { if (mine === fileEpoch) error(e) }
   },
-  async image(file: File) {
+  async image(file: File, sourceId?: string) {
     const mine = ++fileEpoch
     useEditor.setState({ loading: true, error: null })
     try {
@@ -69,16 +71,44 @@ export const editor = {
       if (mine !== fileEpoch) return
       const old = commands.current
       const sources = old ? operations(old).filter(n => n.type === 'source') : []
-      if (old && sources.length !== 1) throw new Error('This project has several artwork sources. Their individual replacement editor will be available in a later milestone. Your project is unchanged.')
-      const next = old ? editParameter(old, sources[0].id, 'image_id', got.id) : styleRecipe(got.id, file.name, [...useEditor.getState().registry!.types.values()])
+      const source = sourceId ? sources.find(s => s.id === sourceId) : sources.length === 1 ? sources[0] : null
+      if (old && !source) throw new Error('Choose the individual image in Artwork settings to replace it. Your project is unchanged.')
+      const next = old ? editParameter(old, source!.id, 'image_id', got.id) : styleRecipe(got.id, file.name, [...useEditor.getState().registry!.types.values()])
       if (!object(next.raw.images)) next.raw.images = {}
       // Retain earlier originals for undo and unreferenced image data for legacy round trips.
       next.raw.images[got.id] = { name: file.name, base64: encodeBytes(bytes) }
       if (old) commands.apply('Replace image', () => next); else commands.reset(next)
       live.stop(); invalidate(true)
-      if (old && live.enabled && quickRecipe(next)) live.change()
+      if (old && live.enabled && liveArtwork(next)) live.change()
     } catch (e) { if (mine === fileEpoch) error(e) }
     finally { if (mine === fileEpoch) useEditor.setState({ loading: false }) }
+  },
+  createText() {
+    fileEpoch++; live.stop(true)
+    const doc = textRecipe([...useEditor.getState().registry!.types.values()])
+    if (commands.current) doc.raw.stencilStudio.previousProject = copy(commands.current.raw)
+    if (commands.current) commands.apply('Create a separate text stencil', () => doc); else commands.reset(doc)
+    gesture = false; useEditor.setState({ error: null, notice: null, preview: null, cropStep: null, interacting: false }); invalidate(true)
+  },
+  command(label: string, update: (doc: ProjectDocument) => ProjectDocument) {
+    const before = commands.current && signature(commands.current)
+    try { if (commands.apply(label, update, gesture && gestureChanged)) { gestureChanged = true; if (commands.current && signature(commands.current) !== before) changed(); else sync() }; useEditor.setState({ error: null }) }
+    catch (e) { error(e) }
+  },
+  parameters(id: string, values: Record<string, unknown>, label = 'Adjust artwork') {
+    const state = useEditor.getState(), op = state.doc && operations(state.doc).find(o => o.id === id)
+    if (!op) return
+    try {
+      for (const [key, value] of Object.entries(values)) state.registry!.validate(op.type, key, value)
+      const p = { ...op.params, ...values }
+      if (op.type === 'transform' && (Number(p.crop_left ?? 0) + Number(p.crop_right ?? 0) >= 95 || Number(p.crop_top ?? 0) + Number(p.crop_bottom ?? 0) >= 95)) throw Error('Keep at least 5% of the image when cropping.')
+      editor.command(`${label} ${id}`, doc => editMany(doc, id, values))
+    } catch (e) { error(e) }
+  },
+  resetParameter(id: string, key: string) {
+    const state = useEditor.getState(), op = state.doc && operations(state.doc).find(o => o.id === id)
+    const def = op && state.registry?.types.get(op.type)?.params.find(p => p.name === key)
+    if (def) editor.edit(id, key, def.default)
   },
   edit(id: string, key: string, value: unknown) {
     try {
@@ -93,8 +123,10 @@ export const editor = {
       useEditor.setState({ error: null })
     } catch (e) { error(e) }
   },
-  begin(interactive = true) { gesture = true; gestureChanged = false; if (interactive) live.begin() },
-  end() { gesture = false; live.end() },
+  begin(interactive = true) { gesture = true; gestureChanged = false; if (interactive) { live.begin(); useEditor.setState({ interacting: true }) } },
+  end() { gesture = false; live.end(); useEditor.setState({ interacting: false }) },
+  preview(step: string, port: string) { useEditor.setState({ preview: { step, port } }) },
+  crop(step: string | null) { useEditor.setState({ cropStep: step }) },
   style(style: Style) {
     try { if (commands.apply(`Choose ${style} style`, doc => switchStyle(doc, style, [...useEditor.getState().registry!.types.values()]))) changed(); useEditor.setState({ error: null }) }
     catch (e) { error(e) }
@@ -105,7 +137,7 @@ export const editor = {
     catch (e) { error(e) }
   },
   autoThreshold(automatic: boolean) {
-    const q = commands.current && quickRecipe(commands.current); if (!q) return
+    const q = commands.current && adjustmentRecipe(commands.current); if (!q) return
     const old = Number(q.threshold.params.threshold ?? 256)
     commands.apply('Adjust paint selection', doc => {
       const next = editParameter(doc, q.threshold.id, 'threshold', automatic ? 256 : Number(doc.raw.stencilStudio?.manualThreshold ?? 128))

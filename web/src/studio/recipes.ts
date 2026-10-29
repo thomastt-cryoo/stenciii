@@ -1,5 +1,5 @@
 import type { GraphJson, NodeType } from '../api'
-import { copy, editParameter, object, projectName, quickRecipe, rawGraph, standardRecipe, type ProjectDocument } from './project'
+import { copy, editParameter, object, projectName, quickRecipe, adjustmentRecipe, rawGraph, standardRecipe, type ProjectDocument } from './project'
 
 export const styles = [
   { id: 'standard', name: 'Standard', description: 'Balanced outlines for logos, lettering and everyday artwork.' },
@@ -8,7 +8,8 @@ export const styles = [
 ] as const
 export type Style = typeof styles[number]['id']
 export function activeStyle(doc: ProjectDocument): Style {
-  const q = quickRecipe(doc)
+  if (['standard', 'smooth', 'crisp'].includes(doc.raw.stencilStudio?.style)) return doc.raw.stencilStudio.style
+  const q = adjustmentRecipe(doc)
   return q?.vector ? q.smoothing ? 'smooth' : 'standard' : 'crisp'
 }
 export const detailLevels = ['Quick', 'Balanced', 'Fine'] as const
@@ -35,7 +36,7 @@ export function styleRecipe(imageId: string, name: string, catalogue: NodeType[]
 
 /** Bank whole graphs, including unknown imported fields. Never switch a branched workflow. */
 export function switchStyle(doc: ProjectDocument, style: Style, catalogue: NodeType[]): ProjectDocument {
-  const current = quickRecipe(doc)
+  const current = adjustmentRecipe(doc)
   if (!current) throw new Error('This custom workflow keeps its original processing. Style switching is available for simple image-to-stencil projects.')
   const before = activeStyle(doc)
   if (before === style) return doc
@@ -60,17 +61,17 @@ export function switchStyle(doc: ProjectDocument, style: Style, catalogue: NodeT
   if (next.raw.graph) next.raw.graph = target
   else { next.raw.nodes = target.nodes; next.raw.edges = target.edges }
   next.raw.stencilStudio = { ...meta, schema: 2, style, styles: banks }
-  if (!quickRecipe(next) || activeStyle(next) !== style) throw new Error('This saved style uses a custom workflow. Its original data is preserved; open the original project to continue.')
+  if (!adjustmentRecipe(next) || activeStyle(next) !== style) throw new Error('This saved style uses a custom workflow. Its original data is preserved; open the original project to continue.')
   return next
 }
 export function setDetail(doc: ProjectDocument, level: number) {
-  const q = quickRecipe(doc); if (!q) return doc
+  const q = adjustmentRecipe(doc); if (!q) return doc
   let next = editParameter(doc, q.source.id, 'resolution', resolutions[activeStyle(doc)][level])
   if (q.vector) next = editParameter(next, q.build.id, 'detail', [2, 4, 6][level])
   return next
 }
 export function detailLevel(doc: ProjectDocument): number | null {
-  const q = quickRecipe(doc); if (!q) return null
+  const q = adjustmentRecipe(doc); if (!q) return null
   const level = resolutions[activeStyle(doc)].indexOf(Number(q.source.params.resolution))
   return level >= 0 && (!q.vector || Number(q.build.params.detail) === [2, 4, 6][level]) ? level : null
 }
@@ -111,11 +112,17 @@ export function draftRecipe(graph: GraphJson): GraphJson {
     if (n.type === 'vector_stencil') n.params.detail = Math.min(Number(n.params.detail ?? 5), 2)
     if (n.type === 'stencil' || n.type === 'vector_stencil') n.params.z_bridging = 'easy'
     if (n.type === 'smooth') n.params.supersample = 1
+    if (n.type === 'shapes_to_mask') n.params.resolution = Math.min(Number(n.params.resolution ?? 1000), 200)
+    if (n.type === 'text') {
+      const scale = Math.min(1, 100 / Number(n.params.size ?? 160))
+      n.params.size = Math.max(20, Math.round(Number(n.params.size ?? 160) * scale))
+      n.params.padding = Math.round(Number(n.params.padding ?? 20) * scale)
+    }
   }
   return draft
 }
 
 /** Only these tested per-instance controls are editable in M2; all 217 remain searchable. */
 export function editable(type: string, key: string) {
-  return type === 'source' ? key === 'resolution' : type === 'threshold' ? ['threshold', 'invert'].includes(key) : type === 'morphology' ? ['op', 'radius', 'iterations', 'kernel'].includes(key) : type === 'transform' || type === 'smooth' || type === 'remove_islands' || type === 'trace' ? true : ['stencil', 'vector_stencil'].includes(type) && ['detail', 'width_mm', 'thickness_mm', 'margin_mm', 'bridge_mm', 'raised_bridges', 'bridges_per_island', 'layer_height_mm', 'extra_top_layers'].includes(key)
+  return ['source', 'text', 'transform', 'threshold', 'reduce', 'smooth', 'morphology', 'trace', 'round_corners', 'remove_islands', 'shapes_to_mask'].includes(type) || ['stencil', 'vector_stencil'].includes(type) && ['detail', 'width_mm', 'thickness_mm', 'margin_mm', 'bridge_mm', 'raised_bridges', 'bridges_per_island', 'layer_height_mm', 'extra_top_layers'].includes(key)
 }

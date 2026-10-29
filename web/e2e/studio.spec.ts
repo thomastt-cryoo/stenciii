@@ -822,8 +822,12 @@ test('the shading menu changes how the mesh is drawn', async ({ page }) => {
   test.setTimeout(240_000)
   await page.goto('/legacy.html')
   await page.locator('input[type=file][accept*=json]').setInputFiles('e2e/fixtures/margin-ring.json')
+  // A draft can open the viewer before its final artifact replaces the canvas.
+  // Wait for actual processing completion; retain the original shading assertion.
+  await settled(page)
   await page.locator('.react-flow__node').filter({ hasText: 'Expand margin' }).first().dispatchEvent('dblclick')
   await expect(page.locator('.v3bar')).toBeVisible({ timeout: 200_000 })
+  await expect(page.locator('.v3status')).toHaveCount(0, { timeout: 60000 })
   await page.getByRole('button', { name: 'Iso' }).click()
   const canvas = page.locator('.v3bar').locator('xpath=ancestor::*[.//canvas][1]').locator('canvas').first()
   const shot = async (mode: string) => {

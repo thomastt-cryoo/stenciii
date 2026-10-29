@@ -6,12 +6,12 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { styleRecipe, styles } from '../src/studio/recipes'
 import type { NodeType } from '../src/api'
-const root = resolve('..'), out = resolve(root, 'sandbox/m2/corpus')
+const root = resolve('..'), milestone = process.env.STENCIL_AUDIT_MILESTONE === 'm3' ? 'm3' : 'm2', out = resolve(root, `sandbox/${milestone}/corpus`)
 const catalogue: NodeType[] = JSON.parse(readFileSync(resolve(root, 'docs/audit/runtime-catalogue.json'), 'utf8'))
 const manifest = JSON.parse(readFileSync(resolve(root, 'web/e2e/corpus/manifest.json'), 'utf8'))
 
 test('measure all styles on every representative input and independently validate every produced STL', () => {
-  mkdirSync(out, { recursive: true }); mkdirSync(resolve(root, 'docs/m2'), { recursive: true })
+  mkdirSync(out, { recursive: true }); mkdirSync(resolve(root, `docs/${milestone}`), { recursive: true })
   const results: any[] = []
   for (const source of manifest) for (const style of styles) {
     const stem = source.file.replace(/\.[^.]+$/, ''), name = `${stem}-${style.id}`
@@ -29,13 +29,13 @@ test('measure all styles on every representative input and independently validat
       if (check.status !== 0) throw new Error(check.stderr || check.stdout)
       row.mesh = JSON.parse(check.stdout)
       try { row.engine = JSON.parse(readFileSync(report, 'utf8')) } catch {}
-      row.project = `sandbox/m2/corpus/${name}.json`; row.output = `sandbox/m2/corpus/${name}.stl`
+      row.project = `sandbox/${milestone}/corpus/${name}.json`; row.output = `sandbox/${milestone}/corpus/${name}.stl`
       row.status = row.mesh.closed_oriented_mesh ? 'valid mesh' : 'INVALID MESH — export guard required'
     }
     results.push(row)
-    writeFileSync(resolve(root, 'docs/m2/corpus-results.json'), JSON.stringify({ source_m1: '61a98108b2cab1d248585ef9c465abcde9fd54e6', recipe: 'Balanced profile, engine defaults for physical dimensions; actual styleRecipe()', cases: results }, null, 2))
     console.log(`${name}: ${row.status} · ${ms} ms`)
   }
+  writeFileSync(resolve(root, `docs/${milestone}/corpus-results.json`), JSON.stringify({ source_base: milestone === 'm3' ? '48490e778d88408c070a64c94261e3efe4ee33ce' : '61a98108b2cab1d248585ef9c465abcde9fd54e6', recipe: 'Balanced profile, engine defaults for physical dimensions; actual styleRecipe()', cases: results }, null, 2))
   expect(results).toHaveLength(manifest.length * 3)
   // Engine refusals are visible in the audit. An emitted invalid STL fails this check.
   expect(results.filter(r => r.status.startsWith('INVALID'))).toEqual([])

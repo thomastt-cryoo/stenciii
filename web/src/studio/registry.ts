@@ -1,6 +1,7 @@
 import type { NodeType, ParamDef } from '../api'
 import mapping from '../../../docs/audit/parameter-mapping.json' with { type: 'json' }
 import type { Operation } from './project'
+import { artworkHelp, artworkNames } from './artwork'
 
 export const categories = [
   'Artwork and image cleanup', 'Size and print settings', 'Bridges and stencil geometry', 'Colours and layers',
@@ -10,7 +11,7 @@ export const categories = [
 export const categoryFor = (type: string, p: string) => {
   if (type === 'export') return categories[11]
   if (['stencil', 'vector_stencil'].includes(type)) return ['width_mm', 'thickness_mm', 'margin_mm', 'flip', 'layer_height_mm', 'extra_top_layers'].includes(p) ? categories[1] : p === 'detail' ? categories[4] : p === 'tile_method' ? categories[5] : categories[2]
-  if (['reduce', 'split_colours', 'tone_patterns', 'colour_set'].includes(type)) return categories[3]
+  if (['split_colours', 'tone_patterns', 'colour_set'].includes(type)) return categories[3]
   if (type === 'remesh') return categories[4]
   if (['tile_layout', 'tiles', 'fragments'].includes(type)) return categories[5]
   if (['pads', 'ring'].includes(type)) return categories[6]
@@ -27,16 +28,18 @@ export class ParameterRegistry {
   constructor(catalogue: NodeType[]) {
     this.types = new Map(catalogue.map(t => [t.id, t]))
     const plan = new Map(mapping.map(p => [p.key, p]))
-    this.settings = catalogue.flatMap(t => t.params.map(p => ({ key: `${t.id}.${p.name}`, type: t.id, operationLabel: t.label.replace(/\s*\(old\)$/, ''), parameter: p, category: categoryFor(t.id, p.name), dependency: plan.get(`${t.id}.${p.name}`)?.dependency ?? t.doc })))
+    this.settings = catalogue.flatMap(t => t.params.map(p => ({ key: `${t.id}.${p.name}`, type: t.id, operationLabel: artworkNames[t.id] ?? t.label.replace(/\s*\(old\)$/, ''), parameter: p, category: categoryFor(t.id, p.name), dependency: plan.get(`${t.id}.${p.name}`)?.dependency ?? t.doc })))
   }
   defaults(type: string) { return Object.fromEntries((this.types.get(type)?.params ?? []).map(p => [p.name, p.default])) }
   search(query: string, category?: string) {
-    const text = query.toLowerCase().trim(), words = text.split(/\s+/).filter(Boolean)
+    const text = query.toLowerCase().trim()
+    const aliases: Record<string, string> = { 'smooth edges': 'smooth', 'remove small dots': 'remove_islands', 'remove specks': 'delete_specks', 'fill small holes': 'fill_holes', 'round tips': 'round_corners', 'thicken paint': 'morphology', 'font': 'text.font' }
+    const words = (aliases[text] ?? text).split(/\s+/).filter(Boolean)
     const score = (s: Setting) => {
       const exact = [s.key, s.parameter.name, s.parameter.label, s.operationLabel].map(v => v.toLowerCase())
       return exact.includes(text) ? 0 : exact.some(v => v.startsWith(text)) ? 1 : words.every(w => exact.some(v => v.includes(w))) ? 2 : 3
     }
-    return this.settings.filter(s => (!category || s.category === category) && words.every(q => `${s.key} ${s.parameter.label} ${s.operationLabel} ${s.category} ${s.dependency}`.toLowerCase().includes(q))).sort((a, b) => text ? score(a) - score(b) : 0)
+    return this.settings.filter(s => (!category || s.category === category) && words.every(q => `${s.key} ${s.parameter.label} ${s.operationLabel} ${s.category} ${s.dependency} ${artworkHelp[s.key] ?? ''}`.toLowerCase().includes(q))).sort((a, b) => text ? score(a) - score(b) : 0)
   }
   instances(setting: Setting, operations: Operation[]) { return operations.filter(o => (o.type === 'complexity' ? 'remesh' : o.type) === setting.type) }
   /** Availability is a projection only. Inactive values are never removed or reset. */
@@ -53,7 +56,9 @@ export class ParameterRegistry {
     if (type === 'morphology') {
       const kernelOps = ['erode', 'dilate', 'open', 'close', 'gradient', 'white_hat', 'black_hat']
       if (['kernel', 'radius', 'angle'].includes(key) && !kernelOps.includes(String(p.op))) return inactive('This operation does not use a kernel.')
-      if (key === 'angle' && p.kernel !== 'line') return inactive('The angle only applies to a line kernel.')
+      if (key === 'angle' && (p.kernel !== 'line' || !kernelOps.includes(String(p.op)))) return inactive('The angle only applies to a line kernel in a neighbourhood operation.')
+      if (key === 'iterations' && ['skeleton', 'hit_or_miss'].includes(String(p.op))) return inactive('This operation computes its complete result without a pass count.')
+      if (['custom', 'rotate'].includes(key) && p.op !== 'hit_or_miss') return inactive('Choose hit-or-miss to use pattern settings.')
       if (['pattern', 'custom', 'rotate'].includes(key) && p.op !== 'hit_or_miss') return inactive('Choose hit-or-miss to use pattern settings.')
       if (['custom', 'rotate'].includes(key) && p.pattern !== 'custom') return inactive('Choose a custom pattern to use this setting.')
     }
@@ -84,5 +89,6 @@ export class ParameterRegistry {
     if (['int', 'float'].includes(p.kind) && (typeof value !== 'number' || !Number.isFinite(value) || value < p.min! || value > p.max! || (p.kind === 'int' && !Number.isInteger(value)))) throw new Error(`Enter a value from ${p.min} to ${p.max}.`)
     if (p.kind === 'bool' && typeof value !== 'boolean') throw new Error('Choose on or off.')
     if (p.kind === 'choice' && !p.choices?.includes(String(value))) throw new Error('Choose one of the available options.')
+    if (['string', 'text'].includes(p.kind) && typeof value !== 'string') throw new Error('Enter text for this setting.')
   }
 }

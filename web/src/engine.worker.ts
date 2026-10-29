@@ -8,6 +8,7 @@ type Req =
   | { id: number; op: 'run'; graph: string; targets: string }
   | { id: number; op: 'cancel' }
   | { id: number; op: 'threads' }
+  | { id: number; op: 'inspect'; graph: string; target: string; out: string }
 
 let engine: Engine | null = null
 let threads = 1
@@ -19,7 +20,7 @@ const budget = (cores: number) => Math.max(1, Math.min(Math.floor(cores / 2), co
 // The threaded build needs shared memory, which only a cross-origin isolated page may use; otherwise (or if the
 // pool cannot start) the single-threaded build runs the same engine.
 const ready = (async () => {
-  const n = budget(navigator.hardwareConcurrency || 1)
+  const n = self.name === 'artwork-preview' ? 1 : budget(navigator.hardwareConcurrency || 1)
   if (n < 2) why = 'too few cores to share with the page'
   else if (!self.crossOriginIsolated || typeof SharedArrayBuffer === 'undefined') why = 'page is not cross-origin isolated (needs COOP/COEP headers)'
   else {
@@ -162,6 +163,12 @@ self.onmessage = async (ev: MessageEvent<Req>) => {
     if (m.op === 'image') return self.postMessage({ id: m.id, ok: JSON.parse(e.add_image(new Uint8Array(m.bytes))) })
     if (m.op === 'cancel') { runToken++; return }
     if (m.op === 'threads') return self.postMessage({ id: m.id, ok: { n: threads, why, version: e.version() } })
+    if (m.op === 'inspect') {
+      const result = JSON.parse(e.run(m.graph, JSON.stringify([m.target]))), state = result.nodes?.[m.target]
+      if (state?.state !== 'done') throw Error(state?.error ?? result.error ?? 'The artwork preview did not finish.')
+      const bytes = e.artifact(state.key, m.out)
+      return self.postMessage({ id: m.id, ok: { bytes, mime: e.mime(state.key, m.out), info: JSON.parse(e.info(state.key, m.out)) } })
+    }
     self.postMessage({ id: m.id, ...(await runGraph(m)) })
   } catch (err) {
     self.postMessage({ id: m.id, error: String((err as any)?.message ?? err) })
