@@ -1,35 +1,20 @@
 import { api, artifactUrl, partUrl, type NodeRun } from '../api'
 import { badgesFor, type Badge } from '../badges'
 import { compileRecipe, projectName, adjustmentRecipe as quickRecipe, type ProjectDocument } from './project'
+import { auditMesh } from './meshAuditClient'
+import { meshProblems, type MeshCheck } from './meshAudit'
+export { inspectStl } from './meshAudit'
+export type { MeshCheck } from './meshAudit'
 import { activeStyle } from './recipes'
 import { artworkNames, type PreviewStage } from './artwork'
 
 export interface Artifact {
   id: string; step: string; label: string; kind: 'solid' | 'parts'; url: string; filename: string
-  info: Record<string, any>; findings: Badge[]; mesh: MeshCheck | null; outline?: Outline
+  info: Record<string, any>; findings: Badge[]; mesh: MeshCheck | null; outline?: Outline; intermediate?: boolean
 }
 export interface ArtworkComparison { url: string; width: number; height: number; marginX: number; marginY: number; flip: boolean }
 export interface Outline { url: string; filename: string }
 export interface ArtifactSet { artifacts: Artifact[]; findings: Badge[]; comparison?: ArtworkComparison; outline?: Outline; outlines?: Record<string, Outline>; stages?: PreviewStage[] }
-export interface MeshCheck { triangles: number; size: number[]; degenerate: number }
-
-/** Inspect real float32 output; invalid facets block export instead of being silently repaired. */
-export function inspectStl(bytes: ArrayBuffer): MeshCheck {
-  if (bytes.byteLength < 84) throw new Error('The generated STL is incomplete. Try making the stencil again.')
-  const view = new DataView(bytes), triangles = view.getUint32(80, true)
-  if (!triangles || bytes.byteLength !== 84 + triangles * 50) throw new Error('The generated STL has an invalid triangle count.')
-  const lo = [Infinity, Infinity, Infinity], hi = [-Infinity, -Infinity, -Infinity]
-  let degenerate = 0
-  for (let i = 0; i < triangles; i++) {
-    const p = Array.from({ length: 9 }, (_, j) => view.getFloat32(96 + 50 * i + j * 4, true))
-    if (p.some(x => !Number.isFinite(x))) throw new Error('The output contains invalid geometry coordinates.')
-    for (let j = 0; j < 9; j++) { const k = j % 3; lo[k] = Math.min(lo[k], p[j]); hi[k] = Math.max(hi[k], p[j]) }
-    const a = [p[3]-p[0], p[4]-p[1], p[5]-p[2]], b = [p[6]-p[0], p[7]-p[1], p[8]-p[2]]
-    if ((a[1]*b[2]-a[2]*b[1])**2 + (a[2]*b[0]-a[0]*b[2])**2 + (a[0]*b[1]-a[1]*b[0])**2 <= 1e-24) degenerate++
-  }
-  return { triangles, size: hi.map((v, i) => v - lo[i]), degenerate }
-}
-
 export async function captureArtifacts(doc: ProjectDocument, runs: Record<string, NodeRun>): Promise<ArtifactSet> {
   const artifacts: Artifact[] = [], findings: Badge[] = []
   const result: ArtifactSet = { artifacts, findings, stages: [], outlines: {} }
@@ -76,18 +61,24 @@ export async function captureArtifacts(doc: ProjectDocument, runs: Record<string
         const blob = await response.blob()
         const files = Object.keys(info.files ?? {})
         const solid = o.type === 'solid' || files.length === 1
-        const mesh = solid ? inspectStl(await blob.arrayBuffer()) : null
-        if (mesh?.degenerate) {
-          const warning: Badge = { level: 'error', text: `${mesh.degenerate} zero-area triangles found. Export is blocked. Try another style or lower detail.` }
+        let mesh: MeshCheck | null = null
+        if(solid)try{mesh=await auditMesh(await blob.arrayBuffer())}catch(error){
+          if(n.type==='remesh')throw error
+          const bad:Badge={level:'error',text:String(error instanceof Error?error.message:error)};checks.push(bad);findings.push(bad)
+        }
+        if (mesh && meshProblems(mesh).length) {
+          const warning: Badge = { level: 'error', text: `${meshProblems(mesh).join('; ')} found. Export is blocked. Try another style or lower detail.` }
           checks.push(warning); findings.push(warning)
         }
         if (!solid) for (const file of files.filter(f => /\.stl$/i.test(f))) {
-          const check = inspectStl(await (await fetch(partUrl(run.key, out, file))).arrayBuffer())
-          if (check.degenerate) { const bad: Badge = { level: 'error', text: `${file} has ${check.degenerate} zero-area triangles. Export is blocked.` }; checks.push(bad); findings.push(bad) }
+          const check = await auditMesh(await (await fetch(partUrl(run.key, out, file))).arrayBuffer())
+          if (meshProblems(check).length) { const bad: Badge = { level: 'error', text: `${file} has ${meshProblems(check).join('; ')}. Export is blocked.` }; checks.push(bad); findings.push(bad) }
         }
+        if(mesh && ['stencil','vector_stencil','remesh'].includes(n.type) && mesh.components>1){const bad:Badge={level:'error',text:`${mesh.components} disconnected solid components found. Export is blocked.`};checks.push(bad);findings.push(bad)}
+        if(n.type === 'remesh' && mesh && (!mesh.closed || mesh.components>1)) throw Error('Mesh optimization failed independent validation: '+meshProblems(mesh).join('; ')+'. The previous result is retained.')
         // Own this URL independently of the worker/cache. Later runs cannot revoke a displayed result.
         const url = URL.createObjectURL(blob)
-        artifacts.push({ id: `${n.id}/${out}`, step: n.id, label: n.type === 'vector_stencil' || n.type === 'stencil' ? 'Stencil plate' : n.type.replace(/_/g, ' '), kind: o.type, url, filename: solid ? `${name}${artifacts.length ? `-${n.id}` : ''}.stl` : `${name}-${n.id}-parts.zip`, info, findings: checks, mesh })
+        artifacts.push({ id: `${n.id}/${out}`, step: n.id, label: n.type === 'vector_stencil' || n.type === 'stencil' ? 'Stencil plate' : n.type === 'remesh' ? 'Optimized stencil' : n.type.replace(/_/g, ' '), kind: o.type, url, filename: solid ? `${name}${artifacts.length ? `-${n.id}` : ''}.stl` : `${name}-${n.id}-parts.zip`, info, findings: checks, mesh, intermediate: graph.edges.some(e=>e.from[0]===n.id&&e.from[1]===out) })
       }
     }
     const nearest = (id: string, seen = new Set<string>()): string[] => {

@@ -38,7 +38,7 @@ test('multiline text, bundled fonts, actual artwork preview, bridged STL/SVG, CL
   execFileSync(resolve(`../target/release/stencil${process.platform==='win32'?'.exe':''}`),['--project',file,'-o',native])
   const nativeMesh=JSON.parse(execFileSync('python',['../scripts/m2/inspect_mesh.py',native],{encoding:'utf8'}));expect(nativeMesh.triangles).toBe(mesh.triangles);expect(nativeMesh.size_mm).toEqual(mesh.size_mm)
   const svgWait=page.waitForEvent('download');await page.getByRole('link',{name:/Save traced outlines SVG/}).click();const svgFile=resolve('../sandbox/m3/text-outlines.svg');await(await svgWait).saveAs(svgFile);const svg=JSON.parse(execFileSync('python',['../scripts/m2/inspect_mesh.py',svgFile],{encoding:'utf8'}));expect(svg.paths).toBeGreaterThan(0)
-  mkdirSync('../docs/m3',{recursive:true});writeFileSync('../docs/m3/text-validation.json',JSON.stringify({mesh,native:nativeMesh,svg},null,2))
+  mkdirSync('../docs/m4',{recursive:true});writeFileSync('../docs/m4/text-validation.json',JSON.stringify({mesh,native:nativeMesh,svg},null,2))
   await page.getByRole('tab',{name:'3D',exact:true}).click();await expect(page.locator('.mesh-preview')).toHaveAttribute('data-ready','true')
   await page.reload();await ready(page);expect(await saved(page)).toEqual(doc)
 })
@@ -77,7 +77,7 @@ test('direct crop handles, zoom/pan, keyboard pixels, rotations and undo match a
   raw=await page.evaluate(()=>JSON.parse(localStorage.getItem('stencil-studio.project.v1')!));const crop=raw.graph.nodes.find((n:any)=>n.type==='transform').params;expect(Math.round(crop.crop_left*width/100)).toBe(Math.round(width*.2))
   await page.getByRole('dialog',{name:'Crop & rotate artwork'}).getByRole('button',{name:'Rotate 90°',exact:true}).click();await page.getByRole('dialog',{name:'Crop & rotate artwork'}).getByRole('button',{name:'Flip horizontally',exact:true}).click()
   await expect(page.locator('.crop-result .stage-image')).toHaveAttribute('data-ready','true');await expect(page.locator('.crop-result .stage-state')).toContainText(`${height} × ${width-Math.round(width*.2)} px`)
-  mkdirSync('../docs/m3/screenshots',{recursive:true});await page.screenshot({path:'../docs/m3/screenshots/03-visual-crop.png',fullPage:true})
+  mkdirSync('../docs/m4/screenshots',{recursive:true});await page.screenshot({path:'../docs/m4/screenshots/03-visual-crop.png',fullPage:true})
   await page.getByRole('button',{name:'Done',exact:true}).click();const doc=await saved(page);expect(Buffer.from(Object.values<any>(doc.images)[0].base64,'base64')).toEqual(image)
   await page.getByRole('button',{name:'Undo',exact:true}).click();await page.getByRole('button',{name:'Redo',exact:true}).click();expect(await saved(page)).toEqual(doc)
 })
@@ -143,7 +143,7 @@ test('fourteen real preparation steps keep live output valid, SVGs inspectable, 
   }
   expect(outside).toEqual([]);expect(await page.locator('.react-flow').count()).toBe(0)
   await page.getByRole('button',{name:'Close settings',exact:true}).click();expect(await saved(page)).toEqual(doc)
-  mkdirSync('../docs/m3',{recursive:true});writeFileSync('../docs/m3/long-chain-validation.json',JSON.stringify({mesh,steps:nodes.length,external_requests:outside},null,2))
+  mkdirSync('../docs/m4',{recursive:true});writeFileSync('../docs/m4/long-chain-validation.json',JSON.stringify({mesh,steps:nodes.length,external_requests:outside},null,2))
 })
 
 test('wide transparent artwork survives repeated rotations, crop panning and undo with identical prepared bytes',async({page})=>{

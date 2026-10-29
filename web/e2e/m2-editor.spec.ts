@@ -28,7 +28,7 @@ test('all three styles produce different valid geometry; style adjustments, byte
   await upload(page); await make(page)
   const hashes: string[] = [], evidence: any[] = []
   mkdirSync('../sandbox/m2/browser', { recursive: true })
-  mkdirSync('../docs/m3/m2-replay', { recursive: true })
+  mkdirSync('../docs/m4/m2-replay', { recursive: true })
   for (const style of ['standard', 'smooth', 'crisp']) {
     if (style !== 'standard') { await page.getByRole('combobox', { name: 'Stencil style', exact: true }).selectOption(style); await expect(page.getByRole('link', { name: 'Export STL', exact: true })).toHaveAttribute('aria-disabled', 'true'); await ready(page) }
     const wait = page.waitForEvent('download'); await page.getByRole('link', { name: 'Export STL', exact: true }).click()
@@ -52,7 +52,7 @@ test('all three styles produce different valid geometry; style adjustments, byte
   await page.setInputFiles('[aria-label="Open project file"]', { name: 'Crisp.stencil.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(crisp)) }); await ready(page)
   expect(await save(page)).toEqual(crisp)
   expect(Buffer.from(Object.values<any>(crisp.images)[0].base64, 'base64')).toEqual(corpus('simple-logo.svg'))
-  writeFileSync('../docs/m3/m2-replay/browser-meshes.json', JSON.stringify({ hashes, evidence }, null, 2))
+  writeFileSync('../docs/m4/m2-replay/browser-meshes.json', JSON.stringify({ hashes, evidence }, null, 2))
   await info.attach('independent meshes', { body: JSON.stringify(evidence), contentType: 'application/json' })
 })
 
@@ -81,7 +81,7 @@ test('live edits show draft, retain the last preview and finish full quality wit
   // Initial generation plus one settled full run; no heavy run on each slider input.
   expect(metrics.runs.filter((r: any) => r.resolution > 200)).toHaveLength(2)
   expect(metrics.runs.filter((r: any) => r.resolution === 200).length).toBeGreaterThan(0)
-  mkdirSync('../docs/m3/m2-replay', { recursive: true }); writeFileSync('../docs/m3/m2-replay/live-performance.json', JSON.stringify(metrics, null, 2))
+  mkdirSync('../docs/m4/m2-replay', { recursive: true }); writeFileSync('../docs/m4/m2-replay/live-performance.json', JSON.stringify(metrics, null, 2))
   // A numeric field settles while still focused.
   await page.getByRole('spinbutton', { name: 'Stencil width', exact: true }).fill('160'); await ready(page)
   await expect(page.locator('.preview-caption')).toContainText('160.0')
@@ -111,8 +111,8 @@ test('prepared comparison is aligned after crop/rotate/flip; raw original and ge
   // Crop happens before rotation: 650×520 -> 585×520 -> 520×585.
   // Vector art width=184; height=184×585/520+16=223 mm.
   await expect(page.locator('.preview-caption')).toContainText('200.0 × 223.0')
-  mkdirSync('../docs/m3/screenshots/m2-replay', { recursive: true })
-  await page.locator('.preview-surface').screenshot({ path: '../docs/m3/screenshots/m2-replay/08-crop-comparison.png' })
+  mkdirSync('../docs/m4/screenshots/m2-replay', { recursive: true })
+  await page.locator('.preview-surface').screenshot({ path: '../docs/m4/screenshots/m2-replay/08-crop-comparison.png' })
   await page.getByRole('tab', { name: 'Original', exact: true }).click(); await expect(page.getByAltText('Original artwork')).toBeVisible()
 })
 
@@ -158,10 +158,10 @@ test('raster cleanup is opt-in, visibly changes fine lines, and bypass restores 
   const toggle = page.getByRole('checkbox', { name: 'Pixel cleanup', exact: true }); await expect(toggle).not.toBeChecked()
   await make(page)
   const base = await save(page); expect(base.graph.nodes.map((n: any) => n.type)).not.toContain('morphology')
-  const before = await page.locator('.readiness p').innerText()
-  await toggle.check(); await ready(page); expect(await page.locator('.readiness p').innerText()).not.toBe(before)
+  const before = await page.locator('.readiness p').filter({ hasText: /triangles/ }).innerText()
+  await toggle.check(); await ready(page); expect(await page.locator('.readiness p').filter({ hasText: /triangles/ }).innerText()).not.toBe(before)
   let doc = await save(page); expect(doc.graph.nodes.find((n: any) => n.type === 'morphology').params).toMatchObject({ iterations: 1, radius: 1 })
-  await toggle.uncheck(); await ready(page); expect(await page.locator('.readiness p').innerText()).toBe(before)
+  await toggle.uncheck(); await ready(page); expect(await page.locator('.readiness p').filter({ hasText: /triangles/ }).innerText()).toBe(before)
   doc = await save(page); expect(doc.graph).toEqual(base.graph)
   await toggle.check(); await ready(page); await page.reload(); await ready(page); await expect(page.getByRole('combobox', { name: 'Stencil style', exact: true })).toHaveValue('crisp')
   expect((await save(page)).graph.nodes.find((n: any) => n.type === 'morphology').params.radius).toBe(1)

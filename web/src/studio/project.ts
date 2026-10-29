@@ -88,10 +88,11 @@ export function adjustmentRecipe(doc: ProjectDocument) {
   const simple = quickRecipe(doc); if (simple) return simple
   let graph: GraphJson
   try { graph = compileRecipe(doc) } catch { return null }
-  if (graph.nodes.some(n => !['source','text','transform','threshold','reduce','smooth','morphology','trace','round_corners','remove_islands','shapes_to_mask','stencil','vector_stencil'].includes(n.type))) return null
+  if (graph.nodes.some(n => !['source','text','transform','threshold','reduce','smooth','morphology','trace','round_corners','remove_islands','shapes_to_mask','stencil','vector_stencil','remesh'].includes(n.type))) return null
   const builds = graph.nodes.filter(n => ['stencil', 'vector_stencil'].includes(n.type)), sources = graph.nodes.filter(n => n.type === 'source'), paints = graph.nodes.filter(n => n.type === 'threshold')
   if (builds.length !== 1 || sources.length !== 1 || paints.length !== 1 || graph.edges.length !== graph.nodes.length - 1) return null
-  const chain: GraphJson['nodes'] = [], seen = new Set<string>(); let n = builds[0]
+  const chain: GraphJson['nodes'] = [], seen = new Set<string>(); let n = graph.nodes.find(n=>!graph.edges.some(e=>e.from[0]===n.id))!
+  if (!n) return null
   while (n) { if (seen.has(n.id)) return null; seen.add(n.id); chain.unshift(n); const inputs = graph.edges.filter(e => e.to[0] === n.id); if (inputs.length > 1) return null; n = graph.nodes.find(n => n.id === inputs[0]?.from[0])! }
   if (seen.size !== graph.nodes.length || chain[0].id !== sources[0].id) return null
   const find = (type: string) => chain.find(n => n.type === type)

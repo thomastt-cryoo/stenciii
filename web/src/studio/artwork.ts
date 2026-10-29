@@ -7,7 +7,7 @@ export const artworkGroups: Record<string, string[]> = {
   'Image & framing': ['source', 'transform'], 'Paint selection': ['threshold', 'reduce'],
   Cleanup: ['smooth', 'morphology', 'remove_islands'], Outlines: ['trace', 'round_corners', 'shapes_to_mask'], Text: ['text'],
 }
-export const artworkNames: Record<string, string> = { source: 'Original image', text: 'Text artwork', transform: 'Crop & rotate', threshold: 'Paint selection', reduce: 'Reduce colours', smooth: 'Smooth edges', morphology: 'Reshape paint', trace: 'Trace outlines', round_corners: 'Round corners', remove_islands: 'Remove small shapes', shapes_to_mask: 'Convert outlines to paint', stencil: 'Make raster stencil', vector_stencil: 'Make vector stencil' }
+export const artworkNames: Record<string, string> = { source: 'Original image', remesh: 'Optimize mesh', complexity: 'Optimize mesh', text: 'Text artwork', transform: 'Crop & rotate', threshold: 'Paint selection', reduce: 'Reduce colours', smooth: 'Smooth edges', morphology: 'Reshape paint', trace: 'Trace outlines', round_corners: 'Round corners', remove_islands: 'Remove small shapes', shapes_to_mask: 'Convert outlines to paint', stencil: 'Make raster stencil', vector_stencil: 'Make vector stencil' }
 export const artworkHelp: Record<string, string> = {
   'source.image_id': 'Choose an original image for this instance. Replacing it keeps the previous bytes for undo.',
   'source.resolution': 'Longest image edge in working pixels. This does not replace your original image.',
@@ -77,7 +77,7 @@ export function validateRecipe(doc: ProjectDocument, catalogue: NodeType[]) {
   return graph
 }
 export function insertionOptions(kind: string, catalogue: NodeType[]) {
-  return catalogue.filter(t => isArtwork(t.id) && t.inputs.length === 1 && t.inputs[0].type === kind).map(t => ({ type: t.id, pair: t.outputs[0].type === kind ? null : t.id === 'trace' ? 'shapes_to_mask' : t.id === 'shapes_to_mask' ? 'trace' : null })).filter(o => catalogue.find(t => t.id === o.type)!.outputs[0].type === kind || o.pair)
+  return catalogue.filter(t => (isArtwork(t.id) || t.id === 'remesh') && t.inputs.length === 1 && t.inputs[0].type === kind).map(t => ({ type: t.id, pair: t.outputs[0].type === kind ? null : t.id === 'trace' ? 'shapes_to_mask' : t.id === 'shapes_to_mask' ? 'trace' : null })).filter(o => catalogue.find(t => t.id === o.type)!.outputs[0].type === kind || o.pair)
 }
 const freshId = (g: ObjectValue, type: string, reserved: string[] = []) => { let id = `${type}-1`, i = 1; while (g.nodes.some((n: any) => n.id === id) || reserved.includes(id)) id = `${type}-${++i}`; return id }
 export function insertArtwork(doc: ProjectDocument, target: string, input: string, type: string, catalogue: NodeType[]) {
@@ -101,8 +101,8 @@ export function connectInput(doc: ProjectDocument, target: string, input: string
   archive(next, 'Change artwork input', old); g.edges = g.edges.filter((e: any) => !old.includes(e)); g.edges.push(edge(from, [target, input])); validateRecipe(next, catalogue); return next
 }
 export function canBypass(doc: ProjectDocument, id: string, catalogue: NodeType[]) {
-  const n = operations(doc).find(n => n.id === id), def = catalogue.find(t => t.id === n?.type), graph = compileRecipe(doc)
-  return !!n && isArtwork(n.type) && def?.inputs.length === 1 && def.outputs[0].type === def.inputs[0].type && !graph.edges.some(e => e.from[0] === id && e.from[1] !== def.outputs[0].name)
+  const n = operations(doc).find(n => n.id === id), def = catalogue.find(t => t.id === (n?.type === 'complexity' ? 'remesh' : n?.type)), graph = compileRecipe(doc)
+  return !!n && (isArtwork(n.type) || ['remesh','complexity'].includes(n.type)) && def?.inputs.length === 1 && def.outputs[0].type === def.inputs[0].type && !graph.edges.some(e => e.from[0] === id && e.from[1] !== def.outputs[0].name)
 }
 export function bypassArtwork(doc: ProjectDocument, id: string, catalogue: NodeType[], remove = false) {
   if (!canBypass(doc, id, catalogue)) throw Error('This step changes artwork format or supplies a diagnostic pass. Reconnect its consumers before removing it.')
@@ -125,14 +125,14 @@ export function enableArtwork(doc: ProjectDocument, id: string, catalogue: NodeT
 }
 export function removeArtwork(doc: ProjectDocument, id: string, catalogue: NodeType[]) {
   const graph = compileRecipe(doc), op = operations(doc).find(n => n.id === id)
-  if (!op || !isArtwork(op.type)) throw Error('Only artwork operations can be removed here.')
+  if (!op || !(isArtwork(op.type) || ['remesh','complexity'].includes(op.type))) throw Error('Only artwork operations can be removed here.')
   if (graph.edges.some(e => e.from[0] === id)) return bypassArtwork(doc, id, catalogue, true)
   const next = copy(doc), g = rawGraph(next), node = rawNode(next, id), links = g.edges.filter((e: any) => endpoint(e, 'to')[0] === id)
   archive(next, 'Remove unused artwork step', [node, ...links]); g.nodes = g.nodes.filter((n: any) => n !== node); g.edges = g.edges.filter((e: any) => !links.includes(e)); validateRecipe(next, catalogue); return next
 }
 export function duplicatePass(doc: ProjectDocument, id: string, catalogue: NodeType[]) {
   const pass = passList(doc).find(p => p.id === id)
-  if (!pass || pass.steps.some(s => !isArtwork(s.type) && !['stencil','vector_stencil'].includes(s.type))) throw Error('Only artwork passes can be duplicated here. Manufacturing branches stay unchanged.')
+  if (!pass || pass.steps.some(s => !isArtwork(s.type) && !['stencil','vector_stencil','remesh','complexity'].includes(s.type))) throw Error('Only artwork passes can be duplicated here. Manufacturing branches stay unchanged.')
   const next = copy(doc), g = rawGraph(next), ids = new Map<string,string>()
   for (const op of pass.steps) { const node = copy(rawNode(doc, op.id)), id = freshId(g, op.type, Object.keys(next.raw.stencilStudio?.disabled ?? {})); ids.set(op.id,id); node.id=id; g.nodes.push(node) }
   for (const original of rawGraph(doc).edges) {
@@ -146,8 +146,8 @@ export function duplicatePass(doc: ProjectDocument, id: string, catalogue: NodeT
 }
 export function duplicateArtwork(doc: ProjectDocument, id: string, catalogue: NodeType[]) {
   const n = operations(doc).find(n => n.id === id); if (!n || !canBypass(doc, id, catalogue)) throw Error('Duplicate applies to optional steps that keep the same artwork format.')
-  const input = catalogue.find(t => t.id === n.type)!.inputs[0].name
-  const next = insertArtwork(doc, id, input, n.type, catalogue)
+  const input = catalogue.find(t => t.id === (n.type === 'complexity' ? 'remesh' : n.type))!.inputs[0].name
+  const next = insertArtwork(doc, id, input, n.type === 'complexity' ? 'remesh' : n.type, catalogue)
   const added = operations(next).find(o => !operations(doc).some(n => n.id === o.id))!
   const data = rawNode(next, added.id); data.params = copy(n.params); return next
 }
@@ -179,11 +179,11 @@ export function resetStyle(doc: ProjectDocument, catalogue: NodeType[]) {
   return next
 }
 export function editMany(doc: ProjectDocument, id: string, values: ObjectValue) { let next = doc; for (const [key, value] of Object.entries(values)) next = editParameter(next, id, key, value); return next }
-export function liveArtwork(doc: ProjectDocument) { try { return operations(doc).every(n => isArtwork(n.type) || ['stencil', 'vector_stencil'].includes(n.type)) && operations(doc).length <= 30 } catch { return false } }
+export function liveArtwork(doc: ProjectDocument) { try { return operations(doc).every(n => isArtwork(n.type) || ['stencil', 'vector_stencil','remesh','complexity'].includes(n.type)) && operations(doc).length <= 30 } catch { return false } }
 export type PreviewStage = { id: string; step: string; port: string; label: string; kind: string; url: string; info: ObjectValue }
 export function inputChoices(doc: ProjectDocument, id: string, port: string, catalogue: NodeType[]) {
   const g = compileRecipe(doc), target = g.nodes.find(n => n.id === id), kind = catalogue.find(t => t.id === target?.type)?.inputs.find(p => p.name === port)?.type
-  return g.nodes.flatMap(n => (catalogue.find(t => t.id === n.type)?.outputs ?? []).filter(p => p.type === kind).map(p => ({ from: [n.id, p.name] as [string, string], label: `${artworkNames[n.type] ?? catalogue.find(t => t.id === n.type)?.label ?? 'Saved result'}${g.nodes.filter(o => o.type === n.type).length > 1 ? ` ${g.nodes.filter(o => o.type === n.type).findIndex(o => o.id === n.id) + 1}` : ''}${p.name === 'removed' || p.name === 'rounded' ? ' · Removed details' : ''}` }))).filter(choice => { try { connectInput(doc, id, port, choice.from, catalogue); return true } catch { return false } })
+  return g.nodes.flatMap(n => (catalogue.find(t => t.id === n.type)?.outputs ?? []).filter(p => p.type === kind && !(p.type==='solid' && ['stencil','vector_stencil'].includes(n.type) && g.edges.some(e=>e.to[0]===n.id&&e.to[1]==='tiles'))).map(p => ({ from: [n.id, p.name] as [string, string], label: `${artworkNames[n.type] ?? catalogue.find(t => t.id === n.type)?.label ?? 'Saved result'}${g.nodes.filter(o => o.type === n.type).length > 1 ? ` ${g.nodes.filter(o => o.type === n.type).findIndex(o => o.id === n.id) + 1}` : ''}${p.name === 'removed' || p.name === 'rounded' ? ' · Removed details' : ''}` }))).filter(choice => { try { connectInput(doc, id, port, choice.from, catalogue); return true } catch { return false } })
 }
 export function renamePass(doc: ProjectDocument, id: string, name: string) { const next = copy(doc), m = meta(next); if (m.passNames != null && !object(m.passNames)) throw Error('Saved pass names use an unsupported format. They are unchanged.'); m.passNames = { ...m.passNames, [id]: name }; return next }
 export function primaryInput(graph: GraphJson, id: string) { return graph.edges.find(e => e.to[0] === id) }

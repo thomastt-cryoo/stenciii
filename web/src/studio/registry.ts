@@ -1,6 +1,7 @@
 import type { NodeType, ParamDef } from '../api'
 import mapping from '../../../docs/audit/parameter-mapping.json' with { type: 'json' }
 import type { Operation } from './project'
+import { geometryHelp } from './geometry'
 import { artworkHelp, artworkNames } from './artwork'
 
 export const categories = [
@@ -39,7 +40,7 @@ export class ParameterRegistry {
       const exact = [s.key, s.parameter.name, s.parameter.label, s.operationLabel].map(v => v.toLowerCase())
       return exact.includes(text) ? 0 : exact.some(v => v.startsWith(text)) ? 1 : words.every(w => exact.some(v => v.includes(w))) ? 2 : 3
     }
-    return this.settings.filter(s => (!category || s.category === category) && words.every(q => `${s.key} ${s.parameter.label} ${s.operationLabel} ${s.category} ${s.dependency} ${artworkHelp[s.key] ?? ''}`.toLowerCase().includes(q))).sort((a, b) => text ? score(a) - score(b) : 0)
+    return this.settings.filter(s => (!category || s.category === category) && words.every(q => `${s.key} ${s.parameter.label} ${s.operationLabel} ${s.category} ${s.dependency} ${geometryHelp[s.key] ?? artworkHelp[s.key] ?? ''}`.toLowerCase().includes(q))).sort((a, b) => text ? score(a) - score(b) : 0)
   }
   instances(setting: Setting, operations: Operation[]) { return operations.filter(o => (o.type === 'complexity' ? 'remesh' : o.type) === setting.type) }
   /** Availability is a projection only. Inactive values are never removed or reset. */
@@ -49,7 +50,8 @@ export class ParameterRegistry {
     if (type === 'stencil' || type === 'vector_stencil') {
       if (['width_mm', 'margin_mm'].includes(key) && context.hasLayout) return inactive('The tile layout supplies this value. The saved plate value is retained.')
       if (['bridge_min_angle_deg', 'bridge_max_length', 'bridge_passes'].includes(key) && p.bridge_spacing !== 'spread') return inactive('Choose spread bridge spacing to use this setting.')
-      if (key === 'z_bridging' && !p.raised_bridges) return inactive('Enable raised bridges to use this setting.')
+      if (type === 'stencil' && key === 'bridge_min_angle_deg' && Number(p.bridge_passes) === 1) return inactive('One raster pass uses the fallback route. Choose at least two spread passes for angular separation.')
+      if (key === 'z_bridging' && (!p.raised_bridges || Math.round(Number(p.thickness_mm)/Number(p.layer_height_mm)) < 2)) return inactive('Raised bridges need at least two base layers to use a height strategy.')
       if (key === 'first_layer_taper_mm' && Number(p.min_first_layer_width_mm) === 0) return inactive('Set minimum first-layer width above zero to use the taper.')
       if (key === 'tile_method' && !context.hasLayout) return inactive('This method applies to a layout made before building.')
     }

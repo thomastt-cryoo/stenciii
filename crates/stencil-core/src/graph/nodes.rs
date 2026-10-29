@@ -158,7 +158,7 @@ pub(super) fn stencil_params_from(p: &P) -> Params {
     }
 }
 
-pub(super) fn finish_solid(o: crate::Output, p: &P) -> Result<Outputs, String> {
+pub(super) fn finish_solid(o: crate::Output, p: &P, vector: bool) -> Result<Outputs, String> {
     if o.stats.islands_remaining != 0 || !o.stats.watertight {
         return Err("verification failed: the stencil has islands or is not watertight".into());
     }
@@ -174,6 +174,16 @@ pub(super) fn finish_solid(o: crate::Output, p: &P) -> Result<Outputs, String> {
     stats["first_layer_taper_mm"] = json!(p.f("first_layer_taper_mm"));
     stats["raised_bridges"] = json!(p.b("raised_bridges"));
     stats["z_bridging"] = json!(p.s("z_bridging"));
+    stats["construction"] = json!(if vector { "vector" } else { "raster" });
+    stats["overhang_check_deg"] = json!(if p.f("max_overhang_deg") <= 0.0 { 45.0 } else { p.f("max_overhang_deg") });
+    if vector {
+        stats["bridge_strips"] = json!(o.stats.bridge_pixels);
+        stats["bridge_strip_width_mm"] = json!(p.f("bridge_mm"));
+    } else {
+        let pixel = o.stats.width_mm / o.stats.grid_w.max(1) as f64;
+        stats["bridge_material_pixels"] = json!(o.stats.bridge_pixels);
+        stats["bridge_strip_width_mm"] = json!((p.f("bridge_mm") / pixel).round().max(1.0) * pixel);
+    }
     if let Some(f) = &o.fallback {
         stats["fallback"] = json!(f);
     }
@@ -295,7 +305,7 @@ pub(super) fn run_vector_stencil(
             "nothing is connected to the 'shapes' input: connect shapes, or a tile layout".into(),
         );
     };
-    finish_solid(crate::vector_stencil::build(s, p.f("detail"), &q)?, p)
+    finish_solid(crate::vector_stencil::build(s, p.f("detail"), &q)?, p, true)
 }
 
 pub(super) fn input_image(i: &HashMap<String, Value>) -> Result<&Rc<RgbImage>, String> {
@@ -377,6 +387,7 @@ pub(super) fn run_stencil(
     finish_solid(
         stencil_from_paint(&m.paint, m.w, m.h, 0, &stencil_params_from(p))?,
         p,
+        false,
     )
 }
 

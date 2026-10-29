@@ -226,6 +226,7 @@ pub(crate) fn bridge_islands(
     min_angle: f64,
     max_length: f64,
     largest_frame: bool,
+    passes: u32,
 ) -> usize {
     let (islands, label) = label_islands(g);
     if islands == 0 {
@@ -240,8 +241,8 @@ pub(crate) fn bridge_islands(
     } else {
         label[0]
     };
-    bridge_labelled(
-        g, &label, frame, radius, rise, per_island, min_angle, max_length, None,
+    bridge_labelled_passes(
+        g, &label, frame, radius, rise, per_island, min_angle, max_length, None, passes,
     )
 }
 
@@ -258,6 +259,14 @@ pub(crate) fn bridge_labelled(
     min_angle: f64,
     max_length: f64,
     avoid: Option<&[bool]>,
+) -> usize {
+    bridge_labelled_passes(g, label, frame, radius, rise, per_island, min_angle, max_length, avoid, 4)
+}
+
+#[allow(clippy::too_many_arguments)]
+fn bridge_labelled_passes(
+    g: &mut Grid, label: &[u32], frame: u32, radius: i64, rise: &mut [f32],
+    per_island: usize, min_angle: f64, max_length: f64, avoid: Option<&[bool]>, passes: u32,
 ) -> usize {
     let (w, h) = (g.w, g.h);
     let mut cost = vec![u32::MAX; w * h];
@@ -323,6 +332,7 @@ pub(crate) fn bridge_labelled(
         carved += extra_bridges(
             g, &original, label, frame, radius, rise, &primary, per_island, min_angle, max_length,
             avoid,
+            passes,
         );
     }
     carved
@@ -407,6 +417,7 @@ fn extra_bridges(
     min_angle: f64,
     max_length: f64,
     avoid: Option<&[bool]>,
+    passes: u32,
 ) -> usize {
     let (w, h) = (g.w, g.h);
     let mut pixels: HashMap<u32, Vec<usize>> = HashMap::new();
@@ -433,7 +444,8 @@ fn extra_bridges(
         let mut dirs = vec![chord(holes, w)];
         // the wanted angle is relaxed in steps, so an island never gets fewer bridges than without it
         let tiers: Vec<f64> = if spread {
-            vec![min_angle, min_angle * 2.0 / 3.0, min_angle / 3.0, 0.0]
+            let count = passes.clamp(1, 8);
+            (0..count).map(|i| if count == 1 { 0.0 } else { min_angle * (count - 1 - i) as f64 / (count - 1) as f64 }).collect()
         } else {
             vec![0.0]
         };

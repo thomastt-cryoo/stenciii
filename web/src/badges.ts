@@ -16,10 +16,13 @@ export function badgesFor(type: string, params: Record<string, unknown>, info: I
     if (n(s.islands_deleted) > 0) out.push({ level: 'warn', text: `${n(s.islands_deleted)} island${n(s.islands_deleted) > 1 ? 's' : ''} deleted` })
     if (n(s.triangles) > 1_500_000) out.push({ level: 'warn', text: `${(n(s.triangles) / 1e6).toFixed(1)} M triangles: heavy to slice` })
     if (typeof s.fallback === 'string') out.push({ level: 'warn', text: s.fallback })
-    if (n(s.islands_found) > 0 && n(s.islands_remaining) === 0) out.push({ level: 'info', text: `${n(s.islands_found)} islands bridged` })
+    if (typeof s.remesh?.skipped === 'string') out.push({ level: 'warn', text: `mesh optimization retained the original: ${s.remesh.skipped}` })
+    if (n(s.remesh?.overhang_violation_mm2) > .5) out.push({ level: 'warn', text: `reconstructed overhang ${n(s.remesh.overhang_violation_mm2).toFixed(0)} mm² exceeds the requested limit` })
+    const retained = Math.max(0, n(s.islands_found) - n(s.islands_deleted))
+    if (retained > 0 && n(s.islands_remaining) === 0) out.push({ level: 'info', text: `${retained} islands bridged` })
   }
   if ((type === 'stencil' || type === 'vector_stencil') && n(params.bridge_mm) > 0 && n(params.bridge_mm) < 1) {
-    out.push({ level: 'warn', text: `bridge ${n(params.bridge_mm)} mm is thinner than a nozzle` })
+    out.push({ level: 'warn', text: `thin bridge ${n(params.bridge_mm)} mm: review printer settings` })
   }
   if (info?.kind === 'parts') {
     for (const w of info.meta?.pads?.warnings ?? []) out.push({ level: 'warn', text: String(w) })

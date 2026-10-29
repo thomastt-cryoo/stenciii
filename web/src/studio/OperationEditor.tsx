@@ -3,9 +3,12 @@ import { editor, useEditor } from './session'
 import { artworkHelp, artworkNames } from './artwork'
 import type { Operation } from './project'
 import type { ParameterRegistry } from './registry'
+import { isGeometry } from './geometry'
+import { GeometryEditor } from './GeometryWorkbench'
 import SourceInformation from './SourceInformation'
 export default function OperationEditor({ op, registry }: { op: Operation; registry: ParameterRegistry }) {
   const doc = useEditor(s => s.doc), def = registry.types.get(op.type)
+  if (isGeometry(op.type)) return <GeometryEditor op={op} registry={registry} />
   if (!def) return <p>This specialist operation is preserved but is not available in this engine.</p>
   const stored = op.type === 'source' && doc?.raw.images?.[String(op.params.image_id)], asset = typeof stored?.base64 === 'string' ? stored : null
   return <section className="operation-editor" aria-label={`${artworkNames[op.type] ?? def.label} settings · ${op.id}`}>

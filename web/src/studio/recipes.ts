@@ -111,6 +111,7 @@ export function draftRecipe(graph: GraphJson): GraphJson {
     if (n.type === 'source') n.params.resolution = Math.min(Number(n.params.resolution ?? 1000), 200)
     if (n.type === 'vector_stencil') n.params.detail = Math.min(Number(n.params.detail ?? 5), 2)
     if (n.type === 'stencil' || n.type === 'vector_stencil') n.params.z_bridging = 'easy'
+    if (n.type === 'remesh') { n.params.decimate = false; n.params.smoothing = 0 }
     if (n.type === 'smooth') n.params.supersample = 1
     if (n.type === 'shapes_to_mask') n.params.resolution = Math.min(Number(n.params.resolution ?? 1000), 200)
     if (n.type === 'text') {
@@ -122,7 +123,7 @@ export function draftRecipe(graph: GraphJson): GraphJson {
   return draft
 }
 
-/** Only these tested per-instance controls are editable in M2; all 217 remain searchable. */
-export function editable(type: string, key: string) {
-  return ['source', 'text', 'transform', 'threshold', 'reduce', 'smooth', 'morphology', 'trace', 'round_corners', 'remove_islands', 'shapes_to_mask'].includes(type) || ['stencil', 'vector_stencil'].includes(type) && ['detail', 'width_mm', 'thickness_mm', 'margin_mm', 'bridge_mm', 'raised_bridges', 'bridges_per_island', 'layer_height_mm', 'extra_top_layers'].includes(key)
+/** Editable qualified fields; the runtime catalogue remains authoritative. */
+export function editable(type: string, _key: string) {
+  return ['source','text','transform','threshold','reduce','smooth','morphology','trace','round_corners','remove_islands','shapes_to_mask','stencil','vector_stencil','remesh','complexity'].includes(type)
 }

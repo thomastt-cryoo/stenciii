@@ -251,6 +251,7 @@ pub fn stencil_from_paint(
         p.bridge_min_angle_deg,
         p.bridge_max_length,
         p.frame_largest,
+        p.bridge_passes,
     );
 
     progress::step("bridge islands", 0.4);
@@ -677,5 +678,25 @@ mod tests {
         .err()
         .unwrap();
         assert!(e.contains("width 100") && e.contains("margin 60"));
+    }
+
+    #[test]
+    fn raster_spread_pass_budget_changes_real_bridge_search() {
+        let mut changed = false;
+        for angle in [30.0, 60.0, 85.0] {
+            let run = |passes| make_stencil(&ring(), &Params {
+                resolution: 120, bridges_per_island: 3, bridge_min_angle_deg: angle,
+                bridge_passes: passes, ..Params::default()
+            }).unwrap();
+            let one = run(1);
+            let four = run(4);
+            assert!(one.stats.watertight && four.stats.watertight);
+            assert_eq!(one.stats.islands_remaining, 0);
+            assert_eq!(four.stats.islands_remaining, 0);
+            changed |= one.stl != four.stl;
+        }
+        assert!(changed, "spread pass budget must reach the raster bridge search");
+        let run = |passes| make_stencil(&ring(), &Params { resolution: 100, bridge_passes: passes, ..Params::default() }).unwrap();
+        assert_eq!(run(1).stl, run(8).stl, "closest placement does not use spread passes");
     }
 }

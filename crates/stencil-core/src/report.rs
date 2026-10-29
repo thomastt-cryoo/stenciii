@@ -79,10 +79,17 @@ pub fn findings(ty: &str, params: &Json, infos: &[Json]) -> Vec<Finding> {
             if let Some(f) = s["fallback"].as_str() {
                 add(Level::Warn, f.to_string());
             }
-            if n(&s["islands_found"]) > 0.0 && n(&s["islands_remaining"]) == 0.0 {
+            if let Some(reason) = s["remesh"]["skipped"].as_str() {
+                add(Level::Warn, format!("mesh optimization retained the original: {reason}"));
+            }
+            if n(&s["remesh"]["overhang_violation_mm2"]) > 0.5 {
+                add(Level::Warn, format!("reconstructed overhang {:.0} mm² exceeds the requested limit", n(&s["remesh"]["overhang_violation_mm2"])));
+            }
+            let retained = (n(&s["islands_found"]) - n(&s["islands_deleted"])).max(0.0);
+            if retained > 0.0 && n(&s["islands_remaining"]) == 0.0 {
                 add(
                     Level::Info,
-                    format!("{} islands bridged", n(&s["islands_found"])),
+                    format!("{} islands bridged", retained),
                 );
             }
         }
@@ -181,7 +188,7 @@ pub fn findings(ty: &str, params: &Json, infos: &[Json]) -> Vec<Finding> {
     if matches!(ty, "stencil" | "vector_stencil") && bridge > 0.0 && bridge < 1.0 {
         add(
             Level::Warn,
-            format!("bridge {bridge} mm is thinner than a nozzle"),
+            format!("thin bridge {bridge} mm: review printer settings"),
         );
     }
     out
@@ -232,7 +239,7 @@ mod tests {
         assert!(f.iter().any(|x| x.text == "2 islands remain"));
         assert!(f.iter().any(|x| x.text.contains("not watertight")));
         assert!(f.iter().any(|x| x.text.contains("heavy to slice")));
-        assert!(f.iter().any(|x| x.text.contains("thinner than a nozzle")));
+        assert!(f.iter().any(|x| x.text.contains("review printer settings")));
     }
 
     #[test]

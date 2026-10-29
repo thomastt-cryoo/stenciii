@@ -43,7 +43,7 @@
       },
       {
         "level": "warn",
-        "text": "bridge 0.6 mm is thinner than a nozzle"
+        "text": "thin bridge 0.6 mm: review printer settings"
       }
     ]
   },
@@ -235,6 +235,55 @@
       {
         "level": "info",
         "text": "12 mm of seam where neighbouring tiles differ by more than a layer in height"
+      }
+    ]
+  },
+  {
+    "name": "mesh optimization fallback and overhang remain visible",
+    "type": "remesh",
+    "params": {},
+    "info": {
+      "kind": "solid",
+      "stats": {
+        "remesh": {
+          "skipped": "unsafe rebuild",
+          "overhang_violation_mm2": 2
+        }
+      }
+    },
+    "expected": [
+      {
+        "level": "warn",
+        "text": "mesh optimization retained the original: unsafe rebuild"
+      },
+      {
+        "level": "warn",
+        "text": "reconstructed overhang 2 mm² exceeds the requested limit"
+      }
+    ]
+  },
+  {
+    "name": "deleted islands are not counted as bridged",
+    "type": "stencil",
+    "params": {
+      "bridge_mm": 1.6
+    },
+    "info": {
+      "kind": "solid",
+      "stats": {
+        "islands_found": 3,
+        "islands_deleted": 1,
+        "islands_remaining": 0
+      }
+    },
+    "expected": [
+      {
+        "level": "warn",
+        "text": "1 island deleted"
+      },
+      {
+        "level": "info",
+        "text": "2 islands bridged"
       }
     ]
   }

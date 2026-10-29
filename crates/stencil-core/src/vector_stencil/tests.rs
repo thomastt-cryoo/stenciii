@@ -2,6 +2,41 @@ use super::*;
 use crate::trace::{trace, TraceParams};
 use crate::ZBridging;
 
+#[test]
+fn vector_overhang_angle_measures_actual_layers_without_changing_mesh() {
+    let n = 100;
+    let mask: Vec<bool> = (0..n*n).map(|i| {
+        let d = ((i%n) as f64-50.0).hypot((i/n) as f64-50.0);
+        (20.0..35.0).contains(&d)
+    }).collect();
+    let shapes = trace(&mask, n, n, &TraceParams { smooth_px: 0.0, corner_deg: 60.0, tolerance_px: 0.3, min_area_px: 1.0 });
+    let run = |angle, flip| build(&shapes, 4.0, &Params { width_mm: 100.0, raised_bridges: true, max_overhang_deg: angle, flip, ..Params::default() }).unwrap();
+    let (normal, strict, relaxed, flipped) = (run(0.0,false), run(45.0,false), run(85.0,false), run(45.0,true));
+    assert!(strict.stats.overhang_area_mm2 > relaxed.stats.overhang_area_mm2);
+    assert_eq!(normal.stats.overhang_area_mm2, strict.stats.overhang_area_mm2);
+    assert_eq!(strict.stl, relaxed.stl, "overhang angle is a diagnostic, not support generation");
+    assert_eq!(flipped.stats.overhang_area_mm2, 0.0);
+}
+
+#[test]
+fn invalid_first_layer_taper_intervals_cannot_produce_a_model() {
+    let (w, h) = (200usize, 100usize);
+    let mask: Vec<bool> = (0..w*h).map(|i| {
+        let (x,y) = (i%w,i/w);
+        let blob = ((20..60).contains(&x) || (140..180).contains(&x)) && (30..70).contains(&y);
+        !(blob || ((60..140).contains(&x) && (49..51).contains(&y)))
+    }).collect();
+    let shapes = trace(&mask,w,h,&TraceParams {smooth_px:0.0,corner_deg:60.0,tolerance_px:0.3,min_area_px:4.0});
+    for flip in [false,true] {
+        for raised_bridges in [false,true] {
+            for taper in [0.0,50.0] {
+                let error=build(&shapes,4.0,&Params {width_mm:100.0,raised_bridges,flip,min_first_layer_width_mm:3.0,first_layer_taper_mm:taper,..Params::default()}).err().expect("invalid taper must be refused");
+                assert!(error.contains("first-layer taper height"));
+            }
+        }
+    }
+}
+
 struct Lcg(u64);
 impl Lcg {
     fn next(&mut self) -> f64 {

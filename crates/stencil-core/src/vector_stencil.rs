@@ -204,6 +204,32 @@ fn shape_area(shape: &[Vec<IntPoint<i32>>]) -> f64 {
     (areas.first().copied().unwrap_or(0.0) - areas.iter().skip(1).sum::<f64>()).max(0.0)
 }
 
+/// The same layer-to-layer support test as raster construction, using the
+/// repaired vector sections that are actually extruded. This is diagnostic;
+/// it never moves the geometry. A zero angle selects the shared 45° default.
+fn layered_overhang_area(planes: &[f64], runs: &[crate::remesh::Region], layer: f64, angle: f64, flip: bool) -> f64 {
+    let height = *planes.last().unwrap_or(&0.0);
+    let count = (height / layer).round().max(1.0) as usize;
+    let angle = if angle <= 0.0 { 45.0 } else { angle.min(89.0) };
+    let reach = layer * angle.to_radians().tan() * UNITS_PER_MM;
+    let at = |k: usize| {
+        let z = if flip { height - (k as f64 + 0.5) * layer } else { (k as f64 + 0.5) * layer };
+        planes.partition_point(|&p| p <= z).saturating_sub(1).min(runs.len() - 1)
+    };
+    let mut total = 0.0;
+    let mut measured = HashMap::new();
+    for k in 1..count {
+        let (below, above) = (at(k - 1), at(k));
+        if below == above { continue; }
+        total += *measured.entry((below, above)).or_insert_with(|| {
+            let supported = grow(&runs[below], reach);
+            let unsupported = runs[above].as_slice().overlay(supported.as_slice(), OverlayRule::Difference, FillRule::NonZero);
+            unsupported.iter().map(|shape| shape_area(shape)).sum::<f64>()
+        });
+    }
+    total
+}
+
 fn bounds(shape: &[Vec<IntPoint<i32>>]) -> [i32; 4] {
     let mut b = [i32::MAX, i32::MAX, i32::MIN, i32::MIN];
     for p in shape.iter().flatten() {
@@ -786,6 +812,7 @@ fn build_once(
             bridge_pixels: bridges.len(),
             islands_remaining: 0,
             first_layer_islands,
+            overhang_area_mm2: layered_overhang_area(&planes, &runs, layer_height, p.max_overhang_deg, p.flip),
             watertight: true,
             triangles: stack.t.len(),
             stl_bytes: stl.len(),

@@ -37,6 +37,7 @@ export class RunController<T> {
       if (mine !== this.ticket) return
       const failed = Object.values(steps).find(s => s.state === 'error')
       if (r.status !== 'done' || failed) throw new Error(failed?.error ?? r.error ?? 'Processing did not finish. Adjust the settings and try again.')
+      this.set({ activity: 'Checking completed geometry', progress: .98 })
       const value = await capture(steps)
       if (mine !== this.ticket) { this.dispose(value); return }
       if (this.state.output) this.dispose(this.state.output.value)

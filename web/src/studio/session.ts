@@ -1,3 +1,4 @@
+import { cancelMeshAudit } from './meshAuditClient'
 import { create } from 'zustand'
 import { api } from '../api'
 import { captureArtifacts, releaseArtifacts, type ArtifactSet } from './artifacts'
@@ -16,7 +17,7 @@ interface State {
   preview: { step: string; port: string } | null; cropStep: string | null; interacting: boolean
 }
 const commands = new ProjectCommands()
-export const controller = new RunController<ArtifactSet>({ cancel: () => api.cancel(), run: (g, step) => api.run(g, undefined, step) }, run => useEditor.setState({ run }), releaseArtifacts)
+export const controller = new RunController<ArtifactSet>({ cancel: () => { api.cancel(); cancelMeshAudit() }, run: (g, step) => api.run(g, undefined, step) }, run => useEditor.setState({ run }), releaseArtifacts)
 export const useEditor = create<State>(() => ({ doc: null, registry: null, run: controller.state, loading: true, error: null, notice: null, canUndo: false, canRedo: false, preview: null, cropStep: null, interacting: false }))
 let fileEpoch = 0
 let initialization: Promise<void> | null = null
@@ -99,7 +100,7 @@ export const editor = {
     const state = useEditor.getState(), op = state.doc && operations(state.doc).find(o => o.id === id)
     if (!op) return
     try {
-      for (const [key, value] of Object.entries(values)) state.registry!.validate(op.type, key, value)
+      for (const [key, value] of Object.entries(values)) state.registry!.validate(op.type === 'complexity' ? 'remesh' : op.type, key, value)
       const p = { ...op.params, ...values }
       if (op.type === 'transform' && (Number(p.crop_left ?? 0) + Number(p.crop_right ?? 0) >= 95 || Number(p.crop_top ?? 0) + Number(p.crop_bottom ?? 0) >= 95)) throw Error('Keep at least 5% of the image when cropping.')
       editor.command(`${label} ${id}`, doc => editMany(doc, id, values))
@@ -107,14 +108,14 @@ export const editor = {
   },
   resetParameter(id: string, key: string) {
     const state = useEditor.getState(), op = state.doc && operations(state.doc).find(o => o.id === id)
-    const def = op && state.registry?.types.get(op.type)?.params.find(p => p.name === key)
+    const def = op && state.registry?.types.get(op.type === 'complexity' ? 'remesh' : op.type)?.params.find(p => p.name === key)
     if (def) editor.edit(id, key, def.default)
   },
   edit(id: string, key: string, value: unknown) {
     try {
       const state = useEditor.getState(), op = state.doc && operations(state.doc).find(n => n.id === id)
       if (!op) return
-      state.registry!.validate(op.type, key, value)
+      state.registry!.validate(op.type === 'complexity' ? 'remesh' : op.type, key, value)
       if (op.type === 'transform' && key.startsWith('crop_')) {
         const other = key === 'crop_left' ? 'crop_right' : key === 'crop_right' ? 'crop_left' : key === 'crop_top' ? 'crop_bottom' : 'crop_top'
         if (Number(value) + Number(op.params[other] ?? 0) >= 95) throw new Error('Keep at least 5% of the image when cropping.')
