@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { execSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
 
 const git = (args: string, fallback: string) => {
   try { return execSync(`git ${args}`, { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim() || fallback } catch { return fallback }
@@ -25,7 +26,14 @@ export default defineConfig({
   define: { __BUILD__: JSON.stringify(build) },
   worker: { format: 'es' },
   // three.js is split into its own lazily loaded chunk
-  build: { chunkSizeWarningLimit: 600 },
+  build: {
+    chunkSizeWarningLimit: 600,
+    ...(process.env.STENCIL_LEGACY_HARNESS === '1' ? { rollupOptions: { input: {
+      studio: fileURLToPath(new URL('./index.html', import.meta.url)),
+      legacy: fileURLToPath(new URL('./legacy.html', import.meta.url)),
+      engineRegression: fileURLToPath(new URL('./regression-api.html', import.meta.url)),
+    } } } : {}),
+  },
   // Shared memory (the multi-threaded engine) needs a cross-origin isolated page.
   server: { port: 5174, headers: isolation },
   preview: { headers: isolation },

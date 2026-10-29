@@ -68,6 +68,12 @@ function call<T>(msg: Record<string, unknown>, transfer: Transferable[] = [], st
       if (ev.data.error !== undefined) p.err(new Error(ev.data.error))
       else p.ok(ev.data.ok)
     }
+    worker.onerror = (event) => {
+      const failed = [...pending.values()]
+      pending.clear()
+      worker?.terminate(); worker = null; active = null
+      for (const p of failed) p.err(new Error(event.message || 'The processing worker stopped. Try Make Stencil again.'))
+    }
   }
   const id = ++seq
   if (msg.op === 'run') active = { id, since: null }
@@ -154,6 +160,22 @@ const unb64 = (s: string) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0)).bu
 export const api = {
   nodeTypes: () => call<NodeType[]>({ op: 'types' }),
   threads: () => call<{ n: number; why: string; version: string }>({ op: 'threads' }),
+  /** Load an original asset without changing a saved project's identity or JSON. */
+  async loadImage(bytes: Uint8Array, name: string) {
+    if (warm) await warm
+    const buffer = bytes.slice().buffer
+    const info = await call<{ id: string; width: number; height: number }>({ op: 'image', bytes: buffer })
+    await idb('readwrite', s => s.put({ name, bytes: buffer } satisfies StoredImage, info.id))
+    return info
+  },
+  /** Explicit recovery also used by regression tests; all in-flight promises are settled. */
+  restart() {
+    worker?.terminate(); worker = null; active = null
+    const dead = [...pending.values()]; pending.clear()
+    for (const p of dead) p.err(new Error('superseded'))
+    warm = api.restoreImages().finally(() => { warm = null })
+    return warm
+  },
   imageInfo: (imageId: string, resolution: number) => call<ImageInfo>({ op: 'imageinfo', imageId, resolution }),
   async upload(f: File) {
     const bytes = await f.arrayBuffer()

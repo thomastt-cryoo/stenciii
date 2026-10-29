@@ -1,0 +1,60 @@
+{
+  "browser-output.stl": {
+    "format": "binary STL",
+    "bytes": 44884,
+    "triangles": 896,
+    "vertices": 448,
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        120.0,
+        94.0,
+        3.200000047683716
+      ]
+    ],
+    "size_mm": [
+      120.0,
+      94.0,
+      3.200000047683716
+    ],
+    "signed_volume_mm3": 33564.44577641079,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true
+  },
+  "native-output.stl": {
+    "format": "binary STL",
+    "bytes": 44884,
+    "triangles": 896,
+    "vertices": 448,
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        120.0,
+        94.0,
+        3.200000047683716
+      ]
+    ],
+    "size_mm": [
+      120.0,
+      94.0,
+      3.200000047683716
+    ],
+    "signed_volume_mm3": 33564.44577641079,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true
+  }
+}

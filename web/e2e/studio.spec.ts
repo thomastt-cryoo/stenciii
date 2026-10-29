@@ -35,7 +35,7 @@ async function open(page: Page, template: string | null = 'Simple') {
     const post = Worker.prototype.postMessage
     Worker.prototype.postMessage = function (this: Worker, m: any, ...r: any[]) { if (m?.op === 'run') w.__runs++; return (post as any).call(this, m, ...r) }
   })
-  await page.goto('/')
+  await page.goto('/legacy.html')
   await page.setInputFiles('label.btn input[type=file] >> nth=0', { name: 'disc.png', mimeType: 'image/png', buffer: png() })
   if (template) {
     await expect(page.locator('.react-flow__node').first()).toBeVisible()
@@ -46,7 +46,7 @@ async function open(page: Page, template: string | null = 'Simple') {
 }
 
 test('dropping an image file on the page loads it', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/legacy.html')
   const dt = await page.evaluateHandle((b64) => {
     const d = new DataTransfer()
     d.items.add(new File([Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))], 'dot.png', { type: 'image/png' }))
@@ -58,7 +58,7 @@ test('dropping an image file on the page loads it', async ({ page }) => {
 })
 
 test('dropping a second image swaps the picture of the existing graph', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/legacy.html')
   const drop = async (name: string) => {
     const dt = await page.evaluateHandle((name) => {
       const d = new DataTransfer()
@@ -303,7 +303,7 @@ test('a render crash shows a recovery page instead of a black window', async ({ 
       localStorage.setItem('studio.graph.v1', JSON.stringify({ nodes: [{ id: 'x', type: 'studio', position: { x: 0, y: 0 } }], edges: [] }))
     }
   })
-  await page.goto('/')
+  await page.goto('/legacy.html')
   const crash = page.locator('.crash')
   if (await crash.count()) {
     await expect(crash).toBeVisible()
@@ -794,7 +794,7 @@ test('Expand margin can be added from the post menu', async ({ page }) => {
 
 test('the Expand margin viewer shows the ring round the assembled plate', async ({ page }) => {
   test.setTimeout(240_000)
-  await page.goto('/')
+  await page.goto('/legacy.html')
   await page.locator('input[type=file][accept*=json]').setInputFiles('e2e/fixtures/margin-ring.json')
   await page.locator('.react-flow__node').filter({ hasText: 'Expand margin' }).first().dispatchEvent('dblclick')
   // The viewer can show the upstream plate while the expanded border is still computing.
@@ -806,7 +806,7 @@ test('the Expand margin viewer shows the ring round the assembled plate', async 
 
 test('files in a downloaded ZIP carry the time they were made, not 1980', async ({ page }) => {
   test.setTimeout(240_000)
-  await page.goto('/')
+  await page.goto('/legacy.html')
   await page.locator('input[type=file][accept*=json]').setInputFiles('e2e/fixtures/margin-ring.json')
   await page.locator('.react-flow__node').filter({ hasText: 'Expand margin' }).first().dispatchEvent('dblclick')
   await expect(page.locator('.v3bar')).toBeVisible({ timeout: 200_000 })
@@ -820,7 +820,7 @@ test('files in a downloaded ZIP carry the time they were made, not 1980', async 
 
 test('the shading menu changes how the mesh is drawn', async ({ page }) => {
   test.setTimeout(240_000)
-  await page.goto('/')
+  await page.goto('/legacy.html')
   await page.locator('input[type=file][accept*=json]').setInputFiles('e2e/fixtures/margin-ring.json')
   await page.locator('.react-flow__node').filter({ hasText: 'Expand margin' }).first().dispatchEvent('dblclick')
   await expect(page.locator('.v3bar')).toBeVisible({ timeout: 200_000 })
@@ -837,7 +837,7 @@ test('the shading menu changes how the mesh is drawn', async ({ page }) => {
 })
 
 test('panning after "fit view" moves the graph by the drag, nothing more', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/legacy.html')
   await page.locator('input[type=file][accept*=json]').setInputFiles('e2e/fixtures/margin-ring.json')
   await expect(page.locator('.react-flow__node').first()).toBeVisible()
   await page.locator('.react-flow__controls-fitview').click()
@@ -1020,7 +1020,7 @@ test('the status text lives in a footer, so the toolbar buttons never move while
 })
 
 test('the console opens with the version and build of the studio', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/legacy.html')
   const line = page.locator('.console-lines').getByText(/Graffiti stencil studio v\d+\.\d+\.\d+ · build \d+ \(/)
   await expect(line).toBeVisible({ timeout: 60_000 })
   await expect(line).toContainText('engine ')

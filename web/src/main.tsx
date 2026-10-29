@@ -1,8 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import '@xyflow/react/dist/style.css'
-import './styles.css'
-import App from './App'
-import ErrorBoundary from './ErrorBoundary'
+import './studio/studio.css'
+import StudioApp from './studio/StudioApp'
+import StudioBoundary from './studio/StudioBoundary'
 
-createRoot(document.getElementById('root')!).render(<StrictMode><ErrorBoundary><App /></ErrorBoundary></StrictMode>)
+createRoot(document.getElementById('root')!).render(<StrictMode><StudioBoundary><StudioApp /></StudioBoundary></StrictMode>)

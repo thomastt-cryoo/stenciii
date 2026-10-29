@@ -1,0 +1,42 @@
+
+[WebServer] (node:5736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:16880) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 23 tests using 1 worker
+
+(node:25196) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/23] e2e\editor.spec.ts:30:1 › empty workspace, light/dark preference, searchable catalogue, keyboard and responsive layout
+[2/23] e2e\editor.spec.ts:53:1 › real generation, quick parameters, original assets, STL export and rapid New→Open regression
+
+
+e2e\editor.spec.ts:53:1 › real generation, quick parameters, original assets, STL export and rapid New→Open regression
+verified: 1 islands found, 0 remaining, watertight true, 896 triangles
+wrote <workspace>\web\test-results\editor-real-generation-qui-df5f4-d-rapid-New→Open-regression\native.stl in 22 ms
+[3/23] e2e\editor.spec.ts:91:1 › replace and drop artwork, undo replacement and recover after processing error
+[4/23] e2e\editor.spec.ts:110:1 › legacy advanced and unknown projects save losslessly without any canvas or default recipe
+[5/23] e2e\editor.spec.ts:123:1 › offline local processing, theme accessibility, and no legacy editor in default UI
+[6/23] e2e\foundation.spec.ts:9:1 › runtime registry accounts for all processing types and searchable parameter keys
+[7/23] e2e\foundation.spec.ts:18:1 › recipe compilation matches the original vector recipe, defaults and dependencies
+[8/23] e2e\foundation.spec.ts:31:1 › unknown data, embedded and unused images, branches, ids, positions and connections survive edits and round trips
+[9/23] e2e\foundation.spec.ts:51:1 › native graph imports, migration aliases and image remapping only affect the execution copy
+[10/23] e2e\foundation.spec.ts:61:1 › commands support atomic source replacement, undo and redo without rewriting unknown fields
+[11/23] e2e\foundation.spec.ts:71:1 › registry identifies every instance and retains conditional metadata
+[12/23] e2e\foundation.spec.ts:85:1 › New then Open identical saved processing always creates a fresh completed generation
+[13/23] e2e\foundation.spec.ts:94:1 › edits, cancellation and superseded work cannot export stale output or overwrite a newer generation
+[14/23] e2e\foundation.spec.ts:106:1 › draft artifacts and failed runs are never full-quality exportable
+[15/23] e2e\foundation.spec.ts:113:1 › late artifact capture is disposed after cancel and recoverable step failures block export
+[16/23] e2e\reliability.spec.ts:6:1 › worker restart restores original images and the cache can recompute unchanged recipes
+[17/23] e2e\reliability.spec.ts:25:1 › cancelling real work and immediately making again preserves project settings and source
+[18/23] e2e\reliability.spec.ts:39:1 › autosaved embedded artwork reopens and recalculates after a page reload
+[19/23] e2e\reliability.spec.ts:49:1 › invalid or unsupported project input can be saved safely and engine errors do not destroy it
+[20/23] e2e\reliability.spec.ts:58:45 › PNG artwork imports and generates an actual STL
+[21/23] e2e\reliability.spec.ts:58:45 › JPG artwork imports and generates an actual STL
+[22/23] e2e\reliability.spec.ts:58:45 › BMP artwork imports and generates an actual STL
+[23/23] e2e\visuals.spec.ts:4:1 › capture actual empty light/dark, generated stencil/3D and settings workspace
+  23 passed (38.2s)

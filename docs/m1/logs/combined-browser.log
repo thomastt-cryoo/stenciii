@@ -1,0 +1,125 @@
+
+[WebServer] (node:1732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:25884) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 106 tests using 1 worker
+
+(node:10020) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/106] e2e\badges.spec.ts:9:3 › badges match the engine findings: islands left, thin bridge, heavy mesh
+[2/106] e2e\badges.spec.ts:9:3 › badges match the engine findings: a clean plate
+[3/106] e2e\badges.spec.ts:9:3 › badges match the engine findings: tiled parts with every finding
+[4/106] e2e\badges.spec.ts:9:3 › badges match the engine findings: pre-tiled parts do not report paint under blocks
+[5/106] e2e\badges.spec.ts:9:3 › badges match the engine findings: layout that costs a lot of paint
+[6/106] e2e\badges.spec.ts:9:3 › badges match the engine findings: layout that costs little
+[7/106] e2e\badges.spec.ts:9:3 › badges match the engine findings: empty mask
+[8/106] e2e\badges.spec.ts:9:3 › badges match the engine findings: full mask
+[9/106] e2e\badges.spec.ts:9:3 › badges match the engine findings: no outlines
+[10/106] e2e\badges.spec.ts:9:3 › badges match the engine findings: fragments dropped at a cut
+[11/106] e2e\editor.spec.ts:30:1 › empty workspace, light/dark preference, searchable catalogue, keyboard and responsive layout
+[12/106] e2e\editor.spec.ts:53:1 › real generation, quick parameters, original assets, STL export and rapid New→Open regression
+e2e\editor.spec.ts:53:1 › real generation, quick parameters, original assets, STL export and rapid New→Open regression
+
+verified: 1 islands found, 0 remaining, watertight true, 896 triangles
+
+wrote <workspace>\web\test-results\editor-real-generation-qui-df5f4-d-rapid-New→Open-regression\native.stl in 25 ms
+[13/106] e2e\editor.spec.ts:91:1 › replace and drop artwork, undo replacement and recover after processing error
+[14/106] e2e\editor.spec.ts:110:1 › legacy advanced and unknown projects save losslessly without any canvas or default recipe
+[15/106] e2e\editor.spec.ts:123:1 › offline local processing, theme accessibility, and no legacy editor in default UI
+[16/106] e2e\foundation.spec.ts:9:1 › runtime registry accounts for all processing types and searchable parameter keys
+[17/106] e2e\foundation.spec.ts:18:1 › recipe compilation matches the original vector recipe, defaults and dependencies
+[18/106] e2e\foundation.spec.ts:31:1 › unknown data, embedded and unused images, branches, ids, positions and connections survive edits and round trips
+[19/106] e2e\foundation.spec.ts:51:1 › native graph imports, migration aliases and image remapping only affect the execution copy
+[20/106] e2e\foundation.spec.ts:61:1 › commands support atomic source replacement, undo and redo without rewriting unknown fields
+[21/106] e2e\foundation.spec.ts:71:1 › registry identifies every instance and retains conditional metadata
+[22/106] e2e\foundation.spec.ts:85:1 › New then Open identical saved processing always creates a fresh completed generation
+[23/106] e2e\foundation.spec.ts:94:1 › edits, cancellation and superseded work cannot export stale output or overwrite a newer generation
+[24/106] e2e\foundation.spec.ts:106:1 › draft artifacts and failed runs are never full-quality exportable
+[25/106] e2e\foundation.spec.ts:113:1 › late artifact capture is disposed after cancel and recoverable step failures block export
+[26/106] e2e\presetBook.spec.ts:4:1 › a presets file is checked and merged without overwriting
+[27/106] e2e\presetBook.spec.ts:15:1 › files that are not presets are refused
+[28/106] e2e\reliability.spec.ts:6:1 › worker restart restores original images and the cache can recompute unchanged recipes
+[29/106] e2e\reliability.spec.ts:25:1 › cancelling real work and immediately making again preserves project settings and source
+[30/106] e2e\reliability.spec.ts:39:1 › autosaved embedded artwork reopens and recalculates after a page reload
+[31/106] e2e\reliability.spec.ts:49:1 › invalid or unsupported project input can be saved safely and engine errors do not destroy it
+[32/106] e2e\reliability.spec.ts:58:45 › PNG artwork imports and generates an actual STL
+[33/106] e2e\reliability.spec.ts:58:45 › JPG artwork imports and generates an actual STL
+[34/106] e2e\reliability.spec.ts:58:45 › BMP artwork imports and generates an actual STL
+[35/106] e2e\studio.spec.ts:48:1 › dropping an image file on the page loads it
+[36/106] e2e\studio.spec.ts:60:1 › dropping a second image swaps the picture of the existing graph
+[37/106] e2e\studio.spec.ts:77:1 › a dropped image builds the Vector template by default
+[38/106] e2e\studio.spec.ts:92:1 › rapid edits settle into one finished run
+[39/106] e2e\studio.spec.ts:103:1 › a heavy node is abandoned by restarting the worker, and the next run still works
+[40/106] e2e\studio.spec.ts:120:1 › undo returns to the previous value
+[41/106] e2e\studio.spec.ts:133:1 › the Reshape paint node can be added from the menu and shows its parameters
+[42/106] e2e\studio.spec.ts:143:1 › the console lists timed sub-steps of the stencil node
+[43/106] e2e\studio.spec.ts:150:1 › new nodes avoid existing ones and no lane panels are drawn
+[44/106] e2e\studio.spec.ts:166:1 › 3D views show dimensions and the trace node exports SVG
+[45/106] e2e\studio.spec.ts:190:1 › the Crop & rotate node can be added and rotates the picture
+[46/106] e2e\studio.spec.ts:201:1 › the preview image zooms and pans on a bounded canvas
+[47/106] e2e\studio.spec.ts:217:1 › releasing the preview image right after a move does not crash the app
+[48/106] e2e\studio.spec.ts:235:1 › after dropping an image the whole starter graph is in view
+[49/106] e2e\studio.spec.ts:246:1 › number boxes, reset and reset-all edit parameters
+[50/106] e2e\studio.spec.ts:264:1 › copy, paste and duplicate create independent nodes
+[51/106] e2e\studio.spec.ts:286:1 › the Text node renders letters and can feed a stencil
+[52/106] e2e\studio.spec.ts:299:1 › a render crash shows a recovery page instead of a black window
+[53/106] e2e\studio.spec.ts:317:1 › templates menu rebuilds the graph around the picture
+[54/106] e2e\studio.spec.ts:324:1 › a long palette menu scrolls inside itself, not the page
+[55/106] e2e\studio.spec.ts:335:1 › the Remesh can be added from the stencil menu and shows its parameters
+[56/106] e2e\studio.spec.ts:346:1 › the shape cleanup nodes can be added from the trace menu
+[57/106] e2e\studio.spec.ts:358:1 › + All lists every node by usage with counts, menus flow into columns, and the perf overlay toggles
+[58/106] e2e\studio.spec.ts:384:1 › the Image node opens a replacement picture and downloads its own, inside the inspector
+[59/106] e2e\studio.spec.ts:399:1 › the Image node workbench (double-click) has Open and Download
+[60/106] e2e\studio.spec.ts:407:1 › the older Tiles & mounting node is hidden from the menus and the palette
+[61/106] e2e\studio.spec.ts:414:1 › sliders carry a tooltip and a unit, and the status line is announced
+[62/106] e2e\studio.spec.ts:422:1 › the Colour set template builds a registered multi-colour graph
+[63/106] e2e\studio.spec.ts:430:1 › the Tiles, pads & screws template chains tiles, pads and screws
+[64/106] e2e\studio.spec.ts:439:1 › the Tiles first template cuts before bridging and feeds pads
+[65/106] e2e\studio.spec.ts:481:1 › dragging a seam that would break the tile size limit snaps back and says why
+[66/106] e2e\studio.spec.ts:490:1 › dragging a seam edits the layout, and Reset layout brings the automatic one back
+[67/106] e2e\studio.spec.ts:506:1 › a connector block slides along its seam and an overlap is refused
+[68/106] e2e\studio.spec.ts:529:1 › undo and redo restore a deleted node
+[69/106] e2e\studio.spec.ts:543:1 › swapping the Image node picture can be undone and redone
+[70/106] e2e\studio.spec.ts:559:1 › help text stays hidden until the Show help toggle is on
+[71/106] e2e\studio.spec.ts:571:1 › every node type has the Show help button and its parameters have help text
+[72/106] e2e\studio.spec.ts:597:1 › a long node description is cut at four lines until Show help is pressed
+[73/106] e2e\studio.spec.ts:610:1 › the unit shows beside the number, not in the label, and clearance labels say radial or diametral
+[74/106] e2e\studio.spec.ts:624:1 › Show help is remembered from node to node and Escape steps back one level at a time
+[75/106] e2e\studio.spec.ts:641:1 › the engine thread budget leaves at least one core free when threads are available
+[76/106] e2e\studio.spec.ts:652:1 › command palette adds a node
+[77/106] e2e\studio.spec.ts:660:1 › viewer exposes smooth and flat shading
+[78/106] e2e\studio.spec.ts:668:1 › the viewer shows the tile layout of a Pads node and can hide it
+[79/106] e2e\studio.spec.ts:680:1 › the Report panel gives a print verdict, lists findings and times each node
+[80/106] e2e\studio.spec.ts:697:1 › the History list names edits and jumps back to an earlier state
+[81/106] e2e\studio.spec.ts:713:1 › presets save the selected node parameters and apply them again
+[82/106] e2e\studio.spec.ts:727:1 › presets export to a file and import again, keeping the ones already there
+[83/106] e2e\studio.spec.ts:750:1 › Rerun and the Report button counts are available
+[84/106] e2e\studio.spec.ts:758:1 › the studio has no serious accessibility violations
+[85/106] e2e\studio.spec.ts:768:1 › the Image node shows the picture properties
+[86/106] e2e\studio.spec.ts:778:1 › the Split volume node is named so and Pads accepts "none" as a thread
+[87/106] e2e\studio.spec.ts:788:1 › Expand margin can be added from the post menu
+[88/106] e2e\studio.spec.ts:795:1 › the Expand margin viewer shows the ring round the assembled plate
+[89/106] e2e\studio.spec.ts:807:1 › files in a downloaded ZIP carry the time they were made, not 1980
+[90/106] e2e\studio.spec.ts:821:1 › the shading menu changes how the mesh is drawn
+[91/106] e2e\studio.spec.ts:839:1 › panning after "fit view" moves the graph by the drag, nothing more
+[92/106] e2e\studio.spec.ts:862:1 › every setting of every node has help text, including the per-tone ones
+[93/106] e2e\studio.spec.ts:873:1 › bolt and nut fit settings are shared between nodes
+[94/106] e2e\studio.spec.ts:887:1 › output ports stay on the card after a run
+[95/106] e2e\studio.spec.ts:895:1 › the side panel can be resized with the keyboard and remembers its width
+[96/106] e2e\studio.spec.ts:908:1 › a narrow window stacks the panel under the canvas without sideways scrolling
+[97/106] e2e\studio.spec.ts:919:1 › the shared bolt settings carry a shared tag
+[98/106] e2e\studio.spec.ts:927:1 › the command palette still finds a node by its former name
+[99/106] e2e\studio.spec.ts:934:1 › a failed run offers a jump to the node that failed
+[100/106] e2e\studio.spec.ts:946:1 › the toolbar buttons are icons that each carry a tooltip and a name
+[101/106] e2e\studio.spec.ts:957:1 › a node added while the view is panned away is brought into view
+[102/106] e2e\studio.spec.ts:986:1 › a node dragged onto a compatible edge is placed between its ends
+[103/106] e2e\studio.spec.ts:998:1 › a node that does not fit the edge leaves it alone
+[104/106] e2e\studio.spec.ts:1008:1 › the status text lives in a footer, so the toolbar buttons never move while it changes
+[105/106] e2e\studio.spec.ts:1022:1 › the console opens with the version and build of the studio
+[106/106] e2e\visuals.spec.ts:4:1 › capture actual empty light/dark, generated stencil/3D and settings workspace
+  106 passed (3.8m)

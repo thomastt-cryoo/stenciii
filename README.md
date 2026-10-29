@@ -1,13 +1,15 @@
-# Stencil Studio — M0 audit
+# Stencil Studio — M1 workspace
 
-This repository preserves Graffiti Stencil Maker v2.9.4 at source commit `5d8df15b798b859faf72248a35d156d6e9aaffc7` while planning a simpler interface. M0 covers the audit, baseline testing and architecture; the UI redesign has not started.
+The default app now provides a simple local workflow: choose an image, Make Stencil, inspect the actual 2D/3D result and export its STL. Light/dark themes, quick settings and lossless project open/save work. The Rust/WASM engine remains based on Graffiti Stencil Maker v2.9.4, source commit `5d8df15b798b859faf72248a35d156d6e9aaffc7`.
+
+See the [M1 completion report and screenshots](docs/M1_REPORT.md) for working features, test evidence and unfinished specialist scope. `npm run build` produces the customer-only app. `npm run e2e` explicitly builds a separate developer harness for the preserved original UI tests. Build instructions remain in INSTALL.md; the original node-editor usage below applies to that reference harness.
 
 - [Feature inventory](docs/FEATURE_INVENTORY.md)
 - [Complete feature and parameter mapping](docs/FEATURE_UI_MAPPING.md)
 - [Proposed workflow and UI architecture](docs/UX_ARCHITECTURE.md)
 - [Actual baseline results, defects and M1 readiness](docs/BASELINE_TESTS.md)
 
-The original build and usage instructions follow.
+The approved M0 documents above remain the historical audit. The original build and usage instructions follow.
 
 # Graffiti Stencil Maker
 

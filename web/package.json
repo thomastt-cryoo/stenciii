@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
+    "build:regression": "tsc --noEmit && node scripts/build-regression.mjs",
     "preview": "vite preview",
-    "e2e": "playwright test"
+    "e2e": "npm run build:regression && playwright test"
   },
   "dependencies": {
     "@xyflow/react": "^12.3.0",

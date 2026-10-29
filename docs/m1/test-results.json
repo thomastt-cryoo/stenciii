@@ -1,0 +1,1833 @@
+{
+  "date_dubai": "2026-10-29",
+  "base_commit": "dd268e884d1722f9606c8f8d984662d8de03bed1",
+  "rust": {
+    "passed": 156,
+    "failed": 0,
+    "ignored": 0
+  },
+  "browser_runs": {
+    "combined_regression": {
+      "stats": {
+        "startTime": "2026-10-29T02:03:23.516Z",
+        "duration": 227226.203,
+        "expected": 106,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "tests": [
+        {
+          "title": "badges match the engine findings: islands left, thin bridge, heavy mesh",
+          "file": "badges.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 17,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "badges match the engine findings: a clean plate",
+          "file": "badges.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 5,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "badges match the engine findings: tiled parts with every finding",
+          "file": "badges.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 3,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "badges match the engine findings: pre-tiled parts do not report paint under blocks",
+          "file": "badges.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 5,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "badges match the engine findings: layout that costs a lot of paint",
+          "file": "badges.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 3,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "badges match the engine findings: layout that costs little",
+          "file": "badges.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "badges match the engine findings: empty mask",
+          "file": "badges.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 3,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "badges match the engine findings: full mask",
+          "file": "badges.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 4,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "badges match the engine findings: no outlines",
+          "file": "badges.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "badges match the engine findings: fragments dropped at a cut",
+          "file": "badges.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "empty workspace, light/dark preference, searchable catalogue, keyboard and responsive layout",
+          "file": "editor.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1145,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "real generation, quick parameters, original assets, STL export and rapid New\u2192Open regression",
+          "file": "editor.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 4628,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "replace and drop artwork, undo replacement and recover after processing error",
+          "file": "editor.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1597,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "legacy advanced and unknown projects save losslessly without any canvas or default recipe",
+          "file": "editor.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 559,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "offline local processing, theme accessibility, and no legacy editor in default UI",
+          "file": "editor.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 4485,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "runtime registry accounts for all processing types and searchable parameter keys",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 150,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "recipe compilation matches the original vector recipe, defaults and dependencies",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 7,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "unknown data, embedded and unused images, branches, ids, positions and connections survive edits and round trips",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 7,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "native graph imports, migration aliases and image remapping only affect the execution copy",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "commands support atomic source replacement, undo and redo without rewriting unknown fields",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 4,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "registry identifies every instance and retains conditional metadata",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "New then Open identical saved processing always creates a fresh completed generation",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "edits, cancellation and superseded work cannot export stale output or overwrite a newer generation",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 3,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "draft artifacts and failed runs are never full-quality exportable",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "late artifact capture is disposed after cancel and recoverable step failures block export",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "a presets file is checked and merged without overwriting",
+          "file": "presetBook.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 3,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "files that are not presets are refused",
+          "file": "presetBook.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 5,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "worker restart restores original images and the cache can recompute unchanged recipes",
+          "file": "reliability.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 517,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "cancelling real work and immediately making again preserves project settings and source",
+          "file": "reliability.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1093,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "autosaved embedded artwork reopens and recalculates after a page reload",
+          "file": "reliability.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 775,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "invalid or unsupported project input can be saved safely and engine errors do not destroy it",
+          "file": "reliability.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 477,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "PNG artwork imports and generates an actual STL",
+          "file": "reliability.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1304,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "JPG artwork imports and generates an actual STL",
+          "file": "reliability.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1209,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "BMP artwork imports and generates an actual STL",
+          "file": "reliability.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1211,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "dropping an image file on the page loads it",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 456,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "dropping a second image swaps the picture of the existing graph",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 430,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "a dropped image builds the Vector template by default",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 451,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "rapid edits settle into one finished run",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2079,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "a heavy node is abandoned by restarting the worker, and the next run still works",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 3271,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "undo returns to the previous value",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2874,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the Reshape paint node can be added from the menu and shows its parameters",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1589,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the console lists timed sub-steps of the stencil node",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1594,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "new nodes avoid existing ones and no lane panels are drawn",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1879,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "3D views show dimensions and the trace node exports SVG",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 3262,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the Crop & rotate node can be added and rotates the picture",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1617,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the preview image zooms and pans on a bounded canvas",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2216,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "releasing the preview image right after a move does not crash the app",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1834,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "after dropping an image the whole starter graph is in view",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2409,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "number boxes, reset and reset-all edit parameters",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1648,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "copy, paste and duplicate create independent nodes",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1719,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the Text node renders letters and can feed a stencil",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2629,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "a render crash shows a recovery page instead of a black window",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 257,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "templates menu rebuilds the graph around the picture",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1552,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "a long palette menu scrolls inside itself, not the page",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1665,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the Remesh can be added from the stencil menu and shows its parameters",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1654,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the shape cleanup nodes can be added from the trace menu",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1779,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "+ All lists every node by usage with counts, menus flow into columns, and the perf overlay toggles",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2866,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the Image node opens a replacement picture and downloads its own, inside the inspector",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1687,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the Image node workbench (double-click) has Open and Download",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1509,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the older Tiles & mounting node is hidden from the menus and the palette",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1584,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "sliders carry a tooltip and a unit, and the status line is announced",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1495,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the Colour set template builds a registered multi-colour graph",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1610,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the Tiles, pads & screws template chains tiles, pads and screws",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1660,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the Tiles first template cuts before bridging and feeds pads",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2576,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "dragging a seam that would break the tile size limit snaps back and says why",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 4992,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "dragging a seam edits the layout, and Reset layout brings the automatic one back",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 7269,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "a connector block slides along its seam and an overlap is refused",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 4916,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "undo and redo restore a deleted node",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2944,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "swapping the Image node picture can be undone and redone",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2934,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "help text stays hidden until the Show help toggle is on",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1779,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "every node type has the Show help button and its parameters have help text",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 6175,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "a long node description is cut at four lines until Show help is pressed",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1666,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the unit shows beside the number, not in the label, and clearance labels say radial or diametral",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1696,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "Show help is remembered from node to node and Escape steps back one level at a time",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1712,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the engine thread budget leaves at least one core free when threads are available",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1658,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "command palette adds a node",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1647,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "viewer exposes smooth and flat shading",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 3185,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the viewer shows the tile layout of a Pads node and can hide it",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 3815,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the Report panel gives a print verdict, lists findings and times each node",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 4079,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the History list names edits and jumps back to an earlier state",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 4335,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "presets save the selected node parameters and apply them again",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 3014,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "presets export to a file and import again, keeping the ones already there",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2582,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "Rerun and the Report button counts are available",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1713,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the studio has no serious accessibility violations",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 4872,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the Image node shows the picture properties",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 686,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the Split volume node is named so and Pads accepts \"none\" as a thread",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1710,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "Expand margin can be added from the post menu",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1784,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the Expand margin viewer shows the ring round the assembled plate",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 18364,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "files in a downloaded ZIP carry the time they were made, not 1980",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 5728,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the shading menu changes how the mesh is drawn",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 13626,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "panning after \"fit view\" moves the graph by the drag, nothing more",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1523,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "every setting of every node has help text, including the per-tone ones",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1754,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "bolt and nut fit settings are shared between nodes",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1856,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "output ports stay on the card after a run",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2667,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the side panel can be resized with the keyboard and remembers its width",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1812,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "a narrow window stacks the panel under the canvas without sideways scrolling",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2701,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the shared bolt settings carry a shared tag",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1769,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the command palette still finds a node by its former name",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1691,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "a failed run offers a jump to the node that failed",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2220,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the toolbar buttons are icons that each carry a tooltip and a name",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1902,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "a node added while the view is panned away is brought into view",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 3468,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "a node dragged onto a compatible edge is placed between its ends",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1985,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "a node that does not fit the edge leaves it alone",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2055,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the status text lives in a footer, so the toolbar buttons never move while it changes",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2650,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "the console opens with the version and build of the studio",
+          "file": "studio.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 564,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "capture actual empty light/dark, generated stencil/3D and settings workspace",
+          "file": "visuals.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 5576,
+              "errors": []
+            }
+          ]
+        }
+      ]
+    },
+    "customer_after_visual_refinement": {
+      "stats": {
+        "startTime": "2026-10-29T02:08:02.220Z",
+        "duration": 38155.866,
+        "expected": 23,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "tests": [
+        {
+          "title": "empty workspace, light/dark preference, searchable catalogue, keyboard and responsive layout",
+          "file": "editor.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1513,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "real generation, quick parameters, original assets, STL export and rapid New\u2192Open regression",
+          "file": "editor.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 6005,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "replace and drop artwork, undo replacement and recover after processing error",
+          "file": "editor.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2040,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "legacy advanced and unknown projects save losslessly without any canvas or default recipe",
+          "file": "editor.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 677,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "offline local processing, theme accessibility, and no legacy editor in default UI",
+          "file": "editor.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 4963,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "runtime registry accounts for all processing types and searchable parameter keys",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 294,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "recipe compilation matches the original vector recipe, defaults and dependencies",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 14,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "unknown data, embedded and unused images, branches, ids, positions and connections survive edits and round trips",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 14,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "native graph imports, migration aliases and image remapping only affect the execution copy",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 6,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "commands support atomic source replacement, undo and redo without rewriting unknown fields",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 7,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "registry identifies every instance and retains conditional metadata",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 6,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "New then Open identical saved processing always creates a fresh completed generation",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 9,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "edits, cancellation and superseded work cannot export stale output or overwrite a newer generation",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 9,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "draft artifacts and failed runs are never full-quality exportable",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 7,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "late artifact capture is disposed after cancel and recoverable step failures block export",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 6,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "worker restart restores original images and the cache can recompute unchanged recipes",
+          "file": "reliability.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 670,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "cancelling real work and immediately making again preserves project settings and source",
+          "file": "reliability.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1176,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "autosaved embedded artwork reopens and recalculates after a page reload",
+          "file": "reliability.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1020,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "invalid or unsupported project input can be saved safely and engine errors do not destroy it",
+          "file": "reliability.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 561,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "PNG artwork imports and generates an actual STL",
+          "file": "reliability.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1992,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "JPG artwork imports and generates an actual STL",
+          "file": "reliability.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 2212,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "BMP artwork imports and generates an actual STL",
+          "file": "reliability.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1301,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "capture actual empty light/dark, generated stencil/3D and settings workspace",
+          "file": "visuals.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 5163,
+              "errors": []
+            }
+          ]
+        }
+      ]
+    },
+    "single_thread_customer": {
+      "stats": {
+        "startTime": "2026-10-29T02:09:54.912Z",
+        "duration": 7969.565999999999,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "tests": [
+        {
+          "title": "customer workflow also generates without cross-origin isolation or threaded WASM",
+          "file": "reliability.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1244,
+              "errors": []
+            }
+          ]
+        }
+      ]
+    },
+    "final_production_and_model_checks": {
+      "stats": {
+        "startTime": "2026-10-29T02:13:25.003Z",
+        "duration": 77734.82,
+        "expected": 16,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "tests": [
+        {
+          "title": "empty workspace, light/dark preference, searchable catalogue, keyboard and responsive layout",
+          "file": "editor.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 16206,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "real generation, quick parameters, original assets, STL export and rapid New\u2192Open regression",
+          "file": "editor.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 17164,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "replace and drop artwork, undo replacement and recover after processing error",
+          "file": "editor.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 9936,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "legacy advanced and unknown projects save losslessly without any canvas or default recipe",
+          "file": "editor.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 1677,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "offline local processing, theme accessibility, and no legacy editor in default UI",
+          "file": "editor.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 7788,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "runtime registry accounts for all processing types and searchable parameter keys",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 275,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "recipe compilation matches the original vector recipe, defaults and dependencies",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 24,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "unknown data, embedded and unused images, branches, ids, positions and connections survive edits and round trips",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 15,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "native graph imports, migration aliases and image remapping only affect the execution copy",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 4,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "commands support atomic source replacement, undo and redo without rewriting unknown fields",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 8,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "registry identifies every instance and retains conditional metadata",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 12,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "New then Open identical saved processing always creates a fresh completed generation",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 4,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "edits, cancellation and superseded work cannot export stale output or overwrite a newer generation",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 7,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "draft artifacts and failed runs are never full-quality exportable",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 14,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "late artifact capture is disposed after cancel and recoverable step failures block export",
+          "file": "foundation.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 5,
+              "errors": []
+            }
+          ]
+        },
+        {
+          "title": "capture actual empty light/dark, generated stencil/3D and settings workspace",
+          "file": "visuals.spec.ts",
+          "outcome": "expected",
+          "runs": [
+            {
+              "status": "passed",
+              "duration_ms": 6509,
+              "errors": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "development_corrections": [
+    {
+      "check": "First 15-test run",
+      "passed": 12,
+      "failed": 3,
+      "cause": "Missing dialog focus return and disabled export link losing its link role in two checks",
+      "resolution": "Fixed; all 15 passed on rerun, and retained in final production checks"
+    },
+    {
+      "check": "Node 26 test module import",
+      "cause": "JSON import required type attribute",
+      "resolution": "Added JSON import attribute; Vite still bundles catalogue routing locally"
+    }
+  ],
+  "not_run": [
+    "macOS",
+    "Firefox/Safari",
+    "Tauri/WebView2/WKWebView",
+    "Fresh-machine offline installation",
+    "Remote CI status",
+    "Future specialist editors"
+  ]
+}

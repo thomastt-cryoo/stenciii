@@ -1,0 +1,7 @@
+{
+  "browser_triangles": 896,
+  "native_triangles": 896,
+  "canonical_triangles_match_at_mm": 0.0001,
+  "embedded_svg_bytes_preserved": true,
+  "rapid_identical_new_open_cycles": 3
+}
