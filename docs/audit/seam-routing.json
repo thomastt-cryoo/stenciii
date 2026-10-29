@@ -1,0 +1,10 @@
+{
+  "note": "Canonical triangle comparison ignores file ordering; direct flag is statically routed to an undeclared legacy parameter.",
+  "same_triangles": {
+    "connector_hex_d3mm.stl": true,
+    "stencil_r1c1.stl": true,
+    "stencil_r1c2.stl": true,
+    "stencil_r2c1.stl": true,
+    "stencil_r2c2.stl": true
+  }
+}

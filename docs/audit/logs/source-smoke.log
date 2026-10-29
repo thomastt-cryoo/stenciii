@@ -1,0 +1,1 @@
+{"performance":"Performance\nEngine workers: 0 not started\nCPU cores: 8 (engine uses 1)\nEngine mode: single-threaded (threaded build missing or failed to start)\nEngine load (10 s): 0%\nUI lag: 0 ms max 0\nJS memory: 10 MB","projectRoundTrip":{"version":2,"steps":4,"images":1,"originalBytesPreserved":true,"explicitRerun":true},"success":true}

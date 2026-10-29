@@ -1,0 +1,31 @@
+{
+  "performance": "Performance\nEngine workers: 0 not started\nCPU cores: 8 (engine uses 1)\nEngine mode: single-threaded (threaded build missing or failed to start)\nEngine load (10 s): 0%\nUI lag: 0 ms max 0\nJS memory: 10 MB",
+  "projectRoundTrip": {
+    "version": 2,
+    "steps": 4,
+    "images": 1,
+    "originalBytesPreserved": true,
+    "explicitRerun": true
+  },
+  "success": true,
+  "requests": [
+    "http://127.0.0.1:5196/",
+    "http://127.0.0.1:5196/assets/index-DBdtDOCL.js",
+    "http://127.0.0.1:5196/assets/index-BLJd1lma.css",
+    "http://127.0.0.1:5196/assets/engine.worker-DtZJtX1Q.js",
+    "http://127.0.0.1:5196/pkg-mt/stencil_wasm.js",
+    "http://127.0.0.1:5196/assets/stencil_wasm-XaqQIrP_.js",
+    "http://127.0.0.1:5196/assets/stencil_wasm_bg-KYEYY513.wasm",
+    "http://127.0.0.1:5196/assets/Viewer3D-UJFtxW_e.js"
+  ],
+  "blocked": [],
+  "failures": [
+    {
+      "url": "http://127.0.0.1:5196/pkg-mt/stencil_wasm.js",
+      "error": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.stl
+sandbox/
+.vscode/
+prompts/
+projects/
+node_modules/
+/target/
+/web/pkg/
+/web/dist/
+/web/node_modules/
+/web/test-results/
+/web/playwright-report/
+/web/public/pkg-mt/

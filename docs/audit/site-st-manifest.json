@@ -1,0 +1,37 @@
+[
+  {
+    "path": "assets/engine.worker-DtZJtX1Q.js",
+    "bytes": 3984,
+    "sha256": "6f57b4d5b5892447482b8aab1671fda266df474ed494066b9f77dbdb512cedb4"
+  },
+  {
+    "path": "assets/index-BLJd1lma.css",
+    "bytes": 31327,
+    "sha256": "0a393f437b63ebdd5563a203ad5ab0c21a7e3b1ed4e2645548d6997b30a5b5a7"
+  },
+  {
+    "path": "assets/index-DBdtDOCL.js",
+    "bytes": 413419,
+    "sha256": "ae415827234cdf782982775fbf7e66fc9acae9f6614d28546b6f6dca9edec1d2"
+  },
+  {
+    "path": "assets/stencil_wasm-XaqQIrP_.js",
+    "bytes": 7028,
+    "sha256": "9b6c03461a13b65f0204cf0dc69b2be3b01c1f84c3186d9895c25518a23e704d"
+  },
+  {
+    "path": "assets/stencil_wasm_bg-KYEYY513.wasm",
+    "bytes": 4182596,
+    "sha256": "310512472e13d69704ac082f281dc5440a4af93cb89a3a3d298f9814152c6348"
+  },
+  {
+    "path": "assets/Viewer3D-UJFtxW_e.js",
+    "bytes": 517353,
+    "sha256": "47278df6d63279b9cdf6b1e3c6527dc68a2c04fbb99fbc6e623a4fd6eebe09aa"
+  },
+  {
+    "path": "index.html",
+    "bytes": 413,
+    "sha256": "957f9b5f17fc85d246edeb31114ad5c1dab304b51059040084d60985c390d7bd"
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "sandbox/m0/source-smoke/stencil.stl": {
+    "format": "binary STL",
+    "bytes": 123484,
+    "triangles": 2468,
+    "vertices": 1234,
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        200.0,
+        200.0,
+        5.199999809265137
+      ]
+    ],
+    "size_mm": [
+      200.0,
+      200.0,
+      5.199999809265137
+    ],
+    "signed_volume_mm3": 174877.94622075598,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true
+  },
+  "sandbox/m0/source-smoke/cli-replayed.stl": {
+    "format": "binary STL",
+    "bytes": 123484,
+    "triangles": 2468,
+    "vertices": 1234,
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        200.0,
+        200.0,
+        5.199999809265137
+      ]
+    ],
+    "size_mm": [
+      200.0,
+      200.0,
+      5.199999809265137
+    ],
+    "signed_volume_mm3": 174877.94622075598,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true
+  },
+  "sandbox/m0/source-smoke/trace.svg": {
+    "format": "SVG",
+    "paths": 1,
+    "attributes": {
+      "viewBox": "0 0 1000 1000",
+      "width": "1000",
+      "height": "1000"
+    }
+  }
+}

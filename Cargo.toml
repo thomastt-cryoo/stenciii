@@ -1,0 +1,8 @@
+[workspace]
+resolver = "2"
+members = ["crates/stencil-core", "crates/stencil-wasm", "crates/stencil-cli", "crates/stencil-launcher"]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1

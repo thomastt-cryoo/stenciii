@@ -1,0 +1,113 @@
+{
+  "responses": [
+    {
+      "url": "http://127.0.0.1:5197/",
+      "status": 200,
+      "mime": "text/html"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/index-BLJd1lma.css",
+      "status": 200,
+      "mime": "text/css"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/index-D_vt0pgc.js",
+      "status": 200,
+      "mime": "text/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:5197/assets/engine.worker-CkHGXZZf.js",
+      "status": 200,
+      "mime": "text/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:5197/pkg-mt/stencil_wasm.js",
+      "status": 200,
+      "mime": "text/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:5197/pkg-mt/snippets/wasm-bindgen-rayon-38edf6e439f6d70d/src/workerHelpers.js",
+      "status": 200,
+      "mime": "text/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:5197/pkg-mt/stencil_wasm_bg.wasm",
+      "status": 200,
+      "mime": "application/wasm"
+    },
+    {
+      "url": "http://127.0.0.1:5197/pkg-mt/snippets/wasm-bindgen-rayon-38edf6e439f6d70d/src/workerHelpers.js",
+      "status": 200,
+      "mime": "text/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:5197/pkg-mt/snippets/wasm-bindgen-rayon-38edf6e439f6d70d/src/workerHelpers.js",
+      "status": 200,
+      "mime": "text/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:5197/pkg-mt/snippets/wasm-bindgen-rayon-38edf6e439f6d70d/src/workerHelpers.js",
+      "status": 200,
+      "mime": "text/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:5197/pkg-mt/snippets/wasm-bindgen-rayon-38edf6e439f6d70d/src/workerHelpers.js",
+      "status": 200,
+      "mime": "text/javascript"
+    },
+    {
+      "url": "http://127.0.0.1:5197/pkg-mt/",
+      "status": 404,
+      "mime": "text/plain; charset=UTF-8"
+    },
+    {
+      "url": "http://127.0.0.1:5197/pkg-mt/",
+      "status": 404,
+      "mime": "text/plain; charset=UTF-8"
+    },
+    {
+      "url": "http://127.0.0.1:5197/pkg-mt/",
+      "status": 404,
+      "mime": "text/plain; charset=UTF-8"
+    },
+    {
+      "url": "http://127.0.0.1:5197/pkg-mt/",
+      "status": 404,
+      "mime": "text/plain; charset=UTF-8"
+    }
+  ],
+  "failed": [
+    {
+      "url": "http://127.0.0.1:5197/pkg-mt/",
+      "error": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:5197/pkg-mt/",
+      "error": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:5197/pkg-mt/",
+      "error": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:5197/pkg-mt/",
+      "error": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    }
+  ],
+  "logs": [],
+  "errors": [
+    "TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:5197/pkg-mt/",
+    "TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:5197/pkg-mt/",
+    "TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:5197/pkg-mt/",
+    "TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:5197/pkg-mt/"
+  ],
+  "body": "Stencil studio\n+ trace\n+ stencil\n+ post\n+ All\nOpen image…\nOpen project…\nPerformance\nEngine workers: 1 busy\nCPU cores: 8 (engine uses 1)\nEngine mode: single-threaded (…)\nEngine load (10 s): 100%\nUI lag: 4 ms max 11\nJS memory: 10 MB\nDrop a picture here (png, jpg, bmp, svg)\n\nSelect a node to edit its parameters and see its result. Drop a picture on the canvas to start.\n\nConsole\n0 lines\nExport\nClear\nno messages yet\nready"
+}

@@ -1,0 +1,103 @@
+import { useEffect, useId, useState, type ReactNode } from 'react'
+import type { NodeType, ParamDef } from './api'
+import { SHARED_FIT, useStudio, type StudioNode } from './store'
+import { helpFor, plainLabel, unitOf } from './help'
+
+const same = (a: unknown, b: unknown) => a === b || (typeof a === 'number' && typeof b === 'number' && Math.abs(a - b) < 1e-9)
+
+/** A number box beside the slider: typing commits values in range at once, and the value is clamped when the box loses focus. */
+function NumberBox({ p, value, onChange }: { p: ParamDef; value: number; onChange: (v: number) => void }) {
+  const [draft, setDraft] = useState(String(value))
+  useEffect(() => { if (parseFloat(draft) !== value) setDraft(String(value)) }, [value])
+  const inRange = (v: number) => Number.isFinite(v) && v >= (p.min ?? -Infinity) && v <= (p.max ?? Infinity)
+  return (
+    <input
+      className="numbox" type="number" min={p.min} max={p.max} step={p.step} value={draft} aria-label={plainLabel(p.label)}
+      onChange={(e) => { setDraft(e.target.value); const v = parseFloat(e.target.value); if (inRange(v)) onChange(v) }}
+      onBlur={() => {
+        const v = parseFloat(draft)
+        const c = Number.isFinite(v) ? Math.min(p.max ?? v, Math.max(p.min ?? v, v)) : value
+        setDraft(String(c))
+        if (c !== value) onChange(c)
+      }}
+    />
+  )
+}
+
+function Reset({ p, value, onChange }: { p: ParamDef; value: unknown; onChange: (v: unknown) => void }) {
+  if (same(value, p.default)) return null
+  const text = `Reset ${plainLabel(p.label)} to ${String(p.default)}`
+  return <button className="reset" title={`Reset to ${String(p.default)}`} aria-label={text} onClick={(e) => { e.preventDefault(); onChange(p.default) }}>↺</button>
+}
+
+/** The one-line reason behind a setting: a tooltip on the whole row and a line that shows on hover or focus. */
+function Help({ p, id, nodeType }: { p: ParamDef; id: string; nodeType: string }) {
+  const text = helpFor(nodeType, p.name)
+  return text ? <small className="help" id={id}>{text}</small> : null
+}
+
+function Field({ p, value, onChange, nodeType }: { p: ParamDef; value: unknown; onChange: (v: unknown) => void; nodeType: string }) {
+  const hid = `help-${useId()}`
+  const help = helpFor(nodeType, p.name)
+  const tip = {}
+  const desc = help ? { 'aria-describedby': hid } : {}
+  if (p.kind === 'bool')
+    return <label className="row chk" {...tip}><input type="checkbox" checked={!!value} onChange={(e) => onChange(e.target.checked)} {...desc} />{plainLabel(p.label)}<Reset p={p} value={value} onChange={onChange} /><Help p={p} id={hid} nodeType={nodeType} /></label>
+  if (p.kind === 'choice')
+    return <label className="row" {...tip}><span>{plainLabel(p.label)}<Reset p={p} value={value} onChange={onChange} /></span><select value={String(value)} onChange={(e) => onChange(e.target.value)} {...desc}>{p.choices!.map((c) => <option key={c}>{c}</option>)}</select><Help p={p} id={hid} nodeType={nodeType} /></label>
+  if (p.kind === 'string')
+    return <label className="row" {...tip}><span>{plainLabel(p.label)}<Reset p={p} value={value} onChange={onChange} /></span><textarea rows={2} value={String(value)} onChange={(e) => onChange(e.target.value)} {...desc} /><Help p={p} id={hid} nodeType={nodeType} /></label>
+  if (p.kind === 'text') return null
+  const unit = unitOf(p.label)
+  return (
+    <label className="row" {...tip}>
+      <span>{plainLabel(p.label)} <em>{String(value)}{unit ? ` ${unit}` : ''}</em>{SHARED_FIT.includes(p.name) && <small className="shared-tag" title="One value for the whole project: every node that makes bolts and nuts uses it">shared</small>}<Reset p={p} value={value} onChange={onChange} /></span>
+      <span className="sliderrow">
+        <input type="range" min={p.min} max={p.max} step={p.step} value={Number(value)} onChange={(e) => onChange(+e.target.value)} aria-valuetext={`${value}${unit ? ` ${unit}` : ''}`} {...desc} />
+        <NumberBox p={p} value={Number(value)} onChange={onChange} />
+        {unit && <span className="unit" aria-hidden="true">{unit}</span>}
+      </span>
+      <Help p={p} id={hid} nodeType={nodeType} />
+    </label>
+  )
+}
+
+export default function ParamForm({ node, type, layers, before }: { node: StudioNode; type: NodeType; layers?: number; before?: ReactNode }) {
+  const setParam = useStudio((s) => s.setParam)
+  const groups = [...new Set(type.params.map((p) => p.group ?? ''))]
+  // the picture of an Image node is not a setting
+  const editable = type.params.filter((p) => p.kind !== 'text')
+  const changed = editable.filter((p) => !same(node.data.params[p.name] ?? p.default, p.default))
+  const showHelp = useStudio((s) => s.showHelp)
+  const setShowHelp = useStudio((s) => s.setShowHelp)
+  return (
+    <div className={showHelp ? 'show-help' : ''}>
+      <p className="mut doc">{type.doc}</p>
+      <button className="help-toggle" aria-pressed={showHelp} onClick={() => setShowHelp(!showHelp)}>
+        {showHelp ? 'Hide help' : 'Show help'}
+      </button>
+      {before}
+      {groups.map((g) => (
+        <fieldset key={g}>
+          {g && <legend>{g}</legend>}
+          {type.params.filter((p) => (p.group ?? '') === g).map((p) => {
+            const v = node.data.params[p.name] ?? p.default
+            const isLayer = layers && node.data.type === 'remesh' && (p.name === 'layer_from' || p.name === 'layer_to')
+            if (!isLayer) return <Field nodeType={type.id} key={p.name} p={p} value={v} onChange={(x) => setParam(node.id, p.name, x)} />
+            // layer_to = 0 means "the top one", shown as the real maximum of the stencil above
+            const shown = p.name === 'layer_to' && Number(v) === 0 ? layers : Number(v)
+            return (
+              <Field nodeType={type.id} key={p.name} p={{ ...p, min: 1, max: layers, default: p.name === 'layer_to' ? layers : p.default }} value={Math.min(shown, layers)}
+                onChange={(x) => setParam(node.id, p.name, p.name === 'layer_to' && x === layers ? 0 : x)} />
+            )
+          })}
+        </fieldset>
+      ))}
+      {changed.length > 0 && (
+        <button className="reset-all" title="Back to the node's own defaults, not to the values a template set" onClick={() => changed.forEach((p) => setParam(node.id, p.name, p.default))}>
+          Reset {changed.length} changed setting{changed.length > 1 ? 's' : ''} to default
+        </button>
+      )}
+    </div>
+  )
+}

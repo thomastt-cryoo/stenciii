@@ -1,0 +1,8 @@
+{
+  "windows_single_thread_baseline_zip_bytes": 5244026,
+  "browser_dual_engine_static_site_zip_bytes": 3884917,
+  "browser_dual_engine_site_raw_bytes": 9578323,
+  "st_engine_wasm_bytes": 4182596,
+  "mt_engine_wasm_bytes": 4385841,
+  "note": "Measurement archives, not final distributions: browser archive needs a local HTTP server; complete third-party shipping notices and cross-platform release validation remain outstanding."
+}

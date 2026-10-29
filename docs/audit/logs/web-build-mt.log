@@ -1,0 +1,18 @@
+
+> stencil-studio@2.9.4 build
+> tsc --noEmit && vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 206 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                0.41 kB │ gzip:     0.27 kB
+dist/assets/engine.worker-DtZJtX1Q.js          3.98 kB
+dist/assets/stencil_wasm-XaqQIrP_.js           7.02 kB
+dist/assets/stencil_wasm_bg-KYEYY513.wasm  4,182.59 kB │ gzip: 1,776.65 kB
+dist/assets/index-BLJd1lma.css                31.32 kB │ gzip:     6.44 kB
+dist/assets/index-CSKxYlbH.js                413.41 kB │ gzip:   134.93 kB
+dist/assets/Viewer3D-DZzflZvg.js             517.35 kB │ gzip:   131.18 kB
+
+✓ built in 1.06s

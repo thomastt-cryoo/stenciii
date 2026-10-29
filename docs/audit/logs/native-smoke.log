@@ -1,0 +1,14 @@
+verified: 1 islands found, 0 remaining, watertight true, 1160 triangles
+print readiness: check
+  [warn] Stencil: overhang 7 mm²
+  [info] Stencil: 1 islands bridged
+slowest nodes:
+  Stencil: 9 ms
+  Image: 1 ms
+  Threshold: 0 ms
+  Tiles & mounting (old): 0 ms
+wrote sandbox/m0/native-raster.stl in 16 ms
+verified: 1 islands found, 0 remaining, watertight true, 432 triangles
+wrote sandbox/m0/native-vector.stl in 19 ms
+verified: 1 islands found, 0 remaining, watertight true, 936 triangles
+wrote 6 parts to sandbox/m0/native-parts and sandbox/m0/native-parts.zip in 529 ms

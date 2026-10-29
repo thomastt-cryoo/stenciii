@@ -1,0 +1,81 @@
+[INFO]: Checking for the Wasm target...
+[INFO]: Compiling to Wasm...
+    Blocking waiting for file lock on build directory
+   Compiling libm v0.2.16
+   Compiling crc32fast v1.5.2
+   Compiling bytemuck v1.25.2
+   Compiling miniz_oxide v0.9.1
+   Compiling float-cmp v0.9.0
+   Compiling polycool v0.4.0
+   Compiling fdeflate v0.3.7
+   Compiling miniz_oxide v0.8.9
+   Compiling strict-num v0.1.1
+   Compiling bitflags v2.13.2
+   Compiling smallvec v1.16.3
+   Compiling flate2 v1.1.10
+   Compiling log v0.4.34
+   Compiling memchr v2.8.3
+   Compiling arrayref v0.3.9
+   Compiling tiny-skia-path v0.12.0
+   Compiling i_float v5.0.0
+   Compiling png v0.18.1
+   Compiling kurbo v0.13.1
+   Compiling num-traits v0.2.19
+   Compiling wasm-bindgen-shared v0.2.129
+   Compiling siphasher v1.0.4
+   Compiling zmij v1.0.23
+   Compiling i_shape v5.0.0
+   Compiling serde_core v1.0.229
+   Compiling roxmltree v0.21.1
+   Compiling core_maths v0.1.1
+   Compiling simplecss v0.2.2
+   Compiling imagesize v0.15.0
+   Compiling zune-core v0.5.3
+   Compiling unicode-ident v1.0.26
+   Compiling pxfm v0.1.30
+   Compiling data-url v0.3.2
+   Compiling i_tree v0.19.0
+   Compiling pico-args v0.5.0
+   Compiling svgtypes v0.16.1
+   Compiling i_key_sort v0.11.0
+   Compiling serde_json v1.0.153
+   Compiling zune-jpeg v0.5.15
+   Compiling usvg v0.48.1
+   Compiling tiny-skia v0.12.0
+   Compiling i_overlay v9.0.1
+   Compiling ttf-parser v0.25.1
+   Compiling wasm-bindgen v0.2.129
+   Compiling rgb v0.8.53
+   Compiling slab v0.4.12
+   Compiling futures-core v0.3.34
+   Compiling itoa v1.0.18
+   Compiling moxcms v0.8.1
+   Compiling glam v0.32.1
+   Compiling pin-project-lite v0.2.17
+   Compiling futures-task v0.3.34
+   Compiling byteorder-lite v0.1.0
+   Compiling once_cell v1.21.4
+   Compiling futures-util v0.3.34
+   Compiling fontdue v0.9.4
+   Compiling i_triangle v0.49.0
+   Compiling image v0.25.10
+   Compiling resvg v0.48.1
+   Compiling js-sys v0.3.106
+   Compiling boolmesh v0.2.0
+   Compiling stencil-core v2.9.4 (<workspace>\crates\stencil-core)
+warning: function `thread_budget` is never used
+ --> crates\stencil-core\src\par.rs:5:8
+  |
+5 | pub fn thread_budget(cores: usize) -> usize {
+  |        ^^^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+
+   Compiling stencil-wasm v2.9.4 (<workspace>\crates\stencil-wasm)
+    Finished `release` profile [optimized] target(s) in 14m 12s
+[INFO]: Installing wasm-bindgen...
+[INFO]: Optimizing wasm binaries with `wasm-opt`...
+[INFO]: Optional fields missing from Cargo.toml: 'description', 'repository', and 'license'. These are not necessary, but recommended
+[INFO]: :-) Done in 16m 33s
+[INFO]: :-) Your wasm pkg is ready to publish at <workspace>\web\pkg.

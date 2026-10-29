@@ -1,0 +1,6 @@
+verified: 1 islands found, 0 remaining, watertight true, 708 triangles
+{"tiling":{"added_material_mm3":0.0,"bridged_tiles":3,"connectors":4,"dropped_specks":0,"grid":[2,2],"hole_depth_mm":10.0,"positions_without_room":0,"reinforced_seams":0,"rod_length_mm":19.0,"rows":1,"seam_angle_deg":0.0,"seam_gap_mm":0.0,"seams_shifted":0,"thin_wall_holes":0,"tiles":4,"welded_tiles":0}}
+wrote 5 parts to sandbox/m0/seam-zero and sandbox/m0/seam-zero.zip in 83 ms
+verified: 1 islands found, 0 remaining, watertight true, 708 triangles
+{"tiling":{"added_material_mm3":0.0,"bridged_tiles":3,"connectors":4,"dropped_specks":0,"grid":[2,2],"hole_depth_mm":10.0,"positions_without_room":0,"reinforced_seams":0,"rod_length_mm":19.0,"rows":1,"seam_angle_deg":0.0,"seam_gap_mm":0.0,"seams_shifted":0,"thin_wall_holes":0,"tiles":4,"welded_tiles":0}}
+wrote 5 parts to sandbox/m0/seam-thirty and sandbox/m0/seam-thirty.zip in 93 ms

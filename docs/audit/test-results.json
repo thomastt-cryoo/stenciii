@@ -1,0 +1,2401 @@
+{
+  "source": {
+    "version": "2.9.4",
+    "commit": "5d8df15b798b859faf72248a35d156d6e9aaffc7",
+    "audit_date_dubai": "2026-10-29"
+  },
+  "log_note": "Local workspace/user path prefixes, line endings and trailing log whitespace are normalized. Test outcomes are not changed.",
+  "rust": {
+    "command": "cargo test --release --workspace --no-fail-fast",
+    "passed": 156,
+    "failed": 0,
+    "ignored": 0
+  },
+  "browser_single_thread_initial": {
+    "stats": {
+      "startTime": "2026-10-29T00:59:17.214Z",
+      "duration": 676429.833,
+      "expected": 82,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "badges match the engine findings: islands left, thin bridge, heavy mesh",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 54,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: a clean plate",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 21,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: tiled parts with every finding",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 10,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: pre-tiled parts do not report paint under blocks",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 12,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: layout that costs a lot of paint",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 10,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: layout that costs little",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 11,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: empty mask",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 10,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: full mask",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 12,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: no outlines",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 14,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: fragments dropped at a cut",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 10,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a presets file is checked and merged without overwriting",
+        "file": "presetBook.spec.ts",
+        "line": 4,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 20,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "files that are not presets are refused",
+        "file": "presetBook.spec.ts",
+        "line": 15,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 39,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dropping an image file on the page loads it",
+        "file": "studio.spec.ts",
+        "line": 48,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2123,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dropping a second image swaps the picture of the existing graph",
+        "file": "studio.spec.ts",
+        "line": 60,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 1229,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a dropped image builds the Vector template by default",
+        "file": "studio.spec.ts",
+        "line": 77,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 1081,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "rapid edits settle into one finished run",
+        "file": "studio.spec.ts",
+        "line": 92,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4397,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a heavy node is abandoned by restarting the worker, and the next run still works",
+        "file": "studio.spec.ts",
+        "line": 103,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 12620,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "undo returns to the previous value",
+        "file": "studio.spec.ts",
+        "line": 120,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5631,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Reshape paint node can be added from the menu and shows its parameters",
+        "file": "studio.spec.ts",
+        "line": 133,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4385,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the console lists timed sub-steps of the stencil node",
+        "file": "studio.spec.ts",
+        "line": 143,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4118,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "new nodes avoid existing ones and no lane panels are drawn",
+        "file": "studio.spec.ts",
+        "line": 150,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5037,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "3D views show dimensions and the trace node exports SVG",
+        "file": "studio.spec.ts",
+        "line": 166,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 6903,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Crop & rotate node can be added and rotates the picture",
+        "file": "studio.spec.ts",
+        "line": 190,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4170,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the preview image zooms and pans on a bounded canvas",
+        "file": "studio.spec.ts",
+        "line": 201,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5349,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "releasing the preview image right after a move does not crash the app",
+        "file": "studio.spec.ts",
+        "line": 217,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4487,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "after dropping an image the whole starter graph is in view",
+        "file": "studio.spec.ts",
+        "line": 235,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4364,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "number boxes, reset and reset-all edit parameters",
+        "file": "studio.spec.ts",
+        "line": 246,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4392,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "copy, paste and duplicate create independent nodes",
+        "file": "studio.spec.ts",
+        "line": 264,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4361,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Text node renders letters and can feed a stencil",
+        "file": "studio.spec.ts",
+        "line": 286,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4889,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a render crash shows a recovery page instead of a black window",
+        "file": "studio.spec.ts",
+        "line": 299,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 809,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "templates menu rebuilds the graph around the picture",
+        "file": "studio.spec.ts",
+        "line": 317,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3985,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a long palette menu scrolls inside itself, not the page",
+        "file": "studio.spec.ts",
+        "line": 324,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4125,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Remesh can be added from the stencil menu and shows its parameters",
+        "file": "studio.spec.ts",
+        "line": 335,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4080,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the shape cleanup nodes can be added from the trace menu",
+        "file": "studio.spec.ts",
+        "line": 346,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4478,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "+ All lists every node by usage with counts, menus flow into columns, and the perf overlay toggles",
+        "file": "studio.spec.ts",
+        "line": 358,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5402,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Image node opens a replacement picture and downloads its own, inside the inspector",
+        "file": "studio.spec.ts",
+        "line": 384,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4341,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Image node workbench (double-click) has Open and Download",
+        "file": "studio.spec.ts",
+        "line": 399,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3853,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the older Tiles & mounting node is hidden from the menus and the palette",
+        "file": "studio.spec.ts",
+        "line": 407,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4323,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "sliders carry a tooltip and a unit, and the status line is announced",
+        "file": "studio.spec.ts",
+        "line": 414,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4744,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Colour set template builds a registered multi-colour graph",
+        "file": "studio.spec.ts",
+        "line": 422,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5646,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Tiles, pads & screws template chains tiles, pads and screws",
+        "file": "studio.spec.ts",
+        "line": 430,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5060,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Tiles first template cuts before bridging and feeds pads",
+        "file": "studio.spec.ts",
+        "line": 439,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 7016,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dragging a seam that would break the tile size limit snaps back and says why",
+        "file": "studio.spec.ts",
+        "line": 481,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 23182,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dragging a seam edits the layout, and Reset layout brings the automatic one back",
+        "file": "studio.spec.ts",
+        "line": 490,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 21297,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a connector block slides along its seam and an overlap is refused",
+        "file": "studio.spec.ts",
+        "line": 506,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 17029,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "undo and redo restore a deleted node",
+        "file": "studio.spec.ts",
+        "line": 529,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5060,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "swapping the Image node picture can be undone and redone",
+        "file": "studio.spec.ts",
+        "line": 543,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5028,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "help text stays hidden until the Show help toggle is on",
+        "file": "studio.spec.ts",
+        "line": 559,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3372,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "every node type has the Show help button and its parameters have help text",
+        "file": "studio.spec.ts",
+        "line": 571,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 10993,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a long node description is cut at four lines until Show help is pressed",
+        "file": "studio.spec.ts",
+        "line": 597,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3849,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the unit shows beside the number, not in the label, and clearance labels say radial or diametral",
+        "file": "studio.spec.ts",
+        "line": 610,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3598,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Show help is remembered from node to node and Escape steps back one level at a time",
+        "file": "studio.spec.ts",
+        "line": 624,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3462,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the engine thread budget leaves at least one core free when threads are available",
+        "file": "studio.spec.ts",
+        "line": 641,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3156,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "command palette adds a node",
+        "file": "studio.spec.ts",
+        "line": 652,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3302,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "viewer exposes smooth and flat shading",
+        "file": "studio.spec.ts",
+        "line": 660,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4163,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the viewer shows the tile layout of a Pads node and can hide it",
+        "file": "studio.spec.ts",
+        "line": 668,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 6330,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Report panel gives a print verdict, lists findings and times each node",
+        "file": "studio.spec.ts",
+        "line": 680,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5099,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the History list names edits and jumps back to an earlier state",
+        "file": "studio.spec.ts",
+        "line": 697,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4601,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "presets save the selected node parameters and apply them again",
+        "file": "studio.spec.ts",
+        "line": 713,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3395,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "presets export to a file and import again, keeping the ones already there",
+        "file": "studio.spec.ts",
+        "line": 727,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4430,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Rerun and the Report button counts are available",
+        "file": "studio.spec.ts",
+        "line": 750,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2921,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the studio has no serious accessibility violations",
+        "file": "studio.spec.ts",
+        "line": 758,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 6418,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Image node shows the picture properties",
+        "file": "studio.spec.ts",
+        "line": 768,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 1048,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Split volume node is named so and Pads accepts \"none\" as a thread",
+        "file": "studio.spec.ts",
+        "line": 778,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2931,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Expand margin can be added from the post menu",
+        "file": "studio.spec.ts",
+        "line": 788,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3216,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Expand margin viewer shows the ring round the assembled plate",
+        "file": "studio.spec.ts",
+        "line": 795,
+        "outcome": "unexpected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "failed",
+            "duration_ms": 66155,
+            "errors": [
+              "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Assembled:.*1296\\.0 × 419\\.8/)\nExpected: visible\nTimeout: 60000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText(/Assembled:.*1296\\.0 × 419\\.8/) with timeout 60000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Assembled:.*1296\\.0 × 419\\.8/)\u001b[22m\n\n\n  800 |   await expect(page.locator('.v3bar')).toBeVisible({ timeout: 200_000 })\n  801 |   // plate 1096 × 219.8 mm plus a 100 mm border all round\n> 802 |   await expect(page.getByText(/Assembled:.*1296\\.0 × 419\\.8/)).toBeVisible({ timeout: 60_000 })\n      |                                                                ^\n  803 | })\n  804 |\n  805 | test('files in a downloaded ZIP carry the time they were made, not 1980', async ({ page }) => {\n    at <workspace>\\web\\e2e\\studio.spec.ts:802:64"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "files in a downloaded ZIP carry the time they were made, not 1980",
+        "file": "studio.spec.ts",
+        "line": 805,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 13908,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the shading menu changes how the mesh is drawn",
+        "file": "studio.spec.ts",
+        "line": 819,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 20791,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "panning after \"fit view\" moves the graph by the drag, nothing more",
+        "file": "studio.spec.ts",
+        "line": 837,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2471,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "every setting of every node has help text, including the per-tone ones",
+        "file": "studio.spec.ts",
+        "line": 860,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4059,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "bolt and nut fit settings are shared between nodes",
+        "file": "studio.spec.ts",
+        "line": 871,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3725,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "output ports stay on the card after a run",
+        "file": "studio.spec.ts",
+        "line": 885,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3644,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the side panel can be resized with the keyboard and remembers its width",
+        "file": "studio.spec.ts",
+        "line": 893,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3665,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a narrow window stacks the panel under the canvas without sideways scrolling",
+        "file": "studio.spec.ts",
+        "line": 906,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3595,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the shared bolt settings carry a shared tag",
+        "file": "studio.spec.ts",
+        "line": 917,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3509,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the command palette still finds a node by its former name",
+        "file": "studio.spec.ts",
+        "line": 925,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3397,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a failed run offers a jump to the node that failed",
+        "file": "studio.spec.ts",
+        "line": 932,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4290,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the toolbar buttons are icons that each carry a tooltip and a name",
+        "file": "studio.spec.ts",
+        "line": 944,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3957,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a node added while the view is panned away is brought into view",
+        "file": "studio.spec.ts",
+        "line": 955,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4369,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a node dragged onto a compatible edge is placed between its ends",
+        "file": "studio.spec.ts",
+        "line": 984,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4238,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a node that does not fit the edge leaves it alone",
+        "file": "studio.spec.ts",
+        "line": 996,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3919,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the status text lives in a footer, so the toolbar buttons never move while it changes",
+        "file": "studio.spec.ts",
+        "line": 1006,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4294,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the console opens with the version and build of the studio",
+        "file": "studio.spec.ts",
+        "line": 1020,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 922,
+            "errors": []
+          }
+        ]
+      }
+    ]
+  },
+  "browser_single_thread_border_after_sync_fix": {
+    "stats": {
+      "startTime": "2026-10-29T01:12:21.498Z",
+      "duration": 77298.274,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "the Expand margin viewer shows the ring round the assembled plate",
+        "file": "studio.spec.ts",
+        "line": 795,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 60068,
+            "errors": []
+          }
+        ]
+      }
+    ]
+  },
+  "browser_multi_thread_after_fixes": {
+    "environment": {
+      "EXPECT_THREADS": "1"
+    },
+    "stats": {
+      "startTime": "2026-10-29T01:13:56.968Z",
+      "duration": 320653.10699999996,
+      "expected": 83,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "badges match the engine findings: islands left, thin bridge, heavy mesh",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 20,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: a clean plate",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 8,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: tiled parts with every finding",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 6,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: pre-tiled parts do not report paint under blocks",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 11,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: layout that costs a lot of paint",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 6,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: layout that costs little",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: empty mask",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: full mask",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 6,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: no outlines",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "badges match the engine findings: fragments dropped at a cut",
+        "file": "badges.spec.ts",
+        "line": 9,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a presets file is checked and merged without overwriting",
+        "file": "presetBook.spec.ts",
+        "line": 4,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 9,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "files that are not presets are refused",
+        "file": "presetBook.spec.ts",
+        "line": 15,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 12,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dropping an image file on the page loads it",
+        "file": "studio.spec.ts",
+        "line": 48,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 1246,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dropping a second image swaps the picture of the existing graph",
+        "file": "studio.spec.ts",
+        "line": 60,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 742,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a dropped image builds the Vector template by default",
+        "file": "studio.spec.ts",
+        "line": 77,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 688,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "rapid edits settle into one finished run",
+        "file": "studio.spec.ts",
+        "line": 92,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3525,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a heavy node is abandoned by restarting the worker, and the next run still works",
+        "file": "studio.spec.ts",
+        "line": 103,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 7903,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "undo returns to the previous value",
+        "file": "studio.spec.ts",
+        "line": 120,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5492,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Reshape paint node can be added from the menu and shows its parameters",
+        "file": "studio.spec.ts",
+        "line": 133,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4095,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the console lists timed sub-steps of the stencil node",
+        "file": "studio.spec.ts",
+        "line": 143,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3177,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "new nodes avoid existing ones and no lane panels are drawn",
+        "file": "studio.spec.ts",
+        "line": 150,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3167,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "3D views show dimensions and the trace node exports SVG",
+        "file": "studio.spec.ts",
+        "line": 166,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4323,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Crop & rotate node can be added and rotates the picture",
+        "file": "studio.spec.ts",
+        "line": 190,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2971,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the preview image zooms and pans on a bounded canvas",
+        "file": "studio.spec.ts",
+        "line": 201,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3390,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "releasing the preview image right after a move does not crash the app",
+        "file": "studio.spec.ts",
+        "line": 217,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3109,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "after dropping an image the whole starter graph is in view",
+        "file": "studio.spec.ts",
+        "line": 235,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3831,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "number boxes, reset and reset-all edit parameters",
+        "file": "studio.spec.ts",
+        "line": 246,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3007,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "copy, paste and duplicate create independent nodes",
+        "file": "studio.spec.ts",
+        "line": 264,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2874,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Text node renders letters and can feed a stencil",
+        "file": "studio.spec.ts",
+        "line": 286,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3590,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a render crash shows a recovery page instead of a black window",
+        "file": "studio.spec.ts",
+        "line": 299,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 418,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "templates menu rebuilds the graph around the picture",
+        "file": "studio.spec.ts",
+        "line": 317,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2900,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a long palette menu scrolls inside itself, not the page",
+        "file": "studio.spec.ts",
+        "line": 324,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2860,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Remesh can be added from the stencil menu and shows its parameters",
+        "file": "studio.spec.ts",
+        "line": 335,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3282,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the shape cleanup nodes can be added from the trace menu",
+        "file": "studio.spec.ts",
+        "line": 346,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3179,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "+ All lists every node by usage with counts, menus flow into columns, and the perf overlay toggles",
+        "file": "studio.spec.ts",
+        "line": 358,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3331,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Image node opens a replacement picture and downloads its own, inside the inspector",
+        "file": "studio.spec.ts",
+        "line": 384,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3133,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Image node workbench (double-click) has Open and Download",
+        "file": "studio.spec.ts",
+        "line": 399,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2867,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the older Tiles & mounting node is hidden from the menus and the palette",
+        "file": "studio.spec.ts",
+        "line": 407,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2792,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "sliders carry a tooltip and a unit, and the status line is announced",
+        "file": "studio.spec.ts",
+        "line": 414,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2768,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Colour set template builds a registered multi-colour graph",
+        "file": "studio.spec.ts",
+        "line": 422,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2895,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Tiles, pads & screws template chains tiles, pads and screws",
+        "file": "studio.spec.ts",
+        "line": 430,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2794,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Tiles first template cuts before bridging and feeds pads",
+        "file": "studio.spec.ts",
+        "line": 439,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4608,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dragging a seam that would break the tile size limit snaps back and says why",
+        "file": "studio.spec.ts",
+        "line": 481,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 7816,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dragging a seam edits the layout, and Reset layout brings the automatic one back",
+        "file": "studio.spec.ts",
+        "line": 490,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 9752,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a connector block slides along its seam and an overlap is refused",
+        "file": "studio.spec.ts",
+        "line": 506,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 8609,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "undo and redo restore a deleted node",
+        "file": "studio.spec.ts",
+        "line": 529,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4227,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "swapping the Image node picture can be undone and redone",
+        "file": "studio.spec.ts",
+        "line": 543,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4357,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "help text stays hidden until the Show help toggle is on",
+        "file": "studio.spec.ts",
+        "line": 559,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2906,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "every node type has the Show help button and its parameters have help text",
+        "file": "studio.spec.ts",
+        "line": 571,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 6805,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a long node description is cut at four lines until Show help is pressed",
+        "file": "studio.spec.ts",
+        "line": 597,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3189,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the unit shows beside the number, not in the label, and clearance labels say radial or diametral",
+        "file": "studio.spec.ts",
+        "line": 610,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3163,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Show help is remembered from node to node and Escape steps back one level at a time",
+        "file": "studio.spec.ts",
+        "line": 624,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5114,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the engine thread budget leaves at least one core free when threads are available",
+        "file": "studio.spec.ts",
+        "line": 641,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3618,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "command palette adds a node",
+        "file": "studio.spec.ts",
+        "line": 652,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4092,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "viewer exposes smooth and flat shading",
+        "file": "studio.spec.ts",
+        "line": 660,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5472,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the viewer shows the tile layout of a Pads node and can hide it",
+        "file": "studio.spec.ts",
+        "line": 668,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 7135,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Report panel gives a print verdict, lists findings and times each node",
+        "file": "studio.spec.ts",
+        "line": 680,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5409,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the History list names edits and jumps back to an earlier state",
+        "file": "studio.spec.ts",
+        "line": 697,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4668,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "presets save the selected node parameters and apply them again",
+        "file": "studio.spec.ts",
+        "line": 713,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2900,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "presets export to a file and import again, keeping the ones already there",
+        "file": "studio.spec.ts",
+        "line": 727,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3868,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Rerun and the Report button counts are available",
+        "file": "studio.spec.ts",
+        "line": 750,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3067,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the studio has no serious accessibility violations",
+        "file": "studio.spec.ts",
+        "line": 758,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 5210,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Image node shows the picture properties",
+        "file": "studio.spec.ts",
+        "line": 768,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 1015,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Split volume node is named so and Pads accepts \"none\" as a thread",
+        "file": "studio.spec.ts",
+        "line": 778,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2895,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Expand margin can be added from the post menu",
+        "file": "studio.spec.ts",
+        "line": 788,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2847,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the Expand margin viewer shows the ring round the assembled plate",
+        "file": "studio.spec.ts",
+        "line": 795,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 34690,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "files in a downloaded ZIP carry the time they were made, not 1980",
+        "file": "studio.spec.ts",
+        "line": 807,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 9365,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the shading menu changes how the mesh is drawn",
+        "file": "studio.spec.ts",
+        "line": 821,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 16136,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "panning after \"fit view\" moves the graph by the drag, nothing more",
+        "file": "studio.spec.ts",
+        "line": 839,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 1913,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "every setting of every node has help text, including the per-tone ones",
+        "file": "studio.spec.ts",
+        "line": 862,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2991,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "bolt and nut fit settings are shared between nodes",
+        "file": "studio.spec.ts",
+        "line": 873,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3208,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "output ports stay on the card after a run",
+        "file": "studio.spec.ts",
+        "line": 887,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2746,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the side panel can be resized with the keyboard and remembers its width",
+        "file": "studio.spec.ts",
+        "line": 895,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3007,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a narrow window stacks the panel under the canvas without sideways scrolling",
+        "file": "studio.spec.ts",
+        "line": 908,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3156,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the shared bolt settings carry a shared tag",
+        "file": "studio.spec.ts",
+        "line": 919,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 2884,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the command palette still finds a node by its former name",
+        "file": "studio.spec.ts",
+        "line": 927,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3282,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a failed run offers a jump to the node that failed",
+        "file": "studio.spec.ts",
+        "line": 934,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3717,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the toolbar buttons are icons that each carry a tooltip and a name",
+        "file": "studio.spec.ts",
+        "line": 946,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3076,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a node added while the view is panned away is brought into view",
+        "file": "studio.spec.ts",
+        "line": 957,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4092,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a node dragged onto a compatible edge is placed between its ends",
+        "file": "studio.spec.ts",
+        "line": 986,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 4940,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a node that does not fit the edge leaves it alone",
+        "file": "studio.spec.ts",
+        "line": 998,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3661,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the status text lives in a footer, so the toolbar buttons never move while it changes",
+        "file": "studio.spec.ts",
+        "line": 1008,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 3441,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "the console opens with the version and build of the studio",
+        "file": "studio.spec.ts",
+        "line": 1022,
+        "outcome": "expected",
+        "expected_status": "passed",
+        "results": [
+          {
+            "status": "passed",
+            "duration_ms": 625,
+            "errors": []
+          }
+        ]
+      }
+    ]
+  },
+  "not_run": [
+    "macOS/Linux execution",
+    "Safari/Firefox",
+    "Tauri/WebView2/WKWebView",
+    "clean-machine disconnected installs",
+    "exhaustive value combinations for all parameters",
+    "replacement UI parity (UI not implemented)"
+  ]
+}

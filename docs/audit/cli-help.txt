@@ -1,0 +1,179 @@
+Image (png, jpg, bmp) or studio project to island-free, watertight graffiti stencil STLs.
+
+With an image the pipeline is image -> threshold -> stencil -> tiles & mounting. With --project the saved studio graph is evaluated as it is and every output that no node consumes is written.
+
+Usage: stencil.exe [OPTIONS] [INPUT]
+
+Arguments:
+  [INPUT]
+          Picture to turn into a stencil
+
+Options:
+      --project <PROJECT>
+          A project saved from the studio (.json) to run instead of a picture
+
+  -o, --output <OUTPUT>
+          Output STL for a single part, or the folder for several (default: next to the input)
+
+      --vector
+          Trace the picture to curves and build the plate from them
+
+      --detail <DETAIL>
+          Vector mode: samples per mm of the plate
+
+      --resolution <RESOLUTION>
+          Pixels on the longest side
+
+      --threshold <THRESHOLD>
+
+
+      --invert
+
+
+      --width <WIDTH>
+
+
+      --thickness <THICKNESS>
+
+
+      --margin <MARGIN>
+
+
+      --bridge <BRIDGE>
+
+
+      --bridges-per-island <BRIDGES_PER_ISLAND>
+          Bridges from every island to the plate (1-5)
+
+      --bridge-spread
+          Place the further bridges of an island at an angle to the earlier ones, not just on the shortest links
+
+      --bridge-min-angle <BRIDGE_MIN_ANGLE>
+          Smallest angle between two bridges of an island in degrees (default 45); implies --bridge-spread
+
+      --bridge-max-length <BRIDGE_MAX_LENGTH>
+          With --bridge-spread: longest bridge as a multiple of the shortest link (1-16, default 4)
+
+      --bridge-passes <BRIDGE_PASSES>
+          With --bridge-spread: how many passes the islands are bridged in (1-8, default 4)
+
+      --min-contact <MIN_CONTACT>
+          Widen any strip of material thinner than this (mm); 0 is off
+
+      --min-first-layer-width <MIN_FIRST_LAYER_WIDTH>
+          Minimum width of narrow features at the build plate (mm); 0 is off
+
+      --first-layer-taper <FIRST_LAYER_TAPER>
+          Height over which the bottom flare tapers back to the stencil outline (mm)
+
+      --threads <THREADS>
+          Worker threads (default: half of the cores, never all of them)
+
+      --layer-height <LAYER_HEIGHT>
+
+
+      --raised-bridges
+          Bridges rise layer by layer so the first layer keeps every island
+
+      --z-bridging <Z_BRIDGING>
+          With --raised-bridges: 'steps' or 'easy'
+
+          [possible values: steps, easy]
+
+      --extra-top-layers <EXTRA_TOP_LAYERS>
+
+
+      --flip
+          Print upside down (180 degrees about Y)
+
+      --min-island <MIN_ISLAND>
+          Delete islands smaller than this area (mm2) instead of bridging
+
+      --max-overhang <MAX_OVERHANG>
+
+
+      --tile-width <TILE_WIDTH>
+          Largest tile width in mm (0 = no tiling)
+
+      --tile-height <TILE_HEIGHT>
+          Largest tile height in mm (0 = no tiling)
+
+      --connector <CONNECTOR>
+          [possible values: hex, round]
+
+      --connector-d <CONNECTOR_D>
+          Connector diameter in mm: 2.5, 3, 4, 5 or 6
+
+      --connector-clearance <CONNECTOR_CLEARANCE>
+
+
+      --seam-clearance <SEAM_CLEARANCE>
+          Total gap removed at each tile seam (mm; split evenly between both tiles)
+
+      --seam-angle <SEAM_ANGLE>
+          Turn the tile seams clockwise by this angle (0-60 degrees) so they cut diagonally; 0 is the straight grid
+
+      --segments <SEGMENTS>
+          Round segments for connectors, holes and threads
+
+      --pads <PADS>
+          Raised threaded pads in the frame (0-4)
+
+      --pad-thread <PAD_THREAD>
+          M3, M4, M5, M6, M8 or M10
+
+      --pad-height <PAD_HEIGHT>
+
+
+      --mount-screw <MOUNT_SCREW>
+          Mounting holes at the seams: none, M3, M4, M5, M6, M8 or M10
+
+      --mount-plain
+          Plain holes instead of cut threads
+
+      --mount-offset <MOUNT_OFFSET>
+
+
+      --mount-extend <MOUNT_EXTEND>
+
+
+      --hardware <HARDWARE>
+          Also write a bolt, nut and connector fit test of this screw size
+
+      --set <NODE.PARAM=VALUE>
+          Set any node parameter: NODE.PARAM=VALUE, where NODE is a node id or a node type used once in the graph (for example --set tile_layout.max_x=200 --set vector_stencil.bridge_mm=2). Repeat it for more
+
+      --layout <FILE.png>
+          Write the picture of every tile layout in the graph (paint dark, connector blocks blue, orange where they cover paint, seams red) to this PNG; with several layouts the node id is added to the name
+
+      --report
+          Print the print-readiness report (findings and the slowest nodes)
+
+      --report-file <FILE.json>
+          Write the print-readiness report as JSON
+
+      --strict
+          Exit with an error when the report has warnings, not only errors
+
+      --list-params [<NODE>]
+          List the parameters --set accepts (all nodes, or only this node type) with their ranges, then exit
+
+      --params-format <FORMAT>
+          With --list-params: `text` (default) or `markdown`, a reference table per node that can be pasted into docs
+
+          [default: text]
+
+      --source <FILE>
+          With --project: use this picture in the project's Image node instead of the saved one
+
+      --batch <DIR>
+          With --project: run the project once for every picture in this folder (png, jpg, bmp, svg). -o is then the folder that gets one subfolder per picture, plus summary.csv
+
+      --sweep <NODE.PARAM=a,b,c>
+          Run once for every value: NODE.PARAM=a,b,c (repeatable; several are combined). -o is then the folder that gets one subfolder per run, plus summary.csv
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+  -V, --version
+          Print version

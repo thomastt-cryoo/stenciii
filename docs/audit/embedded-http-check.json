@@ -1,0 +1,58 @@
+[
+  {
+    "path": "assets/engine.worker-DtZJtX1Q.js",
+    "status": 200,
+    "mime": "text/javascript",
+    "coop": "same-origin",
+    "coep": "require-corp",
+    "hashMatches": true
+  },
+  {
+    "path": "assets/index-BLJd1lma.css",
+    "status": 200,
+    "mime": "text/css",
+    "coop": "same-origin",
+    "coep": "require-corp",
+    "hashMatches": true
+  },
+  {
+    "path": "assets/index-DBdtDOCL.js",
+    "status": 200,
+    "mime": "text/javascript",
+    "coop": "same-origin",
+    "coep": "require-corp",
+    "hashMatches": true
+  },
+  {
+    "path": "assets/stencil_wasm-XaqQIrP_.js",
+    "status": 200,
+    "mime": "text/javascript",
+    "coop": "same-origin",
+    "coep": "require-corp",
+    "hashMatches": true
+  },
+  {
+    "path": "assets/stencil_wasm_bg-KYEYY513.wasm",
+    "status": 200,
+    "mime": "application/wasm",
+    "coop": "same-origin",
+    "coep": "require-corp",
+    "hashMatches": true
+  },
+  {
+    "path": "assets/Viewer3D-UJFtxW_e.js",
+    "status": 200,
+    "mime": "text/javascript",
+    "coop": "same-origin",
+    "coep": "require-corp",
+    "hashMatches": true
+  },
+  {
+    "path": "index.html",
+    "status": 200,
+    "mime": "text/html",
+    "coop": "same-origin",
+    "coep": "require-corp",
+    "hashMatches": true
+  }
+]
