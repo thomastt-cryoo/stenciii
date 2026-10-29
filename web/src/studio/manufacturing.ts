@@ -4,7 +4,7 @@ import { compileRecipe, copy, operations, rawGraph, type ProjectDocument } from 
 import { validateRecipe } from './artwork'
 
 export const manufacturingTypes=['split_colours','tone_patterns','tile_layout','export','tiles','pads','ring','fragments','colour_set','hardware']
-export const implementedManufacturingTypes=['split_colours','tone_patterns','colour_set','tile_layout','tiles','fragments','pads','ring','hardware']
+export const implementedManufacturingTypes=[...manufacturingTypes]
 export const isManufacturing=(type:string)=>implementedManufacturingTypes.includes(type)
 export const manufacturingNames:Record<string,string>={split_colours:'Separate colours',tone_patterns:'Apply tone patterns',colour_set:'Register colour plates',tile_layout:'Plan printable sections',tiles:'Split finished stencil',pads:'Pads & mounting holes',ring:'Expanded borders',hardware:'Screws, nuts & plates',fragments:'Remove tile fragments',export:'Legacy tiles & mounting'}
 const help:Record<string,string>={
@@ -123,7 +123,7 @@ export function tilePartChoices(doc:ProjectDocument,catalogue:NodeType[]){
 }
 export function hasMountingInput(doc:ProjectDocument,id:string){
  const g=compileRecipe(doc),seen=new Set<string>();let n=g.nodes.find(n=>n.id===id)
- while(n&&!seen.has(n.id)){seen.add(n.id);if(n.type==='pads')return n.params.mount_screw!=='none';if(n.type==='export')return n.params.mount_screw!=null&&n.params.mount_screw!=='none';const edge=g.edges.find(e=>e.to[0]===n!.id&&e.to[1]==='parts');n=g.nodes.find(n=>n.id===edge?.from[0])}return false
+ while(n&&!seen.has(n.id)){seen.add(n.id);if(n.type==='pads')return n.params.mount_screw!=='none';if(n.type==='export')return false;const edge=g.edges.find(e=>e.to[0]===n!.id&&e.to[1]==='parts');n=g.nodes.find(n=>n.id===edge?.from[0])}return false
 }
 export function createMountablePlate(doc:ProjectDocument,source:string,catalogue:NodeType[]){return createTiledWorkflow(doc,source,'after',2000,2000,catalogue)}
 export function createHardware(doc:ProjectDocument,source:string|undefined,catalogue:NodeType[]){

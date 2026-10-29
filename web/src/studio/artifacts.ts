@@ -6,6 +6,7 @@ import { meshProblems, type MeshCheck } from './meshAudit'
 export { inspectStl } from './meshAudit'
 export type { MeshCheck } from './meshAudit'
 import { activeStyle } from './recipes'
+import {manufacturingNames} from './manufacturing'
 import { artworkNames, type PreviewStage } from './artwork'
 
 export interface PartArtifact { name:string; url:string; mesh:MeshCheck|null; error?:string }
@@ -38,7 +39,7 @@ export async function captureArtifacts(doc: ProjectDocument, runs: Record<string
         const auxiliary = ['removed', 'rounded'].includes(out) && !graph.edges.some(e => e.from[0] === n.id && e.from[1] === out)
         const checks = auxiliary ? [] : badgesFor(n.type, n.params, info)
         findings.push(...checks)
-        if (['image', 'mask', 'shapes'].includes(o.type)) {
+        if (['image', 'mask', 'shapes', 'tiles'].includes(o.type)) {
           const url = artifactUrl(run.key, out)
           if (url) result.stages!.push({ id: `${n.id}/${out}`, step: n.id, port: out, label: `${artworkNames[n.type] ?? n.type}${['removed', 'rounded'].includes(out) ? ' · Removed details' : ''}`, kind: o.type, url: URL.createObjectURL(await (await fetch(url)).blob()), info })
         }
@@ -84,7 +85,7 @@ export async function captureArtifacts(doc: ProjectDocument, runs: Record<string
         if(n.type === 'remesh' && mesh && (!mesh.closed || mesh.components>1)) throw Error('Mesh optimization failed independent validation: '+meshProblems(mesh).join('; ')+'. The previous result is retained.')
         // Own this URL independently of the worker/cache. Later runs cannot revoke a displayed result.
         const url = URL.createObjectURL(blob)
-        artifacts.push({ id: `${n.id}/${out}`, step: n.id, label: n.type === 'vector_stencil' || n.type === 'stencil' ? 'Stencil plate' : n.type === 'remesh' ? 'Optimized stencil' : n.type.replace(/_/g, ' '), kind: o.type, url, filename: solid ? `${name}${artifacts.length ? `-${n.id}` : ''}.stl` : `${name}-${n.id}-parts.zip`, info, findings: checks, mesh, parts, intermediate: graph.edges.some(e=>e.from[0]===n.id&&e.from[1]===out) })
+        artifacts.push({ id: `${n.id}/${out}`, step: n.id, label: n.type === 'vector_stencil' || n.type === 'stencil' ? 'Stencil plate' : n.type === 'remesh' ? 'Optimized stencil' : manufacturingNames[n.type]??n.type.replace(/_/g, ' '), kind: o.type, url, filename: solid ? `${name}${artifacts.length ? `-${n.id}` : ''}.stl` : `${name}-${n.id}-parts.zip`, info, findings: checks, mesh, parts, intermediate: graph.edges.some(e=>e.from[0]===n.id&&e.from[1]===out) })
       }
     }
     const nearest = (id: string, seen = new Set<string>()): string[] => {

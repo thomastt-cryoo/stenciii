@@ -8,9 +8,9 @@ import {operations,rawGraph,editParameter,ProjectCommands,copy,compileRecipe} fr
 import {inspectStl,meshProblems} from '../src/studio/meshAudit'
 import {applyOperationPreset} from '../src/studio/Presets'
 const catalogue=JSON.parse(readFileSync(new URL('../../docs/audit/runtime-catalogue.json',import.meta.url),'utf8')),registry=new ParameterRegistry(catalogue)
-test('48 geometry slots and 89 unique editable slots keep every authoritative constraint, help and reset default',()=>{
+test('48 preserved geometry slots and 217 unique editable slots keep every authoritative constraint, help and reset default',()=>{
  const scoped=registry.settings.filter(s=>(geometryTypes as readonly string[]).includes(s.type));expect(scoped).toHaveLength(48)
- expect(registry.settings.filter(s=>editable(s.type,s.parameter.name))).toHaveLength(89);expect(registry.settings).toHaveLength(217)
+ expect(registry.settings.filter(s=>editable(s.type,s.parameter.name))).toHaveLength(217);expect(registry.settings).toHaveLength(217)
  for(const s of scoped){const p=s.parameter;expect(geometryHelp[s.key].length).toBeGreaterThan(20);expect(()=>registry.validate(s.type,p.name,p.default)).not.toThrow();if(['int','float'].includes(p.kind)){expect(()=>registry.validate(s.type,p.name,p.min!-p.step!)).toThrow();expect(()=>registry.validate(s.type,p.name,p.max!+p.step!)).toThrow()}if(p.choices)expect(()=>registry.validate(s.type,p.name,'invalid')).toThrow()}
 })
 test('quantized base, extra layers, special values and conditional geometry controls match actual engine semantics',()=>{

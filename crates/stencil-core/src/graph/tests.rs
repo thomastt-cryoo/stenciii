@@ -723,6 +723,34 @@ fn colour_set_rejects_mismatched_plates_and_small_margins() {
 }
 
 #[test]
+fn registration_rejects_equal_square_plates_with_different_automatic_insets() {
+    let mut e = Engine::new();
+    let id = e.add_image(test_png()).unwrap()["id"].as_str().unwrap().to_string();
+    let mut g = colour_set_graph(&id, 10.0, 14.0, json!({"holes":3}));
+    g["nodes"][3]["params"]["width_mm"] = json!(100.0);
+    let r = e.run(&g,None,&||0.0);
+    assert!(r["nodes"]["cs"]["error"].as_str().unwrap().contains("hole centres differ"), "{r}");
+    // An explicit common inset can be valid for both margins.
+    g["nodes"][4]["params"]["inset"] = json!(5.0);
+    let r = e.run(&g,None,&||0.0);
+    assert_eq!(r["nodes"]["cs"]["state"],"done","{r}");
+}
+
+#[test]
+fn direct_legacy_seam_angle_changes_real_mesh_and_cache_without_changing_catalogue() {
+    let mut e = Engine::new();
+    let id=e.add_image(test_png()).unwrap()["id"].as_str().unwrap().to_string();
+    let mut g=graph(&id,8.0);
+    g["nodes"][3]["params"]=json!({"max_x":110,"max_y":110,"segments":24,"depth":6});
+    let run=|e:&mut Engine|{let r=e.run(&g,None,&||0.0);assert_eq!(r["status"],"done","{r}");let key=r["nodes"]["ex"]["key"].as_str().unwrap().to_string();let bytes=e.value(&key,"parts").unwrap().encode().unwrap().1;(key,bytes)};
+    let before=run(&mut e);e.set_legacy_seam_angle(20.0).unwrap();let after=run(&mut e);
+    assert_ne!(before.0,after.0);assert_ne!(before.1,after.1);
+    e.set_legacy_seam_angle(0.0).unwrap();assert_eq!(run(&mut e),before);
+    assert!(e.set_legacy_seam_angle(f64::NAN).is_err());assert!(e.set_legacy_seam_angle(61.0).is_err());
+    assert!(!node_types().to_string().contains("__cli_seam_angle_deg"));
+}
+
+#[test]
 fn tiles_node_cuts_a_stencil_and_describes_the_plate() {
     let mut e = Engine::new();
     let id = e.add_image(test_png()).unwrap()["id"]

@@ -1,4 +1,5 @@
 import { isManufacturing } from './manufacturing'
+import parameterMapping from '../../../docs/audit/parameter-mapping.json' with {type:'json'}
 import type { GraphJson, NodeType } from '../api'
 import { copy, editParameter, object, projectName, quickRecipe, adjustmentRecipe, rawGraph, standardRecipe, type ProjectDocument } from './project'
 
@@ -125,6 +126,7 @@ export function draftRecipe(graph: GraphJson): GraphJson {
 }
 
 /** Editable qualified fields; the runtime catalogue remains authoritative. */
-export function editable(type: string, _key: string) {
-  return isManufacturing(type) || ['source','text','transform','threshold','reduce','smooth','morphology','trace','round_corners','remove_islands','shapes_to_mask','stencil','vector_stencil','remesh','complexity'].includes(type)
+const qualifiedKeys=new Set(parameterMapping.map(p=>p.key))
+export function editable(type: string, key: string) {
+  return qualifiedKeys.has(`${type==='complexity'?'remesh':type}.${key}`)&&(isManufacturing(type) || ['source','text','transform','threshold','reduce','smooth','morphology','trace','round_corners','remove_islands','shapes_to_mask','stencil','vector_stencil','remesh','complexity'].includes(type))
 }

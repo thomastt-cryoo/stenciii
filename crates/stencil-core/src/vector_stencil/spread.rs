@@ -70,6 +70,27 @@ struct Candidate {
     overlaps: usize,
 }
 
+/// Ray/segment intersections of symmetric routes differ by a few binary
+/// rounding bits between native libm and WASM. Rank at 1e-9 mm in
+/// coordinates (100,000 times finer than the polygon grid), then by endpoints.
+/// Integer bins give a transitive total order; an epsilon comparator would not.
+fn rank_length(x: f64) -> i64 { (x * 1e9).round() as i64 }
+fn route_order(a: &Candidate, b: &Candidate) -> std::cmp::Ordering {
+    rank_length(a.length).cmp(&rank_length(b.length)).then_with(|| {
+        let key=|c:&Candidate| [c.from[0],c.from[1],c.to[0],c.to[1]].map(rank_length);
+        key(a).cmp(&key(b))
+    })
+}
+
+#[test]
+fn symmetric_route_ranking_ignores_math_roundoff_and_has_stable_endpoint_ties() {
+    let a=Candidate{from:[60.6269,56.3676],to:[48.5945,68.4],length:17.016383248001,parallel:0.,overlaps:0};
+    let b=Candidate{from:a.from,to:[72.6593,68.4],length:a.length-1e-14,parallel:0.,overlaps:0};
+    assert!(route_order(&a,&b).is_lt());assert!(route_order(&b,&a).is_gt());
+    let shorter=Candidate{length:a.length-0.0000001,..b};
+    assert!(route_order(&shorter,&a).is_lt());
+}
+
 struct Choice<'a> {
     p: &'a Params,
     /// Bridges already placed by anyone.
@@ -153,7 +174,7 @@ impl Choice<'_> {
                 }
             })
             .collect();
-        candidates.sort_by(|a, b| a.length.total_cmp(&b.length));
+        candidates.sort_by(route_order);
         let wanted = p.bridge_min_angle_deg;
         // the wanted angle is relaxed in steps, so an island never gets fewer bridges than without it
         for tier in [wanted, wanted * 2.0 / 3.0, wanted / 3.0, 0.0] {
@@ -164,7 +185,7 @@ impl Choice<'_> {
                 .min_by(|a, b| {
                     a.overlaps
                         .cmp(&b.overlaps)
-                        .then(a.length.total_cmp(&b.length))
+                        .then_with(|| route_order(a,b))
                 });
             if let Some(c) = best {
                 return Some((c.from, c.to));

@@ -40,3 +40,10 @@ Source review also found inconsistent clearance conversions in joiner routines (
 ## M5D — in progress
 
 Complete legacy editing (17 fields), aggregate the correct actual upstream plates and auxiliary outputs, validate ZIP contents/CRC and identity, repair calibration geometry and direct CLI seam-angle routing, investigate the exact M4 Spread fixture, and run full local/production/native/WASM regressions. Review registration alignment and manufacturing metadata needed for accurate previews and quantities. Batch UI may be bounded; preserved CLI batch/sweeps remain mandatory. No M6 implementation.
+
+
+D implementation checkpoint: all 17 legacy controls passed applicable real-output change/reset/reopen checks. Complete export aggregation, a per-file planner, independently audited Parts, ZIP CRC/hash manifests and local sequential batching are implemented. Shared upstream use is recorded explicitly. Source work is ready for final cross-platform verification; this checkpoint does not claim final acceptance of the full 217-field matrix.
+
+The calibration defect was reproduced from original bytes and repaired at its source by subtracting overlapping dimples sequentially. Diametral mounting-hole conversions were reconciled. Direct CLI seam bevel routing now changes actual valid geometry. The exact M4 Spread fixture now agrees in native/ST/MT after stable candidate ties, at 3,152 triangles and 9490.669796050599 mm³. A conservative collinear-tile cleanup fixes only cases preserving planes, topology, dimensions and volume; one additional ring tile and narrower raster cases remain guarded limitations.
+
+Latest native workspace checks pass 167 tests; source preservation passes 24 types, 217 keys and 107 pinned files. The 48-case corpus has 46 independently valid outputs and two explicit blank-input refusals. Targeted export, batch, compatibility and accessibility checks pass. Fresh full browser, strict C44, final 217 merge, broader mode replay, production packaging and GitHub CI remain acceptance gates. No M6 work is included.

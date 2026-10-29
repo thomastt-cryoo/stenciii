@@ -614,6 +614,7 @@ pub fn join_plates(
     )
 }
 
+/// Clearance is diametral for both plain and threaded holes.
 /// `join_plates` with `wall` mm of material between the edge of each hole and the edge of the plate.
 #[allow(clippy::too_many_arguments)]
 pub fn join_plates_padded(
@@ -645,7 +646,7 @@ pub fn join_plates_padded(
             pts.iter()
                 .map(|&(x, y)| {
                     let mut c = if threaded {
-                        thread_void(screw, clearance, -1.0, thickness + 1.0, segments, 8).unwrap()
+                        thread_void(screw, clearance / 2.0, -1.0, thickness + 1.0, segments, 8).unwrap()
                     } else {
                         cylinder((d + clearance) / 2.0, -1.0, thickness + 1.0, segments)
                     };
@@ -714,25 +715,82 @@ pub fn fit_test(hex: bool, d: f64, steps: &[f64], segments: usize) -> Result<Mes
     let hgt = ext + 2.0 * crate::tiles::WALL_MM + 1.0;
     let len = pitch * steps.len() as f64 + 4.0;
     let block = Mesh::cuboid([0.0, -6.0, 0.0], [len, 6.0, hgt]);
-    let mut cuts: Vec<Mesh> = vec![];
+    let mut holes: Vec<Mesh> = vec![];
+    let mut dimples: Vec<Mesh> = vec![];
     for (i, c) in steps.iter().enumerate() {
         let x = 2.0 + pitch * (i as f64 + 0.5);
         let n = if hex { 6 } else { segments.max(12) };
         let mut hole = Mesh::prism_z(n, (d + c) / 2.0, -7.0, 7.0).along(1);
         hole.translate([x, 0.0, hgt / 2.0]);
-        cuts.push(hole);
+        holes.push(hole);
         for k in 0..=i {
             let mut dim = cylinder(0.6, hgt - 0.7, hgt + 0.7, 16);
             dim.translate([x + (k as f64 - i as f64 / 2.0) * 2.0, -4.0, 0.0]);
-            cuts.push(dim);
+            dimples.push(dim);
         }
     }
-    block.subtract(&union_all(cuts))
+    // union_all appends disjoint meshes; it is not a boolean union. On the
+    // small-diameter strips, neighbouring dimple groups overlap. Treating
+    // their appended surfaces as one manifold produced degenerate top faces.
+    // Through-holes are disjoint; apply each potentially overlapping marker
+    // cut separately so its intersection with previous markers is handled.
+    let mut strip = block.subtract(&union_all(holes))?;
+    for dimple in dimples {
+        strip = strip.subtract(&dimple)?;
+    }
+    strip.quantize_f32();
+    if !strip.is_watertight() {
+        return Err("calibration strip failed verification after rounding to STL precision".into());
+    }
+    Ok(strip)
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn calibration_strips_have_valid_stored_faces_and_unchanged_fit_dimensions() {
+        for hex in [true, false] {
+            for d in [2.5, 3.0, 4.0, 5.0, 6.0] {
+                let details = if d == 3.0 { vec![24, 48, 128] } else { vec![48] };
+                for segments in details {
+                    let strip = fit_test(hex, d, &[0.0, 0.1, 0.2, 0.3, 0.4, 0.5], segments).unwrap();
+                    let stored = Mesh::from_stl(&strip.to_stl()).unwrap();
+                    assert!(stored.is_watertight(), "{hex} {d} {segments}");
+                    assert_eq!(crate::tile_bridge::components(&stored).0, 1);
+                    assert!(stored.volume() > 0.0);
+                    for t in &stored.t {
+                        let a=stored.v[t[0]];let b=stored.v[t[1]];let c=stored.v[t[2]];
+                        let u=[b[0]-a[0],b[1]-a[1],b[2]-a[2]];let v=[c[0]-a[0],c[1]-a[1],c[2]-a[2]];
+                        let n=[u[1]*v[2]-u[2]*v[1],u[2]*v[0]-u[0]*v[2],u[0]*v[1]-u[1]*v[0]];
+                        assert!(n.iter().map(|x|x*x).sum::<f64>()>1e-24, "degenerate: {hex} {d} {segments}");
+                    }
+                    let pitch=d+2.0*crate::tiles::WALL_MM+5.0;
+                    let ext=if hex{3f64.sqrt()/2.0*(d+0.5)}else{d+0.5};
+                    let h=ext+2.0*crate::tiles::WALL_MM+1.0;
+                    let (lo,hi)=stored.bounds();assert!((hi[0]-(pitch*6.0+4.0)).abs()<1e-4);assert!((hi[1]-lo[1]-12.0).abs()<1e-4);assert!((hi[2]-h).abs()<1e-4);
+                    for i in 0..6 {
+                        let x=2.0+pitch*(i as f64+0.5);let r=(d+i as f64*0.1)/2.0;
+                        assert!(!stored.box_inside([x-0.01,-0.01,h/2.0-0.01],[x+0.01,0.01,h/2.0+0.01]));
+                        assert!(stored.box_inside([x+r+0.1,-0.01,h/2.0-0.01],[x+r+0.12,0.01,h/2.0+0.01]));
+                    }
+                }
+            }
+        }
+    }
+
+    #[test]
+    fn hand_sized_plate_clearance_is_diametral_for_plain_and_threaded_holes() {
+        for threaded in [false, true] {
+            let radius = |clearance| {
+                let (plate, _) = join_plates_padded("M4", threaded, clearance, 15.0, 25.0, 4.0, 48, 3.0).unwrap();
+                plate.v.iter().map(|p|((p[0]+15.0).powi(2)+p[1].powi(2)).sqrt()).filter(|r|*r<3.0).fold(0.0,f64::max)
+            };
+            assert!((radius(0.4)-2.2).abs()<0.015, "{threaded}: {}",radius(0.4));
+            assert!((radius(0.8)-2.4).abs()<0.015, "{threaded}: {}",radius(0.8));
+        }
+    }
 
     #[test]
     fn thread_solid_is_closed() {

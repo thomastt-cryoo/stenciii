@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
-const folder = '../docs/m4/screenshots'
+const folder = '../docs/m5/replay/m4/screenshots'
 test.setTimeout(180_000)
 test('M3 artwork, processing, presets, text, responsive layout and both themes', async ({ page }) => {
   mkdirSync(folder, { recursive: true })
@@ -60,5 +60,5 @@ test('M3 artwork, processing, presets, text, responsive layout and both themes',
   await page.screenshot({ path: `${folder}/13-text-stencil-dark.png`, fullPage: true })
   await page.getByRole('button', { name: 'Switch to light mode', exact: true }).click()
   await page.screenshot({ path: `${folder}/14-text-stencil-light.png`, fullPage: true })
-  writeFileSync('../docs/m4/responsive-accessibility.json', JSON.stringify({ processing_dialog: audits, themes: ['light', 'dark'] }, null, 2))
+  writeFileSync('../docs/m5/replay/m4/responsive-accessibility.json', JSON.stringify({ processing_dialog: audits, themes: ['light', 'dark'] }, null, 2))
 })

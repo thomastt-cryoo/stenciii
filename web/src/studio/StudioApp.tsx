@@ -1,4 +1,6 @@
 import PartsPreview from './PartsPreview'
+import ExportPanel,{useDefaultPackage} from './ExportPanel'
+import {packageFilename} from './exportPlan'
 import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { controller, editor, useEditor } from './session'
 import { decodeBytes, operations, projectName, adjustmentRecipe as quickRecipe, quickRecipe as styleQuickRecipe } from './project'
@@ -25,6 +27,7 @@ export default function StudioApp() {
   const [settings, setSettings] = useState<{ category?: string; query?: string } | null>(null), [zoom, setZoom] = useState(1), [fit, setFit] = useState(0)
   const hadResult = useRef(false)
   const [drag, setDrag] = useState(false), [assetUrl, setAssetUrl] = useState(''), [selected, setSelected] = useState('')
+  const [exportOpen,setExportOpen]=useState(false)
   const imageInput = useRef<HTMLInputElement>(null), projectInput = useRef<HTMLInputElement>(null)
   const recipe = doc && quickRecipe(doc), sources = doc ? operations(doc).filter(o => o.type === 'source') : []
   const allOps = doc ? operations(doc) : [], textSource = allOps.find(o => o.type === 'text'), textBuild = textSource && allOps.find(o => ['stencil','vector_stencil'].includes(o.type))
@@ -34,7 +37,7 @@ export default function StudioApp() {
   const asset = doc?.raw.images?.[String(sources[0]?.params.image_id)]
   const hiddenLayers=new Set<string>((doc?.raw.stencilStudio?.colourLayers??[]).filter((l:any)=>!l.visible).map((l:any)=>l.plate))
   const visibleArtifacts=run.output?.value.artifacts.filter(a=>!hiddenLayers.has(a.step))??[]
-  const result=visibleArtifacts.find(a=>a.id===selected)??visibleArtifacts.filter(a=>!a.intermediate).at(-1)??visibleArtifacts.at(-1)
+  const result=visibleArtifacts.find(a=>a.id===selected)??visibleArtifacts.filter(a=>!a.intermediate&&a.kind==='parts').at(-1)??visibleArtifacts.filter(a=>!a.intermediate).at(-1)??visibleArtifacts.at(-1)
   const colourAssembly=doc?.raw.stencilStudio?.colourAssemblies?.find((a:any)=>a.id===result?.step)
   const hiddenFiles:string[]=colourAssembly?.layers.flatMap((id:string,i:number)=>hiddenLayers.has(id)?[`colour_${i+1}.stl`]:[])??[]
   const outline = result ? result.outline : run.output?.value.outline
@@ -42,7 +45,10 @@ export default function StudioApp() {
   const findings = result?.findings ?? run.output?.value.findings ?? []
   const otherFindings=(run.output?.value.findings??[]).filter(f=>!findings.some(s=>s.level===f.level&&s.text===f.text))
   const warnings = findings.filter(f => f.level !== 'info'), blocked = findings.some(f => f.level === 'error')
-  const canExport = current && !!result && !blocked
+  const packaged=useDefaultPackage(doc,run.output?.value,result?.id,current&&result?.kind==='parts')
+  const exportUrl=result?.kind==='parts'?packaged.url:result?.url
+  const exportName=result?.kind==='parts'&&doc?packageFilename(doc):result?.filename
+  const canExport = current && !!result && !blocked&&!!exportUrl
   useEffect(() => { void editor.initialize() }, [])
   useEffect(() => { if (state.preview) { if(state.preview.port==='solid'||registry?.types.get(allOps.find(o=>o.id===state.preview!.step)?.type??'')?.outputs.some(p=>p.name===state.preview!.port&&p.type==='parts')){setView('3d');setSelected(`${state.preview.step}/${state.preview.port}`)}else setView('stage'); setSettings(null) } }, [state.preview])
   useEffect(() => { document.documentElement.dataset.theme = theme; try { localStorage.setItem('stencil-studio.theme', theme) } catch {} }, [theme])
@@ -87,7 +93,8 @@ export default function StudioApp() {
       <nav aria-label="Project actions"><button onClick={() => editor.newProject()}>New Project</button><button onClick={() => projectInput.current?.click()}>Open Project</button><button onClick={() => editor.downloadProject()} disabled={!doc}>Save Project</button></nav>
       <div className="header-end"><div className="undo-actions"><button className="icon-button" aria-label="Undo" title="Undo (Ctrl+Z)" disabled={!state.canUndo} onClick={() => editor.undo()}><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 5-4 4 4 4M3 9h8a5 5 0 0 1 5 5" /></svg></button><button className="icon-button" aria-label="Redo" title="Redo (Ctrl+Shift+Z)" disabled={!state.canRedo} onClick={() => editor.redo()}><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m13 5 4 4-4 4m4-4H9a5 5 0 0 0-5 5" /></svg></button></div>
         <button className="icon-button theme-button" aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`} title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`} onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}><svg viewBox="0 0 20 20" aria-hidden="true">{theme === 'light' ? <path d="M15 12A7 7 0 0 1 8 4a7 7 0 1 0 7 8Z" /> : <><circle cx="10" cy="10" r="3" /><path d="M10 1v2m0 14v2M1 10h2m14 0h2M3.5 3.5 5 5m10 10 1.5 1.5m-13 0L5 15M15 5l1.5-1.5" /></>}</svg></button>
-        <a role="link" tabIndex={canExport ? 0 : -1} className={`export-button${!canExport ? ' disabled' : ''}`} aria-disabled={!canExport} href={canExport ? result?.url : undefined} download={result?.filename} onClick={e => { if (!canExport) e.preventDefault() }}>Export {result?.filename.endsWith('.zip') ? 'ZIP' : 'STL'}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v9m-3-3 3 3 3-3M4 13v4h12v-4" /></svg></a>
+        {doc&&result&&<button className="export-options" onClick={()=>setExportOpen(true)}>Export options</button>}
+        <a role="link" tabIndex={canExport ? 0 : -1} className={`export-button${!canExport ? ' disabled' : ''}`} aria-disabled={!canExport} href={canExport ? exportUrl : undefined} download={exportName} title={packaged.error??packaged.progress} onClick={e => { if (!canExport) e.preventDefault() }}>Export {result?.kind==='parts' ? 'ZIP' : 'STL'}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v9m-3-3 3 3 3-3M4 13v4h12v-4" /></svg></a>
       </div>
     </header>
     <div className="workspace-layout"><main className="workspace">
@@ -114,7 +121,7 @@ export default function StudioApp() {
       {current&&otherFindings.length>0&&<details className="readiness-notes"><summary>Notes from other processing results</summary><ul>{otherFindings.map((f,i)=><li key={i}>{f.text}</li>)}</ul></details>}
     </main>
     <aside className="quick-sidebar" aria-label="Quick Adjustments"><div className="quick-controls"><div className="sidebar-title"><h2>Quick Adjustments</h2><p>A few choices. Your kind of stencil.</p></div>
-      {!recipe && doc ? <div className="compatibility-note"><h3>{textSource ? 'Text stencil' : 'Custom workflow'}</h3><p>All {operations(doc).length} saved steps, artwork and settings are preserved. Choose a named pass in Processing Steps to edit artwork and inspect its results.</p><button className="all-settings-button" onClick={() => setSettings({ category: 'Artwork and image cleanup' })}>{textSource ? 'Edit text artwork' : 'Customize artwork'}</button>{textBuild && <div className="quick-group">{number(textBuild.id, textBuild.type, 'width_mm', 'Stencil width', 'mm', textBuild.params)}{number(textBuild.id, textBuild.type, 'thickness_mm', 'Base thickness', 'mm', textBuild.params)}{number(textBuild.id, textBuild.type, 'bridge_mm', 'Bridge width', 'mm', textBuild.params)}</div>}<p>Use All Settings for geometry and mesh optimization. Manufacturing editors belong to M5.</p></div> : <>
+      {!recipe && doc ? <div className="compatibility-note"><h3>{textSource ? 'Text stencil' : 'Custom workflow'}</h3><p>All {operations(doc).length} saved steps, artwork and settings are preserved. Choose a named pass in Processing Steps to edit artwork and inspect its results.</p><button className="all-settings-button" onClick={() => setSettings({ category: 'Artwork and image cleanup' })}>{textSource ? 'Edit text artwork' : 'Customize artwork'}</button>{textBuild && <div className="quick-group">{number(textBuild.id, textBuild.type, 'width_mm', 'Stencil width', 'mm', textBuild.params)}{number(textBuild.id, textBuild.type, 'thickness_mm', 'Base thickness', 'mm', textBuild.params)}{number(textBuild.id, textBuild.type, 'bridge_mm', 'Bridge width', 'mm', textBuild.params)}</div>}<p>Use All Settings for geometry and mesh optimization. Colours, Tiles, Mounting and Hardware have their own sections.</p></div> : <>
         <div className="style-section"><label className="control-label" htmlFor="stencil-style">Stencil style</label><select id="stencil-style" className="style-select" aria-label="Stencil style" value={style} disabled={!recipe || state.loading} onChange={e => editor.style(e.target.value as Style)}>{styles.map(s => <option value={s.id} key={s.id}>{s.name}</option>)}</select><p className="style-description">{styles.find(s => s.id === style)!.description}</p></div>
         {recipe && <fieldset disabled={state.loading} className="quick-group"><legend>Artwork</legend><>
           <label className="detail-field"><span>Detail <output>{detail == null ? 'Custom' : detailLevels[detail]}</output></span><input type="range" aria-label="Detail" min={0} max={2} step={1} value={detail ?? 1} onPointerDown={() => editor.begin()} onPointerUp={() => editor.end()} onPointerCancel={() => editor.end()} onBlur={() => editor.end()} onChange={e => editor.detail(Number(e.target.value))} /></label>
@@ -141,5 +148,6 @@ export default function StudioApp() {
     </aside></div>
     {settings && registry && <Settings registry={registry} doc={doc} initialCategory={settings.category} initialQuery={settings.query} close={() => setSettings(null)} />}
     {doc && registry && state.cropStep && <CropEditor doc={doc} id={state.cropStep} registry={registry} />}
+    {exportOpen&&doc&&run.output&&result&&<ExportPanel doc={doc} set={run.output.value} initial={result.id} current={current} close={()=>setExportOpen(false)}/>}
   </div>
 }

@@ -428,3 +428,15 @@ fn bad_input_fails_with_a_message() {
         .unwrap();
     assert!(!r.status.success());
 }
+
+#[test]
+fn direct_seam_angle_changes_printable_geometry() {
+    let dir=scratch("seam-angle");let image=dir.join("plate.svg");fs::write(&image,r#"<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><rect width="120" height="120" fill="white"/><rect x="20" y="30" width="55" height="40" fill="black"/></svg>"#).unwrap();
+    for angle in [0,20] {
+        let output=dir.join(format!("angle-{angle}"));
+        let result=bin().arg(&image).args(["--resolution","200","--margin","20","--width","160","--thickness","8","--tile-width","90","--tile-height","90","--seam-angle",&angle.to_string(),"--segments","24","-o"]).arg(&output).output().unwrap();
+        assert!(result.status.success(),"{}",String::from_utf8_lossy(&result.stderr));
+        let plate=output.join("stencil_r1c1.stl");assert_stl(&plate);
+    }
+    assert_ne!(fs::read(dir.join("angle-0/stencil_r1c1.stl")).unwrap(),fs::read(dir.join("angle-20/stencil_r1c1.stl")).unwrap());
+}

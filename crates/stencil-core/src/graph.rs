@@ -234,6 +234,7 @@ pub struct Engine {
     cache: HashMap<String, Rc<Outputs>>,
     order: VecDeque<String>,
     fresh: Vec<(String, String)>,
+    legacy_seam_angle: f64,
 }
 
 /// FNV-1a over length-prefixed parts. Unlike `DefaultHasher` it gives the same id on 32-bit wasm and 64-bit native,
@@ -255,6 +256,17 @@ fn hash_hex(parts: &[&[u8]]) -> String {
 impl Engine {
     pub fn new() -> Self {
         Self::default()
+    }
+
+    /// Execution option for the direct CLI's original combined exporter.
+    /// It preserves the legacy pad/count pipeline without inventing an extra
+    /// saved catalogue parameter. Project `tiles.seam_angle_deg` is unchanged.
+    pub fn set_legacy_seam_angle(&mut self, angle: f64) -> Result<(), String> {
+        if !angle.is_finite() || !(0.0..=60.0).contains(&angle) {
+            return Err("seam angle must be from 0 to 60 degrees".into());
+        }
+        self.legacy_seam_angle = angle;
+        Ok(())
     }
 
     /// Registers a picture and returns `{id, width, height}`; the id is a hash of the bytes.
@@ -403,7 +415,12 @@ impl Engine {
             let node = by_id[id.as_str()];
             let ty = node["type"].as_str().unwrap_or("");
             let def = &defs[ty];
-            let params = clean_params(def, node.get("params"));
+            let mut params = clean_params(def, node.get("params"));
+            if ty == "export" && self.legacy_seam_angle != 0.0 {
+                // Included in the execution cache key below, never saved into
+                // the project or advertised as a new runtime parameter.
+                params.0.insert("__cli_seam_angle_deg".into(), json!(self.legacy_seam_angle));
+            }
             let fail = |nodes: &mut Map<String, Json>,
                         results: &mut HashMap<String, Option<(String, Rc<Outputs>)>>,
                         msg: String| {

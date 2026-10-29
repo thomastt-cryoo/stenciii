@@ -6,6 +6,7 @@ export async function prove(page:Page,doc:any,target:string,out:string){
   const w=window as any
   if(!w.__manufacturingProof){
    const worker=new Worker(workerUrl,{type:'module',name:'artwork-preview'}),pending=new Map<number,any>();let seq=0
+   worker.onerror=e=>{for(const p of pending.values()){clearTimeout(p.timer);p.reject(Error(`Manufacturing worker: ${e.message}`))}pending.clear()}
    worker.onmessage=e=>{const p=pending.get(e.data.id);if(!p||e.data.step)return;pending.delete(e.data.id);clearTimeout(p.timer);e.data.error?p.reject(Error(e.data.error)):p.resolve(e.data.ok)}
    w.__manufacturingProof={worker,call:(message:any)=>new Promise<any>((resolve,reject)=>{const id=++seq,timer=setTimeout(()=>reject(Error('Manufacturing proof timed out')),120000);pending.set(id,{resolve,reject,timer});worker.postMessage({id,...message})})}
   }

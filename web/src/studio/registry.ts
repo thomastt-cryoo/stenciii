@@ -80,6 +80,11 @@ export class ParameterRegistry {
       if (['number_size', 'pocket_depth'].includes(key) && !p.number_parts) return inactive('Enable slab numbering to use this setting.')
       if (key === 'hole_spacing' && !p.wall_holes) return inactive('Enable outer mounting holes to use this spacing.')
     }
+    if(type==='export'){
+      if(['pad_thread','pad_height','thread_clearance'].includes(key)&&Number(p.pad_count)===0)return inactive('Set the legacy pad count above zero to use these original pad settings.')
+      if(['mount_clearance','mount_threaded','mount_offset','mount_extend'].includes(key)&&p.mount_screw==='none')return inactive('Choose a legacy mounting screw to use hole and joiner settings.')
+      if(['connector','connector_d','depth','clearance'].includes(key)&&Number(p.max_x)===0&&Number(p.max_y)===0)return inactive('Set a tile size to create seams and connector pockets.')
+    }
     if (type === 'hardware') {
       if(key==='joiner_thickness'&&context.hasMounting===false)return inactive('Connect a mounting assembly with seam joins to use its matched joiner thickness.')
       if(key==='extend'&&!p.plate&&context.hasMounting===false)return inactive('Enable hand-sized plates or connect mounting parts to use the extra row spacing.')

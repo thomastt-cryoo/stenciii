@@ -594,6 +594,7 @@ pub fn tile(solid: &Mesh, p: &TileParams) -> Result<Tiled, String> {
     let bridged = std::sync::atomic::AtomicUsize::new(0);
     let dropped = std::sync::atomic::AtomicUsize::new(0);
     let welded = std::sync::atomic::AtomicUsize::new(0);
+    let facet_cleanup = std::sync::Mutex::new(Vec::<serde_json::Value>::new());
     let cut = |&(i, j): &(usize, usize)| -> Result<Option<Tile>, String> {
         // each internal side is a plane leaning by `lean`, set back by half the gap measured across the face
         let inset = p.seam_gap / 2.0 * secant;
@@ -717,6 +718,13 @@ pub fn tile(solid: &Mesh, p: &TileParams) -> Result<Tiled, String> {
         }
         m.translate([-xs[i], -ys[j], 0.0]);
         m.quantize_f32();
+        match m.repair_collinear_faces() {
+            Ok(0) => {},
+            Ok(n) => facet_cleanup.lock().unwrap().push(serde_json::json!({"file":format!("stencil_r{}c{}.stl",ny-j,i+1),"surface_preserving_edge_collapses":n})),
+            // Keep unrepairable files visible. The independent stored-STL
+            // validators must reject them; never omit them from a part set.
+            Err(error) => facet_cleanup.lock().unwrap().push(serde_json::json!({"file":format!("stencil_r{}c{}.stl",ny-j,i+1),"unresolved":error})),
+        }
         Ok(Some(Tile {
             name: format!("stencil_r{}c{}", ny - j, i + 1),
             mesh: m,
@@ -737,11 +745,14 @@ pub fn tile(solid: &Mesh, p: &TileParams) -> Result<Tiled, String> {
             tiles.push(t);
         }
     }
+    let mut facet_cleanup = facet_cleanup.into_inner().unwrap();
+    facet_cleanup.sort_by(|a,b|a["file"].as_str().cmp(&b["file"].as_str()));
     let info = serde_json::json!({
         "tiles": tiles.len(), "grid": [nx, ny], "connectors": holes.len(), "rows": zs.len(),
         "bridged_tiles": bridged.load(std::sync::atomic::Ordering::Relaxed), "welded_tiles": welded.load(std::sync::atomic::Ordering::Relaxed), "dropped_specks": dropped.load(std::sync::atomic::Ordering::Relaxed), "thin_wall_holes": thin, "positions_without_room": missed,
         "hole_depth_mm": p.depth, "seam_gap_mm": p.seam_gap, "rod_length_mm": rod_length_with_gap(depth, gap_along), "seams_shifted": moved, "seam_angle_deg": p.seam_angle_deg,
         "reinforced_seams": reinforced, "added_material_mm3": added_volume,
+        "facet_cleanup": facet_cleanup,
     });
     let seam_list = seams
         .iter()

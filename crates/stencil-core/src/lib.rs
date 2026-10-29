@@ -152,16 +152,21 @@ pub struct Stats {
     pub watertight: bool,
     pub triangles: usize,
     pub stl_bytes: usize,
+    /// Actual planned vector bridge centre lines, for manufacturing diagnostics.
+    pub bridge_routes_mm: Vec<[[f64; 2]; 2]>,
 }
 
 impl Stats {
     pub fn to_json(&self) -> String {
-        format!(
+        let mut value = format!(
             "{{\"width_mm\":{:.2},\"height_mm\":{:.2},\"thickness_mm\":{:.2},\"layers\":{},\"grid_w\":{},\"grid_h\":{},\"threshold\":{},\"islands_found\":{},\"islands_deleted\":{},\"bridge_pixels\":{},\"islands_remaining\":{},\"first_layer_islands\":{},\"overhang_area_mm2\":{:.2},\"watertight\":{},\"triangles\":{},\"stl_bytes\":{}}}",
             self.width_mm, self.height_mm, self.thickness_mm, self.layers, self.grid_w, self.grid_h,
             self.threshold, self.islands_found, self.islands_deleted, self.bridge_pixels, self.islands_remaining,
             self.first_layer_islands, self.overhang_area_mm2, self.watertight, self.triangles, self.stl_bytes
-        )
+        );
+        value.pop();
+        value.push_str(&format!(",\"bridge_routes_mm\":{}}}", serde_json::to_string(&self.bridge_routes_mm).unwrap()));
+        value
     }
 }
 

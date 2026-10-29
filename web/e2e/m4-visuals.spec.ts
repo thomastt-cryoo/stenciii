@@ -2,7 +2,7 @@ import {expect,test} from '@playwright/test'
 import {mkdirSync,writeFileSync} from 'node:fs'
 import AxeBuilder from '@axe-core/playwright'
 import {geometryProject} from './m4-fixtures'
-const folder='../docs/m4/screenshots/geometry'
+const folder='../docs/m5/replay/m4/screenshots/geometry'
 test.setTimeout(240_000)
 test('geometry inspector, real bridge cutaways, mesh precision and camera tools in both themes and mobile',async({page})=>{
  mkdirSync(folder,{recursive:true});await page.setViewportSize({width:1440,height:1000});await page.emulateMedia({colorScheme:'light'});await page.goto('/')
@@ -21,5 +21,5 @@ test('geometry inspector, real bridge cutaways, mesh precision and camera tools 
  const audits=[]
  for(const width of [1440,800,390]){await page.setViewportSize({width,height:1000});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(await page.locator('.settings-dialog').evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);const result=await new AxeBuilder({page}).include('.settings-dialog').withTags(['wcag2a','wcag2aa']).analyze();const errors=result.violations.filter(v=>['critical','serious'].includes(v.impact??''));expect(errors).toEqual([]);audits.push({width,serious_or_critical:errors.length})}
  await shot('10-mobile-geometry-dark');await page.setViewportSize({width:1440,height:1000});await page.getByRole('navigation',{name:'Settings categories'}).getByRole('button',{name:'Mesh optimization',exact:true}).click();await page.getByRole('button',{name:'Add mesh optimization',exact:true}).click();await page.locator('.geometry-group').filter({hasText:'Surface & outline precision'}).locator('summary').first().click();await shot('11-mesh-optimization-dark');await page.getByRole('button',{name:'Close settings',exact:true}).click();await ready();await shot('12-optimized-solid-dark')
- writeFileSync('../docs/m4/accessibility.json',JSON.stringify({geometry_dialog:audits,themes:['light','dark'],external_processing:false},null,2))
+ writeFileSync('../docs/m5/replay/m4/accessibility.json',JSON.stringify({geometry_dialog:audits,themes:['light','dark'],external_processing:false},null,2))
 })

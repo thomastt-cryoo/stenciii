@@ -1,6 +1,7 @@
 //! Triangle meshes: STL in/out, primitives, watertightness and 3D booleans (via boolmesh).
 use boolmesh::prelude::*;
 use std::collections::HashMap;
+mod collinear;
 
 #[derive(Clone, Default)]
 pub struct Mesh {
@@ -11,6 +12,8 @@ pub struct Mesh {
 pub type P3 = [f64; 3];
 
 impl Mesh {
+    /// A checked local repair for collinear facets created by tile bridge CSG.
+    pub(crate) fn repair_collinear_faces(&mut self) -> Result<usize,String> { collinear::repair(self) }
     pub fn from_stl(b: &[u8]) -> Result<Mesh, String> {
         if b.len() < 84 {
             return Err("not a binary STL".into());

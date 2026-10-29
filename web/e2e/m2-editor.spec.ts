@@ -28,7 +28,7 @@ test('all three styles produce different valid geometry; style adjustments, byte
   await upload(page); await make(page)
   const hashes: string[] = [], evidence: any[] = []
   mkdirSync('../sandbox/m2/browser', { recursive: true })
-  mkdirSync('../docs/m4/m2-replay', { recursive: true })
+  mkdirSync('../docs/m5/replay/m4/m2-replay', { recursive: true })
   for (const style of ['standard', 'smooth', 'crisp']) {
     if (style !== 'standard') { await page.getByRole('combobox', { name: 'Stencil style', exact: true }).selectOption(style); await expect(page.getByRole('link', { name: 'Export STL', exact: true })).toHaveAttribute('aria-disabled', 'true'); await ready(page) }
     const wait = page.waitForEvent('download'); await page.getByRole('link', { name: 'Export STL', exact: true }).click()
@@ -52,7 +52,7 @@ test('all three styles produce different valid geometry; style adjustments, byte
   await page.setInputFiles('[aria-label="Open project file"]', { name: 'Crisp.stencil.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(crisp)) }); await ready(page)
   expect(await save(page)).toEqual(crisp)
   expect(Buffer.from(Object.values<any>(crisp.images)[0].base64, 'base64')).toEqual(corpus('simple-logo.svg'))
-  writeFileSync('../docs/m4/m2-replay/browser-meshes.json', JSON.stringify({ hashes, evidence }, null, 2))
+  writeFileSync('../docs/m5/replay/m4/m2-replay/browser-meshes.json', JSON.stringify({ hashes, evidence }, null, 2))
   await info.attach('independent meshes', { body: JSON.stringify(evidence), contentType: 'application/json' })
 })
 
@@ -81,7 +81,7 @@ test('live edits show draft, retain the last preview and finish full quality wit
   // Initial generation plus one settled full run; no heavy run on each slider input.
   expect(metrics.runs.filter((r: any) => r.resolution > 200)).toHaveLength(2)
   expect(metrics.runs.filter((r: any) => r.resolution === 200).length).toBeGreaterThan(0)
-  mkdirSync('../docs/m4/m2-replay', { recursive: true }); writeFileSync('../docs/m4/m2-replay/live-performance.json', JSON.stringify(metrics, null, 2))
+  mkdirSync('../docs/m5/replay/m4/m2-replay', { recursive: true }); writeFileSync('../docs/m5/replay/m4/m2-replay/live-performance.json', JSON.stringify(metrics, null, 2))
   // A numeric field settles while still focused.
   await page.getByRole('spinbutton', { name: 'Stencil width', exact: true }).fill('160'); await ready(page)
   await expect(page.locator('.preview-caption')).toContainText('160.0')
@@ -111,8 +111,8 @@ test('prepared comparison is aligned after crop/rotate/flip; raw original and ge
   // Crop happens before rotation: 650×520 -> 585×520 -> 520×585.
   // Vector art width=184; height=184×585/520+16=223 mm.
   await expect(page.locator('.preview-caption')).toContainText('200.0 × 223.0')
-  mkdirSync('../docs/m4/screenshots/m2-replay', { recursive: true })
-  await page.locator('.preview-surface').screenshot({ path: '../docs/m4/screenshots/m2-replay/08-crop-comparison.png' })
+  mkdirSync('../docs/m5/replay/m4/screenshots/m2-replay', { recursive: true })
+  await page.locator('.preview-surface').screenshot({ path: '../docs/m5/replay/m4/screenshots/m2-replay/08-crop-comparison.png' })
   await page.getByRole('tab', { name: 'Original', exact: true }).click(); await expect(page.getByAltText('Original artwork')).toBeVisible()
 })
 
@@ -141,13 +141,14 @@ test('friendly upload errors preserve the current image and traced SVG is honest
   const wait = page.waitForEvent('download'); await link.click(); const svg = readFileSync((await (await wait).path())!, 'utf8'); expect(svg).toContain('<svg'); expect(svg).toContain('<path')
 })
 
-test('real known defective hardware geometry is guarded even in a preserved custom project', async ({ page }) => {
+test('the previously defective hardware fit strip exports only after the M5 repair and preserves its custom project', async ({ page }) => {
   await page.goto('/')
   const project = { version: 2, graph: { nodes: [{ id: 'fit', type: 'hardware', params: { plate: false, fit_test: true } }], edges: [] }, future: { keep: true } }
   await page.setInputFiles('[aria-label="Open project file"]', { name: 'hardware.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(project)) })
-  await expect(page.getByRole('status').filter({ hasText: 'Output needs attention' })).toBeVisible({ timeout: 90000 })
-  await expect(page.getByRole('link', { name: 'Export ZIP', exact: true })).toHaveAttribute('aria-disabled', 'true')
-  await page.locator('.readiness-notes summary').click(); await expect(page.locator('.readiness-notes')).toContainText('zero-area triangles')
+  await expect(page.getByRole('link', { name: 'Export ZIP', exact: true })).toHaveAttribute('aria-disabled', 'false',{timeout:90000})
+  const download=page.waitForEvent('download');await page.getByRole('link',{name:'Export ZIP',exact:true}).click()
+  mkdirSync('../sandbox/m5',{recursive:true});const path=resolve('../sandbox/m5/m2-repaired-hardware.zip');await(await download).saveAs(path)
+  const check=JSON.parse(execFileSync('python',['../scripts/m2/inspect_mesh.py',path],{encoding:'utf8'}));expect(check.entries.filter((e:any)=>/\.stl$/i.test(e.name)).every((e:any)=>e.closed_oriented_mesh)).toBe(true)
   expect(await save(page)).toEqual(project)
 })
 

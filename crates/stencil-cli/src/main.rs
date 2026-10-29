@@ -110,7 +110,7 @@ struct Args {
     /// Total gap removed at each tile seam (mm; split evenly between both tiles)
     #[arg(long)]
     seam_clearance: Option<f64>,
-    /// Turn the tile seams clockwise by this angle (0-60 degrees) so they cut diagonally; 0 is the straight grid
+    /// Bevel every seam face away from vertical (0-60 degrees); 0 cuts straight down
     #[arg(long)]
     seam_angle: Option<f64>,
     /// Round segments for connectors, holes and threads
@@ -244,6 +244,9 @@ fn main() {
         use_picture(&mut engine, &mut graph, pic);
     }
     apply_sets(&mut graph, &a.set);
+    if a.project.is_none() {
+        engine.set_legacy_seam_angle(a.seam_angle.unwrap_or(0.0)).unwrap_or_else(|e| fail(&e));
+    }
     let result = engine.run(&graph, None, &|| t.elapsed().as_secs_f64() * 1000.0);
     for l in result["log"].as_array().into_iter().flatten() {
         if l["level"] == "error" {
@@ -334,61 +337,8 @@ fn main() {
         ));
     }
 
-    let consumed: HashSet<&str> = graph["edges"]
-        .as_array()
-        .into_iter()
-        .flatten()
-        .filter_map(|e| e["from"][0].as_str())
-        .collect();
-    let mut files: Vec<(String, Vec<u8>)> = Vec::new();
-    for n in graph["nodes"].as_array().into_iter().flatten() {
-        let id = n["id"].as_str().unwrap_or("");
-        let ty = n["type"].as_str().unwrap_or("");
-        if consumed.contains(id) || ty == "source" {
-            continue;
-        }
-        let r = &result["nodes"][id];
-        let Some(key) = r["key"].as_str() else {
-            continue;
-        };
-        let Some(outs) = r["outputs"].as_object() else {
-            continue;
-        };
-        // a node that offers parts has the solid as a convenience copy: write the parts only
-        let prefer_parts = outs
-            .get("parts")
-            .is_some_and(|m| m["available"].as_bool() != Some(false));
-        for (out, meta) in outs {
-            let kind = meta["type"].as_str().unwrap_or("");
-            if !matches!(kind, "solid" | "parts") || (prefer_parts && kind == "solid") {
-                continue;
-            }
-            let Some(v) = engine.value(key, out) else {
-                continue;
-            };
-            let info = v.info();
-            match info["files"].as_object() {
-                Some(fs) => {
-                    for name in fs.keys() {
-                        files.push((name.clone(), v.part(name).unwrap_or_default()));
-                    }
-                }
-                None => files.push((
-                    format!("{stem}.stl"),
-                    v.encode().map(|e| e.1).unwrap_or_default(),
-                )),
-            }
-            if let Some(s) = info.get("stats") {
-                println!("{s}");
-            }
-            if let Some(m) = info
-                .get("meta")
-                .filter(|m| m.as_object().is_some_and(|o| !o.is_empty()))
-            {
-                println!("{m}");
-            }
-        }
-    }
+    let files = manufacturing_files(&engine, &graph, &result, &stem)
+        .unwrap_or_else(|e| fail(&e));
     if files.is_empty() && layouts > 0 {
         return;
     }
@@ -413,7 +363,9 @@ fn main() {
         fs::create_dir_all(&out)
             .unwrap_or_else(|e| fail(&format!("cannot create {}: {e}", out.display())));
         for (name, bytes) in &files {
-            write(&out.join(name), bytes);
+            let target = out.join(name);
+            if let Some(parent) = target.parent() {fs::create_dir_all(parent).unwrap_or_else(|e| fail(&e.to_string()));}
+            write(&target, bytes);
         }
         let zip = if into_folder {
             out.join(format!("{stem}.zip"))
@@ -429,6 +381,80 @@ fn main() {
             t.elapsed().as_millis()
         );
     }
+}
+
+
+/// Collect leaf deliveries and every upstream Parts file. Nearest transformed
+/// filenames replace their original versions; auxiliary-only hardware leaves
+/// retain the mounted plates. Separate assemblies cannot overwrite one another.
+fn manufacturing_files(engine: &Engine, graph: &Json, result: &Json, stem: &str) -> Result<Vec<(String, Vec<u8>)>, String> {
+    use std::collections::{BTreeMap, VecDeque};
+    let nodes = graph["nodes"].as_array().ok_or("missing project steps")?;
+    let edges = graph["edges"].as_array().ok_or("missing project connections")?;
+    let consumed: HashSet<&str> = edges.iter().filter_map(|e| e["from"][0].as_str()).collect();
+    let mut deliveries: Vec<(String, String, Vec<u8>)> = vec![];
+    let mut shared_sources = std::collections::HashMap::<(String,String),Vec<usize>>::new();
+    let mut assembly_no = 0;
+    let safe = |s: &str| s.chars().map(|c| if c.is_ascii_alphanumeric() || c == '-' || c == '_' {c} else {'_'}).collect::<String>();
+    for node in nodes {
+        let id = node["id"].as_str().unwrap_or("");
+        if consumed.contains(id) { continue; }
+        let Some(outs) = result["nodes"][id]["outputs"].as_object() else {continue};
+        let parts = outs.get("parts").is_some_and(|o| o["available"] == true);
+        if !parts && !outs.values().any(|o| o["type"] == "solid" && o["available"] == true) {continue;}
+        assembly_no += 1;
+        let mut pending = VecDeque::from([id]);
+        let mut visited = HashSet::new();
+        let mut files = BTreeMap::<String, Vec<u8>>::new();
+        let mut family = id.to_owned();
+        while let Some(step) = pending.pop_front() {
+            if !visited.insert(step) {continue;}
+            let r = &result["nodes"][step];
+            if let (Some(key), Some(outputs)) = (r["key"].as_str(), r["outputs"].as_object()) {
+                for (port, output) in outputs {
+                    if output["available"] != true || if parts {output["type"] != "parts"} else {step != id || output["type"] != "solid"} {continue;}
+                    let Some(value) = engine.value(key,port) else {continue;};
+                    if parts { family=step.to_owned(); }
+                    if step == id {
+                        let info=value.info();
+                        if let Some(stats)=info.get("stats") {println!("{stats}");}
+                        if let Some(meta)=info.get("meta").filter(|m| m.as_object().is_some_and(|o| !o.is_empty())) {println!("{meta}");}
+                    }
+                    if let Some(names) = value.info()["files"].as_object() {
+                        for name in names.keys() {files.entry(name.clone()).or_insert_with(|| value.part(name).unwrap_or_default());}
+                    } else {files.entry(format!("{stem}.stl")).or_insert(value.encode()?.1);}
+                }
+            }
+            if parts {for edge in edges.iter().filter(|e| e["to"][0] == step) {if let Some(parent) = edge["from"][0].as_str() {pending.push_back(parent);}}}
+        }
+        for (name, bytes) in files {
+            if name.ends_with(".stl") { validate_delivery(&name, &bytes)?; }
+            let identity=(family.clone(),name.clone());
+            if shared_sources.get(&identity).is_some_and(|indices|indices.iter().any(|&i|deliveries[i].2==bytes)){continue;}
+            shared_sources.entry(identity).or_default().push(deliveries.len());
+            deliveries.push((format!("assembly-{assembly_no}-{}",safe(id)), name, bytes));
+        }
+    }
+    let mut names = std::collections::HashMap::<String, usize>::new();
+    for (_,name,_) in &deliveries {*names.entry(name.to_lowercase()).or_default() += 1;}
+    Ok(deliveries.into_iter().map(|(id,name,bytes)| {
+        let path = if names[&name.to_lowercase()] > 1 {format!("{id}/{name}")} else {name};
+        (path,bytes)
+    }).collect())
+}
+
+fn validate_delivery(name: &str, bytes: &[u8]) -> Result<(), String> {
+    let mesh = stencil_core::mesh::Mesh::from_stl(bytes)?;
+    let normals_finite = bytes[84..].chunks_exact(50).all(|t| (0..3).all(|k| f32::from_le_bytes(t[k*4..k*4+4].try_into().unwrap()).is_finite()));
+    let signed_volume: f64 = mesh.t.iter().map(|t| {let [a,b,c]=[mesh.v[t[0]],mesh.v[t[1]],mesh.v[t[2]]];(a[0]*(b[1]*c[2]-b[2]*c[1])+a[1]*(b[2]*c[0]-b[0]*c[2])+a[2]*(b[0]*c[1]-b[1]*c[0]))/6.0}).sum();
+    let valid_faces = mesh.t.iter().all(|t| {
+        let [a,b,c] = [mesh.v[t[0]],mesh.v[t[1]],mesh.v[t[2]]];
+        if a.into_iter().chain(b).chain(c).any(|x| !x.is_finite()) {return false;}
+        let u=[b[0]-a[0],b[1]-a[1],b[2]-a[2]];let v=[c[0]-a[0],c[1]-a[1],c[2]-a[2]];
+        (u[1]*v[2]-u[2]*v[1]).powi(2)+(u[2]*v[0]-u[0]*v[2]).powi(2)+(u[0]*v[1]-u[1]*v[0]).powi(2)>1e-24
+    });
+    if !normals_finite || !valid_faces || !mesh.is_watertight() || signed_volume <= 0.0 {return Err(format!("{name}: invalid stored mesh (finite normals {normals_finite}, nondegenerate faces {valid_faces}, watertight {}, signed volume {signed_volume}); manufacturing export refused",mesh.is_watertight()));}
+    Ok(())
 }
 
 fn pipeline(a: &Args, image: &str) -> Json {
@@ -483,7 +509,6 @@ fn pipeline(a: &Args, image: &str) -> Json {
         ("max_y", a.tile_height),
         ("clearance", a.connector_clearance),
         ("seam_gap", a.seam_clearance),
-        ("seam_angle_deg", a.seam_angle),
         ("segments", a.segments),
         ("pad_count", a.pads),
         ("pad_height", a.pad_height),

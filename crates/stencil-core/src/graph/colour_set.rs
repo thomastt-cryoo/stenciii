@@ -43,6 +43,8 @@ pub(super) fn run_colour_set(
     let mut files = Vec::new();
     let mut meta = json!({"colours": plates.len()});
     let mut size: Option<(f64, f64, usize)> = None;
+    let mut common_inset: Option<f64> = None;
+    let mut registration = vec![];
     for (k, s) in &plates {
         let mut mesh = crate::mesh::Mesh::from_stl(&s.stl)?;
         let (lo, hi) = mesh.bounds();
@@ -70,6 +72,13 @@ pub(super) fn run_colour_set(
                 ));
             }
             let flip = s.stats["flip"].as_bool().unwrap_or(false);
+            if common_inset.is_some_and(|c| (c - inset).abs() > 0.05) {
+                return Err("registration hole centres differ between colour plates: use matching margins or set one explicit registration inset that fits every plate".into());
+            }
+            common_inset = Some(inset);
+            registration.push(json!({"file": format!("colour_{k}.stl"), "flip": flip,
+                "painting_centres_mm": registration_centres(holes, w, h, inset),
+                "printed_centres_mm": registration_centres(holes, w, h, inset).into_iter().map(|(x,y)| [lo[0] + if flip { w-x } else {x}, lo[1]+y]).collect::<Vec<_>>() }));
             let top = hi[2] + 1.0;
             let cut = hw::union_all(
                 registration_centres(holes, w, h, inset)
@@ -92,7 +101,7 @@ pub(super) fn run_colour_set(
         files.push((format!("colour_{k}.stl"), mesh.to_stl()));
     }
     if holes > 0 {
-        meta["registration"] = json!({"holes": holes, "diameter_mm": d});
+        meta["registration"] = json!({"holes": holes, "diameter_mm": d, "plates": registration});
         if p.b("pins") {
             let pin_d = (d - p.f("pin_clearance")).max(0.5);
             let len = p.f("pin_length");

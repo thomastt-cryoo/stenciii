@@ -816,6 +816,7 @@ fn build_once(
             watertight: true,
             triangles: stack.t.len(),
             stl_bytes: stl.len(),
+            bridge_routes_mm: links.iter().map(|(a,b)| [*a,*b]).collect(),
             ..Stats::default()
         };
         crate::progress::step("extrude mesh", 0.9);
@@ -865,6 +866,7 @@ fn build_once(
         watertight: true,
         triangles: mesh.tris.len(),
         stl_bytes: stl.len(),
+        bridge_routes_mm: links.iter().map(|(a,b)| [*a,*b]).collect(),
         ..Stats::default()
     };
     Ok(Output {

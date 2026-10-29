@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
 import { mkdirSync, readFileSync } from 'node:fs'
-const folder = '../docs/m4/screenshots/m2-replay'
+const folder = '../docs/m5/replay/m4/screenshots/m2-replay'
 test.setTimeout(240_000)
 
 test('actual M2 workspace, three styles, comparison, model, settings and complex artwork in both themes', async ({ page }) => {

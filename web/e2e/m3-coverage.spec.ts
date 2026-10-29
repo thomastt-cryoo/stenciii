@@ -39,7 +39,7 @@ function project(type:string,key:string){
  return {version:2,graph:{nodes,edges},images:{one:{name:type==='morphology'?'Pattern.svg':bytes===colour?'Colour.png':'Corners.svg',base64:bytes.toString('base64')},two:{name:'Logo.svg',base64:second.toString('base64')}},stencilStudio:{name:'Coverage'}}
 }
 test('all 41 controls change saved execution parameters, reset to runtime defaults and execute real intermediate output',async({page})=>{
- test.setTimeout(600_000);mkdirSync('../docs/m4',{recursive:true});await page.goto('/')
+ test.setTimeout(600_000);mkdirSync('../docs/m5/replay/m4',{recursive:true});await page.goto('/')
  await expect(page.getByRole('button',{name:'Choose Image',exact:true})).toBeEnabled()
  const rows:any[]=[]
  const fingerprint=async(raw:any,type:string)=>{
@@ -74,15 +74,15 @@ test('all 41 controls change saved execution parameters, reset to runtime defaul
    else await page.getByRole('textbox',{name:label,exact:true}).fill(String(value))
    let changed=await page.evaluate(()=>JSON.parse(localStorage.getItem('stencil-studio.project.v1')!));expect(changed.graph.nodes.find((n:any)=>n.id==='test').params[parameter.name]).toEqual(value)
    const after=await fingerprint(changed,type)
-   mkdirSync('../docs/m4/examples',{recursive:true})
-   if(!rows.some(r=>r.key.startsWith(`${type}.`)))for(const[label,artifact]of [['before',before],['after',after]]as const)writeFileSync(`../docs/m4/examples/${type}-${label}.${artifact.mime.includes('svg')?'svg':'png'}`,Buffer.from(artifact.base64,'base64'))
+   mkdirSync('../docs/m5/replay/m4/examples',{recursive:true})
+   if(!rows.some(r=>r.key.startsWith(`${type}.`)))for(const[label,artifact]of [['before',before],['after',after]]as const)writeFileSync(`../docs/m5/replay/m4/examples/${type}-${label}.${artifact.mime.includes('svg')?'svg':'png'}`,Buffer.from(artifact.base64,'base64'))
    delete (before as any).base64;delete (after as any).base64
    await page.getByRole('button',{name:`Reset ${label}`,exact:true}).click()
    changed=await page.evaluate(()=>JSON.parse(localStorage.getItem('stencil-studio.project.v1')!));expect(changed.graph.nodes.find((n:any)=>n.id==='test').params[parameter.name]).toEqual(parameter.default)
    await page.getByRole('button',{name:'Close settings',exact:true}).click()
    expect(changed.images).toEqual(doc.images)
    rows.push({key,changed_to:value,reset_to:parameter.default,before,after,output_changed:before.sha256!==after.sha256})
-   writeFileSync('../docs/m4/artwork-coverage.json',JSON.stringify({scoped_slots:rows.length,cases:rows},null,2))
+   writeFileSync('../docs/m5/replay/m4/artwork-coverage.json',JSON.stringify({scoped_slots:rows.length,cases:rows},null,2))
  }
  expect(rows).toHaveLength(41)
  // Every scoped field has a suitable fixture proving a real PNG/SVG change.

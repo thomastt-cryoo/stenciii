@@ -525,7 +525,7 @@ pub(super) fn run_hardware(
             let (j, e) = hw::join_plates(
                 screw,
                 m["threaded"] == true,
-                m["clearance"].as_f64().unwrap_or(0.4) / 2.0,
+                m["clearance"].as_f64().unwrap_or(0.4),
                 m["offset"].as_f64().unwrap_or(0.0),
                 p.f("extend"),
                 p.f("joiner_thickness"),
@@ -563,7 +563,7 @@ pub(super) fn run_export(_: &Engine, i: &HashMap<String, Value>, p: &P) -> Resul
         depth: p.f("depth"),
         clearance: p.f("clearance"),
         seam_gap: p.f("seam_gap"),
-        seam_angle_deg: 0.0,
+        seam_angle_deg: p.f("__cli_seam_angle_deg"),
         segments: p.f("segments") as usize,
         thickness: s.stats["thickness_mm"].as_f64().unwrap_or(0.0),
         shift_mm: 0.0,
@@ -671,7 +671,7 @@ pub(super) fn run_export(_: &Engine, i: &HashMap<String, Value>, p: &P) -> Resul
         let (j, e) = hw::join_plates(
             p.s("mount_screw"),
             p.b("mount_threaded"),
-            p.f("mount_clearance") / 2.0,
+            p.f("mount_clearance"),
             p.f("mount_offset"),
             p.f("mount_extend"),
             4.0,
@@ -1063,7 +1063,7 @@ pub(super) fn run_pads(_: &Engine, i: &HashMap<String, Value>, p: &P) -> Result<
         let (j, e) = hw::join_plates(
             p.s("mount_screw"),
             p.b("mount_threaded"),
-            p.f("mount_clearance") / 2.0,
+            p.f("mount_clearance"),
             off,
             p.f("extend"),
             height,
@@ -1244,6 +1244,7 @@ pub(super) fn run_ring(_: &Engine, i: &HashMap<String, Value>, p: &P) -> Result<
     }
     let mut unnumbered: Vec<String> = vec![];
     let gap = p.f("gap");
+    let mut slab_files = vec![];
     for sl_full in &slabs {
         // each slab gives up half the gap on every side, the first ring the whole gap towards the plate; the
         // holes stay where they are, so the joiner plates stay centred on the seams
@@ -1296,12 +1297,14 @@ pub(super) fn run_ring(_: &Engine, i: &HashMap<String, Value>, p: &P) -> Result<
             ));
         }
         files.push((format!("{}.stl", sl.name), mesh.to_stl()));
+        slab_files.push(json!({"file": format!("{}.stl", sl.name), "assembly_lo_mm": sl.lo,
+            "assembly_hi_mm": sl.hi, "printed_number": if p.b("number_parts") && !unnumbered.contains(&sl.name) { Some(slabs.iter().position(|s| s.name == sl.name).unwrap()+1) } else { None }}));
     }
     // the pair plate joins one seam; the square one has four holes, two each side, for a stronger seam
     let (joiner, square) = hw::join_plates(
         &screw,
         threaded,
-        clearance / 2.0,
+        clearance,
         c,
         2.0 * c,
         p.f("joiner_thickness"),
@@ -1355,6 +1358,7 @@ pub(super) fn run_ring(_: &Engine, i: &HashMap<String, Value>, p: &P) -> Result<
         "rings": rings, "slabs": slabs.len(), "joiner_plates": joiner_plates, "plate_joints": plate_joints,
         "wall_holes": wall_holes, "unused_plate_holes": unused, "width_mm": width,
         "numbered": p.b("number_parts"), "unnumbered": unnumbered,
+        "slab_files": slab_files,
         "thickness_mm": thick, "gap_mm": gap, "screw": screw, "joiner_file": format!("ring_joiner_{screw}.stl"), "square_joiner_file": format!("ring_joiner_square_{screw}.stl"),
     });
     Ok(vec![(
