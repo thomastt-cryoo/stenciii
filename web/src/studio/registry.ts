@@ -31,8 +31,12 @@ export class ParameterRegistry {
   }
   defaults(type: string) { return Object.fromEntries((this.types.get(type)?.params ?? []).map(p => [p.name, p.default])) }
   search(query: string, category?: string) {
-    const words = query.toLowerCase().trim().split(/\s+/).filter(Boolean)
-    return this.settings.filter(s => (!category || s.category === category) && words.every(q => `${s.key} ${s.parameter.label} ${s.operationLabel} ${s.category} ${s.dependency}`.toLowerCase().includes(q)))
+    const text = query.toLowerCase().trim(), words = text.split(/\s+/).filter(Boolean)
+    const score = (s: Setting) => {
+      const exact = [s.key, s.parameter.name, s.parameter.label, s.operationLabel].map(v => v.toLowerCase())
+      return exact.includes(text) ? 0 : exact.some(v => v.startsWith(text)) ? 1 : words.every(w => exact.some(v => v.includes(w))) ? 2 : 3
+    }
+    return this.settings.filter(s => (!category || s.category === category) && words.every(q => `${s.key} ${s.parameter.label} ${s.operationLabel} ${s.category} ${s.dependency}`.toLowerCase().includes(q))).sort((a, b) => text ? score(a) - score(b) : 0)
   }
   instances(setting: Setting, operations: Operation[]) { return operations.filter(o => (o.type === 'complexity' ? 'remesh' : o.type) === setting.type) }
   /** Availability is a projection only. Inactive values are never removed or reset. */

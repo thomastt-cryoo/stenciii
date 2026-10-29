@@ -56,7 +56,10 @@ test('real generation, quick parameters, original assets, STL export and rapid N
   await page.getByRole('spinbutton', { name: 'Stencil width', exact: true }).fill('120')
   await page.getByRole('spinbutton', { name: 'Base thickness', exact: true }).fill('3')
   await page.getByRole('spinbutton', { name: 'Bridge width', exact: true }).fill('2')
-  await page.getByRole('spinbutton', { name: 'Working detail', exact: true }).fill('400')
+  // Exact pixel resolution moved into All Settings; Quick Detail now uses honest style profiles.
+  await page.getByRole('button', { name: 'Exact settings', exact: true }).click()
+  await page.getByRole('spinbutton', { name: 'Working resolution (px) · artwork', exact: true }).fill('400')
+  await page.getByRole('button', { name: 'Close settings', exact: true }).click()
   await page.getByRole('switch', { name: 'Automatic threshold' }).uncheck()
   await page.getByRole('slider', { name: 'Threshold', exact: true }).fill('140')
   const doc = await saved(page)

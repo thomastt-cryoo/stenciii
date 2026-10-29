@@ -1,0 +1,208 @@
+[
+  {
+    "file": "simple-logo.svg",
+    "tags": [
+      "simple logo",
+      "SVG",
+      "interior islands",
+      "organic curves"
+    ],
+    "source": "Original deterministic M2 fixture; repository license",
+    "sha256": "0778e3caead6b775125da16f1e05fb3e49b73e50e2a4f9e4c38ff60f31c0d49e"
+  },
+  {
+    "file": "detailed-logo.svg",
+    "tags": [
+      "detailed logo",
+      "thin features",
+      "islands"
+    ],
+    "source": "Original deterministic M2 fixture; repository license",
+    "sha256": "7f05b3ca8cf26420babb7ea852ca84ad10491e1d3cb77313cf7027d83bc1e930"
+  },
+  {
+    "file": "line-illustration.svg",
+    "tags": [
+      "drawing",
+      "illustration",
+      "thin lines"
+    ],
+    "source": "Original deterministic M2 fixture; repository license",
+    "sha256": "ee249fd8b750fa4381a51763dcd9d22a21a1d49c169fc8e898c8dffef16a9053"
+  },
+  {
+    "file": "thin-lines.svg",
+    "tags": [
+      "fine detail",
+      "subpixel strokes"
+    ],
+    "source": "Original deterministic M2 fixture; repository license",
+    "sha256": "806ed893af7cfe280718c8dba5aedf0a8f352f13eadfb59e16c1ae7b5f09cdef"
+  },
+  {
+    "file": "lettering.png",
+    "tags": [
+      "lettering",
+      "interior islands"
+    ],
+    "source": "Original deterministic M2 fixture; repository license",
+    "sha256": "fe824e7df127e78c605b3b50c9b52e94bebdf8142b7f65366bb961c6ff519119",
+    "size": [
+      600,
+      260
+    ]
+  },
+  {
+    "file": "colour-graphic.png",
+    "tags": [
+      "colour graphic",
+      "overlap",
+      "threshold ambiguity"
+    ],
+    "source": "Original deterministic M2 fixture; repository license",
+    "sha256": "03bab30508b075d06347d066a782d22df562cac49a4acc0fb2e36309f2c601b1",
+    "size": [
+      400,
+      300
+    ]
+  },
+  {
+    "file": "transparent.png",
+    "tags": [
+      "transparent PNG",
+      "alpha",
+      "island"
+    ],
+    "source": "Original deterministic M2 fixture; repository license",
+    "sha256": "f68328ea310f7ae08f877978581fe24e0236868cc2a60a68bedff22cc5dfdc18",
+    "size": [
+      240,
+      240
+    ]
+  },
+  {
+    "file": "low-contrast.jpg",
+    "tags": [
+      "low contrast",
+      "JPG",
+      "automatic threshold"
+    ],
+    "source": "Original deterministic M2 fixture; repository license",
+    "sha256": "684021090809e38e713d56fedc8392fda48dbb79db99b9da1c03a8e3ac8ebc90",
+    "size": [
+      300,
+      240
+    ]
+  },
+  {
+    "file": "small-pixel.bmp",
+    "tags": [
+      "small image",
+      "BMP",
+      "pixel art",
+      "hard edges"
+    ],
+    "source": "Original deterministic M2 fixture; repository license",
+    "sha256": "9b235a313420f86a0b71a11d829683665cc3cd28564123a2b21fbe0c9c867771",
+    "size": [
+      32,
+      24
+    ]
+  },
+  {
+    "file": "high-resolution.png",
+    "tags": [
+      "high resolution",
+      "large image"
+    ],
+    "source": "Original deterministic M2 fixture; repository license",
+    "sha256": "f78b34c0f0005a7559409c97b04335ce74e717bc4dc075e0e37b70f469202175",
+    "size": [
+      3200,
+      2400
+    ]
+  },
+  {
+    "file": "nearly-empty.png",
+    "tags": [
+      "nearly-empty",
+      "edge case"
+    ],
+    "source": "Original deterministic M2 fixture; repository license",
+    "sha256": "46399b0e3f81167e4b45388f628fd1dc40e13eaaa84642dd01456aee468259eb",
+    "size": [
+      200,
+      160
+    ]
+  },
+  {
+    "file": "nearly-solid.png",
+    "tags": [
+      "nearly-solid",
+      "edge case"
+    ],
+    "source": "Original deterministic M2 fixture; repository license",
+    "sha256": "503f5c2f8cac3f5f2e12de1d9e6f2450c8cd10521c0a8b6212e3f01d590b9795",
+    "size": [
+      200,
+      160
+    ]
+  },
+  {
+    "file": "empty.png",
+    "tags": [
+      "empty",
+      "edge case"
+    ],
+    "source": "Original deterministic M2 fixture; repository license",
+    "sha256": "7ae8a6c58d4001f815a792b96715964b5ca8d8e752050ee57f03df700bd1dee2",
+    "size": [
+      120,
+      90
+    ]
+  },
+  {
+    "file": "solid.png",
+    "tags": [
+      "solid",
+      "edge case"
+    ],
+    "source": "Original deterministic M2 fixture; repository license",
+    "sha256": "f0078674a8a3a955e4664641459e06dd980d7d35c2207c6f6eb76eed1d041ea8",
+    "size": [
+      120,
+      90
+    ]
+  },
+  {
+    "file": "astronaut.png",
+    "tags": [
+      "portrait",
+      "face",
+      "photograph",
+      "multiple tones"
+    ],
+    "source": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.19.3/skimage/data/astronaut.png",
+    "license": "Public domain / no known copyright restrictions; see SOURCES.md",
+    "sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+    "size": [
+      512,
+      512
+    ]
+  },
+  {
+    "file": "coins.png",
+    "tags": [
+      "photograph",
+      "multiple tones",
+      "texture"
+    ],
+    "source": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.19.3/skimage/data/coins.png",
+    "license": "Public domain / no known copyright restrictions; see SOURCES.md",
+    "sha256": "f8d773fc9cfa6f4d8e5942dc34d0a0788fcaed2a4fefbbed0aef5398d7ef4cba",
+    "size": [
+      384,
+      303
+    ]
+  }
+]

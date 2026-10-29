@@ -1,6 +1,20 @@
 # Usage
 
-The project provides a Rust CLI and a browser-based node-graph studio. Both use the same Rust stencil engine.
+The project provides a Rust CLI and the node-free Stencil Studio. Both use the same Rust stencil engine. The original processing editor is retained only in the explicitly built developer regression harness.
+
+## Stencil Studio
+
+1. Drop PNG, JPG, BMP or SVG artwork, or select Choose Image. The original appears immediately.
+2. Choose Standard for everyday graphics, Smooth Vector for softer organic curves, or Crisp Raster for pixel-defined edges. Select Detail, automatic or manual paint selection, dimensions and bridge width.
+3. Press Make Stencil. After the first completed generation, adjustments update automatically. Draft previews are labelled; Export waits for a matching full-quality result.
+4. Inspect Stencil (the real STL from above), Compare (prepared artwork aligned with that model) or 3D. The top projection includes all heights, so raised bridges are visible even when absent on the bottom layer. Actual measured dimensions appear below the model; extra layers add to base thickness.
+5. Export STL. Save Project retains the original image bytes, active processing and each style's previous adjustments. Opening a project recalculates it. Undo and redo cover ordinary adjustments, artwork changes and style switches.
+
+Artwork tools provide crop percentages, clockwise rotation, flips, margin and style-appropriate cleanup through All Settings. Their order is crop, flip, rotate, paint selection, optional smoothing, cleanup/tracing, then stencil generation. Vector cleanup acts on traced shapes; raster cleanup acts on mask pixels. Cleanup can erase thin strokes or small holes; it starts disabled. Original view always shows the original image, while Compare uses the prepared image after framing.
+
+All Settings searches every original parameter. Adjustable controls edit the labelled instance; Reference entries explain specialist settings without pretending their editors are complete. Complex imported workflows keep their original processing and do not offer destructive style replacement. Traced-outline SVG export is available for vector workflows and is labelled **before bridge corrections**.
+
+Photographs usually need manual threshold and sometimes crop or cleanup. A single threshold cannot preserve all tones, and pixel-thin strokes may be physically too fragile. Review print notes and actual geometry before printing. Invalid facets block browser export; the existing advanced hardware fit-test defect remains documented in the M2 report.
 
 ## Command line
 

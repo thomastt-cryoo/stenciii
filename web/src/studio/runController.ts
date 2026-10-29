@@ -30,7 +30,8 @@ export class RunController<T> {
       const r = await this.port.run(graph, s => {
         if (mine !== this.ticket) return
         steps[s.node] = s.state
-        const activity = graph.nodes.find(n => n.id === s.node)?.type.replace(/_/g, ' ') ?? 'stencil'
+        const type = graph.nodes.find(n => n.id === s.node)?.type ?? ''
+        const activity = ({ source: 'artwork', transform: 'framing', threshold: 'paint selection', smooth: 'curves', remove_islands: 'cleanup', trace: 'outlines', stencil: 'stencil geometry', vector_stencil: 'stencil geometry' } as Record<string, string>)[type] ?? type.replace(/_/g, ' ')
         this.set({ progress: (s.n + (s.state.progress ?? 0)) / Math.max(1, s.total), activity: `Processing ${activity}` })
       })
       if (mine !== this.ticket) return
@@ -42,7 +43,8 @@ export class RunController<T> {
       this.set({ status: 'complete', progress: 1, activity: '', output: { generation: mine, signature, quality, value } })
     } catch (e) {
       if (mine !== this.ticket) return
-      this.set({ status: 'error', activity: '', error: String(e instanceof Error ? e.message : e) })
+      const message = String(e instanceof Error ? e.message : e)
+      this.set({ status: 'error', activity: '', error: /shapes contain no closed outlines/.test(message) ? 'No visible artwork was found. Try darker artwork, adjust paint selection, or invert the image.' : message })
     }
   }
 }

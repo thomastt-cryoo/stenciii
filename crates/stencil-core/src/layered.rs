@@ -402,18 +402,30 @@ pub(crate) fn layered_mesh(
                     let j = lp.tag[i];
                     if j > *plane {
                         // Vertical edges carry every plane that touches the column, so neighbouring walls share vertices.
-                        let mut poly =
-                            vec![vertex(v0, *plane, &mut mesh), vertex(v1, *plane, &mut mesh)];
-                        for m in column_levels(v1, *plane, j) {
-                            poly.push(vertex(v1, m, &mut mesh));
-                        }
-                        poly.push(vertex(v1, j, &mut mesh));
-                        poly.push(vertex(v0, j, &mut mesh));
-                        for m in column_levels(v0, *plane, j).into_iter().rev() {
-                            poly.push(vertex(v0, m, &mut mesh));
-                        }
-                        for t in 1..poly.len() - 1 {
-                            mesh.tris.push([poly[0], poly[t], poly[t + 1]]);
+                        // Zip the two vertical chains. A fan from the first corner
+                        // makes zero-area faces when its own column has intermediate
+                        // levels. Skipping those faces leaves an unsplit boundary edge.
+                        let levels = |v| {
+                            std::iter::once(*plane)
+                                .chain(column_levels(v, *plane, j))
+                                .chain(std::iter::once(j))
+                                .collect::<Vec<_>>()
+                        };
+                        let (left, right) = (levels(v0), levels(v1));
+                        let (mut a, mut b) = (0, 0);
+                        while a + 1 < left.len() || b + 1 < right.len() {
+                            let p = vertex(v0, left[a], &mut mesh);
+                            let q = vertex(v1, right[b], &mut mesh);
+                            let next_left = left.get(a + 1).copied().unwrap_or(u32::MAX);
+                            let next_right = right.get(b + 1).copied().unwrap_or(u32::MAX);
+                            let r = if next_left <= next_right {
+                                a += 1;
+                                vertex(v0, left[a], &mut mesh)
+                            } else {
+                                b += 1;
+                                vertex(v1, right[b], &mut mesh)
+                            };
+                            mesh.tris.push([p, q, r]);
                         }
                     }
                 }
@@ -638,6 +650,36 @@ fn layered_mesh_by_layer(
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn stepped_columns_have_closed_nonzero_faces() {
+        // Exhaust all small height maps, including both orientations of the
+        // intermediate column that previously produced degenerate fan faces.
+        for code in 0..256_u32 {
+            let heights: Vec<u32> = (0..4).map(|i| (code >> (2 * i)) & 3).collect();
+            if heights.iter().all(|&k| k == 3) {
+                continue;
+            }
+            let mesh = layered_mesh(&heights, 2, 2, 3, 0.37, 0.2).unwrap();
+            for t in &mesh.tris {
+                let [a, b, c] = t.map(|i| mesh.verts[i as usize]);
+                let u = [b[0] - a[0], b[1] - a[1], b[2] - a[2]];
+                let v = [c[0] - a[0], c[1] - a[1], c[2] - a[2]];
+                let area = (u[1] * v[2] - u[2] * v[1]).powi(2)
+                    + (u[2] * v[0] - u[0] * v[2]).powi(2)
+                    + (u[0] * v[1] - u[1] * v[0]).powi(2);
+                assert!(area > 0.0, "zero area for {heights:?}");
+            }
+            // At any elevation, diagonal-only contacts are not manifold solids.
+            let diagonal_contact = (0..3).any(|k| {
+                let filled: Vec<bool> = heights.iter().map(|&h| h <= k).collect();
+                filled[0] == filled[3] && filled[1] == filled[2] && filled[0] != filled[1]
+            });
+            if !diagonal_contact {
+                assert!(mesh.is_watertight(), "open mesh for {heights:?}");
+            }
+        }
+    }
 
     #[test]
     fn first_layer_flare_is_absent_above_its_taper() {

@@ -72,13 +72,14 @@ export function quickRecipe(doc: ProjectDocument) {
   try { graph = compileRecipe(doc) } catch { return null }
   const types = graph.nodes.map(n => n.type)
   const vector = types.includes('vector_stencil')
-  const expected = vector ? ['source', 'threshold', 'trace', 'vector_stencil'] : ['source', 'threshold', 'stencil']
+  const expected = ['source', ...(types.includes('transform') ? ['transform'] : []), 'threshold', ...(types.includes('smooth') ? ['smooth'] : []), ...(types.includes('morphology') ? ['morphology'] : []), ...(vector ? ['trace', ...(types.includes('remove_islands') ? ['remove_islands'] : []), 'vector_stencil'] : ['stencil'])]
   if (graph.nodes.length !== expected.length || expected.some(t => types.filter(x => x === t).length !== 1)) return null
   const chain = expected.map(t => graph.nodes.find(n => n.type === t)!)
   if (graph.edges.length !== chain.length - 1) return null
-  const ports = vector ? ['image', 'mask', 'shapes'] : ['image', 'mask']
+  const ports = chain.slice(0, -1).map(n => n.type === 'source' || n.type === 'transform' ? 'image' : ['trace', 'remove_islands'].includes(n.type) ? 'shapes' : 'mask')
   if (ports.some((p, i) => !graph.edges.some(e => e.from[0] === chain[i].id && e.from[1] === p && e.to[0] === chain[i + 1].id && e.to[1] === p))) return null
-  return { source: chain[0], threshold: chain[1], build: chain.at(-1)!, vector }
+  const find = (type: string) => chain.find(n => n.type === type)
+  return { source: chain[0], threshold: find('threshold')!, build: chain.at(-1)!, vector, transform: find('transform'), smoothing: find('smooth'), cleanup: find('remove_islands') ?? find('morphology'), trace: find('trace') }
 }
 
 export interface Command { label: string; before: ProjectDocument; after: ProjectDocument }
@@ -87,11 +88,14 @@ export class ProjectCommands {
   future: Command[] = []
   constructor(public current: ProjectDocument | null = null) {}
   reset(doc: ProjectDocument | null) { this.current = doc; this.past = []; this.future = [] }
-  apply(label: string, update: (doc: ProjectDocument) => ProjectDocument) {
+  apply(label: string, update: (doc: ProjectDocument) => ProjectDocument, merge = false) {
     if (!this.current) return false
     const after = update(this.current)
     if (JSON.stringify(after) === JSON.stringify(this.current)) return false
-    this.past.push({ label, before: this.current, after }); this.past = this.past.slice(-100)
+    const previous = this.past.at(-1)
+    if (merge && previous?.label === label && !this.future.length) previous.after = after
+    else this.past.push({ label, before: this.current, after })
+    this.past = this.past.slice(-100)
     this.future = []; this.current = after; return true
   }
   undo() { const c = this.past.pop(); if (!c) return false; this.future.push(c); this.current = c.before; return true }

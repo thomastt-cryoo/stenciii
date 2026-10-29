@@ -1,8 +1,8 @@
-# Stencil Studio — M1 workspace
+# Stencil Studio — M2 creative workflow
 
-The default app now provides a simple local workflow: choose an image, Make Stencil, inspect the actual 2D/3D result and export its STL. Light/dark themes, quick settings and lossless project open/save work. The Rust/WASM engine remains based on Graffiti Stencil Maker v2.9.4, source commit `5d8df15b798b859faf72248a35d156d6e9aaffc7`.
+Drop an image, **Make Stencil**, adjust and export. Choose Standard, Smooth Vector or Crisp Raster; after the first generation, adjustments automatically produce a fast draft and then a full-quality model. Original artwork, actual STL top projection, aligned comparison and interactive 3D make changes easy to inspect. Crop, rotate, flip and cleanup controls keep the original image intact. Light/dark themes and lossless project open/save remain local.
 
-See the [M1 completion report and screenshots](docs/M1_REPORT.md) for working features, test evidence and unfinished specialist scope. `npm run build` produces the customer-only app. `npm run e2e` explicitly builds a separate developer harness for the preserved original UI tests. Build instructions remain in INSTALL.md; the original node-editor usage below applies to that reference harness.
+See the [M2 report, recipes, evidence and limitations](docs/M2_REPORT.md), and the approved [M1 report](docs/M1_REPORT.md). The engine remains based on upstream v2.9.4 (`5d8df15b798b859faf72248a35d156d6e9aaffc7`), with a narrowly tested fix for raster wall triangulation. Specialist editors remain assigned to M3–M5. `npm run build` produces the customer-only app; `npm run e2e` explicitly builds a separate harness for the preserved original UI tests. Build instructions are in INSTALL.md. The original node-editor instructions below apply to the reference harness.
 
 - [Feature inventory](docs/FEATURE_INVENTORY.md)
 - [Complete feature and parameter mapping](docs/FEATURE_UI_MAPPING.md)
@@ -53,8 +53,7 @@ cd web
 npm run dev
 ```
 
-Drop an image onto the canvas, connect trace and stencil nodes, and export an STL or tiled ZIP. See [USAGE.md](USAGE.md)
-for the CLI flags and studio workflow.
+Drop an image, choose a style and press Make Stencil. Adjustments update automatically after the first generation. See [USAGE.md](USAGE.md) for the customer workflow and CLI flags.
 
 ## Features
 
