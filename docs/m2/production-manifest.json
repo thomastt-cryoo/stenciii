@@ -1,0 +1,89 @@
+{
+  "production_only": true,
+  "legacy_harness_emitted": false,
+  "regression_api_emitted": false,
+  "files": [
+    {
+      "path": "assets/engine.worker-CdHfCUo5.js",
+      "bytes": 3984,
+      "sha256": "3ecf49b3c2b58dbca58685404fa7d86d846d9a2120f1542928a599e261f3fe1f"
+    },
+    {
+      "path": "assets/index-BCwFDCYw.css",
+      "bytes": 21180,
+      "sha256": "61ed3653f6d42a76f7cc9e77961f1ef3d60827c4dbb559d5edcf6c25bbcafc85"
+    },
+    {
+      "path": "assets/index-CAnpcMIq.js",
+      "bytes": 360566,
+      "sha256": "54c98ace61c304bd9d8c928b00711ea79ab35263940916c3dfca28a430686fad"
+    },
+    {
+      "path": "assets/MeshPreview-DcSjN3ZE.js",
+      "bytes": 506545,
+      "sha256": "2c2579e8a30d1b4cb995f322e63098a6694a1d732643dd489cc65bc50d56f798"
+    },
+    {
+      "path": "assets/stencil_wasm-dvgyQ_7P.js",
+      "bytes": 7028,
+      "sha256": "385c580808c7ab6bd0ec2052f7e4a22d38b2e8dc3e072503509ccb4756dc8338"
+    },
+    {
+      "path": "assets/stencil_wasm_bg-BkpstZog.wasm",
+      "bytes": 4180927,
+      "sha256": "bc75c1876383cbe57a4893590096733f4b3e56d70bd15463aadf8b7c12c41111"
+    },
+    {
+      "path": "index.html",
+      "bytes": 413,
+      "sha256": "04eb8a8e3f196151b19d489b6fd6dc501fed4fb50eaa9c82cc28bd3760db5e16"
+    },
+    {
+      "path": "pkg-mt/.gitignore",
+      "bytes": 1,
+      "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+    },
+    {
+      "path": "pkg-mt/package.json",
+      "bytes": 268,
+      "sha256": "b499e085d253561f8090d9e20e2daf42cb440720132bde1e4421988cc9b3108b"
+    },
+    {
+      "path": "pkg-mt/snippets/wasm-bindgen-rayon-38edf6e439f6d70d/src/workerHelpers.js",
+      "bytes": 4562,
+      "sha256": "8a8c0844a50cfcef52c70273b61393d34946e03c3292cf475922f9e34e7614ba"
+    },
+    {
+      "path": "pkg-mt/stencil_wasm.d.ts",
+      "bytes": 5658,
+      "sha256": "4381249bf61a863dd21d2435303181560f2f590d71f8260e380983fdce268570"
+    },
+    {
+      "path": "pkg-mt/stencil_wasm.js",
+      "bytes": 23209,
+      "sha256": "da690f69bd1831dffee48bf8ed23fb58a68c6a418d5247809da0b8362bfda6c4"
+    },
+    {
+      "path": "pkg-mt/stencil_wasm_bg.wasm",
+      "bytes": 4384060,
+      "sha256": "7bc6d210dbeb77745b100922acf7aaffc454f404cd6e3aac994d68bb6aba7b92"
+    },
+    {
+      "path": "pkg-mt/stencil_wasm_bg.wasm.d.ts",
+      "bytes": 2664,
+      "sha256": "4eb054de80376d77b0b88327fe10d01a87116fe935f092972674e66c5e893bfe"
+    }
+  ],
+  "engine_builds": [
+    {
+      "path": "web/pkg/stencil_wasm_bg.wasm",
+      "bytes": 4180927,
+      "sha256": "bc75c1876383cbe57a4893590096733f4b3e56d70bd15463aadf8b7c12c41111"
+    },
+    {
+      "path": "web/public/pkg-mt/stencil_wasm_bg.wasm",
+      "bytes": 4384060,
+      "sha256": "7bc6d210dbeb77745b100922acf7aaffc454f404cd6e3aac994d68bb6aba7b92"
+    }
+  ]
+}

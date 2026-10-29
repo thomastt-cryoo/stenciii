@@ -1,0 +1,388 @@
+[
+  {
+    "mode": {
+      "n": 4,
+      "why": "threaded",
+      "version": "2.9.4"
+    },
+    "isolated": true,
+    "cases": [
+      {
+        "style": "standard",
+        "milliseconds": 378.2099999934435,
+        "stats": {
+          "bridge_mm": 1.6,
+          "bridge_pixels": 2,
+          "bridges_per_island": 1,
+          "first_layer_islands": 2,
+          "first_layer_taper_mm": 1,
+          "flip": false,
+          "grid_h": 0,
+          "grid_w": 0,
+          "height_mm": 163.2,
+          "islands_deleted": 0,
+          "islands_found": 2,
+          "islands_remaining": 0,
+          "layer_height_mm": 0.2,
+          "layers": 26,
+          "margin_mm": 8,
+          "min_first_layer_width_mm": 0,
+          "overhang_area_mm2": 0,
+          "plate_top_mm": 5.2,
+          "raised_bridges": true,
+          "stl_bytes": 139284,
+          "thickness_mm": 5,
+          "threshold": 0,
+          "triangles": 2784,
+          "watertight": true,
+          "width_mm": 200,
+          "z_bridging": "easy"
+        },
+        "mesh": {
+          "format": "binary STL",
+          "bytes": 139284,
+          "triangles": 2784,
+          "vertices": 1388,
+          "bounds_mm": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              200,
+              163.1999969482422,
+              5.199999809265137
+            ]
+          ],
+          "size_mm": [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ],
+          "signed_volume_mm3": 146206.76338452316,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        }
+      },
+      {
+        "style": "smooth",
+        "milliseconds": 644.6200000047684,
+        "stats": {
+          "bridge_mm": 1.6,
+          "bridge_pixels": 2,
+          "bridges_per_island": 1,
+          "first_layer_islands": 2,
+          "first_layer_taper_mm": 1,
+          "flip": false,
+          "grid_h": 0,
+          "grid_w": 0,
+          "height_mm": 163.2,
+          "islands_deleted": 0,
+          "islands_found": 2,
+          "islands_remaining": 0,
+          "layer_height_mm": 0.2,
+          "layers": 26,
+          "margin_mm": 8,
+          "min_first_layer_width_mm": 0,
+          "overhang_area_mm2": 0,
+          "plate_top_mm": 5.2,
+          "raised_bridges": true,
+          "stl_bytes": 305684,
+          "thickness_mm": 5,
+          "threshold": 0,
+          "triangles": 6112,
+          "watertight": true,
+          "width_mm": 200,
+          "z_bridging": "easy"
+        },
+        "mesh": {
+          "format": "binary STL",
+          "bytes": 305684,
+          "triangles": 6112,
+          "vertices": 3052,
+          "bounds_mm": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              200,
+              163.1999969482422,
+              5.199999809265137
+            ]
+          ],
+          "size_mm": [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ],
+          "signed_volume_mm3": 146235.20948296564,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        }
+      },
+      {
+        "style": "crisp",
+        "milliseconds": 361.1499999985099,
+        "stats": {
+          "bridge_mm": 1.6,
+          "bridge_pixels": 196,
+          "bridges_per_island": 1,
+          "first_layer_islands": 2,
+          "first_layer_taper_mm": 1,
+          "flip": false,
+          "grid_h": 440,
+          "grid_w": 540,
+          "height_mm": 162.96,
+          "islands_deleted": 0,
+          "islands_found": 2,
+          "islands_remaining": 0,
+          "layer_height_mm": 0.2,
+          "layers": 26,
+          "margin_mm": 8,
+          "min_first_layer_width_mm": 0,
+          "overhang_area_mm2": 26.89,
+          "plate_top_mm": 5.2,
+          "raised_bridges": true,
+          "stl_bytes": 452684,
+          "thickness_mm": 5,
+          "threshold": 0,
+          "triangles": 9052,
+          "watertight": true,
+          "width_mm": 200,
+          "z_bridging": "easy"
+        },
+        "mesh": {
+          "format": "binary STL",
+          "bytes": 452684,
+          "triangles": 9052,
+          "vertices": 4524,
+          "bounds_mm": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              200,
+              162.9629669189453,
+              5.199999809265137
+            ]
+          ],
+          "size_mm": [
+            200,
+            162.9629669189453,
+            5.199999809265137
+          ],
+          "signed_volume_mm3": 145641.04095010902,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        }
+      }
+    ]
+  },
+  {
+    "mode": {
+      "n": 1,
+      "why": "page is not cross-origin isolated (needs COOP/COEP headers)",
+      "version": "2.9.4"
+    },
+    "isolated": false,
+    "cases": [
+      {
+        "style": "standard",
+        "milliseconds": 244.10000000149012,
+        "stats": {
+          "bridge_mm": 1.6,
+          "bridge_pixels": 2,
+          "bridges_per_island": 1,
+          "first_layer_islands": 2,
+          "first_layer_taper_mm": 1,
+          "flip": false,
+          "grid_h": 0,
+          "grid_w": 0,
+          "height_mm": 163.2,
+          "islands_deleted": 0,
+          "islands_found": 2,
+          "islands_remaining": 0,
+          "layer_height_mm": 0.2,
+          "layers": 26,
+          "margin_mm": 8,
+          "min_first_layer_width_mm": 0,
+          "overhang_area_mm2": 0,
+          "plate_top_mm": 5.2,
+          "raised_bridges": true,
+          "stl_bytes": 139284,
+          "thickness_mm": 5,
+          "threshold": 0,
+          "triangles": 2784,
+          "watertight": true,
+          "width_mm": 200,
+          "z_bridging": "easy"
+        },
+        "mesh": {
+          "format": "binary STL",
+          "bytes": 139284,
+          "triangles": 2784,
+          "vertices": 1388,
+          "bounds_mm": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              200,
+              163.1999969482422,
+              5.199999809265137
+            ]
+          ],
+          "size_mm": [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ],
+          "signed_volume_mm3": 146206.76338452316,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        }
+      },
+      {
+        "style": "smooth",
+        "milliseconds": 449.30000000447035,
+        "stats": {
+          "bridge_mm": 1.6,
+          "bridge_pixels": 2,
+          "bridges_per_island": 1,
+          "first_layer_islands": 2,
+          "first_layer_taper_mm": 1,
+          "flip": false,
+          "grid_h": 0,
+          "grid_w": 0,
+          "height_mm": 163.2,
+          "islands_deleted": 0,
+          "islands_found": 2,
+          "islands_remaining": 0,
+          "layer_height_mm": 0.2,
+          "layers": 26,
+          "margin_mm": 8,
+          "min_first_layer_width_mm": 0,
+          "overhang_area_mm2": 0,
+          "plate_top_mm": 5.2,
+          "raised_bridges": true,
+          "stl_bytes": 305684,
+          "thickness_mm": 5,
+          "threshold": 0,
+          "triangles": 6112,
+          "watertight": true,
+          "width_mm": 200,
+          "z_bridging": "easy"
+        },
+        "mesh": {
+          "format": "binary STL",
+          "bytes": 305684,
+          "triangles": 6112,
+          "vertices": 3052,
+          "bounds_mm": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              200,
+              163.1999969482422,
+              5.199999809265137
+            ]
+          ],
+          "size_mm": [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ],
+          "signed_volume_mm3": 146235.20948296564,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        }
+      },
+      {
+        "style": "crisp",
+        "milliseconds": 288,
+        "stats": {
+          "bridge_mm": 1.6,
+          "bridge_pixels": 196,
+          "bridges_per_island": 1,
+          "first_layer_islands": 2,
+          "first_layer_taper_mm": 1,
+          "flip": false,
+          "grid_h": 440,
+          "grid_w": 540,
+          "height_mm": 162.96,
+          "islands_deleted": 0,
+          "islands_found": 2,
+          "islands_remaining": 0,
+          "layer_height_mm": 0.2,
+          "layers": 26,
+          "margin_mm": 8,
+          "min_first_layer_width_mm": 0,
+          "overhang_area_mm2": 26.89,
+          "plate_top_mm": 5.2,
+          "raised_bridges": true,
+          "stl_bytes": 452684,
+          "thickness_mm": 5,
+          "threshold": 0,
+          "triangles": 9052,
+          "watertight": true,
+          "width_mm": 200,
+          "z_bridging": "easy"
+        },
+        "mesh": {
+          "format": "binary STL",
+          "bytes": 452684,
+          "triangles": 9052,
+          "vertices": 4524,
+          "bounds_mm": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              200,
+              162.9629669189453,
+              5.199999809265137
+            ]
+          ],
+          "size_mm": [
+            200,
+            162.9629669189453,
+            5.199999809265137
+          ],
+          "signed_volume_mm3": 145641.04095010902,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        }
+      }
+    ]
+  }
+]

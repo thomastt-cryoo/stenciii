@@ -1,0 +1,13 @@
+{
+  "source_commit": "61a98108b2cab1d248585ef9c465abcde9fd54e6",
+  "run_id": 40805613840,
+  "url": "https://github.com/thomastt-cryoo/stenciii/actions/runs/40805613840",
+  "conclusion": "failure",
+  "jobs": [
+    {"id": 123223730668, "name": "rust", "conclusion": "success", "checks": ["cargo test --release --workspace", "CLI smoke test"]},
+    {"id": 123224558600, "name": "web", "conclusion": "success", "checks": ["single-thread WASM", "threaded WASM", "npm audit and regression build", "browser tests", "single-binary studio", "Pages artifact upload"]},
+    {"id": 123226701012, "name": "deploy", "conclusion": "failure", "failed_step": "actions/deploy-pages@v4", "http_status": 404}
+  ],
+  "failure_excerpt": "Failed to create deployment (status: 404) with build version 61a98108b2cab1d248585ef9c465abcde9fd54e6. Ensure GitHub Pages has been enabled: https://github.com/thomastt-cryoo/stenciii/settings/pages",
+  "assessment": "Build and test jobs succeeded. Failure is repository Pages deployment configuration; it is not an application build or test failure. No failing test was suppressed or deployment failure hidden."
+}

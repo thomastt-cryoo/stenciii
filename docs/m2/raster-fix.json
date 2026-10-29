@@ -1,0 +1,63 @@
+{
+  "fixture": "M0 ring.svg; --width 60 --thickness 2 --resolution 100; same defaults",
+  "before_M0": {
+    "format": "binary STL",
+    "bytes": 58084,
+    "triangles": 1160,
+    "vertices": 580,
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        60.0,
+        60.0,
+        2.200000047683716
+      ]
+    ],
+    "size_mm": [
+      60.0,
+      60.0,
+      2.200000047683716
+    ],
+    "signed_volume_mm3": 7015.034331881907,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 2,
+    "closed_oriented_mesh": false
+  },
+  "after_M2": {
+    "format": "binary STL",
+    "bytes": 58084,
+    "triangles": 1160,
+    "vertices": 580,
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        60.0,
+        60.0,
+        2.200000047683716
+      ]
+    ],
+    "size_mm": [
+      60.0,
+      60.0,
+      2.200000047683716
+    ],
+    "signed_volume_mm3": 7015.034331881907,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true
+  },
+  "signed_volume_unchanged": true,
+  "bounds_unchanged": true
+}

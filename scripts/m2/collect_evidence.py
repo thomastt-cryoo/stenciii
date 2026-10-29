@@ -10,7 +10,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 
 def portable(text):
     text = text.replace(str(ROOT).replace('\\', '\\\\'), '<workspace>').replace(str(ROOT), '<workspace>').replace(ROOT.as_posix(), '<workspace>')
-    return re.sub(r'\x1b\[[0-9;]*[A-Za-z]', '', text).replace('\r\n', '\n')
+    return re.sub(r'\x1b\[[0-9;]*[A-Za-z]', '', text).replace('\r\n', '\n').rstrip() + '\n'
 
 
 def browser(path):
@@ -42,6 +42,9 @@ for name, filename in [('complete_regression', 'm2-e2e-final.json'), ('productio
     if path.exists():
         results['browser_runs'][name] = browser(path)
 (OUT / 'test-results.json').write_text(json.dumps(results, indent=2) + '\n', encoding='utf-8')
+audit = ROOT / 'sandbox/m2-npm-audit.json'
+if audit.exists():
+    (OUT / 'npm-audit.json').write_text(json.dumps(json.loads(audit.read_text(encoding='utf-8-sig')), indent=2) + '\n', encoding='utf-8')
 (OUT / 'logs').mkdir(exist_ok=True)
 for filename in ['m2-rust-tests.log', 'm2-native-build.log', 'm2-wasm-st.log', 'm2-wasm-mt.log', 'm2-regression-build.log', 'm2-e2e-final.log', 'm2-production-build.log', 'm2-production-tests.log', 'm2-quality-final.log', 'm2-embedded-build.log']:
     source = ROOT / 'sandbox' / filename

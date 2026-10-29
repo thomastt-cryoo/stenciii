@@ -1,0 +1,27 @@
+
+> stencil-studio@2.9.4 build:regression
+> tsc --noEmit && node scripts/build-regression.mjs
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 224 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/regression-api.html                       0.33 kB │ gzip:     0.23 kB
+dist/legacy.html                               0.53 kB │ gzip:     0.31 kB
+dist/index.html                                0.57 kB │ gzip:     0.32 kB
+dist/assets/engine.worker-CdHfCUo5.js          3.98 kB
+dist/assets/stencil_wasm-dvgyQ_7P.js           7.02 kB
+dist/assets/stencil_wasm_bg-BkpstZog.wasm  4,180.92 kB │ gzip: 1,776.55 kB
+dist/assets/studio-B5kJrpmp.css               21.14 kB │ gzip:     4.90 kB
+dist/assets/legacy-BLJd1lma.css               31.32 kB │ gzip:     6.44 kB
+dist/assets/engineRegression-DCFiIkhF.js       0.06 kB │ gzip:     0.08 kB
+dist/assets/MeshPreview-ozZfqIxf.js            4.39 kB │ gzip:     2.10 kB
+dist/assets/api-xWPW8cJ4.js                    5.11 kB │ gzip:     2.20 kB
+dist/assets/Viewer3D-N9KaM83S.js              13.32 kB │ gzip:     5.40 kB
+dist/assets/preload-helper-CvQiH4Mu.js       145.32 kB │ gzip:    47.53 kB
+dist/assets/studio--5VWOn7E.js               210.19 kB │ gzip:    29.43 kB
+dist/assets/legacy-DK4bB1Uz.js               263.39 kB │ gzip:    86.23 kB
+dist/assets/STLLoader-CGn4Gf2y.js            505.26 kB │ gzip:   126.49 kB
+
+✓ built in 991ms
