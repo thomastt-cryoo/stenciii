@@ -154,7 +154,12 @@ test('wide transparent artwork survives repeated rotations, crop panning and und
  await expect(stage).toHaveAttribute('data-ready','true')
  const bytes=async()=>page.locator('.crop-result img').evaluate(async e=>Array.from(new Uint8Array(await(await fetch((e as HTMLImageElement).src)).arrayBuffer())))
  const before=await bytes()
- for(let i=0;i<4;i++){await dialog.getByRole('button',{name:'Rotate 90°',exact:true}).click();await expect(stage).toHaveAttribute('data-ready','true')}
+ for(let i=0;i<4;i++){
+  await dialog.getByRole('button',{name:'Rotate 90°',exact:true}).click()
+  await expect.poll(()=>page.evaluate(()=>JSON.parse(localStorage.getItem('stencil-studio.project.v1')!).graph.nodes.find((n:any)=>n.type==='transform').params.turn)).toBe(String((i+1)*90%360))
+  await expect(stage).toHaveAttribute('data-ready','true')
+  await expect(stage.locator('.stage-state')).toContainText(i%2===0?'41 × 650 px':'650 × 41 px')
+ }
  expect(await bytes()).toEqual(before)
  await dialog.getByRole('button',{name:'Pan artwork',exact:true}).click();const surface=(await page.locator('.crop-surface').boundingBox())!,plane=page.locator('.crop-plane'),old=(await plane.boundingBox())!
  await page.mouse.move(surface.x+surface.width/2,surface.y+surface.height/2);await page.mouse.down();await page.mouse.move(surface.x+surface.width/2+30,surface.y+surface.height/2+15);await page.mouse.up();const moved=(await plane.boundingBox())!

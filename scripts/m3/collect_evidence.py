@@ -24,6 +24,7 @@ summary = {'date_dubai': '2026-10-29', 'approved_m2_base': '48490e778d88408c070a
            'browser_runs': {}, 'known_development_corrections': [
                'M2 CI screenshot waited for the full-quality canvas before comparing smooth/flat shading; assertion retained.',
                'Visual crop test scoped rotation buttons to the crop dialog.',
+               'The initial new visual test used an obsolete Remove specks label; its selector now uses the actual Remove small shapes label. The final 141-test run passes.',
                'Intermediate worker construction uses a static Vite URL so production emits JavaScript, not raw TypeScript.',
                'Round-corner coverage fixture uses the verified direction-change corner threshold; all 41 fields now change emitted bytes.',
                'Corpus report writes once after measurement to avoid a transient Windows file lock.',
@@ -37,7 +38,7 @@ for name in ['full-browser','final-browser','production-tests']:
 (OUT / 'test-results.json').write_text(json.dumps(summary, indent=2)+'\n', encoding='utf-8')
 audit = ROOT / 'sandbox/m3-npm-audit.json'
 if audit.exists(): (OUT / 'npm-audit.json').write_text(json.dumps(json.loads(audit.read_text(encoding='utf-8-sig')),indent=2)+'\n',encoding='utf-8')
-assets = list((OUT / 'examples').glob('*'))
+assets = [p for p in (OUT / 'examples').glob('*') if p.suffix in ['.png','.svg','.stl']]
 assets += [ROOT / f'sandbox/m3/{name}' for name in ['text.stl','text-native.stl','branched.stl','long-chain.stl','text-outlines.svg','long-outlines.svg']]
 validation={p.relative_to(ROOT).as_posix():inspect(p) for p in assets if p.is_file()}
 (OUT / 'artifact-validation.json').write_text(json.dumps(validation,indent=2)+'\n',encoding='utf-8')
@@ -60,5 +61,6 @@ for c in coverage['cases']:
     seen.add(kind)
     ext='svg' if 'svg' in c['before']['mime'] else 'png'
     gallery.append(f"| `{c['key']}` → {json.dumps(c['changed_to'])} | ![Before](examples/{kind}-before.{ext}) | ![After](examples/{kind}-after.{ext}) |".replace('\n',' '))
+gallery+=['','## Openable demonstrations','','Download [text-project.json](examples/text-project.json) or [long-chain-project.json](examples/long-chain-project.json), then choose Open Project in Stencil Studio. The complete saved preparation is retained. The text demo also has an independently validated [STL](examples/text-stencil.stl) and [pre-bridge traced SVG](examples/text-outlines.svg).']
 (OUT / 'EXAMPLES.md').write_text('\n'.join(gallery)+'\n',encoding='utf-8')
 print(f"Rust {summary['rust']}; {len(validation)} independently inspected artifacts; 41/41 real output changes.")
