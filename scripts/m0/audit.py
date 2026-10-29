@@ -193,7 +193,7 @@ def main():
     before = current.split("<!-- BEGIN GENERATED PARAMETER MATRIX -->")[0].rstrip()
     outputs[target] = before + "\n\n" + "\n".join(text) + "\n"
     # Record every pinned source file, including license/font binaries; do not include generated build assets.
-    archive = tarfile.open(fileobj=io.BytesIO(subprocess.check_output(["git", "archive", BASE], cwd=ROOT)))
+    archive = tarfile.open(fileobj=io.BytesIO(subprocess.check_output(["git", "-c", "core.autocrlf=false", "archive", BASE], cwd=ROOT)))
     files = sorted(m.name for m in archive.getmembers() if m.isfile())
     manifest = []
     for f in files:

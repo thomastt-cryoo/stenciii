@@ -1,92 +1,92 @@
 [
   {
     "path": ".github/workflows/ci.yml",
-    "bytes": 3790,
-    "sha256": "ba8e4ab54647c153c0a03e7570a64e46219b8f123be0fb7878a92270da49801c",
+    "bytes": 3693,
+    "sha256": "256905b3757a6b090fa8d994cd3848a2339041b2f3c68ac37c961b5992963df0",
     "lines": 97
   },
   {
     "path": ".github/workflows/release.yml",
-    "bytes": 2616,
-    "sha256": "60b9b78b52f5f0040c925ae10868d516bb879d51cdecaecbd82adc188adc15c0",
+    "bytes": 2551,
+    "sha256": "92f2490c51eb92139cb7a3135ece123e67385c8bc0a9978dbbb0f8a5eefee89b",
     "lines": 65
   },
   {
     "path": ".gitignore",
-    "bytes": 227,
-    "sha256": "58d4bfb88110368ca57c13a2141045bab9f6bbc0bcfb4526ac69bce406c5eab2",
+    "bytes": 210,
+    "sha256": "41fcf93198fda4a3bef44a010f4f61642694a9a5be25418c024fe833e3442177",
     "lines": 17
   },
   {
     "path": "Cargo.lock",
-    "bytes": 31465,
-    "sha256": "3363eaa327a908f0acca27033b01e6d676999bbe0f13b623f9c2dc37bc83bd96",
+    "bytes": 30282,
+    "sha256": "298f6b1fda1eabaf9e4f0407c3c631aa171ae917f686c81f7f1c3ace3fcaa4d5",
     "lines": 1183
   },
   {
     "path": "Cargo.toml",
-    "bytes": 203,
-    "sha256": "2435748bde8d0eccbb0d957c805312bc5ccf45bfad7973b50ea61cacc7de4eee",
+    "bytes": 195,
+    "sha256": "452304996300e4af4ba0f9d93f0c7bd362c5e78ae03fb87075c9ebc77251a334",
     "lines": 8
   },
   {
     "path": "INSTALL.md",
-    "bytes": 6622,
-    "sha256": "016d3f64d6907048b687d1d8bf4345d30eb3cbd4f96a5d9f01f36f0a511b75b5",
+    "bytes": 6508,
+    "sha256": "1a4fa8fe10bab713a5edc8d2d7b9a6892654bfe4c98c4c59fc98d249e01b1695",
     "lines": 114
   },
   {
     "path": "LICENSE",
-    "bytes": 1235,
-    "sha256": "436a6d536138f203ac333858cff92a568be62797752b3adb94bcaa0f6ffe7ef6",
+    "bytes": 1211,
+    "sha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
     "lines": 24
   },
   {
     "path": "PARAMETERS.md",
-    "bytes": 19608,
-    "sha256": "79c844c9e64977c0b7b66518e9b17da27f67eed73a8ed0567c0b545d728360fd",
+    "bytes": 19267,
+    "sha256": "01625f36f11be79bb023eb11c976458e04b8925b80566518374ab02c10d5e772",
     "lines": 341
   },
   {
     "path": "README.md",
-    "bytes": 2533,
-    "sha256": "47ebd5fb6f794d0ee107815f7408f39ac79edad4f7ea7e91788855af0f4d195f",
+    "bytes": 2464,
+    "sha256": "03821a3b90a07c9fb884e7e8952233c484aeeabef3908088a9c42d72de32f6bf",
     "lines": 69
   },
   {
     "path": "USAGE.md",
-    "bytes": 31529,
-    "sha256": "f949b76003c347699033e191af5a6314723109e1d85403fd9990744350be051c",
+    "bytes": 31327,
+    "sha256": "c252a7a0b4dad8dc9430e64049f8a4dd16d7264164379a5e095e183dd4cebdad",
     "lines": 202
   },
   {
     "path": "crates/stencil-cli/Cargo.toml",
-    "bytes": 640,
-    "sha256": "c3dded6cbe38e93d584a00c7fc91bc9dc3895d07acb6c9cc7dc417fe06e217bf",
+    "bytes": 618,
+    "sha256": "6dcd7b72ee4d1dff49e632554f22ac19032ac7d48ec75a0e3ef1c3157bcd2b3b",
     "lines": 22
   },
   {
     "path": "crates/stencil-cli/src/main.rs",
-    "bytes": 36867,
-    "sha256": "c67c05a1768ab3d0db7b34ed1ee21e63902a42d0ca3ff726fef2bd60303af31b",
+    "bytes": 35886,
+    "sha256": "de0892525c1c9f085c5ec8e9820e6df3aefeb86992e130021df6fa1b951a95d3",
     "lines": 981
   },
   {
     "path": "crates/stencil-cli/src/studio.rs",
-    "bytes": 5213,
-    "sha256": "509d14aaab75922913e99d44f5caaff686873950114a5b50845f900c82a92bcf",
+    "bytes": 5074,
+    "sha256": "06bcaec7a6220512009942a54aaf909aa39539476d97132cbb12557a0beab92d",
     "lines": 139
   },
   {
     "path": "crates/stencil-cli/tests/cli.rs",
-    "bytes": 13570,
-    "sha256": "93f832d6f91595c5a3580caf1cc103a4438f67b300f91ea16af2c93df1398dfe",
+    "bytes": 13141,
+    "sha256": "b245cf9383254598857795821a5b551434adf08133381a9f56845a23e58f576b",
     "lines": 429
   },
   {
     "path": "crates/stencil-core/Cargo.toml",
-    "bytes": 604,
-    "sha256": "ff94ebdb3a64275bae9c334a278e9280c3a89ba49c10a194ae00c55875b95deb",
+    "bytes": 584,
+    "sha256": "de60a285edc4d6cd234d3b50fb1062b091d35e5247db058d4342a7b8ca801d08",
     "lines": 20
   },
   {
@@ -103,290 +103,290 @@
   },
   {
     "path": "crates/stencil-core/fonts/LICENSE-DejaVu.txt",
-    "bytes": 3937,
-    "sha256": "baa2e5e5cdb29e9052bbe4e171b2feb4b3314116ef9032fe11bd874c803cc815",
+    "bytes": 3859,
+    "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9",
     "lines": 78
   },
   {
     "path": "crates/stencil-core/src/colour.rs",
-    "bytes": 18048,
-    "sha256": "3c21cf997b5b1151e9ca21a2bf3acbfbd0ad4c9ed4932d727e76bb77979d5798",
+    "bytes": 17469,
+    "sha256": "bd5ae951bcd5825f8782ba218a738d971e8d6f37593ffd2c245e35f0b0d73312",
     "lines": 579
   },
   {
     "path": "crates/stencil-core/src/decimate.rs",
-    "bytes": 9937,
-    "sha256": "a1c59818d56dfd2ccfa5420693933cd42aa6aed46b81fda477eae06109521df1",
+    "bytes": 9609,
+    "sha256": "798b244fd434fb0d98ad743214a86359043a4c787764c56a5290e162deaa6c0e",
     "lines": 328
   },
   {
     "path": "crates/stencil-core/src/decode.rs",
-    "bytes": 3007,
-    "sha256": "483770b7a1d4535aa5516ec2bffa540e635fabb80f3059ee0cacd755d3b1508c",
+    "bytes": 2916,
+    "sha256": "718c499f8dab4ac01b4a55c73cd7a303247d2a518207ded2217f86e77cd94340",
     "lines": 91
   },
   {
     "path": "crates/stencil-core/src/fasthash.rs",
-    "bytes": 1219,
-    "sha256": "48e353fe49af789ffbaa8b0995af10d4453748e01e280f0aa8382c526828da9a",
+    "bytes": 1175,
+    "sha256": "bfa5c654059296a66a696a305259efc129e08fe9f35f8ba7d2f5680a754027c1",
     "lines": 44
   },
   {
     "path": "crates/stencil-core/src/graph.rs",
-    "bytes": 24153,
-    "sha256": "1bfb655b083c0cb84a5fbe5eccdb1cf268ba409fcc3a2d15e5b1bf1e7257cb9f",
+    "bytes": 23546,
+    "sha256": "df11a612ab2442bbc4da428081fae75c59f3a3e1a013c4d94d82743908a465f0",
     "lines": 607
   },
   {
     "path": "crates/stencil-core/src/graph/catalogue.rs",
-    "bytes": 43947,
-    "sha256": "0123c9a32bd6132a7ef1e27b8baf19663d92b53956f13c02c34950952834a3b4",
+    "bytes": 43193,
+    "sha256": "7850869607d2822c204b7e763c23300f1c589581e69be18cd3a12f48b454bb38",
     "lines": 754
   },
   {
     "path": "crates/stencil-core/src/graph/colour_set.rs",
-    "bytes": 4716,
-    "sha256": "a8699394d3970560b2fc458f98c72c2f6b9efaa5eeaeb50acc5e6d7bc7d8f40e",
+    "bytes": 4598,
+    "sha256": "4c49cc26a05c2b723926760117b61172123d127e554130c0468618afe9ba6d08",
     "lines": 118
   },
   {
     "path": "crates/stencil-core/src/graph/fragments.rs",
-    "bytes": 6448,
-    "sha256": "0483a127d5eeaddeed8cc75ce01a83d5ecd367e7678d05b8ac254d1b601fc1e5",
+    "bytes": 6279,
+    "sha256": "7599affe38986a6c4e690dac654a134f72c6bbf99565f6d677b58793783cf03e",
     "lines": 169
   },
   {
     "path": "crates/stencil-core/src/graph/nodes.rs",
-    "bytes": 52592,
-    "sha256": "1f2cb9cfae2b3ade1a5289e2fa73312aaad815d65ffaa5560b6322aae68c5444",
+    "bytes": 51155,
+    "sha256": "f73a8ec7693832afd46f9e51bc287f0462f13a62e110a5d751fe42d77a298aee",
     "lines": 1437
   },
   {
     "path": "crates/stencil-core/src/graph/tests.rs",
-    "bytes": 48848,
-    "sha256": "c78701f82f604b77ca9afd1d22f75e01e3d0e6317b2421dfd3f15d3fd2c36fcf",
+    "bytes": 47625,
+    "sha256": "f416362feed84e196e287834496025c89cdae5c5629a314d383f2fc6f3c8d963",
     "lines": 1223
   },
   {
     "path": "crates/stencil-core/src/hardware.rs",
-    "bytes": 30629,
-    "sha256": "0188ecf6b2bc808e98948630573b8f23927c9b86ae63703b4d084a13b17134dc",
+    "bytes": 29704,
+    "sha256": "b7f19c53707ed3310d6a1348d4ad30e3470f5e9ab9a537fc3e719f21bdd9edbf",
     "lines": 925
   },
   {
     "path": "crates/stencil-core/src/imageinfo.rs",
-    "bytes": 10759,
-    "sha256": "96197923938ce3dabd78bfc8db6f3c1605f75504a9ff0b3a64aa6173ad764042",
+    "bytes": 10459,
+    "sha256": "266c54db2da0f8e16f5e5ba15d1bf1c3570c333ad43be605489c5128020554be",
     "lines": 300
   },
   {
     "path": "crates/stencil-core/src/islands.rs",
-    "bytes": 17834,
-    "sha256": "f3d940d956aa09a90e9ef5ffa1d811dc127adfaf4f53a2365219973ceda99aa4",
+    "bytes": 17324,
+    "sha256": "c46ccca588d9004499f7e8da854bd98f62f9822c11ce57534bf6e00fce641df2",
     "lines": 510
   },
   {
     "path": "crates/stencil-core/src/layered.rs",
-    "bytes": 23730,
-    "sha256": "0681510b13e1c5e874b49d686b217c897001851ed84bd27e9d9335474b5a4d6d",
+    "bytes": 23074,
+    "sha256": "cf573c7ce838c8dc2639cbd9e61a140379a2fd9d34a3b4c99d3c749188d44bd1",
     "lines": 656
   },
   {
     "path": "crates/stencil-core/src/lib.rs",
-    "bytes": 23312,
-    "sha256": "e16a9068f0bd53ed6a04735d1cede1bb3c9ba1620cb2725261dd79353162b03b",
+    "bytes": 22631,
+    "sha256": "e1f64c9b91d50634f29bb0e64ff20fa7303e2f86b43e6d61d6ad8e254a7c4a93",
     "lines": 681
   },
   {
     "path": "crates/stencil-core/src/mesh.rs",
-    "bytes": 17094,
-    "sha256": "0fbbd5b07b817dafc49feaa49a5a1975e8be767e95f4dd5889c2fb53333a528b",
+    "bytes": 16618,
+    "sha256": "ea55126226a0157690bd69a197c2fde6d3de3be7aa208073124ec3973a29c5ec",
     "lines": 476
   },
   {
     "path": "crates/stencil-core/src/morphology.rs",
-    "bytes": 18268,
-    "sha256": "e94eb2382be2f190f18879483f91fdcbd691be672faf81de61b90a7b12fc2c34",
+    "bytes": 17739,
+    "sha256": "4661fa7f6b62beb9ad4d15ccad94a526b2ab3cea45c0d8aeb622d0025e7c0c5c",
     "lines": 529
   },
   {
     "path": "crates/stencil-core/src/par.rs",
-    "bytes": 2127,
-    "sha256": "8e6f0aae31d451897e1d1724e03c34bad1f959542d0e310ea1c984db7c583482",
+    "bytes": 2072,
+    "sha256": "2d0bafceec0262f2bb572e2b9cd722d32f0eb0a22da809d4e4aacd7902813456",
     "lines": 55
   },
   {
     "path": "crates/stencil-core/src/progress.rs",
-    "bytes": 1294,
-    "sha256": "ffab4091f299d35c0d7c570eb69b9abbe9c68d453ab06c5e0acd85eaad90afb2",
+    "bytes": 1250,
+    "sha256": "dd8e839c2c5e4ebaa4a14f06c80468d31fd6f4b198d11b4b1fab1e4446a3ad59",
     "lines": 44
   },
   {
     "path": "crates/stencil-core/src/remesh.rs",
-    "bytes": 12761,
-    "sha256": "bcea212074de0421ac41634efa30dc3b339de68c336877c8eccc844a8db1a520",
+    "bytes": 12405,
+    "sha256": "7fd55e07f78558e867f5d233189a22edf0e54568ccc7f81a7a5ce4db9b564f65",
     "lines": 356
   },
   {
     "path": "crates/stencil-core/src/remesh/rebuild.rs",
-    "bytes": 18966,
-    "sha256": "eb9c88b651dd6e4637ed30d18efd16b1a0e95dcc3a4a8431f74b9d015efdb59d",
+    "bytes": 18472,
+    "sha256": "5da595288b371d06d93e5bb411ef296e3e1a59e87354276b4ddceee5281f5ceb",
     "lines": 494
   },
   {
     "path": "crates/stencil-core/src/remesh/simplify.rs",
-    "bytes": 10158,
-    "sha256": "2e90e61862cc3a05cbcda5336b3e0120ba622e943150d112959ffb6b945193d0",
+    "bytes": 9870,
+    "sha256": "d1f17725c8dfc78b99967852fb639d2754855938565eef3215715bc157ec9fd1",
     "lines": 288
   },
   {
     "path": "crates/stencil-core/src/report.rs",
-    "bytes": 9252,
-    "sha256": "fd055e4b6e9dd8fb7e0544b412d147bca7a6122c3c69068c25b3d7b5bd2ba1bf",
+    "bytes": 9001,
+    "sha256": "5e0bf1df31c92eb280ebd2162feca33730761bd36d75d74b106aacc77580b8b8",
     "lines": 251
   },
   {
     "path": "crates/stencil-core/src/ring.rs",
-    "bytes": 22568,
-    "sha256": "8b971cb4f652c96858af3ad7fe1ea456d724c8a0f477fc301fa4b797d38e22c0",
+    "bytes": 21932,
+    "sha256": "ff904aa03d9d75fb009ec83743a9b31da0af5f9529a11f30e0ae371334933519",
     "lines": 636
   },
   {
     "path": "crates/stencil-core/src/segindex.rs",
-    "bytes": 6834,
-    "sha256": "79a813285bb601f861a36531c50c7430f761fa52778f7404cf38e082975ca799",
+    "bytes": 6641,
+    "sha256": "f4bca6295c47d2a64d5539a5f874ea2d837cf0ec419bceb02cef87cea99465bd",
     "lines": 193
   },
   {
     "path": "crates/stencil-core/src/shape_edit.rs",
-    "bytes": 14839,
-    "sha256": "4e7f858cd9d853fe9ba22a77f4b9d2e18a2bb3f7bd9f93e0d0564df1ae2375db",
+    "bytes": 14363,
+    "sha256": "57f1e1a2c924f7395da95f63861d2c48a3ab7f275d88d48fb721e35a3bfda756",
     "lines": 476
   },
   {
     "path": "crates/stencil-core/src/smooth.rs",
-    "bytes": 3088,
-    "sha256": "50f5ca968ddcec2f9d484cf6c5cebda18bc951319acf4bfbb7fa49dd5d2fce9c",
+    "bytes": 2999,
+    "sha256": "c65c1c0883a8b3aa9a88b37964065d685a1a4b024e352c018c5d0bdfa275b1dc",
     "lines": 89
   },
   {
     "path": "crates/stencil-core/src/svg.rs",
-    "bytes": 2303,
-    "sha256": "62e811fdea3ca89692126d908a308312573ec84461c385eda45be9dccd104158",
+    "bytes": 2241,
+    "sha256": "8399fdbc17325631b7b9706093b5b702e8eb5c7e1e79cd8782080839d4dc4334",
     "lines": 62
   },
   {
     "path": "crates/stencil-core/src/text.rs",
-    "bytes": 4046,
-    "sha256": "4b2da5b27e5fd3799004f7fedaae4b143f34b8964bc79222a2f170b78f1a2662",
+    "bytes": 3938,
+    "sha256": "b59bfa3f08ba613d166f1170a92a2d18bc75a31831f16ba1575f115a7850d6d9",
     "lines": 108
   },
   {
     "path": "crates/stencil-core/src/thin.rs",
-    "bytes": 8346,
-    "sha256": "d63fd39440e9da3a75a58c611bbb722293620d4b290eca0fbc371ec9032fcf1f",
+    "bytes": 8085,
+    "sha256": "05273ee3b801a760fcb33b99070b9bd8e2642111a1848be00cc85b28704bbc12",
     "lines": 261
   },
   {
     "path": "crates/stencil-core/src/tile_bridge.rs",
-    "bytes": 8182,
-    "sha256": "06b90d50ff58df33fa2971e4ae8e524081d1a0a97e44195022997a44057ef318",
+    "bytes": 7949,
+    "sha256": "8a6d5c9dda6dcbbfe777ecf58d5a350776d727d61a143d358082af30d9fbef1d",
     "lines": 233
   },
   {
     "path": "crates/stencil-core/src/tile_first.rs",
-    "bytes": 50754,
-    "sha256": "79872b014ee908b83704a5e28444043240a29b707d8ad5898736423991e75e7d",
+    "bytes": 49317,
+    "sha256": "e013c523768227e8a2b2abe2d195e701bf72bff00313b15c99d103e01e8a3982",
     "lines": 1437
   },
   {
     "path": "crates/stencil-core/src/tiles.rs",
-    "bytes": 41280,
-    "sha256": "12078bd7691e9f0e02e5d777690a023695beae121f503870745052b564bb9cf7",
+    "bytes": 40216,
+    "sha256": "e3f28c3a69f295d1c593da2b6e3b908297ca1daba0a68b7e69b3670676bba44a",
     "lines": 1064
   },
   {
     "path": "crates/stencil-core/src/trace.rs",
-    "bytes": 16166,
-    "sha256": "029b8d7fdc94bd1865471d47f7371f0250218b1e579a3589c6b696a38e78e622",
+    "bytes": 15683,
+    "sha256": "aae09ae90432c248887a6b3df7717505a22c5b81aaffbb8930c69c0552ca6f02",
     "lines": 483
   },
   {
     "path": "crates/stencil-core/src/transform.rs",
-    "bytes": 6690,
-    "sha256": "a141b8c73082ec6bbb66e8beebe8e126535ec5caae67b7d5276460d3b0561e2b",
+    "bytes": 6479,
+    "sha256": "d813626a2c829624863e8ce1b3da8c072e3b9c04a58374d0ac75a056ad8dbe3d",
     "lines": 211
   },
   {
     "path": "crates/stencil-core/src/vector_stencil.rs",
-    "bytes": 32289,
-    "sha256": "d840734ec8274a99298556276069dd1c7e660c16d8b2e4a46f1b44ee7dd28680",
+    "bytes": 31441,
+    "sha256": "331325b45bc55d2b9618d2ba5b1a3f00306c93541a3c9da2e0e3a0127992c219",
     "lines": 848
   },
   {
     "path": "crates/stencil-core/src/vector_stencil/repair.rs",
-    "bytes": 22210,
-    "sha256": "b3cec9b17e4cd6cd10ca91922c7bc931448efe39cc3b3394829be7f97b1db9d6",
+    "bytes": 21642,
+    "sha256": "953b20f02917cee34788965c4f6c74c6c7359a622959caa46dc8592eb21bb842",
     "lines": 568
   },
   {
     "path": "crates/stencil-core/src/vector_stencil/spread.rs",
-    "bytes": 11609,
-    "sha256": "453d5481a1ab68f036984bcd0858e73d6d8140f7cc7ea97ce328096595c1da11",
+    "bytes": 11308,
+    "sha256": "b15aa02fe25f666e34c6d65e436697cbbeb86d8651fe943f568d2fa12c65476e",
     "lines": 301
   },
   {
     "path": "crates/stencil-core/src/vector_stencil/tests.rs",
-    "bytes": 11120,
-    "sha256": "913672cb01846fbfe8f07e5909d8febf6c4080a714ab6424492eb58a9a34c875",
+    "bytes": 10774,
+    "sha256": "b1865019c9d9ec1fab515360e55587369614a4c486e17481bfb0f24fb8693cdd",
     "lines": 346
   },
   {
     "path": "crates/stencil-core/src/zip.rs",
-    "bytes": 5646,
-    "sha256": "d12c5cc080f0bcf5147c5cc5efd7292af2aa202e6f2ef23cc0635e61f80cb282",
+    "bytes": 5499,
+    "sha256": "b908fee3740ad2dba9b6240f9f479f98a83f0cc81edf89fa64027c2b3eed02cb",
     "lines": 147
   },
   {
     "path": "crates/stencil-core/tests/findings_parity.rs",
-    "bytes": 949,
-    "sha256": "9af16a4fa944af1ee18f637f7192a8d36c016478915ed43b547776f29992619d",
+    "bytes": 922,
+    "sha256": "b30c0b81254f868a5ac9a46623b36e5152e77ad36e5b831b3720b5e8d4a1f2a2",
     "lines": 27
   },
   {
     "path": "crates/stencil-core/tests/fixtures/findings.json",
-    "bytes": 5193,
-    "sha256": "0fbbbe0b3a7083303e0a36d8daaf60113d95b63e3cb4c755749859cb51805766",
+    "bytes": 4952,
+    "sha256": "72207c29758be822f1f379f155e16e0c0bd5625a63f9ce2e909d96289a8f337e",
     "lines": 241
   },
   {
     "path": "crates/stencil-launcher/Cargo.toml",
-    "bytes": 258,
-    "sha256": "c1f184686e49a072fb0515460be1004ca329fb52eca259819a15fd622ee76c30",
+    "bytes": 246,
+    "sha256": "aa8af4f8876fecb650b4631a89840a02e3dcdc9d2e2bf6a129da2747a75eabfb",
     "lines": 12
   },
   {
     "path": "crates/stencil-launcher/src/main.rs",
-    "bytes": 2855,
-    "sha256": "e0b1d592c62e2a0dfa82280f431268d80fe87309aba39b8b8f2dcd6be9c9e392",
+    "bytes": 2776,
+    "sha256": "a3037eda0906a09d80d021b665c5be91637b001ac4ad0e1bead79309ddb6e592",
     "lines": 79
   },
   {
     "path": "crates/stencil-wasm/Cargo.toml",
-    "bytes": 444,
-    "sha256": "5f4063cb0aacbb82e7e6d576f2531c5991b98192f1b283873c782bcd533e9c45",
+    "bytes": 426,
+    "sha256": "431b4a0624c623644143e39bb572a561d9441c1d77b12c9d4f4e868531d9f7c1",
     "lines": 18
   },
   {
     "path": "crates/stencil-wasm/src/lib.rs",
-    "bytes": 5861,
-    "sha256": "0e8f2a54e70f733102e80ff51fcc972f47e397884a1a2bd149db821a7db80457",
+    "bytes": 5656,
+    "sha256": "b0ad466c7558e91960cc52eac8f651ea289e55dad1c41c1eea88303c28297fd6",
     "lines": 205
   },
   {
     "path": "web/e2e/badges.spec.ts",
-    "bytes": 524,
-    "sha256": "401d1ec15afbfffb7d6cde3e656f7d1968eb423fbd76076a4b8351f0503c7905",
+    "bytes": 512,
+    "sha256": "92ecb9200e482ed330b2aa5c405a6b48784dbe297a93bf7b4d6c00e30043a68a",
     "lines": 12
   },
   {
@@ -397,248 +397,248 @@
   },
   {
     "path": "web/e2e/presetBook.spec.ts",
-    "bytes": 969,
-    "sha256": "6d284a1735c5efdca9b3b5f25700ab6e0f25e9dea8e1aead6db7d5df5521d266",
+    "bytes": 950,
+    "sha256": "b6b5e1a586c72c69b15cf69f2dbd77705120ff8c54bdc44812413a6a7a8de0f5",
     "lines": 19
   },
   {
     "path": "web/e2e/studio.spec.ts",
-    "bytes": 55264,
-    "sha256": "6cbb7ab8a4b8375c4a087ccd21add6de911e1c69fc1e2e1a4754d203eda14484",
+    "bytes": 54238,
+    "sha256": "82331ee5819596e00d14a4f26f6dd06d62240082d0a0cec8f2ab45c659809062",
     "lines": 1026
   },
   {
     "path": "web/index.html",
-    "bytes": 313,
-    "sha256": "7376ba9406ce903626be0f8a31fb2c9ce00340db71e259ba32e4c8c1fd239e1c",
+    "bytes": 301,
+    "sha256": "b3b9a6f3c24b4033daeca44a5bf6fb457058f9e6770a856812db1438a94b42ca",
     "lines": 12
   },
   {
     "path": "web/package-lock.json",
-    "bytes": 46043,
-    "sha256": "9b97fbd9dcf64f595f49397916844c61ae886b36ac27c7678f8633091edaceb1",
+    "bytes": 44698,
+    "sha256": "d359689b70a45e1737f48dbc459f94c5221d43b430d8f69daf3c52aa099a2406",
     "lines": 1345
   },
   {
     "path": "web/package.json",
-    "bytes": 708,
-    "sha256": "5de4c487436f231bc8281b4752b81d72f56a5710f7b46981b6e03f21b5b4f77a",
+    "bytes": 679,
+    "sha256": "3982ede2efb711beb734472ec63effa51b5233ee9cbb7405e2b5a8946858b857",
     "lines": 29
   },
   {
     "path": "web/playwright.config.ts",
-    "bytes": 315,
-    "sha256": "37e811fe909f85fee3c7a981403b075b097b2907cf118907a7d0e36e5c8c2fe2",
+    "bytes": 306,
+    "sha256": "37bc278e4f9e9abb3520f13fb3e3b22fafc60cc37f673e282b45a09e5f1bb9e1",
     "lines": 9
   },
   {
     "path": "web/scripts/patch-mt-worker.mjs",
-    "bytes": 852,
-    "sha256": "cce3b7ea5d231d6fee79ca555e82aaed92ea1b5288d395d9249ddce1efa29878",
+    "bytes": 822,
+    "sha256": "c424d88cf1c92067d67c2a6645340fa060d4dfdcdc07f8b8fb5782d64ba98ea4",
     "lines": 30
   },
   {
     "path": "web/src/App.tsx",
-    "bytes": 27561,
-    "sha256": "07c7956dcec49e9ccfd2167ae8b8ae89c7ab6a7ed61ea899cad28c4d69bc4ba5",
+    "bytes": 26807,
+    "sha256": "05b2aa6c805734389cc6cd9e1637efa697073b0631941c6aaf9360558384512c",
     "lines": 754
   },
   {
     "path": "web/src/CommandPalette.tsx",
-    "bytes": 1756,
-    "sha256": "104f77940363579d569130ad8a126e0b4a16804a6913b02a8b7913b9d62919c8",
+    "bytes": 1698,
+    "sha256": "236b8ca00899e69fab2774776232ff61d80db1925bdf4d02aec132e26e6e0240",
     "lines": 58
   },
   {
     "path": "web/src/Console.tsx",
-    "bytes": 1828,
-    "sha256": "922f3f7fdc5c3cd8fff9dfb61f34351d9d7c7c0bf313d53f7d12a45d9d856d2e",
+    "bytes": 1796,
+    "sha256": "3f8daefaee25a64aed0b5f8f0ddf6a77c8e0422a86fd1c74e3bbf46411d40157",
     "lines": 32
   },
   {
     "path": "web/src/ErrorBoundary.tsx",
-    "bytes": 1630,
-    "sha256": "8295e5a157ebb3d17398a75320787853cfec60b37d308e77672401bf4c6d9285",
+    "bytes": 1596,
+    "sha256": "e1f09a030bf9b04b12a30be544fa88eb589a00b35bf9441c581f067730368370",
     "lines": 34
   },
   {
     "path": "web/src/History.tsx",
-    "bytes": 1469,
-    "sha256": "c6161943b401e263d84d5fb767a493bf747cae0b9643e3392aab208a07414005",
+    "bytes": 1436,
+    "sha256": "6701dbab54deb66ab689b87abece2ed2ad5761848f44dc2cdf33a7a74b6a7f78",
     "lines": 33
   },
   {
     "path": "web/src/Icon.tsx",
-    "bytes": 1197,
-    "sha256": "89975295583835c4be19dd8af57d5de7d95f1bbb844b8b61dace6840068707a5",
+    "bytes": 1173,
+    "sha256": "9a0bc88a4c27aec665f721aefc5fbd6cde632c64ab087aa5e637adce12b80495",
     "lines": 24
   },
   {
     "path": "web/src/ImageInfo.tsx",
-    "bytes": 2594,
-    "sha256": "987d97cad3a57e7616ee6f988d1abac1bc65689855166536c920bcbfb4dba451",
+    "bytes": 2549,
+    "sha256": "db7001b2142b3f4ddfabe1098668275393fec8bff0a27f23c7ca6abe6605d3c5",
     "lines": 45
   },
   {
     "path": "web/src/ImageView.tsx",
-    "bytes": 10210,
-    "sha256": "586e4be41d22257a1eef62b1386004801ea85d23faf114a6a41efa3c7cc4c7e1",
+    "bytes": 10003,
+    "sha256": "96ec5883b0f7ae032b31079be3fbf18c44fc4193a38d5dc57e4dee74cff6e374",
     "lines": 207
   },
   {
     "path": "web/src/Inspector.tsx",
-    "bytes": 4150,
-    "sha256": "e8a9bda89c47f719393ed6465dda7699fa92f313a5e0d0a1773b29a65ec15a4e",
+    "bytes": 4076,
+    "sha256": "8adc1f7d53ae13182f8d426e448a78b6ef1a9028e672b66bfd4873e7ce508b5d",
     "lines": 74
   },
   {
     "path": "web/src/NodeActions.tsx",
-    "bytes": 1956,
-    "sha256": "78dc4cf33d8b26b656cc38e796f1aa18b6cee3b0fc2221697422f042adb4c7a6",
+    "bytes": 1922,
+    "sha256": "fe00b489b7c06eec5ff0ae719290af8dfec809342ac81eff53caedbe126b0831",
     "lines": 34
   },
   {
     "path": "web/src/PanelResizer.tsx",
-    "bytes": 1558,
-    "sha256": "a81b12b18f7062256f4a0be762e3d3fc8f988341b320d0be565759c96cf7f43b",
+    "bytes": 1516,
+    "sha256": "0cafdd4980144a503ea35269c44dd809f9fb1471a9633cc4645729b4677af36d",
     "lines": 42
   },
   {
     "path": "web/src/ParamForm.tsx",
-    "bytes": 6502,
-    "sha256": "df33d857c39cddf52e1feabc44b3cd0fe4d7324aee95770d997b51afe5d53004",
+    "bytes": 6399,
+    "sha256": "63a3de55ff03f659124ade2f1307838b4a7e7435d5101d9119b8c63d00263242",
     "lines": 103
   },
   {
     "path": "web/src/Perf.tsx",
-    "bytes": 2681,
-    "sha256": "2d4e4af8a0b8ffb37b000f44b29d2195704f9a1a78eb240f4a5b8f7f994fc3ce",
+    "bytes": 2636,
+    "sha256": "f6f03e51ad44372eb09de1c0b9706e9a79f6acf220496cc87b1f3e1cf099c69c",
     "lines": 45
   },
   {
     "path": "web/src/Presets.tsx",
-    "bytes": 3426,
-    "sha256": "39c7dab3ea2d3c17206405788ba3e7d0edbda020dbd2dc6d8196d16a9e6eac5b",
+    "bytes": 3353,
+    "sha256": "2109438554da44a84f2b98da589b5ff7ca0b39b64158e3df9b0b298bb6df95e1",
     "lines": 73
   },
   {
     "path": "web/src/Report.tsx",
-    "bytes": 3580,
-    "sha256": "27c7d35c5ee18955c56e815296ef65bba9328f8c3da2b6bc79ef37565e1f95d1",
+    "bytes": 3498,
+    "sha256": "61faffe1596060b8a420dbbc3906c84cb8f40863d10ab0766decccffd981a0c8",
     "lines": 82
   },
   {
     "path": "web/src/SourceActions.tsx",
-    "bytes": 1592,
-    "sha256": "4b7bc7e6e87397c99701f331884fe37a544594758f665dd7e304d9068d8ca3a5",
+    "bytes": 1559,
+    "sha256": "b47c4c0da13c619809ef3ce16526e6106c2a728efe0ecc2520c07cfcf1aa76aa",
     "lines": 33
   },
   {
     "path": "web/src/Status.tsx",
-    "bytes": 2033,
-    "sha256": "fe7f1df805b15dc6512c1fafe41dd23dfc5295b16afbd70574d4733342320671",
+    "bytes": 1985,
+    "sha256": "f7b8cf11315a132402f41ad5f66627fee57d6503548a38a46c64102927969c56",
     "lines": 48
   },
   {
     "path": "web/src/StudioEdge.tsx",
-    "bytes": 857,
-    "sha256": "62f74d061fbaf16fd75762b8d2b3a6283343588dd10d7e94d003bf7b0840bb39",
+    "bytes": 839,
+    "sha256": "860980765c8799d7f9e91314b12418f47065d3872d2a6bc30bb612efcdc26923",
     "lines": 18
   },
   {
     "path": "web/src/StudioNode.tsx",
-    "bytes": 4653,
-    "sha256": "60295b59d60eb2cdaa4f2c1aae19f137f0ac64c8b7fed9a32b8564e3efeef5d3",
+    "bytes": 4583,
+    "sha256": "d37c7cf5bdded115e642f916bd50ff7109c8d25e0e6482a2d1a64c080c19c9ba",
     "lines": 70
   },
   {
     "path": "web/src/Viewer3D.tsx",
-    "bytes": 22916,
-    "sha256": "5443ce40b6c81560fce05a0fc1f46706c4e4c34c36907cdf6da65eab85e03d8f",
+    "bytes": 22503,
+    "sha256": "6db04bcee5ad644313f24b2a1b47a40918906a8f1dcab3bf57e7d1b1d6d0280e",
     "lines": 413
   },
   {
     "path": "web/src/Workbench.tsx",
-    "bytes": 7321,
-    "sha256": "55eb0144b7747ce1c88e56d2d1ce30e87cc1efe038efebc3fb0c03a058ebd91f",
+    "bytes": 7199,
+    "sha256": "1f8be85b035dca9b256ac4a0948cb925bad71769cdba3da3cb96aff6c64dd63e",
     "lines": 122
   },
   {
     "path": "web/src/api.ts",
-    "bytes": 10356,
-    "sha256": "10e4c8a03ca83d8163d492f349b249ce132c1712e84ed00d835b9996b76fdbcf",
+    "bytes": 10120,
+    "sha256": "8f05ceca660180f9c390bbc2a835bb20ffa3eca5500d10548f969a927e2a00a9",
     "lines": 236
   },
   {
     "path": "web/src/badges.ts",
-    "bytes": 3970,
-    "sha256": "c13f635d18b2413373e3fbeaf0609eddb865efac7fecf917efcb1c7b4f1d3a37",
+    "bytes": 3921,
+    "sha256": "7bc8dc26fcf61390dd1b65bbdcc21c239e897c541af434686531f7887bd26604",
     "lines": 49
   },
   {
     "path": "web/src/build.d.ts",
-    "bytes": 91,
-    "sha256": "1e9e1915e588abf36c1ec8839a666c44d0c7b7c59c4177d43bddf821186cab98",
+    "bytes": 90,
+    "sha256": "ddb7a997ecf0f9490162bd7c7f7c78190d9209452f9634d5def2231bc92d2871",
     "lines": 1
   },
   {
     "path": "web/src/engine.worker.ts",
-    "bytes": 8025,
-    "sha256": "2663a03c8d2193cdc534725e10d60aedf81bf74c1bba64017feb1a96a86dcdf3",
+    "bytes": 7856,
+    "sha256": "401a60f749ff6fd2fe67217066b0a4ba43d875390054953f5213bdddc432c686",
     "lines": 169
   },
   {
     "path": "web/src/eta.ts",
-    "bytes": 1637,
-    "sha256": "41cbe30bed9c80b0932e79faf4a8d9450a114324f8e91d4e00990c541d0bcb71",
+    "bytes": 1593,
+    "sha256": "025bca377d5a53d11b5ba2d7f82922dce1e49cf72ee67fa698e30466d806a11b",
     "lines": 44
   },
   {
     "path": "web/src/help.ts",
-    "bytes": 15615,
-    "sha256": "d810c4724b1136f763671fb67a07b99c70af7819bfc36e8899f6a8c4de890d2f",
+    "bytes": 15459,
+    "sha256": "df9687338ec469018f1b673c6ec24c366cbe3bdff550c886cec10d7bb2b6a8b0",
     "lines": 156
   },
   {
     "path": "web/src/layoutEdit.ts",
-    "bytes": 4527,
-    "sha256": "535adcbb5977e807219d864241a95c9ad9849da30f271c5685bfdd8a12678de4",
+    "bytes": 4440,
+    "sha256": "955a9c0982b4d12f9aafa8aad9775bec285e1a14c1bacb2e194602fd7d6fcc06",
     "lines": 87
   },
   {
     "path": "web/src/main.tsx",
-    "bytes": 335,
-    "sha256": "84e4e9e5ee148ed2d7c514877eee6a73450aa355b4fe12d132868041e190d053",
+    "bytes": 327,
+    "sha256": "a40d19aacbdbcf46d69d1e807f8aa0fdc80124a8b84c2877a75071759835fa74",
     "lines": 8
   },
   {
     "path": "web/src/presetBook.ts",
-    "bytes": 1812,
-    "sha256": "0f2ac37b79efecfe48dae357592889890008bbaf03b9a2665866498843236ccc",
+    "bytes": 1773,
+    "sha256": "46167af8700ee6dfc8ccce0548b4845284e73891cd061108869ebbbc2d1b32b1",
     "lines": 39
   },
   {
     "path": "web/src/store.ts",
-    "bytes": 25244,
-    "sha256": "90633cb2a8a148601debd535c96bb4a74b8aa2c66645a6ec030a8009d7282867",
+    "bytes": 24767,
+    "sha256": "06cbee373155a40648e3866a78f0e5ba6a0c3e78e5dae23735e1cd8fac561a2d",
     "lines": 477
   },
   {
     "path": "web/src/styles.css",
-    "bytes": 21499,
-    "sha256": "e2d2dee0899912336b05d7306ac5d0147cfec194481c64f3e92c69864c4224c1",
+    "bytes": 20247,
+    "sha256": "d6a11803eca419578dfa35f7d5c417a4d25a1d24baf7b7ceea4ece96f4449f9e",
     "lines": 1252
   },
   {
     "path": "web/tsconfig.json",
-    "bytes": 369,
-    "sha256": "410b21d9c3336f8f5c662e0aac7ac574755ae684c0208f339bbac8bed03d2254",
+    "bytes": 361,
+    "sha256": "d0dd9df6f3c494b0d0c309c77ca30c38588634aaef24d63e47371d0dba8b1593",
     "lines": 8
   },
   {
     "path": "web/vite.config.ts",
-    "bytes": 1397,
-    "sha256": "7f8c67ac86d5d3af0f5ab4869ac6285560e54f893a3491cd6e9b806786a036ba",
+    "bytes": 1365,
+    "sha256": "296f3f00d4041986ade1f5b2f7e819066308f6521725571c533f7f1b32c263aa",
     "lines": 32
   }
 ]
