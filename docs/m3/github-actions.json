@@ -1,0 +1,239 @@
+{
+  "source_commit": "9b6d6f0bd7c1a23fb919bd95b34bf7934eb155d1",
+  "run_url": "https://github.com/thomastt-cryoo/stenciii/actions/runs/40845907942",
+  "jobs": [
+    {
+      "id": 123353209994,
+      "name": "rust",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40845907942,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run dtolnay/rust-toolchain@stable",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run dtolnay/rust-toolchain@nightly",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run Swatinem/rust-cache@v2",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run cargo test --release --workspace",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "CLI smoke test",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Post Run Swatinem/rust-cache@v2",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        }
+      ]
+    },
+    {
+      "id": 123354297646,
+      "name": "web",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40845907942,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run dtolnay/rust-toolchain@stable",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run dtolnay/rust-toolchain@nightly",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run Swatinem/rust-cache@v2",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Install wasm-pack",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Build wasm",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Build threaded wasm",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Patch threaded worker helper",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Build studio",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Build native CLI for browser-to-native equivalence checks",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "End-to-end tests",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Build single-binary studio",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14
+        },
+        {
+          "name": "Run actions/upload-pages-artifact@v3",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 28
+        },
+        {
+          "name": "Post Run Swatinem/rust-cache@v2",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 29
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 30
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 31
+        }
+      ]
+    },
+    {
+      "id": 123359359489,
+      "name": "deploy",
+      "status": "completed",
+      "conclusion": "failure",
+      "run_id": 40845907942,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/deploy-pages@v4",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 2
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        }
+      ]
+    }
+  ],
+  "web_result": "141 passed (5.2m)",
+  "application_checks": "Rust, both WASM builds, npm audit, studio build, native CLI, all 141 browser tests, single-binary studio and Pages artifact upload succeeded.",
+  "deploy_log_excerpt": [
+    "Pages: write",
+    "error_count: 10",
+    "Creating Pages deployment with payload:",
+    "##[error]Creating Pages deployment failed",
+    "##[error]HttpError: Not Found",
+    "    at createPagesDeployment (/home/runner/work/_actions/actions/deploy-pages/v4/src/internal/api-client.js:125:1)",
+    "##[error]Error: Failed to create deployment (status: 404) with build version 9b6d6f0bd7c1a23fb919bd95b34bf7934eb155d1. Request ID 2818:C03D6:10D9DC3F:375CC68B:6AE30DE9 Ensure GitHub Pages has been enabled: https://github.com/thomastt-cryoo/stenciii/settings/pages"
+  ]
+}

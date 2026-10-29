@@ -1,0 +1,102 @@
+{
+  "url": "http://127.0.0.1:5210/",
+  "files": [
+    {
+      "path": "assets/engine.worker-CasSWgMw.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "assets/index-AeODPofx.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "assets/index-DLjwRgte.css",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "assets/MeshPreview-CZguJTsw.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "assets/stencil_wasm-dvgyQ_7P.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "assets/stencil_wasm_bg-BkpstZog.wasm",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "index.html",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "pkg-mt/.gitignore",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "pkg-mt/package.json",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "pkg-mt/snippets/wasm-bindgen-rayon-38edf6e439f6d70d/src/workerHelpers.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "pkg-mt/stencil_wasm.d.ts",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "pkg-mt/stencil_wasm.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "pkg-mt/stencil_wasm_bg.wasm",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "pkg-mt/stencil_wasm_bg.wasm.d.ts",
+      "matches_production_sha256": true,
+      "status": 200
+    }
+  ],
+  "coop": "same-origin",
+  "coep": "require-corp",
+  "legacy_harness_status": 404,
+  "native_wasm_equivalence": [
+    {
+      "style": "standard",
+      "native_single_thread_threaded_triangles_match_at_mm": 0.0001
+    },
+    {
+      "style": "smooth",
+      "native_single_thread_threaded_triangles_match_at_mm": 0.0001
+    },
+    {
+      "style": "crisp",
+      "native_single_thread_threaded_triangles_match_at_mm": 0.0001
+    },
+    {
+      "style": "text",
+      "native_single_thread_threaded_triangles_match_at_mm": 0.0001
+    },
+    {
+      "style": "long",
+      "native_single_thread_threaded_triangles_match_at_mm": 0.0001
+    }
+  ],
+  "binary_bytes": 16450048,
+  "binary_sha256": "e36c97bb55ed8d5a293b1db8e806243ff51a700b74d1295b615a43dd05e0484c"
+}

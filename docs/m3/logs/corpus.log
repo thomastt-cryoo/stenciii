@@ -1,0 +1,65 @@
+
+> stencil-studio@2.9.4 quality
+> playwright test --config playwright.quality.config.ts --reporter=line
+
+
+Running 1 test using 1 worker
+
+
+
+(node:23108) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1/1] quality\quality.spec.ts:13:1 › measure all styles on every representative input and independently validate every produced STL
+quality\quality.spec.ts:13:1 › measure all styles on every representative input and independently validate every produced STL
+simple-logo-standard: valid mesh · 834 ms
+
+simple-logo-smooth: valid mesh · 273 ms
+
+simple-logo-crisp: valid mesh · 139 ms
+
+detailed-logo-standard: valid mesh · 62 ms
+
+detailed-logo-smooth: valid mesh · 197 ms
+
+detailed-logo-crisp: valid mesh · 137 ms
+
+line-illustration-standard: valid mesh · 89 ms
+
+line-illustration-smooth: valid mesh · 220 ms
+
+line-illustration-crisp: valid mesh · 194 ms
+
+thin-lines-standard: valid mesh · 59 ms
+
+thin-lines-smooth: valid mesh · 156 ms
+
+thin-lines-crisp: valid mesh · 116 ms
+
+lettering-standard: valid mesh · 76 ms
+
+lettering-smooth: valid mesh · 203 ms
+
+lettering-crisp: valid mesh · 107 ms
+
+colour-graphic-standard: valid mesh · 91 ms
+
+colour-graphic-smooth: valid mesh · 216 ms
+
+  1) quality\quality.spec.ts:13:1 › measure all styles on every representative input and independently validate every produced STL
+
+    Error: UNKNOWN: unknown error, open '<workspace>\docs\m3\corpus-results.json'
+
+      34 |     }
+      35 |     results.push(row)
+    > 36 |     writeFileSync(resolve(root, `docs/${milestone}/corpus-results.json`), JSON.stringify({ source_base: milestone === 'm3' ? '48490e778d88408c070a64c94261e3efe4ee33ce' : '61a98108b2cab1d248585ef9c465abcde9fd54e6', recipe: 'Balanced profile, engine defaults for physical dimensions; actual styleRecipe()', cases: results }, null, 2))
+         |     ^
+      37 |     console.log(`${name}: ${row.status} · ${ms} ms`)
+      38 |   }
+      39 |   expect(results).toHaveLength(manifest.length * 3)
+        at <workspace>\web\quality\quality.spec.ts:36:5
+
+    Error Context: ..\sandbox\m2\quality-test-results\quality-measure-all-styles-fc026-validate-every-produced-STL\error-context.md
+
+
+  1 failed
+    quality\quality.spec.ts:13:1 › measure all styles on every representative input and independently validate every produced STL

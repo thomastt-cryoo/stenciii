@@ -1,0 +1,9 @@
+{
+  "initial_source": "a3baab562c31750477062c7e7cc701a3a257cca4",
+  "production_before_correction": { "passed": 56, "failed": 1, "failed_case": "wide transparent artwork after repeated rotations" },
+  "cause": "Artwork data-ready and the preparation download depended only on effect-driven busy state. A new project render could briefly retain the previous result's ready state before the effect marked it busy.",
+  "corrected_source": "9b6d6f0bd7c1a23fb919bd95b34bf7934eb155d1",
+  "correction": "Compare the emitted result's project signature, step, port and quality against the current request synchronously during rendering. Stale results stay labelled updating and cannot expose a current preparation download.",
+  "stress_check": { "runs": 8, "passed": 8, "duration_seconds": 48.7, "assertions": ["saved quarter-turn value after every click", "actual output dimensions after every turn", "identical full-resolution image bytes after four turns", "crop pan displacement", "original source bytes unchanged", "crop undo and redo"] },
+  "original_assertion_retained": true
+}

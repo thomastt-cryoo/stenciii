@@ -1,0 +1,36 @@
+
+[WebServer] (node:19648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:6636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 17 tests using 1 worker
+
+(node:7656) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/17] e2e\m3-editor.spec.ts:25:1 › multiline text, bundled fonts, actual artwork preview, bridged STL/SVG, CLI replay and persistence
+e2e\m3-editor.spec.ts:25:1 › multiline text, bundled fonts, actual artwork preview, bridged STL/SVG, CLI replay and persistence
+verified: 5 islands found, 0 remaining, watertight true, 3376 triangles
+wrote <workspace>\sandbox\m3\text-native.stl in 112 ms
+
+
+[2/17] e2e\m3-editor.spec.ts:46:1 › processing list inserts, duplicates, reorders, disables, restores and inspects actual secondary results
+[3/17] e2e\m3-editor.spec.ts:69:1 › direct crop handles, zoom/pan, keyboard pixels, rotations and undo match actual Rust image dimensions
+[4/17] e2e\m3-editor.spec.ts:85:1 › operation presets preserve the legacy file format, import merges, scoped apply, rename/remove and defaults
+[5/17] e2e\m3-editor.spec.ts:105:1 › named branched import stays connected, unknown fields survive artwork edits, and a full long chain exports
+[6/17] e2e\m3-editor.spec.ts:116:1 › multiple image instances replace independently, reopen safely and preserve disabled identities
+[7/17] e2e\m3-editor.spec.ts:128:1 › fourteen real preparation steps keep live output valid, SVGs inspectable, themes accessible and processing local
+[8/17] e2e\m3-editor.spec.ts:149:1 › wide transparent artwork survives repeated rotations, crop panning and undo with identical prepared bytes
+[9/17] e2e\m3-model.spec.ts:14:1 › all 41 artwork slots have actual defaults, constraints, help, validation and editable routing
+[10/17] e2e\m3-model.spec.ts:28:1 › typed insert, duplicate, reordering, bypass/enable and undo preserve values and stable identities
+[11/17] e2e\m3-model.spec.ts:45:1 › conversion pairs compile, every input has the proper type, and circular choices are excluded
+[12/17] e2e\m3-model.spec.ts:54:1 › named imported branches keep unrelated manufacturing, metadata, raw identities and unknown data
+[13/17] e2e\m3-model.spec.ts:68:1 › text is an independent typed source and operation presets affect only their selected instance
+[14/17] e2e\m3-model.spec.ts:78:1 › crop handles use the same rounded input pixels as Rust, including odd sizes, aspect ratios and keyboard steps
+[15/17] e2e\m3-model.spec.ts:87:1 › morphology dependencies distinguish kernel, pass count and pattern controls without deleting inactive values
+[16/17] e2e\m3-model.spec.ts:95:1 › legacy-shaped steps, opaque links and disabled identities survive safe structural editing
+[17/17] e2e\m3-visuals.spec.ts:6:1 › M3 artwork, processing, presets, text, responsive layout and both themes
+  17 passed (47.4s)

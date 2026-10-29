@@ -1,0 +1,340 @@
+{
+  "docs/m3/examples/morphology-after.png": {
+    "format": "PNG",
+    "size_px": [
+      20,
+      20
+    ]
+  },
+  "docs/m3/examples/morphology-before.png": {
+    "format": "PNG",
+    "size_px": [
+      20,
+      20
+    ]
+  },
+  "docs/m3/examples/reduce-after.png": {
+    "format": "PNG",
+    "size_px": [
+      200,
+      150
+    ]
+  },
+  "docs/m3/examples/reduce-before.png": {
+    "format": "PNG",
+    "size_px": [
+      200,
+      150
+    ]
+  },
+  "docs/m3/examples/remove_islands-after.svg": {
+    "format": "SVG",
+    "paths": 1,
+    "attributes": {
+      "viewBox": "0 0 200 150",
+      "width": "200",
+      "height": "150"
+    }
+  },
+  "docs/m3/examples/remove_islands-before.svg": {
+    "format": "SVG",
+    "paths": 1,
+    "attributes": {
+      "viewBox": "0 0 200 150",
+      "width": "200",
+      "height": "150"
+    }
+  },
+  "docs/m3/examples/round_corners-after.svg": {
+    "format": "SVG",
+    "paths": 1,
+    "attributes": {
+      "viewBox": "0 0 200 150",
+      "width": "200",
+      "height": "150"
+    }
+  },
+  "docs/m3/examples/round_corners-before.svg": {
+    "format": "SVG",
+    "paths": 1,
+    "attributes": {
+      "viewBox": "0 0 200 150",
+      "width": "200",
+      "height": "150"
+    }
+  },
+  "docs/m3/examples/shapes_to_mask-after.png": {
+    "format": "PNG",
+    "size_px": [
+      300,
+      225
+    ]
+  },
+  "docs/m3/examples/shapes_to_mask-before.png": {
+    "format": "PNG",
+    "size_px": [
+      1000,
+      750
+    ]
+  },
+  "docs/m3/examples/smooth-after.png": {
+    "format": "PNG",
+    "size_px": [
+      400,
+      300
+    ]
+  },
+  "docs/m3/examples/smooth-before.png": {
+    "format": "PNG",
+    "size_px": [
+      400,
+      300
+    ]
+  },
+  "docs/m3/examples/source-after.png": {
+    "format": "PNG",
+    "size_px": [
+      200,
+      160
+    ]
+  },
+  "docs/m3/examples/source-before.png": {
+    "format": "PNG",
+    "size_px": [
+      200,
+      150
+    ]
+  },
+  "docs/m3/examples/text-after.png": {
+    "format": "PNG",
+    "size_px": [
+      546,
+      414
+    ]
+  },
+  "docs/m3/examples/text-before.png": {
+    "format": "PNG",
+    "size_px": [
+      788,
+      414
+    ]
+  },
+  "docs/m3/examples/text-outlines.svg": {
+    "format": "SVG",
+    "paths": 1,
+    "attributes": {
+      "viewBox": "0 0 675 393",
+      "width": "675",
+      "height": "393"
+    }
+  },
+  "docs/m3/examples/text-stencil.stl": {
+    "format": "binary STL",
+    "bytes": 168884,
+    "triangles": 3376,
+    "vertices": 1668,
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        200.0,
+        123.12889862060547,
+        5.199999809265137
+      ]
+    ],
+    "size_mm": [
+      200.0,
+      123.12889862060547,
+      5.199999809265137
+    ],
+    "signed_volume_mm3": 113653.21759712603,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true
+  },
+  "docs/m3/examples/threshold-after.png": {
+    "format": "PNG",
+    "size_px": [
+      200,
+      150
+    ]
+  },
+  "docs/m3/examples/threshold-before.png": {
+    "format": "PNG",
+    "size_px": [
+      200,
+      150
+    ]
+  },
+  "docs/m3/examples/trace-after.svg": {
+    "format": "SVG",
+    "paths": 1,
+    "attributes": {
+      "viewBox": "0 0 200 150",
+      "width": "200",
+      "height": "150"
+    }
+  },
+  "docs/m3/examples/trace-before.svg": {
+    "format": "SVG",
+    "paths": 1,
+    "attributes": {
+      "viewBox": "0 0 200 150",
+      "width": "200",
+      "height": "150"
+    }
+  },
+  "docs/m3/examples/transform-after.png": {
+    "format": "PNG",
+    "size_px": [
+      176,
+      150
+    ]
+  },
+  "docs/m3/examples/transform-before.png": {
+    "format": "PNG",
+    "size_px": [
+      200,
+      150
+    ]
+  },
+  "sandbox/m3/text.stl": {
+    "format": "binary STL",
+    "bytes": 168884,
+    "triangles": 3376,
+    "vertices": 1668,
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        200.0,
+        123.12889862060547,
+        5.199999809265137
+      ]
+    ],
+    "size_mm": [
+      200.0,
+      123.12889862060547,
+      5.199999809265137
+    ],
+    "signed_volume_mm3": 113653.21759712603,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true
+  },
+  "sandbox/m3/text-native.stl": {
+    "format": "binary STL",
+    "bytes": 168884,
+    "triangles": 3376,
+    "vertices": 1668,
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        200.0,
+        123.12889862060547,
+        5.199999809265137
+      ]
+    ],
+    "size_mm": [
+      200.0,
+      123.12889862060547,
+      5.199999809265137
+    ],
+    "signed_volume_mm3": 113653.21759712603,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true
+  },
+  "sandbox/m3/branched.stl": {
+    "format": "binary STL",
+    "bytes": 104284,
+    "triangles": 2084,
+    "vertices": 1042,
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        100.0,
+        79.0645980834961,
+        5.199999809265137
+      ]
+    ],
+    "size_mm": [
+      100.0,
+      79.0645980834961,
+      5.199999809265137
+    ],
+    "signed_volume_mm3": 30325.33355830804,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true
+  },
+  "sandbox/m3/long-chain.stl": {
+    "format": "binary STL",
+    "bytes": 592684,
+    "triangles": 11852,
+    "vertices": 5922,
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        100.0,
+        83.19999694824219,
+        2.200000047683716
+      ]
+    ],
+    "size_mm": [
+      100.0,
+      83.19999694824219,
+      2.200000047683716
+    ],
+    "signed_volume_mm3": 16188.804611678184,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true
+  },
+  "sandbox/m3/text-outlines.svg": {
+    "format": "SVG",
+    "paths": 1,
+    "attributes": {
+      "viewBox": "0 0 675 393",
+      "width": "675",
+      "height": "393"
+    }
+  },
+  "sandbox/m3/long-outlines.svg": {
+    "format": "SVG",
+    "paths": 1,
+    "attributes": {
+      "viewBox": "0 0 300 240",
+      "width": "300",
+      "height": "240"
+    }
+  }
+}

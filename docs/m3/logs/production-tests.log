@@ -1,0 +1,81 @@
+
+[WebServer] (node:28116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:2380) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 57 tests using 1 worker
+
+
+(node:5252) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/57] e2e\editor.spec.ts:30:1 › empty workspace, light/dark preference, searchable catalogue, keyboard and responsive layout
+[2/57] e2e\editor.spec.ts:53:1 › real generation, quick parameters, original assets, STL export and rapid New→Open regression
+e2e\editor.spec.ts:53:1 › real generation, quick parameters, original assets, STL export and rapid New→Open regression
+
+verified: 1 islands found, 0 remaining, watertight true, 824 triangles
+wrote <workspace>\web\test-results\editor-real-generation-qui-df5f4-d-rapid-New→Open-regression\native.stl in 19 ms
+
+[3/57] e2e\editor.spec.ts:97:1 › replace and drop artwork, undo replacement and recover after processing error
+[4/57] e2e\editor.spec.ts:116:1 › legacy advanced and unknown projects save losslessly without any canvas or default recipe
+[5/57] e2e\editor.spec.ts:129:1 › offline local processing, theme accessibility, and no legacy editor in default UI
+[6/57] e2e\foundation.spec.ts:9:1 › runtime registry accounts for all processing types and searchable parameter keys
+[7/57] e2e\foundation.spec.ts:18:1 › recipe compilation matches the original vector recipe, defaults and dependencies
+[8/57] e2e\foundation.spec.ts:31:1 › unknown data, embedded and unused images, branches, ids, positions and connections survive edits and round trips
+[9/57] e2e\foundation.spec.ts:51:1 › native graph imports, migration aliases and image remapping only affect the execution copy
+[10/57] e2e\foundation.spec.ts:61:1 › commands support atomic source replacement, undo and redo without rewriting unknown fields
+[11/57] e2e\foundation.spec.ts:71:1 › registry identifies every instance and retains conditional metadata
+[12/57] e2e\foundation.spec.ts:92:1 › New then Open identical saved processing always creates a fresh completed generation
+[13/57] e2e\foundation.spec.ts:101:1 › edits, cancellation and superseded work cannot export stale output or overwrite a newer generation
+[14/57] e2e\foundation.spec.ts:113:1 › draft artifacts and failed runs are never full-quality exportable
+[15/57] e2e\foundation.spec.ts:120:1 › late artifact capture is disposed after cancel and recoverable step failures block export
+[16/57] e2e\m2-editor.spec.ts:27:1 › all three styles produce different valid geometry; style adjustments, bytes, undo and reopen survive
+[17/57] e2e\m2-editor.spec.ts:59:1 › live edits show draft, retain the last preview and finish full quality without Make; cancel stays cancelled
+[18/57] e2e\m2-editor.spec.ts:98:1 › prepared comparison is aligned after crop/rotate/flip; raw original and geometry dimensions remain truthful
+[19/57] e2e\m2-editor.spec.ts:119:1 › manual threshold is remembered, cleanup/margin edit per instance and bad crop is rejected without data loss
+[20/57] e2e\m2-editor.spec.ts:135:1 › friendly upload errors preserve the current image and traced SVG is honestly labelled
+[21/57] e2e\m2-editor.spec.ts:144:1 › real known defective hardware geometry is guarded even in a preserved custom project
+[22/57] e2e\m2-editor.spec.ts:154:1 › raster cleanup is opt-in, visibly changes fine lines, and bypass restores the original geometry
+[23/57] e2e\m2-model.spec.ts:11:1 › three actual style recipes satisfy every engine input port and differ in processing
+[24/57] e2e\m2-model.spec.ts:28:1 › raster cleanup is truly bypassed by default and restores its exact settings and connections
+[25/57] e2e\m2-model.spec.ts:39:1 › style banks retain individual adjustments, source identity, old graphs and undo/redo
+[26/57] e2e\m2-model.spec.ts:54:1 › native-root style banking stays bounded and advanced branches are never replaced
+[27/57] e2e\m2-model.spec.ts:61:1 › detail profiles distinguish raster pixels from vector precision; drafts never alter saved settings
+[28/57] e2e\m2-model.spec.ts:72:1 › live scheduler throttles drafts, debounces final work, pauses while dragging and cancels queued runs
+[29/57] e2e\m2-model.spec.ts:86:1 › exact setting titles and qualified identities rank first; references are not fake controls
+[30/57] e2e\m2-model.spec.ts:95:1 › real STL inspection identifies a zero-area facet, invalid size and invalid coordinates
+[31/57] e2e\m2-visuals.spec.ts:6:1 › actual M2 workspace, three styles, comparison, model, settings and complex artwork in both themes
+[32/57] e2e\m3-coverage.spec.ts:41:1 › all 41 controls change saved execution parameters, reset to runtime defaults and execute real intermediate output
+[33/57] e2e\m3-editor.spec.ts:25:1 › multiline text, bundled fonts, actual artwork preview, bridged STL/SVG, CLI replay and persistence
+e2e\m3-editor.spec.ts:25:1 › multiline text, bundled fonts, actual artwork preview, bridged STL/SVG, CLI replay and persistence
+verified: 5 islands found, 0 remaining, watertight true, 3376 triangles
+wrote <workspace>\sandbox\m3\text-native.stl in 105 ms
+
+
+[34/57] e2e\m3-editor.spec.ts:46:1 › processing list inserts, duplicates, reorders, disables, restores and inspects actual secondary results
+[35/57] e2e\m3-editor.spec.ts:69:1 › direct crop handles, zoom/pan, keyboard pixels, rotations and undo match actual Rust image dimensions
+[36/57] e2e\m3-editor.spec.ts:85:1 › operation presets preserve the legacy file format, import merges, scoped apply, rename/remove and defaults
+[37/57] e2e\m3-editor.spec.ts:105:1 › named branched import stays connected, unknown fields survive artwork edits, and a full long chain exports
+[38/57] e2e\m3-editor.spec.ts:116:1 › multiple image instances replace independently, reopen safely and preserve disabled identities
+[39/57] e2e\m3-editor.spec.ts:128:1 › fourteen real preparation steps keep live output valid, SVGs inspectable, themes accessible and processing local
+[40/57] e2e\m3-editor.spec.ts:149:1 › wide transparent artwork survives repeated rotations, crop panning and undo with identical prepared bytes
+[41/57] e2e\m3-model.spec.ts:14:1 › all 41 artwork slots have actual defaults, constraints, help, validation and editable routing
+[42/57] e2e\m3-model.spec.ts:28:1 › typed insert, duplicate, reordering, bypass/enable and undo preserve values and stable identities
+[43/57] e2e\m3-model.spec.ts:45:1 › conversion pairs compile, every input has the proper type, and circular choices are excluded
+[44/57] e2e\m3-model.spec.ts:54:1 › named imported branches keep unrelated manufacturing, metadata, raw identities and unknown data
+[45/57] e2e\m3-model.spec.ts:68:1 › text is an independent typed source and operation presets affect only their selected instance
+[46/57] e2e\m3-model.spec.ts:78:1 › crop handles use the same rounded input pixels as Rust, including odd sizes, aspect ratios and keyboard steps
+[47/57] e2e\m3-model.spec.ts:87:1 › morphology dependencies distinguish kernel, pass count and pattern controls without deleting inactive values
+[48/57] e2e\m3-model.spec.ts:95:1 › legacy-shaped steps, opaque links and disabled identities survive safe structural editing
+[49/57] e2e\m3-visuals.spec.ts:6:1 › M3 artwork, processing, presets, text, responsive layout and both themes
+[50/57] e2e\reliability.spec.ts:6:1 › customer workflow also generates without cross-origin isolation or threaded WASM
+[51/57] e2e\reliability.spec.ts:42:1 › cancelling real work and immediately making again preserves project settings and source
+[52/57] e2e\reliability.spec.ts:56:1 › autosaved embedded artwork reopens and recalculates after a page reload
+[53/57] e2e\reliability.spec.ts:66:1 › invalid or unsupported project input can be saved safely and engine errors do not destroy it
+[54/57] e2e\reliability.spec.ts:75:45 › PNG artwork imports and generates an actual STL
+[55/57] e2e\reliability.spec.ts:75:45 › JPG artwork imports and generates an actual STL
+[56/57] e2e\reliability.spec.ts:75:45 › BMP artwork imports and generates an actual STL
+[57/57] e2e\visuals.spec.ts:5:1 › capture actual empty light/dark, generated stencil/3D and settings workspace
+  57 passed (3.8m)

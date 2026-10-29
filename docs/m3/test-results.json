@@ -1,0 +1,55 @@
+{
+  "date_dubai": "2026-10-29",
+  "approved_m2_base": "48490e778d88408c070a64c94261e3efe4ee33ce",
+  "rust": {
+    "passed": 157,
+    "failed": 0,
+    "ignored": 0
+  },
+  "browser_runs": {
+    "full-browser": {
+      "passed": [
+        [
+          "138",
+          "10.3m"
+        ]
+      ],
+      "failed": [
+        "1"
+      ]
+    },
+    "final-browser": {
+      "passed": [
+        [
+          "141",
+          "8.5m"
+        ]
+      ],
+      "failed": []
+    },
+    "production-tests": {
+      "passed": [
+        [
+          "57",
+          "3.8m"
+        ]
+      ],
+      "failed": []
+    }
+  },
+  "known_development_corrections": [
+    "M2 CI screenshot waited for the full-quality canvas before comparing smooth/flat shading; assertion retained.",
+    "Visual crop test scoped rotation buttons to the crop dialog.",
+    "The initial new visual test used an obsolete Remove specks label; its selector now uses the actual Remove small shapes label. The final 141-test run passes.",
+    "Intermediate worker construction uses a static Vite URL so production emits JavaScript, not raw TypeScript.",
+    "Round-corner coverage fixture uses the verified direction-change corner threshold; all 41 fields now change emitted bytes.",
+    "Corpus report writes once after measurement to avoid a transient Windows file lock.",
+    "Automatic threshold uses the extended linear-artwork adapter after extra steps are added."
+  ],
+  "not_run": [
+    "macOS/Linux desktop launch",
+    "Firefox/Safari",
+    "Physical prints",
+    "Fresh-machine offline installation"
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "run_url": "https://github.com/thomastt-cryoo/stenciii/actions/runs/40812681370",
+  "jobs": {
+    "jobs": [
+      {
+        "id": 123246451550,
+        "name": "rust",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 40812681370,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run dtolnay/rust-toolchain@stable",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run dtolnay/rust-toolchain@nightly",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run Swatinem/rust-cache@v2",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Run cargo test --release --workspace",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "CLI smoke test",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Post Run Swatinem/rust-cache@v2",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 13
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 14
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 15
+          }
+        ]
+      },
+      {
+        "id": 123247211380,
+        "name": "web",
+        "status": "completed",
+        "conclusion": "failure",
+        "run_id": 40812681370,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run dtolnay/rust-toolchain@stable",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run dtolnay/rust-toolchain@nightly",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run Swatinem/rust-cache@v2",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Install wasm-pack",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Build wasm",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Build threaded wasm",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Patch threaded worker helper",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "Build studio",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "Build native CLI for browser-to-native equivalence checks",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 12
+          },
+          {
+            "name": "End-to-end tests",
+            "status": "completed",
+            "conclusion": "failure",
+            "number": 13
+          },
+          {
+            "name": "Build single-binary studio",
+            "status": "completed",
+            "conclusion": "skipped",
+            "number": 14
+          },
+          {
+            "name": "Run actions/upload-pages-artifact@v3",
+            "status": "completed",
+            "conclusion": "skipped",
+            "number": 15
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "skipped",
+            "number": 28
+          },
+          {
+            "name": "Post Run Swatinem/rust-cache@v2",
+            "status": "completed",
+            "conclusion": "skipped",
+            "number": 29
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 30
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 31
+          }
+        ]
+      },
+      {
+        "id": 123249967973,
+        "name": "deploy",
+        "status": "completed",
+        "conclusion": "skipped",
+        "run_id": 40812681370,
+        "logs_url": null,
+        "steps": null
+      }
+    ]
+  },
+  "verified_failure": "web End-to-end tests: 122 passed, 1 failed. studio.spec.ts shading screenshot raced with final artifact replacing its canvas; element detached.",
+  "fix": "Wait for engine completion and viewer readiness before comparing smooth/flat screenshots; original image inequality assertion retained.",
+  "deployment": "Deploy was skipped because web failed. This M2 run was an application regression-test failure, distinct from the earlier optional Pages 404."
+}

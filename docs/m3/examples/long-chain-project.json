@@ -1,0 +1,303 @@
+{
+  "version": 2,
+  "graph": {
+    "nodes": [
+      {
+        "id": "input",
+        "type": "source",
+        "params": {
+          "image_id": "original",
+          "resolution": 240
+        }
+      },
+      {
+        "id": "frame",
+        "type": "transform",
+        "params": {
+          "crop_left": 0,
+          "crop_top": 0,
+          "crop_right": 0,
+          "crop_bottom": 0,
+          "turn": "0",
+          "angle": 0,
+          "flip_h": false,
+          "flip_v": false
+        }
+      },
+      {
+        "id": "reduce",
+        "type": "reduce",
+        "params": {
+          "colours": 3,
+          "smooth": 0
+        }
+      },
+      {
+        "id": "paint",
+        "type": "threshold",
+        "params": {
+          "threshold": 256,
+          "invert": false
+        }
+      },
+      {
+        "id": "soft",
+        "type": "smooth",
+        "params": {
+          "radius": 0.25,
+          "supersample": 1
+        }
+      },
+      {
+        "id": "open",
+        "type": "morphology",
+        "params": {
+          "op": "open",
+          "kernel": "disc",
+          "radius": 1,
+          "angle": 0,
+          "iterations": 1,
+          "pattern": "endpoints",
+          "custom": "x00 011 x1x",
+          "rotate": true
+        }
+      },
+      {
+        "id": "close",
+        "type": "morphology",
+        "params": {
+          "op": "close",
+          "kernel": "disc",
+          "radius": 1,
+          "angle": 0,
+          "iterations": 1,
+          "pattern": "endpoints",
+          "custom": "x00 011 x1x",
+          "rotate": true
+        }
+      },
+      {
+        "id": "trace",
+        "type": "trace",
+        "params": {
+          "smooth": 0.3,
+          "corner_deg": 30,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "corners",
+        "type": "round_corners",
+        "params": {
+          "max_angle": 100,
+          "radius": 1,
+          "round_concave": false
+        }
+      },
+      {
+        "id": "clean",
+        "type": "remove_islands",
+        "params": {
+          "delete_specks": true,
+          "fill_holes": false,
+          "max_area": 4,
+          "keep_largest": 0
+        }
+      },
+      {
+        "id": "pixels",
+        "type": "shapes_to_mask",
+        "params": {
+          "resolution": 300
+        }
+      },
+      {
+        "id": "soft2",
+        "type": "smooth",
+        "params": {
+          "radius": 0.25,
+          "supersample": 1
+        }
+      },
+      {
+        "id": "outlines",
+        "type": "trace",
+        "params": {
+          "smooth": 0.3,
+          "corner_deg": 30,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "plate",
+        "type": "vector_stencil",
+        "params": {
+          "detail": 5,
+          "width_mm": 100,
+          "thickness_mm": 2,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 1,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1,
+          "tile_method": "per_tile"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": [
+          "input",
+          "image"
+        ],
+        "to": [
+          "frame",
+          "image"
+        ]
+      },
+      {
+        "from": [
+          "frame",
+          "image"
+        ],
+        "to": [
+          "reduce",
+          "image"
+        ]
+      },
+      {
+        "from": [
+          "reduce",
+          "image"
+        ],
+        "to": [
+          "paint",
+          "image"
+        ]
+      },
+      {
+        "from": [
+          "paint",
+          "mask"
+        ],
+        "to": [
+          "soft",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "soft",
+          "mask"
+        ],
+        "to": [
+          "open",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "open",
+          "mask"
+        ],
+        "to": [
+          "close",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "close",
+          "mask"
+        ],
+        "to": [
+          "trace",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "trace",
+          "shapes"
+        ],
+        "to": [
+          "corners",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "corners",
+          "shapes"
+        ],
+        "to": [
+          "clean",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "clean",
+          "shapes"
+        ],
+        "to": [
+          "pixels",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "pixels",
+          "mask"
+        ],
+        "to": [
+          "soft2",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "soft2",
+          "mask"
+        ],
+        "to": [
+          "outlines",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "outlines",
+          "shapes"
+        ],
+        "to": [
+          "plate",
+          "shapes"
+        ]
+      }
+    ]
+  },
+  "images": {
+    "original": {
+      "name": "Original.svg",
+      "base64": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjQwIiB2aWV3Qm94PSIwIDAgMzAwIDI0MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSIxNTAiIGN5PSIxMjAiIHI9Ijg1IiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjE0Ii8+PHBhdGggZD0iTTg1IDE0MyBRMTUwIDUzIDIxNSAxNDMgTTEwNiAxMTYgUTE1MCAxNzkgMTk0IDExNiIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIxNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iODAiIHI9IjEzIi8+PC9zdmc+"
+    }
+  },
+  "opaque": {
+    "keep": true
+  }
+}

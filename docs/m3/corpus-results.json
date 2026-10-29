@@ -1,0 +1,4675 @@
+{
+  "source_base": "48490e778d88408c070a64c94261e3efe4ee33ce",
+  "recipe": "Balanced profile, engine defaults for physical dimensions; actual styleRecipe()",
+  "cases": [
+    {
+      "input": "simple-logo.svg",
+      "style": "standard",
+      "milliseconds": 517,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 2 islands found, 0 remaining, watertight true, 2784 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\simple-logo-standard.stl in 162 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":2,\"bridges_per_island\":1.0,\"first_layer_islands\":2,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":163.2,\"islands_deleted\":0,\"islands_found\":2,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":139284,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":2784,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 139284,
+        "triangles": 2784,
+        "vertices": 1388,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 146206.76338452316,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "2 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 2784
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 114,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 22,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 7,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 4,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 4,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/simple-logo-standard.json",
+      "output": "sandbox/m3/corpus/simple-logo-standard.stl"
+    },
+    {
+      "input": "simple-logo.svg",
+      "style": "smooth",
+      "milliseconds": 299,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 2 islands found, 0 remaining, watertight true, 6112 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\simple-logo-smooth.stl in 235 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":2,\"bridges_per_island\":1.0,\"first_layer_islands\":2,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":163.2,\"islands_deleted\":0,\"islands_found\":2,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":305684,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":6112,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 305684,
+        "triangles": 6112,
+        "vertices": 3052,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 146235.20948296564,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "2 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 6112
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Smooth mask",
+            "ms": 131,
+            "node": "soften",
+            "type": "smooth"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 63,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 20,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 9,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 1,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/simple-logo-smooth.json",
+      "output": "sandbox/m3/corpus/simple-logo-smooth.stl"
+    },
+    {
+      "input": "simple-logo.svg",
+      "style": "crisp",
+      "milliseconds": 281,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 2 islands found, 0 remaining, watertight true, 9052 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\simple-logo-crisp.stl in 226 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":196,\"bridges_per_island\":1.0,\"first_layer_islands\":2,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":440,\"grid_w\":540,\"height_mm\":162.96,\"islands_deleted\":0,\"islands_found\":2,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":26.89,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":452684,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":9052,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 452684,
+        "triangles": 9052,
+        "vertices": 4524,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            162.9629669189453,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          162.9629669189453,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 145641.04095010902,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Stencil",
+            "level": "warn",
+            "node": "plate",
+            "text": "overhang 27 mm²",
+            "type": "stencil"
+          },
+          {
+            "label": "Stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "2 islands bridged",
+            "type": "stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 9052
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 198,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 4,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/simple-logo-crisp.json",
+      "output": "sandbox/m3/corpus/simple-logo-crisp.stl"
+    },
+    {
+      "input": "detailed-logo.svg",
+      "style": "standard",
+      "milliseconds": 221,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 2 islands found, 0 remaining, watertight true, 3232 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\detailed-logo-standard.stl in 141 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":2,\"bridges_per_island\":1.0,\"first_layer_islands\":2,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":163.2,\"islands_deleted\":0,\"islands_found\":2,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":161684,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":3232,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 161684,
+        "triangles": 3232,
+        "vertices": 1564,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 158531.21783424524,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "2 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 3232
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 68,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 24,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 22,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 2,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/detailed-logo-standard.json",
+      "output": "sandbox/m3/corpus/detailed-logo-standard.stl"
+    },
+    {
+      "input": "detailed-logo.svg",
+      "style": "smooth",
+      "milliseconds": 259,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 2 islands found, 0 remaining, watertight true, 6712 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\detailed-logo-smooth.stl in 190 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":2,\"bridges_per_island\":1.0,\"first_layer_islands\":2,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":163.2,\"islands_deleted\":0,\"islands_found\":2,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":335684,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":6712,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 335684,
+        "triangles": 6712,
+        "vertices": 3304,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 158560.08483206024,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "2 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 6712
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Smooth mask",
+            "ms": 105,
+            "node": "soften",
+            "type": "smooth"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 47,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 17,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 7,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 1,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/detailed-logo-smooth.json",
+      "output": "sandbox/m3/corpus/detailed-logo-smooth.stl"
+    },
+    {
+      "input": "detailed-logo.svg",
+      "style": "crisp",
+      "milliseconds": 231,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 2 islands found, 0 remaining, watertight true, 8584 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\detailed-logo-crisp.stl in 159 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":163,\"bridges_per_island\":1.0,\"first_layer_islands\":2,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":440,\"grid_w\":540,\"height_mm\":162.96,\"islands_deleted\":0,\"islands_found\":2,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":22.36,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":429284,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":8584,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 429284,
+        "triangles": 8584,
+        "vertices": 4240,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            162.9629669189453,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          162.9629669189453,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 158186.8298465309,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Stencil",
+            "level": "warn",
+            "node": "plate",
+            "text": "overhang 22 mm²",
+            "type": "stencil"
+          },
+          {
+            "label": "Stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "2 islands bridged",
+            "type": "stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 8584
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 146,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 4,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/detailed-logo-crisp.json",
+      "output": "sandbox/m3/corpus/detailed-logo-crisp.stl"
+    },
+    {
+      "input": "line-illustration.svg",
+      "style": "standard",
+      "milliseconds": 73,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 2 islands found, 0 remaining, watertight true, 2232 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\line-illustration-standard.stl in 37 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":2,\"bridges_per_island\":1.0,\"first_layer_islands\":2,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":163.2,\"islands_deleted\":0,\"islands_found\":2,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":111684,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":2232,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 111684,
+        "triangles": 2232,
+        "vertices": 1110,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 157964.97028332774,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "2 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 2232
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 14,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 8,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 6,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/line-illustration-standard.json",
+      "output": "sandbox/m3/corpus/line-illustration-standard.stl"
+    },
+    {
+      "input": "line-illustration.svg",
+      "style": "smooth",
+      "milliseconds": 266,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 2 islands found, 0 remaining, watertight true, 6352 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\line-illustration-smooth.stl in 209 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":2,\"bridges_per_island\":1.0,\"first_layer_islands\":2,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":163.2,\"islands_deleted\":0,\"islands_found\":2,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":317684,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":6352,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 317684,
+        "triangles": 6352,
+        "vertices": 3170,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 158004.42384413024,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "2 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 6352
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Smooth mask",
+            "ms": 124,
+            "node": "soften",
+            "type": "smooth"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 39,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 26,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 8,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 1,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/line-illustration-smooth.json",
+      "output": "sandbox/m3/corpus/line-illustration-smooth.stl"
+    },
+    {
+      "input": "line-illustration.svg",
+      "style": "crisp",
+      "milliseconds": 272,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 2 islands found, 0 remaining, watertight true, 11756 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\line-illustration-crisp.stl in 184 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":60,\"bridges_per_island\":1.0,\"first_layer_islands\":2,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":440,\"grid_w\":540,\"height_mm\":162.96,\"islands_deleted\":0,\"islands_found\":2,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":8.23,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":587884,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":11756,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 587884,
+        "triangles": 11756,
+        "vertices": 5872,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            162.9629669189453,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          162.9629669189453,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 157758.51678478188,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Stencil",
+            "level": "warn",
+            "node": "plate",
+            "text": "overhang 8 mm²",
+            "type": "stencil"
+          },
+          {
+            "label": "Stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "2 islands bridged",
+            "type": "stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 11756
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 166,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 4,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/line-illustration-crisp.json",
+      "output": "sandbox/m3/corpus/line-illustration-crisp.stl"
+    },
+    {
+      "input": "thin-lines.svg",
+      "style": "standard",
+      "milliseconds": 56,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 0 islands found, 0 remaining, watertight true, 1240 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\thin-lines-standard.stl in 22 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":0,\"bridges_per_island\":1.0,\"first_layer_islands\":0,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":163.2,\"islands_deleted\":0,\"islands_found\":0,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":62084,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":1240,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 62084,
+        "triangles": 1240,
+        "vertices": 608,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 159997.17944259182,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          }
+        ],
+        "metrics": {
+          "triangles": 1240
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 8,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 4,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 2,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 1,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/thin-lines-standard.json",
+      "output": "sandbox/m3/corpus/thin-lines-standard.stl"
+    },
+    {
+      "input": "thin-lines.svg",
+      "style": "smooth",
+      "milliseconds": 130,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 0 islands found, 0 remaining, watertight true, 2320 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\thin-lines-smooth.stl in 103 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":0,\"bridges_per_island\":1.0,\"first_layer_islands\":0,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":163.2,\"islands_deleted\":0,\"islands_found\":0,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":116084,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":2320,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 116084,
+        "triangles": 2320,
+        "vertices": 1148,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 159835.74385951078,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          }
+        ],
+        "metrics": {
+          "triangles": 2320
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Smooth mask",
+            "ms": 73,
+            "node": "soften",
+            "type": "smooth"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 17,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 4,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 2,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/thin-lines-smooth.json",
+      "output": "sandbox/m3/corpus/thin-lines-smooth.stl"
+    },
+    {
+      "input": "thin-lines.svg",
+      "style": "crisp",
+      "milliseconds": 89,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 0 islands found, 0 remaining, watertight true, 152 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\thin-lines-crisp.stl in 61 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":0,\"bridges_per_island\":1.0,\"first_layer_islands\":0,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":440,\"grid_w\":540,\"height_mm\":162.96,\"islands_deleted\":0,\"islands_found\":0,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":7684,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":152,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 7684,
+        "triangles": 152,
+        "vertices": 64,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            162.9629669189453,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          162.9629669189453,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 159392.46944713258,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [],
+        "metrics": {
+          "triangles": 152
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 48,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 3,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "ready"
+      },
+      "project": "sandbox/m3/corpus/thin-lines-crisp.json",
+      "output": "sandbox/m3/corpus/thin-lines-crisp.stl"
+    },
+    {
+      "input": "lettering.png",
+      "style": "standard",
+      "milliseconds": 89,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 5 islands found, 0 remaining, watertight true, 2308 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\lettering-standard.stl in 52 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":5,\"bridges_per_island\":1.0,\"first_layer_islands\":5,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":95.83,\"islands_deleted\":0,\"islands_found\":5,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":115484,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":2308,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 115484,
+        "triangles": 2308,
+        "vertices": 1148,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            95.82769775390625,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          95.82769775390625,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 83025.90787819354,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "5 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 2308
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 13,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 8,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 4,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/lettering-standard.json",
+      "output": "sandbox/m3/corpus/lettering-standard.stl"
+    },
+    {
+      "input": "lettering.png",
+      "style": "smooth",
+      "milliseconds": 135,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 5 islands found, 0 remaining, watertight true, 4756 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\lettering-smooth.stl in 105 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":5,\"bridges_per_island\":1.0,\"first_layer_islands\":5,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":95.65,\"islands_deleted\":0,\"islands_found\":5,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":237884,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":4756,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 237884,
+        "triangles": 4756,
+        "vertices": 2372,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            95.64569854736328,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          95.64569854736328,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 82868.28191650612,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "5 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 4756
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Smooth mask",
+            "ms": 52,
+            "node": "soften",
+            "type": "smooth"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 13,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 13,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 9,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/lettering-smooth.json",
+      "output": "sandbox/m3/corpus/lettering-smooth.stl"
+    },
+    {
+      "input": "lettering.png",
+      "style": "crisp",
+      "milliseconds": 150,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 5 islands found, 0 remaining, watertight true, 4480 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\lettering-crisp.stl in 115 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":373,\"bridges_per_island\":1.0,\"first_layer_islands\":5,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":257,\"grid_w\":540,\"height_mm\":95.19,\"islands_deleted\":0,\"islands_found\":5,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":51.17,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":224084,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":4480,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 224084,
+        "triangles": 4480,
+        "vertices": 2234,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            95.18518829345703,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          95.18518829345703,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 82124.93912242507,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Stencil",
+            "level": "warn",
+            "node": "plate",
+            "text": "overhang 51 mm²",
+            "type": "stencil"
+          },
+          {
+            "label": "Stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "5 islands bridged",
+            "type": "stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 4480
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 81,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 12,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/lettering-crisp.json",
+      "output": "sandbox/m3/corpus/lettering-crisp.stl"
+    },
+    {
+      "input": "colour-graphic.png",
+      "style": "standard",
+      "milliseconds": 59,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 0 islands found, 0 remaining, watertight true, 2620 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\colour-graphic-standard.stl in 31 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":0,\"bridges_per_island\":1.0,\"first_layer_islands\":0,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":154.14,\"islands_deleted\":0,\"islands_found\":0,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":131084,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":2620,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 131084,
+        "triangles": 2620,
+        "vertices": 1310,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            154.14149475097656,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          154.14149475097656,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 108542.97577067453,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          }
+        ],
+        "metrics": {
+          "triangles": 2620
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 16,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 2,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 2,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/colour-graphic-standard.json",
+      "output": "sandbox/m3/corpus/colour-graphic-standard.stl"
+    },
+    {
+      "input": "colour-graphic.png",
+      "style": "smooth",
+      "milliseconds": 156,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 0 islands found, 0 remaining, watertight true, 3604 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\colour-graphic-smooth.stl in 127 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":0,\"bridges_per_island\":1.0,\"first_layer_islands\":0,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":154.0,\"islands_deleted\":0,\"islands_found\":0,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":180284,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":3604,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 180284,
+        "triangles": 3604,
+        "vertices": 1802,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            154,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          154,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 108530.85842618842,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          }
+        ],
+        "metrics": {
+          "triangles": 3604
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Smooth mask",
+            "ms": 87,
+            "node": "soften",
+            "type": "smooth"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 20,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 8,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 3,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/colour-graphic-smooth.json",
+      "output": "sandbox/m3/corpus/colour-graphic-smooth.stl"
+    },
+    {
+      "input": "colour-graphic.png",
+      "style": "crisp",
+      "milliseconds": 101,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 0 islands found, 0 remaining, watertight true, 2800 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\colour-graphic-crisp.stl in 65 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":0,\"bridges_per_island\":1.0,\"first_layer_islands\":0,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":415,\"grid_w\":540,\"height_mm\":153.7,\"islands_deleted\":0,\"islands_found\":0,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":140084,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":2800,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 140084,
+        "triangles": 2800,
+        "vertices": 1400,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            153.70370483398438,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          153.70370483398438,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 107547.2682705335,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [],
+        "metrics": {
+          "triangles": 2800
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 41,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 11,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "ready"
+      },
+      "project": "sandbox/m3/corpus/colour-graphic-crisp.json",
+      "output": "sandbox/m3/corpus/colour-graphic-crisp.stl"
+    },
+    {
+      "input": "transparent.png",
+      "style": "standard",
+      "milliseconds": 80,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 1 islands found, 0 remaining, watertight true, 4216 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\transparent-standard.stl in 48 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":1,\"bridges_per_island\":1.0,\"first_layer_islands\":1,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":200.0,\"islands_deleted\":0,\"islands_found\":1,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":210884,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":4216,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 210884,
+        "triangles": 4216,
+        "vertices": 2106,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            200,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          200,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 173531.64399202185,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "1 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 4216
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 18,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 15,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 7,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/transparent-standard.json",
+      "output": "sandbox/m3/corpus/transparent-standard.stl"
+    },
+    {
+      "input": "transparent.png",
+      "style": "smooth",
+      "milliseconds": 286,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 1 islands found, 0 remaining, watertight true, 8512 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\transparent-smooth.stl in 241 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":1,\"bridges_per_island\":1.0,\"first_layer_islands\":1,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":200.0,\"islands_deleted\":0,\"islands_found\":1,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":425684,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":8512,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 425684,
+        "triangles": 8512,
+        "vertices": 4254,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            200,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          200,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 173585.35711945238,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "1 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 8512
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Smooth mask",
+            "ms": 143,
+            "node": "soften",
+            "type": "smooth"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 30,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 29,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 15,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 3,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 1,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/transparent-smooth.json",
+      "output": "sandbox/m3/corpus/transparent-smooth.stl"
+    },
+    {
+      "input": "transparent.png",
+      "style": "crisp",
+      "milliseconds": 216,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 1 islands found, 0 remaining, watertight true, 6740 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\transparent-crisp.stl in 169 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":142,\"bridges_per_island\":1.0,\"first_layer_islands\":1,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":540,\"grid_w\":540,\"height_mm\":200.0,\"islands_deleted\":0,\"islands_found\":1,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":19.48,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":337084,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":6740,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 337084,
+        "triangles": 6740,
+        "vertices": 3368,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            200,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          200,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 173190.9933537562,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Stencil",
+            "level": "warn",
+            "node": "plate",
+            "text": "overhang 19 mm²",
+            "type": "stencil"
+          },
+          {
+            "label": "Stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "1 islands bridged",
+            "type": "stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 6740
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 141,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 16,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/transparent-crisp.json",
+      "output": "sandbox/m3/corpus/transparent-crisp.stl"
+    },
+    {
+      "input": "low-contrast.jpg",
+      "style": "standard",
+      "milliseconds": 100,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 1 islands found, 0 remaining, watertight true, 2200 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\low-contrast-standard.stl in 67 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":1,\"bridges_per_island\":1.0,\"first_layer_islands\":1,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":163.2,\"islands_deleted\":0,\"islands_found\":1,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":110084,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":2200,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 110084,
+        "triangles": 2200,
+        "vertices": 1100,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 124133.85194666256,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "1 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 2200
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 18,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 17,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 3,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/low-contrast-standard.json",
+      "output": "sandbox/m3/corpus/low-contrast-standard.stl"
+    },
+    {
+      "input": "low-contrast.jpg",
+      "style": "smooth",
+      "milliseconds": 192,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 1 islands found, 0 remaining, watertight true, 2932 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\low-contrast-smooth.stl in 160 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":1,\"bridges_per_island\":1.0,\"first_layer_islands\":1,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":163.2,\"islands_deleted\":0,\"islands_found\":1,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":146684,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":2932,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 146684,
+        "triangles": 2932,
+        "vertices": 1466,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 124013.08717025947,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "1 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 2932
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Smooth mask",
+            "ms": 95,
+            "node": "soften",
+            "type": "smooth"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 23,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 20,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 12,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/low-contrast-smooth.json",
+      "output": "sandbox/m3/corpus/low-contrast-smooth.stl"
+    },
+    {
+      "input": "low-contrast.jpg",
+      "style": "crisp",
+      "milliseconds": 441,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 1 islands found, 0 remaining, watertight true, 2720 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\low-contrast-crisp.stl in 368 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":266,\"bridges_per_island\":1.0,\"first_layer_islands\":1,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":440,\"grid_w\":540,\"height_mm\":162.96,\"islands_deleted\":0,\"islands_found\":1,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":36.49,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":136084,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":2720,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 136084,
+        "triangles": 2720,
+        "vertices": 1360,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            162.9629669189453,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          162.9629669189453,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 123282.24876063695,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Stencil",
+            "level": "warn",
+            "node": "plate",
+            "text": "overhang 36 mm²",
+            "type": "stencil"
+          },
+          {
+            "label": "Stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "1 islands bridged",
+            "type": "stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 2720
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 260,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 58,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/low-contrast-crisp.json",
+      "output": "sandbox/m3/corpus/low-contrast-crisp.stl"
+    },
+    {
+      "input": "small-pixel.bmp",
+      "style": "standard",
+      "milliseconds": 216,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 1 islands found, 0 remaining, watertight true, 2528 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\small-pixel-standard.stl in 120 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":1,\"bridges_per_island\":1.0,\"first_layer_islands\":1,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":154.14,\"islands_deleted\":0,\"islands_found\":1,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":126484,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":2528,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 126484,
+        "triangles": 2528,
+        "vertices": 1262,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            154.14149475097656,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          154.14149475097656,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 108870.83640022637,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "1 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 2528
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 44,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 37,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 17,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 1,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/small-pixel-standard.json",
+      "output": "sandbox/m3/corpus/small-pixel-standard.stl"
+    },
+    {
+      "input": "small-pixel.bmp",
+      "style": "smooth",
+      "milliseconds": 894,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 1 islands found, 0 remaining, watertight true, 4024 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\small-pixel-smooth.stl in 564 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":1,\"bridges_per_island\":1.0,\"first_layer_islands\":1,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":154.0,\"islands_deleted\":0,\"islands_found\":1,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":201284,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":4024,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 201284,
+        "triangles": 4024,
+        "vertices": 2010,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            154,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          154,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 108613.98025625828,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "1 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 4024
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Smooth mask",
+            "ms": 321,
+            "node": "soften",
+            "type": "smooth"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 111,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 46,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 25,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 1,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/small-pixel-smooth.json",
+      "output": "sandbox/m3/corpus/small-pixel-smooth.stl"
+    },
+    {
+      "input": "small-pixel.bmp",
+      "style": "crisp",
+      "milliseconds": 264,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 1 islands found, 0 remaining, watertight true, 1864 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\small-pixel-crisp.stl in 199 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":250,\"bridges_per_island\":1.0,\"first_layer_islands\":1,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":415,\"grid_w\":540,\"height_mm\":153.7,\"islands_deleted\":0,\"islands_found\":1,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":34.29,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":93284,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":1864,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 93284,
+        "triangles": 1864,
+        "vertices": 930,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            153.70370483398438,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          153.70370483398438,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 107773.11261521182,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Stencil",
+            "level": "warn",
+            "node": "plate",
+            "text": "overhang 34 mm²",
+            "type": "stencil"
+          },
+          {
+            "label": "Stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "1 islands bridged",
+            "type": "stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 1864
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 181,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 10,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/small-pixel-crisp.json",
+      "output": "sandbox/m3/corpus/small-pixel-crisp.stl"
+    },
+    {
+      "input": "high-resolution.png",
+      "style": "standard",
+      "milliseconds": 992,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 2 islands found, 0 remaining, watertight true, 2220 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\high-resolution-standard.stl in 796 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":2,\"bridges_per_island\":1.0,\"first_layer_islands\":2,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":154.14,\"islands_deleted\":0,\"islands_found\":2,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":111084,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":2220,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 111084,
+        "triangles": 2220,
+        "vertices": 1110,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            154.14149475097656,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          154.14149475097656,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 145787.79088914878,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "2 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 2220
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 532,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 74,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 34,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 5,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 1,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/high-resolution-standard.json",
+      "output": "sandbox/m3/corpus/high-resolution-standard.stl"
+    },
+    {
+      "input": "high-resolution.png",
+      "style": "smooth",
+      "milliseconds": 1582,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 2 islands found, 0 remaining, watertight true, 5384 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\high-resolution-smooth.stl in 1411 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":2,\"bridges_per_island\":1.0,\"first_layer_islands\":2,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":154.0,\"islands_deleted\":0,\"islands_found\":2,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":269284,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":5384,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 269284,
+        "triangles": 5384,
+        "vertices": 2692,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            154,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          154,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 145645.61982678226,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "2 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 5384
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 1011,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 117,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Smooth mask",
+            "ms": 109,
+            "node": "soften",
+            "type": "smooth"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 46,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/high-resolution-smooth.json",
+      "output": "sandbox/m3/corpus/high-resolution-smooth.stl"
+    },
+    {
+      "input": "high-resolution.png",
+      "style": "crisp",
+      "milliseconds": 689,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 2 islands found, 0 remaining, watertight true, 9828 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\high-resolution-crisp.stl in 535 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":124,\"bridges_per_island\":1.0,\"first_layer_islands\":2,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":415,\"grid_w\":540,\"height_mm\":153.7,\"islands_deleted\":0,\"islands_found\":2,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":17.01,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":491484,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":9828,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 491484,
+        "triangles": 9828,
+        "vertices": 4914,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            153.70370483398438,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          153.70370483398438,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 145122.62889363937,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Stencil",
+            "level": "warn",
+            "node": "plate",
+            "text": "overhang 17 mm²",
+            "type": "stencil"
+          },
+          {
+            "label": "Stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "2 islands bridged",
+            "type": "stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 9828
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 271,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 150,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/high-resolution-crisp.json",
+      "output": "sandbox/m3/corpus/high-resolution-crisp.stl"
+    },
+    {
+      "input": "nearly-empty.png",
+      "style": "standard",
+      "milliseconds": 91,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 0 islands found, 0 remaining, watertight true, 60 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\nearly-empty-standard.stl in 43 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":0,\"bridges_per_island\":1.0,\"first_layer_islands\":0,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":163.2,\"islands_deleted\":0,\"islands_found\":0,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":3084,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":60,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 3084,
+        "triangles": 60,
+        "vertices": 30,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 169628.48419053885,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Threshold",
+            "level": "warn",
+            "node": "paint",
+            "text": "mask is almost empty",
+            "type": "threshold"
+          },
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          }
+        ],
+        "metrics": {
+          "triangles": 60
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 20,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 1,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 0,
+            "node": "plate",
+            "type": "vector_stencil"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/nearly-empty-standard.json",
+      "output": "sandbox/m3/corpus/nearly-empty-standard.stl"
+    },
+    {
+      "input": "nearly-empty.png",
+      "style": "smooth",
+      "milliseconds": 644,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 0 islands found, 0 remaining, watertight true, 176 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\nearly-empty-smooth.stl in 330 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":0,\"bridges_per_island\":1.0,\"first_layer_islands\":0,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":163.2,\"islands_deleted\":0,\"islands_found\":0,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":8884,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":176,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 8884,
+        "triangles": 176,
+        "vertices": 88,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 169634.59220101277,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Threshold",
+            "level": "warn",
+            "node": "paint",
+            "text": "mask is almost empty",
+            "type": "threshold"
+          },
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          }
+        ],
+        "metrics": {
+          "triangles": 176
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Smooth mask",
+            "ms": 171,
+            "node": "soften",
+            "type": "smooth"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 40,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 25,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 3,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 2,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/nearly-empty-smooth.json",
+      "output": "sandbox/m3/corpus/nearly-empty-smooth.stl"
+    },
+    {
+      "input": "nearly-empty.png",
+      "style": "crisp",
+      "milliseconds": 456,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 0 islands found, 0 remaining, watertight true, 120 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\nearly-empty-crisp.stl in 368 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":0,\"bridges_per_island\":1.0,\"first_layer_islands\":0,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":440,\"grid_w\":540,\"height_mm\":162.96,\"islands_deleted\":0,\"islands_found\":0,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":6084,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":120,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 6084,
+        "triangles": 120,
+        "vertices": 60,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            162.9629669189453,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          162.9629669189453,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 169383.75648553477,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Threshold",
+            "level": "warn",
+            "node": "paint",
+            "text": "mask is almost empty",
+            "type": "threshold"
+          }
+        ],
+        "metrics": {
+          "triangles": 120
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 302,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 39,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/nearly-empty-crisp.json",
+      "output": "sandbox/m3/corpus/nearly-empty-crisp.stl"
+    },
+    {
+      "input": "nearly-solid.png",
+      "style": "standard",
+      "milliseconds": 120,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 1 islands found, 0 remaining, watertight true, 100 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\nearly-solid-standard.stl in 61 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":1,\"bridges_per_island\":1.0,\"first_layer_islands\":1,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":163.2,\"islands_deleted\":0,\"islands_found\":1,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":5084,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":100,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 5084,
+        "triangles": 100,
+        "vertices": 50,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 29304.48827844303,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Threshold",
+            "level": "warn",
+            "node": "paint",
+            "text": "mask is almost all paint",
+            "type": "threshold"
+          },
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "1 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 100
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 18,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 13,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 4,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 1,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/nearly-solid-standard.json",
+      "output": "sandbox/m3/corpus/nearly-solid-standard.stl"
+    },
+    {
+      "input": "nearly-solid.png",
+      "style": "smooth",
+      "milliseconds": 426,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 1 islands found, 0 remaining, watertight true, 816 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\nearly-solid-smooth.stl in 312 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":1,\"bridges_per_island\":1.0,\"first_layer_islands\":1,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":163.2,\"islands_deleted\":0,\"islands_found\":1,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":40884,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":816,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 40884,
+        "triangles": 816,
+        "vertices": 408,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 29293.641655364438,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Threshold",
+            "level": "warn",
+            "node": "paint",
+            "text": "mask is almost all paint",
+            "type": "threshold"
+          },
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "1 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 816
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Smooth mask",
+            "ms": 194,
+            "node": "soften",
+            "type": "smooth"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 44,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 28,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 24,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 1,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/nearly-solid-smooth.json",
+      "output": "sandbox/m3/corpus/nearly-solid-smooth.stl"
+    },
+    {
+      "input": "nearly-solid.png",
+      "style": "crisp",
+      "milliseconds": 178,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 1 islands found, 0 remaining, watertight true, 164 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\nearly-solid-crisp.stl in 135 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":770,\"bridges_per_island\":1.0,\"first_layer_islands\":1,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":440,\"grid_w\":540,\"height_mm\":162.96,\"islands_deleted\":0,\"islands_found\":1,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":105.62,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":8284,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":164,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 8284,
+        "triangles": 164,
+        "vertices": 82,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            162.9629669189453,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          162.9629669189453,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 27213.775659338426,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Threshold",
+            "level": "warn",
+            "node": "paint",
+            "text": "mask is almost all paint",
+            "type": "threshold"
+          },
+          {
+            "label": "Stencil",
+            "level": "warn",
+            "node": "plate",
+            "text": "overhang 106 mm²",
+            "type": "stencil"
+          },
+          {
+            "label": "Stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "1 islands bridged",
+            "type": "stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 164
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 100,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 20,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/nearly-solid-crisp.json",
+      "output": "sandbox/m3/corpus/nearly-solid-crisp.stl"
+    },
+    {
+      "input": "empty.png",
+      "style": "standard",
+      "milliseconds": 156,
+      "status": "engine error",
+      "exit_code": 1,
+      "log": "error: plate: the shapes contain no closed outlines: trace a picture that has paint in it\nerror: the graph produced no STL (end it with a Stencil or a Tiles & mounting node)"
+    },
+    {
+      "input": "empty.png",
+      "style": "smooth",
+      "milliseconds": 307,
+      "status": "engine error",
+      "exit_code": 1,
+      "log": "error: plate: the shapes contain no closed outlines: trace a picture that has paint in it\nerror: the graph produced no STL (end it with a Stencil or a Tiles & mounting node)"
+    },
+    {
+      "input": "empty.png",
+      "style": "crisp",
+      "milliseconds": 157,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 0 islands found, 0 remaining, watertight true, 12 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\empty-crisp.stl in 88 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":0,\"bridges_per_island\":1.0,\"first_layer_islands\":0,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":415,\"grid_w\":540,\"height_mm\":153.7,\"islands_deleted\":0,\"islands_found\":0,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":684,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":12,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 684,
+        "triangles": 12,
+        "vertices": 8,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            153.70370483398438,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          153.70370483398438,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 159851.84716401272,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Threshold",
+            "level": "warn",
+            "node": "paint",
+            "text": "mask is almost empty",
+            "type": "threshold"
+          }
+        ],
+        "metrics": {
+          "triangles": 12
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 55,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 11,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/empty-crisp.json",
+      "output": "sandbox/m3/corpus/empty-crisp.stl"
+    },
+    {
+      "input": "solid.png",
+      "style": "standard",
+      "milliseconds": 291,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 0 islands found, 0 remaining, watertight true, 32 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\solid-standard.stl in 122 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":0,\"bridges_per_island\":1.0,\"first_layer_islands\":0,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":154.14,\"islands_deleted\":0,\"islands_found\":0,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":1684,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":32,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            154.14149475097656,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          154.14149475097656,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 28133.37133135531,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Threshold",
+            "level": "warn",
+            "node": "paint",
+            "text": "mask is almost all paint",
+            "type": "threshold"
+          },
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          }
+        ],
+        "metrics": {
+          "triangles": 32
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 29,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 18,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 15,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 1,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 1,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/solid-standard.json",
+      "output": "sandbox/m3/corpus/solid-standard.stl"
+    },
+    {
+      "input": "solid.png",
+      "style": "smooth",
+      "milliseconds": 401,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 0 islands found, 0 remaining, watertight true, 612 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\solid-smooth.stl in 330 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":0,\"bridges_per_island\":1.0,\"first_layer_islands\":0,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":154.0,\"islands_deleted\":0,\"islands_found\":0,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":30684,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":612,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 30684,
+        "triangles": 612,
+        "vertices": 306,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            154,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          154,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 28117.906391836306,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Threshold",
+            "level": "warn",
+            "node": "paint",
+            "text": "mask is almost all paint",
+            "type": "threshold"
+          },
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          }
+        ],
+        "metrics": {
+          "triangles": 612
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Smooth mask",
+            "ms": 225,
+            "node": "soften",
+            "type": "smooth"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 37,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 31,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 11,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 2,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 1,
+            "node": "framing",
+            "type": "transform"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 0,
+            "node": "cleanup",
+            "type": "remove_islands"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/solid-smooth.json",
+      "output": "sandbox/m3/corpus/solid-smooth.stl"
+    },
+    {
+      "input": "solid.png",
+      "style": "crisp",
+      "milliseconds": 284,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 0 islands found, 0 remaining, watertight true, 32 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\solid-crisp.stl in 201 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":0,\"bridges_per_island\":1.0,\"first_layer_islands\":0,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":415,\"grid_w\":540,\"height_mm\":153.7,\"islands_deleted\":0,\"islands_found\":0,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":1684,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":32,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            153.70370483398438,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          153.70370483398438,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 26106.99861538249,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Threshold",
+            "level": "warn",
+            "node": "paint",
+            "text": "mask is almost all paint",
+            "type": "threshold"
+          }
+        ],
+        "metrics": {
+          "triangles": 32
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 103,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 43,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/solid-crisp.json",
+      "output": "sandbox/m3/corpus/solid-crisp.stl"
+    },
+    {
+      "input": "astronaut.png",
+      "style": "standard",
+      "milliseconds": 343,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 58 islands found, 0 remaining, watertight true, 33848 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\astronaut-standard.stl in 302 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":58,\"bridges_per_island\":1.0,\"first_layer_islands\":58,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":200.0,\"islands_deleted\":0,\"islands_found\":58,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":1692484,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":33848,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 1692484,
+        "triangles": 33848,
+        "vertices": 16624,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            200,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          200,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 139877.88976851152,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "58 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 33848
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 168,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 55,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 38,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 3,
+            "node": "cleanup",
+            "type": "remove_islands"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 1,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/astronaut-standard.json",
+      "output": "sandbox/m3/corpus/astronaut-standard.stl"
+    },
+    {
+      "input": "astronaut.png",
+      "style": "smooth",
+      "milliseconds": 1235,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 77 islands found, 0 remaining, watertight true, 50060 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\astronaut-smooth.stl in 1124 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":77,\"bridges_per_island\":1.0,\"first_layer_islands\":77,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":200.0,\"islands_deleted\":0,\"islands_found\":77,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":2503084,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":50060,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 2503084,
+        "triangles": 50060,
+        "vertices": 24710,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            200,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          200,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 140018.33735913783,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "77 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 50060
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 555,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 196,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Smooth mask",
+            "ms": 185,
+            "node": "soften",
+            "type": "smooth"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 99,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 7,
+            "node": "cleanup",
+            "type": "remove_islands"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 1,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/astronaut-smooth.json",
+      "output": "sandbox/m3/corpus/astronaut-smooth.stl"
+    },
+    {
+      "input": "astronaut.png",
+      "style": "crisp",
+      "milliseconds": 838,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 99 islands found, 0 remaining, watertight true, 44772 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\astronaut-crisp.stl in 454 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":2276,\"bridges_per_island\":1.0,\"first_layer_islands\":99,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":540,\"grid_w\":540,\"height_mm\":200.0,\"islands_deleted\":0,\"islands_found\":99,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":312.89,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":2238684,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":44772,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 2238684,
+        "triangles": 44772,
+        "vertices": 21774,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            200,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          200,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 138994.94811106232,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Stencil",
+            "level": "warn",
+            "node": "plate",
+            "text": "overhang 313 mm²",
+            "type": "stencil"
+          },
+          {
+            "label": "Stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "99 islands bridged",
+            "type": "stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 44772
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 327,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 84,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/astronaut-crisp.json",
+      "output": "sandbox/m3/corpus/astronaut-crisp.stl"
+    },
+    {
+      "input": "coins.png",
+      "style": "standard",
+      "milliseconds": 720,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 69 islands found, 0 remaining, watertight true, 25288 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\coins-standard.stl in 624 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":69,\"bridges_per_island\":1.0,\"first_layer_islands\":69,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":161.22,\"islands_deleted\":0,\"islands_found\":69,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":1264484,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":25288,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 1264484,
+        "triangles": 25288,
+        "vertices": 12196,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            161.218505859375,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          161.218505859375,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 85476.44935042589,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "69 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 25288
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 497,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 35,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 34,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 3,
+            "node": "cleanup",
+            "type": "remove_islands"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/coins-standard.json",
+      "output": "sandbox/m3/corpus/coins-standard.stl"
+    },
+    {
+      "input": "coins.png",
+      "style": "smooth",
+      "milliseconds": 1413,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 69 islands found, 0 remaining, watertight true, 36332 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\coins-smooth.stl in 1313 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":69,\"bridges_per_island\":1.0,\"first_layer_islands\":69,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":161.1,\"islands_deleted\":0,\"islands_found\":69,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":1816684,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":36332,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 1816684,
+        "triangles": 36332,
+        "vertices": 17652,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            161.09710693359375,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          161.09710693359375,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 85384.05335161304,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Remove islands",
+            "level": "warn",
+            "node": "cleanup",
+            "text": "no outlines found",
+            "type": "remove_islands"
+          },
+          {
+            "label": "Vector stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "69 islands bridged",
+            "type": "vector_stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 36332
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Vector stencil",
+            "ms": 843,
+            "node": "plate",
+            "type": "vector_stencil"
+          },
+          {
+            "cached": false,
+            "label": "Smooth mask",
+            "ms": 189,
+            "node": "soften",
+            "type": "smooth"
+          },
+          {
+            "cached": false,
+            "label": "Trace",
+            "ms": 141,
+            "node": "outlines",
+            "type": "trace"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 82,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Remove islands",
+            "ms": 10,
+            "node": "cleanup",
+            "type": "remove_islands"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 2,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 1,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/coins-smooth.json",
+      "output": "sandbox/m3/corpus/coins-smooth.stl"
+    },
+    {
+      "input": "coins.png",
+      "style": "crisp",
+      "milliseconds": 605,
+      "status": "valid mesh",
+      "exit_code": 0,
+      "log": "verified: 92 islands found, 0 remaining, watertight true, 34758 triangles\nwrote <workspace>\\sandbox\\m3\\corpus\\coins-crisp.stl in 492 ms\n{\"bridge_mm\":1.6,\"bridge_pixels\":3663,\"bridges_per_island\":1.0,\"first_layer_islands\":92,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":435,\"grid_w\":540,\"height_mm\":161.11,\"islands_deleted\":0,\"islands_found\":92,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":26,\"margin_mm\":8.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":503.02,\"plate_top_mm\":5.2,\"raised_bridges\":true,\"stl_bytes\":1737984,\"thickness_mm\":5.0,\"threshold\":0,\"triangles\":34758,\"watertight\":true,\"width_mm\":200.0,\"z_bridging\":\"easy\"}",
+      "mesh": {
+        "format": "binary STL",
+        "bytes": 1737984,
+        "triangles": 34758,
+        "vertices": 16411,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            161.11111450195312,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          161.11111450195312,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 83012.07368405382,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "engine": {
+        "findings": [
+          {
+            "label": "Stencil",
+            "level": "warn",
+            "node": "plate",
+            "text": "overhang 503 mm²",
+            "type": "stencil"
+          },
+          {
+            "label": "Stencil",
+            "level": "info",
+            "node": "plate",
+            "text": "92 islands bridged",
+            "type": "stencil"
+          }
+        ],
+        "metrics": {
+          "triangles": 34758
+        },
+        "timing": [
+          {
+            "cached": false,
+            "label": "Stencil",
+            "ms": 400,
+            "node": "plate",
+            "type": "stencil"
+          },
+          {
+            "cached": false,
+            "label": "Image",
+            "ms": 39,
+            "node": "artwork",
+            "type": "source"
+          },
+          {
+            "cached": false,
+            "label": "Threshold",
+            "ms": 1,
+            "node": "paint",
+            "type": "threshold"
+          },
+          {
+            "cached": false,
+            "label": "Crop & rotate",
+            "ms": 0,
+            "node": "framing",
+            "type": "transform"
+          }
+        ],
+        "verdict": "check"
+      },
+      "project": "sandbox/m3/corpus/coins-crisp.json",
+      "output": "sandbox/m3/corpus/coins-crisp.stl"
+    }
+  ]
+}

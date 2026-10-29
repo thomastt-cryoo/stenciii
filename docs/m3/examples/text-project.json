@@ -1,0 +1,104 @@
+{
+  "version": 2,
+  "stencilStudio": {
+    "schema": 2,
+    "name": "Text stencil",
+    "style": "standard",
+    "inputKind": "text"
+  },
+  "images": {},
+  "graph": {
+    "nodes": [
+      {
+        "id": "text-artwork",
+        "type": "text",
+        "params": {
+          "text": "AOBR\nSTENCIL",
+          "font": "serif bold",
+          "size": 120,
+          "line_spacing": 1.35,
+          "padding": 30
+        }
+      },
+      {
+        "id": "outlines",
+        "type": "trace",
+        "params": {
+          "smooth": 1.5,
+          "corner_deg": 60,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "cleanup",
+        "type": "remove_islands",
+        "params": {
+          "delete_specks": false,
+          "fill_holes": false,
+          "max_area": 50,
+          "keep_largest": 0
+        }
+      },
+      {
+        "id": "plate",
+        "type": "vector_stencil",
+        "params": {
+          "detail": 4,
+          "width_mm": 200,
+          "thickness_mm": 5,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 1,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1,
+          "tile_method": "per_tile"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": [
+          "text-artwork",
+          "mask"
+        ],
+        "to": [
+          "outlines",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "outlines",
+          "shapes"
+        ],
+        "to": [
+          "cleanup",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "cleanup",
+          "shapes"
+        ],
+        "to": [
+          "plate",
+          "shapes"
+        ]
+      }
+    ]
+  }
+}
