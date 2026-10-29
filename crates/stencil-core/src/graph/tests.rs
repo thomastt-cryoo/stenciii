@@ -742,10 +742,12 @@ fn direct_legacy_seam_angle_changes_real_mesh_and_cache_without_changing_catalog
     let id=e.add_image(test_png()).unwrap()["id"].as_str().unwrap().to_string();
     let mut g=graph(&id,8.0);
     g["nodes"][3]["params"]=json!({"max_x":110,"max_y":110,"segments":24,"depth":6});
-    let run=|e:&mut Engine|{let r=e.run(&g,None,&||0.0);assert_eq!(r["status"],"done","{r}");let key=r["nodes"]["ex"]["key"].as_str().unwrap().to_string();let bytes=e.value(&key,"parts").unwrap().encode().unwrap().1;(key,bytes)};
+    let run=|e:&mut Engine|{let r=e.run(&g,None,&||0.0);assert_eq!(r["nodes"]["ex"]["state"],"done","{r}");let key=r["nodes"]["ex"]["key"].as_str().unwrap().to_string();let Some(Value::Parts(parts))=e.value(&key,"parts")else{panic!("expected printable parts")};(key,parts.files.clone())};
     let before=run(&mut e);e.set_legacy_seam_angle(20.0).unwrap();let after=run(&mut e);
-    assert_ne!(before.0,after.0);assert_ne!(before.1,after.1);
-    e.set_legacy_seam_angle(0.0).unwrap();assert_eq!(run(&mut e),before);
+    assert_ne!(before.0,after.0);assert!(before.1!=after.1,"seam angle must change actual part bytes");
+    // Native ZIPs carry current timestamps. Compare the contained geometry,
+    // so crossing a clock tick cannot masquerade as a cache regression.
+    e.set_legacy_seam_angle(0.0).unwrap();let restored=run(&mut e);assert_eq!(restored.0,before.0);assert!(restored.1==before.1,"restoring zero angle must restore every part file");
     assert!(e.set_legacy_seam_angle(f64::NAN).is_err());assert!(e.set_legacy_seam_angle(61.0).is_err());
     assert!(!node_types().to_string().contains("__cli_seam_angle_deg"));
 }

@@ -15,7 +15,7 @@ for(const phase of 'abcd'){
  }
 }
 if(!process.env.M5_MODES_SAMPLE&&cases.length!==256)throw Error('Complete all 128 parameter cases before replay.')
-const result={modes:[],engine_sha256:Object.fromEntries(['web/pkg/stencil_wasm_bg.wasm','web/public/pkg-mt/stencil_wasm_bg.wasm'].map(p=>[p,createHash('sha256').update(readFileSync(p)).digest('hex')])),cases:cases.map(c=>({...c}))},browser=await chromium.launch({headless:true})
+const result={modes:[],failures:[],engine_sha256:Object.fromEntries(['web/pkg/stencil_wasm_bg.wasm','web/public/pkg-mt/stencil_wasm_bg.wasm'].map(p=>[p,createHash('sha256').update(readFileSync(p)).digest('hex')])),cases:cases.map(c=>({...c}))},browser=await chromium.launch({headless:true})
 for(const mode of ['st','mt']){
  if(mode==='st'&&!process.env.M5_REPLAY_ST){
   result.modes.push({mode,threads:{n:1},source:'Accepted real single-thread parameter runs; exact stored bytes and freshness checked'})
@@ -45,13 +45,14 @@ for(const mode of ['st','mt']){
 }
 await browser.close()
 for(const row of result.cases){
- if(row.expectedError){row.verified_refusal=true;continue}
- if(row.out!=='parts'){if(row.st.sha256!==row.mt.sha256)throw Error(`ST/MT bitmap differs: ${row.stem}`);row.st_mt_identical=true;continue}
- const into=`${root}/native-${row.stem}`;mkdirSync(into,{recursive:true});const cli=spawnSync(resolve(`target/release/stencil${process.platform==='win32'?'.exe':''}`),['--project',row.project,'-o',into],{encoding:'utf8',timeout:180000,maxBuffer:8000000})
- if(cli.status!==0)throw Error(`${row.stem}: ${cli.stderr}`)
+ if(row.out!=='parts'){row.st_mt_identical=row.st.sha256===row.mt.sha256;if(!row.st_mt_identical)result.failures.push({case:row.stem,error:'ST/MT bitmap differs'});continue}
+ const into=`${root}/native-${row.stem}`;mkdirSync(into,{recursive:true});const cli=spawnSync(resolve(`target/release/stencil${process.platform==='win32'?'.exe':''}`),['--project',row.project,'--report','-o',into],{encoding:'utf8',timeout:180000,maxBuffer:8000000})
+ if(row.expectedError){row.native={refusal:cli.stderr,exit_code:cli.status};row.verified_refusal=cli.status!==0&&/no room/.test(cli.stderr);if(!row.verified_refusal)result.failures.push({case:row.stem,error:'Native refusal did not match the recorded constraint'});continue}
+ if(cli.status!==0){row.native={error:cli.stderr,exit_code:cli.status};result.failures.push({case:row.stem,error:cli.stderr});continue}
  const zip=`${into}/${basename(row.project,'.json')}.zip`,compare=spawnSync('python',['scripts/m5/compare_geometry.py',zip,row.st.path,row.mt.path],{encoding:'utf8',timeout:180000,maxBuffer:16000000})
- if(compare.status!==0){row.comparison_error=compare.stderr;throw Error(`${row.stem}: ${compare.stderr}`)}
+ if(compare.status!==0){row.comparison_error=compare.stderr;result.failures.push({case:row.stem,error:compare.stderr});continue}
  row.native={path:zip};row.comparison=JSON.parse(compare.stdout);writeFileSync('docs/m5/manufacturing-modes.json',JSON.stringify(result,null,2)+'\n')
 }
 for(const row of result.cases){delete row.accepted_st;delete row.accepted_path}
-writeFileSync('docs/m5/manufacturing-modes.json',JSON.stringify(result,null,2)+'\n');console.log(`Verified ${cases.length} field fixtures in ST/MT and every successful Parts fixture through native STL comparison.`)
+result.completed_cases=cases.length;result.all_structural_checks_passed=result.failures.length===0
+writeFileSync('docs/m5/manufacturing-modes.json',JSON.stringify(result,null,2)+'\n');console.log(`Completed ${cases.length} field fixtures; ${result.failures.length} unexpected refusal or validation failures. Read all comparison flags before claiming equivalence.`)
