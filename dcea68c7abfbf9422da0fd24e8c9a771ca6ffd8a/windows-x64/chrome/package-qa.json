@@ -1,0 +1,1708 @@
+{
+  "platform": "win32",
+  "arch": "x64",
+  "instance": {
+    "fallback": false,
+    "launcherPid": 3280,
+    "pid": 9844,
+    "port": 61851,
+    "preferredPort": 0,
+    "profile": "D:\\a\\stenciii\\stenciii\\out\\chrome\\profile",
+    "schema": 1,
+    "studio": "stencil-studio",
+    "temporarySession": false,
+    "url": "http://localhost:61851/",
+    "version": "2.9.4"
+  },
+  "browser": "chromium",
+  "channel": "chrome",
+  "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+  "cases": [
+    {
+      "name": "simple",
+      "passed": true,
+      "elapsed_ms": 6849,
+      "webgl": {
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 1042,
+        "height": 513
+      },
+      "proof": {
+        "independent": {
+          "format": "binary STL",
+          "bytes": 249084,
+          "triangles": 4980,
+          "vertices": 2490,
+          "bounds_mm": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              200,
+              153.70370483398438,
+              5.199999809265137
+            ]
+          ],
+          "size_mm": [
+            200,
+            153.70370483398438,
+            5.199999809265137
+          ],
+          "signed_volume_mm3": 71470.04460015621,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        "normals": {
+          "simple.stl": {
+            "finite_unit_normals": 4980,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 1
+          }
+        },
+        "m6_equivalence": {
+          "simple.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "3db1d38e6e22f88ed068c30eea8f1828d911839ca8a7382322a0e6d825fd8384",
+              "3db1d38e6e22f88ed068c30eea8f1828d911839ca8a7382322a0e6d825fd8384"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              4980,
+              4980
+            ],
+            "shared_exact_triangles": 4980,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          }
+        }
+      },
+      "lossless_save_reopen": true
+    },
+    {
+      "name": "colours",
+      "passed": true,
+      "elapsed_ms": 6553,
+      "webgl": {
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 1042,
+        "height": 391
+      },
+      "proof": {
+        "independent": {
+          "format": "ZIP",
+          "bytes": 601064,
+          "entries": [
+            {
+              "name": "assembly-1-Register_colour_plates/colour_1.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 3128985397,
+              "format": "binary STL",
+              "bytes": 281084,
+              "triangles": 5620,
+              "vertices": 2804,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  79.16666412353516,
+                  5.199999809265137
+                ]
+              ],
+              "size_mm": [
+                100,
+                79.16666412353516,
+                5.199999809265137
+              ],
+              "signed_volume_mm3": 23213.70367228597,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Register_colour_plates/colour_2.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 3558357564,
+              "format": "binary STL",
+              "bytes": 277284,
+              "triangles": 5544,
+              "vertices": 2754,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  79.16666412353516,
+                  5.199999809265137
+                ]
+              ],
+              "size_mm": [
+                100,
+                79.16666412353516,
+                5.199999809265137
+              ],
+              "signed_volume_mm3": 31926.622641310845,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 1850354433,
+              "format": "binary STL",
+              "bytes": 28284,
+              "triangles": 564,
+              "vertices": 288,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  17.399999618530273,
+                  3.799999952316284,
+                  12
+                ]
+              ],
+              "size_mm": [
+                17.399999618530273,
+                3.799999952316284,
+                12
+              ],
+              "signed_volume_mm3": 407.116420441479,
+              "components": 3,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "original-project.json",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 1292928382
+            },
+            {
+              "name": "manufacturing-manifest.json",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 994627638
+            }
+          ]
+        },
+        "normals": {
+          "assembly-1-Register_colour_plates/colour_1.stl": {
+            "finite_unit_normals": 5620,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999992
+          },
+          "assembly-1-Register_colour_plates/colour_2.stl": {
+            "finite_unit_normals": 5544,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999992
+          },
+          "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+            "finite_unit_normals": 564,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999994
+          }
+        },
+        "m6_equivalence": {
+          "assembly-1-Register_colour_plates/colour_1.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "92c79f38745cfb9cf767e369c879eeb016c96599b52edc2d73390025864ace9a",
+              "92c79f38745cfb9cf767e369c879eeb016c96599b52edc2d73390025864ace9a"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              5620,
+              5620
+            ],
+            "shared_exact_triangles": 5620,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Register_colour_plates/colour_2.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "7ecf80834a9ac81d7fdf2a24df6a19b3914b104cb47f188ecc2f640f0e9838a4",
+              "7ecf80834a9ac81d7fdf2a24df6a19b3914b104cb47f188ecc2f640f0e9838a4"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              5544,
+              5544
+            ],
+            "shared_exact_triangles": 5544,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "457eabc0702e354b1b836f2831f4c45e9559d8c9d156097aa9a807989022eb25",
+              "457eabc0702e354b1b836f2831f4c45e9559d8c9d156097aa9a807989022eb25"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              564,
+              564
+            ],
+            "shared_exact_triangles": 564,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          }
+        }
+      },
+      "lossless_save_reopen": true
+    },
+    {
+      "name": "mounted",
+      "passed": true,
+      "elapsed_ms": 84819,
+      "webgl": {
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 1042,
+        "height": 406
+      },
+      "proof": {
+        "independent": {
+          "format": "ZIP",
+          "bytes": 7449516,
+          "entries": [
+            {
+              "name": "assembly-1-Screws__nuts___plates/bolt_M4x20.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 169357490,
+              "format": "binary STL",
+              "bytes": 1109984,
+              "triangles": 22198,
+              "vertices": 11101,
+              "bounds_mm": [
+                [
+                  -3.6950416564941406,
+                  -3.200000047683716,
+                  0
+                ],
+                [
+                  3.6950416564941406,
+                  3.200000047683716,
+                  22.799999237060547
+                ]
+              ],
+              "size_mm": [
+                7.390083312988281,
+                6.400000095367432,
+                22.799999237060547
+              ],
+              "signed_volume_mm3": 275.1615151358435,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Screws__nuts___plates/extender_M4.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 2320968388,
+              "format": "binary STL",
+              "bytes": 52684,
+              "triangles": 1052,
+              "vertices": 520,
+              "bounds_mm": [
+                [
+                  -31,
+                  -5,
+                  0
+                ],
+                [
+                  31,
+                  30,
+                  4
+                ]
+              ],
+              "size_mm": [
+                62,
+                35,
+                4
+              ],
+              "signed_volume_mm3": 8351.064091155293,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 2640225596,
+              "format": "binary STL",
+              "bytes": 75784,
+              "triangles": 1514,
+              "vertices": 747,
+              "bounds_mm": [
+                [
+                  0,
+                  -6,
+                  0
+                ],
+                [
+                  64,
+                  6,
+                  6.031088829040527
+                ]
+              ],
+              "size_mm": [
+                64,
+                12,
+                6.031088829040527
+              ],
+              "signed_volume_mm3": 4120.407504078494,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Screws__nuts___plates/joiner_M4.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 2897482446,
+              "format": "binary STL",
+              "bytes": 32684,
+              "triangles": 652,
+              "vertices": 324,
+              "bounds_mm": [
+                [
+                  -31,
+                  -5,
+                  0
+                ],
+                [
+                  31,
+                  5,
+                  4
+                ]
+              ],
+              "size_mm": [
+                62,
+                10,
+                4
+              ],
+              "signed_volume_mm3": 2272.3594823948415,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 605590619,
+              "format": "binary STL",
+              "bytes": 52684,
+              "triangles": 1052,
+              "vertices": 520,
+              "bounds_mm": [
+                [
+                  -20,
+                  -5,
+                  0
+                ],
+                [
+                  20,
+                  30,
+                  4
+                ]
+              ],
+              "size_mm": [
+                40,
+                35,
+                4
+              ],
+              "signed_volume_mm3": 5271.064095202302,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 355635482,
+              "format": "binary STL",
+              "bytes": 32684,
+              "triangles": 652,
+              "vertices": 324,
+              "bounds_mm": [
+                [
+                  -20,
+                  -5,
+                  0
+                ],
+                [
+                  20,
+                  5,
+                  4
+                ]
+              ],
+              "size_mm": [
+                40,
+                10,
+                4
+              ],
+              "signed_volume_mm3": 1392.359483688909,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Screws__nuts___plates/nut_M4.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 3632108162,
+              "format": "binary STL",
+              "bytes": 202884,
+              "triangles": 4056,
+              "vertices": 2028,
+              "bounds_mm": [
+                [
+                  -3.6950416564941406,
+                  -3.200000047683716,
+                  0
+                ],
+                [
+                  3.6950416564941406,
+                  3.200000047683716,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                7.390083312988281,
+                6.400000095367432,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 78.03963848374417,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 1888694489,
+              "format": "binary STL",
+              "bytes": 1084,
+              "triangles": 20,
+              "vertices": 12,
+              "bounds_mm": [
+                [
+                  -1.5,
+                  -1.299038052558899,
+                  0
+                ],
+                [
+                  1.5,
+                  1.299038052558899,
+                  19
+                ]
+              ],
+              "size_mm": [
+                3,
+                2.598076105117798,
+                19
+              ],
+              "signed_volume_mm3": 111.06775349378586,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Screws__nuts___plates/stencil_r1c1.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 4069539765,
+              "format": "binary STL",
+              "bytes": 1092084,
+              "triangles": 21840,
+              "vertices": 10912,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  200,
+                  152.83018493652344,
+                  10.199999809265137
+                ]
+              ],
+              "size_mm": [
+                200,
+                152.83018493652344,
+                10.199999809265137
+              ],
+              "signed_volume_mm3": 90455.07365462901,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Screws__nuts___plates/stencil_r1c2.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 3056450732,
+              "format": "binary STL",
+              "bytes": 1943584,
+              "triangles": 38870,
+              "vertices": 19425,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  200,
+                  152.83018493652344,
+                  10.199999809265137
+                ]
+              ],
+              "size_mm": [
+                200,
+                152.83018493652344,
+                10.199999809265137
+              ],
+              "signed_volume_mm3": 76107.74273099219,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Screws__nuts___plates/stencil_r2c1.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 1045188127,
+              "format": "binary STL",
+              "bytes": 966384,
+              "triangles": 19326,
+              "vertices": 9655,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  200,
+                  152.83018493652344,
+                  10.199999809265137
+                ]
+              ],
+              "size_mm": [
+                200,
+                152.83018493652344,
+                10.199999809265137
+              ],
+              "signed_volume_mm3": 81013.51064672832,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Screws__nuts___plates/stencil_r2c2.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 916478351,
+              "format": "binary STL",
+              "bytes": 1849584,
+              "triangles": 36990,
+              "vertices": 18485,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  200,
+                  152.83018493652344,
+                  10.199999809265137
+                ]
+              ],
+              "size_mm": [
+                200,
+                152.83018493652344,
+                10.199999809265137
+              ],
+              "signed_volume_mm3": 73275.46625275699,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "original-project.json",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 243005678
+            },
+            {
+              "name": "manufacturing-manifest.json",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 4147523820
+            }
+          ]
+        },
+        "normals": {
+          "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+            "finite_unit_normals": 22198,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999994
+          },
+          "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+            "finite_unit_normals": 1052,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999997
+          },
+          "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+            "finite_unit_normals": 1514,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999997
+          },
+          "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+            "finite_unit_normals": 652,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999997
+          },
+          "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+            "finite_unit_normals": 1052,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999997
+          },
+          "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+            "finite_unit_normals": 652,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999997
+          },
+          "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+            "finite_unit_normals": 4056,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999997
+          },
+          "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+            "finite_unit_normals": 20,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999999
+          },
+          "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+            "finite_unit_normals": 21840,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999992
+          },
+          "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+            "finite_unit_normals": 38870,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999992
+          },
+          "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+            "finite_unit_normals": 19326,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999994
+          },
+          "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+            "finite_unit_normals": 36990,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999992
+          }
+        },
+        "m6_equivalence": {
+          "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "b6b0877558cf60c27be4f9cf56937071536075054063dacff1bf5da73114817f",
+              "b6b0877558cf60c27be4f9cf56937071536075054063dacff1bf5da73114817f"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              22198,
+              22198
+            ],
+            "shared_exact_triangles": 22198,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "be2612c8d75b592730cd77cdf817873a5928b3ef3dcddb8fd281e3e1b151cd5c",
+              "be2612c8d75b592730cd77cdf817873a5928b3ef3dcddb8fd281e3e1b151cd5c"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              1052,
+              1052
+            ],
+            "shared_exact_triangles": 1052,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "2d20a4c07245c89d54a4cd12ee8d232d0b8664d754c5cfcbeb3e89972c2a4c96",
+              "2d20a4c07245c89d54a4cd12ee8d232d0b8664d754c5cfcbeb3e89972c2a4c96"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              1514,
+              1514
+            ],
+            "shared_exact_triangles": 1514,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "96ebc8d21861eb3950e0ded7e3505239345b052c7d7b0e5fb6f72f519202e236",
+              "96ebc8d21861eb3950e0ded7e3505239345b052c7d7b0e5fb6f72f519202e236"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              652,
+              652
+            ],
+            "shared_exact_triangles": 652,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+            "file_bytes_equal": false,
+            "file_sha256": [
+              "2839daa4ee30384d6c5c4544858d69c47c0d257e99e5802ddb5d597e98c6e695",
+              "05e13f02da6f9ddc6bfa633a79a3aa87334fa8534ee0c22ee6aff9fd38e849e3"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              1052,
+              1052
+            ],
+            "shared_exact_triangles": 1052,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "894413bc65bcc887ee3480d2e2bc5a74474111214785d512475ef3324a65c252",
+              "894413bc65bcc887ee3480d2e2bc5a74474111214785d512475ef3324a65c252"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              652,
+              652
+            ],
+            "shared_exact_triangles": 652,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "22cda41f699269f93726c3e938abac8ddbc647fbef8909851f10bf28f70048f7",
+              "22cda41f699269f93726c3e938abac8ddbc647fbef8909851f10bf28f70048f7"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              4056,
+              4056
+            ],
+            "shared_exact_triangles": 4056,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "50219ab79346510a53a0934661f69c05bed68f563d3a34b4c5031bf56aef094c",
+              "50219ab79346510a53a0934661f69c05bed68f563d3a34b4c5031bf56aef094c"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              20,
+              20
+            ],
+            "shared_exact_triangles": 20,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "9e2a0b0729743d154f008d3d27806b141a2bad3ecad2e3e55c3d653848b6f637",
+              "9e2a0b0729743d154f008d3d27806b141a2bad3ecad2e3e55c3d653848b6f637"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              21840,
+              21840
+            ],
+            "shared_exact_triangles": 21840,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "774006997c7650a3678b15736e6c27f8c236a522ecd1dea8d26b1381f090f4fa",
+              "774006997c7650a3678b15736e6c27f8c236a522ecd1dea8d26b1381f090f4fa"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              38870,
+              38870
+            ],
+            "shared_exact_triangles": 38870,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "b0802525c98a658180c1a76b52295dda2ff6be480c22fc84aa1cff9ef2c9338e",
+              "b0802525c98a658180c1a76b52295dda2ff6be480c22fc84aa1cff9ef2c9338e"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              19326,
+              19326
+            ],
+            "shared_exact_triangles": 19326,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+            "file_bytes_equal": false,
+            "file_sha256": [
+              "facce45d601ef1c1aeb494d14e83d17635f5174f968e64be54ccc981ebf1d2bf",
+              "04783fdc75d9f6010eac6f14c70aaccf39aeed5f0dc2d68329722cf7c3e62b09"
+            ],
+            "exact_oriented_triangles_equal": false,
+            "exact_surface_equal": true,
+            "category": "B",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              36990,
+              36990
+            ],
+            "shared_exact_triangles": 36988,
+            "residual_triangles": [
+              2,
+              2
+            ],
+            "residual_exact_planes": 1,
+            "unmatched_plane_boundary_lines": 0
+          }
+        }
+      },
+      "lossless_save_reopen": true
+    },
+    {
+      "name": "old-browser",
+      "passed": true,
+      "elapsed_ms": 2781,
+      "webgl": {
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 1042,
+        "height": 482
+      },
+      "proof": {
+        "independent": {
+          "format": "binary STL",
+          "bytes": 175284,
+          "triangles": 3504,
+          "vertices": 1728,
+          "bounds_mm": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              100,
+              77,
+              2.5999999046325684
+            ]
+          ],
+          "size_mm": [
+            100,
+            77,
+            2.5999999046325684
+          ],
+          "signed_volume_mm3": 9429.272557626588,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        "normals": {
+          "old-browser.stl": {
+            "finite_unit_normals": 3504,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999994
+          }
+        },
+        "m6_equivalence": {}
+      },
+      "lossless_save_reopen": true
+    }
+  ],
+  "outside": [],
+  "consoleErrors": [],
+  "version": "156.0.8078.48",
+  "initial_engine": {
+    "n": 2,
+    "why": "threaded",
+    "version": "2.9.4"
+  },
+  "single_thread": {
+    "passed": true,
+    "proof": {
+      "independent": {
+        "format": "binary STL",
+        "bytes": 249084,
+        "triangles": 4980,
+        "vertices": 2490,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            153.70370483398438,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          153.70370483398438,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 71470.04460015621,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      "normals": {
+        "single-thread.stl": {
+          "finite_unit_normals": 4980,
+          "zero_or_opposed_normals": 0,
+          "minimum_normal_cross_cosine": 1
+        }
+      },
+      "m6_equivalence": {
+        "single-thread.stl": {
+          "file_bytes_equal": true,
+          "file_sha256": [
+            "3db1d38e6e22f88ed068c30eea8f1828d911839ca8a7382322a0e6d825fd8384",
+            "3db1d38e6e22f88ed068c30eea8f1828d911839ca8a7382322a0e6d825fd8384"
+          ],
+          "exact_oriented_triangles_equal": true,
+          "exact_surface_equal": true,
+          "category": "A",
+          "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+          "spatial_tolerance_mm": 0,
+          "maximum_surface_deviation_mm": 0,
+          "triangles": [
+            4980,
+            4980
+          ],
+          "shared_exact_triangles": 4980,
+          "residual_triangles": [
+            0,
+            0
+          ],
+          "residual_exact_planes": 0,
+          "unmatched_plane_boundary_lines": 0
+        }
+      }
+    }
+  },
+  "batch": {
+    "summary": {
+      "schema": 2,
+      "recipe": "Simple stencil",
+      "source": "source-1",
+      "options": {
+        "format": "zip",
+        "project": true,
+        "layouts": false,
+        "outlines": false,
+        "strict": false
+      },
+      "planned_jobs": 2,
+      "verified": 2,
+      "failed": 0,
+      "cancelled": 0,
+      "items": [
+        {
+          "id": "1-1",
+          "name": "Simple stencil",
+          "relativePath": "Simple stencil",
+          "overrides": [
+            {
+              "step": "stencil-3",
+              "parameter": "thickness_mm",
+              "value": 2,
+              "label": "Thickness (mm)"
+            }
+          ],
+          "status": "Verified",
+          "milliseconds": 597.214999999851,
+          "metrics": {
+            "triangles": 4980,
+            "components": 1,
+            "volumeMm3": 30240.661680737045,
+            "sizeMm": [
+              200,
+              153.70370483398438,
+              2.200000047683716
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 258754
+          },
+          "findings": [
+            {
+              "level": "warn",
+              "text": "overhang 213 mm²"
+            },
+            {
+              "level": "info",
+              "text": "6 islands bridged"
+            }
+          ],
+          "output": "1-1-Simple_stencil-manufacturing.zip"
+        },
+        {
+          "id": "1-2",
+          "name": "Simple stencil",
+          "relativePath": "Simple stencil",
+          "overrides": [
+            {
+              "step": "stencil-3",
+              "parameter": "thickness_mm",
+              "value": 3,
+              "label": "Thickness (mm)"
+            }
+          ],
+          "status": "Verified",
+          "milliseconds": 550.3300000000745,
+          "metrics": {
+            "triangles": 4980,
+            "components": 1,
+            "volumeMm3": 43998.234876176226,
+            "sizeMm": [
+              200,
+              153.70370483398438,
+              3.200000047683716
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 258754
+          },
+          "findings": [
+            {
+              "level": "warn",
+              "text": "overhang 213 mm²"
+            },
+            {
+              "level": "info",
+              "text": "6 islands bridged"
+            }
+          ],
+          "output": "1-2-Simple_stencil-manufacturing.zip"
+        }
+      ]
+    },
+    "csv_rows": 2,
+    "verified_jobs": 2,
+    "independent_stl_count": 2,
+    "all_stls_valid": true,
+    "jobs": [
+      {
+        "entry": "1-1-Simple_stencil/manufacturing.zip",
+        "files": [
+          {
+            "path": "assembly-1-stencil-3/stencil-3.stl",
+            "source": "stencil-3",
+            "assembly": "stencil-3",
+            "role": "Stencil plate",
+            "copies_to_print": 1,
+            "bytes": 249084,
+            "sha256": "c73e9633ece7b2a1cbee473d7c0cc43ce67da7c45d8b4f9ffc74d214f370ca78",
+            "geometry": {
+              "triangles": 4980,
+              "size": [
+                200,
+                153.70370483398438,
+                2.200000047683716
+              ],
+              "bounds": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  200,
+                  153.70370483398438,
+                  2.200000047683716
+                ]
+              ],
+              "vertices": 2490,
+              "components": 1,
+              "degenerate": 0,
+              "edgesNotSharedTwice": 0,
+              "inconsistentWinding": 0,
+              "signedVolume": 30240.661680737045,
+              "closed": true,
+              "milliseconds": 34.75999999977648
+            },
+            "replaces_upstream_sources": [],
+            "also_used_by": []
+          },
+          {
+            "path": "original-project.json",
+            "source": "project",
+            "assembly": "Project",
+            "role": "Complete saved project with original artwork",
+            "copies_to_print": null,
+            "bytes": 6404,
+            "sha256": "e5ee10b8f668313939093e67b994fc01f9df5902fc78e9acee3c36bcc8254241",
+            "geometry": null,
+            "replaces_upstream_sources": [],
+            "also_used_by": []
+          }
+        ],
+        "assemblies": [
+          {
+            "id": "stencil-3/solid",
+            "name": "stencil-3",
+            "sources": [
+              {
+                "step": "stencil-3",
+                "kind": "solid",
+                "metadata": {},
+                "stats": {
+                  "bridge_material_pixels": 6318,
+                  "bridge_mm": 1.6,
+                  "bridge_pixels": 6318,
+                  "bridge_routes_mm": [],
+                  "bridge_strip_width_mm": 1.6666666666666665,
+                  "bridges_per_island": 1,
+                  "construction": "raster",
+                  "first_layer_islands": 6,
+                  "first_layer_taper_mm": 1,
+                  "flip": false,
+                  "grid_h": 830,
+                  "grid_w": 1080,
+                  "height_mm": 153.7,
+                  "islands_deleted": 0,
+                  "islands_found": 6,
+                  "islands_remaining": 0,
+                  "layer_height_mm": 0.2,
+                  "layers": 11,
+                  "margin_mm": 8,
+                  "min_first_layer_width_mm": 0,
+                  "overhang_area_mm2": 212.96,
+                  "overhang_check_deg": 45,
+                  "plate_top_mm": 2.2,
+                  "raised_bridges": true,
+                  "stl_bytes": 249084,
+                  "thickness_mm": 2,
+                  "threshold": 0,
+                  "triangles": 4980,
+                  "watertight": true,
+                  "width_mm": 200,
+                  "z_bridging": "easy"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "entry": "1-2-Simple_stencil/manufacturing.zip",
+        "files": [
+          {
+            "path": "assembly-1-stencil-3/stencil-3.stl",
+            "source": "stencil-3",
+            "assembly": "stencil-3",
+            "role": "Stencil plate",
+            "copies_to_print": 1,
+            "bytes": 249084,
+            "sha256": "f164a7420cd3ec500f5807cd6a13f0b37605245c38bc5ee66edfaea50380c915",
+            "geometry": {
+              "triangles": 4980,
+              "size": [
+                200,
+                153.70370483398438,
+                3.200000047683716
+              ],
+              "bounds": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  200,
+                  153.70370483398438,
+                  3.200000047683716
+                ]
+              ],
+              "vertices": 2490,
+              "components": 1,
+              "degenerate": 0,
+              "edgesNotSharedTwice": 0,
+              "inconsistentWinding": 0,
+              "signedVolume": 43998.234876176226,
+              "closed": true,
+              "milliseconds": 32.70999999996275
+            },
+            "replaces_upstream_sources": [],
+            "also_used_by": []
+          },
+          {
+            "path": "original-project.json",
+            "source": "project",
+            "assembly": "Project",
+            "role": "Complete saved project with original artwork",
+            "copies_to_print": null,
+            "bytes": 6404,
+            "sha256": "9733ecef2adbf0469d432c93685083eb00cb9feb44de5398dceff15c4587f4c5",
+            "geometry": null,
+            "replaces_upstream_sources": [],
+            "also_used_by": []
+          }
+        ],
+        "assemblies": [
+          {
+            "id": "stencil-3/solid",
+            "name": "stencil-3",
+            "sources": [
+              {
+                "step": "stencil-3",
+                "kind": "solid",
+                "metadata": {},
+                "stats": {
+                  "bridge_material_pixels": 6318,
+                  "bridge_mm": 1.6,
+                  "bridge_pixels": 6318,
+                  "bridge_routes_mm": [],
+                  "bridge_strip_width_mm": 1.6666666666666665,
+                  "bridges_per_island": 1,
+                  "construction": "raster",
+                  "first_layer_islands": 6,
+                  "first_layer_taper_mm": 1,
+                  "flip": false,
+                  "grid_h": 830,
+                  "grid_w": 1080,
+                  "height_mm": 153.7,
+                  "islands_deleted": 0,
+                  "islands_found": 6,
+                  "islands_remaining": 0,
+                  "layer_height_mm": 0.2,
+                  "layers": 16,
+                  "margin_mm": 8,
+                  "min_first_layer_width_mm": 0,
+                  "overhang_area_mm2": 212.96,
+                  "overhang_check_deg": 45,
+                  "plate_top_mm": 3.2,
+                  "raised_bridges": true,
+                  "stl_bytes": 249084,
+                  "thickness_mm": 3,
+                  "threshold": 0,
+                  "triangles": 4980,
+                  "watertight": true,
+                  "width_mm": 200,
+                  "z_bridging": "easy"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "meshes": [
+      {
+        "format": "binary STL",
+        "bytes": 249084,
+        "triangles": 4980,
+        "vertices": 2490,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            153.70370483398438,
+            2.200000047683716
+          ]
+        ],
+        "size_mm": [
+          200,
+          153.70370483398438,
+          2.200000047683716
+        ],
+        "signed_volume_mm3": 30240.661680737045,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 249084,
+        "triangles": 4980,
+        "vertices": 2490,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            153.70370483398438,
+            3.200000047683716
+          ]
+        ],
+        "size_mm": [
+          200,
+          153.70370483398438,
+          3.200000047683716
+        ],
+        "signed_volume_mm3": 43998.234876176226,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      }
+    ]
+  },
+  "shutdown_document": true,
+  "passed": true
+}

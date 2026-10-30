@@ -1,0 +1,26 @@
+{
+  "platform": "win32",
+  "arch": "x64",
+  "instance": {
+    "fallback": false,
+    "launcherPid": 3252,
+    "pid": 6024,
+    "port": 57754,
+    "preferredPort": 0,
+    "profile": "D:\\a\\stenciii\\stenciii\\out\\firefox\\profile",
+    "schema": 1,
+    "studio": "stencil-studio",
+    "temporarySession": false,
+    "url": "http://localhost:57754/",
+    "version": "2.9.4"
+  },
+  "browser": "firefox",
+  "channel": "",
+  "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+  "cases": [],
+  "outside": [],
+  "consoleErrors": [],
+  "version": "157.0",
+  "passed": false,
+  "error": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('.mesh-preview')\nExpected: \"true\"\nReceived: \"false\"\nTimeout:  120000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('.mesh-preview') with timeout 120000ms\n  - waiting for locator('.mesh-preview')\n    240 × locator resolved to <div data-cut=\"full\" data-ready=\"false\" data-detail=\"auto\" class=\"mesh-preview\" data-shading=\"smooth\" data-wireframe=\"false\" data-comparison=\"false\">…</div>\n        - unexpected value \"false\"\n\n    at captureRawStack (D:\\a\\stenciii\\stenciii\\web\\node_modules\\playwright-core\\lib\\coreBundle.js:9282:17)\n    at callMatcherAsStep (D:\\a\\stenciii\\stenciii\\web\\node_modules\\playwright\\lib\\matchers\\expect.js:13316:57)\n    at Object.toHaveAttribute (D:\\a\\stenciii\\stenciii\\web\\node_modules\\playwright\\lib\\matchers\\expect.js:13308:23)\n    at D:\\a\\stenciii\\stenciii\\scripts\\m7\\package-qa.mjs:43:106"
+}
