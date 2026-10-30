@@ -62,7 +62,9 @@ test('live edits show draft, retain the last preview and finish full quality wit
     const post = Worker.prototype.postMessage
     Worker.prototype.postMessage = function (this: Worker, message: any, ...rest: any[]) {
       if (message.op === 'run') w.m2Runs.push({ at: performance.now(), resolution: JSON.parse(message.graph).nodes.find((n: any) => n.type === 'source')?.params.resolution })
-      return (post as any).call(this, message, ...rest)
+      const sent = (post as any).call(this, message, ...rest)
+      if (message.op === 'run') w.m2CancelHook?.()
+      return sent
     }
     let last = performance.now(); const frame = (time: number) => { w.m2FrameGaps.push(time - last); last = time; requestAnimationFrame(frame) }; requestAnimationFrame(frame)
   })
@@ -86,10 +88,28 @@ test('live edits show draft, retain the last preview and finish full quality wit
   await page.getByRole('spinbutton', { name: 'Stencil width', exact: true }).fill('160'); await ready(page)
   await expect(page.locator('.preview-caption')).toContainText('160.0')
   await page.getByRole('switch', { name: 'Automatic threshold' }).uncheck()
+  await ready(page)
+  // Cancel an actually submitted run in the same browser task. Waiting for
+  // Playwright's two-frame click stability lets a fast draft finish first.
+  await page.evaluate(() => {
+    const w = window as any
+    w.m2Cancellation = { messagePosted: false, buttonVisibleAtClick: false, buttonClicked: false }
+    const cancel = () => {
+      if (!w.m2Cancellation.messagePosted) return
+      const button = [...document.querySelectorAll<HTMLButtonElement>('.readiness button')].find(b => b.textContent === 'Cancel')
+      const rect = button?.getBoundingClientRect()
+      if (!button || button.disabled || !rect?.width || !rect.height) return
+      observer.disconnect(); w.m2CancelHook = undefined
+      w.m2Cancellation.buttonVisibleAtClick = true
+      button.click(); w.m2Cancellation.buttonClicked = true
+    }
+    const observer = new MutationObserver(cancel)
+    observer.observe(document.body, { childList: true, subtree: true })
+    w.m2CancelHook = () => { w.m2Cancellation.messagePosted = true; cancel() }
+  })
   await page.getByRole('slider', { name: 'Threshold', exact: true }).dispatchEvent('pointerdown', { pointerId: 2 })
   await page.getByRole('slider', { name: 'Threshold', exact: true }).fill('141')
-  await expect(page.getByRole('button', { name: 'Cancel', exact: true })).toBeVisible({ timeout: 30000 })
-  await page.getByRole('button', { name: 'Cancel', exact: true }).click()
+  await expect.poll(() => page.evaluate(() => (window as any).m2Cancellation), { timeout: 30000 }).toEqual({ messagePosted: true, buttonVisibleAtClick: true, buttonClicked: true })
   await expect(page.getByRole('status').filter({ hasText: /Processing cancelled/ })).toBeVisible()
   await page.waitForTimeout(1000); await expect(page.getByRole('link', { name: 'Export STL', exact: true })).toHaveAttribute('aria-disabled', 'true')
   await make(page)
