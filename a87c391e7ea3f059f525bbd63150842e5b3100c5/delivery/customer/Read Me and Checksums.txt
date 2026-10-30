@@ -1,0 +1,23 @@
+STENCIL STUDIO - M7 OFFLINE BROWSER EDITION
+
+Read Platform Test Record.txt inside the ZIP for tested systems and limits.
+This is a technical review package; no commercial listing has been published.
+
+SHA-256 (checks corruption, not publisher identity):
+
+StencilStudio-Windows-x64.zip
+8242785 bytes
+bb8c5a8a14e6d2acaef36d5e0a39e8b3a1c179fefd3d16f9acd3b37825f935f5
+
+StencilStudio-macOS-Apple-Silicon.zip
+7832696 bytes
+c602b64f5894fea31b3e75511e61f3e6825074ed557e678573c0b5b09b23655a
+
+StencilStudio-macOS-Intel.zip
+8225479 bytes
+21298dcc72cbb397854989886cad2f942b0ba2320a1c2d8d85db4c186beb8d1c
+
+StencilStudio-Quick-Start.pdf
+43171 bytes
+89868c6d2cebf0684ee81591a603c457398744fd008269387e226ea8d38f6a03
+
