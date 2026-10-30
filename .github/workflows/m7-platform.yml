@@ -37,6 +37,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+      - name: Install locked QA and notice dependencies
+        run: npm --prefix web ci
       - uses: actions/download-artifact@v4
         if: inputs.package_source == ''
         with:
@@ -49,7 +51,6 @@ jobs:
         run: |
           tar -xzf production-assets.tar.gz
           test ! -e web/dist/legacy.html
-          npm --prefix web ci
           target=$(rustc +1.99.0 -vV | sed -n 's/^host: //p')
           if [ "$RUNNER_OS" = Windows ]; then
             export CARGO_TARGET_X86_64_PC_WINDOWS_MSVC_RUSTFLAGS='-C target-feature=+crt-static -C strip=symbols'
@@ -96,7 +97,7 @@ jobs:
           sw_vers > out/os-version.txt
           file 'extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' 'extracted/Stencil Studio.app/Contents/Resources/stencil' > out/architectures.txt
           (spctl --assess --type execute --verbose=4 'extracted/Stencil Studio.app' > out/gatekeeper.txt 2>&1) || true
-          open -n 'extracted/Stencil Studio.app' --args --no-open --profile-dir "$PWD/gui-profile"
+          open -n 'extracted/Stencil Studio.app' --args --profile-dir "$PWD/gui-profile"
           sleep 3
           pgrep -x stencil-studio > out/gui-launch-pids.txt
           screencapture -x out/actual-launcher.png

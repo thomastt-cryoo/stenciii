@@ -34,7 +34,13 @@ try:
     ready=json.loads(host.stdout.readline());report['instance']=ready
     index=json.loads((ROOT/'docs/m7/acceptance/index.json').read_text())
     for fixture in [r for r in index if r['name']in('simple','colours','mounted','old-browser')]:
-        command('POST',f'/session/{session}/url',{'url':ready['url']});wait('return !!Array.from(document.querySelectorAll("button")).find(e=>e.textContent==="Choose Image"&&!e.disabled)')
+        command('POST',f'/session/{session}/url',{'url':ready['url']})
+        # Each case needs an empty workspace. Safari's automation window keeps
+        # origin storage across navigations; preserve/reopen is tested below,
+        # then clear only this test origin's app draft before the next case.
+        execute('localStorage.removeItem("stencil-studio.project.v1")')
+        command('POST',f'/session/{session}/refresh',{})
+        wait('return !!Array.from(document.querySelectorAll("button")).find(e=>e.textContent==="Choose Image"&&!e.disabled)')
         raw=json.loads((ROOT/'docs/m7/acceptance'/fixture['project']).read_text())
         execute('const input=document.querySelector("[aria-label=\\\"Open project file\\\"]"),dt=new DataTransfer();dt.items.add(new File([JSON.stringify(arguments[0])],"Safari project.json",{type:"application/json"}));input.files=dt.files;input.dispatchEvent(new Event("change",{bubbles:true}));',raw)
         href=wait('return Array.from(document.querySelectorAll("a")).find(e=>/^Export (STL|ZIP)$/.test(e.textContent)&&e.getAttribute("aria-disabled")==="false")?.href',480)

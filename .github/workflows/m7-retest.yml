@@ -11,7 +11,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[m7-retest]')
     uses: ./.github/workflows/m7-platform.yml
     with:
-      runner: macos-15
+      runner: macos-26
       platform: macos-arm64
       expected_arch: arm64
       assets_run: '41100143518'
