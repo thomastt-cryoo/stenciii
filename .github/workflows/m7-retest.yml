@@ -16,6 +16,15 @@ jobs:
       expected_arch: arm64
       assets_run: '41100143518'
       package_source: '1561d8d22bcbc36e4f1325a7f632e52369358156'
+  windows:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[m7-windows-retest]')
+    uses: ./.github/workflows/m7-platform.yml
+    with:
+      runner: windows-2025
+      platform: windows-x64
+      expected_arch: x64
+      assets_run: '41100143518'
+      package_source: '1561d8d22bcbc36e4f1325a7f632e52369358156'
   intel:
     needs: apple-silicon
     uses: ./.github/workflows/m7-platform.yml

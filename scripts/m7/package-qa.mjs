@@ -19,6 +19,11 @@ let browser
 const report={platform:process.platform,arch:process.arch,instance,browser:browserName,channel,offline:'Browser requests to every non-loopback host blocked; not an OS-wide network disconnection',cases,outside,consoleErrors}
 const python=process.env.M7_PYTHON||'python'
 const prove=(file,baseline)=>JSON.parse(execFileSync(python,[resolve(root,'scripts/m7/prove_export.py'),file,...(baseline?[resolve(root,baseline)]:[])],{encoding:'utf8',maxBuffer:32_000_000,timeout:600000}))
+async function download(page,action){
+ // Complete manufacturing archives can take longer than a small STL. Register
+ // both promises immediately so timeout failures still reach finally/cleanup.
+ const [file]=await Promise.all([page.waitForEvent('download',{timeout:240000}),action()]);return file
+}
 try {
  browser=await ({chromium,firefox,webkit}[browserName]).launch({headless:process.env.M7_HEADFUL!=='1',...(channel?{channel}:{})})
  report.version=browser.version()
@@ -33,17 +38,17 @@ try {
   // There is one primary printable result link; its disabled state tracks the current project.
   await expect(page.getByRole('link',{name:/^Export (STL|ZIP)$/})).toHaveAttribute('aria-disabled','false',{timeout:480000})
   const exportLink=page.getByRole('link',{name:/^Export (STL|ZIP)$/}),kind=(await exportLink.innerText()).includes('ZIP')?'zip':'stl'
-  const downloadEvent=page.waitForEvent('download');await exportLink.click();const file=resolve(out,fixture.name+'.'+kind);await(await downloadEvent).saveAs(file)
+  const printable=await download(page,()=>exportLink.click()),file=resolve(out,fixture.name+'.'+kind);await printable.saveAs(file)
   const proof=prove(file,fixture.m6_output)
   await page.getByRole('tab',{name:'3D',exact:true}).click();await expect(page.locator('.mesh-preview')).toHaveAttribute('data-ready','true',{timeout:120000})
   const gl=await page.locator('.mesh-preview canvas').evaluate(canvas=>{const gl=canvas.getContext('webgl2')||canvas.getContext('webgl');return gl?{version:gl.getParameter(gl.VERSION),width:canvas.width,height:canvas.height}:null});assert(gl&&gl.width>0&&gl.height>0)
   if(cases.length===0){
    await page.screenshot({path:resolve(out,'actual-3d-preview.png'),fullPage:true})
    await page.getByRole('button',{name:'All Settings',exact:true}).click();await page.getByRole('searchbox').fill('diagnostics');await page.getByRole('button',{name:'Engine diagnostics and processing reports',exact:true}).click();await page.locator('.engine-diagnostics>summary').click()
-   const diagnosticEvent=page.waitForEvent('download');await page.getByRole('button',{name:'Download diagnostic report JSON',exact:true}).click();const diagnosticFile=resolve(out,'initial-engine.json');await(await diagnosticEvent).saveAs(diagnosticFile);report.initial_engine=JSON.parse(readFileSync(diagnosticFile)).engine
+   const diagnostic=await download(page,()=>page.getByRole('button',{name:'Download diagnostic report JSON',exact:true}).click()),diagnosticFile=resolve(out,'initial-engine.json');await diagnostic.saveAs(diagnosticFile);report.initial_engine=JSON.parse(readFileSync(diagnosticFile)).engine
    await page.getByRole('button',{name:'Close settings',exact:true}).click()
   }
-  const saved=page.waitForEvent('download');await page.getByRole('button',{name:'Save Project',exact:true}).click();const savedFile=resolve(out,fixture.name+'-saved.json');await(await saved).saveAs(savedFile)
+  const saved=await download(page,()=>page.getByRole('button',{name:'Save Project',exact:true}).click()),savedFile=resolve(out,fixture.name+'-saved.json');await saved.saveAs(savedFile)
   assert.deepEqual(JSON.parse(readFileSync(savedFile)),raw)
   await page.reload();await expect(page.getByRole('button',{name:'All Settings',exact:true})).toBeEnabled({timeout:60000});assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('stencil-studio.project.v1'))),raw)
   await page.setInputFiles('[aria-label="Open project file"]',savedFile);await expect(exportLink).toHaveAttribute('aria-disabled','false',{timeout:480000})
@@ -55,14 +60,14 @@ try {
  const context=await browser.newContext(),page=await context.newPage()
  await context.route('**/*',route=>{const u=new URL(route.request().url());if(!['localhost','127.0.0.1'].includes(u.hostname)){outside.push(u.href);return route.abort()}if(u.pathname.startsWith('/pkg-mt/'))return route.abort();return route.continue()})
  await page.goto(instance.url);await expect(page.getByRole('button',{name:'Choose Image',exact:true})).toBeEnabled({timeout:60000});await page.setInputFiles('[aria-label="Open project file"]',resolve(root,'docs/m7/acceptance/simple.json'));await expect(page.getByRole('link',{name:'Export STL',exact:true})).toHaveAttribute('aria-disabled','false',{timeout:120000})
- const dl=page.waitForEvent('download');await page.getByRole('link',{name:'Export STL',exact:true}).click();const fallback=resolve(out,'single-thread.stl');await(await dl).saveAs(fallback);report.single_thread={passed:true,proof:prove(fallback,'docs/m6/workflows/simple.stl')}
+ const dl=await download(page,()=>page.getByRole('link',{name:'Export STL',exact:true}).click()),fallback=resolve(out,'single-thread.stl');await dl.saveAs(fallback);report.single_thread={passed:true,proof:prove(fallback,'docs/m6/workflows/simple.stl')}
  await page.getByRole('button',{name:'All Settings',exact:true}).click();await page.getByRole('searchbox').fill('diagnostics');await page.getByRole('button',{name:'Engine diagnostics and processing reports',exact:true}).click();await page.locator('.engine-diagnostics>summary').click();await expect(page.locator('.engine-diagnostics')).toContainText('1 threads')
  await page.getByRole('button',{name:'Close settings',exact:true}).click()
  // Reuse a portable recipe for a real local numeric sweep with two jobs.
  await page.getByRole('button',{name:'All Settings',exact:true}).click();await page.getByRole('button',{name:'Batch processing and diagnostics',exact:true}).click();await page.setInputFiles('[aria-label="Batch saved project"]',resolve(root,'docs/m7/acceptance/simple.json'))
  await page.getByRole('button',{name:'Add parameter variation',exact:true}).click();const raw=JSON.parse(readFileSync(resolve(root,'docs/m7/acceptance/simple.json'))),plate=raw.graph.nodes.find(n=>n.type==='stencil')
  await page.getByRole('combobox',{name:'Variation setting 1',exact:true}).selectOption(JSON.stringify([plate.id,'thickness_mm']));await page.getByRole('spinbutton',{name:'Variation start 1',exact:true}).fill('2');await page.getByRole('spinbutton',{name:'Variation end 1',exact:true}).fill('3');await page.getByRole('spinbutton',{name:'Variation increment 1',exact:true}).fill('1')
- await page.getByRole('button',{name:'Run local batch',exact:true}).click();await expect(page.getByRole('link',{name:'Download batch collection',exact:true})).toBeVisible({timeout:480000});const batchEvent=page.waitForEvent('download');await page.getByRole('link',{name:'Download batch collection',exact:true}).click();const batchFile=resolve(out,'batch-sweep.zip');await(await batchEvent).saveAs(batchFile)
+ await page.getByRole('button',{name:'Run local batch',exact:true}).click();await expect(page.getByRole('link',{name:'Download batch collection',exact:true})).toBeVisible({timeout:480000});const batch=await download(page,()=>page.getByRole('link',{name:'Download batch collection',exact:true}).click()),batchFile=resolve(out,'batch-sweep.zip');await batch.saveAs(batchFile)
  report.batch=JSON.parse(execFileSync(python,[resolve(root,'scripts/m6/validate_batch.py'),batchFile],{encoding:'utf8',maxBuffer:32_000_000,timeout:600000}));assert.equal(report.batch.verified_jobs,2)
  // Explicit launcher shutdown must end the old document and its entire worker tree.
  child.stdin.end();await expect(page.getByRole('heading',{name:'Stencil Studio is closed',exact:true})).toBeVisible({timeout:15000});report.shutdown_document=true
