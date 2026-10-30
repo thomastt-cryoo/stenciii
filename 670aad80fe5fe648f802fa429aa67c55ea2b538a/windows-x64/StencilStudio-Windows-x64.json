@@ -1,0 +1,16 @@
+{
+  "file": "StencilStudio-Windows-x64.zip",
+  "platform": "windows-x64",
+  "source_commit": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
+  "bytes": 8262443,
+  "sha256": "f675a8877673c2cf8925eb2dd1165c7ea9d1d8bfb2f8bf0a9e9aae27628eff09",
+  "etsy_limit_bytes": 20000000,
+  "fits_etsy_limit": true,
+  "signing": {
+    "developer_id_signed": false,
+    "notarized": false,
+    "ad_hoc_signed": false
+  },
+  "backend_bytes": 17279488,
+  "launcher_bytes": 596480
+}

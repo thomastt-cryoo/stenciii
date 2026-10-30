@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "graph": {
+    "nodes": [
+      {
+        "id": "words",
+        "type": "text",
+        "params": {
+          "text": "STUDIO 07",
+          "font": "sans bold",
+          "size": 100,
+          "line_spacing": 1,
+          "padding": 20
+        }
+      },
+      {
+        "id": "plate",
+        "type": "stencil",
+        "params": {
+          "width_mm": 100,
+          "thickness_mm": 2,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 0,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": [
+          "words",
+          "mask"
+        ],
+        "to": [
+          "plate",
+          "mask"
+        ]
+      }
+    ]
+  }
+}
