@@ -16,13 +16,26 @@ let errors='';child.stderr.on('data',b=>errors+=b)
 const line=await Promise.race([new Promise((ok,bad)=>{createInterface({input:child.stdout}).once('line',ok);child.on('exit',code=>bad(Error(`Launcher exited ${code}: ${errors}`)))}),new Promise((_,bad)=>setTimeout(()=>bad(Error('Startup timeout')),25000).unref())])
 const instance=JSON.parse(line),outside=[],consoleErrors=[],consoleMessages=[],cases=[]
 let browser,activePage
-const report={platform:process.platform,arch:process.arch,instance,browser:browserName,channel,offline:'Browser requests to every non-loopback host blocked; not an OS-wide network disconnection',cases,outside,consoleErrors,consoleMessages}
+const report={platform:process.platform,arch:process.arch,instance,browser:browserName,channel,offline:'Browser requests to every non-loopback host blocked; not an OS-wide network disconnection',cases,outside,consoleErrors,consoleMessages,limitations:[],navigation_observer_errors:[]}
 const python=process.env.M7_PYTHON||'python'
 const prove=(file,baseline)=>JSON.parse(execFileSync(python,[resolve(root,'scripts/m7/prove_export.py'),file,...(baseline?[resolve(root,baseline)]:[])],{encoding:'utf8',maxBuffer:32_000_000,timeout:600000}))
 async function download(page,action){
  // Complete manufacturing archives can take longer than a small STL. Register
  // both promises immediately so timeout failures still reach finally/cleanup.
  const [file]=await Promise.all([page.waitForEvent('download',{timeout:240000}),action()]);return file
+}
+async function reloadDraft(page){
+ const previous=await page.evaluate(()=>performance.timeOrigin)
+ try{await page.reload({waitUntil:'domcontentloaded'})}catch(e){
+  // Firefox can report an aborted download/navigation observer even when the
+  // requested new document commits. Require proof of a fresh local document;
+  // never turn an unchanged document or our closed-session page into a pass.
+  if(browserName!=='firefox'||!String(e).includes('NS_BINDING_ABORTED'))throw e
+  await expect.poll(()=>page.evaluate(()=>performance.timeOrigin)).not.toBe(previous)
+  assert.equal(new URL(page.url()).origin,new URL(instance.url).origin)
+  report.navigation_observer_errors.push(String(e))
+ }
+ await expect(page.getByRole('button',{name:'All Settings',exact:true})).toBeEnabled({timeout:60000})
 }
 try {
  browser=await ({chromium,firefox,webkit}[browserName]).launch({headless:process.env.M7_HEADFUL!=='1',...(channel?{channel}:{})})
@@ -44,8 +57,18 @@ try {
   const exportLink=page.getByRole('link',{name:/^Export (STL|ZIP)$/}),kind=(await exportLink.innerText()).includes('ZIP')?'zip':'stl'
   const printable=await download(page,()=>exportLink.click()),file=resolve(out,fixture.name+'.'+kind);await printable.saveAs(file)
   const proof=prove(file,fixture.m6_output)
-  await page.getByRole('tab',{name:'3D',exact:true}).click();await expect(page.locator('.mesh-preview')).toHaveAttribute('data-ready','true',{timeout:120000})
-  const gl=await page.locator('.mesh-preview canvas').evaluate(canvas=>{const gl=canvas.getContext('webgl2')||canvas.getContext('webgl');return gl?{version:gl.getParameter(gl.VERSION),width:canvas.width,height:canvas.height}:null});assert(gl&&gl.width>0&&gl.height>0)
+  // A separate, empty canvas distinguishes a disabled runner graphics API
+  // from a failure to render the actual application mesh. Do not force GPU
+  // preferences or claim a 3D pass when the browser cannot create WebGL2.
+  const capability=await page.evaluate(()=>{const c=document.createElement('canvas'),messages=[];c.addEventListener('webglcontextcreationerror',e=>messages.push(e.statusMessage));const g=c.getContext('webgl2',{antialias:true,alpha:true});const r={available:!!g,messages,version:g?.getParameter(g.VERSION)};g?.getExtension('WEBGL_lose_context')?.loseContext();return r})
+  await page.getByRole('tab',{name:'3D',exact:true}).click();let gl
+  if(capability.available){
+   await expect(page.locator('.mesh-preview')).toHaveAttribute('data-ready','true',{timeout:120000})
+   gl=await page.locator('.mesh-preview canvas').evaluate(canvas=>{const gl=canvas.getContext('webgl2')||canvas.getContext('webgl');return gl?{version:gl.getParameter(gl.VERSION),width:canvas.width,height:canvas.height}:null});assert(gl&&gl.width>0&&gl.height>0)
+  }else{
+   await expect(page.getByRole('alert').filter({hasText:'3D rendering is unavailable'})).toBeVisible()
+   gl={tested:false,reason:'An independent empty canvas also cannot create WebGL2',capability};report.limitations.push({case:fixture.name,feature:'3D preview',...gl})
+  }
   if(cases.length===0){
    await page.screenshot({path:resolve(out,'actual-3d-preview.png'),fullPage:true})
    await page.getByRole('button',{name:'All Settings',exact:true}).click();await page.getByRole('searchbox').fill('diagnostics');await page.getByRole('button',{name:'Engine diagnostics and processing reports',exact:true}).click();await page.locator('.engine-diagnostics>summary').click()
@@ -54,7 +77,7 @@ try {
   }
   const saved=await download(page,()=>page.getByRole('button',{name:'Save Project',exact:true}).click()),savedFile=resolve(out,fixture.name+'-saved.json');await saved.saveAs(savedFile)
   assert.deepEqual(JSON.parse(readFileSync(savedFile)),raw)
-  await page.reload();await expect(page.getByRole('button',{name:'All Settings',exact:true})).toBeEnabled({timeout:60000});assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('stencil-studio.project.v1'))),raw)
+  await reloadDraft(page);assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('stencil-studio.project.v1'))),raw)
   await page.setInputFiles('[aria-label="Open project file"]',savedFile);await expect(exportLink).toHaveAttribute('aria-disabled','false',{timeout:480000})
   cases.push({name:fixture.name,passed:true,elapsed_ms:Date.now()-started,webgl:gl,proof,lossless_save_reopen:true})
   writeFileSync(resolve(out,'package-qa.json'),JSON.stringify(report,null,2));console.log(`PASS ${browserName} ${fixture.name}`)
@@ -78,7 +101,7 @@ try {
  report.batch_formats=JSON.parse(execFileSync(python,[resolve(root,'scripts/m7/batch_formats.py'),batchFile],{encoding:'utf8',maxBuffer:32_000_000,timeout:600000}))
  // Explicit launcher shutdown must end the old document and its entire worker tree.
  child.stdin.end();await expect(page.getByRole('heading',{name:'Stencil Studio is closed',exact:true})).toBeVisible({timeout:15000});report.shutdown_document=true
- await context.close();assert.equal(outside.length,0);assert.deepEqual(consoleErrors,[]);report.passed=true
+ await context.close();assert.equal(outside.length,0);assert.deepEqual(consoleErrors,[]);report.passed=true;report.qualification=report.limitations.length?'passed_with_graphics_limit':'passed'
 }catch(e){
  report.passed=false;report.error=String(e.stack||e)
  if(activePage)try{report.failure_text=await activePage.locator('body').innerText({timeout:2000});await activePage.screenshot({path:resolve(out,'failure.png'),fullPage:true,timeout:5000})}catch{}

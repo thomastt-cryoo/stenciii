@@ -16,7 +16,7 @@ jobs:
       expected_arch: arm64
       assets_run: '41100143518'
       package_source: '1561d8d22bcbc36e4f1325a7f632e52369358156'
-      case_filter: ${{ contains(github.event.head_commit.message, '[m7-style-check]') && 'smooth-vector,mounted,registered-colour-branches' || '' }}
+      case_filter: ''
   windows:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[m7-windows-retest]') || contains(github.event.head_commit.message, '[m7-style-check]')
     uses: ./.github/workflows/m7-platform.yml
@@ -37,3 +37,5 @@ jobs:
       platform: macos-x64
       expected_arch: x86_64
       assets_run: '41100143518'
+      package_source: '1f31e1f29703b0181e02d8e7453c331fc69089c3'
+      case_filter: 'simple,mounted,registered-colour-branches,smooth-vector'

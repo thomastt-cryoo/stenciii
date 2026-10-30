@@ -118,6 +118,9 @@ jobs:
         env:
           M7_CASES: ${{ inputs.case_filter || 'simple,colours,mounted,old-browser' }}
         run: node scripts/m7/package-qa.mjs '${{ steps.extract.outputs.launcher }}' out/chrome chromium chrome
+      - name: Simultaneous launches, multiple projects and folder update
+        if: always() && steps.extract.outcome == 'success'
+        run: node scripts/m7/lifecycle-qa.mjs '${{ steps.extract.outputs.launcher }}' out/lifecycle
       - name: Firefox engine
         if: always() && steps.extract.outcome == 'success'
         env:
