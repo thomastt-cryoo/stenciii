@@ -1,0 +1,57 @@
+[
+  {
+    "package": "block2-0.6.2",
+    "url": "https://raw.githubusercontent.com/madsmtm/objc2/b4167b582b2f75f9a1be75495c41b765344fd03c/LICENSE.md",
+    "file": "block2-0.6.2/LICENSE.md"
+  },
+  {
+    "package": "dispatch2-0.3.1",
+    "url": "https://raw.githubusercontent.com/madsmtm/objc2/8852b424193ca41602281b3d7540d7c8ed51e49a/LICENSE.md",
+    "file": "dispatch2-0.3.1/LICENSE.md"
+  },
+  {
+    "package": "i_key_sort-0.11.0",
+    "url": "https://raw.githubusercontent.com/iShape-Rust/iKeySort/d8c914dc29afd4d4824dacd2c134dbc16168e78c/LICENSE",
+    "file": "i_key_sort-0.11.0/LICENSE"
+  },
+  {
+    "package": "i_overlay-9.0.1",
+    "url": "https://raw.githubusercontent.com/iShape-Rust/iOverlay/7a9e659a0355af272cb26383be169557a78e5ea4/LICENSE-MIT",
+    "file": "i_overlay-9.0.1/LICENSE-MIT"
+  },
+  {
+    "package": "i_overlay-9.0.1",
+    "url": "https://raw.githubusercontent.com/iShape-Rust/iOverlay/7a9e659a0355af272cb26383be169557a78e5ea4/LICENSE-APACHE",
+    "file": "i_overlay-9.0.1/LICENSE-APACHE"
+  },
+  {
+    "package": "i_triangle-0.49.0",
+    "url": "https://raw.githubusercontent.com/iShape-Rust/iTriangle/ada5bae407cb7d474ed774e15959675a376658d7/LICENSE-MIT",
+    "file": "i_triangle-0.49.0/LICENSE-MIT"
+  },
+  {
+    "package": "i_triangle-0.49.0",
+    "url": "https://raw.githubusercontent.com/iShape-Rust/iTriangle/ada5bae407cb7d474ed774e15959675a376658d7/LICENSE-APACHE",
+    "file": "i_triangle-0.49.0/LICENSE-APACHE"
+  },
+  {
+    "package": "objc2-0.6.5",
+    "url": "https://raw.githubusercontent.com/madsmtm/objc2/d7d2fa23ceaa5e6096c923b081040e5d81b3b9df/LICENSE.md",
+    "file": "objc2-0.6.5/LICENSE.md"
+  },
+  {
+    "package": "objc2-app-kit-0.3.2",
+    "url": "https://raw.githubusercontent.com/madsmtm/objc2/7b1abfd750a2cacaea71d6a56ecfb83cb7de560b/LICENSE.md",
+    "file": "objc2-app-kit-0.3.2/LICENSE.md"
+  },
+  {
+    "package": "objc2-core-foundation-0.3.2",
+    "url": "https://raw.githubusercontent.com/madsmtm/objc2/7b1abfd750a2cacaea71d6a56ecfb83cb7de560b/LICENSE.md",
+    "file": "objc2-core-foundation-0.3.2/LICENSE.md"
+  },
+  {
+    "package": "objc2-encode-4.1.0",
+    "url": "https://raw.githubusercontent.com/madsmtm/objc2/8d214f5477365ffcbcbb7de058c86ed9a518efb7/LICENSE.md",
+    "file": "objc2-encode-4.1.0/LICENSE.md"
+  }
+]

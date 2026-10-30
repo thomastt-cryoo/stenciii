@@ -1,0 +1,37 @@
+name: M7 reviewed download layout
+on:
+  push:
+    branches: [codex/m7-delivery]
+permissions:
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/m7-artifacts
+          path: retained
+      - name: Gather tested runtime archives
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import shutil
+          source=Path('retained/670aad80fe5fe648f802fa429aa67c55ea2b538a')
+          target=Path('candidates');target.mkdir()
+          for platform in ['windows-x64','macos-arm64','macos-x64']:
+              archives=list((source/platform).glob('StencilStudio-*.zip'));assert len(archives)==1
+              p=archives[0];shutil.copyfile(p,target/p.name);shutil.copyfile(p.with_suffix('.json'),target/p.with_suffix('.json').name)
+          PY
+      - name: Assemble exactly five customer files and audit unchanged runtimes
+        run: python scripts/m7/finalize_delivery.py --candidates candidates --out out/customer
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stencil-studio-m7-reviewed-downloads
+          path: out
+      - name: Retain downloads without publishing a release
+        run: python scripts/m7/archive-evidence.py out delivery

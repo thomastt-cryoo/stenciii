@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": [
+    "truncated support program rejected",
+    "same-size support corruption rejected",
+    "missing complete support folder refused with extraction guidance",
+    "invalid manifest rejected",
+    "unsafe manifest path rejected",
+    "locked support file gives readable refusal",
+    "portable update and removal preserve separate project files"
+  ],
+  "archive_sha256": "f420f254389dcf3776cb20fdc408972fd8f7660bad904392642dc913bbb72240"
+}

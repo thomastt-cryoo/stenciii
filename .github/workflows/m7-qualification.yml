@@ -1,0 +1,33 @@
+name: M7 customer package qualification
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/m7-distribution]
+    paths: [".github/workflows/m7-*.yml", "scripts/m7/**", "docs/m7/runtime-notices/**"]
+permissions:
+  contents: write
+jobs:
+  arm64:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[m7-qualify]')
+    uses: ./.github/workflows/m7-platform.yml
+    with:
+      runner: macos-15
+      platform: macos-arm64
+      expected_arch: arm64
+      assets_run: '41100143518'
+  windows:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[m7-qualify]')
+    uses: ./.github/workflows/m7-platform.yml
+    with:
+      runner: windows-2025
+      platform: windows-x64
+      expected_arch: x64
+      assets_run: '41100143518'
+  intel:
+    needs: arm64
+    uses: ./.github/workflows/m7-platform.yml
+    with:
+      runner: macos-15-intel
+      platform: macos-x64
+      expected_arch: x86_64
+      assets_run: '41100143518'

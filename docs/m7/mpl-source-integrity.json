@@ -1,0 +1,14 @@
+[
+  {
+    "name": "boolmesh",
+    "version": "0.2.0",
+    "unchanged_files": 29,
+    "crate_sha256": "d7311bfc1f81ac8eb9c6bb767ba92318d3527947e6f045089ffac6220ce7cd1c"
+  },
+  {
+    "name": "option-ext",
+    "version": "0.2.0",
+    "unchanged_files": 8,
+    "crate_sha256": "04744f49eae99ab78e0d5c0b603ab218f515ea8cfe5a456d7629ad883a3b6e7d"
+  }
+]

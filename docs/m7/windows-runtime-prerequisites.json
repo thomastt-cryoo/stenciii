@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "PATH": "Windows system directories only",
+  "launcher_subsystem": "Windows GUI (2)",
+  "external_vcruntime_imports": false,
+  "backend_and_launcher_imports": "retained in windows-*-imports.txt",
+  "studio_http_200": true,
+  "clean_shutdown": true,
+  "actual_imports": {
+    "backend": [
+      "bcryptprimitives.dll",
+      "kernel32.dll",
+      "ntdll.dll",
+      "api-ms-win-core-synch-l1-2-0.dll",
+      "KERNEL32.dll",
+      "WS2_32.dll"
+    ],
+    "launcher": [
+      "kernel32.dll",
+      "shell32.dll",
+      "combase.dll",
+      "user32.dll",
+      "comctl32.dll",
+      "ntdll.dll",
+      "api-ms-win-core-synch-l1-2-0.dll",
+      "KERNEL32.dll"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "run": 41134317606,
+  "conclusion": "success",
+  "assembly_source": "a87c391e7ea3f059f525bbd63150842e5b3100c5",
+  "runtime_source": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
+  "durable_artifact_commit": "0b3798a4a96a37917b795ab3db36d7d18e05bb83",
+  "indexed_downloads": "https://github.com/thomastt-cryoo/stenciii/tree/codex/m7-artifacts/m7-current/customer",
+  "files": [
+    {
+      "file": "StencilStudio-Windows-x64.zip",
+      "bytes": 8242785,
+      "sha256": "bb8c5a8a14e6d2acaef36d5e0a39e8b3a1c179fefd3d16f9acd3b37825f935f5"
+    },
+    {
+      "file": "StencilStudio-macOS-Apple-Silicon.zip",
+      "bytes": 7832696,
+      "sha256": "c602b64f5894fea31b3e75511e61f3e6825074ed557e678573c0b5b09b23655a"
+    },
+    {
+      "file": "StencilStudio-macOS-Intel.zip",
+      "bytes": 8225479,
+      "sha256": "21298dcc72cbb397854989886cad2f942b0ba2320a1c2d8d85db4c186beb8d1c"
+    },
+    {
+      "file": "StencilStudio-Quick-Start.pdf",
+      "bytes": 43171,
+      "sha256": "89868c6d2cebf0684ee81591a603c457398744fd008269387e226ea8d38f6a03"
+    },
+    {
+      "file": "Read Me and Checksums.txt",
+      "bytes": 700,
+      "sha256": "038b3a8c986e39520789bb112dfd4cb5f14d1e81b3e871c6dbba3c8a09f0ab88"
+    }
+  ],
+  "exact_runtime_and_notice_members_verified": true,
+  "local_files_match_retained_CI_bytes": true,
+  "release_published": false
+}

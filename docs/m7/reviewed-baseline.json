@@ -1,0 +1,59 @@
+{
+  "accepted_main": "b5756e733b59dc63abf3f1d7c22c371a03adba47",
+  "functional_implementation": "a71c2e806648fb43d235f2ace3f7dca1e1dd77cf",
+  "final_m6_verification": "edbe76392c21c7315119f371ae68bfbc92dc5ac6",
+  "files": [
+    {
+      "path": "docs/M6_REPORT.md",
+      "sha256": "d2ea3f143978e4a2b98b19078adafd1c3ef1a230ca5522672c5b1ebe448629b0",
+      "bytes": 20006
+    },
+    {
+      "path": "docs/m6/FEATURE_PARITY.md",
+      "sha256": "43cdf2564576d4e755b144e0872fe6ef25b0896b1c9d2483f803d8f021fa4737",
+      "bytes": 88102
+    },
+    {
+      "path": "docs/m6/GEOMETRY_INVESTIGATION.md",
+      "sha256": "c343886f31c9cf8270d37c82511c2bb60efdbbf32c2400d77f16cd9ecc57ab49",
+      "bytes": 6508
+    },
+    {
+      "path": "docs/m6/KNOWN_LIMITS.md",
+      "sha256": "4e88a43ae50f916217230738768971dacd4091ea8b86df193508e4f748641a92",
+      "bytes": 4051
+    },
+    {
+      "path": "docs/m6/WORK_LOG.md",
+      "sha256": "33090ad671bdf5edbb6190ac9ef5f81f7d0ed3ef922adfed0dcacf4c7a36a7d8",
+      "bytes": 1394
+    },
+    {
+      "path": "docs/m6/final-results.json",
+      "sha256": "0679154ea33be5f316b3c1420b83f48b3fdcd05d4f273a73b6e2b3cfa78b3f5c",
+      "bytes": 1767
+    },
+    {
+      "path": "docs/m6/source-provenance.json",
+      "sha256": "d7132f16dfc71a28f5938c9fa3f571983a7779cbfc0c368364246edcd36ca219",
+      "bytes": 1423
+    },
+    {
+      "path": "docs/m6/ci.json",
+      "sha256": "c2ea3c08f61e776459d148dc3b517860a96bd6e61b7313a47411f461c9b3c3a8",
+      "bytes": 5710
+    },
+    {
+      "path": "docs/m6/parity-summary.json",
+      "sha256": "a7274b03729809b848e35b2462902e489d7690605e6be549b46dbf45a44529f0",
+      "bytes": 1951
+    }
+  ],
+  "constraints": [
+    "M7 only; no M8 or public commercial release",
+    "No geometry change without demonstrated platform defect",
+    "No public hosting",
+    "Native-window and browser-launcher evidence remain separate",
+    "Actual target OS tests required; compilation is not launch qualification"
+  ]
+}

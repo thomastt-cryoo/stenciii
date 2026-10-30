@@ -1,0 +1,16 @@
+{
+  "stats": {
+    "startTime": "2026-10-30T21:21:28.572Z",
+    "duration": 600349.504,
+    "expected": 139,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "test_count": 139,
+  "source_commit": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
+  "tested_archive_sha256": "288b8f9cd435c1df793607290e7bc9a56069992426fd745184509d0424414ee1",
+  "tested_archive_bytes": 8431015,
+  "suite": "unchanged scripts/m6/production.config.ts",
+  "hosting": "actual extracted local Windows customer package"
+}

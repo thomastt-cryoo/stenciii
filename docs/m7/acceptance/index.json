@@ -1,0 +1,77 @@
+[
+  {
+    "name": "simple",
+    "project": "simple.json",
+    "m6_output": "docs/m6/workflows/simple.stl"
+  },
+  {
+    "name": "vector",
+    "project": "vector.json",
+    "m6_output": "docs/m6/workflows/vector.stl"
+  },
+  {
+    "name": "tones",
+    "project": "tones.json",
+    "m6_output": "docs/m6/workflows/tones.stl"
+  },
+  {
+    "name": "colours",
+    "project": "colours.json",
+    "m6_output": "docs/m6/workflows/colours.zip"
+  },
+  {
+    "name": "first",
+    "project": "first.json",
+    "m6_output": "docs/m6/workflows/first.zip"
+  },
+  {
+    "name": "mounted",
+    "project": "mounted.json",
+    "m6_output": "docs/m6/workflows/mounted.zip"
+  },
+  {
+    "name": "old-browser",
+    "project": "old-browser.json",
+    "m6_output": null
+  },
+  {
+    "name": "registered-colour-branches",
+    "project": "registered-colour-branches.json",
+    "m6_output": null
+  },
+  {
+    "name": "layout-offsets",
+    "project": "layout-offsets.json",
+    "m6_output": null
+  },
+  {
+    "name": "shared-hardware-and-multiple-images",
+    "project": "shared-hardware-and-multiple-images.json",
+    "m6_output": null
+  },
+  {
+    "name": "detailed-logo",
+    "project": "detailed-logo.json",
+    "m6_output": null
+  },
+  {
+    "name": "transparent",
+    "project": "transparent.json",
+    "m6_output": null
+  },
+  {
+    "name": "photograph",
+    "project": "photograph.json",
+    "m6_output": null
+  },
+  {
+    "name": "text",
+    "project": "text.json",
+    "m6_output": null
+  },
+  {
+    "name": "smooth-vector",
+    "project": "smooth-vector.json",
+    "m6_output": "docs/m7/reference/smooth-vector.stl"
+  }
+]

@@ -15,3 +15,6 @@ node_modules/
 /web/test-results/
 /web/playwright-report/
 /web/public/pkg-mt/
+
+# Generated review downloads are retained on codex/m7-artifacts.
+/distribution/m7/customer/

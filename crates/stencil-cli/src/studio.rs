@@ -1,10 +1,19 @@
 //! `stencil studio`: serves the embedded web studio on localhost.
 
 #[cfg(feature = "studio")]
+mod managed;
+
+#[cfg(feature = "studio")]
+#[derive(rust_embed::RustEmbed)]
+#[folder = "../../web/dist/"]
+struct Site;
+
+#[cfg(feature = "studio")]
 pub fn run(args: &[String]) {
-    #[derive(rust_embed::RustEmbed)]
-    #[folder = "../../web/dist/"]
-    struct Site;
+    if args.iter().any(|argument| argument == "--managed") {
+        managed::run(args);
+        return;
+    }
 
     let mut port: u16 = 5173;
     let mut open_browser = true;

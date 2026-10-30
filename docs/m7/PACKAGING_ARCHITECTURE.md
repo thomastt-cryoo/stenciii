@@ -1,0 +1,15 @@
+# M7 browser edition architecture
+
+The user changed M7 to **browser edition only for Windows and macOS**. Native Tauri editor windows, WebView2 and WKWebView are out of scope. An initial Tauri compilation experiment stopped at a missing local Windows SDK header before runtime testing; that is not evidence of a Tauri incompatibility. Its unshipped prototype was retired after the scope change.
+
+Each portable package contains a small graphical launcher and the existing Rust CLI with the complete production React application and both WASM engines embedded once. A supported browser must already be installed before offline use. No Rust, Node, Python, npm, web server installation or internet service is needed by customers. Artwork and processing stay in browser workers. The backend serves read-only embedded assets, never the customer's filesystem. The launcher control window is not a native editor window.
+
+The managed server atomically binds 127.0.0.1, selects a free port on conflict, validates Host and Origin, rejects unsafe paths, and serves WASM MIME types and COOP/COEP/CORP/CSP headers. A random session WebSocket follows browser tabs without background timer expiry. Closing the launcher closes its stdin ownership pipe; closing all connected tabs stops the server after eight seconds. A closed tab socket prompts an HTTP session check, rather than immediate shutdown: Firefox can close that socket before pagehide during refresh. A live same-session endpoint reconnects the lease; two failed checks or a changed session navigate the browser to an inert document, terminating its worker tree. Reloads have a grace period. Non-managed M6 hosting stays available for developers.
+
+The launcher verifies support-file sizes and SHA-256 hashes before startup. These detect damage, not publisher authenticity. One launcher runs per OS user profile. Repeated launch focuses its control window; the explicit Open Studio again button can open another tab. The remembered port keeps the browser origin stable. If that port becomes occupied, the launcher explains that the alternate origin cannot see the previous draft, preserves the old address, and offers a temporary session for saved projects.
+
+Windows uses a GUI subsystem executable and hidden backend child with static CRT. Mac uses a real .app launcher bundle and ad hoc signatures for integrity, without paid Developer ID or notarization. Unsigned distribution may need app-specific OS approval. No protections are disabled globally.
+
+Launcher settings use local application data. Browser drafts remain associated with the browser and local origin; Save Project provides portable backups. Updates replace the application folder without deleting browser or application data. Removing the folder leaves saved projects and browser storage intact.
+
+Packaging and qualification are separate gates. Exact compressed sizes, versions and actual platform outcomes belong in the M7 report; this architecture description alone makes no compatibility claim. Each upload must be at most 20,000,000 bytes, with at most five Etsy files. No public hosting, tag, commercial release or M8 work is enabled.
