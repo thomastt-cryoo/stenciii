@@ -41,7 +41,12 @@ def check(launcher,out):
         # Stable origin survives restart; an occupied old port gets a temporary
         # address without overwriting the draft's remembered origin.
         p,again=start(profile,'--idle-timeout','0');assert again['port']==port;stop(p)
-        busy=socket.socket();busy.bind(('127.0.0.1',port));busy.listen()
+        busy=socket.socket()
+        # macOS retains closed TCP connections in TIME_WAIT. Match the Unix
+        # listener's reuse policy so this fixture tests a genuinely occupied
+        # port rather than failing before it can create the competing server.
+        if os.name!='nt':busy.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+        busy.bind(('127.0.0.1',port));busy.listen()
         try:
             p,conflict=start(profile,'--idle-timeout','0');assert conflict['temporarySession']and conflict['port']!=port;assert json.loads((profile/'startup.json').read_text())['port']==port;stop(p)
         finally:busy.close()

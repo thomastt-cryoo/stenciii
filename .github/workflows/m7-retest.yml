@@ -1,0 +1,26 @@
+name: M7 exact-package retest
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/m7-distribution]
+    paths: ["scripts/m7/**", ".github/workflows/m7-*.yml"]
+permissions:
+  contents: write
+jobs:
+  apple-silicon:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[m7-retest]')
+    uses: ./.github/workflows/m7-platform.yml
+    with:
+      runner: macos-15
+      platform: macos-arm64
+      expected_arch: arm64
+      assets_run: '41100143518'
+      package_source: '1561d8d22bcbc36e4f1325a7f632e52369358156'
+  intel:
+    needs: apple-silicon
+    uses: ./.github/workflows/m7-platform.yml
+    with:
+      runner: macos-15-intel
+      platform: macos-x64
+      expected_arch: x86_64
+      assets_run: '41100143518'

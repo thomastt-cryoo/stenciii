@@ -1,0 +1,234 @@
+{
+  "m6_baseline": "b5756e733b59dc63abf3f1d7c22c371a03adba47",
+  "unchanged_core_and_wasm_sources": true,
+  "files": [
+    {
+      "path": "crates/stencil-core/Cargo.toml",
+      "canonical_sha256": "de60a285edc4d6cd234d3b50fb1062b091d35e5247db058d4342a7b8ca801d08"
+    },
+    {
+      "path": "crates/stencil-core/examples/catalogue.rs",
+      "canonical_sha256": "eed55f988e1b271ccecdd4322e4397f439f241545207cdf695e7966d47ca63be"
+    },
+    {
+      "path": "crates/stencil-core/examples/m5_fit_probe.rs",
+      "canonical_sha256": "2f18d1ab674b19dada7f4796ebac8dfd3afbdeb16211730bad45da56e1c8bc1f"
+    },
+    {
+      "path": "crates/stencil-core/examples/m5_seam_probe.rs",
+      "canonical_sha256": "64743fd58e190da4a5edabddcd9142081eb2bdb4bc4967a345a0b15378d4bc19"
+    },
+    {
+      "path": "crates/stencil-core/examples/m6_artifact_replay.rs",
+      "canonical_sha256": "4f13b590adb75b2cd9b9339aa4a8b4ccdd6b6c42a47dae5b7239b0e390aafcf9"
+    },
+    {
+      "path": "crates/stencil-core/examples/m6_tile_matrix.rs",
+      "canonical_sha256": "6d8b80e7e69cfdeb5c86fe7b927c87ed1141f50f670700c3df4e8a57317a0057"
+    },
+    {
+      "path": "crates/stencil-core/fonts/DejaVuSans-Bold.ttf",
+      "canonical_sha256": "5c1247acef7f2b8522a31742c76d6adcb5569bacc0be7ceaa4dc39dd252ce895"
+    },
+    {
+      "path": "crates/stencil-core/fonts/DejaVuSerif-Bold.ttf",
+      "canonical_sha256": "847b33e13925f19ff87e4d934d6b3cf7cac35ce16424f6f670e40c2f377cf2df"
+    },
+    {
+      "path": "crates/stencil-core/fonts/LICENSE-DejaVu.txt",
+      "canonical_sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+    },
+    {
+      "path": "crates/stencil-core/src/colour.rs",
+      "canonical_sha256": "bd5ae951bcd5825f8782ba218a738d971e8d6f37593ffd2c245e35f0b0d73312"
+    },
+    {
+      "path": "crates/stencil-core/src/decimate.rs",
+      "canonical_sha256": "798b244fd434fb0d98ad743214a86359043a4c787764c56a5290e162deaa6c0e"
+    },
+    {
+      "path": "crates/stencil-core/src/decode.rs",
+      "canonical_sha256": "718c499f8dab4ac01b4a55c73cd7a303247d2a518207ded2217f86e77cd94340"
+    },
+    {
+      "path": "crates/stencil-core/src/fasthash.rs",
+      "canonical_sha256": "bfa5c654059296a66a696a305259efc129e08fe9f35f8ba7d2f5680a754027c1"
+    },
+    {
+      "path": "crates/stencil-core/src/graph.rs",
+      "canonical_sha256": "83f7189dd733924af1aa9a52f670d1c1e44df4c6007c3b6bc892183a37bf63be"
+    },
+    {
+      "path": "crates/stencil-core/src/graph/catalogue.rs",
+      "canonical_sha256": "7850869607d2822c204b7e763c23300f1c589581e69be18cd3a12f48b454bb38"
+    },
+    {
+      "path": "crates/stencil-core/src/graph/colour_set.rs",
+      "canonical_sha256": "4a6754a2c8d06c4a228ee3ad17f538414f55b3e97d97fcea61a750e5e8eced49"
+    },
+    {
+      "path": "crates/stencil-core/src/graph/fragments.rs",
+      "canonical_sha256": "7599affe38986a6c4e690dac654a134f72c6bbf99565f6d677b58793783cf03e"
+    },
+    {
+      "path": "crates/stencil-core/src/graph/nodes.rs",
+      "canonical_sha256": "4d684aa83520d41b564efe6dab57052bd5938531160883575176a7376620cf1d"
+    },
+    {
+      "path": "crates/stencil-core/src/graph/tests.rs",
+      "canonical_sha256": "1e9d516f28c398d80d6e488e5eada72d797e19bc70b5c2930b4771c84174b71a"
+    },
+    {
+      "path": "crates/stencil-core/src/hardware.rs",
+      "canonical_sha256": "b9fa293336bd6ef3dbbfbce31d67b1d76235d03e37aa91cfcd931609d35c74d0"
+    },
+    {
+      "path": "crates/stencil-core/src/imageinfo.rs",
+      "canonical_sha256": "266c54db2da0f8e16f5e5ba15d1bf1c3570c333ad43be605489c5128020554be"
+    },
+    {
+      "path": "crates/stencil-core/src/islands.rs",
+      "canonical_sha256": "85efc6a6563a15313d564996fd3a39d4c0771f1543eab6206449556af5e26813"
+    },
+    {
+      "path": "crates/stencil-core/src/layered.rs",
+      "canonical_sha256": "0ef4aea36e8c0490123c2ac0e17d2bdc31a0143c58aba8c779d5c14e3af956a8"
+    },
+    {
+      "path": "crates/stencil-core/src/lib.rs",
+      "canonical_sha256": "f9d50370f3b5453f0aa8db677390b9f75015c8a9ccae83489608ad43a382bb37"
+    },
+    {
+      "path": "crates/stencil-core/src/mesh.rs",
+      "canonical_sha256": "8c5535092907e930944153fdf53ed48af55a9f327e7ea93a7fa9ee436e4fc66a"
+    },
+    {
+      "path": "crates/stencil-core/src/mesh/collinear.rs",
+      "canonical_sha256": "e083024c58c442094e3b02d9ef281f95f4e306579fb6d039a001148bba0311d9"
+    },
+    {
+      "path": "crates/stencil-core/src/morphology.rs",
+      "canonical_sha256": "4661fa7f6b62beb9ad4d15ccad94a526b2ab3cea45c0d8aeb622d0025e7c0c5c"
+    },
+    {
+      "path": "crates/stencil-core/src/par.rs",
+      "canonical_sha256": "2d0bafceec0262f2bb572e2b9cd722d32f0eb0a22da809d4e4aacd7902813456"
+    },
+    {
+      "path": "crates/stencil-core/src/progress.rs",
+      "canonical_sha256": "dd8e839c2c5e4ebaa4a14f06c80468d31fd6f4b198d11b4b1fab1e4446a3ad59"
+    },
+    {
+      "path": "crates/stencil-core/src/remesh.rs",
+      "canonical_sha256": "7fd55e07f78558e867f5d233189a22edf0e54568ccc7f81a7a5ce4db9b564f65"
+    },
+    {
+      "path": "crates/stencil-core/src/remesh/rebuild.rs",
+      "canonical_sha256": "5da595288b371d06d93e5bb411ef296e3e1a59e87354276b4ddceee5281f5ceb"
+    },
+    {
+      "path": "crates/stencil-core/src/remesh/simplify.rs",
+      "canonical_sha256": "d1f17725c8dfc78b99967852fb639d2754855938565eef3215715bc157ec9fd1"
+    },
+    {
+      "path": "crates/stencil-core/src/report.rs",
+      "canonical_sha256": "2a0d629776d13e5651ac49ff8023bc644c00bd893d1b83ece76de994c9a5e120"
+    },
+    {
+      "path": "crates/stencil-core/src/ring.rs",
+      "canonical_sha256": "ff904aa03d9d75fb009ec83743a9b31da0af5f9529a11f30e0ae371334933519"
+    },
+    {
+      "path": "crates/stencil-core/src/segindex.rs",
+      "canonical_sha256": "f4bca6295c47d2a64d5539a5f874ea2d837cf0ec419bceb02cef87cea99465bd"
+    },
+    {
+      "path": "crates/stencil-core/src/shape_edit.rs",
+      "canonical_sha256": "57f1e1a2c924f7395da95f63861d2c48a3ab7f275d88d48fb721e35a3bfda756"
+    },
+    {
+      "path": "crates/stencil-core/src/smooth.rs",
+      "canonical_sha256": "c65c1c0883a8b3aa9a88b37964065d685a1a4b024e352c018c5d0bdfa275b1dc"
+    },
+    {
+      "path": "crates/stencil-core/src/svg.rs",
+      "canonical_sha256": "8399fdbc17325631b7b9706093b5b702e8eb5c7e1e79cd8782080839d4dc4334"
+    },
+    {
+      "path": "crates/stencil-core/src/text.rs",
+      "canonical_sha256": "b59bfa3f08ba613d166f1170a92a2d18bc75a31831f16ba1575f115a7850d6d9"
+    },
+    {
+      "path": "crates/stencil-core/src/thin.rs",
+      "canonical_sha256": "05273ee3b801a760fcb33b99070b9bd8e2642111a1848be00cc85b28704bbc12"
+    },
+    {
+      "path": "crates/stencil-core/src/tile_bridge.rs",
+      "canonical_sha256": "8a6d5c9dda6dcbbfe777ecf58d5a350776d727d61a143d358082af30d9fbef1d"
+    },
+    {
+      "path": "crates/stencil-core/src/tile_first.rs",
+      "canonical_sha256": "28811b9669053f4d5113914bcf1fdb3c257f9c03ace8a8e7b93a4c1bff5ca601"
+    },
+    {
+      "path": "crates/stencil-core/src/tiles.rs",
+      "canonical_sha256": "261c6bb50f3f06e813adee849f30091b4efffe8c3f7f6bbbae89f6588169f5f0"
+    },
+    {
+      "path": "crates/stencil-core/src/trace.rs",
+      "canonical_sha256": "aae09ae90432c248887a6b3df7717505a22c5b81aaffbb8930c69c0552ca6f02"
+    },
+    {
+      "path": "crates/stencil-core/src/transform.rs",
+      "canonical_sha256": "d813626a2c829624863e8ce1b3da8c072e3b9c04a58374d0ac75a056ad8dbe3d"
+    },
+    {
+      "path": "crates/stencil-core/src/vector_stencil.rs",
+      "canonical_sha256": "cdf68573da1c097592e49fcd02fc74ca5703300256920661a21313e6aced172f"
+    },
+    {
+      "path": "crates/stencil-core/src/vector_stencil/repair.rs",
+      "canonical_sha256": "953b20f02917cee34788965c4f6c74c6c7359a622959caa46dc8592eb21bb842"
+    },
+    {
+      "path": "crates/stencil-core/src/vector_stencil/spread.rs",
+      "canonical_sha256": "0bf921ef098c9df15c7e012270bec0aa641b56950f98a3a1492a0fd76301eab5"
+    },
+    {
+      "path": "crates/stencil-core/src/vector_stencil/tests.rs",
+      "canonical_sha256": "9f8540e9f7c0286eb4f79690b0c72dbc664421440f021f6189b33634ce00b9a0"
+    },
+    {
+      "path": "crates/stencil-core/src/zip.rs",
+      "canonical_sha256": "b908fee3740ad2dba9b6240f9f479f98a83f0cc81edf89fa64027c2b3eed02cb"
+    },
+    {
+      "path": "crates/stencil-core/tests/findings_parity.rs",
+      "canonical_sha256": "b30c0b81254f868a5ac9a46623b36e5152e77ad36e5b831b3720b5e8d4a1f2a2"
+    },
+    {
+      "path": "crates/stencil-core/tests/fixtures/findings.json",
+      "canonical_sha256": "5e3a8fb167b1b76be7bfb0099086f407bc6c37bf342f53410d1bd8bff437a7ce"
+    },
+    {
+      "path": "crates/stencil-core/tests/m6_reports.rs",
+      "canonical_sha256": "1ff3939842411c4046562cbf08708464753b028e65f67ef2eadff48ea5c12665"
+    },
+    {
+      "path": "crates/stencil-core/tests/m6_stl_normals.rs",
+      "canonical_sha256": "138bf5b4f00ef7df0b430061678f998cd1d4044c6f41ce9892a7c86f1f4d47d7"
+    },
+    {
+      "path": "crates/stencil-core/tests/m6_tiles.rs",
+      "canonical_sha256": "90e8e3a44fdabf8bf8e46659f125535dfb934889f1cc081138afb1f50f809133"
+    },
+    {
+      "path": "crates/stencil-wasm/Cargo.toml",
+      "canonical_sha256": "431b4a0624c623644143e39bb572a561d9441c1d77b12c9d4f4e868531d9f7c1"
+    },
+    {
+      "path": "crates/stencil-wasm/src/lib.rs",
+      "canonical_sha256": "b0ad466c7558e91960cc52eac8f651ea289e55dad1c41c1eea88303c28297fd6"
+    }
+  ]
+}

@@ -63,72 +63,34 @@ jobs:
 
   apple-silicon:
     needs: assets
-    runs-on: macos-15
     permissions:
       contents: write
-    env:
-      MACOSX_DEPLOYMENT_TARGET: "13.3"
-    steps:
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@master
-        with:
-          toolchain: 1.99.0
-      - uses: dtolnay/rust-toolchain@master
-        with:
-          toolchain: nightly-2026-10-28
-          components: rust-src
-      - uses: Swatinem/rust-cache@v2
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 26.3.0
-          cache: npm
-          cache-dependency-path: web/package-lock.json
-      - uses: actions/download-artifact@v4
-        with:
-          name: production-assets
-      - name: Build customer binaries
-        run: |
-          test "$(uname -m)" = arm64
-          tar -xzf production-assets.tar.gz
-          npm --prefix web ci
-          cargo +1.99.0 build --locked --release -p stencil-cli -p stencil-launcher --features studio
-          strip target/release/stencil target/release/stencil-studio
-          python3 scripts/m7/licenses.py --out notices
-          python3 scripts/m7/package.py --platform macos-arm64 --backend target/release/stencil --launcher target/release/stencil-studio --notices notices --out out --source "$GITHUB_SHA"
-      - name: Extract and launch actual app bundle
-        run: |
-          mkdir -p extracted
-          ditto -x -k out/StencilStudio-macOS-Apple-Silicon.zip extracted
-          codesign --verify --deep --strict 'extracted/Stencil Studio.app'
-          sw_vers > out/os-version.txt
-          file 'extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' 'extracted/Stencil Studio.app/Contents/Resources/stencil' > out/architectures.txt
-          (spctl --assess --type execute --verbose=4 'extracted/Stencil Studio.app' > out/gatekeeper.txt 2>&1) || true
-          open -n 'extracted/Stencil Studio.app' --args --no-open --profile-dir "$PWD/gui-profile"
-          sleep 3
-          pgrep -x stencil-studio > out/gui-launch-pids.txt
-          screencapture -x out/actual-launcher.png
-          kill -TERM "$(cat out/gui-launch-pids.txt)"
-          sleep 3
-          if lsof -a -c stencil -iTCP -sTCP:LISTEN > out/after-gui-close.txt; then echo 'Orphaned server'; exit 1; fi
-      - name: Package acceptance in real browser engine
-        env:
-          M7_PYTHON: python3
-        run: |
-          cd web && npx playwright install chromium && cd ..
-          node scripts/m7/package-qa.mjs 'extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' out/chromium chromium
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: macos-arm64-browser-package
-          path: out
-      - name: Retain exact downloads on artifact branch
-        if: always()
-        run: python3 scripts/m7/archive-evidence.py out macos-arm64
+    uses: ./.github/workflows/m7-platform.yml
+    with:
+      runner: macos-15
+      platform: macos-arm64
+      expected_arch: arm64
+      assets_run: '${{ github.run_id }}'
+
+  windows:
+    needs: assets
+    permissions:
+      contents: write
+    uses: ./.github/workflows/m7-platform.yml
+    with:
+      runner: windows-2025
+      platform: windows-x64
+      expected_arch: x64
+      assets_run: '${{ github.run_id }}'
 
   intel:
     if: inputs.intel || contains(github.event.head_commit.message, '[m7-all]')
     needs: apple-silicon
-    runs-on: macos-15-intel
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo 'Intel packaging follows the Apple Silicon gate; not yet qualified.' && exit 1
+    permissions:
+      contents: write
+    uses: ./.github/workflows/m7-platform.yml
+    with:
+      runner: macos-15-intel
+      platform: macos-x64
+      expected_arch: x86_64
+      assets_run: '${{ github.run_id }}'

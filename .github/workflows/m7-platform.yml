@@ -6,6 +6,7 @@ on:
       platform: {type: string, required: true}
       expected_arch: {type: string, required: true}
       assets_run: {type: string, required: true}
+      package_source: {type: string, required: false, default: ''}
 permissions:
   contents: write
 jobs:
@@ -20,9 +21,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@master
+        if: inputs.package_source == ''
         with:
           toolchain: 1.99.0
       - uses: Swatinem/rust-cache@v2
+        if: inputs.package_source == ''
         with:
           key: browser-${{ inputs.platform }}
           cache-on-failure: true
@@ -35,12 +38,14 @@ jobs:
         with:
           python-version: "3.13"
       - uses: actions/download-artifact@v4
+        if: inputs.package_source == ''
         with:
           name: production-assets
           run-id: ${{ inputs.assets_run }}
           github-token: ${{ github.token }}
       - name: Build and package exact candidate
         id: package
+        if: inputs.package_source == ''
         run: |
           tar -xzf production-assets.tar.gz
           test ! -e web/dist/legacy.html
@@ -58,9 +63,19 @@ jobs:
           python scripts/m7/licenses.py --out notices
           python scripts/m7/package.py --platform '${{ inputs.platform }}' --backend "target/m7/$target/release/stencil$exe" --launcher "target/m7/$target/release/stencil-studio$exe" --notices notices --out out --source "$GITHUB_SHA"
           python -c "import hashlib,json,pathlib; p=pathlib.Path('production-assets.tar.gz'); pathlib.Path('out/assets-provenance.json').write_text(json.dumps({'workflow_run':'${{ inputs.assets_run }}','sha256':hashlib.sha256(p.read_bytes()).hexdigest()}))"
+      - uses: actions/checkout@v4
+        if: inputs.package_source != ''
+        with:
+          ref: codex/m7-artifacts
+          path: retained-artifacts
+      - name: Reuse exact compiled customer package
+        id: reuse
+        if: inputs.package_source != ''
+        run: |
+          python -c "from pathlib import Path; import shutil,json,hashlib; source=Path('retained-artifacts/${{ inputs.package_source }}/${{ inputs.platform }}'); out=Path('out');out.mkdir(exist_ok=True); files=[p for p in source.iterdir() if p.is_file()]; [shutil.copyfile(p,out/p.name) for p in files]; packages=list(out.glob('StencilStudio-*.zip'));assert len(packages)==1; p=packages[0];m=json.loads(p.with_suffix('.json').read_text());assert m['source_commit']=='${{ inputs.package_source }}' and m['sha256']==hashlib.sha256(p.read_bytes()).hexdigest() and m['bytes']==p.stat().st_size"
       - name: Extract customer download
         id: extract
-        if: steps.package.outcome == 'success'
+        if: steps.package.outcome == 'success' || steps.reuse.outcome == 'success'
         run: |
           mkdir -p extracted
           if [ "$RUNNER_OS" = Windows ]; then
@@ -73,10 +88,10 @@ jobs:
             echo 'launcher=extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' >> "$GITHUB_OUTPUT"
           fi
       - name: Managed host and lifecycle qualification
-        if: steps.extract.outcome == 'success'
+        if: always() && steps.extract.outcome == 'success'
         run: python scripts/m7/host_qa.py '${{ steps.extract.outputs.launcher }}' out/host
       - name: Real macOS GUI launcher
-        if: steps.extract.outcome == 'success' && runner.os == 'macOS'
+        if: always() && steps.extract.outcome == 'success' && runner.os == 'macOS'
         run: |
           sw_vers > out/os-version.txt
           file 'extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' 'extracted/Stencil Studio.app/Contents/Resources/stencil' > out/architectures.txt
@@ -89,28 +104,28 @@ jobs:
           sleep 3
           if lsof -a -c stencil -iTCP -sTCP:LISTEN > out/after-gui-close.txt; then echo 'Orphaned server'; exit 1; fi
       - name: Browser test binaries
-        if: steps.extract.outcome == 'success'
+        if: always() && steps.extract.outcome == 'success'
         run: cd web && npx playwright install chromium firefox
       - name: Complete representative Chromium package collection
-        if: steps.extract.outcome == 'success'
+        if: always() && steps.extract.outcome == 'success'
         run: node scripts/m7/package-qa.mjs '${{ steps.extract.outputs.launcher }}' out/chromium chromium
       - name: Installed Chrome
-        if: steps.extract.outcome == 'success'
+        if: always() && steps.extract.outcome == 'success'
         env:
           M7_CASES: simple,colours,mounted,old-browser
         run: node scripts/m7/package-qa.mjs '${{ steps.extract.outputs.launcher }}' out/chrome chromium chrome
       - name: Firefox engine
-        if: steps.extract.outcome == 'success'
+        if: always() && steps.extract.outcome == 'success'
         env:
           M7_CASES: simple,colours,mounted,old-browser
         run: node scripts/m7/package-qa.mjs '${{ steps.extract.outputs.launcher }}' out/firefox firefox
       - name: Installed Edge
-        if: steps.extract.outcome == 'success' && runner.os == 'Windows'
+        if: always() && steps.extract.outcome == 'success' && runner.os == 'Windows'
         env:
           M7_CASES: simple,colours,mounted,old-browser
         run: node scripts/m7/package-qa.mjs '${{ steps.extract.outputs.launcher }}' out/edge chromium msedge
       - name: Installed Safari (Apple WebDriver)
-        if: steps.extract.outcome == 'success' && runner.os == 'macOS'
+        if: always() && steps.extract.outcome == 'success' && runner.os == 'macOS'
         run: |
           sudo /usr/bin/safaridriver --enable
           python scripts/m7/safari_qa.py '${{ steps.extract.outputs.launcher }}' out/safari

@@ -1,5 +1,7 @@
 # Stencil Studio — local stencil creation
 
+M7 now targets the **offline browser edition for Windows and Mac**, following the user's scope change. The graphical launchers open the complete local editor in an installed browser. Native editor windows are outside this milestone. Packaging qualification is in progress on `codex/m7-distribution`; no commercial release is published. See [packaging architecture](docs/m7/PACKAGING_ARCHITECTURE.md) and [shipping notices](docs/m7/LICENSE_REVIEW.md).
+
 Drop an image or **Create from Text**, **Make Stencil**, customize and export. Standard, Smooth Vector and Crisp Raster retain live draft/full previews. Advanced sections provide colour layers and registration, tone patterns, both tiling strategies, editable seams and connectors, mounting, expanded borders and real threaded hardware. All 217 original qualified settings have per-instance editors. Original artwork and imported project data stay in the saved project. Processing stays local in both themes.
 
 **Export options** collects selected assemblies with upstream plates and hardware, measured dimensions, independent file checks and a complete manufacturing manifest. **All Settings → Batch processing and diagnostics** runs multiple images, browser-selected folders or saved artwork with numeric ranges and explicit choices. It previews the Cartesian job count, runs sequentially, isolates failures, supports cancellation and exports individual results, a combined ZIP and CSV/JSON summaries. Keep the workspace open while jobs run.
