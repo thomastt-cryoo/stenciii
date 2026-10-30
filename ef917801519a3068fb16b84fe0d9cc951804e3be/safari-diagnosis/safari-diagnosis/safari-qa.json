@@ -1,0 +1,50 @@
+{
+  "browser": "Safari",
+  "platform": "macOS",
+  "cases": [],
+  "limitations": [],
+  "export_method": "actual customer blob links, retrieved through WebDriver; disk downloads qualified separately in Chromium",
+  "capabilities": {
+    "safari:platformVersion": "15.7.9",
+    "safari:automaticInspection": false,
+    "webkit:WebRTC": {
+      "DisableICECandidateFiltering": false,
+      "DisableInsecureMediaCapture": false
+    },
+    "webkit:alwaysAllowAutoplay": false,
+    "browserVersion": "26.6",
+    "strictFileInteractability": false,
+    "browserName": "Safari",
+    "safari:useSimulator": false,
+    "safari:automaticProfiling": false,
+    "setWindowRect": true,
+    "acceptInsecureCerts": false,
+    "safari:platformBuildVersion": "24G830",
+    "safari:experimentalWebSocketUrl": false,
+    "platformName": "macOS",
+    "safari:diagnose": false
+  },
+  "hosting": "diagnostic production assets, not customer-package qualification",
+  "instance": {
+    "url": "http://localhost:49171/"
+  },
+  "last_capability": {
+    "version": null,
+    "available": true,
+    "messages": []
+  },
+  "passed": false,
+  "error": "Safari viewer error: 3D rendering is unavailable. The verified STL remains downloadable.",
+  "renderer_errors": [
+    {
+      "message": "TypeError: null is not an object (evaluating 'e.getShaderPrecisionFormat(e.VERTEX_SHADER,e.HIGH_FLOAT).precision')",
+      "stack": "c@http://localhost:49171/assets/BufferGeometryUtils-BYokyORa.js:3571:15916\nSi@http://localhost:49171/assets/BufferGeometryUtils-BYokyORa.js:3571:16261\nIe@http://localhost:49171/assets/BufferGeometryUtils-BYokyORa.js:3824:20063\nws@http://localhost:49171/assets/BufferGeometryUtils-BYokyORa.js:3824:20615\n@http://localhost:49171/assets/MeshPreview-MSiZEM-4.js:1:1666\n_c@http://localhost:49171/assets/index-jXzNGot3.js:9:24075\nIl@http://localhost:49171/assets/index-jXzNGot3.js:9:42049\n@http://localhost:49171/assets/index-jXzNGot3.js:9:40400\nx@http://localhost:49171/assets/index-jXzNGot3.js:2:9222\nee@http://localhost:49171/assets/index-jXzNGot3.js:2:9582"
+    },
+    {
+      "message": "TypeError: null is not an object (evaluating 'e.getShaderPrecisionFormat(e.VERTEX_SHADER,e.HIGH_FLOAT).precision')",
+      "stack": "c@http://localhost:49171/assets/BufferGeometryUtils-BYokyORa.js:3571:15916\nSi@http://localhost:49171/assets/BufferGeometryUtils-BYokyORa.js:3571:16261\nIe@http://localhost:49171/assets/BufferGeometryUtils-BYokyORa.js:3824:20063\nws@http://localhost:49171/assets/BufferGeometryUtils-BYokyORa.js:3824:20615\n@http://localhost:49171/assets/MeshPreview-MSiZEM-4.js:1:1666\n_c@http://localhost:49171/assets/index-jXzNGot3.js:9:24075\nIl@http://localhost:49171/assets/index-jXzNGot3.js:9:42049\nFl@http://localhost:49171/assets/index-jXzNGot3.js:9:40902\nPl@http://localhost:49171/assets/index-jXzNGot3.js:9:39957\nxl@http://localhost:49171/assets/index-jXzNGot3.js:9:36611\nia@http://localhost:49171/assets/index-jXzNGot3.js:7:3258\n@http://localhost:49171/assets/index-jXzNGot3.js:9:34003\nclick@[native code]\n@\n@\nPromise@[native code]\n_execute@\nevaluateJavaScriptFunction@"
+    }
+  ],
+  "console_errors": [],
+  "failure_text": "\nStencil Studio\nNew Project\nOpen Project\nSave Project\n\n\n\nExport options\nExport STL\nYOUR WORKSPACE\nSimple stencil\nReplace image\nOriginal\nStencil\nCompare\n3D\n\u2212\n100%\n+\nFit\nInspect artwork\nCustomize artwork\nProcessing Steps\n3D rendering is unavailable. The verified STL remains downloadable.\nView Options\nDrag to orbit \u00b7 Scroll to zoom\n200.0 \u00d7 153.7 \u00d7 5.2 mm\nCheckStencil made \u00b7 Review the notes\n4,980 triangles \u00b7 1 connected component \u00b7 Closed, oriented mesh independently checked\nGeometry checks detect common mesh defects; they do not guarantee print success. Height cutaways are inspection views.\n1 print note to review\nQuick Adjustments\nA few choices. Your kind of stencil.\nStencil style\n\nPixel-defined edges for bold graphics and hard-edged artwork.\nArtwork\nDetail Custom\n\nControls the pixel resolution of the stencil edges. Exact settings\n\nAutomatic threshold\n\nInvert artwork\n\nArtwork tools\nSize & strength\nStencil width\n\nmm\nBase thickness\n\nmm\nBridge width\n\nmm\nBridge & layer settings\nBridges hold floating pieces in place. Final height includes the saved extra layers.\nMake Stencil\nAll Settings\n\u2197\nAdjustments update the preview automatically."
+}

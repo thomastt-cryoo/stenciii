@@ -1,0 +1,8 @@
+{
+  "source_assets_run": 41129666851,
+  "patched_error_handlers": [
+    "MeshPreview-MSiZEM-4.js"
+  ],
+  "production_application_source_changed": false,
+  "purpose": "capture previously swallowed renderer exception"
+}
