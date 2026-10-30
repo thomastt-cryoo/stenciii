@@ -1,0 +1,5128 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\mazin\\Downloads\\stencil\\web\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "../scripts/m6/production.config.ts",
+      "--reporter=line,json"
+    ],
+    "configFile": "C:\\Users\\mazin\\Downloads\\stencil\\scripts\\m6\\production.config.ts",
+    "rootDir": "C:/Users/mazin/Downloads/stencil/web/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/mazin/Downloads/stencil/sandbox/m6/production-test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/mazin/Downloads/stencil/web/e2e",
+        "testIgnore": [
+          "**/studio.spec.ts",
+          "**/reliability.spec.ts",
+          "**/*-coverage.spec.ts",
+          "**/m6-controls.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\production-test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "C:\\Users\\mazin\\Downloads\\stencil\\web\\e2e",
+        "snapshotDir": "C:\\Users\\mazin\\Downloads\\stencil\\web\\e2e",
+        "testIgnore": [
+          "**/studio.spec.ts",
+          "**/reliability.spec.ts",
+          "**/*-coverage.spec.ts",
+          "**/m6-controls.spec.ts"
+        ],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:5210"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "badges.spec.ts",
+      "file": "badges.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "badges match the engine findings: islands left, thin bridge, heavy mesh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:32.687Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e13f62e5495b256ee82b-f26984ebf2f30ac9c7da",
+          "file": "badges.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "badges match the engine findings: a clean plate",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:32.777Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e13f62e5495b256ee82b-cc37d41eda0d8f94a61f",
+          "file": "badges.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "badges match the engine findings: tiled parts with every finding",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:32.805Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e13f62e5495b256ee82b-8fabacb7224a304c61a4",
+          "file": "badges.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "badges match the engine findings: pre-tiled parts do not report paint under blocks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:32.839Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e13f62e5495b256ee82b-a152b14be2e2c35e8e31",
+          "file": "badges.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "badges match the engine findings: layout that costs a lot of paint",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:32.877Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e13f62e5495b256ee82b-7535c388338a16a7f6df",
+          "file": "badges.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "badges match the engine findings: layout that costs little",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:32.907Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e13f62e5495b256ee82b-e1cd57b3b96c995a48e5",
+          "file": "badges.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "badges match the engine findings: empty mask",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:32.926Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e13f62e5495b256ee82b-bf7a604f792a91008b3c",
+          "file": "badges.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "badges match the engine findings: full mask",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:32.944Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e13f62e5495b256ee82b-817cc891d6ac15d6b60c",
+          "file": "badges.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "badges match the engine findings: no outlines",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:32.967Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e13f62e5495b256ee82b-b36593af4156b618af20",
+          "file": "badges.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "badges match the engine findings: fragments dropped at a cut",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:32.998Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e13f62e5495b256ee82b-ccc6936272550f4889da",
+          "file": "badges.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "badges match the engine findings: mesh optimization fallback and overhang remain visible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:33.024Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e13f62e5495b256ee82b-e275775e8bfba575e35b",
+          "file": "badges.spec.ts",
+          "line": 9,
+          "column": 3
+        },
+        {
+          "title": "badges match the engine findings: deleted islands are not counted as bridged",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:33.055Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e13f62e5495b256ee82b-2fb45eb0d09be2f51e1d",
+          "file": "badges.spec.ts",
+          "line": 9,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "editor.spec.ts",
+      "file": "editor.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "empty workspace, light/dark preference, searchable catalogue, keyboard and responsive layout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2240,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:33.302Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2f56d7d370f0ba02e91-4b9670abb0c46cc57638",
+          "file": "editor.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "real generation, quick parameters, original assets, STL export and rapid New→Open regression",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4772,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "dmVyaWZpZWQ6IDEgaXNsYW5kcyBmb3VuZCwgMCByZW1haW5pbmcsIHdhdGVydGlnaHQgdHJ1ZSwgODI0IHRyaWFuZ2xlcwp3cm90ZSBDOlxVc2Vyc1xtYXppblxEb3dubG9hZHNcc3RlbmNpbFxzYW5kYm94XG02XHByb2R1Y3Rpb24tdGVzdC1yZXN1bHRzXGVkaXRvci1yZWFsLWdlbmVyYXRpb24tcXVpLWRmNWY0LWQtcmFwaWQtTmV34oaST3Blbi1yZWdyZXNzaW9uXG5hdGl2ZS5zdGwgaW4gNDEgbXMK"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:35.867Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2f56d7d370f0ba02e91-7e2a20f8b8192416c3f6",
+          "file": "editor.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "replace and drop artwork, undo replacement and recover after processing error",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2229,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:40.670Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2f56d7d370f0ba02e91-b71d9e4259d2895dd100",
+          "file": "editor.spec.ts",
+          "line": 97,
+          "column": 1
+        },
+        {
+          "title": "legacy advanced and unknown projects save losslessly without any canvas or default recipe",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 523,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:42.927Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2f56d7d370f0ba02e91-c631691a6428627f3d59",
+          "file": "editor.spec.ts",
+          "line": 116,
+          "column": 1
+        },
+        {
+          "title": "offline local processing, theme accessibility, and no legacy editor in default UI",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4240,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:43.476Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d2f56d7d370f0ba02e91-0635ca114049345dcf33",
+          "file": "editor.spec.ts",
+          "line": 129,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "foundation.spec.ts",
+      "file": "foundation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "runtime registry accounts for all processing types and searchable parameter keys",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 217,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:47.813Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-5454c094ab4a7234efdb",
+          "file": "foundation.spec.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "recipe compilation matches the original vector recipe, defaults and dependencies",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:48.044Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-abf33676490c9e5c7f9e",
+          "file": "foundation.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "unknown data, embedded and unused images, branches, ids, positions and connections survive edits and round trips",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:48.066Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-21991fddb18eefd17f77",
+          "file": "foundation.spec.ts",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "native graph imports, migration aliases and image remapping only affect the execution copy",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:48.095Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-e400b8117f774e0e2afd",
+          "file": "foundation.spec.ts",
+          "line": 51,
+          "column": 1
+        },
+        {
+          "title": "commands support atomic source replacement, undo and redo without rewriting unknown fields",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:48.113Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-af9629e3088aec4356ed",
+          "file": "foundation.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "registry identifies every instance and retains conditional metadata",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:48.125Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-60e43dff1668c6877ac9",
+          "file": "foundation.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "New then Open identical saved processing always creates a fresh completed generation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:48.144Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-13a440d91b399b6258a2",
+          "file": "foundation.spec.ts",
+          "line": 92,
+          "column": 1
+        },
+        {
+          "title": "edits, cancellation and superseded work cannot export stale output or overwrite a newer generation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:48.155Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-824f24e88096332b0f14",
+          "file": "foundation.spec.ts",
+          "line": 101,
+          "column": 1
+        },
+        {
+          "title": "draft artifacts and failed runs are never full-quality exportable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:48.170Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-a221d7406f5ee2ab7ffc",
+          "file": "foundation.spec.ts",
+          "line": 113,
+          "column": 1
+        },
+        {
+          "title": "late artifact capture is disposed after cancel and recoverable step failures block export",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:48.187Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b60d0cacd30be8ae473-9dffff4ad641332ff437",
+          "file": "foundation.spec.ts",
+          "line": 120,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m2-editor.spec.ts",
+      "file": "m2-editor.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "all three styles produce different valid geometry; style adjustments, bytes, undo and reopen survive",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16071,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:13:48.223Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "independent meshes",
+                      "contentType": "application/json",
+                      "body": "W3sic3R5bGUiOiJzdGFuZGFyZCIsIm1lc2giOnsiZm9ybWF0IjoiYmluYXJ5IFNUTCIsImJ5dGVzIjoxMzkyODQsInRyaWFuZ2xlcyI6Mjc4NCwidmVydGljZXMiOjEzODgsImJvdW5kc19tbSI6W1swLDAsMF0sWzIwMCwxNjMuMTk5OTk2OTQ4MjQyMiw1LjE5OTk5OTgwOTI2NTEzN11dLCJzaXplX21tIjpbMjAwLDE2My4xOTk5OTY5NDgyNDIyLDUuMTk5OTk5ODA5MjY1MTM3XSwic2lnbmVkX3ZvbHVtZV9tbTMiOjE0NjIwNi43NjMzODQ1MjMxNiwiY29tcG9uZW50cyI6MSwiZWRnZXNfbm90X3NoYXJlZF90d2ljZSI6MCwiaW5jb25zaXN0ZW50X2VkZ2Vfd2luZGluZyI6MCwiZGVnZW5lcmF0ZV9mYWNlcyI6MCwiY2xvc2VkX29yaWVudGVkX21lc2giOnRydWV9fSx7InN0eWxlIjoic21vb3RoIiwibWVzaCI6eyJmb3JtYXQiOiJiaW5hcnkgU1RMIiwiYnl0ZXMiOjMwNTY4NCwidHJpYW5nbGVzIjo2MTEyLCJ2ZXJ0aWNlcyI6MzA1MiwiYm91bmRzX21tIjpbWzAsMCwwXSxbMjAwLDE2My4xOTk5OTY5NDgyNDIyLDUuMTk5OTk5ODA5MjY1MTM3XV0sInNpemVfbW0iOlsyMDAsMTYzLjE5OTk5Njk0ODI0MjIsNS4xOTk5OTk4MDkyNjUxMzddLCJzaWduZWRfdm9sdW1lX21tMyI6MTQ2MjM1LjIwOTQ4Mjk2NTY0LCJjb21wb25lbnRzIjoxLCJlZGdlc19ub3Rfc2hhcmVkX3R3aWNlIjowLCJpbmNvbnNpc3RlbnRfZWRnZV93aW5kaW5nIjowLCJkZWdlbmVyYXRlX2ZhY2VzIjowLCJjbG9zZWRfb3JpZW50ZWRfbWVzaCI6dHJ1ZX19LHsic3R5bGUiOiJjcmlzcCIsIm1lc2giOnsiZm9ybWF0IjoiYmluYXJ5IFNUTCIsImJ5dGVzIjo0NTI2ODQsInRyaWFuZ2xlcyI6OTA1MiwidmVydGljZXMiOjQ1MjQsImJvdW5kc19tbSI6W1swLDAsMF0sWzIwMCwxNjIuOTYyOTY2OTE4OTQ1Myw1LjE5OTk5OTgwOTI2NTEzN11dLCJzaXplX21tIjpbMjAwLDE2Mi45NjI5NjY5MTg5NDUzLDUuMTk5OTk5ODA5MjY1MTM3XSwic2lnbmVkX3ZvbHVtZV9tbTMiOjE0NTY0MS4wNDA5NTAxMDkwMiwiY29tcG9uZW50cyI6MSwiZWRnZXNfbm90X3NoYXJlZF90d2ljZSI6MCwiaW5jb25zaXN0ZW50X2VkZ2Vfd2luZGluZyI6MCwiZGVnZW5lcmF0ZV9mYWNlcyI6MCwiY2xvc2VkX29yaWVudGVkX21lc2giOnRydWV9fV0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e0acf342ce0541fa1c91-6bcd0dc958fb0c6f2106",
+          "file": "m2-editor.spec.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "live edits show draft, retain the last preview and finish full quality without Make; cancel stays cancelled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8305,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:04.308Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e0acf342ce0541fa1c91-00945bc0bef8abf10725",
+          "file": "m2-editor.spec.ts",
+          "line": 59,
+          "column": 1
+        },
+        {
+          "title": "prepared comparison is aligned after crop/rotate/flip; raw original and geometry dimensions remain truthful",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3365,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:12.633Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e0acf342ce0541fa1c91-655b7f1f6eeef912a8fa",
+          "file": "m2-editor.spec.ts",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "manual threshold is remembered, cleanup/margin edit per instance and bad crop is rejected without data loss",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1563,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:16.023Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e0acf342ce0541fa1c91-e39e0045acf196f15ec9",
+          "file": "m2-editor.spec.ts",
+          "line": 119,
+          "column": 1
+        },
+        {
+          "title": "friendly upload errors preserve the current image and traced SVG is honestly labelled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1639,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:17.618Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e0acf342ce0541fa1c91-07506e0db2e06b7648fa",
+          "file": "m2-editor.spec.ts",
+          "line": 135,
+          "column": 1
+        },
+        {
+          "title": "the previously defective hardware fit strip exports only after the M5 repair and preserves its custom project",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7400,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:19.275Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e0acf342ce0541fa1c91-84ec215ca9c298665cb1",
+          "file": "m2-editor.spec.ts",
+          "line": 144,
+          "column": 1
+        },
+        {
+          "title": "raster cleanup is opt-in, visibly changes fine lines, and bypass restores the original geometry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5314,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:26.704Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e0acf342ce0541fa1c91-cbbacb8703fd5e1e2a94",
+          "file": "m2-editor.spec.ts",
+          "line": 155,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m2-model.spec.ts",
+      "file": "m2-model.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "three actual style recipes satisfy every engine input port and differ in processing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 40,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:32.093Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "543de65a1b4131bbf076-ec309499953fc592b6ea",
+          "file": "m2-model.spec.ts",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "raster cleanup is truly bypassed by default and restores its exact settings and connections",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:32.145Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "543de65a1b4131bbf076-d22a54ae76ba0ec5f35f",
+          "file": "m2-model.spec.ts",
+          "line": 28,
+          "column": 1
+        },
+        {
+          "title": "style banks retain individual adjustments, source identity, old graphs and undo/redo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:32.172Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "543de65a1b4131bbf076-14395d40b413971bc71d",
+          "file": "m2-model.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "native-root style banking stays bounded and advanced branches are never replaced",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:32.190Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "543de65a1b4131bbf076-303a5f62e7706bd0805c",
+          "file": "m2-model.spec.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "detail profiles distinguish raster pixels from vector precision; drafts never alter saved settings",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:32.217Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "543de65a1b4131bbf076-11734f372a3557ae2bbd",
+          "file": "m2-model.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "live scheduler throttles drafts, debounces final work, pauses while dragging and cancels queued runs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:32.254Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "543de65a1b4131bbf076-c8b7e8398539f2ee00af",
+          "file": "m2-model.spec.ts",
+          "line": 72,
+          "column": 1
+        },
+        {
+          "title": "exact setting titles and qualified identities rank first; references are not fake controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:32.284Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "543de65a1b4131bbf076-e88cb9bf2bd45cabb5e6",
+          "file": "m2-model.spec.ts",
+          "line": 86,
+          "column": 1
+        },
+        {
+          "title": "real STL inspection identifies a zero-area facet, invalid size and invalid coordinates",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:32.299Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "543de65a1b4131bbf076-3e1127355f5c5239af46",
+          "file": "m2-model.spec.ts",
+          "line": 95,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m2-visuals.spec.ts",
+      "file": "m2-visuals.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "actual M2 workspace, three styles, comparison, model, settings and complex artwork in both themes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 22711,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:32.331Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bad641bdc15f9d8becfd-34ff0a76f365b891e9ad",
+          "file": "m2-visuals.spec.ts",
+          "line": 6,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m3-editor.spec.ts",
+      "file": "m3-editor.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "multiline text, bundled fonts, actual artwork preview, bridged STL/SVG, CLI replay and persistence",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5347,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "dmVyaWZpZWQ6IDUgaXNsYW5kcyBmb3VuZCwgMCByZW1haW5pbmcsIHdhdGVydGlnaHQgdHJ1ZSwgMzM3NiB0cmlhbmdsZXMKd3JvdGUgQzpcVXNlcnNcbWF6aW5cRG93bmxvYWRzXHN0ZW5jaWxcc2FuZGJveFxtNlxyZXBsYXlcbTNcdGV4dC1uYXRpdmUuc3RsIGluIDExNyBtcwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:14:55.094Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "053f2f25766e8e1bca55-6a2f064a10b0696253cc",
+          "file": "m3-editor.spec.ts",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "processing list inserts, duplicates, reorders, disables, restores and inspects actual secondary results",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2668,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:00.467Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "053f2f25766e8e1bca55-255c5b5e99d59a850ac5",
+          "file": "m3-editor.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "direct crop handles, zoom/pan, keyboard pixels, rotations and undo match actual Rust image dimensions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3268,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:03.162Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "053f2f25766e8e1bca55-60d946bbd2d4bd90a5f5",
+          "file": "m3-editor.spec.ts",
+          "line": 69,
+          "column": 1
+        },
+        {
+          "title": "operation presets preserve the legacy file format, import merges, scoped apply, rename/remove and defaults",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2708,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:06.446Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "053f2f25766e8e1bca55-f43d064bea573b615f13",
+          "file": "m3-editor.spec.ts",
+          "line": 85,
+          "column": 1
+        },
+        {
+          "title": "named branched import stays connected, unknown fields survive artwork edits, and a full long chain exports",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2106,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:09.168Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "053f2f25766e8e1bca55-ff2ea2ef66ce8082ae17",
+          "file": "m3-editor.spec.ts",
+          "line": 105,
+          "column": 1
+        },
+        {
+          "title": "multiple image instances replace independently, reopen safely and preserve disabled identities",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1112,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:11.294Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "053f2f25766e8e1bca55-4c3d2e229ec139e38846",
+          "file": "m3-editor.spec.ts",
+          "line": 116,
+          "column": 1
+        },
+        {
+          "title": "fourteen real preparation steps keep live output valid, SVGs inspectable, themes accessible and processing local",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1166,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_FAILED at http://localhost:5210/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:5210/\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_FAILED at http://localhost:5210/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:5210/\", waiting until \"load\"\u001b[22m\n\n    at C:\\Users\\mazin\\Downloads\\stencil\\web\\e2e\\m3-editor.spec.ts:135:14",
+                    "location": {
+                      "file": "C:\\Users\\mazin\\Downloads\\stencil\\web\\e2e\\m3-editor.spec.ts",
+                      "column": 14,
+                      "line": 135
+                    },
+                    "snippet": "  133 |   mkdirSync('../sandbox/m6/replay/m3',{recursive:true});writeFileSync('../sandbox/m6/replay/m3/long-project.json',JSON.stringify(doc))\n  134 |   const outside:string[]=[];await page.route('**/*',route=>{const u=route.request().url();if(/^https?:/.test(u)&&!u.startsWith('http://localhost:5199')){outside.push(u);return route.abort()}return route.continue()})\n> 135 |   await page.goto('/');await page.setInputFiles('[aria-label=\"Open project file\"]',{name:'long.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(doc))});await ready(page)\n      |              ^\n  136 |   const mesh=await downloadMesh(page,'long-chain');expect(mesh.degenerate_faces).toBe(0)\n  137 |   await page.getByRole('combobox',{name:'Inspect artwork stage',exact:true}).selectOption('outlines/shapes');await expect(page.locator('.stage-image')).toHaveAttribute('data-ready','true')\n  138 |   const svgWait=page.waitForEvent('download');await page.getByRole('link',{name:'Save artwork preview',exact:true}).click();const path=resolve('../sandbox/m6/replay/m3/long-outlines.svg');await(await svgWait).saveAs(path);expect(JSON.parse(execFileSync('python',['../scripts/m2/inspect_mesh.py',path],{encoding:'utf8'})).paths).toBeGreaterThan(0)"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\mazin\\Downloads\\stencil\\web\\e2e\\m3-editor.spec.ts",
+                        "column": 14,
+                        "line": 135
+                      },
+                      "message": "Error: page.goto: net::ERR_FAILED at http://localhost:5210/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:5210/\", waiting until \"load\"\u001b[22m\n\n\n  133 |   mkdirSync('../sandbox/m6/replay/m3',{recursive:true});writeFileSync('../sandbox/m6/replay/m3/long-project.json',JSON.stringify(doc))\n  134 |   const outside:string[]=[];await page.route('**/*',route=>{const u=route.request().url();if(/^https?:/.test(u)&&!u.startsWith('http://localhost:5199')){outside.push(u);return route.abort()}return route.continue()})\n> 135 |   await page.goto('/');await page.setInputFiles('[aria-label=\"Open project file\"]',{name:'long.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(doc))});await ready(page)\n      |              ^\n  136 |   const mesh=await downloadMesh(page,'long-chain');expect(mesh.degenerate_faces).toBe(0)\n  137 |   await page.getByRole('combobox',{name:'Inspect artwork stage',exact:true}).selectOption('outlines/shapes');await expect(page.locator('.stage-image')).toHaveAttribute('data-ready','true')\n  138 |   const svgWait=page.waitForEvent('download');await page.getByRole('link',{name:'Save artwork preview',exact:true}).click();const path=resolve('../sandbox/m6/replay/m3/long-outlines.svg');await(await svgWait).saveAs(path);expect(JSON.parse(execFileSync('python',['../scripts/m2/inspect_mesh.py',path],{encoding:'utf8'})).paths).toBeGreaterThan(0)\n    at C:\\Users\\mazin\\Downloads\\stencil\\web\\e2e\\m3-editor.spec.ts:135:14"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:12.432Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\production-test-results\\m3-editor-fourteen-real-pr-8aad2-ssible-and-processing-local\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\mazin\\Downloads\\stencil\\web\\e2e\\m3-editor.spec.ts",
+                    "column": 14,
+                    "line": 135
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "053f2f25766e8e1bca55-a2656206bdbb12ba1d1c",
+          "file": "m3-editor.spec.ts",
+          "line": 128,
+          "column": 1
+        },
+        {
+          "title": "wide transparent artwork survives repeated rotations, crop panning and undo with identical prepared bytes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3961,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:14.326Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "053f2f25766e8e1bca55-492947432e1a69bf18ca",
+          "file": "m3-editor.spec.ts",
+          "line": 149,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m3-model.spec.ts",
+      "file": "m3-model.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "all 41 artwork slots have actual defaults, constraints, help, validation and editable routing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 93,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:18.553Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "72bf7c05532a36403ca9-59ecb941a2962604af1e",
+          "file": "m3-model.spec.ts",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "typed insert, duplicate, reordering, bypass/enable and undo preserve values and stable identities",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 18,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:18.657Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "72bf7c05532a36403ca9-93f24ef1ca096a50aebf",
+          "file": "m3-model.spec.ts",
+          "line": 28,
+          "column": 1
+        },
+        {
+          "title": "conversion pairs compile, every input has the proper type, and circular choices are excluded",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:18.684Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "72bf7c05532a36403ca9-cc4828bfe2eac3fea770",
+          "file": "m3-model.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "named imported branches keep unrelated manufacturing, metadata, raw identities and unknown data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:18.706Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "72bf7c05532a36403ca9-35be4fee4f9e54142f57",
+          "file": "m3-model.spec.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "text is an independent typed source and operation presets affect only their selected instance",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:18.722Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "72bf7c05532a36403ca9-39ec0a8e2c56adc07d3d",
+          "file": "m3-model.spec.ts",
+          "line": 68,
+          "column": 1
+        },
+        {
+          "title": "crop handles use the same rounded input pixels as Rust, including odd sizes, aspect ratios and keyboard steps",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:18.749Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "72bf7c05532a36403ca9-3c95aa30d41a245da7bd",
+          "file": "m3-model.spec.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "morphology dependencies distinguish kernel, pass count and pattern controls without deleting inactive values",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:18.768Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "72bf7c05532a36403ca9-29902691900996cc3278",
+          "file": "m3-model.spec.ts",
+          "line": 87,
+          "column": 1
+        },
+        {
+          "title": "legacy-shaped steps, opaque links and disabled identities survive safe structural editing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:18.780Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "72bf7c05532a36403ca9-715a79f96936289cb08b",
+          "file": "m3-model.spec.ts",
+          "line": 95,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m3-visuals.spec.ts",
+      "file": "m3-visuals.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "M3 artwork, processing, presets, text, responsive layout and both themes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9218,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:18.820Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a305b744a70e5db791cf-6ac94b0d60eb64e69e85",
+          "file": "m3-visuals.spec.ts",
+          "line": 6,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m4-dense.spec.ts",
+      "file": "m4-dense.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "dense exact topology audit stays off the UI, checks an analytic closed solid and refuses above-budget data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7028,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:28.081Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "485820f9e7473b4ccaf2-887bc06fe5a38aa3c63e",
+          "file": "m4-dense.spec.ts",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m4-editor.spec.ts",
+      "file": "m4-editor.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "bridge strategy, physical layers, scoped editing, live preview, undo and save/open alter real verified STL",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7584,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:35.155Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "63b0234a6780e6ce292d-92b2b0729afc38a4a53a",
+          "file": "m4-editor.spec.ts",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "optional remesh changes exported geometry, restores exact bypass and retains the last valid result on an invalid interval",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10384,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:42.756Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "63b0234a6780e6ce292d-a9e37ff85a5ae2175e55",
+          "file": "m4-editor.spec.ts",
+          "line": 24,
+          "column": 1
+        },
+        {
+          "title": "all 3D display options change actual rendering and never change current export bytes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7888,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:15:53.154Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "63b0234a6780e6ce292d-35fb91a4690d03c271fd",
+          "file": "m4-editor.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "two stencil instances and an existing tiled branch keep independent settings and safe geometry dependencies",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1180,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:16:01.062Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "63b0234a6780e6ce292d-f02a11963ca3d55f9a55",
+          "file": "m4-editor.spec.ts",
+          "line": 51,
+          "column": 1
+        },
+        {
+          "title": "unordered imported operations select the final optimized solid and label the original as an intermediate result",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2721,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:16:02.263Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "63b0234a6780e6ce292d-3aedeca3e2fd271d747c",
+          "file": "m4-editor.spec.ts",
+          "line": 60,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m4-model.spec.ts",
+      "file": "m4-model.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "48 preserved geometry slots and 217 unique editable slots keep every authoritative constraint, help and reset default",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 80,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:16:05.015Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1084c934b1a3aa231ab9-7eada897a3312a2c9e46",
+          "file": "m4-model.spec.ts",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "quantized base, extra layers, special values and conditional geometry controls match actual engine semantics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:16:05.104Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1084c934b1a3aa231ab9-9894d7934e3550116596",
+          "file": "m4-model.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "mesh optimization is an ordinary typed reversible step with stable identity and saved settings",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:16:05.116Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1084c934b1a3aa231ab9-02fc700b1299a4621f5f",
+          "file": "m4-model.spec.ts",
+          "line": 24,
+          "column": 1
+        },
+        {
+          "title": "branch-scoped optimization preserves unknown raw data and rejects parts-producing stencil inputs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:16:05.131Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1084c934b1a3aa231ab9-7afc9b3a4a0a6cfc9117",
+          "file": "m4-model.spec.ts",
+          "line": 32,
+          "column": 1
+        },
+        {
+          "title": "legacy remesh alias and geometry presets edit only the chosen raw instance",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:16:05.150Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1084c934b1a3aa231ab9-b293dd1d832569e8cb23",
+          "file": "m4-model.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "independent exact STL audit detects closure, winding, degeneracy, nonfinite normals and distinct closed components",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:16:05.167Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1084c934b1a3aa231ab9-ecef7f728657838c96d0",
+          "file": "m4-model.spec.ts",
+          "line": 52,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m4-visuals.spec.ts",
+      "file": "m4-visuals.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "geometry inspector, real bridge cutaways, mesh precision and camera tools in both themes and mobile",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20921,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:16:05.204Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8d241e0f6038f061ace9-85fa3230e9b5f017219e",
+          "file": "m4-visuals.spec.ts",
+          "line": 7,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m5a-editor.spec.ts",
+      "file": "m5a-editor.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "guided colour branches preserve raw originals, all ten layers, registration groups, history and unknown data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 57,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:16:26.181Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "049b5241f16992d75e25-b6074e2822c5e1a3020c",
+          "file": "m5a-editor.spec.ts",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "registration rejects unequal dimensions and holes outside margins; actual tone groups become inactive",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2403,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:16:26.281Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "049b5241f16992d75e25-bfe391fbd4977c60a126",
+          "file": "m5a-editor.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "real guided ten-colour creation, six/four registration groups, independent plate export, names and visibility survive reopen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20273,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:16:28.800Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "049b5241f16992d75e25-fed83063d108a1769f13",
+          "file": "m5a-editor.spec.ts",
+          "line": 31,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m5b-editor.spec.ts",
+      "file": "m5b-editor.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "both tiling strategies append separate safe passes and retain original topology, offsets and undo history",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 79,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:16:49.210Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bd782416eb724e0f63ad-ce5ec7d95f2f9289e286",
+          "file": "m5b-editor.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "manual numeric, keyboard, seam dragging and pocket movement use actual layout limits and survive ZIP export/reopen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14891,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:16:49.371Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bd782416eb724e0f63ad-63a2ed50724ac467b236",
+          "file": "m5b-editor.spec.ts",
+          "line": 21,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m5c-editor.spec.ts",
+      "file": "m5c-editor.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "mounting and hardware use compatible tile ancestry, preserve originals and restore optional manufacturing operations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 21,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:17:04.392Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "77dda5baa35c9c1d4987-7f1b335fe8fa09442a13",
+          "file": "m5c-editor.spec.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "mounting, border and matching hardware guides generate real parts and preserve scoped edits, history and saved artwork",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 110884,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:17:04.425Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "77dda5baa35c9c1d4987-6cae9b9186322a5807a0",
+          "file": "m5c-editor.spec.ts",
+          "line": 17,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m5d-branches.spec.ts",
+      "file": "m5d-branches.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "shared and independent hardware branches export every assembly once with actual layout and outline auxiliaries",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16232,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:18:55.347Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7fbccad42eef9dc2cbe4-a369297f61ebe7a9d1ce",
+          "file": "m5d-branches.spec.ts",
+          "line": 6,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m5d-colours.spec.ts",
+      "file": "m5d-colours.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "two through ten colour reductions expose every real mask and complete registration groups collect all ten plates",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3126,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:19:11.626Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "559b191fa800501198a7-76289ffa8b28a34531b5",
+          "file": "m5d-colours.spec.ts",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m5d-export.spec.ts",
+      "file": "m5d-export.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "the unchanged export guard rejects the actual historical calibration defect and unsafe ZIP names",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 36,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:19:14.805Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9c25383042a21eaec22b-5517e66f7df4c323c7ef",
+          "file": "m5d-export.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "complete manufacturing ZIP collects mounted tiles upstream of auxiliary hardware, with CRC, geometry and stale guards",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 18781,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:19:14.850Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9c25383042a21eaec22b-2dcab0f95c97ca991229",
+          "file": "m5d-export.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "offline local batch keeps the saved recipe, isolates a failed image and collects independently valid results",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4190,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:19:33.655Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9c25383042a21eaec22b-32e5c08d3bf913f18d1d",
+          "file": "m5d-export.spec.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "a basic saved recipe with a single Parts STL also works in local batch",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1798,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:19:37.867Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9c25383042a21eaec22b-8db3a309e1adb8b8e85b",
+          "file": "m5d-export.spec.ts",
+          "line": 32,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m5d-manufacturing.spec.ts",
+      "file": "m5d-manufacturing.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "all metric hardware sizes and dense connector calibration use real WASM and independently valid stored faces",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 360000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13640,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:19:39.701Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9e3481b48b0603202ec1-c8aeabfb00572e506932",
+          "file": "m5d-manufacturing.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "manufacturing settings and export panel remain keyboard accessible in both themes and narrow layouts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11493,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:19:53.361Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9e3481b48b0603202ec1-90a7a5a721ea71c4407c",
+          "file": "m5d-manufacturing.spec.ts",
+          "line": 15,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m6-batch-editor.spec.ts",
+      "file": "m6-batch-editor.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "graph-only recipes accept replacement artwork, optional attachments are scoped, and text/font choice sweeps run without image sources",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3982,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:04.896Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "baa1d85abca6aa520918-cc9c44c2caeb35a27549",
+          "file": "m6-batch-editor.spec.ts",
+          "line": 21,
+          "column": 1
+        },
+        {
+          "title": "strict warnings and multi-file single-STL choices refuse clearly without exporting incomplete results",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1406,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:08.897Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "baa1d85abca6aa520918-5cad4f74179a7eb3d8a0",
+          "file": "m6-batch-editor.spec.ts",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "saved recipe selection, numeric sweeps, isolated failures and JSON/CSV summaries remain offline and lossless",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3347,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:10.320Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "baa1d85abca6aa520918-eb2da78e07044388e284",
+          "file": "m6-batch-editor.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "folder input preserves mixed-format paths and a multiple-file fallback is available without folder support",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3776,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:13.683Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "baa1d85abca6aa520918-c7e5e1f783a7fa095d1e",
+          "file": "m6-batch-editor.spec.ts",
+          "line": 51,
+          "column": 1
+        },
+        {
+          "title": "cancellation retains verified jobs and restarting cannot publish results from the cancelled generation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2080,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:17.472Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "baa1d85abca6aa520918-da936e5d1beda6305229",
+          "file": "m6-batch-editor.spec.ts",
+          "line": 68,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m6-batch-limits.spec.ts",
+      "file": "m6-batch-limits.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "maximum supported browser image batch completes with real validated outputs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5503,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:19.577Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7680f0d81fc801ad1216-ff5e5a8dd1326dc38b3d",
+          "file": "m6-batch-limits.spec.ts",
+          "line": 9,
+          "column": 29
+        },
+        {
+          "title": "maximum supported browser 128-job parameter sweep completes with real validated outputs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 21606,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:25.098Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7680f0d81fc801ad1216-9e06aa8e1be351fe5c56",
+          "file": "m6-batch-limits.spec.ts",
+          "line": 9,
+          "column": 29
+        }
+      ]
+    },
+    {
+      "title": "m6-batch-model.spec.ts",
+      "file": "m6-batch-model.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "batch ranges and Cartesian choices obey the real schema, preserve values and reject oversized job plans",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 30,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:46.766Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad278232f2489e5889fc-19dfe61bc89df8d8cf02",
+          "file": "m6-batch-model.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "batch source replacement clones only the intended shared source and keeps unknown data and the original recipe",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:46.822Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad278232f2489e5889fc-434e38f9244ebc815542",
+          "file": "m6-batch-model.spec.ts",
+          "line": 24,
+          "column": 1
+        },
+        {
+          "title": "input quotas refuse work before reading oversized files and CSV names cannot become formulas",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:46.863Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad278232f2489e5889fc-fa9940511a3dff0e054e",
+          "file": "m6-batch-model.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "component checks allow explicit alignment pins and retained fragments while rejecting loose plate bodies",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:46.900Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ad278232f2489e5889fc-ed4324af3453a64ffc6c",
+          "file": "m6-batch-model.spec.ts",
+          "line": 55,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m6-original-workflows.spec.ts",
+      "file": "m6-original-workflows.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "original Simple stencil template creates, executes, saves and exports a valid complete workflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2745,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:46.956Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1c84ecc7c0405aa99385-8cd9fd0e7499e62cadde",
+          "file": "m6-original-workflows.spec.ts",
+          "line": 9,
+          "column": 41
+        },
+        {
+          "title": "original Colour tones template creates, executes, saves and exports a valid complete workflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2973,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:49.720Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1c84ecc7c0405aa99385-648d890fd695c4794402",
+          "file": "m6-original-workflows.spec.ts",
+          "line": 9,
+          "column": 41
+        },
+        {
+          "title": "original Vector stencil template creates, executes, saves and exports a valid complete workflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2098,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:52.711Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1c84ecc7c0405aa99385-6444623f1642afb90c1f",
+          "file": "m6-original-workflows.spec.ts",
+          "line": 9,
+          "column": 41
+        },
+        {
+          "title": "original Two-colour registered set template creates, executes, saves and exports a valid complete workflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3489,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:54.824Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1c84ecc7c0405aa99385-bc616b7cd5c4c94ccaa0",
+          "file": "m6-original-workflows.spec.ts",
+          "line": 9,
+          "column": 41
+        },
+        {
+          "title": "original Tiles, pads and screws template creates, executes, saves and exports a valid complete workflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17307,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:20:58.327Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1c84ecc7c0405aa99385-7a5b9e463ae42bbb191c",
+          "file": "m6-original-workflows.spec.ts",
+          "line": 9,
+          "column": 41
+        },
+        {
+          "title": "original Tiles first template creates, executes, saves and exports a valid complete workflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 33427,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:21:15.649Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1c84ecc7c0405aa99385-ad9ff44e4d1c0377499e",
+          "file": "m6-original-workflows.spec.ts",
+          "line": 9,
+          "column": 41
+        },
+        {
+          "title": "shared screw-fit controls are opt-in, scoped, saved, undoable and applied to real hardware output",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 600000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6244,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:21:49.103Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1c84ecc7c0405aa99385-7f1948c5c1a7799e4c4c",
+          "file": "m6-original-workflows.spec.ts",
+          "line": 23,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m6-parity-model.spec.ts",
+      "file": "m6-parity-model.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "imported preset identities are data, preserve reserved names and cannot modify object prototypes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:21:55.422Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "218fe0713935bb4401b9-ed298272c86b557b65f6",
+          "file": "m6-parity-model.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "reserved imported operation IDs retain failure state and cannot become exportable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:21:55.470Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "218fe0713935bb4401b9-6e294317fcb05614c202",
+          "file": "m6-parity-model.spec.ts",
+          "line": 21,
+          "column": 1
+        },
+        {
+          "title": "all six original workflows retain original topology, settings and complete source/project recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 68,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:21:55.509Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "218fe0713935bb4401b9-0c50b0e045c529abb1f4",
+          "file": "m6-parity-model.spec.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "group clipboard retains connections and unknown fields, remaps identities and protects colliding original images",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 22,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:21:55.606Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "218fe0713935bb4401b9-d5d882a5dec3065b391b",
+          "file": "m6-parity-model.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "history jumping preserves future states and accurately labels its bounded retained history",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 26,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:21:55.656Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "218fe0713935bb4401b9-6b25aa31d6ccd57c9933",
+          "file": "m6-parity-model.spec.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "shared screw fit is explicit, atomic, scoped to supported hardware and retained through undo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 41,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:21:55.715Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "218fe0713935bb4401b9-837370109d01e04e33d2",
+          "file": "m6-parity-model.spec.ts",
+          "line": 63,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m6-preferences.spec.ts",
+      "file": "m6-preferences.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "original local preferences, project names and export bytes survive editing and reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3876,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:21:55.820Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "579e911b2ec2dd9c230a-3362edd7dcd6f8e55021",
+          "file": "m6-preferences.spec.ts",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m6-projects.spec.ts",
+      "file": "m6-projects.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "an original browser graph with IndexedDB-only artwork becomes a self-contained lossless saved project",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3411,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:21:59.778Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d9f12b167b458c00c10c-8e09d8c1db3744700666",
+          "file": "m6-projects.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "lossless Open → Edit → Save → Reopen and native replay: native",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5035,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:22:03.226Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d9f12b167b458c00c10c-35ef5abf457593851f58",
+          "file": "m6-projects.spec.ts",
+          "line": 31,
+          "column": 33
+        },
+        {
+          "title": "lossless Open → Edit → Save → Reopen and native replay: old-browser",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5540,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:22:08.289Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d9f12b167b458c00c10c-9a8c194583467e962218",
+          "file": "m6-projects.spec.ts",
+          "line": 31,
+          "column": 33
+        },
+        {
+          "title": "lossless Open → Edit → Save → Reopen and native replay: renamed-remesh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4189,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:22:13.866Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d9f12b167b458c00c10c-bc0f7c93bb727d3ab6a6",
+          "file": "m6-projects.spec.ts",
+          "line": 31,
+          "column": 33
+        },
+        {
+          "title": "lossless Open → Edit → Save → Reopen and native replay: legacy-exporter",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3337,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:22:18.103Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d9f12b167b458c00c10c-d94c2ec13922fc0921eb",
+          "file": "m6-projects.spec.ts",
+          "line": 31,
+          "column": 33
+        },
+        {
+          "title": "lossless Open → Edit → Save → Reopen and native replay: layout-offsets",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5698,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:22:21.473Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d9f12b167b458c00c10c-7fb728956fa97fcc78f2",
+          "file": "m6-projects.spec.ts",
+          "line": 31,
+          "column": 33
+        },
+        {
+          "title": "lossless Open → Edit → Save → Reopen and native replay: shared-hardware-and-multiple-images",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5485,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:22:27.199Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d9f12b167b458c00c10c-572d64d8cef00d8afe66",
+          "file": "m6-projects.spec.ts",
+          "line": 31,
+          "column": 33
+        },
+        {
+          "title": "lossless Open → Edit → Save → Reopen and native replay: registered-colour-branches",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4019,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:22:32.716Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d9f12b167b458c00c10c-479d2e3d8ae6f1c76ffb",
+          "file": "m6-projects.spec.ts",
+          "line": 31,
+          "column": 33
+        },
+        {
+          "title": "lossless Open → Edit → Save → Reopen and native replay: style-banks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4050,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:22:36.765Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d9f12b167b458c00c10c-56f21e463e15eec7998d",
+          "file": "m6-projects.spec.ts",
+          "line": 31,
+          "column": 33
+        },
+        {
+          "title": "lossless Open → Edit → Save → Reopen and native replay: disabled-and-archived",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4092,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:22:40.872Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d9f12b167b458c00c10c-687ef49ac612dac9f4d8",
+          "file": "m6-projects.spec.ts",
+          "line": 31,
+          "column": 33
+        },
+        {
+          "title": "lossless Open → Edit → Save → Reopen and native replay: unknown-operation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 895,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:22:45.004Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d9f12b167b458c00c10c-d02abcdcc1ea83262502",
+          "file": "m6-projects.spec.ts",
+          "line": 31,
+          "column": 33
+        }
+      ]
+    },
+    {
+      "title": "m6-reliability.spec.ts",
+      "file": "m6-reliability.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "actual processing and lossless project download survive unavailable browser storage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2706,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:22:45.964Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "15cc7c449edd6ceb1d1f-7d58994708168382e11e",
+          "file": "m6-reliability.spec.ts",
+          "line": 10,
+          "column": 43
+        },
+        {
+          "title": "actual processing and lossless project download survive full browser storage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2519,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:22:48.681Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "15cc7c449edd6ceb1d1f-52f136c2f621b2f046dd",
+          "file": "m6-reliability.spec.ts",
+          "line": 10,
+          "column": 43
+        },
+        {
+          "title": "a hung threaded pool falls back to the real bundled single-thread engine and settles startup requests",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11931,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:22:51.216Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "15cc7c449edd6ceb1d1f-8750226ce9e5aab67665",
+          "file": "m6-reliability.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "history jumps, copied step groups and keyboard panel resizing operate through customer controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2066,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:23:03.166Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "15cc7c449edd6ceb1d1f-27e960eff75940a3d31c",
+          "file": "m6-reliability.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "damaged autosave is retained and an engine failure has actionable per-step diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 918,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:23:05.244Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "15cc7c449edd6ceb1d1f-a990c7cc3dc1a5a231e3",
+          "file": "m6-reliability.spec.ts",
+          "line": 58,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "m6-visuals.spec.ts",
+      "file": "m6-visuals.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "M6 current customer controls are readable and accessible at 1366px in light mode",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9132,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:23:06.197Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3528b255d26fd0ea85e-b8aff3bbedf3381f907e",
+          "file": "m6-visuals.spec.ts",
+          "line": 5,
+          "column": 132
+        },
+        {
+          "title": "M6 current customer controls are readable and accessible at 1366px in dark mode",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9568,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:23:15.342Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3528b255d26fd0ea85e-c66c2407e7ccc29918ff",
+          "file": "m6-visuals.spec.ts",
+          "line": 5,
+          "column": 132
+        },
+        {
+          "title": "M6 current customer controls are readable and accessible at 1024px in light mode",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12337,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:23:24.927Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3528b255d26fd0ea85e-cb5808e218aa0bfaa44c",
+          "file": "m6-visuals.spec.ts",
+          "line": 5,
+          "column": 132
+        },
+        {
+          "title": "M6 current customer controls are readable and accessible at 1024px in dark mode",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10865,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:23:37.286Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3528b255d26fd0ea85e-dc7fe2c58504d8b32107",
+          "file": "m6-visuals.spec.ts",
+          "line": 5,
+          "column": 132
+        },
+        {
+          "title": "M6 current customer controls are readable and accessible at 390px in light mode",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10915,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:23:48.182Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3528b255d26fd0ea85e-30c7ab5f2f67229522d1",
+          "file": "m6-visuals.spec.ts",
+          "line": 5,
+          "column": 132
+        },
+        {
+          "title": "M6 current customer controls are readable and accessible at 390px in dark mode",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10740,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:23:59.120Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3528b255d26fd0ea85e-d71c5dacac1d87c110ff",
+          "file": "m6-visuals.spec.ts",
+          "line": 5,
+          "column": 132
+        },
+        {
+          "title": "recovery download includes authoritative project bytes when rendering fails and persistent storage is blocked",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 730,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:24:09.878Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3528b255d26fd0ea85e-bdd1afab9e454ecc14aa",
+          "file": "m6-visuals.spec.ts",
+          "line": 15,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "presetBook.spec.ts",
+      "file": "presetBook.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "a presets file is checked and merged without overwriting",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:24:10.636Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8d67d8cb9107d390298-379986959a7e16bf78a7",
+          "file": "presetBook.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "files that are not presets are refused",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:24:10.647Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8d67d8cb9107d390298-38d5dba27c94b4cf12dd",
+          "file": "presetBook.spec.ts",
+          "line": 15,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "visuals.spec.ts",
+      "file": "visuals.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "capture actual empty light/dark, generated stencil/3D and settings workspace",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4627,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:24:10.684Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "821bf1ebb4ae78f6d65d-ca87b1ce8483ca880101",
+          "file": "visuals.spec.ts",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-30T04:13:30.037Z",
+    "duration": 646298.0619999999,
+    "expected": 138,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

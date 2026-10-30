@@ -1,0 +1,253 @@
+{
+  "type": "text",
+  "slots": 5,
+  "cases": [
+    {
+      "key": "text.text",
+      "schema": {
+        "default": "STENCIL",
+        "group": null,
+        "kind": "string",
+        "label": "Text",
+        "name": "text"
+      },
+      "initial": "AOBR\nSTENCIL",
+      "changed": "AOBR\nAB",
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "AOBR\nAB",
+          "sha256": "816879cb4e719008668d0cb6b489a444fa4f87825243b3e7242cbc7384978bef",
+          "info": {
+            "coverage": 0.2116,
+            "height": 414,
+            "kind": "mask",
+            "width": 546
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              546,
+              414
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/text/text-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "text.font",
+      "schema": {
+        "choices": [
+          "sans bold",
+          "serif bold"
+        ],
+        "default": "sans bold",
+        "group": null,
+        "kind": "choice",
+        "label": "Font",
+        "name": "font"
+      },
+      "initial": "sans bold",
+      "changed": "serif bold",
+      "choices": [
+        "sans bold",
+        "serif bold"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "sans bold",
+          "sha256": "127fe1822f4c6fba81a0dda294d1ab00338512009fb0426f11d6c0c80a56b273",
+          "info": {
+            "coverage": 0.226,
+            "height": 414,
+            "kind": "mask",
+            "width": 788
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              788,
+              414
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/text/font-0.json"
+        },
+        {
+          "value": "serif bold",
+          "sha256": "5f9ecbac20ea3d674e753653d8c47dba454b69434963854bae2516fb279a11f7",
+          "info": {
+            "coverage": 0.1873,
+            "height": 417,
+            "kind": "mask",
+            "width": 859
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              859,
+              417
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/text/font-1.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "text.size",
+      "schema": {
+        "default": 160,
+        "group": null,
+        "kind": "int",
+        "label": "Letter height (px)",
+        "max": 600,
+        "min": 20,
+        "name": "size",
+        "step": 5
+      },
+      "initial": 160,
+      "changed": 200,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 200,
+          "sha256": "3930ceb791e49dd0c47732e119bbb1688c6e8d14d79292fbedb7471bb4cab55d",
+          "info": {
+            "coverage": 0.234,
+            "height": 507,
+            "kind": "mask",
+            "width": 975
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              975,
+              507
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/text/size-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "text.line_spacing",
+      "schema": {
+        "default": 1,
+        "group": null,
+        "kind": "float",
+        "label": "Line spacing (x)",
+        "max": 2,
+        "min": 0.7,
+        "name": "line_spacing",
+        "step": 0.05
+      },
+      "initial": 1,
+      "changed": 1.5,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 1.5,
+          "sha256": "d65da9c1aa612e3ec00539d1077a2048e3f631cf5cdff617f373c0a0ec83848a",
+          "info": {
+            "coverage": 0.1845,
+            "height": 507,
+            "kind": "mask",
+            "width": 788
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              788,
+              507
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/text/line_spacing-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "text.padding",
+      "schema": {
+        "default": 20,
+        "group": null,
+        "kind": "int",
+        "label": "Padding (px)",
+        "max": 200,
+        "min": 0,
+        "name": "padding",
+        "step": 1
+      },
+      "initial": 20,
+      "changed": 45,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 45,
+          "sha256": "6b94b5d75312a9014392aa97b8d17250439172f9b5eef5965faff262291dc621",
+          "info": {
+            "coverage": 0.1896,
+            "height": 464,
+            "kind": "mask",
+            "width": 838
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              838,
+              464
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/text/padding-0.json"
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "implementation": "a71c2e806648fb43d235f2ace3f7dca1e1dd77cf",
+  "lossless_fixtures": 11,
+  "native_executable": 10,
+  "preserved_unknown_operation_with_explicit_refusal": 1,
+  "cases": [
+    {
+      "fixture": "browser-indexeddb-original",
+      "project": "docs/m6/projects/browser-indexeddb-original.json",
+      "sha256": "7b99fb5327105d552d8ea1b289822b4bd5b54769b478a4726296f6642645faef",
+      "lossless": true,
+      "native_exit": 0,
+      "native_executable": true,
+      "original_browser_database_recovered": true,
+      "independently_valid_outputs": true
+    },
+    {
+      "fixture": "disabled-and-archived",
+      "project": "docs/m6/projects/disabled-and-archived.json",
+      "sha256": "0392949916a3c42d5b24a722cf283bd0c5f2b0393e74390f87c1bc9fd91847be",
+      "lossless": true,
+      "native_exit": 0,
+      "native_executable": true,
+      "original_browser_database_recovered": false,
+      "independently_valid_outputs": true
+    },
+    {
+      "fixture": "layout-offsets",
+      "project": "docs/m6/projects/layout-offsets.json",
+      "sha256": "8620035fb718d708e58a126deae73c0db72b0d1ea4052c9ed4a3e60b903fe35b",
+      "lossless": true,
+      "native_exit": 0,
+      "native_executable": true,
+      "original_browser_database_recovered": false,
+      "independently_valid_outputs": true
+    },
+    {
+      "fixture": "legacy-exporter",
+      "project": "docs/m6/projects/legacy-exporter.json",
+      "sha256": "ab152dc4bdc55d3a90ca012dcdf8ce2d5d3011457b44a566c4c68e519f0ef989",
+      "lossless": true,
+      "native_exit": 0,
+      "native_executable": true,
+      "original_browser_database_recovered": false,
+      "independently_valid_outputs": true
+    },
+    {
+      "fixture": "native",
+      "project": "docs/m6/projects/native.json",
+      "sha256": "7879a9159667af5f57065cd8e94bc5e6613ab801442a5167d0457d1fba5d947a",
+      "lossless": true,
+      "native_exit": 0,
+      "native_executable": true,
+      "original_browser_database_recovered": false,
+      "independently_valid_outputs": true
+    },
+    {
+      "fixture": "old-browser",
+      "project": "docs/m6/projects/old-browser.json",
+      "sha256": "e920cfce20b7ca649b92943847026852096f07085794dd4449e1fb90519bed6f",
+      "lossless": true,
+      "native_exit": 0,
+      "native_executable": true,
+      "original_browser_database_recovered": false,
+      "independently_valid_outputs": true
+    },
+    {
+      "fixture": "registered-colour-branches",
+      "project": "docs/m6/projects/registered-colour-branches.json",
+      "sha256": "0e5269f2fc169a3f943c7d17dd4179e4b7eb9fb49e3cf2b465c5e1c6a8d20bf0",
+      "lossless": true,
+      "native_exit": 0,
+      "native_executable": true,
+      "original_browser_database_recovered": false,
+      "independently_valid_outputs": true
+    },
+    {
+      "fixture": "renamed-remesh",
+      "project": "docs/m6/projects/renamed-remesh.json",
+      "sha256": "6f46e9e8e78210d2353fa0de6d1e7a2cf43dd8eeac7c06d8c1ed496d24c26b18",
+      "lossless": true,
+      "native_exit": 0,
+      "native_executable": true,
+      "original_browser_database_recovered": false,
+      "independently_valid_outputs": true
+    },
+    {
+      "fixture": "shared-hardware-and-multiple-images",
+      "project": "docs/m6/projects/shared-hardware-and-multiple-images.json",
+      "sha256": "3ab4e48bf7c07eba2a04219b2ed2bd7bfa0c8e62019b14e952f443d2fb0bb0d4",
+      "lossless": true,
+      "native_exit": 0,
+      "native_executable": true,
+      "original_browser_database_recovered": false,
+      "independently_valid_outputs": true
+    },
+    {
+      "fixture": "style-banks",
+      "project": "docs/m6/projects/style-banks.json",
+      "sha256": "2e67f2aa20ad74de6bafe6f20d21cae2d48bfdf22fa5863fb11e54c256b92c94",
+      "lossless": true,
+      "native_exit": 0,
+      "native_executable": true,
+      "original_browser_database_recovered": false,
+      "independently_valid_outputs": true
+    },
+    {
+      "fixture": "unknown-operation",
+      "project": "docs/m6/projects/unknown-operation.json",
+      "sha256": "ebc544c22a06bbf19cff52f8b97339e8bff1a7d85ff657bc6b2eda43589cbd40",
+      "lossless": true,
+      "native_exit": 1,
+      "native_executable": false,
+      "original_browser_database_recovered": false,
+      "independently_valid_outputs": null
+    }
+  ]
+}

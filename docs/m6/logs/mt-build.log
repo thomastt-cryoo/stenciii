@@ -1,0 +1,19 @@
+[INFO]: Checking for the Wasm target...
+[INFO]: Compiling to Wasm...
+   Compiling stencil-core v2.9.4 (C:\Users\mazin\Downloads\stencil\crates\stencil-core)
+warning: function `thread_budget` is never used
+ --> crates\stencil-core\src\par.rs:5:8
+  |
+5 | pub fn thread_budget(cores: usize) -> usize {
+  |        ^^^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+
+   Compiling stencil-wasm v2.9.4 (C:\Users\mazin\Downloads\stencil\crates\stencil-wasm)
+    Finished `release` profile [optimized] target(s) in 2m 04s
+[INFO]: Installing wasm-bindgen...
+[INFO]: Optimizing wasm binaries with `wasm-opt`...
+[INFO]: Optional fields missing from Cargo.toml: 'description', 'repository', and 'license'. These are not necessary, but recommended
+[INFO]: :-) Done in 2m 31s
+[INFO]: :-) Your wasm pkg is ready to publish at C:\Users\mazin\Downloads\stencil\web\public\pkg-mt.

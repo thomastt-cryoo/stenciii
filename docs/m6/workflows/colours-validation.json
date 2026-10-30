@@ -1,0 +1,150 @@
+{
+  "elapsedMs": 3242,
+  "independent": {
+    "format": "ZIP",
+    "bytes": 601065,
+    "entries": [
+      {
+        "name": "assembly-1-Register_colour_plates/colour_1.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 3128985397,
+        "format": "binary STL",
+        "bytes": 281084,
+        "triangles": 5620,
+        "vertices": 2804,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            79.16666412353516,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          100,
+          79.16666412353516,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 23213.70367228597,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Register_colour_plates/colour_2.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 3558357564,
+        "format": "binary STL",
+        "bytes": 277284,
+        "triangles": 5544,
+        "vertices": 2754,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            79.16666412353516,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          100,
+          79.16666412353516,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 31926.622641310845,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 1850354433,
+        "format": "binary STL",
+        "bytes": 28284,
+        "triangles": 564,
+        "vertices": 288,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            17.399999618530273,
+            3.799999952316284,
+            12
+          ]
+        ],
+        "size_mm": [
+          17.399999618530273,
+          3.799999952316284,
+          12
+        ],
+        "signed_volume_mm3": 407.116420441479,
+        "components": 3,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "original-project.json",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 1292928382
+      },
+      {
+        "name": "manufacturing-manifest.json",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 3873277275
+      }
+    ]
+  }
+}

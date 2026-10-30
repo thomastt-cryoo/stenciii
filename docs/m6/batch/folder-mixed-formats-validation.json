@@ -1,0 +1,213 @@
+{
+  "summary": {
+    "schema": 2,
+    "recipe": "M5 export",
+    "source": "source",
+    "options": {
+      "format": "stl",
+      "project": true,
+      "layouts": false,
+      "outlines": false,
+      "strict": false
+    },
+    "planned_jobs": 3,
+    "verified": 3,
+    "failed": 0,
+    "cancelled": 0,
+    "items": [
+      {
+        "id": "1-1",
+        "name": "alpha.png",
+        "relativePath": "folder/alpha.png",
+        "overrides": [],
+        "status": "Verified",
+        "milliseconds": 190.125,
+        "metrics": {
+          "triangles": 1864,
+          "components": 1,
+          "volumeMm3": 178895.07577908091,
+          "sizeMm": [
+            160,
+            160,
+            8
+          ],
+          "stlFiles": 1,
+          "seamStepMm": null,
+          "paintUnderBlocksMm2": null,
+          "bytes": 93284
+        },
+        "findings": [
+          {
+            "level": "warn",
+            "text": "overhang 18 mm²"
+          },
+          {
+            "level": "info",
+            "text": "1 islands bridged"
+          }
+        ],
+        "output": "1-1-alpha.png-manufacturing.stl"
+      },
+      {
+        "id": "2-1",
+        "name": "original.svg",
+        "relativePath": "folder/original.svg",
+        "overrides": [],
+        "status": "Verified",
+        "milliseconds": 189.9399999976158,
+        "metrics": {
+          "triangles": 2208,
+          "components": 1,
+          "volumeMm3": 154564.82671657976,
+          "sizeMm": [
+            160,
+            134.39999389648438,
+            8
+          ],
+          "stlFiles": 1,
+          "seamStepMm": null,
+          "paintUnderBlocksMm2": null,
+          "bytes": 110484
+        },
+        "findings": [
+          {
+            "level": "warn",
+            "text": "overhang 48 mm²"
+          },
+          {
+            "level": "info",
+            "text": "3 islands bridged"
+          }
+        ],
+        "output": "2-1-original.svg-manufacturing.stl"
+      },
+      {
+        "id": "3-1",
+        "name": "pixels.bmp",
+        "relativePath": "folder/pixels.bmp",
+        "overrides": [],
+        "status": "Verified",
+        "milliseconds": 117.56499999761581,
+        "metrics": {
+          "triangles": 476,
+          "components": 1,
+          "volumeMm3": 125401.31611762193,
+          "sizeMm": [
+            160,
+            128,
+            8
+          ],
+          "stlFiles": 1,
+          "seamStepMm": null,
+          "paintUnderBlocksMm2": null,
+          "bytes": 23884
+        },
+        "findings": [
+          {
+            "level": "warn",
+            "text": "overhang 34 mm²"
+          },
+          {
+            "level": "info",
+            "text": "1 islands bridged"
+          }
+        ],
+        "output": "3-1-pixels.bmp-manufacturing.stl"
+      }
+    ]
+  },
+  "csv_rows": 3,
+  "verified_jobs": 3,
+  "independent_stl_count": 3,
+  "all_stls_valid": true,
+  "jobs": [],
+  "meshes": [
+    {
+      "format": "binary STL",
+      "bytes": 93284,
+      "triangles": 1864,
+      "vertices": 930,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          160,
+          160,
+          8
+        ]
+      ],
+      "size_mm": [
+        160,
+        160,
+        8
+      ],
+      "signed_volume_mm3": 178895.07577908091,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    {
+      "format": "binary STL",
+      "bytes": 110484,
+      "triangles": 2208,
+      "vertices": 1104,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          160,
+          134.39999389648438,
+          8
+        ]
+      ],
+      "size_mm": [
+        160,
+        134.39999389648438,
+        8
+      ],
+      "signed_volume_mm3": 154564.82671657976,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    {
+      "format": "binary STL",
+      "bytes": 23884,
+      "triangles": 476,
+      "vertices": 236,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          160,
+          128,
+          8
+        ]
+      ],
+      "size_mm": [
+        160,
+        128,
+        8
+      ],
+      "signed_volume_mm3": 125401.31611762193,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "lossless": true,
+  "executable": true,
+  "nativeExit": 0,
+  "nativeDiagnostic": "verified: 2 islands found, 0 remaining, watertight true, 3200 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\project-replay\\style-banks\\style-banks.stl in 156 ms\n",
+  "independent": {
+    "files": [
+      {
+        "file": "style-banks.stl",
+        "format": "binary STL",
+        "bytes": 160084,
+        "triangles": 3200,
+        "vertices": 1596,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 146095.27486348088,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      }
+    ],
+    "all_valid": true
+  }
+}

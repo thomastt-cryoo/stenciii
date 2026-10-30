@@ -1,0 +1,2039 @@
+{
+  "type": "stencil",
+  "slots": 19,
+  "cases": [
+    {
+      "key": "stencil.width_mm",
+      "schema": {
+        "default": 200,
+        "group": "Plate",
+        "kind": "float",
+        "label": "Plate width (mm)",
+        "max": 2000,
+        "min": 20,
+        "name": "width_mm",
+        "step": 1
+      },
+      "initial": 100,
+      "changed": 140,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 140,
+          "sha256": "232367a49818afc0e16688d72720df118a4e7d7ce72dcb66b7184f5a0818b155",
+          "info": {
+            "bytes": 65884,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 441,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 441,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 0.8235294117647058,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 130,
+              "grid_w": 170,
+              "height_mm": 107.06,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 299.09,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 65884,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1316,
+              "watertight": true,
+              "width_mm": 140,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 65884,
+            "triangles": 1316,
+            "vertices": 632,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                140,
+                107.05882263183594,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              140,
+              107.05882263183594,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 16872.275582949645,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/width_mm-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.thickness_mm",
+      "schema": {
+        "default": 5,
+        "group": "Plate",
+        "kind": "float",
+        "label": "Thickness (mm)",
+        "max": 100,
+        "min": 0.2,
+        "name": "thickness_mm",
+        "step": 0.2
+      },
+      "initial": 2.4,
+      "changed": 3.4,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 3.4,
+          "sha256": "ff922897c8a768ea594d21a8ce75ab8176ef1c05d5d31be4570c7a33b459b2ca",
+          "info": {
+            "bytes": 65484,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 770,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 770,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 18,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 254.33,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 3.6,
+              "raised_bridges": true,
+              "stl_bytes": 65484,
+              "thickness_mm": 3.4,
+              "threshold": 0,
+              "triangles": 1308,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 65484,
+            "triangles": 1308,
+            "vertices": 630,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                3.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              3.5999999046325684
+            ],
+            "signed_volume_mm3": 13049.675874502766,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/thickness_mm-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.margin_mm",
+      "schema": {
+        "default": 8,
+        "group": "Plate",
+        "kind": "float",
+        "label": "Margin (mm)",
+        "max": 500,
+        "min": 0,
+        "name": "margin_mm",
+        "step": 1
+      },
+      "initial": 4,
+      "changed": 10,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 10,
+          "sha256": "3fff6f63070262cda47ce434973c2ba054a567c132f9042ede585da115920074",
+          "info": {
+            "bytes": 65484,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 770,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 770,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.0416666666666667,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 152,
+              "grid_w": 192,
+              "height_mm": 79.17,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 10,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 208.88,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 65484,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1308,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 65484,
+            "triangles": 1308,
+            "vertices": 630,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                79.16666412353516,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              79.16666412353516,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 11869.84536311487,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/margin_mm-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.flip",
+      "schema": {
+        "default": false,
+        "group": "Plate",
+        "kind": "bool",
+        "label": "Print upside down",
+        "name": "flip"
+      },
+      "initial": false,
+      "changed": true,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": true,
+          "sha256": "05f3ec98c2da14a165f37ff3fe40a92d59b305f4cf78b5a8cd81930101fb71cf",
+          "info": {
+            "bytes": 65484,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 770,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 770,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 0,
+              "first_layer_taper_mm": 1,
+              "flip": true,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 0,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 65484,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1308,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 65484,
+            "triangles": 1308,
+            "vertices": 630,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                2.384185791015625e-7
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.6000001430511475
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9413.462372569538,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/flip-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.bridge_mm",
+      "schema": {
+        "default": 1.6,
+        "group": "Bridges",
+        "kind": "float",
+        "label": "Bridge width (mm)",
+        "max": 50,
+        "min": 0.6,
+        "name": "bridge_mm",
+        "step": 0.1
+      },
+      "initial": 1.2,
+      "changed": 2.5,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 2.5,
+          "sha256": "11ae690f2bb55454ad5efaf332d2242c16774e0b7980b5023684f6ba27bf22b7",
+          "info": {
+            "bytes": 66884,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 1798,
+              "bridge_mm": 2.5,
+              "bridge_pixels": 1798,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 2.2988505747126435,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 593.87,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 66884,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1336,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 66884,
+            "triangles": 1336,
+            "vertices": 642,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9888.822586761598,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/bridge_mm-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.bridges_per_island",
+      "schema": {
+        "default": 1,
+        "group": "Bridges",
+        "kind": "int",
+        "label": "Bridges per island",
+        "max": 5,
+        "min": 1,
+        "name": "bridges_per_island",
+        "step": 1
+      },
+      "initial": 3,
+      "changed": 1,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 1,
+          "sha256": "5e985739c0129d67dd739434fa9d02c41f69e0daea7f01884d33aaf9950effa1",
+          "info": {
+            "bytes": 48484,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 226,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 226,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 1,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 74.65,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 48484,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 968,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 48484,
+            "triangles": 968,
+            "vertices": 484,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9161.910033890585,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/bridges_per_island-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.bridge_spacing",
+      "schema": {
+        "choices": [
+          "closest",
+          "spread"
+        ],
+        "default": "closest",
+        "group": "Bridges",
+        "kind": "choice",
+        "label": "Bridge spacing",
+        "name": "bridge_spacing"
+      },
+      "initial": "closest",
+      "changed": "spread",
+      "choices": [
+        "closest",
+        "spread"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "closest",
+          "sha256": "f5a91a1c055a375b3c93d3dc0e1ab108e597013f960855eddf012b8175c9a2fb",
+          "info": {
+            "bytes": 61484,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 629,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 629,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 207.76,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 61484,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1228,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 61484,
+            "triangles": 1228,
+            "vertices": 594,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9348.262365835419,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/bridge_spacing-0.json"
+        },
+        {
+          "value": "spread",
+          "sha256": "8e129ffdb3966f1a5b1e48557e6e53b48cc0852a6b83559efc7517a78e70ad1e",
+          "info": {
+            "bytes": 65484,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 770,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 770,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 254.33,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 65484,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1308,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 65484,
+            "triangles": 1308,
+            "vertices": 630,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9413.462386052463,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/bridge_spacing-1.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.bridge_min_angle_deg",
+      "schema": {
+        "default": 45,
+        "group": "Bridges",
+        "kind": "float",
+        "label": "Minimum angle between bridges (deg)",
+        "max": 90,
+        "min": 15,
+        "name": "bridge_min_angle_deg",
+        "step": 5
+      },
+      "initial": 45,
+      "changed": 85,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 85,
+          "sha256": "3d47a20fd6f05f8cddfa2187043de4fd3b5a4bb07d4321cc3d7ed4ab482405bb",
+          "info": {
+            "bytes": 78484,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 1377,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 1377,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 5,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 455.15,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 78484,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1568,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 78484,
+            "triangles": 1568,
+            "vertices": 744,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9694.609440870101,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/bridge_min_angle_deg-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.bridge_max_length",
+      "schema": {
+        "default": 4,
+        "group": "Bridges",
+        "kind": "float",
+        "label": "Longest bridge in spread mode (x shortest)",
+        "max": 16,
+        "min": 1,
+        "name": "bridge_max_length",
+        "step": 0.5
+      },
+      "initial": 4,
+      "changed": 1,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 1,
+          "sha256": "f0c223ba10d973c310351f1d2f03f9f5889b0b6f326f96125da78c8ff3f923ad",
+          "info": {
+            "bytes": 61884,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 648,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 648,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 214.03,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 61884,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1236,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 61884,
+            "triangles": 1236,
+            "vertices": 598,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9357.048208325094,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/bridge_max_length-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.bridge_passes",
+      "schema": {
+        "default": 4,
+        "group": "Bridges",
+        "kind": "int",
+        "label": "Bridging passes in spread mode",
+        "max": 8,
+        "min": 1,
+        "name": "bridge_passes",
+        "step": 1
+      },
+      "initial": 4,
+      "changed": 1,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 1,
+          "sha256": "54158af656a5bd7f486ca2cf234f985df78d8a1bf73593ef79040690c77b8500",
+          "info": {
+            "bytes": 67084,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 30,
+              "bridge_mm": 1.6,
+              "bridge_pixels": 30,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.5384615384615385,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 1,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 130,
+              "grid_w": 130,
+              "height_mm": 200,
+              "islands_deleted": 0,
+              "islands_found": 1,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 8,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 71.01,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 67084,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1340,
+              "watertight": true,
+              "width_mm": 200,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 67084,
+            "triangles": 1340,
+            "vertices": 666,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                200,
+                200,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              200,
+              200,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 90536.32735885607,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/bridge_passes-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.raised_bridges",
+      "schema": {
+        "default": true,
+        "group": "Bridges",
+        "kind": "bool",
+        "label": "Raised bridges",
+        "name": "raised_bridges"
+      },
+      "initial": true,
+      "changed": false,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": false,
+          "sha256": "487f41127af4afd9c32a2c20befe23e87898d4ad0403f8fecab5e906d66490ab",
+          "info": {
+            "bytes": 49684,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 770,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 770,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 0,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 0,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": false,
+              "stl_bytes": 49684,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 992,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 49684,
+            "triangles": 992,
+            "vertices": 472,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9718.654644784983,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/raised_bridges-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.z_bridging",
+      "schema": {
+        "choices": [
+          "easy",
+          "steps"
+        ],
+        "default": "easy",
+        "group": "Bridges",
+        "kind": "choice",
+        "label": "Z bridging",
+        "name": "z_bridging"
+      },
+      "initial": "easy",
+      "changed": "steps",
+      "choices": [
+        "easy",
+        "steps"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "easy",
+          "sha256": "8e129ffdb3966f1a5b1e48557e6e53b48cc0852a6b83559efc7517a78e70ad1e",
+          "info": {
+            "bytes": 65484,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 770,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 770,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 254.33,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 65484,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1308,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 65484,
+            "triangles": 1308,
+            "vertices": 630,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9413.462386052463,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/z_bridging-0.json"
+        },
+        {
+          "value": "steps",
+          "sha256": "134aa5fa43f37f02d060247e59d94daedfa4c118be87f3aa6a003ed53c7c6aa7",
+          "info": {
+            "bytes": 146284,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 770,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 770,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 254.33,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 146284,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 2924,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "steps"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 146284,
+            "triangles": 2924,
+            "vertices": 1438,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9425.220891079294,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/z_bridging-1.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.layer_height_mm",
+      "schema": {
+        "default": 0.2,
+        "group": "Bridges",
+        "kind": "float",
+        "label": "Layer height (mm)",
+        "max": 5,
+        "min": 0.05,
+        "name": "layer_height_mm",
+        "step": 0.05
+      },
+      "initial": 0.2,
+      "changed": 0.3,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 0.3,
+          "sha256": "8e7595fca0c8509f064d66de0c712f0c4318463470c4841cb7d28595aced6556",
+          "info": {
+            "bytes": 65484,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 770,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 770,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.3,
+              "layers": 9,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 254.33,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6999999999999997,
+              "raised_bridges": true,
+              "stl_bytes": 65484,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1308,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 65484,
+            "triangles": 1308,
+            "vertices": 630,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.700000047683716
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.700000047683716
+            ],
+            "signed_volume_mm3": 9787.257343895162,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/layer_height_mm-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.extra_top_layers",
+      "schema": {
+        "default": 1,
+        "group": "Bridges",
+        "kind": "int",
+        "label": "Extra top layers",
+        "max": 50,
+        "min": 0,
+        "name": "extra_top_layers",
+        "step": 1
+      },
+      "initial": 1,
+      "changed": 4,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 4,
+          "sha256": "abb0439c26c71d3450d8fc05912bdc7d3f0c1fddcc0fd220981d21379e85c12f",
+          "info": {
+            "bytes": 65484,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 770,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 770,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 16,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 254.33,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 3.2,
+              "raised_bridges": true,
+              "stl_bytes": 65484,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1308,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 65484,
+            "triangles": 1308,
+            "vertices": 630,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                3.200000047683716
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              3.200000047683716
+            ],
+            "signed_volume_mm3": 11656.229459522694,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/extra_top_layers-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.max_overhang_deg",
+      "schema": {
+        "default": 0,
+        "group": "Bridges",
+        "kind": "float",
+        "label": "Overhang check angle (deg)",
+        "max": 89,
+        "min": 0,
+        "name": "max_overhang_deg",
+        "step": 1
+      },
+      "initial": 0,
+      "changed": 85,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 85,
+          "sha256": "8e129ffdb3966f1a5b1e48557e6e53b48cc0852a6b83559efc7517a78e70ad1e",
+          "info": {
+            "bytes": 65484,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 770,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 770,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 145.99,
+              "overhang_check_deg": 85,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 65484,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1308,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 65484,
+            "triangles": 1308,
+            "vertices": 630,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9413.462386052463,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/max_overhang_deg-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.min_island_mm2",
+      "schema": {
+        "default": 0,
+        "group": "Bridges",
+        "kind": "float",
+        "label": "Delete islands under (mm²)",
+        "max": 100000,
+        "min": 0,
+        "name": "min_island_mm2",
+        "step": 1
+      },
+      "initial": 0,
+      "changed": 10,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 10,
+          "sha256": "4a500b1bf324bb73f258be047d6fbbbb13c811a3c74c5fd7a65f0dac6d177880",
+          "info": {
+            "bytes": 63484,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 727,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 727,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 5,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 1,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 240.12,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 63484,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1268,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 63484,
+            "triangles": 1268,
+            "vertices": 610,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9391.861113548704,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/min_island_mm2-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.min_contact_mm",
+      "schema": {
+        "default": 0,
+        "group": "Bridges",
+        "kind": "float",
+        "label": "Minimum surface contact (mm)",
+        "max": 3,
+        "min": 0,
+        "name": "min_contact_mm",
+        "step": 0.1
+      },
+      "initial": 0,
+      "changed": 2.5,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 2.5,
+          "sha256": "de077d97c1a8e1dbe2a62be1fb31c82ce3bfea212ac397c60730c618200abd33",
+          "info": {
+            "bytes": 67084,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 770,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 770,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 254.33,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 67084,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1340,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 67084,
+            "triangles": 1340,
+            "vertices": 646,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9506.209131013475,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/min_contact_mm-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.min_first_layer_width_mm",
+      "schema": {
+        "default": 0,
+        "group": "First layer",
+        "kind": "float",
+        "label": "Minimum first-layer width (mm)",
+        "max": 10,
+        "min": 0,
+        "name": "min_first_layer_width_mm",
+        "step": 0.1
+      },
+      "initial": 0,
+      "changed": 2.5,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 2.5,
+          "sha256": "5641ca08f956793f02f8092ca948ecca4ec5651387a77b1a2579ec95b2d25f39",
+          "info": {
+            "bytes": 2847484,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 770,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 770,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 2.5,
+              "overhang_area_mm2": 254.33,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 2847484,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 56948,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 2847484,
+            "triangles": 56948,
+            "vertices": 28450,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9420.002221079356,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/min_first_layer_width_mm-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "stencil.first_layer_taper_mm",
+      "schema": {
+        "default": 1,
+        "group": "First layer",
+        "kind": "float",
+        "label": "Taper height (mm)",
+        "max": 50,
+        "min": 0,
+        "name": "first_layer_taper_mm",
+        "step": 0.1
+      },
+      "initial": 0.4,
+      "changed": 1.6,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 1.6,
+          "sha256": "75516e0329565de32cd1ca8043a9dab6ec318d93b40c00007a44025944805d36",
+          "info": {
+            "bytes": 2942484,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 770,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 770,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1494252873563218,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1.6,
+              "flip": false,
+              "grid_h": 134,
+              "grid_w": 174,
+              "height_mm": 77.01,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 5,
+              "overhang_area_mm2": 254.33,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "stl_bytes": 2942484,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 58848,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 2942484,
+            "triangles": 58848,
+            "vertices": 29400,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77.0114974975586,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77.0114974975586,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9527.01768996402,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/stencil/first_layer_taper_mm-0.json"
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "type": "threshold",
+  "slots": 2,
+  "cases": [
+    {
+      "key": "threshold.threshold",
+      "schema": {
+        "default": 256,
+        "group": null,
+        "kind": "int",
+        "label": "Threshold",
+        "max": 256,
+        "min": 0,
+        "name": "threshold",
+        "step": 1
+      },
+      "initial": 256,
+      "changed": 180,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 180,
+          "sha256": "32b32f671a8d869e390c014f45b90fe5b5307aff06382db20e58b5203fe8155e",
+          "info": {
+            "coverage": 0.3975,
+            "height": 150,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              150
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/threshold/threshold-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "threshold.invert",
+      "schema": {
+        "default": false,
+        "group": null,
+        "kind": "bool",
+        "label": "Invert",
+        "name": "invert"
+      },
+      "initial": false,
+      "changed": true,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": true,
+          "sha256": "ee9f91598d3f58e29f32eaae5736e02e0fe536a79f5196e500833b07a229a89c",
+          "info": {
+            "coverage": 0.6052,
+            "height": 150,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              150
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/threshold/invert-0.json"
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

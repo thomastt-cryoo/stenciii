@@ -1,0 +1,8 @@
+test_missing_or_reversed_faces_cannot_pass_the_surface_proof (test_surface_comparison.SurfaceComparison.test_missing_or_reversed_faces_cannot_pass_the_surface_proof) ... ok
+test_ordering_and_different_planar_triangulations_are_distinct (test_surface_comparison.SurfaceComparison.test_ordering_and_different_planar_triangulations_are_distinct) ... ok
+test_same_vertices_can_hide_nonplanar_surface_differences (test_surface_comparison.SurfaceComparison.test_same_vertices_can_hide_nonplanar_surface_differences) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.056s
+
+OK

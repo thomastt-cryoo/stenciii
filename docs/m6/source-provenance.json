@@ -1,0 +1,28 @@
+{
+  "implementation_commit": "a71c2e806648fb43d235f2ace3f7dca1e1dd77cf",
+  "implementation_tree": "67739587adeeac1a68234bbad6ca834c21ec63ec",
+  "verification_commit": "edbe76392c21c7315119f371ae68bfbc92dc5ac6",
+  "verification_tree": "056016c59132c4c2a0aa3a6f9f766e4eced82843",
+  "accepted_m5_documentation": "cb07659c1f650a76b220fb273e09e4e349e02b8b",
+  "accepted_m5_source": "001f3d6d79167d83d366c16bf9a187da4e140fd4",
+  "product_source_paths": [
+    "Cargo.toml",
+    "Cargo.lock",
+    "crates",
+    "web/src",
+    "web/index.html",
+    "web/package.json",
+    "web/package-lock.json",
+    "web/vite.config.ts",
+    "web/public"
+  ],
+  "identical_product_source_manifest_sha256": "bf76a6212909290f16d9a65b5637b6a76e7c2d5694e27c855dca9e6617379040",
+  "product_source_unchanged_in_verification_commits": true,
+  "production_build_metadata_commit": "a71c2e8",
+  "production_build_clean": true,
+  "engine_sha256": {
+    "web/pkg/stencil_wasm_bg.wasm": "74b9720e65978a7a59f576ff2221d2f8923e02dc458aea9cc74f67080c0e55ec",
+    "web/public/pkg-mt/stencil_wasm_bg.wasm": "43e1c1691f7cf40a127388eea9cdc53c001d4b8d6c97783745f85bba180cbdb8"
+  },
+  "note": "Later verification commits change test synchronization, configured-origin checks and documentation only. Some earlier local screenshots/diagnostic reports carry cb07659+dirty because they were captured during implementation; they are not presented as clean source builds."
+}

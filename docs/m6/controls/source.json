@@ -1,0 +1,91 @@
+{
+  "type": "source",
+  "slots": 2,
+  "cases": [
+    {
+      "key": "source.image_id",
+      "schema": {
+        "default": "",
+        "group": null,
+        "kind": "text",
+        "label": "Image",
+        "name": "image_id"
+      },
+      "initial": "one",
+      "changed": "two",
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "two",
+          "sha256": "05c6a4833143dd5bc1c09858d17201b870658ad501437009bd1a199381402318",
+          "info": {
+            "height": 160,
+            "kind": "image",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              160
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/source/image_id-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "source.resolution",
+      "schema": {
+        "default": 1000,
+        "group": null,
+        "kind": "int",
+        "label": "Working resolution (px)",
+        "max": 2000,
+        "min": 20,
+        "name": "resolution",
+        "step": 10
+      },
+      "initial": 200,
+      "changed": 300,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 300,
+          "sha256": "c8b240b6985ee3bd59029da27cfa5fdbc3393bcf5fe6e71c6b28181ef04a6f13",
+          "info": {
+            "height": 225,
+            "kind": "image",
+            "width": 300
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              300,
+              225
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/source/resolution-0.json"
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

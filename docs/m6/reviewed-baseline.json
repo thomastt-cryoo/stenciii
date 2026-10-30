@@ -1,0 +1,76 @@
+{
+  "accepted_base": "cb07659c1f650a76b220fb273e09e4e349e02b8b",
+  "files": [
+    {
+      "path": "docs/FEATURE_INVENTORY.md",
+      "sha256": "b6390e2e5b2968c2196c8bc2c816647a221708510be22de7ed1fd7f0272c6c23",
+      "committed_sha256": "b6390e2e5b2968c2196c8bc2c816647a221708510be22de7ed1fd7f0272c6c23"
+    },
+    {
+      "path": "docs/FEATURE_UI_MAPPING.md",
+      "sha256": "642b76d2af4939e1f0bb00d82d036c602cdac6951fdabb76f1fc9f9ff9570e9f",
+      "committed_sha256": "642b76d2af4939e1f0bb00d82d036c602cdac6951fdabb76f1fc9f9ff9570e9f"
+    },
+    {
+      "path": "docs/M1_REPORT.md",
+      "sha256": "89a2c6a0ad60151054ff24a66161d48c7ed770439614d5613501bd97562658f0",
+      "committed_sha256": "89a2c6a0ad60151054ff24a66161d48c7ed770439614d5613501bd97562658f0"
+    },
+    {
+      "path": "docs/M2_REPORT.md",
+      "sha256": "d6f48b0b6f371ad30f6952d920af3869f04df5722154de6ff39d004cbc24f3ce",
+      "committed_sha256": "d6f48b0b6f371ad30f6952d920af3869f04df5722154de6ff39d004cbc24f3ce"
+    },
+    {
+      "path": "docs/M3_REPORT.md",
+      "sha256": "74a49551735a073f0aa4b5669bfb9982dd414639b196864ba77f182f1a55fde7",
+      "committed_sha256": "74a49551735a073f0aa4b5669bfb9982dd414639b196864ba77f182f1a55fde7"
+    },
+    {
+      "path": "docs/M4_REPORT.md",
+      "sha256": "a8857bf14a5954ab66e70d96ed82e0e41f121a8924775fbf7e1a44ae31a56931",
+      "committed_sha256": "5486addf6f7256c9a818f5b249540c28ab30b360f413b4c6675bfcdee53c2f1e"
+    },
+    {
+      "path": "docs/m5/M5_REPORT.md",
+      "sha256": "624aa413285f77b1177a65175c6ed350605974cec2975e883b1a249f2cbe853d",
+      "committed_sha256": "624aa413285f77b1177a65175c6ed350605974cec2975e883b1a249f2cbe853d"
+    },
+    {
+      "path": "docs/audit/runtime-catalogue.json",
+      "sha256": "fa6a399b7ff1886bb40059e10cac4c933f05e3545d9d29accd4b02d0154c4017",
+      "committed_sha256": "fa6a399b7ff1886bb40059e10cac4c933f05e3545d9d29accd4b02d0154c4017"
+    },
+    {
+      "path": "docs/m5/PARAMETER_COVERAGE.md",
+      "sha256": "11c2d4eb2edd93b8b762634d729ea8a8d593b3265580f5ba33859592b038abd7",
+      "committed_sha256": "0abf76dec59c14f9ffae5b6d7d565b49d93be3ffc52aab55d378e396d3daa883"
+    },
+    {
+      "path": "docs/m5/parameter-coverage-217.json",
+      "sha256": "81ce716b65656a52bcfb89a6e5a7dd46d6f6bf21ba5a62b5344c8190746e5bed",
+      "committed_sha256": "e8a76413fa4d7b3742a05ae6ec9ded7d03978d3a238a2d8048590131e4b4f48a"
+    },
+    {
+      "path": "docs/m5/KNOWN_LIMITS.md",
+      "sha256": "38204fd437f3581b6c14bb35fbd2bce17695b1dc23fe737989d0957c39d2aabc",
+      "committed_sha256": "38204fd437f3581b6c14bb35fbd2bce17695b1dc23fe737989d0957c39d2aabc"
+    },
+    {
+      "path": "docs/m5/ENGINE_PARITY.md",
+      "sha256": "eacb9872a7399bb862dfb8bd4ca629ecbc615f094c8c49605cc854fcd684df95",
+      "committed_sha256": "9d21f7c467fb47a16f446fd272adf595a39db060af6a7dee6414377fde6645ba"
+    },
+    {
+      "path": "docs/m5/final-results.json",
+      "sha256": "99fd4e900b2cfd3d031f3c6c74a4460cbf63c30b30081fbfc84315e0e1653f88",
+      "committed_sha256": "9e9c4e5d4476668ab08a25d028452405c49bdc280bed29c06d291cf29282b380"
+    },
+    {
+      "path": "docs/m5/github-ci.json",
+      "sha256": "565dfd76067f5791afcb9a69eb612226286762dbf5c3df8cfb0be4b0b7325e81",
+      "committed_sha256": "565dfd76067f5791afcb9a69eb612226286762dbf5c3df8cfb0be4b0b7325e81"
+    }
+  ],
+  "worktree_hash_scope": "SHA-256 of the reviewed Windows worktree bytes; canonical committed hashes are supplied separately for cross-platform reproduction."
+}

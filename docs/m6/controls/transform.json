@@ -1,0 +1,420 @@
+{
+  "type": "transform",
+  "slots": 8,
+  "cases": [
+    {
+      "key": "transform.crop_left",
+      "schema": {
+        "default": 0,
+        "group": "Crop",
+        "kind": "float",
+        "label": "Crop left (%)",
+        "max": 90,
+        "min": 0,
+        "name": "crop_left",
+        "step": 0.5
+      },
+      "initial": 0,
+      "changed": 12,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 12,
+          "sha256": "ba8e15ce67f6e1c14a213e022c0770e6faccbd59fb0ff2e7183af07683dfac21",
+          "info": {
+            "height": 150,
+            "kind": "image",
+            "width": 176
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              176,
+              150
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/transform/crop_left-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "transform.crop_top",
+      "schema": {
+        "default": 0,
+        "group": "Crop",
+        "kind": "float",
+        "label": "Crop top (%)",
+        "max": 90,
+        "min": 0,
+        "name": "crop_top",
+        "step": 0.5
+      },
+      "initial": 0,
+      "changed": 10,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 10,
+          "sha256": "67a2528ea8797becbaf6b7ba0aa57963ee13bf536c2a333b7339b45d019cff4d",
+          "info": {
+            "height": 135,
+            "kind": "image",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              135
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/transform/crop_top-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "transform.crop_right",
+      "schema": {
+        "default": 0,
+        "group": "Crop",
+        "kind": "float",
+        "label": "Crop right (%)",
+        "max": 90,
+        "min": 0,
+        "name": "crop_right",
+        "step": 0.5
+      },
+      "initial": 0,
+      "changed": 17,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 17,
+          "sha256": "045294c3b20361a22f189ed4d191a5cbd54b7fe1d5d250dd7fea63780c971138",
+          "info": {
+            "height": 150,
+            "kind": "image",
+            "width": 166
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              166,
+              150
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/transform/crop_right-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "transform.crop_bottom",
+      "schema": {
+        "default": 0,
+        "group": "Crop",
+        "kind": "float",
+        "label": "Crop bottom (%)",
+        "max": 90,
+        "min": 0,
+        "name": "crop_bottom",
+        "step": 0.5
+      },
+      "initial": 0,
+      "changed": 15,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 15,
+          "sha256": "434f4fcf9f70d17dfb64ef2c6bc015b80128f7e75f79d186f7e37161a5b58680",
+          "info": {
+            "height": 127,
+            "kind": "image",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              127
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/transform/crop_bottom-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "transform.turn",
+      "schema": {
+        "choices": [
+          "0",
+          "90",
+          "180",
+          "270"
+        ],
+        "default": "0",
+        "group": "Rotate",
+        "kind": "choice",
+        "label": "Turn (deg)",
+        "name": "turn"
+      },
+      "initial": "0",
+      "changed": "90",
+      "choices": [
+        "0",
+        "90",
+        "180",
+        "270"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "0",
+          "sha256": "91fd4a2e0dfbd123053e3beca9fd0f2de9e91957ff0f1518ae67bc837eebb830",
+          "info": {
+            "height": 150,
+            "kind": "image",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              150
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/transform/turn-0.json"
+        },
+        {
+          "value": "90",
+          "sha256": "6ef966102f53ba4edb71627c3af5e2dda659201f8c99de33cbc70a663e591b0b",
+          "info": {
+            "height": 200,
+            "kind": "image",
+            "width": 150
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              150,
+              200
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/transform/turn-1.json"
+        },
+        {
+          "value": "180",
+          "sha256": "27b2b26c86681e72c783530240a0e2b4a36fea0c8cc38869bc4815fef0286679",
+          "info": {
+            "height": 150,
+            "kind": "image",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              150
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/transform/turn-2.json"
+        },
+        {
+          "value": "270",
+          "sha256": "377e54f09132611fbef233bbc99a86619606e31cd435bb81ad6a27f36bb1a8b7",
+          "info": {
+            "height": 200,
+            "kind": "image",
+            "width": 150
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              150,
+              200
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/transform/turn-3.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "transform.angle",
+      "schema": {
+        "default": 0,
+        "group": "Rotate",
+        "kind": "float",
+        "label": "Fine rotation (deg)",
+        "max": 45,
+        "min": -45,
+        "name": "angle",
+        "step": 0.5
+      },
+      "initial": 0,
+      "changed": 17,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 17,
+          "sha256": "d9f9f45794204519336d92de81ffe8ffe54922977672e9743e85761ef9183ef2",
+          "info": {
+            "height": 202,
+            "kind": "image",
+            "width": 236
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              236,
+              202
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/transform/angle-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "transform.flip_h",
+      "schema": {
+        "default": false,
+        "group": "Rotate",
+        "kind": "bool",
+        "label": "Flip horizontally",
+        "name": "flip_h"
+      },
+      "initial": false,
+      "changed": true,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": true,
+          "sha256": "fab266ce2da674f7a50e466b47af749f6fb64e423060f148f7913a30ecaf560e",
+          "info": {
+            "height": 150,
+            "kind": "image",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              150
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/transform/flip_h-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "transform.flip_v",
+      "schema": {
+        "default": false,
+        "group": "Rotate",
+        "kind": "bool",
+        "label": "Flip vertically",
+        "name": "flip_v"
+      },
+      "initial": false,
+      "changed": true,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": true,
+          "sha256": "15603138d7a0fd985710d4b212c55dd60275f0b3388fe75ce088d6203986773d",
+          "info": {
+            "height": 150,
+            "kind": "image",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              150
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/transform/flip_v-0.json"
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

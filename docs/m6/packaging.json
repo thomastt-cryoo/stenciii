@@ -1,0 +1,100 @@
+{
+  "url": "http://127.0.0.1:5210/",
+  "files": [
+    {
+      "path": "assets/BufferGeometryUtils-BYokyORa.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "assets/engine.worker-ClpkUGW-.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "assets/index-4mcwSqnB.css",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "assets/index-DJvEKstq.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "assets/meshAudit.worker-DYZaH-ut.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "assets/MeshPreview-6yNDStO2.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "assets/stencil_wasm-CvlI4SvJ.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "assets/stencil_wasm_bg-BllC_iXp.wasm",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "assets/Viewer3D-BdAjpRS7.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "assets/zip.worker-DDOehMQV.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "index.html",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "pkg-mt/.gitignore",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "pkg-mt/package.json",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "pkg-mt/snippets/wasm-bindgen-rayon-38edf6e439f6d70d/src/workerHelpers.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "pkg-mt/stencil_wasm.d.ts",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "pkg-mt/stencil_wasm.js",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "pkg-mt/stencil_wasm_bg.wasm",
+      "matches_production_sha256": true,
+      "status": 200
+    },
+    {
+      "path": "pkg-mt/stencil_wasm_bg.wasm.d.ts",
+      "matches_production_sha256": true,
+      "status": 200
+    }
+  ],
+  "coop": "same-origin",
+  "coep": "require-corp",
+  "test_entries_status": 404,
+  "binary_bytes": 16973824,
+  "binary_sha256": "1bc2a0eb3d3faeeca016b61b6bb8dda5daacbdb70bc2505c79c35ad354df76f7"
+}

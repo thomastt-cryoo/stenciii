@@ -1,0 +1,1242 @@
+{
+  "type": "remesh",
+  "slots": 8,
+  "cases": [
+    {
+      "key": "remesh.layer_from",
+      "schema": {
+        "default": 1,
+        "group": "Layers",
+        "kind": "int",
+        "label": "First layer",
+        "max": 1000,
+        "min": 1,
+        "name": "layer_from",
+        "step": 1
+      },
+      "initial": 1,
+      "changed": 4,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 4,
+          "sha256": "c52c72fdeaeb9ac5d29f4fc6f4f5245b82e7ae54abe30ac2695e8abf1ebfcf63",
+          "info": {
+            "bytes": 172284,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 1925,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 1925,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1037527593818983,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 0,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 262,
+              "grid_w": 453,
+              "height_mm": 57.84,
+              "islands_deleted": 0,
+              "islands_found": 4,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 0,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": false,
+              "remesh": {
+                "decimate_mm": 0,
+                "from": 4,
+                "layer_height_mm": 0.2,
+                "layers": 13,
+                "max_deviation_mm": 0,
+                "overhang_violation_mm2": 0,
+                "skipped": "no layer could be simplified without adding vertices",
+                "to": 13,
+                "tolerance_used_mm": 0,
+                "triangles_after": 3444,
+                "triangles_after_layers": 3444,
+                "triangles_before": 3444,
+                "vertices_after": 1700,
+                "vertices_before": 1700
+              },
+              "stl_bytes": 172284,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 3444,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 172284,
+            "triangles": 3444,
+            "vertices": 1700,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                57.83664321899414,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              57.83664321899414,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 12235.80749809917,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/remesh/layer_from-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "remesh.layer_to",
+      "schema": {
+        "default": 0,
+        "group": "Layers",
+        "kind": "int",
+        "label": "Last layer",
+        "max": 1000,
+        "min": 0,
+        "name": "layer_to",
+        "step": 1
+      },
+      "initial": 0,
+      "changed": 6,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 6,
+          "sha256": "c52c72fdeaeb9ac5d29f4fc6f4f5245b82e7ae54abe30ac2695e8abf1ebfcf63",
+          "info": {
+            "bytes": 172284,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 1925,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 1925,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1037527593818983,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 0,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 262,
+              "grid_w": 453,
+              "height_mm": 57.84,
+              "islands_deleted": 0,
+              "islands_found": 4,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 0,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": false,
+              "remesh": {
+                "decimate_mm": 0,
+                "from": 1,
+                "layer_height_mm": 0.2,
+                "layers": 13,
+                "max_deviation_mm": 0,
+                "overhang_violation_mm2": 0,
+                "skipped": "no layer could be simplified without adding vertices",
+                "to": 6,
+                "tolerance_used_mm": 0,
+                "triangles_after": 3444,
+                "triangles_after_layers": 3444,
+                "triangles_before": 3444,
+                "vertices_after": 1700,
+                "vertices_before": 1700
+              },
+              "stl_bytes": 172284,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 3444,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 172284,
+            "triangles": 3444,
+            "vertices": 1700,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                57.83664321899414,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              57.83664321899414,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 12235.80749809917,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/remesh/layer_to-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "remesh.tolerance_mm",
+      "schema": {
+        "default": 0.1,
+        "group": "Simplify",
+        "kind": "float",
+        "label": "Largest shift of an outline (mm)",
+        "max": 1,
+        "min": 0.01,
+        "name": "tolerance_mm",
+        "step": 0.01
+      },
+      "initial": 0.2,
+      "changed": 0.4,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 0.4,
+          "sha256": "bce7ffe8912ef94f7ca6b33566b5f0730a32834d71fcf382e21caa23c056b63d",
+          "info": {
+            "bytes": 36084,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 1925,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 1925,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1037527593818983,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 0,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 262,
+              "grid_w": 453,
+              "height_mm": 57.84,
+              "islands_deleted": 0,
+              "islands_found": 4,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 0,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": false,
+              "remesh": {
+                "decimate_mm": 0,
+                "from": 1,
+                "layer_height_mm": 0.2,
+                "layers": 13,
+                "max_deviation_mm": 0.3967412049632321,
+                "overhang_violation_mm2": 0,
+                "skipped": null,
+                "to": 13,
+                "tolerance_used_mm": 0.4,
+                "triangles_after": 720,
+                "triangles_after_layers": 720,
+                "triangles_before": 3444,
+                "vertices_after": 340,
+                "vertices_before": 1700
+              },
+              "stl_bytes": 36084,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 720,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 36084,
+            "triangles": 720,
+            "vertices": 340,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                57.83660125732422,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              57.83660125732422,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 12288.184441635483,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/remesh/tolerance_mm-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "remesh.smoothing",
+      "schema": {
+        "default": 0.5,
+        "group": "Simplify",
+        "kind": "float",
+        "label": "Smoothing",
+        "max": 1,
+        "min": 0,
+        "name": "smoothing",
+        "step": 0.05
+      },
+      "initial": 0.5,
+      "changed": 1,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 1,
+          "sha256": "c06320c7b39b87b378bac96c9439279eb9a1d00ccc6cc0e5be9adfc921245f25",
+          "info": {
+            "bytes": 99884,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 1925,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 1925,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1037527593818983,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 0,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 262,
+              "grid_w": 453,
+              "height_mm": 57.84,
+              "islands_deleted": 0,
+              "islands_found": 4,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 0,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": false,
+              "remesh": {
+                "decimate_mm": 0,
+                "from": 1,
+                "layer_height_mm": 0.2,
+                "layers": 13,
+                "max_deviation_mm": 0.1996461569487471,
+                "overhang_violation_mm2": 0,
+                "skipped": null,
+                "to": 13,
+                "tolerance_used_mm": 0.2,
+                "triangles_after": 1996,
+                "triangles_after_layers": 1996,
+                "triangles_before": 3444,
+                "vertices_after": 978,
+                "vertices_before": 1700
+              },
+              "stl_bytes": 99884,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1996,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 99884,
+            "triangles": 1996,
+            "vertices": 978,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                57.83660125732422,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              57.83660125732422,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 12249.74695634366,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/remesh/smoothing-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "remesh.keep_material",
+      "schema": {
+        "default": true,
+        "group": "Simplify",
+        "kind": "bool",
+        "label": "Only round towards material",
+        "name": "keep_material"
+      },
+      "initial": true,
+      "changed": false,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": false,
+          "sha256": "0e151759d11a2378546331c6d9e7431f9af57403b802276f28ec69ad7b71f81d",
+          "info": {
+            "bytes": 79484,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 1925,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 1925,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1037527593818983,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 0,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 262,
+              "grid_w": 453,
+              "height_mm": 57.84,
+              "islands_deleted": 0,
+              "islands_found": 4,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 0,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": false,
+              "remesh": {
+                "decimate_mm": 0,
+                "from": 1,
+                "layer_height_mm": 0.2,
+                "layers": 13,
+                "max_deviation_mm": 0.19983108261019308,
+                "overhang_violation_mm2": 0,
+                "skipped": null,
+                "to": 13,
+                "tolerance_used_mm": 0.2,
+                "triangles_after": 1588,
+                "triangles_after_layers": 1588,
+                "triangles_before": 3444,
+                "vertices_after": 774,
+                "vertices_before": 1700
+              },
+              "stl_bytes": 79484,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 1588,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 79484,
+            "triangles": 1588,
+            "vertices": 774,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                57.83660125732422,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              57.83660125732422,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 12228.520113680097,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/remesh/keep_material-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "remesh.max_overhang_deg",
+      "schema": {
+        "default": 45,
+        "group": "Simplify",
+        "kind": "float",
+        "label": "Largest overhang (deg)",
+        "max": 90,
+        "min": 10,
+        "name": "max_overhang_deg",
+        "step": 1
+      },
+      "initial": 10,
+      "changed": 85,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 85,
+          "sha256": "b2771c09406e64e8ef59aba934ec0cafcf07dfb47fbb0b13da08ade563e85460",
+          "info": {
+            "bytes": 366384,
+            "kind": "solid",
+            "stats": {
+              "bridge_material_pixels": 1925,
+              "bridge_mm": 1.2,
+              "bridge_pixels": 1925,
+              "bridge_routes_mm": [],
+              "bridge_strip_width_mm": 1.1037527593818983,
+              "bridges_per_island": 3,
+              "construction": "raster",
+              "first_layer_islands": 0,
+              "first_layer_taper_mm": 2.4,
+              "flip": false,
+              "grid_h": 262,
+              "grid_w": 453,
+              "height_mm": 57.84,
+              "islands_deleted": 0,
+              "islands_found": 4,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 3,
+              "overhang_area_mm2": 0,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": false,
+              "remesh": {
+                "decimate_mm": 0,
+                "from": 1,
+                "layer_height_mm": 0.2,
+                "layers": 13,
+                "max_deviation_mm": 0.9616665118434956,
+                "overhang_violation_mm2": 0,
+                "skipped": null,
+                "to": 13,
+                "tolerance_used_mm": 1,
+                "triangles_after": 7326,
+                "triangles_after_layers": 7326,
+                "triangles_before": 119048,
+                "vertices_after": 3643,
+                "vertices_before": 59502
+              },
+              "stl_bytes": 366384,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 7326,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "easy"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 366384,
+            "triangles": 7326,
+            "vertices": 3643,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                57.83660125732422,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              57.83660125732422,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 12367.02688018093,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/remesh/max_overhang_deg-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "remesh.decimate",
+      "schema": {
+        "default": true,
+        "group": "Decimate",
+        "kind": "bool",
+        "label": "Decimate flat faces and straight edges",
+        "name": "decimate"
+      },
+      "initial": false,
+      "changed": true,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": true,
+          "sha256": "c5dcb5c3224bfc86ae5e9bb767ee5bb6c1b8720b9a1cbfff3ce88f8ce6553be9",
+          "info": {
+            "bytes": 193784,
+            "kind": "solid",
+            "stats": {
+              "bridge_mm": 1.2,
+              "bridge_pixels": 16,
+              "bridge_routes_mm": [
+                [
+                  [
+                    15.5,
+                    21.25
+                  ],
+                  [
+                    8.6,
+                    21.25
+                  ]
+                ],
+                [
+                  [
+                    74.656,
+                    55.819
+                  ],
+                  [
+                    74.65599999999999,
+                    68.4
+                  ]
+                ],
+                [
+                  [
+                    79.4393,
+                    23.1431
+                  ],
+                  [
+                    91.4,
+                    23.143100000000004
+                  ]
+                ],
+                [
+                  [
+                    16.0324,
+                    49.1481
+                  ],
+                  [
+                    8.6,
+                    49.14810000000001
+                  ]
+                ],
+                [
+                  [
+                    45.1019,
+                    42.4824
+                  ],
+                  [
+                    45.1019,
+                    31.025
+                  ]
+                ],
+                [
+                  [
+                    65.0219,
+                    50.575
+                  ],
+                  [
+                    71.275,
+                    50.575
+                  ]
+                ],
+                [
+                  [
+                    28.725,
+                    21.25
+                  ],
+                  [
+                    28.72500000000001,
+                    8.6
+                  ]
+                ],
+                [
+                  [
+                    15.5,
+                    31.025
+                  ],
+                  [
+                    8.599999999999998,
+                    24.125000000000004
+                  ]
+                ],
+                [
+                  [
+                    23.2625,
+                    56.9719
+                  ],
+                  [
+                    23.262499999999996,
+                    68.4
+                  ]
+                ],
+                [
+                  [
+                    27.3414,
+                    55.777
+                  ],
+                  [
+                    39.964400000000005,
+                    68.4
+                  ]
+                ],
+                [
+                  [
+                    48.275,
+                    44.25
+                  ],
+                  [
+                    68.85753709661016,
+                    8.600000000000009
+                  ]
+                ],
+                [
+                  [
+                    44.25,
+                    55.8219
+                  ],
+                  [
+                    47.620291737317906,
+                    68.4
+                  ]
+                ],
+                [
+                  [
+                    62.0268,
+                    55.289
+                  ],
+                  [
+                    75.1378,
+                    68.4
+                  ]
+                ],
+                [
+                  [
+                    56.9,
+                    55.75
+                  ],
+                  [
+                    34.989557284253685,
+                    68.4
+                  ]
+                ],
+                [
+                  [
+                    78.819,
+                    51.656
+                  ],
+                  [
+                    91.4,
+                    55.02706878997596
+                  ]
+                ],
+                [
+                  [
+                    77.025,
+                    48.275
+                  ],
+                  [
+                    91.4,
+                    33.89999999999999
+                  ]
+                ]
+              ],
+              "bridge_strip_width_mm": 1.2,
+              "bridge_strips": 16,
+              "bridges_per_island": 3,
+              "construction": "vector",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 0,
+              "grid_w": 0,
+              "height_mm": 77,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 225.64,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "remesh": {
+                "decimate_mm": 0.02,
+                "from": 1,
+                "layer_height_mm": 0.2,
+                "layers": 13,
+                "max_deviation_mm": 0.045780416086226995,
+                "overhang_violation_mm2": 0,
+                "skipped": null,
+                "to": 13,
+                "tolerance_used_mm": 0,
+                "triangles_after": 3874,
+                "triangles_after_layers": 5000,
+                "triangles_before": 5000,
+                "vertices_after": 1911,
+                "vertices_before": 2474
+              },
+              "stl_bytes": 193784,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 3874,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "steps"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 193784,
+            "triangles": 3874,
+            "vertices": 1911,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9437.354680874067,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/remesh/decimate-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "remesh.decimate_mm",
+      "schema": {
+        "default": 0.02,
+        "group": "Decimate",
+        "kind": "float",
+        "label": "Largest surface shift (mm)",
+        "max": 0.5,
+        "min": 0.005,
+        "name": "decimate_mm",
+        "step": 0.005
+      },
+      "initial": 0.02,
+      "changed": 0.15,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 0.15,
+          "sha256": "f6d9c1b5e95ad049e09a0305fae55fedafa1150a83b55951f77f35f8178457a5",
+          "info": {
+            "bytes": 137884,
+            "kind": "solid",
+            "stats": {
+              "bridge_mm": 1.2,
+              "bridge_pixels": 16,
+              "bridge_routes_mm": [
+                [
+                  [
+                    15.5,
+                    21.25
+                  ],
+                  [
+                    8.6,
+                    21.25
+                  ]
+                ],
+                [
+                  [
+                    74.656,
+                    55.819
+                  ],
+                  [
+                    74.65599999999999,
+                    68.4
+                  ]
+                ],
+                [
+                  [
+                    79.4393,
+                    23.1431
+                  ],
+                  [
+                    91.4,
+                    23.143100000000004
+                  ]
+                ],
+                [
+                  [
+                    16.0324,
+                    49.1481
+                  ],
+                  [
+                    8.6,
+                    49.14810000000001
+                  ]
+                ],
+                [
+                  [
+                    45.1019,
+                    42.4824
+                  ],
+                  [
+                    45.1019,
+                    31.025
+                  ]
+                ],
+                [
+                  [
+                    65.0219,
+                    50.575
+                  ],
+                  [
+                    71.275,
+                    50.575
+                  ]
+                ],
+                [
+                  [
+                    28.725,
+                    21.25
+                  ],
+                  [
+                    28.72500000000001,
+                    8.6
+                  ]
+                ],
+                [
+                  [
+                    15.5,
+                    31.025
+                  ],
+                  [
+                    8.599999999999998,
+                    24.125000000000004
+                  ]
+                ],
+                [
+                  [
+                    23.2625,
+                    56.9719
+                  ],
+                  [
+                    23.262499999999996,
+                    68.4
+                  ]
+                ],
+                [
+                  [
+                    27.3414,
+                    55.777
+                  ],
+                  [
+                    39.964400000000005,
+                    68.4
+                  ]
+                ],
+                [
+                  [
+                    48.275,
+                    44.25
+                  ],
+                  [
+                    68.85753709661016,
+                    8.600000000000009
+                  ]
+                ],
+                [
+                  [
+                    44.25,
+                    55.8219
+                  ],
+                  [
+                    47.620291737317906,
+                    68.4
+                  ]
+                ],
+                [
+                  [
+                    62.0268,
+                    55.289
+                  ],
+                  [
+                    75.1378,
+                    68.4
+                  ]
+                ],
+                [
+                  [
+                    56.9,
+                    55.75
+                  ],
+                  [
+                    34.989557284253685,
+                    68.4
+                  ]
+                ],
+                [
+                  [
+                    78.819,
+                    51.656
+                  ],
+                  [
+                    91.4,
+                    55.02706878997596
+                  ]
+                ],
+                [
+                  [
+                    77.025,
+                    48.275
+                  ],
+                  [
+                    91.4,
+                    33.89999999999999
+                  ]
+                ]
+              ],
+              "bridge_strip_width_mm": 1.2,
+              "bridge_strips": 16,
+              "bridges_per_island": 3,
+              "construction": "vector",
+              "first_layer_islands": 6,
+              "first_layer_taper_mm": 1,
+              "flip": false,
+              "grid_h": 0,
+              "grid_w": 0,
+              "height_mm": 77,
+              "islands_deleted": 0,
+              "islands_found": 6,
+              "islands_remaining": 0,
+              "layer_height_mm": 0.2,
+              "layers": 13,
+              "margin_mm": 4,
+              "min_first_layer_width_mm": 0,
+              "overhang_area_mm2": 225.64,
+              "overhang_check_deg": 45,
+              "plate_top_mm": 2.6,
+              "raised_bridges": true,
+              "remesh": {
+                "decimate_mm": 0.15,
+                "from": 1,
+                "layer_height_mm": 0.2,
+                "layers": 13,
+                "max_deviation_mm": 0.14972141922920484,
+                "overhang_violation_mm2": 0,
+                "skipped": null,
+                "to": 13,
+                "tolerance_used_mm": 0,
+                "triangles_after": 2756,
+                "triangles_after_layers": 5000,
+                "triangles_before": 5000,
+                "vertices_after": 1352,
+                "vertices_before": 2474
+              },
+              "stl_bytes": 137884,
+              "thickness_mm": 2.4,
+              "threshold": 0,
+              "triangles": 2756,
+              "watertight": true,
+              "width_mm": 100,
+              "z_bridging": "steps"
+            },
+            "tiles": []
+          },
+          "mime": "model/stl",
+          "extension": "stl",
+          "independent": {
+            "format": "binary STL",
+            "bytes": 137884,
+            "triangles": 2756,
+            "vertices": 1352,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                100,
+                77,
+                2.5999999046325684
+              ]
+            ],
+            "size_mm": [
+              100,
+              77,
+              2.5999999046325684
+            ],
+            "signed_volume_mm3": 9436.447378918985,
+            "components": 1,
+            "edges_not_shared_twice": 0,
+            "inconsistent_edge_winding": 0,
+            "degenerate_faces": 0,
+            "closed_oriented_mesh": true
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/remesh/decimate_mm-0.json"
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

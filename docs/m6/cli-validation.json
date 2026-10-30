@@ -1,0 +1,578 @@
+{
+  "batch_and_cartesian_sweep": {
+    "arguments": [
+      "--project",
+      "C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\recipe.json",
+      "--batch",
+      "C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\images",
+      "--sweep",
+      "vector_stencil-4.width_mm=100,120",
+      "--sweep",
+      "vector_stencil-4.bridge_spacing=closest,spread",
+      "-o",
+      "C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\batch"
+    ],
+    "exit_code": 1,
+    "seconds": 1.78510519998963,
+    "stdout": "",
+    "stderr": "== =local_width_mm=100_bridge_spacing=closest\nverified: 1 islands found, 0 remaining, watertight true, 1004 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\batch\\=local_width_mm=100_bridge_spacing=closest\\recipe.stl in 39 ms\n== =local_width_mm=100_bridge_spacing=spread\nverified: 1 islands found, 0 remaining, watertight true, 1004 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\batch\\=local_width_mm=100_bridge_spacing=spread\\recipe.stl in 32 ms\n== =local_width_mm=120_bridge_spacing=closest\nverified: 1 islands found, 0 remaining, watertight true, 1100 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\batch\\=local_width_mm=120_bridge_spacing=closest\\recipe.stl in 30 ms\n== =local_width_mm=120_bridge_spacing=spread\nverified: 1 islands found, 0 remaining, watertight true, 1100 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\batch\\=local_width_mm=120_bridge_spacing=spread\\recipe.stl in 37 ms\n== broken_width_mm=100_bridge_spacing=closest\nerror: not a readable png/jpg/bmp/svg image\n== broken_width_mm=100_bridge_spacing=spread\nerror: not a readable png/jpg/bmp/svg image\n== broken_width_mm=120_bridge_spacing=closest\nerror: not a readable png/jpg/bmp/svg image\n== broken_width_mm=120_bridge_spacing=spread\nerror: not a readable png/jpg/bmp/svg image\n== one,logo_width_mm=100_bridge_spacing=closest\nverified: 2 islands found, 0 remaining, watertight true, 1456 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\batch\\one,logo_width_mm=100_bridge_spacing=closest\\recipe.stl in 39 ms\n== one,logo_width_mm=100_bridge_spacing=spread\nverified: 2 islands found, 0 remaining, watertight true, 1436 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\batch\\one,logo_width_mm=100_bridge_spacing=spread\\recipe.stl in 34 ms\n== one,logo_width_mm=120_bridge_spacing=closest\nverified: 2 islands found, 0 remaining, watertight true, 1600 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\batch\\one,logo_width_mm=120_bridge_spacing=closest\\recipe.stl in 41 ms\n== one,logo_width_mm=120_bridge_spacing=spread\nverified: 2 islands found, 0 remaining, watertight true, 1588 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\batch\\one,logo_width_mm=120_bridge_spacing=spread\\recipe.stl in 26 ms\n== pixel_width_mm=100_bridge_spacing=closest\nverified: 1 islands found, 0 remaining, watertight true, 732 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\batch\\pixel_width_mm=100_bridge_spacing=closest\\recipe.stl in 19 ms\n== pixel_width_mm=100_bridge_spacing=spread\nverified: 1 islands found, 0 remaining, watertight true, 732 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\batch\\pixel_width_mm=100_bridge_spacing=spread\\recipe.stl in 18 ms\n== pixel_width_mm=120_bridge_spacing=closest\nverified: 1 islands found, 0 remaining, watertight true, 800 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\batch\\pixel_width_mm=120_bridge_spacing=closest\\recipe.stl in 15 ms\n== pixel_width_mm=120_bridge_spacing=spread\nverified: 1 islands found, 0 remaining, watertight true, 800 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\batch\\pixel_width_mm=120_bridge_spacing=spread\\recipe.stl in 41 ms\nrun  status  verdict  findings  seam_step_mm  paint_under_blocks_mm2  seconds\n'=local_width_mm=100_bridge_spacing=closest  ok  ready  1  -  -  0.1\n'=local_width_mm=100_bridge_spacing=spread  ok  ready  1  -  -  0.1\n'=local_width_mm=120_bridge_spacing=closest  ok  ready  1  -  -  0.1\n'=local_width_mm=120_bridge_spacing=spread  ok  ready  1  -  -  0.1\nbroken_width_mm=100_bridge_spacing=closest  failed  -  0  -  -  0.2\nbroken_width_mm=100_bridge_spacing=spread  failed  -  0  -  -  0.1\nbroken_width_mm=120_bridge_spacing=closest  failed  -  0  -  -  0.1\nbroken_width_mm=120_bridge_spacing=spread  failed  -  0  -  -  0.1\n\"one  logo_width_mm=100_bridge_spacing=closest\"  ok  ready  1  -  -  0.2\n\"one  logo_width_mm=100_bridge_spacing=spread\"  ok  ready  1  -  -  0.1\n\"one  logo_width_mm=120_bridge_spacing=closest\"  ok  ready  1  -  -  0.2\n\"one  logo_width_mm=120_bridge_spacing=spread\"  ok  ready  1  -  -  0.1\npixel_width_mm=100_bridge_spacing=closest  ok  ready  1  -  -  0.1\npixel_width_mm=100_bridge_spacing=spread  ok  ready  1  -  -  0.1\npixel_width_mm=120_bridge_spacing=closest  ok  ready  1  -  -  0.1\npixel_width_mm=120_bridge_spacing=spread  ok  ready  1  -  -  0.1\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\batch\\summary.csv\nerror: 4 of 16 runs failed\n"
+  },
+  "summary_rows": [
+    {
+      "run": "'=local_width_mm=100_bridge_spacing=closest",
+      "status": "ok",
+      "verdict": "ready",
+      "findings": "1",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.1"
+    },
+    {
+      "run": "'=local_width_mm=100_bridge_spacing=spread",
+      "status": "ok",
+      "verdict": "ready",
+      "findings": "1",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.1"
+    },
+    {
+      "run": "'=local_width_mm=120_bridge_spacing=closest",
+      "status": "ok",
+      "verdict": "ready",
+      "findings": "1",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.1"
+    },
+    {
+      "run": "'=local_width_mm=120_bridge_spacing=spread",
+      "status": "ok",
+      "verdict": "ready",
+      "findings": "1",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.1"
+    },
+    {
+      "run": "broken_width_mm=100_bridge_spacing=closest",
+      "status": "failed",
+      "verdict": "-",
+      "findings": "0",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.2"
+    },
+    {
+      "run": "broken_width_mm=100_bridge_spacing=spread",
+      "status": "failed",
+      "verdict": "-",
+      "findings": "0",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.1"
+    },
+    {
+      "run": "broken_width_mm=120_bridge_spacing=closest",
+      "status": "failed",
+      "verdict": "-",
+      "findings": "0",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.1"
+    },
+    {
+      "run": "broken_width_mm=120_bridge_spacing=spread",
+      "status": "failed",
+      "verdict": "-",
+      "findings": "0",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.1"
+    },
+    {
+      "run": "one,logo_width_mm=100_bridge_spacing=closest",
+      "status": "ok",
+      "verdict": "ready",
+      "findings": "1",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.2"
+    },
+    {
+      "run": "one,logo_width_mm=100_bridge_spacing=spread",
+      "status": "ok",
+      "verdict": "ready",
+      "findings": "1",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.1"
+    },
+    {
+      "run": "one,logo_width_mm=120_bridge_spacing=closest",
+      "status": "ok",
+      "verdict": "ready",
+      "findings": "1",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.2"
+    },
+    {
+      "run": "one,logo_width_mm=120_bridge_spacing=spread",
+      "status": "ok",
+      "verdict": "ready",
+      "findings": "1",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.1"
+    },
+    {
+      "run": "pixel_width_mm=100_bridge_spacing=closest",
+      "status": "ok",
+      "verdict": "ready",
+      "findings": "1",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.1"
+    },
+    {
+      "run": "pixel_width_mm=100_bridge_spacing=spread",
+      "status": "ok",
+      "verdict": "ready",
+      "findings": "1",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.1"
+    },
+    {
+      "run": "pixel_width_mm=120_bridge_spacing=closest",
+      "status": "ok",
+      "verdict": "ready",
+      "findings": "1",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.1"
+    },
+    {
+      "run": "pixel_width_mm=120_bridge_spacing=spread",
+      "status": "ok",
+      "verdict": "ready",
+      "findings": "1",
+      "seam_step_mm": "-",
+      "paint_under_blocks_mm2": "-",
+      "seconds": "0.1"
+    }
+  ],
+  "valid_stls": {
+    "batch/=local_width_mm=100_bridge_spacing=closest/recipe.stl": {
+      "format": "binary STL",
+      "bytes": 50284,
+      "triangles": 1004,
+      "vertices": 500,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          100.0,
+          100.0,
+          3.0
+        ]
+      ],
+      "size_mm": [
+        100.0,
+        100.0,
+        3.0
+      ],
+      "signed_volume_mm3": 26628.69167076089,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "batch/=local_width_mm=100_bridge_spacing=spread/recipe.stl": {
+      "format": "binary STL",
+      "bytes": 50284,
+      "triangles": 1004,
+      "vertices": 500,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          100.0,
+          100.0,
+          3.0
+        ]
+      ],
+      "size_mm": [
+        100.0,
+        100.0,
+        3.0
+      ],
+      "signed_volume_mm3": 26628.69167076089,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "batch/=local_width_mm=120_bridge_spacing=closest/recipe.stl": {
+      "format": "binary STL",
+      "bytes": 55084,
+      "triangles": 1100,
+      "vertices": 548,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          120.0,
+          120.0,
+          3.0
+        ]
+      ],
+      "size_mm": [
+        120.0,
+        120.0,
+        3.0
+      ],
+      "signed_volume_mm3": 37812.222924831265,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "batch/=local_width_mm=120_bridge_spacing=spread/recipe.stl": {
+      "format": "binary STL",
+      "bytes": 55084,
+      "triangles": 1100,
+      "vertices": 548,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          120.0,
+          120.0,
+          3.0
+        ]
+      ],
+      "size_mm": [
+        120.0,
+        120.0,
+        3.0
+      ],
+      "signed_volume_mm3": 37812.222924831265,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "batch/one,logo_width_mm=100_bridge_spacing=closest/recipe.stl": {
+      "format": "binary STL",
+      "bytes": 72884,
+      "triangles": 1456,
+      "vertices": 724,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          100.0,
+          84.80000305175781,
+          3.0
+        ]
+      ],
+      "size_mm": [
+        100.0,
+        84.80000305175781,
+        3.0
+      ],
+      "signed_volume_mm3": 23132.34146136041,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "batch/one,logo_width_mm=100_bridge_spacing=spread/recipe.stl": {
+      "format": "binary STL",
+      "bytes": 71884,
+      "triangles": 1436,
+      "vertices": 716,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          100.0,
+          84.80000305175781,
+          3.0
+        ]
+      ],
+      "size_mm": [
+        100.0,
+        84.80000305175781,
+        3.0
+      ],
+      "signed_volume_mm3": 23103.358793302155,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "batch/one,logo_width_mm=120_bridge_spacing=closest/recipe.stl": {
+      "format": "binary STL",
+      "bytes": 80084,
+      "triangles": 1600,
+      "vertices": 796,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          120.0,
+          100.80000305175781,
+          3.0
+        ]
+      ],
+      "size_mm": [
+        120.0,
+        100.80000305175781,
+        3.0
+      ],
+      "signed_volume_mm3": 32583.905098884192,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "batch/one,logo_width_mm=120_bridge_spacing=spread/recipe.stl": {
+      "format": "binary STL",
+      "bytes": 79484,
+      "triangles": 1588,
+      "vertices": 792,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          120.0,
+          100.80000305175781,
+          3.0
+        ]
+      ],
+      "size_mm": [
+        120.0,
+        100.80000305175781,
+        3.0
+      ],
+      "signed_volume_mm3": 32548.06224512942,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "batch/pixel_width_mm=100_bridge_spacing=closest/recipe.stl": {
+      "format": "binary STL",
+      "bytes": 36684,
+      "triangles": 732,
+      "vertices": 364,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          100.0,
+          81.0,
+          3.0
+        ]
+      ],
+      "size_mm": [
+        100.0,
+        81.0,
+        3.0
+      ],
+      "signed_volume_mm3": 19291.5652021375,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "batch/pixel_width_mm=100_bridge_spacing=spread/recipe.stl": {
+      "format": "binary STL",
+      "bytes": 36684,
+      "triangles": 732,
+      "vertices": 364,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          100.0,
+          81.0,
+          3.0
+        ]
+      ],
+      "size_mm": [
+        100.0,
+        81.0,
+        3.0
+      ],
+      "signed_volume_mm3": 19291.5652021375,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "batch/pixel_width_mm=120_bridge_spacing=closest/recipe.stl": {
+      "format": "binary STL",
+      "bytes": 40084,
+      "triangles": 800,
+      "vertices": 398,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          120.0,
+          96.0,
+          3.0
+        ]
+      ],
+      "size_mm": [
+        120.0,
+        96.0,
+        3.0
+      ],
+      "signed_volume_mm3": 26553.413600241176,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "batch/pixel_width_mm=120_bridge_spacing=spread/recipe.stl": {
+      "format": "binary STL",
+      "bytes": 40084,
+      "triangles": 800,
+      "vertices": 398,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          120.0,
+          96.0,
+          3.0
+        ]
+      ],
+      "size_mm": [
+        120.0,
+        96.0,
+        3.0
+      ],
+      "signed_volume_mm3": 26553.413574487953,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    }
+  },
+  "strict_unused_cleanup": {
+    "arguments": [
+      "--project",
+      "C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\recipe.json",
+      "--strict",
+      "--report-file",
+      "C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\strict-report.json",
+      "-o",
+      "C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\strict.stl"
+    ],
+    "exit_code": 0,
+    "seconds": 0.0781384000001708,
+    "stdout": "{\"bridge_mm\":1.6,\"bridge_pixels\":0,\"bridge_routes_mm\":[],\"bridge_strip_width_mm\":1.6,\"bridge_strips\":0,\"bridges_per_island\":1.0,\"construction\":\"vector\",\"first_layer_islands\":0,\"first_layer_taper_mm\":1.0,\"flip\":false,\"grid_h\":0,\"grid_w\":0,\"height_mm\":100.0,\"islands_deleted\":0,\"islands_found\":0,\"islands_remaining\":0,\"layer_height_mm\":0.2,\"layers\":15,\"margin_mm\":12.0,\"min_first_layer_width_mm\":0.0,\"overhang_area_mm2\":0.0,\"overhang_check_deg\":45.0,\"plate_top_mm\":3.0,\"raised_bridges\":false,\"stl_bytes\":1684,\"thickness_mm\":3.0,\"threshold\":0,\"triangles\":32,\"watertight\":true,\"width_mm\":100.0,\"z_bridging\":\"easy\"}\n",
+    "stderr": "verified: 0 islands found, 0 remaining, watertight true, 32 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\cli\\strict.stl in 21 ms\n"
+  },
+  "strict_report": {
+    "findings": [],
+    "metrics": {
+      "triangles": 32.0
+    },
+    "timing": [
+      {
+        "cached": false,
+        "label": "Image",
+        "ms": 1.0,
+        "node": "source-1",
+        "type": "source"
+      },
+      {
+        "cached": false,
+        "label": "Trace",
+        "ms": 1.0,
+        "node": "trace-3",
+        "type": "trace"
+      },
+      {
+        "cached": false,
+        "label": "Vector stencil",
+        "ms": 1.0,
+        "node": "vector_stencil-4",
+        "type": "vector_stencil"
+      },
+      {
+        "cached": false,
+        "label": "Threshold",
+        "ms": 0.0,
+        "node": "threshold-2",
+        "type": "threshold"
+      },
+      {
+        "cached": false,
+        "label": "Remove islands",
+        "ms": 0.0,
+        "node": "clean",
+        "type": "remove_islands"
+      }
+    ],
+    "verdict": "ready"
+  },
+  "schema_listing_characters": 19083,
+  "unknown_range_and_choice_rejections": 3,
+  "all_checks_passed": true
+}

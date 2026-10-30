@@ -1,0 +1,400 @@
+{
+  "summary": {
+    "schema": 2,
+    "recipe": "M5 tile_layout",
+    "source": "source",
+    "options": {
+      "format": "zip",
+      "project": false,
+      "layouts": true,
+      "outlines": true,
+      "strict": false
+    },
+    "planned_jobs": 1,
+    "verified": 1,
+    "failed": 0,
+    "cancelled": 0,
+    "items": [
+      {
+        "id": "1-1",
+        "name": "Graph recipe input.svg",
+        "relativePath": "Graph recipe input.svg",
+        "overrides": [],
+        "status": "Verified",
+        "milliseconds": 363.4800000041723,
+        "metrics": {
+          "triangles": 2576,
+          "components": 3,
+          "volumeMm3": 94659.95518178624,
+          "sizeMm": [
+            90,
+            144,
+            11
+          ],
+          "stlFiles": 3,
+          "seamStepMm": 0,
+          "paintUnderBlocksMm2": 75.4,
+          "bytes": 165490
+        },
+        "findings": [
+          {
+            "level": "info",
+            "text": "75 mm² of paint under connector blocks (0.7% of the artwork)"
+          }
+        ],
+        "output": "1-1-Graph_recipe_input.svg-manufacturing.zip"
+      }
+    ]
+  },
+  "csv_rows": 1,
+  "verified_jobs": 1,
+  "independent_stl_count": 3,
+  "all_stls_valid": true,
+  "jobs": [
+    {
+      "entry": "1-1-Graph_recipe_input.svg/manufacturing.zip",
+      "files": [
+        {
+          "path": "assembly-1-built/stencil_r1c1.stl",
+          "source": "built",
+          "assembly": "built",
+          "role": "Stencil tile",
+          "copies_to_print": 1,
+          "bytes": 70484,
+          "sha256": "4991bedb022eae63f7225c5f21bda279c2365f1e676c80a1a3ab52291e60740d",
+          "geometry": {
+            "triangles": 1408,
+            "size": [
+              90,
+              144,
+              6
+            ],
+            "bounds": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                90,
+                144,
+                6
+              ]
+            ],
+            "vertices": 706,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 48584.98914427432,
+            "closed": true,
+            "milliseconds": 10.359999999403954
+          },
+          "replaces_upstream_sources": [],
+          "also_used_by": []
+        },
+        {
+          "path": "assembly-1-built/stencil_r1c2.stl",
+          "source": "built",
+          "assembly": "built",
+          "role": "Stencil tile",
+          "copies_to_print": 1,
+          "bytes": 57484,
+          "sha256": "4de0ae152f1c4dcb0a9d1fbfa85cfe563e7c3fb8141c8919d67f84c732119ed6",
+          "geometry": {
+            "triangles": 1148,
+            "size": [
+              90,
+              144,
+              6
+            ],
+            "bounds": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                90,
+                144,
+                6
+              ]
+            ],
+            "vertices": 576,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 46010.66365391026,
+            "closed": true,
+            "milliseconds": 8.459999993443489
+          },
+          "replaces_upstream_sources": [],
+          "also_used_by": []
+        },
+        {
+          "path": "assembly-1-built/connector_hex_d3mm.stl",
+          "source": "built",
+          "assembly": "built",
+          "role": "Connector rod",
+          "copies_to_print": 5,
+          "bytes": 1084,
+          "sha256": "4c3d8674fa463ec4987067d63ec5726009dcd63a8f876822fa2c9387cfd10a38",
+          "geometry": {
+            "triangles": 20,
+            "size": [
+              3,
+              2.598076105117798,
+              11
+            ],
+            "bounds": [
+              [
+                -1.5,
+                -1.299038052558899,
+                0
+              ],
+              [
+                1.5,
+                1.299038052558899,
+                11
+              ]
+            ],
+            "vertices": 12,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 64.3023836016655,
+            "closed": true,
+            "milliseconds": 0.19999998807907104
+          },
+          "replaces_upstream_sources": [],
+          "also_used_by": []
+        },
+        {
+          "path": "assembly-1-built/test-layout.png",
+          "source": "test",
+          "assembly": "built",
+          "role": "Actual layout preview",
+          "copies_to_print": null,
+          "bytes": 15572,
+          "sha256": "ea746cfa47bcf34a94128031e7b48628eabf1f129eb61b146981367b4f69a2eb",
+          "geometry": null,
+          "replaces_upstream_sources": [],
+          "also_used_by": []
+        },
+        {
+          "path": "assembly-1-built/trace-traced-outlines-before-bridges.svg",
+          "source": "trace",
+          "assembly": "built",
+          "role": "Artwork before physical bridge corrections",
+          "copies_to_print": null,
+          "bytes": 13670,
+          "sha256": "6129cbb9972d5479c07557257d8fd3edc08ad31df1f2d822f7046ede6e14fc58",
+          "geometry": null,
+          "replaces_upstream_sources": [],
+          "also_used_by": []
+        }
+      ],
+      "assemblies": [
+        {
+          "id": "built/parts",
+          "name": "built",
+          "sources": [
+            {
+              "step": "built",
+              "kind": "parts",
+              "metadata": {
+                "plate": {
+                  "connectors": [
+                    [
+                      84,
+                      11.5,
+                      96,
+                      16.7
+                    ],
+                    [
+                      84,
+                      44.800000000000004,
+                      96,
+                      50.00000000000001
+                    ],
+                    [
+                      84,
+                      81.20000000000002,
+                      96,
+                      86.4
+                    ],
+                    [
+                      84,
+                      88.4,
+                      96,
+                      93.6
+                    ],
+                    [
+                      84,
+                      127.20000000000002,
+                      96,
+                      132.4
+                    ]
+                  ],
+                  "flip": false,
+                  "h": 144,
+                  "layer": 0.2,
+                  "margin": 18,
+                  "parts": [
+                    {
+                      "file": "stencil_r1c1.stl",
+                      "origin": [
+                        0,
+                        0
+                      ],
+                      "role": "tile",
+                      "size": [
+                        90,
+                        144
+                      ]
+                    },
+                    {
+                      "file": "stencil_r1c2.stl",
+                      "origin": [
+                        90,
+                        0
+                      ],
+                      "role": "tile",
+                      "size": [
+                        90,
+                        144
+                      ]
+                    }
+                  ],
+                  "seams": [
+                    [
+                      0,
+                      90,
+                      0,
+                      144
+                    ]
+                  ],
+                  "thickness": 6,
+                  "top": 6,
+                  "w": 180
+                },
+                "tiling": {
+                  "bridges": 7,
+                  "connectors": 5,
+                  "dropped_fragments": 0,
+                  "facet_cleanup": [],
+                  "fallback_tiles": [],
+                  "grid": [
+                    2,
+                    1
+                  ],
+                  "hole_depth_mm": 6,
+                  "islands_bridged": 7,
+                  "paint_under_blocks_mm2": 75.4,
+                  "pre_tiled": true,
+                  "rod_length_mm": 11,
+                  "rows": 1,
+                  "seam_step_mm": 0,
+                  "tile_method": "per_tile",
+                  "tiles": 2
+                }
+              },
+              "stats": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "format": "binary STL",
+      "bytes": 70484,
+      "triangles": 1408,
+      "vertices": 706,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          90,
+          144,
+          6
+        ]
+      ],
+      "size_mm": [
+        90,
+        144,
+        6
+      ],
+      "signed_volume_mm3": 48584.98914427432,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    {
+      "format": "binary STL",
+      "bytes": 57484,
+      "triangles": 1148,
+      "vertices": 576,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          90,
+          144,
+          6
+        ]
+      ],
+      "size_mm": [
+        90,
+        144,
+        6
+      ],
+      "signed_volume_mm3": 46010.66365391026,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    {
+      "format": "binary STL",
+      "bytes": 1084,
+      "triangles": 20,
+      "vertices": 12,
+      "bounds_mm": [
+        [
+          -1.5,
+          -1.299038052558899,
+          0
+        ],
+        [
+          1.5,
+          1.299038052558899,
+          11
+        ]
+      ],
+      "size_mm": [
+        3,
+        2.598076105117798,
+        11
+      ],
+      "signed_volume_mm3": 64.3023836016655,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    }
+  ]
+}

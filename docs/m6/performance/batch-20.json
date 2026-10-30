@@ -1,0 +1,1196 @@
+{
+  "elapsedMs": 4243,
+  "frames": {
+    "count": 255,
+    "maxGapMs": 16.670000000000073,
+    "last": 4761.67,
+    "active": false
+  },
+  "memoryMeasurement": "Observed samples of this owned Chromium process tree. Summed working sets include shared pages and are not unique physical memory. Worker WASM memory is included in its process, not separately attributed.",
+  "samples": [
+    {
+      "elapsedMs": 702,
+      "processes": [
+        {
+          "type": "browser",
+          "id": 10408,
+          "cpuTime": 21.294604
+        },
+        {
+          "type": "renderer",
+          "id": 724,
+          "cpuTime": 0.558097
+        },
+        {
+          "type": "GPU",
+          "id": 22688,
+          "cpuTime": 1021.654788
+        },
+        {
+          "type": "network.mojom.NetworkService",
+          "id": 22884,
+          "cpuTime": 3.541649
+        }
+      ],
+      "memory": [
+        {
+          "Id": 724,
+          "WorkingSet64": 171626496,
+          "PrivateMemorySize64": 105295872
+        },
+        {
+          "Id": 10408,
+          "WorkingSet64": 79106048,
+          "PrivateMemorySize64": 30216192
+        },
+        {
+          "Id": 22688,
+          "WorkingSet64": 97480704,
+          "PrivateMemorySize64": 117596160
+        },
+        {
+          "Id": 22884,
+          "WorkingSet64": 39636992,
+          "PrivateMemorySize64": 16404480
+        }
+      ],
+      "sumWorkingSetBytes": 387850240
+    },
+    {
+      "elapsedMs": 4243,
+      "processes": [
+        {
+          "type": "browser",
+          "id": 10408,
+          "cpuTime": 21.975084
+        },
+        {
+          "type": "renderer",
+          "id": 724,
+          "cpuTime": 6.696288
+        },
+        {
+          "type": "GPU",
+          "id": 22688,
+          "cpuTime": 1021.77043
+        },
+        {
+          "type": "network.mojom.NetworkService",
+          "id": 22884,
+          "cpuTime": 4.103493
+        }
+      ],
+      "memory": [
+        {
+          "Id": 724,
+          "WorkingSet64": 202502144,
+          "PrivateMemorySize64": 128643072
+        },
+        {
+          "Id": 10408,
+          "WorkingSet64": 81387520,
+          "PrivateMemorySize64": 32088064
+        },
+        {
+          "Id": 22688,
+          "WorkingSet64": 98058240,
+          "PrivateMemorySize64": 117350400
+        },
+        {
+          "Id": 22884,
+          "WorkingSet64": 42852352,
+          "PrivateMemorySize64": 19607552
+        }
+      ],
+      "sumWorkingSetBytes": 424800256
+    }
+  ],
+  "observedPeakSumWorkingSetBytes": 424800256,
+  "validation": {
+    "summary": {
+      "schema": 2,
+      "recipe": "M5 export",
+      "source": "source",
+      "options": {
+        "format": "stl",
+        "project": true,
+        "layouts": false,
+        "outlines": false,
+        "strict": false
+      },
+      "planned_jobs": 20,
+      "verified": 20,
+      "failed": 0,
+      "cancelled": 0,
+      "items": [
+        {
+          "id": "1-1",
+          "name": "local-1.svg",
+          "relativePath": "local-1.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 154.5949999988079,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "1-1-local-1.svg-manufacturing.stl"
+        },
+        {
+          "id": "2-1",
+          "name": "local-2.svg",
+          "relativePath": "local-2.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 144.1650000065565,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "2-1-local-2.svg-manufacturing.stl"
+        },
+        {
+          "id": "3-1",
+          "name": "local-3.svg",
+          "relativePath": "local-3.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 126.58500000834465,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "3-1-local-3.svg-manufacturing.stl"
+        },
+        {
+          "id": "4-1",
+          "name": "local-4.svg",
+          "relativePath": "local-4.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 131.1300000101328,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "4-1-local-4.svg-manufacturing.stl"
+        },
+        {
+          "id": "5-1",
+          "name": "local-5.svg",
+          "relativePath": "local-5.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 142.28500001132488,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "5-1-local-5.svg-manufacturing.stl"
+        },
+        {
+          "id": "6-1",
+          "name": "local-6.svg",
+          "relativePath": "local-6.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 134.37999999523163,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "6-1-local-6.svg-manufacturing.stl"
+        },
+        {
+          "id": "7-1",
+          "name": "local-7.svg",
+          "relativePath": "local-7.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 160.5949999988079,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "7-1-local-7.svg-manufacturing.stl"
+        },
+        {
+          "id": "8-1",
+          "name": "local-8.svg",
+          "relativePath": "local-8.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 144.37000000476837,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "8-1-local-8.svg-manufacturing.stl"
+        },
+        {
+          "id": "9-1",
+          "name": "local-9.svg",
+          "relativePath": "local-9.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 125.59000000357628,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "9-1-local-9.svg-manufacturing.stl"
+        },
+        {
+          "id": "10-1",
+          "name": "local-10.svg",
+          "relativePath": "local-10.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 123.05999998748302,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "10-1-local-10.svg-manufacturing.stl"
+        },
+        {
+          "id": "11-1",
+          "name": "local-11.svg",
+          "relativePath": "local-11.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 114.33999998867512,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "11-1-local-11.svg-manufacturing.stl"
+        },
+        {
+          "id": "12-1",
+          "name": "local-12.svg",
+          "relativePath": "local-12.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 114.96000000834465,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "12-1-local-12.svg-manufacturing.stl"
+        },
+        {
+          "id": "13-1",
+          "name": "local-13.svg",
+          "relativePath": "local-13.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 116.16500000655651,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "13-1-local-13.svg-manufacturing.stl"
+        },
+        {
+          "id": "14-1",
+          "name": "local-14.svg",
+          "relativePath": "local-14.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 117.70499999821186,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "14-1-local-14.svg-manufacturing.stl"
+        },
+        {
+          "id": "15-1",
+          "name": "local-15.svg",
+          "relativePath": "local-15.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 127.47999998927116,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "15-1-local-15.svg-manufacturing.stl"
+        },
+        {
+          "id": "16-1",
+          "name": "local-16.svg",
+          "relativePath": "local-16.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 119.85499998927116,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "16-1-local-16.svg-manufacturing.stl"
+        },
+        {
+          "id": "17-1",
+          "name": "local-17.svg",
+          "relativePath": "local-17.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 141.27500000596046,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "17-1-local-17.svg-manufacturing.stl"
+        },
+        {
+          "id": "18-1",
+          "name": "local-18.svg",
+          "relativePath": "local-18.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 131.51000000536442,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "18-1-local-18.svg-manufacturing.stl"
+        },
+        {
+          "id": "19-1",
+          "name": "local-19.svg",
+          "relativePath": "local-19.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 123.61499999463558,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "19-1-local-19.svg-manufacturing.stl"
+        },
+        {
+          "id": "20-1",
+          "name": "local-20.svg",
+          "relativePath": "local-20.svg",
+          "overrides": [],
+          "status": "Verified",
+          "milliseconds": 115.76999999582767,
+          "metrics": {
+            "triangles": 32,
+            "components": 1,
+            "volumeMm3": 101084.20776459457,
+            "sizeMm": [
+              160,
+              109.20635223388672,
+              8
+            ],
+            "stlFiles": 1,
+            "seamStepMm": null,
+            "paintUnderBlocksMm2": null,
+            "bytes": 1684
+          },
+          "findings": [],
+          "output": "20-1-local-20.svg-manufacturing.stl"
+        }
+      ]
+    },
+    "csv_rows": 20,
+    "verified_jobs": 20,
+    "independent_stl_count": 20,
+    "all_stls_valid": true,
+    "jobs": [],
+    "meshes": [
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "format": "binary STL",
+        "bytes": 1684,
+        "triangles": 32,
+        "vertices": 16,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.20635223388672,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.20635223388672,
+          8
+        ],
+        "signed_volume_mm3": 101084.20776459457,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      }
+    ]
+  }
+}

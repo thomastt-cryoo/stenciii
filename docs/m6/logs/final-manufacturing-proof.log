@@ -1,0 +1,1 @@
+{"field_fixtures": 256, "part_fixtures": 191, "bitmap_fixtures": 64, "expected_constraints": 1, "compared_file_pairs": 3142, "unique_file_pairs": 894, "independently_valid_unique_stls": 881, "categories": {"A": 2954, "B": 187, "C": 1}, "all_comparisons_classified": true, "all_required_stls_valid": true, "elapsed_seconds": 90.86950020000222}

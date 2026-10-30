@@ -1,0 +1,29 @@
+
+> stencil-studio@2.9.4 build:regression
+> tsc --noEmit && node scripts/build-regression.mjs
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 262 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/regression-api.html                         0.33 kB │ gzip:     0.23 kB
+dist/legacy.html                                 0.53 kB │ gzip:     0.31 kB
+dist/index.html                                  0.57 kB │ gzip:     0.31 kB
+dist/assets/zip.worker-DDOehMQV.js               1.88 kB
+dist/assets/meshAudit.worker-DYZaH-ut.js         2.45 kB
+dist/assets/engine.worker-ClpkUGW-.js            4.63 kB
+dist/assets/stencil_wasm-CvlI4SvJ.js             7.02 kB
+dist/assets/stencil_wasm_bg-BllC_iXp.wasm    4,254.91 kB │ gzip: 1,802.12 kB
+dist/assets/legacy-BLJd1lma.css                 31.32 kB │ gzip:     6.44 kB
+dist/assets/studio-4mcwSqnB.css                 39.96 kB │ gzip:     8.07 kB
+dist/assets/engineRegression-CURZixce.js         0.06 kB │ gzip:     0.08 kB
+dist/assets/api-DQ9MQ3UP.js                      7.42 kB │ gzip:     3.13 kB
+dist/assets/MeshPreview-JWKyDdeI.js              9.93 kB │ gzip:     4.06 kB
+dist/assets/Viewer3D-0DmzWWMV.js                13.48 kB │ gzip:     5.49 kB
+dist/assets/presetBook-BGg2bBw-.js             157.81 kB │ gzip:    52.57 kB
+dist/assets/legacy-DCMsIVc1.js                 251.92 kB │ gzip:    81.64 kB
+dist/assets/studio-mkP-cklm.js                 385.82 kB │ gzip:    81.63 kB
+dist/assets/BufferGeometryUtils-BYokyORa.js    506.26 kB │ gzip:   126.84 kB
+
+✓ built in 2.43s

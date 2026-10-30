@@ -1,0 +1,151 @@
+{
+  "summary": {
+    "schema": 2,
+    "recipe": "M5 export",
+    "source": "source",
+    "options": {
+      "format": "zip",
+      "project": true,
+      "layouts": false,
+      "outlines": false,
+      "strict": false
+    },
+    "planned_jobs": 1,
+    "verified": 1,
+    "failed": 0,
+    "cancelled": 0,
+    "items": [
+      {
+        "id": "1-1",
+        "name": "restart.svg",
+        "relativePath": "restart.svg",
+        "overrides": [],
+        "status": "Verified",
+        "milliseconds": 113.7250000089407,
+        "metrics": {
+          "triangles": 32,
+          "components": 1,
+          "volumeMm3": 99942.40234374999,
+          "sizeMm": [
+            160,
+            108.80000305175781,
+            8
+          ],
+          "stlFiles": 1,
+          "seamStepMm": null,
+          "paintUnderBlocksMm2": null,
+          "bytes": 8211
+        },
+        "findings": [],
+        "output": "1-1-restart.svg-manufacturing.zip"
+      }
+    ]
+  },
+  "csv_rows": 1,
+  "verified_jobs": 1,
+  "independent_stl_count": 1,
+  "all_stls_valid": true,
+  "jobs": [
+    {
+      "entry": "1-1-restart.svg/manufacturing.zip",
+      "files": [
+        {
+          "path": "assembly-1-test/stencil.stl",
+          "source": "test",
+          "assembly": "test",
+          "role": "Printable part",
+          "copies_to_print": null,
+          "bytes": 1684,
+          "sha256": "d38ab204ba7aa3f7f1d4711aeeedeb9f3ee7651b644e6c35314e83fc6be1184e",
+          "geometry": {
+            "triangles": 32,
+            "size": [
+              160,
+              108.80000305175781,
+              8
+            ],
+            "bounds": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                160,
+                108.80000305175781,
+                8
+              ]
+            ],
+            "vertices": 16,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 99942.40234374999,
+            "closed": true,
+            "milliseconds": 0.4650000035762787
+          },
+          "replaces_upstream_sources": [],
+          "also_used_by": []
+        },
+        {
+          "path": "original-project.json",
+          "source": "project",
+          "assembly": "Project",
+          "role": "Complete saved project with original artwork",
+          "copies_to_print": null,
+          "bytes": 4470,
+          "sha256": "c696909b523530750e09ed8b7fc855ddba07c6fadda70e22e4dc74edb585b5c5",
+          "geometry": null,
+          "replaces_upstream_sources": [],
+          "also_used_by": []
+        }
+      ],
+      "assemblies": [
+        {
+          "id": "test/parts",
+          "name": "test",
+          "sources": [
+            {
+              "step": "test",
+              "kind": "parts",
+              "metadata": {},
+              "stats": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "format": "binary STL",
+      "bytes": 1684,
+      "triangles": 32,
+      "vertices": 16,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          160,
+          108.80000305175781,
+          8
+        ]
+      ],
+      "size_mm": [
+        160,
+        108.80000305175781,
+        8
+      ],
+      "signed_volume_mm3": 99942.40234374999,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    }
+  ]
+}

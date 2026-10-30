@@ -1,0 +1,96 @@
+{
+  "type": "smooth",
+  "slots": 2,
+  "cases": [
+    {
+      "key": "smooth.radius",
+      "schema": {
+        "default": 1.5,
+        "group": null,
+        "kind": "float",
+        "label": "Smoothing (px)",
+        "max": 10,
+        "min": 0,
+        "name": "radius",
+        "step": 0.25
+      },
+      "initial": 1.5,
+      "changed": 0.25,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 0.25,
+          "sha256": "e63b85270ee212c635a5059a6a4a84f90e19df79b63429c7b7b446f1dccfc5d2",
+          "info": {
+            "coverage": 0.3948,
+            "height": 300,
+            "kind": "mask",
+            "width": 400
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              400,
+              300
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/smooth/radius-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "smooth.supersample",
+      "schema": {
+        "default": 2,
+        "group": null,
+        "kind": "int",
+        "label": "Supersample (x)",
+        "max": 4,
+        "min": 1,
+        "name": "supersample",
+        "step": 1
+      },
+      "initial": 2,
+      "changed": 1,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 1,
+          "sha256": "293da623e8134e5aa795fad586084ad1d4799bc11041be000fbf6b219c854090",
+          "info": {
+            "coverage": 0.395,
+            "height": 150,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              150
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/smooth/supersample-0.json"
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "before_opposed_facets": [
+    430,
+    1169
+  ],
+  "after": {
+    "format": "binary STL",
+    "bytes": 146684,
+    "triangles": 2932,
+    "vertices": 1442,
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        100.0,
+        80.0,
+        2.5999999046325684
+      ]
+    ],
+    "size_mm": [
+      100.0,
+      80.0,
+      2.5999999046325684
+    ],
+    "signed_volume_mm3": 12855.107775606673,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true,
+    "finite_unit_normals": 2932,
+    "zero_or_opposed_normals": 0,
+    "minimum_normal_cross_cosine": 0.9999999999999996
+  },
+  "exact_shape_proof": {
+    "file_bytes_equal": false,
+    "file_sha256": [
+      "34498aec051828557c0475f290c126ef795f190d08f6ad5f2d564cc11c9127b8",
+      "b4c552ea2e2e9c2b047e514cc16ee3abcb621ec507180b76f18eb2569ba46e8b"
+    ],
+    "exact_oriented_triangles_equal": true,
+    "exact_surface_equal": true,
+    "category": "A",
+    "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+    "spatial_tolerance_mm": 0,
+    "maximum_surface_deviation_mm": 0,
+    "triangles": [
+      2932,
+      2932
+    ],
+    "shared_exact_triangles": 2932,
+    "residual_triangles": [
+      0,
+      0
+    ],
+    "residual_exact_planes": 0,
+    "unmatched_plane_boundary_lines": 0
+  },
+  "native": [
+    {
+      "case": "retained-normal-defect",
+      "info": {
+        "bytes": 146684,
+        "kind": "solid",
+        "stats": {
+          "bridge_mm": 1.2,
+          "bridge_pixels": 16,
+          "bridge_routes_mm": [
+            [
+              [
+                20.0,
+                25.0
+              ],
+              [
+                14.0,
+                25.0
+              ]
+            ],
+            [
+              [
+                71.44,
+                55.06
+              ],
+              [
+                71.44,
+                66.0
+              ]
+            ],
+            [
+              [
+                75.5994,
+                26.6462
+              ],
+              [
+                86.0,
+                26.6462
+              ]
+            ],
+            [
+              [
+                20.463,
+                49.2593
+              ],
+              [
+                14.0,
+                49.2593
+              ]
+            ],
+            [
+              [
+                45.7407,
+                43.463
+              ],
+              [
+                45.7407,
+                33.5
+              ]
+            ],
+            [
+              [
+                63.06,
+                50.128
+              ],
+              [
+                68.5,
+                50.128
+              ]
+            ],
+            [
+              [
+                20.0,
+                33.5
+              ],
+              [
+                14.0,
+                39.5
+              ]
+            ],
+            [
+              [
+                60.5,
+                25.0
+              ],
+              [
+                60.5,
+                14.0
+              ]
+            ],
+            [
+              [
+                26.75,
+                56.0625
+              ],
+              [
+                26.75,
+                66.0
+              ]
+            ],
+            [
+              [
+                23.0,
+                55.0
+              ],
+              [
+                14.000000000000002,
+                64.0
+              ]
+            ],
+            [
+              [
+                44.628,
+                55.06
+              ],
+              [
+                55.568,
+                66.0
+              ]
+            ],
+            [
+              [
+                50.4246,
+                46.9511
+              ],
+              [
+                69.44892645509428,
+                13.999999999999991
+              ]
+            ],
+            [
+              [
+                57.7593,
+                55.537
+              ],
+              [
+                39.63685240040684,
+                66.0
+              ]
+            ],
+            [
+              [
+                61.5477,
+                54.3558
+              ],
+              [
+                64.66775398650648,
+                66.0
+              ]
+            ],
+            [
+              [
+                75.06,
+                51.44
+              ],
+              [
+                86.0,
+                54.37136416519648
+              ]
+            ],
+            [
+              [
+                70.0,
+                48.5
+              ],
+              [
+                86.0,
+                32.49999999999999
+              ]
+            ]
+          ],
+          "bridge_strip_width_mm": 1.2,
+          "bridge_strips": 16,
+          "bridges_per_island": 3.0,
+          "construction": "vector",
+          "first_layer_islands": 6,
+          "first_layer_taper_mm": 1.0,
+          "flip": false,
+          "grid_h": 0,
+          "grid_w": 0,
+          "height_mm": 80.0,
+          "islands_deleted": 0,
+          "islands_found": 6,
+          "islands_remaining": 0,
+          "layer_height_mm": 0.2,
+          "layers": 13,
+          "margin_mm": 10.0,
+          "min_first_layer_width_mm": 0.0,
+          "overhang_area_mm2": 240.52,
+          "overhang_check_deg": 45.0,
+          "plate_top_mm": 2.6,
+          "raised_bridges": true,
+          "stl_bytes": 146684,
+          "thickness_mm": 2.4,
+          "threshold": 0,
+          "triangles": 2932,
+          "watertight": true,
+          "width_mm": 100.0,
+          "z_bridging": "easy"
+        },
+        "tiles": []
+      },
+      "milliseconds": 125.53909999999999,
+      "mime": "model/stl",
+      "path": "C:\\Users\\mazin\\Downloads\\stencil\\docs\\m6\\examples\\normal-orientation-after.stl"
+    }
+  ],
+  "encoder_scope": "Normals now use the stored float32 coordinates. Triangle coordinates and ordering are unchanged by serialization; the validator and geometry tolerances are unchanged."
+}

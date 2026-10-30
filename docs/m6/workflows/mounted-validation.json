@@ -1,0 +1,501 @@
+{
+  "elapsedMs": 17007,
+  "independent": {
+    "format": "ZIP",
+    "bytes": 7449540,
+    "entries": [
+      {
+        "name": "assembly-1-Screws__nuts___plates/bolt_M4x20.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 169357490,
+        "format": "binary STL",
+        "bytes": 1109984,
+        "triangles": 22198,
+        "vertices": 11101,
+        "bounds_mm": [
+          [
+            -3.6950416564941406,
+            -3.200000047683716,
+            0
+          ],
+          [
+            3.6950416564941406,
+            3.200000047683716,
+            22.799999237060547
+          ]
+        ],
+        "size_mm": [
+          7.390083312988281,
+          6.400000095367432,
+          22.799999237060547
+        ],
+        "signed_volume_mm3": 275.1615151358435,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Screws__nuts___plates/extender_M4.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 2320968388,
+        "format": "binary STL",
+        "bytes": 52684,
+        "triangles": 1052,
+        "vertices": 520,
+        "bounds_mm": [
+          [
+            -31,
+            -5,
+            0
+          ],
+          [
+            31,
+            30,
+            4
+          ]
+        ],
+        "size_mm": [
+          62,
+          35,
+          4
+        ],
+        "signed_volume_mm3": 8351.064091155293,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 2640225596,
+        "format": "binary STL",
+        "bytes": 75784,
+        "triangles": 1514,
+        "vertices": 747,
+        "bounds_mm": [
+          [
+            0,
+            -6,
+            0
+          ],
+          [
+            64,
+            6,
+            6.031088829040527
+          ]
+        ],
+        "size_mm": [
+          64,
+          12,
+          6.031088829040527
+        ],
+        "signed_volume_mm3": 4120.407504078494,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Screws__nuts___plates/joiner_M4.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 2897482446,
+        "format": "binary STL",
+        "bytes": 32684,
+        "triangles": 652,
+        "vertices": 324,
+        "bounds_mm": [
+          [
+            -31,
+            -5,
+            0
+          ],
+          [
+            31,
+            5,
+            4
+          ]
+        ],
+        "size_mm": [
+          62,
+          10,
+          4
+        ],
+        "signed_volume_mm3": 2272.3594823948415,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 1170319528,
+        "format": "binary STL",
+        "bytes": 52684,
+        "triangles": 1052,
+        "vertices": 520,
+        "bounds_mm": [
+          [
+            -20,
+            -5,
+            0
+          ],
+          [
+            20,
+            30,
+            4
+          ]
+        ],
+        "size_mm": [
+          40,
+          35,
+          4
+        ],
+        "signed_volume_mm3": 5271.064095202302,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 355635482,
+        "format": "binary STL",
+        "bytes": 32684,
+        "triangles": 652,
+        "vertices": 324,
+        "bounds_mm": [
+          [
+            -20,
+            -5,
+            0
+          ],
+          [
+            20,
+            5,
+            4
+          ]
+        ],
+        "size_mm": [
+          40,
+          10,
+          4
+        ],
+        "signed_volume_mm3": 1392.359483688909,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Screws__nuts___plates/nut_M4.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 3632108162,
+        "format": "binary STL",
+        "bytes": 202884,
+        "triangles": 4056,
+        "vertices": 2028,
+        "bounds_mm": [
+          [
+            -3.6950416564941406,
+            -3.200000047683716,
+            0
+          ],
+          [
+            3.6950416564941406,
+            3.200000047683716,
+            3.200000047683716
+          ]
+        ],
+        "size_mm": [
+          7.390083312988281,
+          6.400000095367432,
+          3.200000047683716
+        ],
+        "signed_volume_mm3": 78.03963848374417,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 1888694489,
+        "format": "binary STL",
+        "bytes": 1084,
+        "triangles": 20,
+        "vertices": 12,
+        "bounds_mm": [
+          [
+            -1.5,
+            -1.299038052558899,
+            0
+          ],
+          [
+            1.5,
+            1.299038052558899,
+            19
+          ]
+        ],
+        "size_mm": [
+          3,
+          2.598076105117798,
+          19
+        ],
+        "signed_volume_mm3": 111.06775349378586,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Screws__nuts___plates/stencil_r1c1.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 4069539765,
+        "format": "binary STL",
+        "bytes": 1092084,
+        "triangles": 21840,
+        "vertices": 10912,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            152.83018493652344,
+            10.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          152.83018493652344,
+          10.199999809265137
+        ],
+        "signed_volume_mm3": 90455.07365462901,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Screws__nuts___plates/stencil_r1c2.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 3056450732,
+        "format": "binary STL",
+        "bytes": 1943584,
+        "triangles": 38870,
+        "vertices": 19425,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            152.83018493652344,
+            10.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          152.83018493652344,
+          10.199999809265137
+        ],
+        "signed_volume_mm3": 76107.74273099219,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Screws__nuts___plates/stencil_r2c1.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 1045188127,
+        "format": "binary STL",
+        "bytes": 966384,
+        "triangles": 19326,
+        "vertices": 9655,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            152.83018493652344,
+            10.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          152.83018493652344,
+          10.199999809265137
+        ],
+        "signed_volume_mm3": 81013.51064672832,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Screws__nuts___plates/stencil_r2c2.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 728672710,
+        "format": "binary STL",
+        "bytes": 1849584,
+        "triangles": 36990,
+        "vertices": 18485,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            152.83018493652344,
+            10.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          152.83018493652344,
+          10.199999809265137
+        ],
+        "signed_volume_mm3": 73275.46625275696,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "original-project.json",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 243005678
+      },
+      {
+        "name": "manufacturing-manifest.json",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 2563562902
+      }
+    ]
+  }
+}

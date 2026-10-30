@@ -1,0 +1,101 @@
+{
+  "lossless": true,
+  "executable": true,
+  "nativeExit": 0,
+  "nativeDiagnostic": "wrote 3 parts to C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\project-replay\\layout-offsets and C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\project-replay\\layout-offsets\\layout-offsets.zip in 247 ms\n",
+  "independent": {
+    "files": [
+      {
+        "file": "connector_hex_d3mm.stl",
+        "format": "binary STL",
+        "bytes": 1084,
+        "triangles": 20,
+        "vertices": 12,
+        "bounds_mm": [
+          [
+            -1.5,
+            -1.299038052558899,
+            0
+          ],
+          [
+            1.5,
+            1.299038052558899,
+            11
+          ]
+        ],
+        "size_mm": [
+          3,
+          2.598076105117798,
+          11
+        ],
+        "signed_volume_mm3": 64.3023836016655,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "file": "stencil_r1c1.stl",
+        "format": "binary STL",
+        "bytes": 76684,
+        "triangles": 1532,
+        "vertices": 768,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            91,
+            144,
+            6
+          ]
+        ],
+        "size_mm": [
+          91,
+          144,
+          6
+        ],
+        "signed_volume_mm3": 49227.0825537301,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "file": "stencil_r1c2.stl",
+        "format": "binary STL",
+        "bytes": 55884,
+        "triangles": 1116,
+        "vertices": 560,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            89,
+            144,
+            6
+          ]
+        ],
+        "size_mm": [
+          89,
+          144,
+          6
+        ],
+        "signed_volume_mm3": 45428.33140552709,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      }
+    ],
+    "all_valid": true
+  }
+}

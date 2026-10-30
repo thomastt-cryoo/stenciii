@@ -1,0 +1,182 @@
+
+Running 139 tests using 1 worker
+
+
+
+(node:17636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1/139] e2e\badges.spec.ts:9:3 › badges match the engine findings: islands left, thin bridge, heavy mesh
+[2/139] e2e\badges.spec.ts:9:3 › badges match the engine findings: a clean plate
+[3/139] e2e\badges.spec.ts:9:3 › badges match the engine findings: tiled parts with every finding
+[4/139] e2e\badges.spec.ts:9:3 › badges match the engine findings: pre-tiled parts do not report paint under blocks
+[5/139] e2e\badges.spec.ts:9:3 › badges match the engine findings: layout that costs a lot of paint
+[6/139] e2e\badges.spec.ts:9:3 › badges match the engine findings: layout that costs little
+[7/139] e2e\badges.spec.ts:9:3 › badges match the engine findings: empty mask
+[8/139] e2e\badges.spec.ts:9:3 › badges match the engine findings: full mask
+[9/139] e2e\badges.spec.ts:9:3 › badges match the engine findings: no outlines
+[10/139] e2e\badges.spec.ts:9:3 › badges match the engine findings: fragments dropped at a cut
+[11/139] e2e\badges.spec.ts:9:3 › badges match the engine findings: mesh optimization fallback and overhang remain visible
+[12/139] e2e\badges.spec.ts:9:3 › badges match the engine findings: deleted islands are not counted as bridged
+[13/139] e2e\editor.spec.ts:30:1 › empty workspace, light/dark preference, searchable catalogue, keyboard and responsive layout
+[14/139] e2e\editor.spec.ts:53:1 › real generation, quick parameters, original assets, STL export and rapid New→Open regression
+e2e\editor.spec.ts:53:1 › real generation, quick parameters, original assets, STL export and rapid New→Open regression
+verified: 1 islands found, 0 remaining, watertight true, 824 triangles
+wrote C:\Users\mazin\Downloads\stencil\sandbox\m6\production-test-results\editor-real-generation-qui-df5f4-d-rapid-New→Open-regression\native.stl in 41 ms
+
+
+[15/139] e2e\editor.spec.ts:97:1 › replace and drop artwork, undo replacement and recover after processing error
+[16/139] e2e\editor.spec.ts:116:1 › legacy advanced and unknown projects save losslessly without any canvas or default recipe
+[17/139] e2e\editor.spec.ts:129:1 › offline local processing, theme accessibility, and no legacy editor in default UI
+[18/139] e2e\foundation.spec.ts:9:1 › runtime registry accounts for all processing types and searchable parameter keys
+[19/139] e2e\foundation.spec.ts:18:1 › recipe compilation matches the original vector recipe, defaults and dependencies
+[20/139] e2e\foundation.spec.ts:31:1 › unknown data, embedded and unused images, branches, ids, positions and connections survive edits and round trips
+[21/139] e2e\foundation.spec.ts:51:1 › native graph imports, migration aliases and image remapping only affect the execution copy
+[22/139] e2e\foundation.spec.ts:61:1 › commands support atomic source replacement, undo and redo without rewriting unknown fields
+[23/139] e2e\foundation.spec.ts:71:1 › registry identifies every instance and retains conditional metadata
+[24/139] e2e\foundation.spec.ts:92:1 › New then Open identical saved processing always creates a fresh completed generation
+[25/139] e2e\foundation.spec.ts:101:1 › edits, cancellation and superseded work cannot export stale output or overwrite a newer generation
+[26/139] e2e\foundation.spec.ts:113:1 › draft artifacts and failed runs are never full-quality exportable
+[27/139] e2e\foundation.spec.ts:120:1 › late artifact capture is disposed after cancel and recoverable step failures block export
+[28/139] e2e\m2-editor.spec.ts:27:1 › all three styles produce different valid geometry; style adjustments, bytes, undo and reopen survive
+[29/139] e2e\m2-editor.spec.ts:59:1 › live edits show draft, retain the last preview and finish full quality without Make; cancel stays cancelled
+[30/139] e2e\m2-editor.spec.ts:98:1 › prepared comparison is aligned after crop/rotate/flip; raw original and geometry dimensions remain truthful
+[31/139] e2e\m2-editor.spec.ts:119:1 › manual threshold is remembered, cleanup/margin edit per instance and bad crop is rejected without data loss
+[32/139] e2e\m2-editor.spec.ts:135:1 › friendly upload errors preserve the current image and traced SVG is honestly labelled
+[33/139] e2e\m2-editor.spec.ts:144:1 › the previously defective hardware fit strip exports only after the M5 repair and preserves its custom project
+[34/139] e2e\m2-editor.spec.ts:155:1 › raster cleanup is opt-in, visibly changes fine lines, and bypass restores the original geometry
+[35/139] e2e\m2-model.spec.ts:11:1 › three actual style recipes satisfy every engine input port and differ in processing
+[36/139] e2e\m2-model.spec.ts:28:1 › raster cleanup is truly bypassed by default and restores its exact settings and connections
+[37/139] e2e\m2-model.spec.ts:39:1 › style banks retain individual adjustments, source identity, old graphs and undo/redo
+[38/139] e2e\m2-model.spec.ts:54:1 › native-root style banking stays bounded and advanced branches are never replaced
+[39/139] e2e\m2-model.spec.ts:61:1 › detail profiles distinguish raster pixels from vector precision; drafts never alter saved settings
+[40/139] e2e\m2-model.spec.ts:72:1 › live scheduler throttles drafts, debounces final work, pauses while dragging and cancels queued runs
+[41/139] e2e\m2-model.spec.ts:86:1 › exact setting titles and qualified identities rank first; references are not fake controls
+[42/139] e2e\m2-model.spec.ts:95:1 › real STL inspection identifies a zero-area facet, invalid size and invalid coordinates
+[43/139] e2e\m2-visuals.spec.ts:6:1 › actual M2 workspace, three styles, comparison, model, settings and complex artwork in both themes
+[44/139] e2e\m3-editor.spec.ts:25:1 › multiline text, bundled fonts, actual artwork preview, bridged STL/SVG, CLI replay and persistence
+
+
+e2e\m3-editor.spec.ts:25:1 › multiline text, bundled fonts, actual artwork preview, bridged STL/SVG, CLI replay and persistence
+verified: 5 islands found, 0 remaining, watertight true, 3376 triangles
+wrote C:\Users\mazin\Downloads\stencil\sandbox\m6\replay\m3\text-native.stl in 117 ms
+[45/139] e2e\m3-editor.spec.ts:46:1 › processing list inserts, duplicates, reorders, disables, restores and inspects actual secondary results
+[46/139] e2e\m3-editor.spec.ts:69:1 › direct crop handles, zoom/pan, keyboard pixels, rotations and undo match actual Rust image dimensions
+[47/139] e2e\m3-editor.spec.ts:85:1 › operation presets preserve the legacy file format, import merges, scoped apply, rename/remove and defaults
+[48/139] e2e\m3-editor.spec.ts:105:1 › named branched import stays connected, unknown fields survive artwork edits, and a full long chain exports
+[49/139] e2e\m3-editor.spec.ts:116:1 › multiple image instances replace independently, reopen safely and preserve disabled identities
+[50/139] e2e\m3-editor.spec.ts:128:1 › fourteen real preparation steps keep live output valid, SVGs inspectable, themes accessible and processing local
+  1) e2e\m3-editor.spec.ts:128:1 › fourteen real preparation steps keep live output valid, SVGs inspectable, themes accessible and processing local 
+
+    Error: page.goto: net::ERR_FAILED at http://localhost:5210/
+    Call log:
+      - navigating to "http://localhost:5210/", waiting until "load"
+
+
+      133 |   mkdirSync('../sandbox/m6/replay/m3',{recursive:true});writeFileSync('../sandbox/m6/replay/m3/long-project.json',JSON.stringify(doc))
+      134 |   const outside:string[]=[];await page.route('**/*',route=>{const u=route.request().url();if(/^https?:/.test(u)&&!u.startsWith('http://localhost:5199')){outside.push(u);return route.abort()}return route.continue()})
+    > 135 |   await page.goto('/');await page.setInputFiles('[aria-label="Open project file"]',{name:'long.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(doc))});await ready(page)
+          |              ^
+      136 |   const mesh=await downloadMesh(page,'long-chain');expect(mesh.degenerate_faces).toBe(0)
+      137 |   await page.getByRole('combobox',{name:'Inspect artwork stage',exact:true}).selectOption('outlines/shapes');await expect(page.locator('.stage-image')).toHaveAttribute('data-ready','true')
+      138 |   const svgWait=page.waitForEvent('download');await page.getByRole('link',{name:'Save artwork preview',exact:true}).click();const path=resolve('../sandbox/m6/replay/m3/long-outlines.svg');await(await svgWait).saveAs(path);expect(JSON.parse(execFileSync('python',['../scripts/m2/inspect_mesh.py',path],{encoding:'utf8'})).paths).toBeGreaterThan(0)
+        at C:\Users\mazin\Downloads\stencil\web\e2e\m3-editor.spec.ts:135:14
+
+    Error Context: ..\sandbox\m6\production-test-results\m3-editor-fourteen-real-pr-8aad2-ssible-and-processing-local\error-context.md
+
+
+(node:26952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[51/139] e2e\m3-editor.spec.ts:149:1 › wide transparent artwork survives repeated rotations, crop panning and undo with identical prepared bytes
+[52/139] e2e\m3-model.spec.ts:14:1 › all 41 artwork slots have actual defaults, constraints, help, validation and editable routing
+[53/139] e2e\m3-model.spec.ts:28:1 › typed insert, duplicate, reordering, bypass/enable and undo preserve values and stable identities
+[54/139] e2e\m3-model.spec.ts:45:1 › conversion pairs compile, every input has the proper type, and circular choices are excluded
+[55/139] e2e\m3-model.spec.ts:54:1 › named imported branches keep unrelated manufacturing, metadata, raw identities and unknown data
+[56/139] e2e\m3-model.spec.ts:68:1 › text is an independent typed source and operation presets affect only their selected instance
+[57/139] e2e\m3-model.spec.ts:78:1 › crop handles use the same rounded input pixels as Rust, including odd sizes, aspect ratios and keyboard steps
+[58/139] e2e\m3-model.spec.ts:87:1 › morphology dependencies distinguish kernel, pass count and pattern controls without deleting inactive values
+[59/139] e2e\m3-model.spec.ts:95:1 › legacy-shaped steps, opaque links and disabled identities survive safe structural editing
+[60/139] e2e\m3-visuals.spec.ts:6:1 › M3 artwork, processing, presets, text, responsive layout and both themes
+[61/139] e2e\m4-dense.spec.ts:5:1 › dense exact topology audit stays off the UI, checks an analytic closed solid and refuses above-budget data
+[62/139] e2e\m4-editor.spec.ts:14:1 › bridge strategy, physical layers, scoped editing, live preview, undo and save/open alter real verified STL
+[63/139] e2e\m4-editor.spec.ts:24:1 › optional remesh changes exported geometry, restores exact bypass and retains the last valid result on an invalid interval
+[64/139] e2e\m4-editor.spec.ts:38:1 › all 3D display options change actual rendering and never change current export bytes
+[65/139] e2e\m4-editor.spec.ts:51:1 › two stencil instances and an existing tiled branch keep independent settings and safe geometry dependencies
+[66/139] e2e\m4-editor.spec.ts:60:1 › unordered imported operations select the final optimized solid and label the original as an intermediate result
+[67/139] e2e\m4-model.spec.ts:11:1 › 48 preserved geometry slots and 217 unique editable slots keep every authoritative constraint, help and reset default
+[68/139] e2e\m4-model.spec.ts:16:1 › quantized base, extra layers, special values and conditional geometry controls match actual engine semantics
+[69/139] e2e\m4-model.spec.ts:24:1 › mesh optimization is an ordinary typed reversible step with stable identity and saved settings
+[70/139] e2e\m4-model.spec.ts:32:1 › branch-scoped optimization preserves unknown raw data and rejects parts-producing stencil inputs
+[71/139] e2e\m4-model.spec.ts:39:1 › legacy remesh alias and geometry presets edit only the chosen raw instance
+[72/139] e2e\m4-model.spec.ts:52:1 › independent exact STL audit detects closure, winding, degeneracy, nonfinite normals and distinct closed components
+[73/139] e2e\m4-visuals.spec.ts:7:1 › geometry inspector, real bridge cutaways, mesh precision and camera tools in both themes and mobile
+[74/139] e2e\m5a-editor.spec.ts:11:1 › guided colour branches preserve raw originals, all ten layers, registration groups, history and unknown data
+[75/139] e2e\m5a-editor.spec.ts:20:1 › registration rejects unequal dimensions and holes outside margins; actual tone groups become inactive
+[76/139] e2e\m5a-editor.spec.ts:31:1 › real guided ten-colour creation, six/four registration groups, independent plate export, names and visibility survive reopen
+[77/139] e2e\m5b-editor.spec.ts:13:1 › both tiling strategies append separate safe passes and retain original topology, offsets and undo history
+[78/139] e2e\m5b-editor.spec.ts:21:1 › manual numeric, keyboard, seam dragging and pocket movement use actual layout limits and survive ZIP export/reopen
+[79/139] e2e\m5c-editor.spec.ts:9:1 › mounting and hardware use compatible tile ancestry, preserve originals and restore optional manufacturing operations
+[80/139] e2e\m5c-editor.spec.ts:17:1 › mounting, border and matching hardware guides generate real parts and preserve scoped edits, history and saved artwork
+[81/139] e2e\m5d-branches.spec.ts:6:1 › shared and independent hardware branches export every assembly once with actual layout and outline auxiliaries
+[82/139] e2e\m5d-colours.spec.ts:5:1 › two through ten colour reductions expose every real mask and complete registration groups collect all ten plates
+[83/139] e2e\m5d-export.spec.ts:10:1 › the unchanged export guard rejects the actual historical calibration defect and unsafe ZIP names
+[84/139] e2e\m5d-export.spec.ts:16:1 › complete manufacturing ZIP collects mounted tiles upstream of auxiliary hardware, with CRC, geometry and stale guards
+[85/139] e2e\m5d-export.spec.ts:27:1 › offline local batch keeps the saved recipe, isolates a failed image and collects independently valid results
+[86/139] e2e\m5d-export.spec.ts:32:1 › a basic saved recipe with a single Parts STL also works in local batch
+[87/139] e2e\m5d-manufacturing.spec.ts:7:1 › all metric hardware sizes and dense connector calibration use real WASM and independently valid stored faces
+[88/139] e2e\m5d-manufacturing.spec.ts:15:1 › manufacturing settings and export panel remain keyboard accessible in both themes and narrow layouts
+[89/139] e2e\m6-batch-editor.spec.ts:21:1 › graph-only recipes accept replacement artwork, optional attachments are scoped, and text/font choice sweeps run without image sources
+[90/139] e2e\m6-batch-editor.spec.ts:31:1 › strict warnings and multi-file single-STL choices refuse clearly without exporting incomplete results
+[91/139] e2e\m6-batch-editor.spec.ts:36:1 › saved recipe selection, numeric sweeps, isolated failures and JSON/CSV summaries remain offline and lossless
+[92/139] e2e\m6-batch-editor.spec.ts:51:1 › folder input preserves mixed-format paths and a multiple-file fallback is available without folder support
+[93/139] e2e\m6-batch-editor.spec.ts:68:1 › cancellation retains verified jobs and restarting cannot publish results from the cancelled generation
+[94/139] e2e\m6-batch-limits.spec.ts:9:29 › maximum supported browser image batch completes with real validated outputs
+[95/139] e2e\m6-batch-limits.spec.ts:9:29 › maximum supported browser 128-job parameter sweep completes with real validated outputs
+[96/139] e2e\m6-batch-model.spec.ts:10:1 › batch ranges and Cartesian choices obey the real schema, preserve values and reject oversized job plans
+[97/139] e2e\m6-batch-model.spec.ts:24:1 › batch source replacement clones only the intended shared source and keeps unknown data and the original recipe
+[98/139] e2e\m6-batch-model.spec.ts:37:1 › input quotas refuse work before reading oversized files and CSV names cannot become formulas
+[99/139] e2e\m6-batch-model.spec.ts:55:1 › component checks allow explicit alignment pins and retained fragments while rejecting loose plate bodies
+[100/139] e2e\m6-original-workflows.spec.ts:9:41 › original Simple stencil template creates, executes, saves and exports a valid complete workflow
+[101/139] e2e\m6-original-workflows.spec.ts:9:41 › original Colour tones template creates, executes, saves and exports a valid complete workflow
+[102/139] e2e\m6-original-workflows.spec.ts:9:41 › original Vector stencil template creates, executes, saves and exports a valid complete workflow
+[103/139] e2e\m6-original-workflows.spec.ts:9:41 › original Two-colour registered set template creates, executes, saves and exports a valid complete workflow
+[104/139] e2e\m6-original-workflows.spec.ts:9:41 › original Tiles, pads and screws template creates, executes, saves and exports a valid complete workflow
+[105/139] e2e\m6-original-workflows.spec.ts:9:41 › original Tiles first template creates, executes, saves and exports a valid complete workflow
+[106/139] e2e\m6-original-workflows.spec.ts:23:1 › shared screw-fit controls are opt-in, scoped, saved, undoable and applied to real hardware output
+[107/139] e2e\m6-parity-model.spec.ts:12:1 › imported preset identities are data, preserve reserved names and cannot modify object prototypes
+[108/139] e2e\m6-parity-model.spec.ts:21:1 › reserved imported operation IDs retain failure state and cannot become exportable
+[109/139] e2e\m6-parity-model.spec.ts:27:1 › all six original workflows retain original topology, settings and complete source/project recovery
+[110/139] e2e\m6-parity-model.spec.ts:39:1 › group clipboard retains connections and unknown fields, remaps identities and protects colliding original images
+[111/139] e2e\m6-parity-model.spec.ts:54:1 › history jumping preserves future states and accurately labels its bounded retained history
+[112/139] e2e\m6-parity-model.spec.ts:63:1 › shared screw fit is explicit, atomic, scoped to supported hardware and retained through undo
+[113/139] e2e\m6-preferences.spec.ts:4:1 › original local preferences, project names and export bytes survive editing and reload
+[114/139] e2e\m6-projects.spec.ts:12:1 › an original browser graph with IndexedDB-only artwork becomes a self-contained lossless saved project
+[115/139] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: native
+[116/139] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: old-browser
+[117/139] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: renamed-remesh
+[118/139] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: legacy-exporter
+[119/139] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: layout-offsets
+[120/139] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: shared-hardware-and-multiple-images
+[121/139] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: registered-colour-branches
+[122/139] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: style-banks
+[123/139] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: disabled-and-archived
+[124/139] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: unknown-operation
+[125/139] e2e\m6-reliability.spec.ts:10:43 › actual processing and lossless project download survive unavailable browser storage
+[126/139] e2e\m6-reliability.spec.ts:10:43 › actual processing and lossless project download survive full browser storage
+[127/139] e2e\m6-reliability.spec.ts:29:1 › a hung threaded pool falls back to the real bundled single-thread engine and settles startup requests
+[128/139] e2e\m6-reliability.spec.ts:46:1 › history jumps, copied step groups and keyboard panel resizing operate through customer controls
+[129/139] e2e\m6-reliability.spec.ts:58:1 › damaged autosave is retained and an engine failure has actionable per-step diagnostics
+[130/139] e2e\m6-visuals.spec.ts:5:132 › M6 current customer controls are readable and accessible at 1366px in light mode
+[131/139] e2e\m6-visuals.spec.ts:5:132 › M6 current customer controls are readable and accessible at 1366px in dark mode
+[132/139] e2e\m6-visuals.spec.ts:5:132 › M6 current customer controls are readable and accessible at 1024px in light mode
+[133/139] e2e\m6-visuals.spec.ts:5:132 › M6 current customer controls are readable and accessible at 1024px in dark mode
+[134/139] e2e\m6-visuals.spec.ts:5:132 › M6 current customer controls are readable and accessible at 390px in light mode
+[135/139] e2e\m6-visuals.spec.ts:5:132 › M6 current customer controls are readable and accessible at 390px in dark mode
+[136/139] e2e\m6-visuals.spec.ts:15:1 › recovery download includes authoritative project bytes when rendering fails and persistent storage is blocked
+[137/139] e2e\presetBook.spec.ts:4:1 › a presets file is checked and merged without overwriting
+[138/139] e2e\presetBook.spec.ts:15:1 › files that are not presets are refused
+[139/139] e2e\visuals.spec.ts:5:1 › capture actual empty light/dark, generated stencil/3D and settings workspace
+  1 failed
+    e2e\m3-editor.spec.ts:128:1 › fourteen real preparation steps keep live output valid, SVGs inspectable, themes accessible and processing local 
+  138 passed (10.8m)

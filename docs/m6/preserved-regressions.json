@@ -1,0 +1,210 @@
+{
+  "accepted_base": "cb07659c1f650a76b220fb273e09e4e349e02b8b",
+  "all_original_test_files_preserved": true,
+  "original_test_files": 33,
+  "original_test_cases": 176,
+  "baseline_evidence_unchanged": true,
+  "files": [
+    {
+      "path": "web/e2e/badges.spec.ts",
+      "original_sha256": "92ecb9200e482ed330b2aa5c405a6b48784dbe297a93bf7b4d6c00e30043a68a",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": false
+    },
+    {
+      "path": "web/e2e/editor.spec.ts",
+      "original_sha256": "e0da4e66852f23e8ab87d6b2547b4ede9560910068117f958a3a2343dd195f19",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/foundation.spec.ts",
+      "original_sha256": "0bb313bfce35563b0d54d2349a47ec960bca413825deb12d6aadb0c3c83c15b1",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": false
+    },
+    {
+      "path": "web/e2e/m2-editor.spec.ts",
+      "original_sha256": "609ae0c6821162d17c4ce077491b994a889c1ee5f88e877632ddeae042cc67f2",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": false,
+      "synchronization_update": "Cancel is activated after a real worker run is posted, in the browser task where the visible enabled Cancel button is found. Draft/live behavior, cancellation persistence and disabled export assertions remain; three production repetitions passed."
+    },
+    {
+      "path": "web/e2e/m2-model.spec.ts",
+      "original_sha256": "30ded063b71d4b755b315aca1386fd64d42210016babc459726afa13749395b6",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": false
+    },
+    {
+      "path": "web/e2e/m2-visuals.spec.ts",
+      "original_sha256": "9b5a794104d0b7ac016351df93b1061505afaa7c343b7e36b1f5e3ab58ce1843",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m3-coverage.spec.ts",
+      "original_sha256": "1fba27f2bdfd598a3f8769693cfc580606fb462d34bb84a003040c92ff752868",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m3-editor.spec.ts",
+      "original_sha256": "549a99633df4b537620711b16bef9405cfeea8f6af5b7755d0314088b2b1bb66",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": false,
+      "origin_update": "No-network guard compares exact configured baseURL origin rather than a hardcoded 5199 prefix, allowing the same test to verify the embedded 5210 server without permitting any external origin."
+    },
+    {
+      "path": "web/e2e/m3-model.spec.ts",
+      "original_sha256": "2e9b496067ee1101d0ea0ea6c8cb6cac9349b60f00900c55985b4b19c3222ea1",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": false
+    },
+    {
+      "path": "web/e2e/m3-visuals.spec.ts",
+      "original_sha256": "46e3bd8fc532782f7e26b1e4cd61d7e2d4124828743a016d52052db3bccdd97f",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m4-coverage.spec.ts",
+      "original_sha256": "27a03d920288ef987b56860def45f5be320012c9a1ee32861b94048c1fa4ee1b",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m4-dense.spec.ts",
+      "original_sha256": "9069e46ec7bc27224ff64a2c280a334736adbfdae49e177eda307b8442a1f441",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m4-editor.spec.ts",
+      "original_sha256": "394b15a1abbaaad45dd7894ebdb489925c1e95e1eeffded3a344586eaa79481d",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m4-fixtures.ts",
+      "original_sha256": "20af035102ef3d0f10b39d08d0b9a1c46f4ce96f8ead716766952a9c1d29d10e",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": false
+    },
+    {
+      "path": "web/e2e/m4-model.spec.ts",
+      "original_sha256": "4613a1b0fbcb931d572550b7e0f6c1f344a7fcc9b9a182bcd7e6feffa75cec6b",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": false
+    },
+    {
+      "path": "web/e2e/m4-visuals.spec.ts",
+      "original_sha256": "23b12147b4087ed8728d6c5b3c46aed29b3737d4f17acc824bebec7b138e0f05",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m5-fixtures.ts",
+      "original_sha256": "a659e3e29e34740dacc1d907846adeafe4b3f87a551b0e8293b6e9cdca28f45e",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": false
+    },
+    {
+      "path": "web/e2e/m5-proof.ts",
+      "original_sha256": "895e8a6a3010d2db247cddbe35987111c32a50fbe304bf797cc8ee02787cafed",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": false
+    },
+    {
+      "path": "web/e2e/m5a-coverage.spec.ts",
+      "original_sha256": "9d9d349d2783eaf4f48674c51d991d9cf7803eceff57ba767c34d2cb69ed0ffc",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m5a-editor.spec.ts",
+      "original_sha256": "92e187de270588f595a907127fc241e7d70341e5f3af86a8d52a42d4deee55f9",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m5b-coverage.spec.ts",
+      "original_sha256": "300e03b15b6581ce32abfafe79d44a19f557a92da734e10336e6685cca55056e",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m5b-editor.spec.ts",
+      "original_sha256": "5c5400569accc4994189d141524f3dc7780e9fa3c02a0d707efa35bbe09dae17",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m5c-coverage.spec.ts",
+      "original_sha256": "1f4f41bafe64a09b942fa183291b3281d5139dc932ab482e8842c2d6280049e2",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m5c-editor.spec.ts",
+      "original_sha256": "92513371c7b1acd87fa718cda078125758cd69d174020cef742e045a3179a6b7",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m5d-branches.spec.ts",
+      "original_sha256": "dbc5b2099d60d9c7bc6f272c7c0f91d77690304741ea27f3d0389559470334f9",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m5d-colours.spec.ts",
+      "original_sha256": "3f31a980cdfa99d3f9cbf746772e1c48ea0b466651bb0fa550a5ee7224f91635",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m5d-coverage.spec.ts",
+      "original_sha256": "7f72aff715b7ccc11989b7ab1f6d1b33950fdb66c5786c7590c8eda8d548fe27",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m5d-export.spec.ts",
+      "original_sha256": "f87dc271ab23a1640d8bc5db01350636f43bfdde20a1d7053fdef68b8aa559a4",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/m5d-manufacturing.spec.ts",
+      "original_sha256": "25346613f9b8e7b6c16e773197480e3ecbf71bab3d34b8c0e26452010eb630b7",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    },
+    {
+      "path": "web/e2e/presetBook.spec.ts",
+      "original_sha256": "b6b5e1a586c72c69b15cf69f2dbd77705120ff8c54bdc44812413a6a7a8de0f5",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": false
+    },
+    {
+      "path": "web/e2e/reliability.spec.ts",
+      "original_sha256": "c0350db0f0a8cc677234c627cc79bed3685657ce915712c4a4f24597c5d9429a",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": false
+    },
+    {
+      "path": "web/e2e/studio.spec.ts",
+      "original_sha256": "72b186266b0da6241d9267b975ed5dcd696cb2c3c00d70129e2b5d023eb06f23",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": false
+    },
+    {
+      "path": "web/e2e/visuals.spec.ts",
+      "original_sha256": "7adc92b84bcf99d4411625323776ae63890b6dcb64aac4d15b0cbeb379204a44",
+      "assertions_and_inputs_preserved": true,
+      "only_output_paths_changed": true
+    }
+  ],
+  "source_comparison_scope": "All original files and 176 cases retained. Output paths route to M6. Two documented test synchronization/origin fixes preserve the original behavioral assertions."
+}

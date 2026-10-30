@@ -8,6 +8,7 @@ controls={row['key']:row for path in (root/'controls').glob('*.json') for row in
 assert len(catalogue)==24 and len(original)==len(controls)==217 and all(row['verified'] for row in controls.values())
 parity=json.loads((root/'all-control-parity.json').read_text(encoding='utf-8'));assert parity['all_outputs_valid'] and parity['all_comparisons_classified'] and parity['qualified_slots']==217
 rows=[]
+blocked_keys={row['case'].rsplit('-',1)[0].replace('-','.',1) for row in parity.get('semantic_constraints',[])}
 for kind in catalogue:
     for parameter in kind['params']:
         key=kind['id']+'.'+parameter['name'];old=original[key];tested=controls[key];assert tested['schema']==parameter
@@ -20,7 +21,7 @@ for kind in catalogue:
                      'control_evidence':f"docs/m6/controls/{kind['id']}.json",'value_and_choice_count':len(tested['outputs']),
                      'scope':tested['scope'],'reset':True,'undo_redo':True,'saved_file_reopened':True,
                      'real_engine_outputs_or_constraints':tested['outputs'],'three_engine_evidence':'docs/m6/all-control-modes.json',
-                     'outcome':'Passed','limitation':'The listed dependencies and resource limits apply; not every Cartesian combination is claimed tested.'})
+                     'outcome':'Passed; explicit bridge-off loose-body case correctly blocked from export' if key in blocked_keys else 'Passed','limitation':'Turning off tile-island bridging can leave disconnected bodies; ordinary and batch export refuse them. Reenable bridging to export this fixture.' if key in blocked_keys else 'The listed dependencies and resource limits apply; not every Cartesian combination is claimed tested.'})
 (root/'parameter-coverage-217.json').write_text(json.dumps({'runtime_processing_types':24,'qualified_slots':217,'unique_exercised_slots':len(rows),'executed_values_and_choices':sum(r['value_and_choice_count'] for r in rows),'cases':rows},indent=2)+'\n',encoding='utf-8')
 destinations='''F01\tUpload/drop/replace; named image controls\tm2-editor.spec.ts; reliability.spec.ts; m6-batch-editor.spec.ts
 F02\tArtwork → Image properties and analysis\tm6-visuals.spec.ts; core imageinfo tests

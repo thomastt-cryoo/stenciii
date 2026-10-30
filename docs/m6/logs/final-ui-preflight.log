@@ -1,0 +1,49 @@
+
+[WebServer] (node:27932) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:6396) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 35 tests using 1 worker
+
+
+(node:27024) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/35] e2e\m6-batch-editor.spec.ts:21:1 › graph-only recipes accept replacement artwork, optional attachments are scoped, and text/font choice sweeps run without image sources
+[2/35] e2e\m6-batch-editor.spec.ts:31:1 › strict warnings and multi-file single-STL choices refuse clearly without exporting incomplete results
+[3/35] e2e\m6-batch-editor.spec.ts:36:1 › saved recipe selection, numeric sweeps, isolated failures and JSON/CSV summaries remain offline and lossless
+[4/35] e2e\m6-batch-editor.spec.ts:51:1 › folder input preserves mixed-format paths and a multiple-file fallback is available without folder support
+[5/35] e2e\m6-batch-editor.spec.ts:68:1 › cancellation retains verified jobs and restarting cannot publish results from the cancelled generation
+[6/35] e2e\m6-parity-model.spec.ts:12:1 › imported preset identities are data, preserve reserved names and cannot modify object prototypes
+[7/35] e2e\m6-parity-model.spec.ts:21:1 › reserved imported operation IDs retain failure state and cannot become exportable
+[8/35] e2e\m6-parity-model.spec.ts:27:1 › all six original workflows retain original topology, settings and complete source/project recovery
+[9/35] e2e\m6-parity-model.spec.ts:39:1 › group clipboard retains connections and unknown fields, remaps identities and protects colliding original images
+[10/35] e2e\m6-parity-model.spec.ts:54:1 › history jumping preserves future states and accurately labels its bounded retained history
+[11/35] e2e\m6-parity-model.spec.ts:63:1 › shared screw fit is explicit, atomic, scoped to supported hardware and retained through undo
+[12/35] e2e\m6-preferences.spec.ts:4:1 › original local preferences, project names and export bytes survive editing and reload
+[13/35] e2e\m6-projects.spec.ts:12:1 › an original browser graph with IndexedDB-only artwork becomes a self-contained lossless saved project
+[14/35] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: native
+[15/35] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: old-browser
+[16/35] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: renamed-remesh
+[17/35] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: legacy-exporter
+[18/35] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: layout-offsets
+[19/35] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: shared-hardware-and-multiple-images
+[20/35] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: registered-colour-branches
+[21/35] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: style-banks
+[22/35] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: disabled-and-archived
+[23/35] e2e\m6-projects.spec.ts:31:33 › lossless Open → Edit → Save → Reopen and native replay: unknown-operation
+[24/35] e2e\m6-reliability.spec.ts:10:43 › actual processing and lossless project download survive unavailable browser storage
+[25/35] e2e\m6-reliability.spec.ts:10:43 › actual processing and lossless project download survive full browser storage
+[26/35] e2e\m6-reliability.spec.ts:29:1 › a hung threaded pool falls back to the real bundled single-thread engine and settles startup requests
+[27/35] e2e\m6-reliability.spec.ts:46:1 › history jumps, copied step groups and keyboard panel resizing operate through customer controls
+[28/35] e2e\m6-reliability.spec.ts:58:1 › damaged autosave is retained and an engine failure has actionable per-step diagnostics
+[29/35] e2e\m6-visuals.spec.ts:5:132 › M6 current customer controls are readable and accessible at 1366px in light mode
+[30/35] e2e\m6-visuals.spec.ts:5:132 › M6 current customer controls are readable and accessible at 1366px in dark mode
+[31/35] e2e\m6-visuals.spec.ts:5:132 › M6 current customer controls are readable and accessible at 1024px in light mode
+[32/35] e2e\m6-visuals.spec.ts:5:132 › M6 current customer controls are readable and accessible at 1024px in dark mode
+[33/35] e2e\m6-visuals.spec.ts:5:132 › M6 current customer controls are readable and accessible at 390px in light mode
+[34/35] e2e\m6-visuals.spec.ts:5:132 › M6 current customer controls are readable and accessible at 390px in dark mode
+[35/35] e2e\m6-visuals.spec.ts:15:1 › recovery download includes authoritative project bytes when rendering fails and persistent storage is blocked
+  35 passed (3.2m)

@@ -1,0 +1,9 @@
+{
+  "fixture": "docs/m6/fixtures/control-projects/tiles/bridge_islands-0.json",
+  "raw_file": "stencil_r1c2.stl",
+  "raw_components": 2,
+  "ordinary_export_blocked": true,
+  "manufacturing_zip_blocked": true,
+  "batch_item_failed_without_collection": true,
+  "reenabling_tile_island_bridges_restores_complete_export": true
+}

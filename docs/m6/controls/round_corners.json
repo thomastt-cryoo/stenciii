@@ -1,0 +1,147 @@
+{
+  "type": "round_corners",
+  "slots": 3,
+  "cases": [
+    {
+      "key": "round_corners.max_angle",
+      "schema": {
+        "default": 60,
+        "group": null,
+        "kind": "float",
+        "label": "Corners sharper than (deg)",
+        "max": 170,
+        "min": 10,
+        "name": "max_angle",
+        "step": 5
+      },
+      "initial": 60,
+      "changed": 140,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 140,
+          "sha256": "07fb449bfb63fb2874e86c5b877501aed31b41c5f0860f7de5918db645c8bbff",
+          "info": {
+            "height": 150,
+            "kind": "shapes",
+            "loops": 5,
+            "segments": 77,
+            "width": 200
+          },
+          "mime": "image/svg+xml",
+          "extension": "svg",
+          "independent": {
+            "format": "SVG",
+            "paths": 1,
+            "attributes": {
+              "viewBox": "0 0 200 150",
+              "width": "200",
+              "height": "150"
+            }
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/round_corners/max_angle-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "round_corners.radius",
+      "schema": {
+        "default": 3,
+        "group": null,
+        "kind": "float",
+        "label": "Arc radius (px)",
+        "max": 50,
+        "min": 0.5,
+        "name": "radius",
+        "step": 0.5
+      },
+      "initial": 3,
+      "changed": 10,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 10,
+          "sha256": "14d57588795dceb0b5ff021c34c0a54c1426601e4f77b354d5789970bcf05430",
+          "info": {
+            "height": 150,
+            "kind": "shapes",
+            "loops": 5,
+            "segments": 77,
+            "width": 200
+          },
+          "mime": "image/svg+xml",
+          "extension": "svg",
+          "independent": {
+            "format": "SVG",
+            "paths": 1,
+            "attributes": {
+              "viewBox": "0 0 200 150",
+              "width": "200",
+              "height": "150"
+            }
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/round_corners/radius-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "round_corners.round_concave",
+      "schema": {
+        "default": false,
+        "group": null,
+        "kind": "bool",
+        "label": "Also round empty spikes poking into the paint",
+        "name": "round_concave"
+      },
+      "initial": false,
+      "changed": true,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": true,
+          "sha256": "de899bef5d840b5992623b568db0581813fdf0adae23946f2566f37d09b23fc3",
+          "info": {
+            "height": 150,
+            "kind": "shapes",
+            "loops": 5,
+            "segments": 88,
+            "width": 200
+          },
+          "mime": "image/svg+xml",
+          "extension": "svg",
+          "independent": {
+            "format": "SVG",
+            "paths": 1,
+            "attributes": {
+              "viewBox": "0 0 200 150",
+              "width": "200",
+              "height": "150"
+            }
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/round_corners/round_concave-0.json"
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

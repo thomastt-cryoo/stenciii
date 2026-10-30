@@ -1,0 +1,155 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\mazin\\Downloads\\stencil\\web\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "../scripts/m6/production.config.ts",
+      "e2e/m3-editor.spec.ts",
+      "--grep",
+      "fourteen real preparation steps",
+      "--reporter=line,json"
+    ],
+    "configFile": "C:\\Users\\mazin\\Downloads\\stencil\\scripts\\m6\\production.config.ts",
+    "rootDir": "C:/Users/mazin/Downloads/stencil/web/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/mazin/Downloads/stencil/sandbox/m6/production-test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/mazin/Downloads/stencil/web/e2e",
+        "testIgnore": [
+          "**/studio.spec.ts",
+          "**/reliability.spec.ts",
+          "**/*-coverage.spec.ts",
+          "**/m6-controls.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\production-test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "C:\\Users\\mazin\\Downloads\\stencil\\web\\e2e",
+        "snapshotDir": "C:\\Users\\mazin\\Downloads\\stencil\\web\\e2e",
+        "testIgnore": [
+          "**/studio.spec.ts",
+          "**/reliability.spec.ts",
+          "**/*-coverage.spec.ts",
+          "**/m6-controls.spec.ts"
+        ],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:5210"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "m3-editor.spec.ts",
+      "file": "m3-editor.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "fourteen real preparation steps keep live output valid, SVGs inspectable, themes accessible and processing local",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9552,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T04:28:01.679Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "053f2f25766e8e1bca55-a2656206bdbb12ba1d1c",
+          "file": "m3-editor.spec.ts",
+          "line": 128,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-30T04:28:00.557Z",
+    "duration": 12519.188,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,5152 @@
+{
+  "slots": 38,
+  "cases": [
+    {
+      "key": "split_colours.invert",
+      "default": false,
+      "kind": "bool",
+      "category": "Colours and layers",
+      "control": "bool",
+      "dependencies": "Reverse the lightness order of the separated colours. It does not invert each individual mask.",
+      "changed_to": true,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "2599f601004dd9f8ea6f8ef1e2d459166f34d772c379fabafb645fdbe7ffe0ee",
+        "info": {
+          "coverage": 0.1,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "115c932f0683a5ad73824834914afbacb8d643a790a59b9310e1a658b3018373",
+        "info": {
+          "coverage": 0.1,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/split_colours-invert-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/split_colours-invert-after.json"
+    },
+    {
+      "key": "split_colours.colours",
+      "default": 10,
+      "kind": "int",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "category": "Colours and layers",
+      "control": "int",
+      "dependencies": "Maximum separated colours, from two to ten. The engine reduces images with more colours; an image with fewer colours produces fewer masks.",
+      "changed_to": 5,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "40e085f142f85ac781a8b381aafa4c1beb13223bbd1166cfaef5892ff24f5542",
+        "info": {
+          "height": 40,
+          "kind": "image",
+          "width": 400
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            400,
+            40
+          ]
+        }
+      },
+      "after": {
+        "sha256": "d06015ee230bbfedab0df64bf529edab2183f1af0f966c5ed8a1faa16143dab2",
+        "info": {
+          "height": 40,
+          "kind": "image",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            40
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/split_colours-colours-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/split_colours-colours-after.json"
+    },
+    {
+      "key": "split_colours.min_area",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 5,
+      "step": 0.05,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Remove separate regions smaller than this percentage of the whole image from each colour mask. Zero keeps them.",
+      "changed_to": 1,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "2599f601004dd9f8ea6f8ef1e2d459166f34d772c379fabafb645fdbe7ffe0ee",
+        "info": {
+          "coverage": 0.1,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "ca06f051ebbc6f2ecd04f39dc357374aa3c192297932ef18de047f945035f20f",
+        "info": {
+          "coverage": 0.1,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/split_colours-min_area-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/split_colours-min_area-after.json"
+    },
+    {
+      "key": "tone_patterns.plate_width_mm",
+      "default": 100,
+      "kind": "int",
+      "min": 20,
+      "max": 2000,
+      "step": 1,
+      "category": "Colours and layers",
+      "control": "int",
+      "dependencies": "Physical plate width used to convert pattern spacing in millimetres to working pixels. Match the width of the stencil you will build.",
+      "changed_to": 150,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "77d108ac1eb138e93310058ea0983d8d2be0c1e9802d7c4745ed1a2c621bc5fa",
+        "info": {
+          "coverage": 0.5045,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-plate_width_mm-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-plate_width_mm-after.json"
+    },
+    {
+      "key": "tone_patterns.invert",
+      "default": false,
+      "kind": "bool",
+      "category": "Colours and layers",
+      "control": "bool",
+      "dependencies": "Reverse lightness ranking before assigning solid paint, intermediate patterns and empty background.",
+      "changed_to": true,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "3bc99c4f42ee915d04ccfbf8b1a1cf623a3ab9b9241fd05d4e315ed73708489a",
+        "info": {
+          "coverage": 0.4995,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-invert-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-invert-after.json"
+    },
+    {
+      "key": "tone_patterns.kind",
+      "default": "auto",
+      "kind": "choice",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker"
+      ],
+      "category": "Colours and layers",
+      "control": "choice",
+      "dependencies": "Default pattern for intermediate tones. Auto lets the engine choose; darkest is solid paint and lightest is empty.",
+      "changed_to": "dots",
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "f9c2e1df9d04aa54fb7dd7c9f1254af5e1576c33b390c46077dda932487669be",
+        "info": {
+          "coverage": 0.4995,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-kind-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-kind-after.json"
+    },
+    {
+      "key": "tone_patterns.spacing_mm",
+      "default": 2.5,
+      "kind": "float",
+      "min": 0,
+      "max": 20,
+      "step": 0.1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Default distance between pattern marks in millimetres. Zero turns intermediate patterned tones into solid paint; use a positive spacing for patterns.",
+      "changed_to": 1.4,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "cad2fb0dd8543d059801f69bd727f885772f14a149172bafe07589a3cefacb39",
+        "info": {
+          "coverage": 0.5022,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-spacing_mm-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-spacing_mm-after.json"
+    },
+    {
+      "key": "tone_patterns.angle",
+      "default": 45,
+      "kind": "int",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "category": "Colours and layers",
+      "control": "int",
+      "dependencies": "Pattern angle in degrees. This changes lines and crosshatching where the selected pattern uses direction.",
+      "changed_to": 20,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "efeaacaedbd7d8a85ec8e3399ba5425703c5c66ad988a0002c18b14dddae5ce9",
+        "info": {
+          "coverage": 0.5005,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-angle-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-angle-after.json"
+    },
+    {
+      "key": "tone_patterns.kind_1",
+      "default": "auto",
+      "kind": "choice",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "category": "Colours and layers",
+      "control": "choice",
+      "dependencies": "Pattern for intermediate tone 1. Auto inherits the default pattern; solid and empty explicitly replace this tone. This override is used only if that tone exists.",
+      "changed_to": "dots",
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "f53f1e8c6cb21c25cc350feab073edf970b555763e3cfefde9c4e1042bcc15cc",
+        "info": {
+          "coverage": 0.4991,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-kind_1-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-kind_1-after.json"
+    },
+    {
+      "key": "tone_patterns.spacing_1",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 20,
+      "step": 0.1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Spacing override for intermediate tone 1, in millimetres. Zero inherits the default spacing. Used only for a pattern with spacing.",
+      "changed_to": 3.3,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "070ed214945c5c701ff8d66effa4981bed5f57f6a295aca6cb4b0d1933e3d821",
+        "info": {
+          "coverage": 0.498,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-spacing_1-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-spacing_1-after.json"
+    },
+    {
+      "key": "tone_patterns.cover_1",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 95,
+      "step": 1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Paint coverage override for intermediate tone 1, as a percentage. Zero uses the engine's tone-rank-based coverage; solid and empty patterns do not use coverage.",
+      "changed_to": 41,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "e6afb6e53bd66d8818ed668e8693650c70c082a2c5a054d32f097b5bde9c0fe0",
+        "info": {
+          "coverage": 0.4527,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-cover_1-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-cover_1-after.json"
+    },
+    {
+      "key": "tone_patterns.kind_2",
+      "default": "auto",
+      "kind": "choice",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "category": "Colours and layers",
+      "control": "choice",
+      "dependencies": "Pattern for intermediate tone 2. Auto inherits the default pattern; solid and empty explicitly replace this tone. This override is used only if that tone exists.",
+      "changed_to": "dots",
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "50f54f25a65cf9c0b900a4b62286ee59fdc5edf21ae9873645b575555047820d",
+        "info": {
+          "coverage": 0.501,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-kind_2-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-kind_2-after.json"
+    },
+    {
+      "key": "tone_patterns.spacing_2",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 20,
+      "step": 0.1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Spacing override for intermediate tone 2, in millimetres. Zero inherits the default spacing. Used only for a pattern with spacing.",
+      "changed_to": 3.3,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "c0d257e550a362ab0a17f110e207172fc1af24ac918011d4f8b55cb17b608c11",
+        "info": {
+          "coverage": 0.4981,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-spacing_2-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-spacing_2-after.json"
+    },
+    {
+      "key": "tone_patterns.cover_2",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 95,
+      "step": 1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Paint coverage override for intermediate tone 2, as a percentage. Zero uses the engine's tone-rank-based coverage; solid and empty patterns do not use coverage.",
+      "changed_to": 41,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "10a15cbd391e271aeed5267abe12ce22f7ebf23cc19108d97f85bc9b30d89c95",
+        "info": {
+          "coverage": 0.4649,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-cover_2-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-cover_2-after.json"
+    },
+    {
+      "key": "tone_patterns.kind_3",
+      "default": "auto",
+      "kind": "choice",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "category": "Colours and layers",
+      "control": "choice",
+      "dependencies": "Pattern for intermediate tone 3. Auto inherits the default pattern; solid and empty explicitly replace this tone. This override is used only if that tone exists.",
+      "changed_to": "dots",
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "01214044c369fe50081a2e925c16f6dd2f145d6b15e990141bcccf33b9e4e746",
+        "info": {
+          "coverage": 0.5008,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-kind_3-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-kind_3-after.json"
+    },
+    {
+      "key": "tone_patterns.spacing_3",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 20,
+      "step": 0.1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Spacing override for intermediate tone 3, in millimetres. Zero inherits the default spacing. Used only for a pattern with spacing.",
+      "changed_to": 3.3,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "6d3a5f0558de38bb30f16979ab5e8b2d03b54d85140f5ba2a3f2eaf24f6f209f",
+        "info": {
+          "coverage": 0.5008,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-spacing_3-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-spacing_3-after.json"
+    },
+    {
+      "key": "tone_patterns.cover_3",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 95,
+      "step": 1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Paint coverage override for intermediate tone 3, as a percentage. Zero uses the engine's tone-rank-based coverage; solid and empty patterns do not use coverage.",
+      "changed_to": 41,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "4c495018429395e7bdea36d0874bc7de8f5eb098766d6ddf9d3f4907d98797d8",
+        "info": {
+          "coverage": 0.4757,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-cover_3-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-cover_3-after.json"
+    },
+    {
+      "key": "tone_patterns.kind_4",
+      "default": "auto",
+      "kind": "choice",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "category": "Colours and layers",
+      "control": "choice",
+      "dependencies": "Pattern for intermediate tone 4. Auto inherits the default pattern; solid and empty explicitly replace this tone. This override is used only if that tone exists.",
+      "changed_to": "dots",
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "cc63d1d6fc0610e32c3667ff46555fb1939e448a7fd7de0c7bd3e40437dd588e",
+        "info": {
+          "coverage": 0.5024,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-kind_4-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-kind_4-after.json"
+    },
+    {
+      "key": "tone_patterns.spacing_4",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 20,
+      "step": 0.1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Spacing override for intermediate tone 4, in millimetres. Zero inherits the default spacing. Used only for a pattern with spacing.",
+      "changed_to": 3.3,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "dc094c6d7c324c5dbb5511c46e184b79032aa64b11ab53b584d2d2401e087fb1",
+        "info": {
+          "coverage": 0.4998,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-spacing_4-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-spacing_4-after.json"
+    },
+    {
+      "key": "tone_patterns.cover_4",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 95,
+      "step": 1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Paint coverage override for intermediate tone 4, as a percentage. Zero uses the engine's tone-rank-based coverage; solid and empty patterns do not use coverage.",
+      "changed_to": 41,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "23531c0e7ef8c0fe8589f63f96235375f4f9be2affc1c0ade48430d280080687",
+        "info": {
+          "coverage": 0.4871,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-cover_4-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-cover_4-after.json"
+    },
+    {
+      "key": "tone_patterns.kind_5",
+      "default": "auto",
+      "kind": "choice",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "category": "Colours and layers",
+      "control": "choice",
+      "dependencies": "Pattern for intermediate tone 5. Auto inherits the default pattern; solid and empty explicitly replace this tone. This override is used only if that tone exists.",
+      "changed_to": "dots",
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "3fe79243e7733030bddd6c98dfcf4bcdb7a7a8b3d9f9dbab070b356224b9f79b",
+        "info": {
+          "coverage": 0.5026,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-kind_5-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-kind_5-after.json"
+    },
+    {
+      "key": "tone_patterns.spacing_5",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 20,
+      "step": 0.1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Spacing override for intermediate tone 5, in millimetres. Zero inherits the default spacing. Used only for a pattern with spacing.",
+      "changed_to": 3.3,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "3fe79243e7733030bddd6c98dfcf4bcdb7a7a8b3d9f9dbab070b356224b9f79b",
+        "info": {
+          "coverage": 0.5026,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "b47e69545427d6dee981c4255eb9624c3df4ec04c2e18bef3874ec091b5f31e2",
+        "info": {
+          "coverage": 0.5033,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-spacing_5-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-spacing_5-after.json"
+    },
+    {
+      "key": "tone_patterns.cover_5",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 95,
+      "step": 1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Paint coverage override for intermediate tone 5, as a percentage. Zero uses the engine's tone-rank-based coverage; solid and empty patterns do not use coverage.",
+      "changed_to": 41,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "3fe79243e7733030bddd6c98dfcf4bcdb7a7a8b3d9f9dbab070b356224b9f79b",
+        "info": {
+          "coverage": 0.5026,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "aaaa77cd82219d7efb89c29929789405fec5f4df0a1cd742c95b148c1b9ed751",
+        "info": {
+          "coverage": 0.497,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-cover_5-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-cover_5-after.json"
+    },
+    {
+      "key": "tone_patterns.kind_6",
+      "default": "auto",
+      "kind": "choice",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "category": "Colours and layers",
+      "control": "choice",
+      "dependencies": "Pattern for intermediate tone 6. Auto inherits the default pattern; solid and empty explicitly replace this tone. This override is used only if that tone exists.",
+      "changed_to": "dots",
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "a0b44e51a8c97bd69f354008c8751f315c785a3f5fa5c7b83e630b6fa60b2298",
+        "info": {
+          "coverage": 0.5004,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-kind_6-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-kind_6-after.json"
+    },
+    {
+      "key": "tone_patterns.spacing_6",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 20,
+      "step": 0.1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Spacing override for intermediate tone 6, in millimetres. Zero inherits the default spacing. Used only for a pattern with spacing.",
+      "changed_to": 3.3,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "a0b44e51a8c97bd69f354008c8751f315c785a3f5fa5c7b83e630b6fa60b2298",
+        "info": {
+          "coverage": 0.5004,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "a57d077e5e8f033dfc61ca34ea9fdf0f1b26d2456b5e4bbfcd4ad93000b7dd1d",
+        "info": {
+          "coverage": 0.5,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-spacing_6-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-spacing_6-after.json"
+    },
+    {
+      "key": "tone_patterns.cover_6",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 95,
+      "step": 1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Paint coverage override for intermediate tone 6, as a percentage. Zero uses the engine's tone-rank-based coverage; solid and empty patterns do not use coverage.",
+      "changed_to": 41,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "a0b44e51a8c97bd69f354008c8751f315c785a3f5fa5c7b83e630b6fa60b2298",
+        "info": {
+          "coverage": 0.5004,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "5099d8b1d99348c5a4b98f3ce953bf4478f818af75a7ee7c842a00e252eb50db",
+        "info": {
+          "coverage": 0.5096,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-cover_6-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-cover_6-after.json"
+    },
+    {
+      "key": "tone_patterns.kind_7",
+      "default": "auto",
+      "kind": "choice",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "category": "Colours and layers",
+      "control": "choice",
+      "dependencies": "Pattern for intermediate tone 7. Auto inherits the default pattern; solid and empty explicitly replace this tone. This override is used only if that tone exists.",
+      "changed_to": "dots",
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "4c32b06e9efb83263458497a68e55041da2d878fca8bd86c63dad4791af93145",
+        "info": {
+          "coverage": 0.5026,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-kind_7-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-kind_7-after.json"
+    },
+    {
+      "key": "tone_patterns.spacing_7",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 20,
+      "step": 0.1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Spacing override for intermediate tone 7, in millimetres. Zero inherits the default spacing. Used only for a pattern with spacing.",
+      "changed_to": 3.3,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "4c32b06e9efb83263458497a68e55041da2d878fca8bd86c63dad4791af93145",
+        "info": {
+          "coverage": 0.5026,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "d25fa29f4d44387490e17259868c71c6b79c0792ff67654d46a9a4a94b6d1bbb",
+        "info": {
+          "coverage": 0.5043,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-spacing_7-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-spacing_7-after.json"
+    },
+    {
+      "key": "tone_patterns.cover_7",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 95,
+      "step": 1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Paint coverage override for intermediate tone 7, as a percentage. Zero uses the engine's tone-rank-based coverage; solid and empty patterns do not use coverage.",
+      "changed_to": 41,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "4c32b06e9efb83263458497a68e55041da2d878fca8bd86c63dad4791af93145",
+        "info": {
+          "coverage": 0.5026,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "6cd19fe8b1a907127795ac3c1973dd2eedafacfb516de909b4a615f507999a21",
+        "info": {
+          "coverage": 0.5201,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-cover_7-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-cover_7-after.json"
+    },
+    {
+      "key": "tone_patterns.kind_8",
+      "default": "auto",
+      "kind": "choice",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "category": "Colours and layers",
+      "control": "choice",
+      "dependencies": "Pattern for intermediate tone 8. Auto inherits the default pattern; solid and empty explicitly replace this tone. This override is used only if that tone exists.",
+      "changed_to": "dots",
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "6d727e00460b6bbc6b989baafee43d07e417a6a3e2d5cc629ec19d11a20c28f5",
+        "info": {
+          "coverage": 0.502,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+        "info": {
+          "coverage": 0.5013,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-kind_8-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-kind_8-after.json"
+    },
+    {
+      "key": "tone_patterns.spacing_8",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 20,
+      "step": 0.1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Spacing override for intermediate tone 8, in millimetres. Zero inherits the default spacing. Used only for a pattern with spacing.",
+      "changed_to": 3.3,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "6d727e00460b6bbc6b989baafee43d07e417a6a3e2d5cc629ec19d11a20c28f5",
+        "info": {
+          "coverage": 0.502,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "6f7a4013ca3278c317740315a71c51fa82c6d7be0a9221f76ca5f423b65eed04",
+        "info": {
+          "coverage": 0.501,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-spacing_8-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-spacing_8-after.json"
+    },
+    {
+      "key": "tone_patterns.cover_8",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 95,
+      "step": 1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Paint coverage override for intermediate tone 8, as a percentage. Zero uses the engine's tone-rank-based coverage; solid and empty patterns do not use coverage.",
+      "changed_to": 41,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "6d727e00460b6bbc6b989baafee43d07e417a6a3e2d5cc629ec19d11a20c28f5",
+        "info": {
+          "coverage": 0.502,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "after": {
+        "sha256": "72da1e188239dd99d1e4518f6347358389d54de097f5f86403c759a361c3a0f5",
+        "info": {
+          "coverage": 0.532,
+          "height": 120,
+          "kind": "mask",
+          "width": 200
+        },
+        "mime": "image/png",
+        "extension": "png",
+        "validation": {
+          "format": "PNG",
+          "size_px": [
+            200,
+            120
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/tone_patterns-cover_8-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/tone_patterns-cover_8-after.json"
+    },
+    {
+      "key": "colour_set.holes",
+      "default": 3,
+      "kind": "int",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "category": "Colours and layers",
+      "control": "int",
+      "dependencies": "Matching registration holes in each plate margin. Zero leaves the plates unchanged and disables pins.",
+      "changed_to": 2,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "34067c98d79e93b4a58aac9e211797821f95050841e83ea0f460e2512296a97c",
+        "info": {
+          "files": {
+            "colour_1.stl": 31084,
+            "colour_2.stl": 31084,
+            "colour_3.stl": 31084,
+            "pins_3x_d3.8mm.stl": 28284
+          },
+          "kind": "parts",
+          "meta": {
+            "colours": 3,
+            "registration": {
+              "diameter_mm": 4,
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "mime": "application/zip",
+        "extension": "zip",
+        "validation": {
+          "format": "ZIP",
+          "bytes": 122006,
+          "entries": [
+            {
+              "name": "colour_1.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                8
+              ],
+              "crc": 2241270743,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156176,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_2.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                8
+              ],
+              "crc": 545210853,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.90739415618,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_3.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                8
+              ],
+              "crc": 409538506,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156187,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "pins_3x_d3.8mm.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                8
+              ],
+              "crc": 1850354433,
+              "format": "binary STL",
+              "bytes": 28284,
+              "triangles": 564,
+              "vertices": 288,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  17.399999618530273,
+                  3.799999952316284,
+                  12
+                ]
+              ],
+              "size_mm": [
+                17.399999618530273,
+                3.799999952316284,
+                12
+              ],
+              "signed_volume_mm3": 407.116420441479,
+              "components": 3,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            }
+          ]
+        }
+      },
+      "after": {
+        "sha256": "38f3de8d32fc9b9a2c56ea5e302bc529408b9292e12d37a90e5dca22ac856684",
+        "info": {
+          "files": {
+            "colour_1.stl": 21284,
+            "colour_2.stl": 21284,
+            "colour_3.stl": 21284,
+            "pins_2x_d3.8mm.stl": 18884
+          },
+          "kind": "parts",
+          "meta": {
+            "colours": 3,
+            "registration": {
+              "diameter_mm": 4,
+              "holes": 2,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "mime": "application/zip",
+        "extension": "zip",
+        "validation": {
+          "format": "ZIP",
+          "bytes": 83206,
+          "entries": [
+            {
+              "name": "colour_1.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                8
+              ],
+              "crc": 1298556921,
+              "format": "binary STL",
+              "bytes": 21284,
+              "triangles": 424,
+              "vertices": 208,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20451.005028114832,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_2.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                8
+              ],
+              "crc": 2461316243,
+              "format": "binary STL",
+              "bytes": 21284,
+              "triangles": 424,
+              "vertices": 208,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20451.00502811484,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_3.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                8
+              ],
+              "crc": 3430484610,
+              "format": "binary STL",
+              "bytes": 21284,
+              "triangles": 424,
+              "vertices": 208,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20451.005028114836,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "pins_2x_d3.8mm.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                8
+              ],
+              "crc": 1645656231,
+              "format": "binary STL",
+              "bytes": 18884,
+              "triangles": 376,
+              "vertices": 192,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  10.600000381469727,
+                  3.799999952316284,
+                  12
+                ]
+              ],
+              "size_mm": [
+                10.600000381469727,
+                3.799999952316284,
+                12
+              ],
+              "signed_volume_mm3": 271.4109474978907,
+              "components": 2,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            }
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/colour_set-holes-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/colour_set-holes-after.json"
+    },
+    {
+      "key": "colour_set.hole_d",
+      "default": 4,
+      "kind": "float",
+      "min": 2,
+      "max": 12,
+      "step": 0.5,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Diameter of each registration hole. Each plate needs a margin at least this diameter plus 1 mm.",
+      "changed_to": 3.5,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "a00a75f65a6a064a392c9495d6f30bfe6cdd7941ba15bfcaf87aec458fda9e27",
+        "info": {
+          "files": {
+            "colour_1.stl": 31084,
+            "colour_2.stl": 31084,
+            "colour_3.stl": 31084,
+            "pins_3x_d3.8mm.stl": 28284
+          },
+          "kind": "parts",
+          "meta": {
+            "colours": 3,
+            "registration": {
+              "diameter_mm": 4,
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "mime": "application/zip",
+        "extension": "zip",
+        "validation": {
+          "format": "ZIP",
+          "bytes": 122006,
+          "entries": [
+            {
+              "name": "colour_1.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                10
+              ],
+              "crc": 2241270743,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156176,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_2.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                10
+              ],
+              "crc": 545210853,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.90739415618,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_3.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                10
+              ],
+              "crc": 409538506,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156187,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "pins_3x_d3.8mm.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                10
+              ],
+              "crc": 1850354433,
+              "format": "binary STL",
+              "bytes": 28284,
+              "triangles": 564,
+              "vertices": 288,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  17.399999618530273,
+                  3.799999952316284,
+                  12
+                ]
+              ],
+              "size_mm": [
+                17.399999618530273,
+                3.799999952316284,
+                12
+              ],
+              "signed_volume_mm3": 407.116420441479,
+              "components": 3,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            }
+          ]
+        }
+      },
+      "after": {
+        "sha256": "13a6f24624eee19c0fe72e48e2fd5d69b6fecdf87bf4832f842a0975d3a9d51a",
+        "info": {
+          "files": {
+            "colour_1.stl": 31084,
+            "colour_2.stl": 31084,
+            "colour_3.stl": 31084,
+            "pins_3x_d3.3mm.stl": 28284
+          },
+          "kind": "parts",
+          "meta": {
+            "colours": 3,
+            "registration": {
+              "diameter_mm": 3.5,
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "mime": "application/zip",
+        "extension": "zip",
+        "validation": {
+          "format": "ZIP",
+          "bytes": 122006,
+          "entries": [
+            {
+              "name": "colour_1.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                10
+              ],
+              "crc": 492974017,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20439.10106108519,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_2.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                10
+              ],
+              "crc": 1523392424,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20439.1010610852,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_3.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                10
+              ],
+              "crc": 73651087,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20439.101061085195,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "pins_3x_d3.3mm.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                10
+              ],
+              "crc": 1423800552,
+              "format": "binary STL",
+              "bytes": 28284,
+              "triangles": 564,
+              "vertices": 288,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  15.899999618530273,
+                  3.299999952316284,
+                  12
+                ]
+              ],
+              "size_mm": [
+                15.899999618530273,
+                3.299999952316284,
+                12
+              ],
+              "signed_volume_mm3": 307.02893059636926,
+              "components": 3,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            }
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/colour_set-hole_d-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/colour_set-hole_d-after.json"
+    },
+    {
+      "key": "colour_set.inset",
+      "default": 0,
+      "kind": "float",
+      "min": 0,
+      "max": 100,
+      "step": 0.5,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Hole centre distance from the outside edge. Zero chooses the middle of the margin band; holes must remain inside it.",
+      "changed_to": 5.5,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "fe12accd5e2359120f5a14ebdab11ff7a8d918106ad4a846386ce6bf71226da2",
+        "info": {
+          "files": {
+            "colour_1.stl": 31084,
+            "colour_2.stl": 31084,
+            "colour_3.stl": 31084,
+            "pins_3x_d3.8mm.stl": 28284
+          },
+          "kind": "parts",
+          "meta": {
+            "colours": 3,
+            "registration": {
+              "diameter_mm": 4,
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "mime": "application/zip",
+        "extension": "zip",
+        "validation": {
+          "format": "ZIP",
+          "bytes": 122006,
+          "entries": [
+            {
+              "name": "colour_1.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                12
+              ],
+              "crc": 2241270743,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156176,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_2.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                12
+              ],
+              "crc": 545210853,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.90739415618,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_3.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                12
+              ],
+              "crc": 409538506,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156187,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "pins_3x_d3.8mm.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                12
+              ],
+              "crc": 1850354433,
+              "format": "binary STL",
+              "bytes": 28284,
+              "triangles": 564,
+              "vertices": 288,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  17.399999618530273,
+                  3.799999952316284,
+                  12
+                ]
+              ],
+              "size_mm": [
+                17.399999618530273,
+                3.799999952316284,
+                12
+              ],
+              "signed_volume_mm3": 407.116420441479,
+              "components": 3,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            }
+          ]
+        }
+      },
+      "after": {
+        "sha256": "e6bd16f2e9618059add69bf58716fb91b22c40be5e7cc83f19e4b63acfcb4ca8",
+        "info": {
+          "files": {
+            "colour_1.stl": 31084,
+            "colour_2.stl": 31084,
+            "colour_3.stl": 31084,
+            "pins_3x_d3.8mm.stl": 28284
+          },
+          "kind": "parts",
+          "meta": {
+            "colours": 3,
+            "registration": {
+              "diameter_mm": 4,
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      62.5
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      62.5
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      62.5
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      62.5
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      62.5
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      5.5
+                    ],
+                    [
+                      94.5,
+                      62.5
+                    ]
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "mime": "application/zip",
+        "extension": "zip",
+        "validation": {
+          "format": "ZIP",
+          "bytes": 122006,
+          "entries": [
+            {
+              "name": "colour_1.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                12
+              ],
+              "crc": 461911180,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.90739488363,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_2.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                12
+              ],
+              "crc": 2478808751,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.90739488362,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_3.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                12
+              ],
+              "crc": 1427719541,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394883605,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "pins_3x_d3.8mm.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                12
+              ],
+              "crc": 1850354433,
+              "format": "binary STL",
+              "bytes": 28284,
+              "triangles": 564,
+              "vertices": 288,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  17.399999618530273,
+                  3.799999952316284,
+                  12
+                ]
+              ],
+              "size_mm": [
+                17.399999618530273,
+                3.799999952316284,
+                12
+              ],
+              "signed_volume_mm3": 407.116420441479,
+              "components": 3,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            }
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/colour_set-inset-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/colour_set-inset-after.json"
+    },
+    {
+      "key": "colour_set.pins",
+      "default": true,
+      "kind": "bool",
+      "category": "Colours and layers",
+      "control": "bool",
+      "dependencies": "Include a real alignment pin STL with the registered plates. Requires registration holes.",
+      "changed_to": false,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "d7ce5b0602a704e2ec5756d5e23529715347e54fddaebb4318f561201b8a255d",
+        "info": {
+          "files": {
+            "colour_1.stl": 31084,
+            "colour_2.stl": 31084,
+            "colour_3.stl": 31084,
+            "pins_3x_d3.8mm.stl": 28284
+          },
+          "kind": "parts",
+          "meta": {
+            "colours": 3,
+            "registration": {
+              "diameter_mm": 4,
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "mime": "application/zip",
+        "extension": "zip",
+        "validation": {
+          "format": "ZIP",
+          "bytes": 122006,
+          "entries": [
+            {
+              "name": "colour_1.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                14
+              ],
+              "crc": 2241270743,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156176,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_2.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                14
+              ],
+              "crc": 545210853,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.90739415618,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_3.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                14
+              ],
+              "crc": 409538506,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156187,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "pins_3x_d3.8mm.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                14
+              ],
+              "crc": 1850354433,
+              "format": "binary STL",
+              "bytes": 28284,
+              "triangles": 564,
+              "vertices": 288,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  17.399999618530273,
+                  3.799999952316284,
+                  12
+                ]
+              ],
+              "size_mm": [
+                17.399999618530273,
+                3.799999952316284,
+                12
+              ],
+              "signed_volume_mm3": 407.116420441479,
+              "components": 3,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            }
+          ]
+        }
+      },
+      "after": {
+        "sha256": "72f14a6f2a965003953963f3111f8a8998c0ae8899901313a00b638036e684d8",
+        "info": {
+          "files": {
+            "colour_1.stl": 31084,
+            "colour_2.stl": 31084,
+            "colour_3.stl": 31084
+          },
+          "kind": "parts",
+          "meta": {
+            "colours": 3,
+            "registration": {
+              "diameter_mm": 4,
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "mime": "application/zip",
+        "extension": "zip",
+        "validation": {
+          "format": "ZIP",
+          "bytes": 93601,
+          "entries": [
+            {
+              "name": "colour_1.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                14
+              ],
+              "crc": 2241270743,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156176,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_2.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                14
+              ],
+              "crc": 545210853,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.90739415618,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_3.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                14
+              ],
+              "crc": 409538506,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156187,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            }
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/colour_set-pins-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/colour_set-pins-after.json"
+    },
+    {
+      "key": "colour_set.pin_clearance",
+      "default": 0.2,
+      "kind": "float",
+      "min": 0,
+      "max": 1,
+      "step": 0.05,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Diametral clearance: subtracted from hole diameter to size the pin. Printer fit still needs physical calibration.",
+      "changed_to": 0.4,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "d713f2b3611145d6ae86015b87005671900137882e018dede4c0833ae1c4802b",
+        "info": {
+          "files": {
+            "colour_1.stl": 31084,
+            "colour_2.stl": 31084,
+            "colour_3.stl": 31084,
+            "pins_3x_d3.8mm.stl": 28284
+          },
+          "kind": "parts",
+          "meta": {
+            "colours": 3,
+            "registration": {
+              "diameter_mm": 4,
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "mime": "application/zip",
+        "extension": "zip",
+        "validation": {
+          "format": "ZIP",
+          "bytes": 122006,
+          "entries": [
+            {
+              "name": "colour_1.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                16
+              ],
+              "crc": 2241270743,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156176,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_2.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                16
+              ],
+              "crc": 545210853,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.90739415618,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_3.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                16
+              ],
+              "crc": 409538506,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156187,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "pins_3x_d3.8mm.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                16
+              ],
+              "crc": 1850354433,
+              "format": "binary STL",
+              "bytes": 28284,
+              "triangles": 564,
+              "vertices": 288,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  17.399999618530273,
+                  3.799999952316284,
+                  12
+                ]
+              ],
+              "size_mm": [
+                17.399999618530273,
+                3.799999952316284,
+                12
+              ],
+              "signed_volume_mm3": 407.116420441479,
+              "components": 3,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            }
+          ]
+        }
+      },
+      "after": {
+        "sha256": "c667d30c5affd39b60bb7c4fe0863a03946b5adea01c304df3ed6b7c8e5ced85",
+        "info": {
+          "files": {
+            "colour_1.stl": 31084,
+            "colour_2.stl": 31084,
+            "colour_3.stl": 31084,
+            "pins_3x_d3.6mm.stl": 28284
+          },
+          "kind": "parts",
+          "meta": {
+            "colours": 3,
+            "registration": {
+              "diameter_mm": 4,
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "mime": "application/zip",
+        "extension": "zip",
+        "validation": {
+          "format": "ZIP",
+          "bytes": 122006,
+          "entries": [
+            {
+              "name": "colour_1.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                16
+              ],
+              "crc": 2241270743,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156176,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_2.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                16
+              ],
+              "crc": 545210853,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.90739415618,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_3.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                16
+              ],
+              "crc": 409538506,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156187,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "pins_3x_d3.6mm.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                16
+              ],
+              "crc": 2111686744,
+              "format": "binary STL",
+              "bytes": 28284,
+              "triangles": 564,
+              "vertices": 288,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  16.799999237060547,
+                  3.5999999046325684,
+                  12
+                ]
+              ],
+              "size_mm": [
+                16.799999237060547,
+                3.5999999046325684,
+                12
+              ],
+              "signed_volume_mm3": 365.3898013127055,
+              "components": 3,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            }
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/colour_set-pin_clearance-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/colour_set-pin_clearance-after.json"
+    },
+    {
+      "key": "colour_set.pin_length",
+      "default": 12,
+      "kind": "float",
+      "min": 4,
+      "max": 60,
+      "step": 1,
+      "category": "Colours and layers",
+      "control": "float",
+      "dependencies": "Length of the alignment pins in millimetres.",
+      "changed_to": 18,
+      "reset": true,
+      "reopened": true,
+      "output_changed": true,
+      "before": {
+        "sha256": "1c3ece48e825f7ef77058e056312dbc8dc6e58fcff27f7f7b739dce49ee3dd6d",
+        "info": {
+          "files": {
+            "colour_1.stl": 31084,
+            "colour_2.stl": 31084,
+            "colour_3.stl": 31084,
+            "pins_3x_d3.8mm.stl": 28284
+          },
+          "kind": "parts",
+          "meta": {
+            "colours": 3,
+            "registration": {
+              "diameter_mm": 4,
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "mime": "application/zip",
+        "extension": "zip",
+        "validation": {
+          "format": "ZIP",
+          "bytes": 122006,
+          "entries": [
+            {
+              "name": "colour_1.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                20
+              ],
+              "crc": 2241270743,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156176,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_2.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                20
+              ],
+              "crc": 545210853,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.90739415618,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_3.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                20
+              ],
+              "crc": 409538506,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156187,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "pins_3x_d3.8mm.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                20
+              ],
+              "crc": 1850354433,
+              "format": "binary STL",
+              "bytes": 28284,
+              "triangles": 564,
+              "vertices": 288,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  17.399999618530273,
+                  3.799999952316284,
+                  12
+                ]
+              ],
+              "size_mm": [
+                17.399999618530273,
+                3.799999952316284,
+                12
+              ],
+              "signed_volume_mm3": 407.116420441479,
+              "components": 3,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            }
+          ]
+        }
+      },
+      "after": {
+        "sha256": "bc95d45323a6d890db8b1a322e54007e00ff1d41d7a232f9808e30455d9616af",
+        "info": {
+          "files": {
+            "colour_1.stl": 31084,
+            "colour_2.stl": 31084,
+            "colour_3.stl": 31084,
+            "pins_3x_d3.8mm.stl": 28284
+          },
+          "kind": "parts",
+          "meta": {
+            "colours": 3,
+            "registration": {
+              "diameter_mm": 4,
+              "holes": 3,
+              "plates": [
+                {
+                  "file": "colour_1.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_2.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                },
+                {
+                  "file": "colour_3.stl",
+                  "flip": false,
+                  "painting_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ],
+                  "printed_centres_mm": [
+                    [
+                      5,
+                      5
+                    ],
+                    [
+                      95,
+                      5
+                    ],
+                    [
+                      95,
+                      63
+                    ]
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "mime": "application/zip",
+        "extension": "zip",
+        "validation": {
+          "format": "ZIP",
+          "bytes": 122006,
+          "entries": [
+            {
+              "name": "colour_1.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                20
+              ],
+              "crc": 2241270743,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156176,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_2.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                20
+              ],
+              "crc": 545210853,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.90739415618,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "colour_3.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                20
+              ],
+              "crc": 409538506,
+              "format": "binary STL",
+              "bytes": 31084,
+              "triangles": 620,
+              "vertices": 304,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  68,
+                  3.200000047683716
+                ]
+              ],
+              "size_mm": [
+                100,
+                68,
+                3.200000047683716
+              ],
+              "signed_volume_mm3": 20410.907394156187,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "pins_3x_d3.8mm.stl",
+              "date_time": [
+                2026,
+                10,
+                30,
+                6,
+                4,
+                20
+              ],
+              "crc": 3011955623,
+              "format": "binary STL",
+              "bytes": 28284,
+              "triangles": 564,
+              "vertices": 288,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  17.399999618530273,
+                  3.799999952316284,
+                  18
+                ]
+              ],
+              "size_mm": [
+                17.399999618530273,
+                3.799999952316284,
+                18
+              ],
+              "signed_volume_mm3": 610.6746306622188,
+              "components": 3,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            }
+          ]
+        }
+      },
+      "project_before": "sandbox/m6/replay/m5/a/colour_set-pin_length-before.json",
+      "project_after": "sandbox/m6/replay/m5/a/colour_set-pin_length-after.json"
+    }
+  ]
+}

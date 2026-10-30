@@ -1,0 +1,4715 @@
+{
+  "type": "tile_layout",
+  "slots": 12,
+  "cases": [
+    {
+      "key": "tile_layout.width_mm",
+      "schema": {
+        "default": 100,
+        "group": "Plate",
+        "kind": "float",
+        "label": "Plate width (mm)",
+        "max": 2000,
+        "min": 20,
+        "name": "width_mm",
+        "step": 1
+      },
+      "initial": 180,
+      "changed": 220,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 220,
+          "sha256": "5e0c427d6e234de86c57fa50f620615334771d5797727d467495e43f2c3b4cf5",
+          "info": {
+            "files": {
+              "connector_hex_d3mm.stl": 1084,
+              "stencil_r1c1.stl": 89684,
+              "stencil_r1c2.stl": 77684,
+              "stencil_r2c1.stl": 19084,
+              "stencil_r2c2.stl": 18484
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    104,
+                    11.5,
+                    116,
+                    16.7
+                  ],
+                  [
+                    104,
+                    52,
+                    116,
+                    57.2
+                  ],
+                  [
+                    104,
+                    66,
+                    116,
+                    71.19999999999999
+                  ],
+                  [
+                    104,
+                    105.5,
+                    116,
+                    110.69999999999999
+                  ],
+                  [
+                    104,
+                    116,
+                    116,
+                    121.19999999999999
+                  ],
+                  [
+                    104,
+                    157,
+                    116,
+                    162.2
+                  ],
+                  [
+                    11.5,
+                    81,
+                    16.7,
+                    93
+                  ],
+                  [
+                    38.5,
+                    81,
+                    43.7,
+                    93
+                  ],
+                  [
+                    66,
+                    81,
+                    71.19999999999999,
+                    93
+                  ],
+                  [
+                    93.5,
+                    81,
+                    98.69999999999999,
+                    93
+                  ],
+                  [
+                    121.5,
+                    81,
+                    126.69999999999999,
+                    93
+                  ],
+                  [
+                    148.5,
+                    81,
+                    153.7,
+                    93
+                  ],
+                  [
+                    176,
+                    81,
+                    181.2,
+                    93
+                  ],
+                  [
+                    203.5,
+                    81,
+                    208.7,
+                    93
+                  ]
+                ],
+                "flip": false,
+                "h": 174,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      87
+                    ],
+                    "role": "tile",
+                    "size": [
+                      110,
+                      87
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      110,
+                      87
+                    ],
+                    "role": "tile",
+                    "size": [
+                      110,
+                      87
+                    ]
+                  },
+                  {
+                    "file": "stencil_r2c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      110,
+                      87
+                    ]
+                  },
+                  {
+                    "file": "stencil_r2c2.stl",
+                    "origin": [
+                      110,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      110,
+                      87
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    110,
+                    0,
+                    87
+                  ],
+                  [
+                    0,
+                    110,
+                    87,
+                    174
+                  ],
+                  [
+                    1,
+                    87,
+                    0,
+                    110
+                  ],
+                  [
+                    1,
+                    87,
+                    110,
+                    220
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 220
+              },
+              "tiling": {
+                "bridges": 23,
+                "connectors": 14,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  2
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 23,
+                "paint_under_blocks_mm2": 549.4,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 4
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 206639,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  2
+                ],
+                "crc": 1792416142,
+                "format": "binary STL",
+                "bytes": 89684,
+                "triangles": 1792,
+                "vertices": 896,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    110,
+                    87,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  110,
+                  87,
+                  6
+                ],
+                "signed_volume_mm3": 35950.915652508374,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  2
+                ],
+                "crc": 3161298939,
+                "format": "binary STL",
+                "bytes": 77684,
+                "triangles": 1552,
+                "vertices": 776,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    110,
+                    87,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  110,
+                  87,
+                  6
+                ],
+                "signed_volume_mm3": 33083.29871222129,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r2c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  2
+                ],
+                "crc": 606761716,
+                "format": "binary STL",
+                "bytes": 19084,
+                "triangles": 380,
+                "vertices": 190,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    110,
+                    87,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  110,
+                  87,
+                  6
+                ],
+                "signed_volume_mm3": 33569.2586284652,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r2c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  2
+                ],
+                "crc": 256716429,
+                "format": "binary STL",
+                "bytes": 18484,
+                "triangles": 368,
+                "vertices": 184,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    110,
+                    87,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  110,
+                  87,
+                  6
+                ],
+                "signed_volume_mm3": 31951.191465939195,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_hex_d3mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  2
+                ],
+                "crc": 3450284195,
+                "format": "binary STL",
+                "bytes": 1084,
+                "triangles": 20,
+                "vertices": 12,
+                "bounds_mm": [
+                  [
+                    -1.5,
+                    -1.299038052558899,
+                    0
+                  ],
+                  [
+                    1.5,
+                    1.299038052558899,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  3,
+                  2.598076105117798,
+                  11
+                ],
+                "signed_volume_mm3": 64.3023836016655,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/width_mm-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tile_layout.margin_mm",
+      "schema": {
+        "default": 8,
+        "group": "Plate",
+        "kind": "float",
+        "label": "Margin (mm)",
+        "max": 500,
+        "min": 0,
+        "name": "margin_mm",
+        "step": 1
+      },
+      "initial": 18,
+      "changed": 22,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 22,
+          "sha256": "e89802d672d74ce24617ce2bfc8e49e180d35f3facb58e5f9c935ee964b951f0",
+          "info": {
+            "files": {
+              "connector_hex_d3mm.stl": 1084,
+              "stencil_r1c1.stl": 71684,
+              "stencil_r1c2.stl": 58084
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    11.5,
+                    96,
+                    16.7
+                  ],
+                  [
+                    84,
+                    48.199999999999996,
+                    96,
+                    53.4
+                  ],
+                  [
+                    84,
+                    58.4,
+                    96,
+                    63.6
+                  ],
+                  [
+                    84,
+                    87.6,
+                    96,
+                    92.79999999999998
+                  ],
+                  [
+                    84,
+                    128.79999999999998,
+                    96,
+                    133.99999999999997
+                  ]
+                ],
+                "flip": false,
+                "h": 146,
+                "layer": 0.2,
+                "margin": 22,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      146
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      146
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    146
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 54.4,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 131237,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  4
+                ],
+                "crc": 1569784924,
+                "format": "binary STL",
+                "bytes": 71684,
+                "triangles": 1432,
+                "vertices": 718,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    146,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  146,
+                  6
+                ],
+                "signed_volume_mm3": 52876.33418730362,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  4
+                ],
+                "crc": 1507450109,
+                "format": "binary STL",
+                "bytes": 58084,
+                "triangles": 1160,
+                "vertices": 582,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    146,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  146,
+                  6
+                ],
+                "signed_volume_mm3": 50429.0439434165,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_hex_d3mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  4
+                ],
+                "crc": 3450284195,
+                "format": "binary STL",
+                "bytes": 1084,
+                "triangles": 20,
+                "vertices": 12,
+                "bounds_mm": [
+                  [
+                    -1.5,
+                    -1.299038052558899,
+                    0
+                  ],
+                  [
+                    1.5,
+                    1.299038052558899,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  3,
+                  2.598076105117798,
+                  11
+                ],
+                "signed_volume_mm3": 64.3023836016655,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/margin_mm-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tile_layout.max_x",
+      "schema": {
+        "default": 150,
+        "group": "Tiles",
+        "kind": "float",
+        "label": "Largest tile width (mm)",
+        "max": 2000,
+        "min": 0,
+        "name": "max_x",
+        "step": 5
+      },
+      "initial": 110,
+      "changed": 80,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 80,
+          "sha256": "54957914af4eb51b523894508d8cec9bdd7c015bf5d8f0c2e49ad981047c68c1",
+          "info": {
+            "files": {
+              "connector_hex_d3mm.stl": 1084,
+              "stencil_r1c1.stl": 40284,
+              "stencil_r1c2.stl": 74484,
+              "stencil_r1c3.stl": 30284
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    54,
+                    11.5,
+                    66,
+                    16.7
+                  ],
+                  [
+                    54,
+                    48.800000000000004,
+                    66,
+                    54.00000000000001
+                  ],
+                  [
+                    54,
+                    81.20000000000002,
+                    66,
+                    86.4
+                  ],
+                  [
+                    54,
+                    88.4,
+                    66,
+                    93.6
+                  ],
+                  [
+                    54,
+                    127.20000000000002,
+                    66,
+                    132.4
+                  ],
+                  [
+                    114,
+                    11.5,
+                    126,
+                    16.7
+                  ],
+                  [
+                    114,
+                    40.800000000000004,
+                    126,
+                    46.00000000000001
+                  ],
+                  [
+                    114,
+                    69.60000000000001,
+                    126,
+                    74.8
+                  ],
+                  [
+                    114,
+                    89.4,
+                    126,
+                    94.6
+                  ],
+                  [
+                    114,
+                    127.20000000000002,
+                    126,
+                    132.4
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      60,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      60,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      60,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c3.stl",
+                    "origin": [
+                      120,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      60,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    60,
+                    0,
+                    144
+                  ],
+                  [
+                    0,
+                    120,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 14,
+                "connectors": 10,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  3,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 14,
+                "paint_under_blocks_mm2": 367.7,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 3
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 146638,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  4
+                ],
+                "crc": 320662844,
+                "format": "binary STL",
+                "bytes": 40284,
+                "triangles": 804,
+                "vertices": 404,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    60,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  60,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 36714.76413148526,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  4
+                ],
+                "crc": 1068848573,
+                "format": "binary STL",
+                "bytes": 74484,
+                "triangles": 1488,
+                "vertices": 736,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    60,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  60,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 26829.411620890365,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c3.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  4
+                ],
+                "crc": 3259334520,
+                "format": "binary STL",
+                "bytes": 30284,
+                "triangles": 604,
+                "vertices": 304,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    60,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  60,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 34055.9545919906,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_hex_d3mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  4
+                ],
+                "crc": 3450284195,
+                "format": "binary STL",
+                "bytes": 1084,
+                "triangles": 20,
+                "vertices": 12,
+                "bounds_mm": [
+                  [
+                    -1.5,
+                    -1.299038052558899,
+                    0
+                  ],
+                  [
+                    1.5,
+                    1.299038052558899,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  3,
+                  2.598076105117798,
+                  11
+                ],
+                "signed_volume_mm3": 64.3023836016655,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/max_x-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tile_layout.max_y",
+      "schema": {
+        "default": 150,
+        "group": "Tiles",
+        "kind": "float",
+        "label": "Largest tile height (mm)",
+        "max": 2000,
+        "min": 0,
+        "name": "max_y",
+        "step": 5
+      },
+      "initial": 160,
+      "changed": 80,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 80,
+          "sha256": "10fe1ec36b6d6a497cdd3183724850a4a258ad2cb89b16c8c01050549a174f03",
+          "info": {
+            "files": {
+              "connector_hex_d3mm.stl": 1084,
+              "stencil_r1c1.stl": 70684,
+              "stencil_r1c2.stl": 58684,
+              "stencil_r2c1.stl": 16684,
+              "stencil_r2c2.stl": 14484
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    9.5,
+                    96,
+                    14.7
+                  ],
+                  [
+                    84,
+                    42.8,
+                    96,
+                    48
+                  ],
+                  [
+                    84,
+                    54,
+                    96,
+                    59.2
+                  ],
+                  [
+                    84,
+                    86.5,
+                    96,
+                    91.69999999999999
+                  ],
+                  [
+                    84,
+                    114.80000000000001,
+                    96,
+                    120
+                  ],
+                  [
+                    84,
+                    129,
+                    96,
+                    134.2
+                  ],
+                  [
+                    12.5,
+                    66,
+                    17.7,
+                    78
+                  ],
+                  [
+                    42,
+                    66,
+                    47.2,
+                    78
+                  ],
+                  [
+                    76,
+                    66,
+                    81.19999999999999,
+                    78
+                  ],
+                  [
+                    114.80000000000001,
+                    66,
+                    120,
+                    78
+                  ],
+                  [
+                    132,
+                    66,
+                    137.2,
+                    78
+                  ],
+                  [
+                    162,
+                    66,
+                    167.2,
+                    78
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      72
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      72
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      72
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      72
+                    ]
+                  },
+                  {
+                    "file": "stencil_r2c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      72
+                    ]
+                  },
+                  {
+                    "file": "stencil_r2c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      72
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    72
+                  ],
+                  [
+                    0,
+                    90,
+                    72,
+                    144
+                  ],
+                  [
+                    1,
+                    72,
+                    0,
+                    90
+                  ],
+                  [
+                    1,
+                    72,
+                    90,
+                    180
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 14,
+                "connectors": 12,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  2
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 14,
+                "paint_under_blocks_mm2": 417.3,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 4
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 162239,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  6
+                ],
+                "crc": 1587840254,
+                "format": "binary STL",
+                "bytes": 70684,
+                "triangles": 1412,
+                "vertices": 708,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    72,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  72,
+                  6
+                ],
+                "signed_volume_mm3": 25601.282606527056,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  6
+                ],
+                "crc": 35369870,
+                "format": "binary STL",
+                "bytes": 58684,
+                "triangles": 1172,
+                "vertices": 588,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    72,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  72,
+                  6
+                ],
+                "signed_volume_mm3": 23790.250878119696,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r2c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  6
+                ],
+                "crc": 1496821479,
+                "format": "binary STL",
+                "bytes": 16684,
+                "triangles": 332,
+                "vertices": 166,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    72,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  72,
+                  6
+                ],
+                "signed_volume_mm3": 24393.447297638384,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r2c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  6
+                ],
+                "crc": 1604249481,
+                "format": "binary STL",
+                "bytes": 14484,
+                "triangles": 288,
+                "vertices": 146,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    72,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  72,
+                  6
+                ],
+                "signed_volume_mm3": 23276.197357499,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_hex_d3mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  6
+                ],
+                "crc": 3450284195,
+                "format": "binary STL",
+                "bytes": 1084,
+                "triangles": 20,
+                "vertices": 12,
+                "bounds_mm": [
+                  [
+                    -1.5,
+                    -1.299038052558899,
+                    0
+                  ],
+                  [
+                    1.5,
+                    1.299038052558899,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  3,
+                  2.598076105117798,
+                  11
+                ],
+                "signed_volume_mm3": 64.3023836016655,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/max_y-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tile_layout.seam_shift",
+      "schema": {
+        "default": 8,
+        "group": "Tiles",
+        "kind": "float",
+        "label": "Seam may move up to (mm)",
+        "max": 50,
+        "min": 0,
+        "name": "seam_shift",
+        "step": 1
+      },
+      "initial": 10,
+      "changed": 0,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 0,
+          "sha256": "b31d411ce8b892e915816ea81f7a153ee819145d7b4a268459b8730cf2c3ada8",
+          "info": {
+            "files": {
+              "connector_hex_d3mm.stl": 1084,
+              "stencil_r1c1.stl": 4284,
+              "stencil_r1c2.stl": 4284
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    44,
+                    24.799999999999997,
+                    56,
+                    30
+                  ],
+                  [
+                    44,
+                    50,
+                    56,
+                    55.2
+                  ]
+                ],
+                "flip": false,
+                "h": 60,
+                "layer": 0.2,
+                "margin": 0,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      50,
+                      60
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      50,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      50,
+                      60
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    50,
+                    0,
+                    60
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 100
+              },
+              "tiling": {
+                "bridges": 0,
+                "connectors": 2,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 0,
+                "paint_under_blocks_mm2": 20.8,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 10037,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  8
+                ],
+                "crc": 1091547005,
+                "format": "binary STL",
+                "bytes": 4284,
+                "triangles": 84,
+                "vertices": 44,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    50,
+                    60,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  50,
+                  60,
+                  6
+                ],
+                "signed_volume_mm3": 17344.17594233036,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  8
+                ],
+                "crc": 1184347357,
+                "format": "binary STL",
+                "bytes": 4284,
+                "triangles": 84,
+                "vertices": 44,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    50,
+                    60,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  50,
+                  60,
+                  6
+                ],
+                "signed_volume_mm3": 17344.175557808885,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_hex_d3mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  8
+                ],
+                "crc": 3450284195,
+                "format": "binary STL",
+                "bytes": 1084,
+                "triangles": 20,
+                "vertices": 12,
+                "bounds_mm": [
+                  [
+                    -1.5,
+                    -1.299038052558899,
+                    0
+                  ],
+                  [
+                    1.5,
+                    1.299038052558899,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  3,
+                  2.598076105117798,
+                  11
+                ],
+                "signed_volume_mm3": 64.3023836016655,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/seam_shift-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tile_layout.connector",
+      "schema": {
+        "choices": [
+          "hex",
+          "round"
+        ],
+        "default": "hex",
+        "group": "Connectors",
+        "kind": "choice",
+        "label": "Connector shape",
+        "name": "connector"
+      },
+      "initial": "hex",
+      "changed": "round",
+      "choices": [
+        "hex",
+        "round"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "hex",
+          "sha256": "474f87788ec6646ce13ab43659b5736f6f00a01a5e447214910c4441bc64e695",
+          "info": {
+            "files": {
+              "connector_hex_d3mm.stl": 1084,
+              "stencil_r1c1.stl": 70484,
+              "stencil_r1c2.stl": 57484
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    11.5,
+                    96,
+                    16.7
+                  ],
+                  [
+                    84,
+                    44.800000000000004,
+                    96,
+                    50.00000000000001
+                  ],
+                  [
+                    84,
+                    81.20000000000002,
+                    96,
+                    86.4
+                  ],
+                  [
+                    84,
+                    88.4,
+                    96,
+                    93.6
+                  ],
+                  [
+                    84,
+                    127.20000000000002,
+                    96,
+                    132.4
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 75.4,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 129437,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  10
+                ],
+                "crc": 2194170096,
+                "format": "binary STL",
+                "bytes": 70484,
+                "triangles": 1408,
+                "vertices": 706,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 48584.98914427432,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  10
+                ],
+                "crc": 872738937,
+                "format": "binary STL",
+                "bytes": 57484,
+                "triangles": 1148,
+                "vertices": 576,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 46010.66365391026,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_hex_d3mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  10
+                ],
+                "crc": 3450284195,
+                "format": "binary STL",
+                "bytes": 1084,
+                "triangles": 20,
+                "vertices": 12,
+                "bounds_mm": [
+                  [
+                    -1.5,
+                    -1.299038052558899,
+                    0
+                  ],
+                  [
+                    1.5,
+                    1.299038052558899,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  3,
+                  2.598076105117798,
+                  11
+                ],
+                "signed_volume_mm3": 64.3023836016655,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/connector-0.json"
+        },
+        {
+          "value": "round",
+          "sha256": "662347d9cf7924170f29230f5b007aaa482b76e65c43d35d946e20c597ff35ea",
+          "info": {
+            "files": {
+              "connector_round_d3mm.stl": 9484,
+              "stencil_r1c1.stl": 112484,
+              "stencil_r1c2.stl": 99484
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    11.5,
+                    96,
+                    16.7
+                  ],
+                  [
+                    84,
+                    44.800000000000004,
+                    96,
+                    50.00000000000001
+                  ],
+                  [
+                    84,
+                    81.20000000000002,
+                    96,
+                    86.4
+                  ],
+                  [
+                    84,
+                    88.4,
+                    96,
+                    93.6
+                  ],
+                  [
+                    84,
+                    127.20000000000002,
+                    96,
+                    132.4
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 75.4,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 221841,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  10
+                ],
+                "crc": 3328155809,
+                "format": "binary STL",
+                "bytes": 112484,
+                "triangles": 2248,
+                "vertices": 1126,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 48543.935593326736,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  10
+                ],
+                "crc": 3474437253,
+                "format": "binary STL",
+                "bytes": 99484,
+                "triangles": 1988,
+                "vertices": 996,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 45969.6101029627,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_round_d3mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  10
+                ],
+                "crc": 1657999402,
+                "format": "binary STL",
+                "bytes": 9484,
+                "triangles": 188,
+                "vertices": 96,
+                "bounds_mm": [
+                  [
+                    -1.5,
+                    -1.5,
+                    0
+                  ],
+                  [
+                    1.5,
+                    1.5,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  3,
+                  3,
+                  11
+                ],
+                "signed_volume_mm3": 77.53255644019974,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/connector-1.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tile_layout.connector_d",
+      "schema": {
+        "choices": [
+          "2.5",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "default": "3",
+        "group": "Connectors",
+        "kind": "choice",
+        "label": "Connector diameter (mm)",
+        "name": "connector_d"
+      },
+      "initial": "3",
+      "changed": "4",
+      "choices": [
+        "2.5",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "2.5",
+          "sha256": "c4f55601a568a39835fc579092b981b7e3ed45019fee2571e72fe4c88492a4e9",
+          "info": {
+            "files": {
+              "connector_hex_d2.5mm.stl": 1084,
+              "stencil_r1c1.stl": 78684,
+              "stencil_r1c2.stl": 66484
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    12.5,
+                    96,
+                    17.2
+                  ],
+                  [
+                    84,
+                    44.800000000000004,
+                    96,
+                    49.50000000000001
+                  ],
+                  [
+                    84,
+                    57.6,
+                    96,
+                    62.300000000000004
+                  ],
+                  [
+                    84,
+                    86.4,
+                    96,
+                    91.1
+                  ],
+                  [
+                    84,
+                    127.20000000000002,
+                    96,
+                    131.9
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 10,
+                "top": 10,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 62.4,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 2,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 146641,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  12
+                ],
+                "crc": 1090759835,
+                "format": "binary STL",
+                "bytes": 78684,
+                "triangles": 1572,
+                "vertices": 788,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    10
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  10
+                ],
+                "signed_volume_mm3": 81144.58513878557,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  12
+                ],
+                "crc": 453738660,
+                "format": "binary STL",
+                "bytes": 66484,
+                "triangles": 1328,
+                "vertices": 666,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    10
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  10
+                ],
+                "signed_volume_mm3": 76496.15501585486,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_hex_d2.5mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  12
+                ],
+                "crc": 270686320,
+                "format": "binary STL",
+                "bytes": 1084,
+                "triangles": 20,
+                "vertices": 12,
+                "bounds_mm": [
+                  [
+                    -1.25,
+                    -1.0825318098068237,
+                    0
+                  ],
+                  [
+                    1.25,
+                    1.0825318098068237,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  2.5,
+                  2.1650636196136475,
+                  11
+                ],
+                "signed_volume_mm3": 44.65443715453147,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/connector_d-0.json"
+        },
+        {
+          "value": "3",
+          "sha256": "4da7e1402c0d605830e8e32bbe91e2fa8d66ea51549bf8799f55aa2745da4085",
+          "info": {
+            "files": {
+              "connector_hex_d3mm.stl": 1084,
+              "stencil_r1c1.stl": 76484,
+              "stencil_r1c2.stl": 63484
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    11.5,
+                    96,
+                    16.7
+                  ],
+                  [
+                    84,
+                    44.800000000000004,
+                    96,
+                    50.00000000000001
+                  ],
+                  [
+                    84,
+                    81.20000000000002,
+                    96,
+                    86.4
+                  ],
+                  [
+                    84,
+                    88.4,
+                    96,
+                    93.6
+                  ],
+                  [
+                    84,
+                    127.20000000000002,
+                    96,
+                    132.4
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 10,
+                "top": 10,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 75.4,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 2,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 141437,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  12
+                ],
+                "crc": 310971814,
+                "format": "binary STL",
+                "bytes": 76484,
+                "triangles": 1528,
+                "vertices": 766,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    10
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  10
+                ],
+                "signed_volume_mm3": 80908.47112559223,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  12
+                ],
+                "crc": 3258938146,
+                "format": "binary STL",
+                "bytes": 63484,
+                "triangles": 1268,
+                "vertices": 636,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    10
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  10
+                ],
+                "signed_volume_mm3": 76617.92864165208,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_hex_d3mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  12
+                ],
+                "crc": 3450284195,
+                "format": "binary STL",
+                "bytes": 1084,
+                "triangles": 20,
+                "vertices": 12,
+                "bounds_mm": [
+                  [
+                    -1.5,
+                    -1.299038052558899,
+                    0
+                  ],
+                  [
+                    1.5,
+                    1.299038052558899,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  3,
+                  2.598076105117798,
+                  11
+                ],
+                "signed_volume_mm3": 64.3023836016655,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/connector_d-1.json"
+        },
+        {
+          "value": "4",
+          "sha256": "a6b96d35d9ba2cf320b5652ca013bc32b558865fabefd95fb33f5cd98756c848",
+          "info": {
+            "files": {
+              "connector_hex_d4mm.stl": 1084,
+              "stencil_r1c1.stl": 68684,
+              "stencil_r1c2.stl": 58084
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    11.5,
+                    96,
+                    17.7
+                  ],
+                  [
+                    84,
+                    44.800000000000004,
+                    96,
+                    51.00000000000001
+                  ],
+                  [
+                    84,
+                    79.60000000000001,
+                    96,
+                    85.8
+                  ],
+                  [
+                    84,
+                    88.4,
+                    96,
+                    94.6
+                  ],
+                  [
+                    84,
+                    126.20000000000002,
+                    96,
+                    132.4
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 10,
+                "top": 10,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 93.6,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 128237,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  12
+                ],
+                "crc": 1747155377,
+                "format": "binary STL",
+                "bytes": 68684,
+                "triangles": 1372,
+                "vertices": 688,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    10
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  10
+                ],
+                "signed_volume_mm3": 81020.32628733001,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  12
+                ],
+                "crc": 3918886565,
+                "format": "binary STL",
+                "bytes": 58084,
+                "triangles": 1160,
+                "vertices": 582,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    10
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  10
+                ],
+                "signed_volume_mm3": 76819.06271887998,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_hex_d4mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  12
+                ],
+                "crc": 1602184234,
+                "format": "binary STL",
+                "bytes": 1084,
+                "triangles": 20,
+                "vertices": 12,
+                "bounds_mm": [
+                  [
+                    -2,
+                    -1.7320507764816284,
+                    0
+                  ],
+                  [
+                    2,
+                    1.7320507764816284,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  4,
+                  3.464101552963257,
+                  11
+                ],
+                "signed_volume_mm3": 114.31535124778748,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/connector_d-2.json"
+        },
+        {
+          "value": "5",
+          "sha256": "bf4f8fc140452945de402d48acfa2ff6298ac094a7531bb384804b5ec07d922b",
+          "info": {
+            "files": {
+              "connector_hex_d5mm.stl": 1084,
+              "stencil_r1c1.stl": 67284,
+              "stencil_r1c2.stl": 57484
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    10.5,
+                    96,
+                    17.7
+                  ],
+                  [
+                    84,
+                    44.8,
+                    96,
+                    52
+                  ],
+                  [
+                    84,
+                    79.20000000000002,
+                    96,
+                    86.4
+                  ],
+                  [
+                    84,
+                    88.4,
+                    96,
+                    95.6
+                  ],
+                  [
+                    84,
+                    126.20000000000002,
+                    96,
+                    133.4
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 10,
+                "top": 10,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 113.4,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 126237,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  12
+                ],
+                "crc": 4153567717,
+                "format": "binary STL",
+                "bytes": 67284,
+                "triangles": 1344,
+                "vertices": 674,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    10
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  10
+                ],
+                "signed_volume_mm3": 80866.20153096893,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  12
+                ],
+                "crc": 2724545361,
+                "format": "binary STL",
+                "bytes": 57484,
+                "triangles": 1148,
+                "vertices": 576,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    10
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  10
+                ],
+                "signed_volume_mm3": 76770.0979460632,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_hex_d5mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  12
+                ],
+                "crc": 3911581172,
+                "format": "binary STL",
+                "bytes": 1084,
+                "triangles": 20,
+                "vertices": 12,
+                "bounds_mm": [
+                  [
+                    -2.5,
+                    -2.1650636196136475,
+                    0
+                  ],
+                  [
+                    2.5,
+                    2.1650636196136475,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  5,
+                  4.330127239227295,
+                  11
+                ],
+                "signed_volume_mm3": 178.6177486181259,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/connector_d-3.json"
+        },
+        {
+          "value": "6",
+          "sha256": "5f994593a98e9f714929aba5cf086a15d6e7941ab6ce76e6c29270f62b22c5d2",
+          "info": {
+            "files": {
+              "connector_hex_d6mm.stl": 1084,
+              "stencil_r1c1.stl": 65884,
+              "stencil_r1c2.stl": 57484
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    10.5,
+                    96,
+                    18.7
+                  ],
+                  [
+                    84,
+                    44.8,
+                    96,
+                    53
+                  ],
+                  [
+                    84,
+                    78.20000000000002,
+                    96,
+                    86.4
+                  ],
+                  [
+                    84,
+                    88.4,
+                    96,
+                    96.6
+                  ],
+                  [
+                    84,
+                    125.20000000000002,
+                    96,
+                    133.4
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 10,
+                "top": 10,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 137.6,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 124837,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  12
+                ],
+                "crc": 306169800,
+                "format": "binary STL",
+                "bytes": 65884,
+                "triangles": 1316,
+                "vertices": 660,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    10
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  10
+                ],
+                "signed_volume_mm3": 80726.84519839188,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  12
+                ],
+                "crc": 3805430879,
+                "format": "binary STL",
+                "bytes": 57484,
+                "triangles": 1148,
+                "vertices": 576,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    10
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  10
+                ],
+                "signed_volume_mm3": 76687.96242403142,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_hex_d6mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  12
+                ],
+                "crc": 882937127,
+                "format": "binary STL",
+                "bytes": 1084,
+                "triangles": 20,
+                "vertices": 12,
+                "bounds_mm": [
+                  [
+                    -3,
+                    -2.598076105117798,
+                    0
+                  ],
+                  [
+                    3,
+                    2.598076105117798,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  6,
+                  5.196152210235596,
+                  11
+                ],
+                "signed_volume_mm3": 257.209534406662,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/connector_d-4.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tile_layout.depth",
+      "schema": {
+        "default": 10,
+        "group": "Connectors",
+        "kind": "float",
+        "label": "Connector depth into each tile (mm)",
+        "max": 20,
+        "min": 4,
+        "name": "depth",
+        "step": 0.5
+      },
+      "initial": 6,
+      "changed": 8,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 8,
+          "sha256": "3fc50fb67bae5d09184434987963daac7c4192edf4ed4a345a874759d1e0bf93",
+          "info": {
+            "files": {
+              "connector_hex_d3mm.stl": 1084,
+              "stencil_r1c1.stl": 70884,
+              "stencil_r1c2.stl": 56084
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    82,
+                    11.5,
+                    98,
+                    16.7
+                  ],
+                  [
+                    82,
+                    48.800000000000004,
+                    98,
+                    54.00000000000001
+                  ],
+                  [
+                    82,
+                    81.20000000000002,
+                    98,
+                    86.4
+                  ],
+                  [
+                    82,
+                    88.4,
+                    98,
+                    93.6
+                  ],
+                  [
+                    82,
+                    127.20000000000002,
+                    98,
+                    132.4
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 8,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 88.8,
+                "pre_tiled": true,
+                "rod_length_mm": 15,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 128437,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  14
+                ],
+                "crc": 4119048835,
+                "format": "binary STL",
+                "bytes": 70884,
+                "triangles": 1416,
+                "vertices": 710,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 48537.78529095976,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  14
+                ],
+                "crc": 2426384194,
+                "format": "binary STL",
+                "bytes": 56084,
+                "triangles": 1120,
+                "vertices": 560,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 46004.06124441536,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_hex_d3mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  14
+                ],
+                "crc": 2967206969,
+                "format": "binary STL",
+                "bytes": 1084,
+                "triangles": 20,
+                "vertices": 12,
+                "bounds_mm": [
+                  [
+                    -1.5,
+                    -1.299038052558899,
+                    0
+                  ],
+                  [
+                    1.5,
+                    1.299038052558899,
+                    15
+                  ]
+                ],
+                "size_mm": [
+                  3,
+                  2.598076105117798,
+                  15
+                ],
+                "signed_volume_mm3": 87.68506854772568,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/depth-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tile_layout.clearance",
+      "schema": {
+        "default": 0.2,
+        "group": "Connectors",
+        "kind": "float",
+        "label": "Connector hole clearance (mm, diametral)",
+        "max": 0.6,
+        "min": 0,
+        "name": "clearance",
+        "step": 0.05
+      },
+      "initial": 0.2,
+      "changed": 0.4,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 0.4,
+          "sha256": "ebcc8487967d415789e403b0348b1cc1bbb9d0e03f5a8a97849f71638d1c77fb",
+          "info": {
+            "files": {
+              "connector_hex_d3mm.stl": 1084,
+              "stencil_r1c1.stl": 70484,
+              "stencil_r1c2.stl": 57484
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    11.5,
+                    96,
+                    16.9
+                  ],
+                  [
+                    84,
+                    44.8,
+                    96,
+                    50.2
+                  ],
+                  [
+                    84,
+                    81,
+                    96,
+                    86.4
+                  ],
+                  [
+                    84,
+                    88.4,
+                    96,
+                    93.80000000000001
+                  ],
+                  [
+                    84,
+                    127.2,
+                    96,
+                    132.6
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 79.2,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 129437,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  16
+                ],
+                "crc": 3846697150,
+                "format": "binary STL",
+                "bytes": 70484,
+                "triangles": 1408,
+                "vertices": 706,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 48562.35383301075,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  16
+                ],
+                "crc": 1079368032,
+                "format": "binary STL",
+                "bytes": 57484,
+                "triangles": 1148,
+                "vertices": 576,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 46001.73955533411,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_hex_d3mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  16
+                ],
+                "crc": 3450284195,
+                "format": "binary STL",
+                "bytes": 1084,
+                "triangles": 20,
+                "vertices": 12,
+                "bounds_mm": [
+                  [
+                    -1.5,
+                    -1.299038052558899,
+                    0
+                  ],
+                  [
+                    1.5,
+                    1.299038052558899,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  3,
+                  2.598076105117798,
+                  11
+                ],
+                "signed_volume_mm3": 64.3023836016655,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/clearance-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tile_layout.spacing",
+      "schema": {
+        "default": 30,
+        "group": "Connectors",
+        "kind": "float",
+        "label": "Pockets about every (mm)",
+        "max": 200,
+        "min": 10,
+        "name": "spacing",
+        "step": 5
+      },
+      "initial": 30,
+      "changed": 55,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 55,
+          "sha256": "f93f0f657b5702356abef6be7ee1a350ff0e7a66c154fd52ca9d9a05768ea2be",
+          "info": {
+            "files": {
+              "connector_hex_d3mm.stl": 1084,
+              "stencil_r1c1.stl": 69884,
+              "stencil_r1c2.stl": 57684
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    19.5,
+                    96,
+                    24.700000000000003
+                  ],
+                  [
+                    84,
+                    54,
+                    96,
+                    59.2
+                  ],
+                  [
+                    84,
+                    119,
+                    96,
+                    124.19999999999999
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 8,
+                "connectors": 3,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 8,
+                "paint_under_blocks_mm2": 0,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 129037,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  18
+                ],
+                "crc": 2715456430,
+                "format": "binary STL",
+                "bytes": 69884,
+                "triangles": 1396,
+                "vertices": 700,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 48648.090347590674,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  18
+                ],
+                "crc": 765388494,
+                "format": "binary STL",
+                "bytes": 57684,
+                "triangles": 1152,
+                "vertices": 578,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 45863.889396499275,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_hex_d3mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  18
+                ],
+                "crc": 3450284195,
+                "format": "binary STL",
+                "bytes": 1084,
+                "triangles": 20,
+                "vertices": 12,
+                "bounds_mm": [
+                  [
+                    -1.5,
+                    -1.299038052558899,
+                    0
+                  ],
+                  [
+                    1.5,
+                    1.299038052558899,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  3,
+                  2.598076105117798,
+                  11
+                ],
+                "signed_volume_mm3": 64.3023836016655,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/spacing-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tile_layout.segments",
+      "schema": {
+        "default": 48,
+        "group": "Connectors",
+        "kind": "int",
+        "label": "Round segments",
+        "max": 128,
+        "min": 24,
+        "name": "segments",
+        "step": 4
+      },
+      "initial": 48,
+      "changed": 32,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 32,
+          "sha256": "f097d2ab416a0e05b213181488f24910c8dba48b0dccf3390ebb7568b29a6e85",
+          "info": {
+            "files": {
+              "connector_round_d3mm.stl": 6284,
+              "stencil_r1c1.stl": 96484,
+              "stencil_r1c2.stl": 83484
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    11.5,
+                    96,
+                    16.7
+                  ],
+                  [
+                    84,
+                    44.800000000000004,
+                    96,
+                    50.00000000000001
+                  ],
+                  [
+                    84,
+                    81.20000000000002,
+                    96,
+                    86.4
+                  ],
+                  [
+                    84,
+                    88.4,
+                    96,
+                    93.6
+                  ],
+                  [
+                    84,
+                    127.20000000000002,
+                    96,
+                    132.4
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 75.4,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 186641,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  20
+                ],
+                "crc": 3574275567,
+                "format": "binary STL",
+                "bytes": 96484,
+                "triangles": 1928,
+                "vertices": 966,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 48544.794384051485,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  20
+                ],
+                "crc": 2576881013,
+                "format": "binary STL",
+                "bytes": 83484,
+                "triangles": 1668,
+                "vertices": 836,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  90,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 45970.46889368739,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_round_d3mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  20
+                ],
+                "crc": 2588312186,
+                "format": "binary STL",
+                "bytes": 6284,
+                "triangles": 124,
+                "vertices": 64,
+                "bounds_mm": [
+                  [
+                    -1.5,
+                    -1.5,
+                    0
+                  ],
+                  [
+                    1.5,
+                    1.5,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  3,
+                  3,
+                  11
+                ],
+                "signed_volume_mm3": 77.2557677732203,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/segments-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tile_layout.edits",
+      "schema": {
+        "default": "",
+        "group": null,
+        "kind": "text",
+        "label": "Layout edits",
+        "name": "edits"
+      },
+      "initial": "",
+      "changed": "{\"seams\":{\"x1\":1},\"pockets\":{}}",
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "{\"seams\":{\"x1\":1},\"pockets\":{}}",
+          "sha256": "6fd016c14d2be80a31fae7f74f8e4b83e348ab3b74d3a0219026c5a821efe592",
+          "info": {
+            "files": {
+              "connector_hex_d3mm.stl": 1084,
+              "stencil_r1c1.stl": 75484,
+              "stencil_r1c2.stl": 56284
+            },
+            "kind": "parts",
+            "meta": {
+              "plate": {
+                "connectors": [
+                  [
+                    85,
+                    11.5,
+                    97,
+                    16.7
+                  ],
+                  [
+                    85,
+                    44.800000000000004,
+                    97,
+                    50.00000000000001
+                  ],
+                  [
+                    85,
+                    57.6,
+                    97,
+                    62.800000000000004
+                  ],
+                  [
+                    85,
+                    87.4,
+                    97,
+                    92.6
+                  ],
+                  [
+                    85,
+                    127.20000000000002,
+                    97,
+                    132.4
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      91,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      91,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      89,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    91,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 77.9,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            }
+          },
+          "mime": "application/zip",
+          "extension": "zip",
+          "independent": {
+            "format": "ZIP",
+            "bytes": 133237,
+            "entries": [
+              {
+                "name": "stencil_r1c1.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  20
+                ],
+                "crc": 1529174638,
+                "format": "binary STL",
+                "bytes": 75484,
+                "triangles": 1508,
+                "vertices": 756,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    91,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  91,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 49120.23921052361,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "stencil_r1c2.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  20
+                ],
+                "crc": 612787742,
+                "format": "binary STL",
+                "bytes": 56284,
+                "triangles": 1124,
+                "vertices": 564,
+                "bounds_mm": [
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  [
+                    89,
+                    144,
+                    6
+                  ]
+                ],
+                "size_mm": [
+                  89,
+                  144,
+                  6
+                ],
+                "signed_volume_mm3": 45468.10518003577,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              },
+              {
+                "name": "connector_hex_d3mm.stl",
+                "date_time": [
+                  2026,
+                  10,
+                  30,
+                  6,
+                  25,
+                  20
+                ],
+                "crc": 3450284195,
+                "format": "binary STL",
+                "bytes": 1084,
+                "triangles": 20,
+                "vertices": 12,
+                "bounds_mm": [
+                  [
+                    -1.5,
+                    -1.299038052558899,
+                    0
+                  ],
+                  [
+                    1.5,
+                    1.299038052558899,
+                    11
+                  ]
+                ],
+                "size_mm": [
+                  3,
+                  2.598076105117798,
+                  11
+                ],
+                "signed_volume_mm3": 64.3023836016655,
+                "components": 1,
+                "edges_not_shared_twice": 0,
+                "inconsistent_edge_winding": 0,
+                "degenerate_faces": 0,
+                "closed_oriented_mesh": true
+              }
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tile_layout/edits-0.json"
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

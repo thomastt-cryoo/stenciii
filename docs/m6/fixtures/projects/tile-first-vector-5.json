@@ -1,0 +1,104 @@
+{
+  "version": 2,
+  "graph": {
+    "edges": [
+      {
+        "from": [
+          "src",
+          "image"
+        ],
+        "to": [
+          "mask",
+          "image"
+        ]
+      },
+      {
+        "from": [
+          "mask",
+          "mask"
+        ],
+        "to": [
+          "outlines",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "outlines",
+          "shapes"
+        ],
+        "to": [
+          "layout",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "layout",
+          "tiles"
+        ],
+        "to": [
+          "built",
+          "tiles"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "src",
+        "params": {
+          "image_id": "1598e11c03cbf521",
+          "resolution": 160
+        },
+        "type": "source"
+      },
+      {
+        "id": "mask",
+        "params": {},
+        "type": "threshold"
+      },
+      {
+        "id": "outlines",
+        "params": {},
+        "type": "trace"
+      },
+      {
+        "id": "layout",
+        "params": {
+          "clearance": 0.2,
+          "connector": "hex",
+          "connector_d": "3",
+          "depth": 6,
+          "margin_mm": 18,
+          "max_x": 70,
+          "max_y": 70,
+          "seam_shift": 0,
+          "segments": 24,
+          "width_mm": 120
+        },
+        "type": "tile_layout"
+      },
+      {
+        "id": "built",
+        "params": {
+          "detail": 2,
+          "margin_mm": 18,
+          "raised_bridges": true,
+          "thickness_mm": 8,
+          "width_mm": 120,
+          "z_bridging": "easy"
+        },
+        "type": "vector_stencil"
+      }
+    ]
+  },
+  "images": {
+    "1598e11c03cbf521": {
+      "name": "Retained M5 ring.svg",
+      "base64": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIj48cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iI2ZmZiIvPjxjaXJjbGUgY3g9IjYwIiBjeT0iNjAiIHI9IjQ4IiBmaWxsPSIjMDAwIi8+PGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iMjgiIGZpbGw9IiNmZmYiLz48Y2lyY2xlIGN4PSI2MCIgY3k9IjYwIiByPSIxMiIgZmlsbD0iIzAwMCIvPjwvc3ZnPgo="
+    }
+  },
+  "stencilStudio": {
+    "m6Fixture": "tile-first-vector-5"
+  }
+}

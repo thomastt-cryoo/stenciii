@@ -1,0 +1,2522 @@
+{
+  "type": "tone_patterns",
+  "slots": 29,
+  "cases": [
+    {
+      "key": "tone_patterns.plate_width_mm",
+      "schema": {
+        "default": 100,
+        "group": null,
+        "kind": "int",
+        "label": "Plate width (mm)",
+        "max": 2000,
+        "min": 20,
+        "name": "plate_width_mm",
+        "step": 1
+      },
+      "initial": 100,
+      "changed": 150,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 150,
+          "sha256": "77d108ac1eb138e93310058ea0983d8d2be0c1e9802d7c4745ed1a2c621bc5fa",
+          "info": {
+            "coverage": 0.5045,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/plate_width_mm-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.invert",
+      "schema": {
+        "default": false,
+        "group": null,
+        "kind": "bool",
+        "label": "Invert",
+        "name": "invert"
+      },
+      "initial": false,
+      "changed": true,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": true,
+          "sha256": "3bc99c4f42ee915d04ccfbf8b1a1cf623a3ab9b9241fd05d4e315ed73708489a",
+          "info": {
+            "coverage": 0.4995,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/invert-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.kind",
+      "schema": {
+        "choices": [
+          "auto",
+          "lines",
+          "dots",
+          "crosshatch",
+          "checker"
+        ],
+        "default": "auto",
+        "group": null,
+        "kind": "choice",
+        "label": "Default pattern type",
+        "name": "kind"
+      },
+      "initial": "auto",
+      "changed": "dots",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "auto",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind-0.json"
+        },
+        {
+          "value": "lines",
+          "sha256": "f280822e8cde29728a1ba43c28af9bcc725c862d71fb492160ca08a232a14d34",
+          "info": {
+            "coverage": 0.5038,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind-1.json"
+        },
+        {
+          "value": "dots",
+          "sha256": "f9c2e1df9d04aa54fb7dd7c9f1254af5e1576c33b390c46077dda932487669be",
+          "info": {
+            "coverage": 0.4995,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind-2.json"
+        },
+        {
+          "value": "crosshatch",
+          "sha256": "51f0b6fe0bfa656429c0fe937d54092e69c03345c1c05145cd31cdfc54081c42",
+          "info": {
+            "coverage": 0.5053,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind-3.json"
+        },
+        {
+          "value": "checker",
+          "sha256": "32b66b83498f9ed46d4b835e3f97582fdfb70d76a0a90b3ff854a611c4a18623",
+          "info": {
+            "coverage": 0.5032,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind-4.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.spacing_mm",
+      "schema": {
+        "default": 2.5,
+        "group": null,
+        "kind": "float",
+        "label": "Default pattern spacing (mm)",
+        "max": 20,
+        "min": 0,
+        "name": "spacing_mm",
+        "step": 0.1
+      },
+      "initial": 2.5,
+      "changed": 1.4,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 1.4,
+          "sha256": "cad2fb0dd8543d059801f69bd727f885772f14a149172bafe07589a3cefacb39",
+          "info": {
+            "coverage": 0.5022,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/spacing_mm-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.angle",
+      "schema": {
+        "default": 45,
+        "group": null,
+        "kind": "int",
+        "label": "Default pattern angle (deg)",
+        "max": 90,
+        "min": 0,
+        "name": "angle",
+        "step": 5
+      },
+      "initial": 45,
+      "changed": 20,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 20,
+          "sha256": "efeaacaedbd7d8a85ec8e3399ba5425703c5c66ad988a0002c18b14dddae5ce9",
+          "info": {
+            "coverage": 0.5005,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/angle-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.kind_1",
+      "schema": {
+        "choices": [
+          "auto",
+          "lines",
+          "dots",
+          "crosshatch",
+          "checker",
+          "solid",
+          "empty"
+        ],
+        "default": "auto",
+        "group": "Tone 1",
+        "kind": "choice",
+        "label": "Type",
+        "name": "kind_1"
+      },
+      "initial": "lines",
+      "changed": "dots",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "auto",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_1-0.json"
+        },
+        {
+          "value": "lines",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_1-1.json"
+        },
+        {
+          "value": "dots",
+          "sha256": "f53f1e8c6cb21c25cc350feab073edf970b555763e3cfefde9c4e1042bcc15cc",
+          "info": {
+            "coverage": 0.4991,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_1-2.json"
+        },
+        {
+          "value": "crosshatch",
+          "sha256": "60b3f9353d43109e179790ac8962eec49186556a285a33709d82aeba4d526f5f",
+          "info": {
+            "coverage": 0.5014,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_1-3.json"
+        },
+        {
+          "value": "checker",
+          "sha256": "5dcf17c6bacc5c3aa6fea9dd08658f5e1fa2e722ab3b6915ef7e27769cffd609",
+          "info": {
+            "coverage": 0.4605,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_1-4.json"
+        },
+        {
+          "value": "solid",
+          "sha256": "e392533f1d81e486da1c3ea6a5b1c6969a5ab7ebf5f4fff98a83fb1aec423762",
+          "info": {
+            "coverage": 0.511,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_1-5.json"
+        },
+        {
+          "value": "empty",
+          "sha256": "4d9b52e37b2c7ed644b4a7f34356faa9ef6b14a600c779252b5a7e2a36a94170",
+          "info": {
+            "coverage": 0.411,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_1-6.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.spacing_1",
+      "schema": {
+        "default": 0,
+        "group": "Tone 1",
+        "kind": "float",
+        "label": "Spacing (mm)",
+        "max": 20,
+        "min": 0,
+        "name": "spacing_1",
+        "step": 0.1
+      },
+      "initial": 0,
+      "changed": 3.3,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 3.3,
+          "sha256": "070ed214945c5c701ff8d66effa4981bed5f57f6a295aca6cb4b0d1933e3d821",
+          "info": {
+            "coverage": 0.498,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/spacing_1-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.cover_1",
+      "schema": {
+        "default": 0,
+        "group": "Tone 1",
+        "kind": "float",
+        "label": "Coverage (%)",
+        "max": 95,
+        "min": 0,
+        "name": "cover_1",
+        "step": 1
+      },
+      "initial": 0,
+      "changed": 41,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 41,
+          "sha256": "e6afb6e53bd66d8818ed668e8693650c70c082a2c5a054d32f097b5bde9c0fe0",
+          "info": {
+            "coverage": 0.4527,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/cover_1-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.kind_2",
+      "schema": {
+        "choices": [
+          "auto",
+          "lines",
+          "dots",
+          "crosshatch",
+          "checker",
+          "solid",
+          "empty"
+        ],
+        "default": "auto",
+        "group": "Tone 2",
+        "kind": "choice",
+        "label": "Type",
+        "name": "kind_2"
+      },
+      "initial": "lines",
+      "changed": "dots",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "auto",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_2-0.json"
+        },
+        {
+          "value": "lines",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_2-1.json"
+        },
+        {
+          "value": "dots",
+          "sha256": "50f54f25a65cf9c0b900a4b62286ee59fdc5edf21ae9873645b575555047820d",
+          "info": {
+            "coverage": 0.501,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_2-2.json"
+        },
+        {
+          "value": "crosshatch",
+          "sha256": "2463d763233febc5cf034f668d9d09ff2f0be1179c921c8f0e1cd9c0980245fe",
+          "info": {
+            "coverage": 0.5032,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_2-3.json"
+        },
+        {
+          "value": "checker",
+          "sha256": "0a91e3b3cc44e8858329ddc0d98fbf7302cc4d8ecea6720693f72f3a6cf7ed56",
+          "info": {
+            "coverage": 0.475,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_2-4.json"
+        },
+        {
+          "value": "solid",
+          "sha256": "61b582f500cec5d858a18355c563393471685c0b28187a6429c9217ada1daf95",
+          "info": {
+            "coverage": 0.5232,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_2-5.json"
+        },
+        {
+          "value": "empty",
+          "sha256": "c0f912c9f40194d9efd0fc5751597c6900ba77a6a0f85332e7a9374b8af80564",
+          "info": {
+            "coverage": 0.4232,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_2-6.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.spacing_2",
+      "schema": {
+        "default": 0,
+        "group": "Tone 2",
+        "kind": "float",
+        "label": "Spacing (mm)",
+        "max": 20,
+        "min": 0,
+        "name": "spacing_2",
+        "step": 0.1
+      },
+      "initial": 0,
+      "changed": 3.3,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 3.3,
+          "sha256": "c0d257e550a362ab0a17f110e207172fc1af24ac918011d4f8b55cb17b608c11",
+          "info": {
+            "coverage": 0.4981,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/spacing_2-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.cover_2",
+      "schema": {
+        "default": 0,
+        "group": "Tone 2",
+        "kind": "float",
+        "label": "Coverage (%)",
+        "max": 95,
+        "min": 0,
+        "name": "cover_2",
+        "step": 1
+      },
+      "initial": 0,
+      "changed": 41,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 41,
+          "sha256": "10a15cbd391e271aeed5267abe12ce22f7ebf23cc19108d97f85bc9b30d89c95",
+          "info": {
+            "coverage": 0.4649,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/cover_2-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.kind_3",
+      "schema": {
+        "choices": [
+          "auto",
+          "lines",
+          "dots",
+          "crosshatch",
+          "checker",
+          "solid",
+          "empty"
+        ],
+        "default": "auto",
+        "group": "Tone 3",
+        "kind": "choice",
+        "label": "Type",
+        "name": "kind_3"
+      },
+      "initial": "lines",
+      "changed": "dots",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "auto",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_3-0.json"
+        },
+        {
+          "value": "lines",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_3-1.json"
+        },
+        {
+          "value": "dots",
+          "sha256": "01214044c369fe50081a2e925c16f6dd2f145d6b15e990141bcccf33b9e4e746",
+          "info": {
+            "coverage": 0.5008,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_3-2.json"
+        },
+        {
+          "value": "crosshatch",
+          "sha256": "4ebd0c5f3659e56f06ba86aaf1237403436f866129ebaabd632347c78701b40c",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_3-3.json"
+        },
+        {
+          "value": "checker",
+          "sha256": "c8591f01fa93fc9524ce5e30e493efa7df4b3e61edbbd13fca63441733654e88",
+          "info": {
+            "coverage": 0.4835,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_3-4.json"
+        },
+        {
+          "value": "solid",
+          "sha256": "f34ef05d6bfc1c13d36d516a9310b4b163a43a1b8c4bba3a5cd0c8433a96e615",
+          "info": {
+            "coverage": 0.534,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_3-5.json"
+        },
+        {
+          "value": "empty",
+          "sha256": "52e9437840206f03a0ee94a972bf57079e91a906712f28a3ec5fb46f8eb1823d",
+          "info": {
+            "coverage": 0.434,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_3-6.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.spacing_3",
+      "schema": {
+        "default": 0,
+        "group": "Tone 3",
+        "kind": "float",
+        "label": "Spacing (mm)",
+        "max": 20,
+        "min": 0,
+        "name": "spacing_3",
+        "step": 0.1
+      },
+      "initial": 0,
+      "changed": 3.3,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 3.3,
+          "sha256": "6d3a5f0558de38bb30f16979ab5e8b2d03b54d85140f5ba2a3f2eaf24f6f209f",
+          "info": {
+            "coverage": 0.5008,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/spacing_3-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.cover_3",
+      "schema": {
+        "default": 0,
+        "group": "Tone 3",
+        "kind": "float",
+        "label": "Coverage (%)",
+        "max": 95,
+        "min": 0,
+        "name": "cover_3",
+        "step": 1
+      },
+      "initial": 0,
+      "changed": 41,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 41,
+          "sha256": "4c495018429395e7bdea36d0874bc7de8f5eb098766d6ddf9d3f4907d98797d8",
+          "info": {
+            "coverage": 0.4757,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/cover_3-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.kind_4",
+      "schema": {
+        "choices": [
+          "auto",
+          "lines",
+          "dots",
+          "crosshatch",
+          "checker",
+          "solid",
+          "empty"
+        ],
+        "default": "auto",
+        "group": "Tone 4",
+        "kind": "choice",
+        "label": "Type",
+        "name": "kind_4"
+      },
+      "initial": "lines",
+      "changed": "dots",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "auto",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_4-0.json"
+        },
+        {
+          "value": "lines",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_4-1.json"
+        },
+        {
+          "value": "dots",
+          "sha256": "cc63d1d6fc0610e32c3667ff46555fb1939e448a7fd7de0c7bd3e40437dd588e",
+          "info": {
+            "coverage": 0.5024,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_4-2.json"
+        },
+        {
+          "value": "crosshatch",
+          "sha256": "36fad9a6b80b3bed520beb4c635adcb77e2a462e380b095955e988108751b6ce",
+          "info": {
+            "coverage": 0.5017,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_4-3.json"
+        },
+        {
+          "value": "checker",
+          "sha256": "3125459701f39267a0106078b3d587b76e0148aa460add0e212fa3327fc649bb",
+          "info": {
+            "coverage": 0.4957,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_4-4.json"
+        },
+        {
+          "value": "solid",
+          "sha256": "ecb2705b6b98d8385981d08306c323ea34178a5bb3e6629be7d40f956d8332f7",
+          "info": {
+            "coverage": 0.5462,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_4-5.json"
+        },
+        {
+          "value": "empty",
+          "sha256": "5b2687c488831b313e3095c723d607236b29670d02a4ca462db26c8267dddb2c",
+          "info": {
+            "coverage": 0.4462,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_4-6.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.spacing_4",
+      "schema": {
+        "default": 0,
+        "group": "Tone 4",
+        "kind": "float",
+        "label": "Spacing (mm)",
+        "max": 20,
+        "min": 0,
+        "name": "spacing_4",
+        "step": 0.1
+      },
+      "initial": 0,
+      "changed": 3.3,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 3.3,
+          "sha256": "dc094c6d7c324c5dbb5511c46e184b79032aa64b11ab53b584d2d2401e087fb1",
+          "info": {
+            "coverage": 0.4998,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/spacing_4-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.cover_4",
+      "schema": {
+        "default": 0,
+        "group": "Tone 4",
+        "kind": "float",
+        "label": "Coverage (%)",
+        "max": 95,
+        "min": 0,
+        "name": "cover_4",
+        "step": 1
+      },
+      "initial": 0,
+      "changed": 41,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 41,
+          "sha256": "23531c0e7ef8c0fe8589f63f96235375f4f9be2affc1c0ade48430d280080687",
+          "info": {
+            "coverage": 0.4871,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/cover_4-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.kind_5",
+      "schema": {
+        "choices": [
+          "auto",
+          "lines",
+          "dots",
+          "crosshatch",
+          "checker",
+          "solid",
+          "empty"
+        ],
+        "default": "auto",
+        "group": "Tone 5",
+        "kind": "choice",
+        "label": "Type",
+        "name": "kind_5"
+      },
+      "initial": "lines",
+      "changed": "dots",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "auto",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_5-0.json"
+        },
+        {
+          "value": "lines",
+          "sha256": "3fe79243e7733030bddd6c98dfcf4bcdb7a7a8b3d9f9dbab070b356224b9f79b",
+          "info": {
+            "coverage": 0.5026,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_5-1.json"
+        },
+        {
+          "value": "dots",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_5-2.json"
+        },
+        {
+          "value": "crosshatch",
+          "sha256": "36446c4abca3be523e4b166ee29c2b656a0f8f1befb0cf5fe7d00cee7ebf4bdc",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_5-3.json"
+        },
+        {
+          "value": "checker",
+          "sha256": "ace9e5089f0a01e64d55a6e43932f08ceb01c3c47401736f00e94610f7c35c2b",
+          "info": {
+            "coverage": 0.509,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_5-4.json"
+        },
+        {
+          "value": "solid",
+          "sha256": "60bba3765dd5ec026b3f7d370ab87e4ef35ad6ef207295441fa54205a4703be1",
+          "info": {
+            "coverage": 0.5569,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_5-5.json"
+        },
+        {
+          "value": "empty",
+          "sha256": "31f1f97ac99e14baf1911a29ed5c78a3663f2de90a3522f47c4f8a0eab1ecd98",
+          "info": {
+            "coverage": 0.4569,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_5-6.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.spacing_5",
+      "schema": {
+        "default": 0,
+        "group": "Tone 5",
+        "kind": "float",
+        "label": "Spacing (mm)",
+        "max": 20,
+        "min": 0,
+        "name": "spacing_5",
+        "step": 0.1
+      },
+      "initial": 0,
+      "changed": 3.3,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 3.3,
+          "sha256": "b47e69545427d6dee981c4255eb9624c3df4ec04c2e18bef3874ec091b5f31e2",
+          "info": {
+            "coverage": 0.5033,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/spacing_5-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.cover_5",
+      "schema": {
+        "default": 0,
+        "group": "Tone 5",
+        "kind": "float",
+        "label": "Coverage (%)",
+        "max": 95,
+        "min": 0,
+        "name": "cover_5",
+        "step": 1
+      },
+      "initial": 0,
+      "changed": 41,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 41,
+          "sha256": "aaaa77cd82219d7efb89c29929789405fec5f4df0a1cd742c95b148c1b9ed751",
+          "info": {
+            "coverage": 0.497,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/cover_5-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.kind_6",
+      "schema": {
+        "choices": [
+          "auto",
+          "lines",
+          "dots",
+          "crosshatch",
+          "checker",
+          "solid",
+          "empty"
+        ],
+        "default": "auto",
+        "group": "Tone 6",
+        "kind": "choice",
+        "label": "Type",
+        "name": "kind_6"
+      },
+      "initial": "lines",
+      "changed": "dots",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "auto",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_6-0.json"
+        },
+        {
+          "value": "lines",
+          "sha256": "a0b44e51a8c97bd69f354008c8751f315c785a3f5fa5c7b83e630b6fa60b2298",
+          "info": {
+            "coverage": 0.5004,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_6-1.json"
+        },
+        {
+          "value": "dots",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_6-2.json"
+        },
+        {
+          "value": "crosshatch",
+          "sha256": "e65e20765a72018b29e4b6cac7242d59bd6df453e71ff128a3ec5d6761558ce8",
+          "info": {
+            "coverage": 0.5023,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_6-3.json"
+        },
+        {
+          "value": "checker",
+          "sha256": "61baac7b3a770f6163903d491b99f68a90b4752b7600c3a8c64eb9c384716d17",
+          "info": {
+            "coverage": 0.5169,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_6-4.json"
+        },
+        {
+          "value": "solid",
+          "sha256": "dc9e1184a87580f79e1f4a35004006cdd7ac5cf6132f3421012b6892cf8f52ef",
+          "info": {
+            "coverage": 0.5679,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_6-5.json"
+        },
+        {
+          "value": "empty",
+          "sha256": "15e141cda872995f7b6c3aca43fccd237668e6797a2ee8dd3c2aff5e54b81fe1",
+          "info": {
+            "coverage": 0.4679,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_6-6.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.spacing_6",
+      "schema": {
+        "default": 0,
+        "group": "Tone 6",
+        "kind": "float",
+        "label": "Spacing (mm)",
+        "max": 20,
+        "min": 0,
+        "name": "spacing_6",
+        "step": 0.1
+      },
+      "initial": 0,
+      "changed": 3.3,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 3.3,
+          "sha256": "a57d077e5e8f033dfc61ca34ea9fdf0f1b26d2456b5e4bbfcd4ad93000b7dd1d",
+          "info": {
+            "coverage": 0.5,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/spacing_6-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.cover_6",
+      "schema": {
+        "default": 0,
+        "group": "Tone 6",
+        "kind": "float",
+        "label": "Coverage (%)",
+        "max": 95,
+        "min": 0,
+        "name": "cover_6",
+        "step": 1
+      },
+      "initial": 0,
+      "changed": 41,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 41,
+          "sha256": "5099d8b1d99348c5a4b98f3ce953bf4478f818af75a7ee7c842a00e252eb50db",
+          "info": {
+            "coverage": 0.5096,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/cover_6-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.kind_7",
+      "schema": {
+        "choices": [
+          "auto",
+          "lines",
+          "dots",
+          "crosshatch",
+          "checker",
+          "solid",
+          "empty"
+        ],
+        "default": "auto",
+        "group": "Tone 7",
+        "kind": "choice",
+        "label": "Type",
+        "name": "kind_7"
+      },
+      "initial": "lines",
+      "changed": "dots",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "auto",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_7-0.json"
+        },
+        {
+          "value": "lines",
+          "sha256": "4c32b06e9efb83263458497a68e55041da2d878fca8bd86c63dad4791af93145",
+          "info": {
+            "coverage": 0.5026,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_7-1.json"
+        },
+        {
+          "value": "dots",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_7-2.json"
+        },
+        {
+          "value": "crosshatch",
+          "sha256": "642c83a2b8b9cd48951447dbd93fb65d4f93cf4da5c8b219beb5781c8921dc86",
+          "info": {
+            "coverage": 0.501,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_7-3.json"
+        },
+        {
+          "value": "checker",
+          "sha256": "5b1b0a86c53ab322dc223e953d32cb0b4a6a05625e0bd0d3689b95c677ee2af6",
+          "info": {
+            "coverage": 0.5289,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_7-4.json"
+        },
+        {
+          "value": "solid",
+          "sha256": "87626d3efb46be1be61647fc369723d1616fccc4205a1afcfa5aae0f2ed064e6",
+          "info": {
+            "coverage": 0.5793,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_7-5.json"
+        },
+        {
+          "value": "empty",
+          "sha256": "030dd10f6d6b65780af47d445424f66bcfe86fa21fc590ab57b3e3b35c4eeafa",
+          "info": {
+            "coverage": 0.4793,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_7-6.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.spacing_7",
+      "schema": {
+        "default": 0,
+        "group": "Tone 7",
+        "kind": "float",
+        "label": "Spacing (mm)",
+        "max": 20,
+        "min": 0,
+        "name": "spacing_7",
+        "step": 0.1
+      },
+      "initial": 0,
+      "changed": 3.3,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 3.3,
+          "sha256": "d25fa29f4d44387490e17259868c71c6b79c0792ff67654d46a9a4a94b6d1bbb",
+          "info": {
+            "coverage": 0.5043,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/spacing_7-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.cover_7",
+      "schema": {
+        "default": 0,
+        "group": "Tone 7",
+        "kind": "float",
+        "label": "Coverage (%)",
+        "max": 95,
+        "min": 0,
+        "name": "cover_7",
+        "step": 1
+      },
+      "initial": 0,
+      "changed": 41,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 41,
+          "sha256": "6cd19fe8b1a907127795ac3c1973dd2eedafacfb516de909b4a615f507999a21",
+          "info": {
+            "coverage": 0.5201,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/cover_7-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.kind_8",
+      "schema": {
+        "choices": [
+          "auto",
+          "lines",
+          "dots",
+          "crosshatch",
+          "checker",
+          "solid",
+          "empty"
+        ],
+        "default": "auto",
+        "group": "Tone 8",
+        "kind": "choice",
+        "label": "Type",
+        "name": "kind_8"
+      },
+      "initial": "lines",
+      "changed": "dots",
+      "choices": [
+        "auto",
+        "lines",
+        "dots",
+        "crosshatch",
+        "checker",
+        "solid",
+        "empty"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "auto",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_8-0.json"
+        },
+        {
+          "value": "lines",
+          "sha256": "6d727e00460b6bbc6b989baafee43d07e417a6a3e2d5cc629ec19d11a20c28f5",
+          "info": {
+            "coverage": 0.502,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_8-1.json"
+        },
+        {
+          "value": "dots",
+          "sha256": "249b44d418b266abf1a2c8ac3c47822f24b45ff664e1f280c7093d47ee844b43",
+          "info": {
+            "coverage": 0.5013,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_8-2.json"
+        },
+        {
+          "value": "crosshatch",
+          "sha256": "d690a9c84a907147de28001223aca7d06a890e4593f5334d32296824d0dc661a",
+          "info": {
+            "coverage": 0.5019,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_8-3.json"
+        },
+        {
+          "value": "checker",
+          "sha256": "cea88f78fc8353f1785214f7dd05ffc76214ca529f14d349e37dcd8644d49084",
+          "info": {
+            "coverage": 0.5425,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_8-4.json"
+        },
+        {
+          "value": "solid",
+          "sha256": "0a7430cd7d4250fbca663d2a6c357b4166efeedbbc6fd53d2895af99cc6fee7a",
+          "info": {
+            "coverage": 0.5903,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_8-5.json"
+        },
+        {
+          "value": "empty",
+          "sha256": "6850a7e2c14f06e5b960c1b4ffb3f4d94db52e4b2100264cc08d46d05f84f13f",
+          "info": {
+            "coverage": 0.4903,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/kind_8-6.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.spacing_8",
+      "schema": {
+        "default": 0,
+        "group": "Tone 8",
+        "kind": "float",
+        "label": "Spacing (mm)",
+        "max": 20,
+        "min": 0,
+        "name": "spacing_8",
+        "step": 0.1
+      },
+      "initial": 0,
+      "changed": 3.3,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 3.3,
+          "sha256": "6f7a4013ca3278c317740315a71c51fa82c6d7be0a9221f76ca5f423b65eed04",
+          "info": {
+            "coverage": 0.501,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/spacing_8-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "tone_patterns.cover_8",
+      "schema": {
+        "default": 0,
+        "group": "Tone 8",
+        "kind": "float",
+        "label": "Coverage (%)",
+        "max": 95,
+        "min": 0,
+        "name": "cover_8",
+        "step": 1
+      },
+      "initial": 0,
+      "changed": 41,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 41,
+          "sha256": "72da1e188239dd99d1e4518f6347358389d54de097f5f86403c759a361c3a0f5",
+          "info": {
+            "coverage": 0.532,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/tone_patterns/cover_8-0.json"
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "schema": 1,
+  "app": {
+    "version": "2.9.4",
+    "build": 19,
+    "commit": "a71c2e8",
+    "time": "2026-10-30T04:03:06.754Z"
+  },
+  "engine": {
+    "n": 1,
+    "why": "threaded engine startup failed or timed out; using the single-thread engine",
+    "version": "2.9.4"
+  },
+  "storage": {
+    "sessionBytes": 381,
+    "sessionLimitBytes": 134217728,
+    "persistentAvailable": true,
+    "error": null
+  },
+  "uiSamples": {
+    "perSecond": 0,
+    "maxGapMs": 0,
+    "pageHeapBytes": null
+  },
+  "worker": {
+    "workers": 1,
+    "busy": false
+  },
+  "generation": 2,
+  "status": "complete",
+  "quality": "full",
+  "outputMatchesCurrent": true,
+  "elapsedMs": 267,
+  "error": null,
+  "failedStep": null,
+  "steps": {
+    "artwork": {
+      "cached": false,
+      "key": "484d40a19ead20d2",
+      "ms": 15,
+      "outputs": {
+        "image": {
+          "available": true,
+          "type": "image"
+        }
+      },
+      "state": "done"
+    },
+    "framing": {
+      "cached": false,
+      "key": "5175166c3bd6a1fb",
+      "ms": 1,
+      "outputs": {
+        "image": {
+          "available": true,
+          "type": "image"
+        }
+      },
+      "state": "done"
+    },
+    "paint": {
+      "cached": false,
+      "key": "f2b3110115da2274",
+      "ms": 3,
+      "outputs": {
+        "mask": {
+          "available": true,
+          "type": "mask"
+        }
+      },
+      "state": "done"
+    },
+    "outlines": {
+      "cached": false,
+      "key": "166163baebe47b7e",
+      "ms": 10,
+      "outputs": {
+        "shapes": {
+          "available": true,
+          "type": "shapes"
+        }
+      },
+      "state": "done"
+    },
+    "cleanup": {
+      "cached": false,
+      "key": "38ea718c578afca0",
+      "ms": 1,
+      "outputs": {
+        "removed": {
+          "available": true,
+          "type": "shapes"
+        },
+        "shapes": {
+          "available": true,
+          "type": "shapes"
+        }
+      },
+      "state": "done"
+    },
+    "plate": {
+      "cached": false,
+      "key": "44ac7ca5ccd79ee2",
+      "ms": 61,
+      "outputs": {
+        "parts": {
+          "available": false,
+          "type": "parts"
+        },
+        "solid": {
+          "available": true,
+          "type": "solid"
+        }
+      },
+      "state": "done"
+    }
+  },
+  "log": [
+    {
+      "ts": "2026-10-30T08:23:01.846",
+      "ms": 15,
+      "t": 0.02,
+      "level": "info",
+      "node": "artwork",
+      "type": "source",
+      "msg": "done"
+    },
+    {
+      "ts": "2026-10-30T08:23:01.873",
+      "ms": 1,
+      "t": 0,
+      "level": "info",
+      "node": "framing",
+      "type": "transform",
+      "msg": "done"
+    },
+    {
+      "ts": "2026-10-30T08:23:01.895",
+      "ms": 3,
+      "t": 0,
+      "level": "info",
+      "node": "paint",
+      "type": "threshold",
+      "msg": "done"
+    },
+    {
+      "ts": "2026-10-30T08:23:01.922",
+      "ms": 10,
+      "t": 0.01,
+      "level": "info",
+      "node": "outlines",
+      "type": "trace",
+      "msg": "done"
+    },
+    {
+      "ts": "2026-10-30T08:23:01.936",
+      "ms": 1,
+      "t": 0,
+      "level": "info",
+      "node": "cleanup",
+      "type": "remove_islands",
+      "msg": "done"
+    },
+    {
+      "ts": "2026-10-30T08:23:01.998",
+      "ms": 51,
+      "t": 0.175,
+      "level": "info",
+      "node": "plate",
+      "type": "vector_stencil",
+      "msg": "↳ bridge islands"
+    },
+    {
+      "ts": "2026-10-30T08:23:02.006",
+      "ms": 8,
+      "t": 0.182,
+      "level": "info",
+      "node": "plate",
+      "type": "vector_stencil",
+      "msg": "↳ extrude mesh"
+    },
+    {
+      "ts": "2026-10-30T08:23:02.009",
+      "ms": 61,
+      "t": 0.06,
+      "level": "info",
+      "node": "plate",
+      "type": "vector_stencil",
+      "msg": "done"
+    }
+  ],
+  "lastOutputGeneration": 2,
+  "outputs": [
+    {
+      "step": "plate",
+      "kind": "solid",
+      "info": {
+        "bytes": 139284,
+        "kind": "solid",
+        "stats": {
+          "bridge_mm": 1.6,
+          "bridge_pixels": 2,
+          "bridge_routes_mm": [
+            [
+              [
+                100,
+                33.7404
+              ],
+              [
+                100.02136541147895,
+                25.222174792658542
+              ]
+            ],
+            [
+              [
+                80.1846,
+                82.7323
+              ],
+              [
+                43.68074733748577,
+                83.70247136735138
+              ]
+            ]
+          ],
+          "bridge_strip_width_mm": 1.6,
+          "bridge_strips": 2,
+          "bridges_per_island": 1,
+          "construction": "vector",
+          "first_layer_islands": 2,
+          "first_layer_taper_mm": 1,
+          "flip": false,
+          "grid_h": 0,
+          "grid_w": 0,
+          "height_mm": 163.2,
+          "islands_deleted": 0,
+          "islands_found": 2,
+          "islands_remaining": 0,
+          "layer_height_mm": 0.2,
+          "layers": 26,
+          "margin_mm": 8,
+          "min_first_layer_width_mm": 0,
+          "overhang_area_mm2": 46.62,
+          "overhang_check_deg": 45,
+          "plate_top_mm": 5.2,
+          "raised_bridges": true,
+          "stl_bytes": 139284,
+          "thickness_mm": 5,
+          "threshold": 0,
+          "triangles": 2784,
+          "watertight": true,
+          "width_mm": 200,
+          "z_bridging": "easy"
+        },
+        "tiles": []
+      },
+      "mesh": {
+        "triangles": 2784,
+        "size": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "bounds": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "vertices": 1388,
+        "components": 1,
+        "degenerate": 0,
+        "edgesNotSharedTwice": 0,
+        "inconsistentWinding": 0,
+        "signedVolume": 146206.76338452316,
+        "closed": true,
+        "milliseconds": 14.019999995827675
+      },
+      "findings": [
+        {
+          "level": "warn",
+          "text": "overhang 47 mm²"
+        },
+        {
+          "level": "info",
+          "text": "2 islands bridged"
+        }
+      ],
+      "parts": []
+    }
+  ],
+  "observedStartupMs": 10384
+}

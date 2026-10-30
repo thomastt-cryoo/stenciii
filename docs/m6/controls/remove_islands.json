@@ -1,0 +1,192 @@
+{
+  "type": "remove_islands",
+  "slots": 4,
+  "cases": [
+    {
+      "key": "remove_islands.delete_specks",
+      "schema": {
+        "default": true,
+        "group": null,
+        "kind": "bool",
+        "label": "Delete small paint specks",
+        "name": "delete_specks"
+      },
+      "initial": true,
+      "changed": false,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": false,
+          "sha256": "8c68e184c53fa3751506bb884c5f3a3de5c3dc9a63cd803ffeb29c5d986dbbe7",
+          "info": {
+            "height": 150,
+            "kind": "shapes",
+            "loops": 4,
+            "segments": 43,
+            "width": 200
+          },
+          "mime": "image/svg+xml",
+          "extension": "svg",
+          "independent": {
+            "format": "SVG",
+            "paths": 1,
+            "attributes": {
+              "viewBox": "0 0 200 150",
+              "width": "200",
+              "height": "150"
+            }
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/remove_islands/delete_specks-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "remove_islands.fill_holes",
+      "schema": {
+        "default": true,
+        "group": null,
+        "kind": "bool",
+        "label": "Fill small holes",
+        "name": "fill_holes"
+      },
+      "initial": true,
+      "changed": false,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": false,
+          "sha256": "80b9977ed82ab7fca563b27e717ae00e893445985ad835c39360f777b555ceb2",
+          "info": {
+            "height": 150,
+            "kind": "shapes",
+            "loops": 4,
+            "segments": 45,
+            "width": 200
+          },
+          "mime": "image/svg+xml",
+          "extension": "svg",
+          "independent": {
+            "format": "SVG",
+            "paths": 1,
+            "attributes": {
+              "viewBox": "0 0 200 150",
+              "width": "200",
+              "height": "150"
+            }
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/remove_islands/fill_holes-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "remove_islands.max_area",
+      "schema": {
+        "default": 50,
+        "group": null,
+        "kind": "float",
+        "label": "Smaller than (px²)",
+        "max": 100000,
+        "min": 1,
+        "name": "max_area",
+        "step": 1
+      },
+      "initial": 50,
+      "changed": 300,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 300,
+          "sha256": "dbccd43a75fc0490c02dd31a80e1b4fa1802327e2dcaa1d17bc3acbf38707f10",
+          "info": {
+            "height": 150,
+            "kind": "shapes",
+            "loops": 1,
+            "segments": 22,
+            "width": 200
+          },
+          "mime": "image/svg+xml",
+          "extension": "svg",
+          "independent": {
+            "format": "SVG",
+            "paths": 1,
+            "attributes": {
+              "viewBox": "0 0 200 150",
+              "width": "200",
+              "height": "150"
+            }
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/remove_islands/max_area-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "remove_islands.keep_largest",
+      "schema": {
+        "default": 0,
+        "group": null,
+        "kind": "int",
+        "label": "Keep only the largest shapes",
+        "max": 1000,
+        "min": 0,
+        "name": "keep_largest",
+        "step": 1
+      },
+      "initial": 0,
+      "changed": 1,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 1,
+          "sha256": "1425d75614e3e035b72c8ed2dc0cf0bd18ad7c69c9822ed8217f6a15ad2feb3b",
+          "info": {
+            "height": 150,
+            "kind": "shapes",
+            "loops": 2,
+            "segments": 31,
+            "width": 200
+          },
+          "mime": "image/svg+xml",
+          "extension": "svg",
+          "independent": {
+            "format": "SVG",
+            "paths": 1,
+            "attributes": {
+              "viewBox": "0 0 200 150",
+              "width": "200",
+              "height": "150"
+            }
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/remove_islands/keep_largest-0.json"
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

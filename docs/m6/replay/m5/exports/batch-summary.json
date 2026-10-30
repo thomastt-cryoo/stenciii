@@ -1,0 +1,86 @@
+{
+  "schema": 2,
+  "recipe": "M5 tiles",
+  "source": "source",
+  "options": {
+    "format": "zip",
+    "project": true,
+    "layouts": false,
+    "outlines": false,
+    "strict": false
+  },
+  "planned_jobs": 3,
+  "verified": 2,
+  "failed": 1,
+  "cancelled": 0,
+  "items": [
+    {
+      "id": "1-1",
+      "name": "first.svg",
+      "relativePath": "first.svg",
+      "overrides": [],
+      "status": "Verified",
+      "milliseconds": 619.4200000017881,
+      "metrics": {
+        "triangles": 2640,
+        "components": 3,
+        "volumeMm3": 94390.46103863046,
+        "sizeMm": [
+          90,
+          144,
+          11
+        ],
+        "stlFiles": 3,
+        "seamStepMm": null,
+        "paintUnderBlocksMm2": null,
+        "bytes": 142818
+      },
+      "findings": [
+        {
+          "level": "info",
+          "text": "6 islands bridged"
+        }
+      ],
+      "output": "1-1-first.svg-manufacturing.zip"
+    },
+    {
+      "id": "2-1",
+      "name": "broken.svg",
+      "relativePath": "broken.svg",
+      "overrides": [],
+      "status": "Failed",
+      "error": "not a readable png/jpg/bmp/svg image",
+      "milliseconds": 158.15999999642372,
+      "output": null
+    },
+    {
+      "id": "3-1",
+      "name": "second.svg",
+      "relativePath": "second.svg",
+      "overrides": [],
+      "status": "Verified",
+      "milliseconds": 737,
+      "metrics": {
+        "triangles": 2640,
+        "components": 3,
+        "volumeMm3": 94390.46103863046,
+        "sizeMm": [
+          90,
+          144,
+          11
+        ],
+        "stlFiles": 3,
+        "seamStepMm": null,
+        "paintUnderBlocksMm2": null,
+        "bytes": 142822
+      },
+      "findings": [
+        {
+          "level": "info",
+          "text": "6 islands bridged"
+        }
+      ],
+      "output": "3-1-second.svg-manufacturing.zip"
+    }
+  ]
+}

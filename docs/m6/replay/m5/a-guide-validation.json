@@ -1,0 +1,38 @@
+{
+  "layers": 10,
+  "registration_group_sizes": [
+    6,
+    4
+  ],
+  "registered_stl": {
+    "format": "binary STL",
+    "bytes": 31084,
+    "triangles": 620,
+    "vertices": 304,
+    "bounds_mm": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        200,
+        126.4000015258789,
+        5.199999809265137
+      ]
+    ],
+    "size_mm": [
+      200,
+      126.4000015258789,
+      5.199999809265137
+    ],
+    "signed_volume_mm3": 120697.44797181051,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true
+  },
+  "original_images_preserved": true,
+  "round_trip": true
+}

@@ -1,0 +1,41 @@
+{
+  "lossless": true,
+  "executable": true,
+  "nativeExit": 0,
+  "nativeDiagnostic": "verified: 6 islands found, 0 remaining, watertight true, 5408 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\project-replay\\renamed-remesh\\renamed-remesh.stl in 1592 ms\n",
+  "independent": {
+    "files": [
+      {
+        "file": "renamed-remesh.stl",
+        "format": "binary STL",
+        "bytes": 270484,
+        "triangles": 5408,
+        "vertices": 2680,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            77,
+            2.5999999046325684
+          ]
+        ],
+        "size_mm": [
+          100,
+          77,
+          2.5999999046325684
+        ],
+        "signed_volume_mm3": 9434.485829242201,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      }
+    ],
+    "all_valid": true
+  }
+}

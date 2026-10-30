@@ -1,0 +1,39 @@
+{
+  "valid": {
+    "id": 1,
+    "ok": {
+      "triangles": 1769472,
+      "size": [
+        1,
+        1,
+        1
+      ],
+      "bounds": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "vertices": 884738,
+      "components": 1,
+      "degenerate": 0,
+      "edgesNotSharedTwice": 0,
+      "inconsistentWinding": 0,
+      "signedVolume": 0.9999999999989917,
+      "closed": true,
+      "milliseconds": 5322.225000008941
+    }
+  },
+  "blocked": {
+    "id": 2,
+    "error": "This model exceeds the current two-million-triangle verification limit. Lower vector detail or use mesh optimization before exporting."
+  },
+  "max_frame_gap_ms": 66.66000000000008,
+  "frames": 366
+}

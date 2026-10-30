@@ -1,0 +1,2372 @@
+{
+  "manifest": {
+    "schema": 1,
+    "complete_for_selected_outputs": true,
+    "assemblies": [
+      {
+        "id": "free/parts",
+        "name": "Freestanding",
+        "sources": [
+          {
+            "step": "free",
+            "kind": "parts",
+            "metadata": {},
+            "stats": null
+          }
+        ]
+      },
+      {
+        "id": "hw/a/parts",
+        "name": "Workshop",
+        "sources": [
+          {
+            "step": "hw/a",
+            "kind": "parts",
+            "metadata": {
+              "joiners": {
+                "screw": "M4",
+                "seams_joined": 2
+              }
+            },
+            "stats": null
+          },
+          {
+            "step": "mounted",
+            "kind": "parts",
+            "metadata": {
+              "pads": {
+                "hole_diameter_mm": 4.4,
+                "holes": 8,
+                "joins": 2,
+                "pad_diameter_mm": 0,
+                "pad_thread": "none",
+                "pads": 0,
+                "thread_major_mm": 0,
+                "warnings": []
+              },
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    11.5,
+                    96,
+                    16.7
+                  ],
+                  [
+                    84,
+                    44.800000000000004,
+                    96,
+                    50.00000000000001
+                  ],
+                  [
+                    84,
+                    81.20000000000002,
+                    96,
+                    86.4
+                  ],
+                  [
+                    84,
+                    88.4,
+                    96,
+                    93.6
+                  ],
+                  [
+                    84,
+                    127.20000000000002,
+                    96,
+                    132.4
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "holes": [
+                  {
+                    "r": 2.2,
+                    "x": 75,
+                    "y": 9
+                  },
+                  {
+                    "r": 2.2,
+                    "x": 105,
+                    "y": 9
+                  },
+                  {
+                    "r": 2.2,
+                    "x": 75,
+                    "y": 135
+                  },
+                  {
+                    "r": 2.2,
+                    "x": 105,
+                    "y": 135
+                  },
+                  {
+                    "r": 2.2,
+                    "x": 122,
+                    "y": 9
+                  },
+                  {
+                    "r": 2.2,
+                    "x": 122,
+                    "y": 135
+                  },
+                  {
+                    "r": 2.2,
+                    "x": 9,
+                    "y": 72
+                  },
+                  {
+                    "r": 2.2,
+                    "x": 171,
+                    "y": 72
+                  }
+                ],
+                "joins": [
+                  {
+                    "a": [
+                      75,
+                      9
+                    ],
+                    "axis": 0,
+                    "b": [
+                      105,
+                      9
+                    ]
+                  },
+                  {
+                    "a": [
+                      75,
+                      135
+                    ],
+                    "axis": 0,
+                    "b": [
+                      105,
+                      135
+                    ]
+                  }
+                ],
+                "layer": 0.2,
+                "margin": 18,
+                "mounting": {
+                  "clearance": 0.4,
+                  "offset": 15,
+                  "screw": "M4",
+                  "threaded": false
+                },
+                "pads": [],
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 75.4,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            },
+            "stats": null
+          },
+          {
+            "step": "built",
+            "kind": "parts",
+            "metadata": {
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    11.5,
+                    96,
+                    16.7
+                  ],
+                  [
+                    84,
+                    44.800000000000004,
+                    96,
+                    50.00000000000001
+                  ],
+                  [
+                    84,
+                    81.20000000000002,
+                    96,
+                    86.4
+                  ],
+                  [
+                    84,
+                    88.4,
+                    96,
+                    93.6
+                  ],
+                  [
+                    84,
+                    127.20000000000002,
+                    96,
+                    132.4
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 75.4,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            },
+            "stats": null
+          }
+        ]
+      },
+      {
+        "id": "hw:a/parts",
+        "name": "Workshop",
+        "sources": [
+          {
+            "step": "hw:a",
+            "kind": "parts",
+            "metadata": {
+              "joiners": {
+                "screw": "M4",
+                "seams_joined": 2
+              }
+            },
+            "stats": null
+          },
+          {
+            "step": "mounted",
+            "kind": "parts",
+            "metadata": {
+              "pads": {
+                "hole_diameter_mm": 4.4,
+                "holes": 8,
+                "joins": 2,
+                "pad_diameter_mm": 0,
+                "pad_thread": "none",
+                "pads": 0,
+                "thread_major_mm": 0,
+                "warnings": []
+              },
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    11.5,
+                    96,
+                    16.7
+                  ],
+                  [
+                    84,
+                    44.800000000000004,
+                    96,
+                    50.00000000000001
+                  ],
+                  [
+                    84,
+                    81.20000000000002,
+                    96,
+                    86.4
+                  ],
+                  [
+                    84,
+                    88.4,
+                    96,
+                    93.6
+                  ],
+                  [
+                    84,
+                    127.20000000000002,
+                    96,
+                    132.4
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "holes": [
+                  {
+                    "r": 2.2,
+                    "x": 75,
+                    "y": 9
+                  },
+                  {
+                    "r": 2.2,
+                    "x": 105,
+                    "y": 9
+                  },
+                  {
+                    "r": 2.2,
+                    "x": 75,
+                    "y": 135
+                  },
+                  {
+                    "r": 2.2,
+                    "x": 105,
+                    "y": 135
+                  },
+                  {
+                    "r": 2.2,
+                    "x": 122,
+                    "y": 9
+                  },
+                  {
+                    "r": 2.2,
+                    "x": 122,
+                    "y": 135
+                  },
+                  {
+                    "r": 2.2,
+                    "x": 9,
+                    "y": 72
+                  },
+                  {
+                    "r": 2.2,
+                    "x": 171,
+                    "y": 72
+                  }
+                ],
+                "joins": [
+                  {
+                    "a": [
+                      75,
+                      9
+                    ],
+                    "axis": 0,
+                    "b": [
+                      105,
+                      9
+                    ]
+                  },
+                  {
+                    "a": [
+                      75,
+                      135
+                    ],
+                    "axis": 0,
+                    "b": [
+                      105,
+                      135
+                    ]
+                  }
+                ],
+                "layer": 0.2,
+                "margin": 18,
+                "mounting": {
+                  "clearance": 0.4,
+                  "offset": 15,
+                  "screw": "M4",
+                  "threaded": false
+                },
+                "pads": [],
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 75.4,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            },
+            "stats": null
+          },
+          {
+            "step": "built",
+            "kind": "parts",
+            "metadata": {
+              "plate": {
+                "connectors": [
+                  [
+                    84,
+                    11.5,
+                    96,
+                    16.7
+                  ],
+                  [
+                    84,
+                    44.800000000000004,
+                    96,
+                    50.00000000000001
+                  ],
+                  [
+                    84,
+                    81.20000000000002,
+                    96,
+                    86.4
+                  ],
+                  [
+                    84,
+                    88.4,
+                    96,
+                    93.6
+                  ],
+                  [
+                    84,
+                    127.20000000000002,
+                    96,
+                    132.4
+                  ]
+                ],
+                "flip": false,
+                "h": 144,
+                "layer": 0.2,
+                "margin": 18,
+                "parts": [
+                  {
+                    "file": "stencil_r1c1.stl",
+                    "origin": [
+                      0,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  },
+                  {
+                    "file": "stencil_r1c2.stl",
+                    "origin": [
+                      90,
+                      0
+                    ],
+                    "role": "tile",
+                    "size": [
+                      90,
+                      144
+                    ]
+                  }
+                ],
+                "seams": [
+                  [
+                    0,
+                    90,
+                    0,
+                    144
+                  ]
+                ],
+                "thickness": 6,
+                "top": 6,
+                "w": 180
+              },
+              "tiling": {
+                "bridges": 7,
+                "connectors": 5,
+                "dropped_fragments": 0,
+                "facet_cleanup": [],
+                "fallback_tiles": [],
+                "grid": [
+                  2,
+                  1
+                ],
+                "hole_depth_mm": 6,
+                "islands_bridged": 7,
+                "paint_under_blocks_mm2": 75.4,
+                "pre_tiled": true,
+                "rod_length_mm": 11,
+                "rows": 1,
+                "seam_step_mm": 0,
+                "tile_method": "per_tile",
+                "tiles": 2
+              }
+            },
+            "stats": null
+          }
+        ]
+      }
+    ],
+    "warnings": [],
+    "files": [
+      {
+        "path": "assembly-1-Freestanding/bolt_M4x20.stl",
+        "source": "free",
+        "assembly": "Freestanding",
+        "role": "Fastener",
+        "copies_to_print": null,
+        "bytes": 555584,
+        "sha256": "ef61cddff153a2c3af6b5f423376194dafd5cfad88770a093cf1f3026d867ab7",
+        "geometry": {
+          "triangles": 11110,
+          "size": [
+            7.390083312988281,
+            6.400000095367432,
+            22.799999237060547
+          ],
+          "bounds": [
+            [
+              -3.6950416564941406,
+              -3.200000047683716,
+              0
+            ],
+            [
+              3.6950416564941406,
+              3.200000047683716,
+              22.799999237060547
+            ]
+          ],
+          "vertices": 5557,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 270.44331926595504,
+          "closed": true,
+          "milliseconds": 29.62999999523163
+        },
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-1-Freestanding/fit_test_hex_d3mm.stl",
+        "source": "free",
+        "assembly": "Freestanding",
+        "role": "Calibration strip",
+        "copies_to_print": 1,
+        "bytes": 75784,
+        "sha256": "2d20a4c07245c89d54a4cd12ee8d232d0b8664d754c5cfcbeb3e89972c2a4c96",
+        "geometry": {
+          "triangles": 1514,
+          "size": [
+            64,
+            12,
+            6.031088829040527
+          ],
+          "bounds": [
+            [
+              0,
+              -6,
+              0
+            ],
+            [
+              64,
+              6,
+              6.031088829040527
+            ]
+          ],
+          "vertices": 747,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 4120.407504078494,
+          "closed": true,
+          "milliseconds": 3.8500000089406967
+        },
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-1-Freestanding/joiner_plate_4holes_M4_30x25mm.stl",
+        "source": "free",
+        "assembly": "Freestanding",
+        "role": "Joiner / extender",
+        "copies_to_print": null,
+        "bytes": 33484,
+        "sha256": "5828258336b34037a8f5f6c1561c0e0c1fb9cdae4fe56ab6a0c80ad3aa323499",
+        "geometry": {
+          "triangles": 668,
+          "size": [
+            40,
+            35,
+            4
+          ],
+          "bounds": [
+            [
+              -20,
+              -5,
+              0
+            ],
+            [
+              20,
+              30,
+              4
+            ]
+          ],
+          "vertices": 328,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 5273.139487553748,
+          "closed": true,
+          "milliseconds": 1.084999993443489
+        },
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-1-Freestanding/joiner_plate_M4_30mm.stl",
+        "source": "free",
+        "assembly": "Freestanding",
+        "role": "Joiner / extender",
+        "copies_to_print": null,
+        "bytes": 23084,
+        "sha256": "5067fc9db5ff5583d69d6baf65dcac0ab3658eaa06226a74fa809255e661dc8e",
+        "geometry": {
+          "triangles": 460,
+          "size": [
+            40,
+            10,
+            4
+          ],
+          "bounds": [
+            [
+              -20,
+              -5,
+              0
+            ],
+            [
+              20,
+              5,
+              4
+            ]
+          ],
+          "vertices": 228,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 1393.3971829942982,
+          "closed": true,
+          "milliseconds": 0.8550000041723251
+        },
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-1-Freestanding/nut_M4.stl",
+        "source": "free",
+        "assembly": "Freestanding",
+        "role": "Fastener",
+        "copies_to_print": null,
+        "bytes": 102084,
+        "sha256": "00db3f636b49634728e18b4f9f81459357aa5a738f1b77260029879d9ada0b49",
+        "geometry": {
+          "triangles": 2040,
+          "size": [
+            7.390083312988281,
+            6.400000095367432,
+            3.200000047683716
+          ],
+          "bounds": [
+            [
+              -3.6950416564941406,
+              -3.200000047683716,
+              0
+            ],
+            [
+              3.6950416564941406,
+              3.200000047683716,
+              3.200000047683716
+            ]
+          ],
+          "vertices": 1020,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 78.97161061744633,
+          "closed": true,
+          "milliseconds": 5.3499999940395355
+        },
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-2-Workshop/bolt_M6x20.stl",
+        "source": "hw/a",
+        "assembly": "Workshop",
+        "role": "Fastener",
+        "copies_to_print": null,
+        "bytes": 392384,
+        "sha256": "0313740a1628fd37b1c97da29075a1c45e55f3ac94d39337fdca1c1f975b6b5a",
+        "geometry": {
+          "triangles": 7846,
+          "size": [
+            11.085124969482422,
+            9.600000381469727,
+            24.200000762939453
+          ],
+          "bounds": [
+            [
+              -5.542562484741211,
+              -4.800000190734863,
+              0
+            ],
+            [
+              5.542562484741211,
+              4.800000190734863,
+              24.200000762939453
+            ]
+          ],
+          "vertices": 3925,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 724.6552301886662,
+          "closed": true,
+          "milliseconds": 13.13000001013279
+        },
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-2-Workshop/extender_M4.stl",
+        "source": "hw/a",
+        "assembly": "Workshop",
+        "role": "Joiner / extender",
+        "copies_to_print": null,
+        "bytes": 33484,
+        "sha256": "76035cb7951afab26c8dbd3071cd7544dc1f85acc7fc9bf99c1820f8b2837636",
+        "geometry": {
+          "triangles": 668,
+          "size": [
+            40,
+            35,
+            4
+          ],
+          "bounds": [
+            [
+              -20,
+              -5,
+              0
+            ],
+            [
+              20,
+              30,
+              4
+            ]
+          ],
+          "vertices": 328,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 5273.139487553748,
+          "closed": true,
+          "milliseconds": 0.9249999970197678
+        },
+        "replaces_upstream_sources": [
+          "mounted"
+        ],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-2-Workshop/fit_test_hex_d3mm.stl",
+        "source": "hw/a",
+        "assembly": "Workshop",
+        "role": "Calibration strip",
+        "copies_to_print": 1,
+        "bytes": 75784,
+        "sha256": "2d20a4c07245c89d54a4cd12ee8d232d0b8664d754c5cfcbeb3e89972c2a4c96",
+        "geometry": {
+          "triangles": 1514,
+          "size": [
+            64,
+            12,
+            6.031088829040527
+          ],
+          "bounds": [
+            [
+              0,
+              -6,
+              0
+            ],
+            [
+              64,
+              6,
+              6.031088829040527
+            ]
+          ],
+          "vertices": 747,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 4120.407504078494,
+          "closed": true,
+          "milliseconds": 2.1200000047683716
+        },
+        "replaces_upstream_sources": [],
+        "also_used_by": [
+          {
+            "assembly": "Workshop",
+            "source": "hw:a",
+            "requested_path": "assembly-3-Workshop/fit_test_hex_d3mm.stl"
+          }
+        ]
+      },
+      {
+        "path": "assembly-2-Workshop/joiner_M4.stl",
+        "source": "hw/a",
+        "assembly": "Workshop",
+        "role": "Joiner / extender",
+        "copies_to_print": 2,
+        "bytes": 23084,
+        "sha256": "5067fc9db5ff5583d69d6baf65dcac0ab3658eaa06226a74fa809255e661dc8e",
+        "geometry": {
+          "triangles": 460,
+          "size": [
+            40,
+            10,
+            4
+          ],
+          "bounds": [
+            [
+              -20,
+              -5,
+              0
+            ],
+            [
+              20,
+              5,
+              4
+            ]
+          ],
+          "vertices": 228,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 1393.3971829942982,
+          "closed": true,
+          "milliseconds": 0.7049999982118607
+        },
+        "replaces_upstream_sources": [
+          "mounted"
+        ],
+        "also_used_by": [
+          {
+            "assembly": "Workshop",
+            "source": "hw:a",
+            "requested_path": "assembly-3-Workshop/joiner_M4.stl"
+          }
+        ]
+      },
+      {
+        "path": "assembly-2-Workshop/joiner_plate_4holes_M6_30x25mm.stl",
+        "source": "hw/a",
+        "assembly": "Workshop",
+        "role": "Joiner / extender",
+        "copies_to_print": null,
+        "bytes": 33484,
+        "sha256": "4feddfc6312420c8c97d69c81ed689fcd44aaba87cfe252fe67290c8edd132ff",
+        "geometry": {
+          "triangles": 668,
+          "size": [
+            42,
+            37,
+            4
+          ],
+          "bounds": [
+            [
+              -21,
+              -6,
+              0
+            ],
+            [
+              21,
+              31,
+              4
+            ]
+          ],
+          "vertices": 328,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 5582.803958768051,
+          "closed": true,
+          "milliseconds": 1.0399999916553497
+        },
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-2-Workshop/joiner_plate_M6_30mm.stl",
+        "source": "hw/a",
+        "assembly": "Workshop",
+        "role": "Joiner / extender",
+        "copies_to_print": null,
+        "bytes": 23084,
+        "sha256": "b4bcf95067584bc52bddaa11af5b6e66d23b8138e9fd4b62b4b99bea8ba2ac2c",
+        "geometry": {
+          "triangles": 460,
+          "size": [
+            42,
+            12,
+            4
+          ],
+          "bounds": [
+            [
+              -21,
+              -6,
+              0
+            ],
+            [
+              21,
+              6,
+              4
+            ]
+          ],
+          "vertices": 228,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 1637.2334946102412,
+          "closed": true,
+          "milliseconds": 0.7000000029802322
+        },
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-2-Workshop/nut_M6.stl",
+        "source": "hw/a",
+        "assembly": "Workshop",
+        "role": "Fastener",
+        "copies_to_print": null,
+        "bytes": 102084,
+        "sha256": "decb770cb22bb90adcf1edb22ad5f3f21c717797db556b71c57a8f52a222fa47",
+        "geometry": {
+          "triangles": 2040,
+          "size": [
+            11.085124969482422,
+            9.600000381469727,
+            4.800000190734863
+          ],
+          "bounds": [
+            [
+              -5.542562484741211,
+              -4.800000190734863,
+              0
+            ],
+            [
+              5.542562484741211,
+              4.800000190734863,
+              4.800000190734863
+            ]
+          ],
+          "vertices": 1020,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 273.3997246112116,
+          "closed": true,
+          "milliseconds": 4.594999998807907
+        },
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-2-Workshop/connector_hex_d3mm.stl",
+        "source": "mounted",
+        "assembly": "Workshop",
+        "role": "Connector rod",
+        "copies_to_print": 5,
+        "bytes": 1084,
+        "sha256": "4c3d8674fa463ec4987067d63ec5726009dcd63a8f876822fa2c9387cfd10a38",
+        "geometry": {
+          "triangles": 20,
+          "size": [
+            3,
+            2.598076105117798,
+            11
+          ],
+          "bounds": [
+            [
+              -1.5,
+              -1.299038052558899,
+              0
+            ],
+            [
+              1.5,
+              1.299038052558899,
+              11
+            ]
+          ],
+          "vertices": 12,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 64.3023836016655,
+          "closed": true,
+          "milliseconds": 0.10999999940395355
+        },
+        "replaces_upstream_sources": [
+          "built"
+        ],
+        "also_used_by": [
+          {
+            "assembly": "Workshop",
+            "source": "mounted",
+            "requested_path": "assembly-3-Workshop/connector_hex_d3mm.stl"
+          }
+        ]
+      },
+      {
+        "path": "assembly-2-Workshop/stencil_r1c1.stl",
+        "source": "mounted",
+        "assembly": "Workshop",
+        "role": "Stencil tile",
+        "copies_to_print": 1,
+        "bytes": 99884,
+        "sha256": "3dff634b9fe6cae528e9e63a1e275fbb133fe6f34120426f13facf47dfabc64c",
+        "geometry": {
+          "triangles": 1996,
+          "size": [
+            90,
+            144,
+            10
+          ],
+          "bounds": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              90,
+              144,
+              10
+            ]
+          ],
+          "vertices": 994,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 49349.870019353184,
+          "closed": true,
+          "milliseconds": 3.905000001192093
+        },
+        "replaces_upstream_sources": [
+          "built"
+        ],
+        "also_used_by": [
+          {
+            "assembly": "Workshop",
+            "source": "mounted",
+            "requested_path": "assembly-3-Workshop/stencil_r1c1.stl"
+          }
+        ]
+      },
+      {
+        "path": "assembly-2-Workshop/stencil_r1c2.stl",
+        "source": "mounted",
+        "assembly": "Workshop",
+        "role": "Stencil tile",
+        "copies_to_print": 1,
+        "bytes": 106484,
+        "sha256": "9d46f4081e5b8b69805a8dd955ceea669f7ea9c14adab1a2905bcfba5266b84a",
+        "geometry": {
+          "triangles": 2128,
+          "size": [
+            90,
+            144,
+            10
+          ],
+          "bounds": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              90,
+              144,
+              10
+            ]
+          ],
+          "vertices": 1056,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 47285.46524811928,
+          "closed": true,
+          "milliseconds": 5.879999995231628
+        },
+        "replaces_upstream_sources": [
+          "built"
+        ],
+        "also_used_by": [
+          {
+            "assembly": "Workshop",
+            "source": "mounted",
+            "requested_path": "assembly-3-Workshop/stencil_r1c2.stl"
+          }
+        ]
+      },
+      {
+        "path": "assembly-2-Workshop/test-layout.png",
+        "source": "test",
+        "assembly": "Workshop",
+        "role": "Actual layout preview",
+        "copies_to_print": null,
+        "bytes": 15572,
+        "sha256": "ea746cfa47bcf34a94128031e7b48628eabf1f129eb61b146981367b4f69a2eb",
+        "geometry": null,
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-2-Workshop/trace-traced-outlines-before-bridges.svg",
+        "source": "trace",
+        "assembly": "Workshop",
+        "role": "Artwork before physical bridge corrections",
+        "copies_to_print": null,
+        "bytes": 13670,
+        "sha256": "6129cbb9972d5479c07557257d8fd3edc08ad31df1f2d822f7046ede6e14fc58",
+        "geometry": null,
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-3-Workshop/bolt_M4x20.stl",
+        "source": "hw:a",
+        "assembly": "Workshop",
+        "role": "Fastener",
+        "copies_to_print": null,
+        "bytes": 555584,
+        "sha256": "ef61cddff153a2c3af6b5f423376194dafd5cfad88770a093cf1f3026d867ab7",
+        "geometry": {
+          "triangles": 11110,
+          "size": [
+            7.390083312988281,
+            6.400000095367432,
+            22.799999237060547
+          ],
+          "bounds": [
+            [
+              -3.6950416564941406,
+              -3.200000047683716,
+              0
+            ],
+            [
+              3.6950416564941406,
+              3.200000047683716,
+              22.799999237060547
+            ]
+          ],
+          "vertices": 5557,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 270.44331926595504,
+          "closed": true,
+          "milliseconds": 26.239999994635582
+        },
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-3-Workshop/extender_M4.stl",
+        "source": "hw:a",
+        "assembly": "Workshop",
+        "role": "Joiner / extender",
+        "copies_to_print": null,
+        "bytes": 33484,
+        "sha256": "5828258336b34037a8f5f6c1561c0e0c1fb9cdae4fe56ab6a0c80ad3aa323499",
+        "geometry": {
+          "triangles": 668,
+          "size": [
+            40,
+            35,
+            4
+          ],
+          "bounds": [
+            [
+              -20,
+              -5,
+              0
+            ],
+            [
+              20,
+              30,
+              4
+            ]
+          ],
+          "vertices": 328,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 5273.139487553748,
+          "closed": true,
+          "milliseconds": 1.0250000059604645
+        },
+        "replaces_upstream_sources": [
+          "mounted"
+        ],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-3-Workshop/joiner_plate_4holes_M4_30x25mm.stl",
+        "source": "hw:a",
+        "assembly": "Workshop",
+        "role": "Joiner / extender",
+        "copies_to_print": null,
+        "bytes": 33484,
+        "sha256": "5828258336b34037a8f5f6c1561c0e0c1fb9cdae4fe56ab6a0c80ad3aa323499",
+        "geometry": {
+          "triangles": 668,
+          "size": [
+            40,
+            35,
+            4
+          ],
+          "bounds": [
+            [
+              -20,
+              -5,
+              0
+            ],
+            [
+              20,
+              30,
+              4
+            ]
+          ],
+          "vertices": 328,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 5273.139487553748,
+          "closed": true,
+          "milliseconds": 1.155000001192093
+        },
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-3-Workshop/joiner_plate_M4_30mm.stl",
+        "source": "hw:a",
+        "assembly": "Workshop",
+        "role": "Joiner / extender",
+        "copies_to_print": null,
+        "bytes": 23084,
+        "sha256": "5067fc9db5ff5583d69d6baf65dcac0ab3658eaa06226a74fa809255e661dc8e",
+        "geometry": {
+          "triangles": 460,
+          "size": [
+            40,
+            10,
+            4
+          ],
+          "bounds": [
+            [
+              -20,
+              -5,
+              0
+            ],
+            [
+              20,
+              5,
+              4
+            ]
+          ],
+          "vertices": 228,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 1393.3971829942982,
+          "closed": true,
+          "milliseconds": 0.6699999868869781
+        },
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-3-Workshop/nut_M4.stl",
+        "source": "hw:a",
+        "assembly": "Workshop",
+        "role": "Fastener",
+        "copies_to_print": null,
+        "bytes": 102084,
+        "sha256": "00db3f636b49634728e18b4f9f81459357aa5a738f1b77260029879d9ada0b49",
+        "geometry": {
+          "triangles": 2040,
+          "size": [
+            7.390083312988281,
+            6.400000095367432,
+            3.200000047683716
+          ],
+          "bounds": [
+            [
+              -3.6950416564941406,
+              -3.200000047683716,
+              0
+            ],
+            [
+              3.6950416564941406,
+              3.200000047683716,
+              3.200000047683716
+            ]
+          ],
+          "vertices": 1020,
+          "components": 1,
+          "degenerate": 0,
+          "edgesNotSharedTwice": 0,
+          "inconsistentWinding": 0,
+          "signedVolume": 78.97161061744633,
+          "closed": true,
+          "milliseconds": 3.8900000005960464
+        },
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-3-Workshop/test-layout.png",
+        "source": "test",
+        "assembly": "Workshop",
+        "role": "Actual layout preview",
+        "copies_to_print": null,
+        "bytes": 15572,
+        "sha256": "ea746cfa47bcf34a94128031e7b48628eabf1f129eb61b146981367b4f69a2eb",
+        "geometry": null,
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "assembly-3-Workshop/trace-traced-outlines-before-bridges.svg",
+        "source": "trace",
+        "assembly": "Workshop",
+        "role": "Artwork before physical bridge corrections",
+        "copies_to_print": null,
+        "bytes": 13670,
+        "sha256": "6129cbb9972d5479c07557257d8fd3edc08ad31df1f2d822f7046ede6e14fc58",
+        "geometry": null,
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      },
+      {
+        "path": "original-project.json",
+        "source": "project",
+        "assembly": "Project",
+        "role": "Complete saved project with original artwork",
+        "copies_to_print": null,
+        "bytes": 6093,
+        "sha256": "d9d05a52ff7f1acea56c5a03ad7fd006aced34e92a76db3c580edc449747c9ec",
+        "geometry": null,
+        "replaces_upstream_sources": [],
+        "also_used_by": []
+      }
+    ],
+    "excluded": []
+  },
+  "independent_validation": {
+    "format": "ZIP",
+    "bytes": 2534380,
+    "entries": [
+      {
+        "name": "assembly-1-Freestanding/bolt_M4x20.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 3962795483,
+        "format": "binary STL",
+        "bytes": 555584,
+        "triangles": 11110,
+        "vertices": 5557,
+        "bounds_mm": [
+          [
+            -3.6950416564941406,
+            -3.200000047683716,
+            0
+          ],
+          [
+            3.6950416564941406,
+            3.200000047683716,
+            22.799999237060547
+          ]
+        ],
+        "size_mm": [
+          7.390083312988281,
+          6.400000095367432,
+          22.799999237060547
+        ],
+        "signed_volume_mm3": 270.44331926595504,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Freestanding/fit_test_hex_d3mm.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 2640225596,
+        "format": "binary STL",
+        "bytes": 75784,
+        "triangles": 1514,
+        "vertices": 747,
+        "bounds_mm": [
+          [
+            0,
+            -6,
+            0
+          ],
+          [
+            64,
+            6,
+            6.031088829040527
+          ]
+        ],
+        "size_mm": [
+          64,
+          12,
+          6.031088829040527
+        ],
+        "signed_volume_mm3": 4120.407504078494,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Freestanding/joiner_plate_4holes_M4_30x25mm.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 48435010,
+        "format": "binary STL",
+        "bytes": 33484,
+        "triangles": 668,
+        "vertices": 328,
+        "bounds_mm": [
+          [
+            -20,
+            -5,
+            0
+          ],
+          [
+            20,
+            30,
+            4
+          ]
+        ],
+        "size_mm": [
+          40,
+          35,
+          4
+        ],
+        "signed_volume_mm3": 5273.139487553748,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Freestanding/joiner_plate_M4_30mm.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 2574424237,
+        "format": "binary STL",
+        "bytes": 23084,
+        "triangles": 460,
+        "vertices": 228,
+        "bounds_mm": [
+          [
+            -20,
+            -5,
+            0
+          ],
+          [
+            20,
+            5,
+            4
+          ]
+        ],
+        "size_mm": [
+          40,
+          10,
+          4
+        ],
+        "signed_volume_mm3": 1393.3971829942982,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Freestanding/nut_M4.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 1613891123,
+        "format": "binary STL",
+        "bytes": 102084,
+        "triangles": 2040,
+        "vertices": 1020,
+        "bounds_mm": [
+          [
+            -3.6950416564941406,
+            -3.200000047683716,
+            0
+          ],
+          [
+            3.6950416564941406,
+            3.200000047683716,
+            3.200000047683716
+          ]
+        ],
+        "size_mm": [
+          7.390083312988281,
+          6.400000095367432,
+          3.200000047683716
+        ],
+        "signed_volume_mm3": 78.97161061744633,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-2-Workshop/bolt_M6x20.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 840252871,
+        "format": "binary STL",
+        "bytes": 392384,
+        "triangles": 7846,
+        "vertices": 3925,
+        "bounds_mm": [
+          [
+            -5.542562484741211,
+            -4.800000190734863,
+            0
+          ],
+          [
+            5.542562484741211,
+            4.800000190734863,
+            24.200000762939453
+          ]
+        ],
+        "size_mm": [
+          11.085124969482422,
+          9.600000381469727,
+          24.200000762939453
+        ],
+        "signed_volume_mm3": 724.6552301886662,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-2-Workshop/extender_M4.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 1528608119,
+        "format": "binary STL",
+        "bytes": 33484,
+        "triangles": 668,
+        "vertices": 328,
+        "bounds_mm": [
+          [
+            -20,
+            -5,
+            0
+          ],
+          [
+            20,
+            30,
+            4
+          ]
+        ],
+        "size_mm": [
+          40,
+          35,
+          4
+        ],
+        "signed_volume_mm3": 5273.139487553748,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-2-Workshop/fit_test_hex_d3mm.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 2640225596,
+        "format": "binary STL",
+        "bytes": 75784,
+        "triangles": 1514,
+        "vertices": 747,
+        "bounds_mm": [
+          [
+            0,
+            -6,
+            0
+          ],
+          [
+            64,
+            6,
+            6.031088829040527
+          ]
+        ],
+        "size_mm": [
+          64,
+          12,
+          6.031088829040527
+        ],
+        "signed_volume_mm3": 4120.407504078494,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-2-Workshop/joiner_M4.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 2574424237,
+        "format": "binary STL",
+        "bytes": 23084,
+        "triangles": 460,
+        "vertices": 228,
+        "bounds_mm": [
+          [
+            -20,
+            -5,
+            0
+          ],
+          [
+            20,
+            5,
+            4
+          ]
+        ],
+        "size_mm": [
+          40,
+          10,
+          4
+        ],
+        "signed_volume_mm3": 1393.3971829942982,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-2-Workshop/joiner_plate_4holes_M6_30x25mm.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 2678832652,
+        "format": "binary STL",
+        "bytes": 33484,
+        "triangles": 668,
+        "vertices": 328,
+        "bounds_mm": [
+          [
+            -21,
+            -6,
+            0
+          ],
+          [
+            21,
+            31,
+            4
+          ]
+        ],
+        "size_mm": [
+          42,
+          37,
+          4
+        ],
+        "signed_volume_mm3": 5582.803958768051,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-2-Workshop/joiner_plate_M6_30mm.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 2043853011,
+        "format": "binary STL",
+        "bytes": 23084,
+        "triangles": 460,
+        "vertices": 228,
+        "bounds_mm": [
+          [
+            -21,
+            -6,
+            0
+          ],
+          [
+            21,
+            6,
+            4
+          ]
+        ],
+        "size_mm": [
+          42,
+          12,
+          4
+        ],
+        "signed_volume_mm3": 1637.2334946102412,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-2-Workshop/nut_M6.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 3984291476,
+        "format": "binary STL",
+        "bytes": 102084,
+        "triangles": 2040,
+        "vertices": 1020,
+        "bounds_mm": [
+          [
+            -5.542562484741211,
+            -4.800000190734863,
+            0
+          ],
+          [
+            5.542562484741211,
+            4.800000190734863,
+            4.800000190734863
+          ]
+        ],
+        "size_mm": [
+          11.085124969482422,
+          9.600000381469727,
+          4.800000190734863
+        ],
+        "signed_volume_mm3": 273.3997246112116,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-2-Workshop/connector_hex_d3mm.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 3450284195,
+        "format": "binary STL",
+        "bytes": 1084,
+        "triangles": 20,
+        "vertices": 12,
+        "bounds_mm": [
+          [
+            -1.5,
+            -1.299038052558899,
+            0
+          ],
+          [
+            1.5,
+            1.299038052558899,
+            11
+          ]
+        ],
+        "size_mm": [
+          3,
+          2.598076105117798,
+          11
+        ],
+        "signed_volume_mm3": 64.3023836016655,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-2-Workshop/stencil_r1c1.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 1370928872,
+        "format": "binary STL",
+        "bytes": 99884,
+        "triangles": 1996,
+        "vertices": 994,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            90,
+            144,
+            10
+          ]
+        ],
+        "size_mm": [
+          90,
+          144,
+          10
+        ],
+        "signed_volume_mm3": 49349.870019353184,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-2-Workshop/stencil_r1c2.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 4015919099,
+        "format": "binary STL",
+        "bytes": 106484,
+        "triangles": 2128,
+        "vertices": 1056,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            90,
+            144,
+            10
+          ]
+        ],
+        "size_mm": [
+          90,
+          144,
+          10
+        ],
+        "signed_volume_mm3": 47285.46524811928,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-2-Workshop/test-layout.png",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 2026108568
+      },
+      {
+        "name": "assembly-2-Workshop/trace-traced-outlines-before-bridges.svg",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 3654641834
+      },
+      {
+        "name": "assembly-3-Workshop/bolt_M4x20.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 3962795483,
+        "format": "binary STL",
+        "bytes": 555584,
+        "triangles": 11110,
+        "vertices": 5557,
+        "bounds_mm": [
+          [
+            -3.6950416564941406,
+            -3.200000047683716,
+            0
+          ],
+          [
+            3.6950416564941406,
+            3.200000047683716,
+            22.799999237060547
+          ]
+        ],
+        "size_mm": [
+          7.390083312988281,
+          6.400000095367432,
+          22.799999237060547
+        ],
+        "signed_volume_mm3": 270.44331926595504,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-3-Workshop/extender_M4.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 48435010,
+        "format": "binary STL",
+        "bytes": 33484,
+        "triangles": 668,
+        "vertices": 328,
+        "bounds_mm": [
+          [
+            -20,
+            -5,
+            0
+          ],
+          [
+            20,
+            30,
+            4
+          ]
+        ],
+        "size_mm": [
+          40,
+          35,
+          4
+        ],
+        "signed_volume_mm3": 5273.139487553748,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-3-Workshop/joiner_plate_4holes_M4_30x25mm.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 48435010,
+        "format": "binary STL",
+        "bytes": 33484,
+        "triangles": 668,
+        "vertices": 328,
+        "bounds_mm": [
+          [
+            -20,
+            -5,
+            0
+          ],
+          [
+            20,
+            30,
+            4
+          ]
+        ],
+        "size_mm": [
+          40,
+          35,
+          4
+        ],
+        "signed_volume_mm3": 5273.139487553748,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-3-Workshop/joiner_plate_M4_30mm.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 2574424237,
+        "format": "binary STL",
+        "bytes": 23084,
+        "triangles": 460,
+        "vertices": 228,
+        "bounds_mm": [
+          [
+            -20,
+            -5,
+            0
+          ],
+          [
+            20,
+            5,
+            4
+          ]
+        ],
+        "size_mm": [
+          40,
+          10,
+          4
+        ],
+        "signed_volume_mm3": 1393.3971829942982,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-3-Workshop/nut_M4.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 1613891123,
+        "format": "binary STL",
+        "bytes": 102084,
+        "triangles": 2040,
+        "vertices": 1020,
+        "bounds_mm": [
+          [
+            -3.6950416564941406,
+            -3.200000047683716,
+            0
+          ],
+          [
+            3.6950416564941406,
+            3.200000047683716,
+            3.200000047683716
+          ]
+        ],
+        "size_mm": [
+          7.390083312988281,
+          6.400000095367432,
+          3.200000047683716
+        ],
+        "signed_volume_mm3": 78.97161061744633,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-3-Workshop/test-layout.png",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 2026108568
+      },
+      {
+        "name": "assembly-3-Workshop/trace-traced-outlines-before-bridges.svg",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 3654641834
+      },
+      {
+        "name": "original-project.json",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 3451171277
+      },
+      {
+        "name": "manufacturing-manifest.json",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 312420722
+      }
+    ]
+  }
+}

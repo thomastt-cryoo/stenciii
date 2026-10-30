@@ -8,7 +8,7 @@ from exact_surface import compare
 from surface_deviation import certify
 from output_formats import normals,png,svg
 from retain_discrepancies import retain
-start=time.monotonic();data=json.loads(Path('docs/m6/all-control-modes.json').read_text(encoding='utf-8'));assert data['completed_values']==data['executed_values'];checks={};proofs={};rows=[];retained={};formats=Counter()
+start=time.monotonic();data=json.loads(Path('docs/m6/all-control-modes.json').read_text(encoding='utf-8'));assert data['completed_values']==data['executed_values'];checks={};proofs={};rows=[];retained={};formats=Counter();semantic_constraints=[]
 for case in data['cases']:
     if case['expectedDiagnostic']:
         assert case['native'].get('error') and case['st'].get('refusal') and case['mt'].get('refusal');continue
@@ -34,7 +34,14 @@ for case in data['cases']:
             if suffix=='.stl':
                 meta=case['native']['info'].get('meta',{});components=checks[sha]['components']
                 allowed=meta.get('registration',{}).get('holes',1) if 'pins' in name else meta.get('fragments',{}).get('keep',1) if 'stencil' in name else 1
-                assert (components==allowed if 'pins' in name else 1<=components<=allowed),(case['case'],name,components,allowed)
+                semantic_ok=components==allowed if 'pins' in name else 1<=components<=allowed
+                if not semantic_ok:
+                    # This deliberate bridge-off fixture is a negative export case,
+                    # not a printable two-body tile. Keep the ordinary guard strict.
+                    assert (case['case'],name,components,allowed)==('tiles-bridge_islands-0','stencil_r1c2.stl',2,1)
+                    guard=json.loads(Path('docs/m6/disconnected-guard-validation.json').read_text())
+                    assert all(guard[k] for k in ['ordinary_export_blocked','manufacturing_zip_blocked','batch_item_failed_without_collection','reenabling_tile_island_bridges_restores_complete_export'])
+                    semantic_constraints.append({'case':case['case'],'file':name,'engine':mode,'components':components,'permitted':allowed,'outcome':'Export correctly blocked; reenable tile-island bridging','guard_evidence':'docs/m6/disconnected-guard-validation.json'})
         for left,right in [('native','st'),('st','mt')]:
             a,b=files[left][name],files[right][name];hashes=tuple(hashlib.sha256(body).hexdigest() for body in [a,b])
             if suffix=='.stl':
@@ -54,5 +61,5 @@ for case in data['cases']:
 entries=retain(retained,Path('docs/m6/fixtures/control-discrepancies')) if retained else {}
 for row in rows:
     if 'retained_stl_entries' in row:row['retained_archives']=[entries[n] for n in row['retained_stl_entries']]
-result={'qualified_slots':217,'executed_values':data['completed_values'],'three_engine_diagnostics':sum(c['expectedDiagnostic'] for c in data['cases']),'output_counts_by_case':dict(formats),'independently_valid_unique_artifacts':len(checks),'compared_stl_file_pairs':len(rows),'categories':dict(Counter(r['category'] for r in rows)),'all_outputs_valid':True,'all_comparisons_classified':True,'image_and_vector_bytes_identical':True,'elapsed_seconds':time.monotonic()-start,'cases':rows}
+result={'qualified_slots':217,'executed_values':data['completed_values'],'three_engine_diagnostics':sum(c['expectedDiagnostic'] for c in data['cases']),'output_counts_by_case':dict(formats),'independently_valid_unique_artifacts':len(checks),'compared_stl_file_pairs':len(rows),'categories':dict(Counter(r['category'] for r in rows)),'all_outputs_valid':True,'validity_scope':'Stored bytes, normals, closed oriented surfaces and positive volume; disconnected negative fixture is explicitly blocked from customer export','semantic_constraints':semantic_constraints,'all_comparisons_classified':True,'image_and_vector_bytes_identical':True,'elapsed_seconds':time.monotonic()-start,'cases':rows}
 Path('docs/m6/all-control-parity.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8');print(json.dumps({k:v for k,v in result.items() if k!='cases'}))

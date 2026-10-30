@@ -1,0 +1,41 @@
+{
+  "lossless": true,
+  "executable": true,
+  "nativeExit": 0,
+  "nativeDiagnostic": "verified: 0 islands found, 0 remaining, watertight true, 52 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\project-replay\\legacy-exporter\\stencil.stl in 27 ms\n",
+  "independent": {
+    "files": [
+      {
+        "file": "stencil.stl",
+        "format": "binary STL",
+        "bytes": 2684,
+        "triangles": 52,
+        "vertices": 24,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            160,
+            109.02655029296875,
+            8
+          ]
+        ],
+        "size_mm": [
+          160,
+          109.02655029296875,
+          8
+        ],
+        "signed_volume_mm3": 100575.58392858342,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      }
+    ],
+    "all_valid": true
+  }
+}

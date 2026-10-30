@@ -1,0 +1,40 @@
+{
+  "lossless": true,
+  "originalBytesEmbedded": true,
+  "nativeExit": 0,
+  "independent": {
+    "files": [
+      {
+        "file": "browser-indexeddb-original.stl",
+        "format": "binary STL",
+        "bytes": 139284,
+        "triangles": 2784,
+        "vertices": 1388,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            163.1999969482422,
+            5.199999809265137
+          ]
+        ],
+        "size_mm": [
+          200,
+          163.1999969482422,
+          5.199999809265137
+        ],
+        "signed_volume_mm3": 146206.76338452316,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      }
+    ],
+    "all_valid": true
+  }
+}

@@ -1,0 +1,19 @@
+
+Running 3 tests using 1 worker
+
+
+
+(node:17396) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1/3] e2e\m2-editor.spec.ts:59:1 › live edits show draft, retain the last preview and finish full quality without Make; cancel stays cancelled
+(node:26920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/3] e2e\m2-editor.spec.ts:59:1 › live edits show draft, retain the last preview and finish full quality without Make; cancel stays cancelled
+
+
+(node:17024) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[3/3] e2e\m2-editor.spec.ts:59:1 › live edits show draft, retain the last preview and finish full quality without Make; cancel stays cancelled
+  3 passed (46.4s)

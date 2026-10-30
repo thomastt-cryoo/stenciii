@@ -1,0 +1,7 @@
+{
+  "lossless": true,
+  "executable": false,
+  "nativeExit": 1,
+  "nativeDiagnostic": "error: unknown node type 'future-supported-in-v9'\n",
+  "independent": null
+}

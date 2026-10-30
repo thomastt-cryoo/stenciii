@@ -1,0 +1,131 @@
+{
+  "lossless": true,
+  "executable": true,
+  "nativeExit": 0,
+  "nativeDiagnostic": "verified: 0 islands found, 0 remaining, watertight true, 32 triangles\nverified: 0 islands found, 0 remaining, watertight true, 32 triangles\nverified: 0 islands found, 0 remaining, watertight true, 32 triangles\nwrote 4 parts to C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\project-replay\\registered-colour-branches and C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\project-replay\\registered-colour-branches\\registered-colour-branches.zip in 168 ms\n",
+  "independent": {
+    "files": [
+      {
+        "file": "colour_1.stl",
+        "format": "binary STL",
+        "bytes": 31084,
+        "triangles": 620,
+        "vertices": 304,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            68,
+            3.200000047683716
+          ]
+        ],
+        "size_mm": [
+          100,
+          68,
+          3.200000047683716
+        ],
+        "signed_volume_mm3": 20410.907394156176,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "file": "colour_2.stl",
+        "format": "binary STL",
+        "bytes": 31084,
+        "triangles": 620,
+        "vertices": 304,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            68,
+            3.200000047683716
+          ]
+        ],
+        "size_mm": [
+          100,
+          68,
+          3.200000047683716
+        ],
+        "signed_volume_mm3": 20410.90739415618,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "file": "colour_3.stl",
+        "format": "binary STL",
+        "bytes": 31084,
+        "triangles": 620,
+        "vertices": 304,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            68,
+            3.200000047683716
+          ]
+        ],
+        "size_mm": [
+          100,
+          68,
+          3.200000047683716
+        ],
+        "signed_volume_mm3": 20410.907394156187,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "file": "pins_3x_d3.8mm.stl",
+        "format": "binary STL",
+        "bytes": 28284,
+        "triangles": 564,
+        "vertices": 288,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            17.399999618530273,
+            3.799999952316284,
+            12
+          ]
+        ],
+        "size_mm": [
+          17.399999618530273,
+          3.799999952316284,
+          12
+        ],
+        "signed_volume_mm3": 407.116420441479,
+        "components": 3,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      }
+    ],
+    "all_valid": true
+  }
+}

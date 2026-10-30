@@ -1,0 +1,69 @@
+{
+  "mesh": {
+    "format": "binary STL",
+    "bytes": 168884,
+    "triangles": 3376,
+    "vertices": 1668,
+    "bounds_mm": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        200,
+        123.12889862060547,
+        5.199999809265137
+      ]
+    ],
+    "size_mm": [
+      200,
+      123.12889862060547,
+      5.199999809265137
+    ],
+    "signed_volume_mm3": 113653.21759712603,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true
+  },
+  "native": {
+    "format": "binary STL",
+    "bytes": 168884,
+    "triangles": 3376,
+    "vertices": 1668,
+    "bounds_mm": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        200,
+        123.12889862060547,
+        5.199999809265137
+      ]
+    ],
+    "size_mm": [
+      200,
+      123.12889862060547,
+      5.199999809265137
+    ],
+    "signed_volume_mm3": 113653.21759712603,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true
+  },
+  "svg": {
+    "format": "SVG",
+    "paths": 1,
+    "attributes": {
+      "viewBox": "0 0 675 393",
+      "width": "675",
+      "height": "393"
+    }
+  }
+}

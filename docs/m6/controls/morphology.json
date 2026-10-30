@@ -1,0 +1,780 @@
+{
+  "type": "morphology",
+  "slots": 8,
+  "cases": [
+    {
+      "key": "morphology.op",
+      "schema": {
+        "choices": [
+          "erode",
+          "dilate",
+          "open",
+          "close",
+          "gradient",
+          "white_hat",
+          "black_hat",
+          "thin",
+          "skeleton",
+          "hit_or_miss"
+        ],
+        "default": "open",
+        "group": null,
+        "kind": "choice",
+        "label": "Operation",
+        "name": "op"
+      },
+      "initial": "open",
+      "changed": "dilate",
+      "choices": [
+        "erode",
+        "dilate",
+        "open",
+        "close",
+        "gradient",
+        "white_hat",
+        "black_hat",
+        "thin",
+        "skeleton",
+        "hit_or_miss"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "erode",
+          "sha256": "124f884ecce6ec629edd556f019ef2b17d07210cb7d62844dfaa643096e67b78",
+          "info": {
+            "coverage": 0.0025,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/op-0.json"
+        },
+        {
+          "value": "dilate",
+          "sha256": "5c18b078459119b7409761b7d204305644ad25833a396cfd616b430aded6d811",
+          "info": {
+            "coverage": 0.435,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/op-1.json"
+        },
+        {
+          "value": "open",
+          "sha256": "11530a73777844f1e4671e132b67776f062a81e966c44266b19f3c77c866ca95",
+          "info": {
+            "coverage": 0.0525,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/op-2.json"
+        },
+        {
+          "value": "close",
+          "sha256": "ae90942b614d50086d55ad27735d939697c838a0e527d1f92467ec2a0d9c533c",
+          "info": {
+            "coverage": 0.11,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/op-3.json"
+        },
+        {
+          "value": "gradient",
+          "sha256": "bd5b572b87cdd43df2c3716307b1fde16e7584c3bffd417973699e3643fa3f75",
+          "info": {
+            "coverage": 0.4325,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/op-4.json"
+        },
+        {
+          "value": "white_hat",
+          "sha256": "f41296b2cccf56b4b95839c64fb4ed27f2a55d77efa16b5dd94b0968621059bf",
+          "info": {
+            "coverage": 0.0325,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/op-5.json"
+        },
+        {
+          "value": "black_hat",
+          "sha256": "1bd0344a233e060afba47175ce84971eb1a38bb0e6a383b0c4f8147364a41dfe",
+          "info": {
+            "coverage": 0.025,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/op-6.json"
+        },
+        {
+          "value": "thin",
+          "sha256": "7ee5eff23e25de769be7c5ed1feb1ac9cd369b04cce6880ac62537a95cff7c2a",
+          "info": {
+            "coverage": 0.0325,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/op-7.json"
+        },
+        {
+          "value": "skeleton",
+          "sha256": "7ce7650e81324db898b7528e51211eceadd76a65425e273fc80071cfc42c6029",
+          "info": {
+            "coverage": 0.025,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/op-8.json"
+        },
+        {
+          "value": "hit_or_miss",
+          "sha256": "62f9775ba39b93bfa2409220ebe49e03628c87a020123dd7a73ebbc1b78333fb",
+          "info": {
+            "coverage": 0.005,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/op-9.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "morphology.kernel",
+      "schema": {
+        "choices": [
+          "square",
+          "disc",
+          "diamond",
+          "cross",
+          "line",
+          "ring"
+        ],
+        "default": "disc",
+        "group": "Kernel",
+        "kind": "choice",
+        "label": "Kernel shape",
+        "name": "kernel"
+      },
+      "initial": "disc",
+      "changed": "square",
+      "choices": [
+        "square",
+        "disc",
+        "diamond",
+        "cross",
+        "line",
+        "ring"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "square",
+          "sha256": "19c84efc5550e3bcefe0e3f644f7d2aeaecabdbde5db445c8076c120e432defd",
+          "info": {
+            "coverage": 0.0625,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/kernel-0.json"
+        },
+        {
+          "value": "disc",
+          "sha256": "11530a73777844f1e4671e132b67776f062a81e966c44266b19f3c77c866ca95",
+          "info": {
+            "coverage": 0.0525,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/kernel-1.json"
+        },
+        {
+          "value": "diamond",
+          "sha256": "94c098478c66f120dc239c0319b5e14c1ea51695c3d3b8e15bfec2289fd137e4",
+          "info": {
+            "coverage": 0.0325,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/kernel-2.json"
+        },
+        {
+          "value": "cross",
+          "sha256": "add5189f16377d9fd7f5412f809a446e646d5d5f2be809d43d8efc0ce04699c8",
+          "info": {
+            "coverage": 0.0225,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/kernel-3.json"
+        },
+        {
+          "value": "line",
+          "sha256": "19c84efc5550e3bcefe0e3f644f7d2aeaecabdbde5db445c8076c120e432defd",
+          "info": {
+            "coverage": 0.0625,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/kernel-4.json"
+        },
+        {
+          "value": "ring",
+          "sha256": "9b0943e86a62f69a97f0fa61692c6ba0240bfa184401b20689ae189299227b94",
+          "info": {
+            "coverage": 0.03,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/kernel-5.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "morphology.radius",
+      "schema": {
+        "default": 2,
+        "group": "Kernel",
+        "kind": "int",
+        "label": "Kernel radius (px)",
+        "max": 30,
+        "min": 1,
+        "name": "radius",
+        "step": 1
+      },
+      "initial": 2,
+      "changed": 3,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 3,
+          "sha256": "7b5f4dc5e596c1530fd53e0fe90d047413d6efef1f5968b9a9b5263c29782427",
+          "info": {
+            "coverage": 0,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/radius-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "morphology.angle",
+      "schema": {
+        "default": 0,
+        "group": "Kernel",
+        "kind": "float",
+        "label": "Line angle (deg)",
+        "max": 179,
+        "min": 0,
+        "name": "angle",
+        "step": 1
+      },
+      "initial": 0,
+      "changed": 45,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 45,
+          "sha256": "0a4628e2352937c80e0c11e9614d9bcd8e64980ecf33f1f74bdc330c36f4d4c3",
+          "info": {
+            "coverage": 0.0475,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/angle-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "morphology.iterations",
+      "schema": {
+        "default": 1,
+        "group": "Kernel",
+        "kind": "int",
+        "label": "Iterations",
+        "max": 10,
+        "min": 0,
+        "name": "iterations",
+        "step": 1
+      },
+      "initial": 1,
+      "changed": 2,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 2,
+          "sha256": "7b5f4dc5e596c1530fd53e0fe90d047413d6efef1f5968b9a9b5263c29782427",
+          "info": {
+            "coverage": 0,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/iterations-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "morphology.pattern",
+      "schema": {
+        "choices": [
+          "isolated",
+          "endpoints",
+          "corners",
+          "junctions",
+          "custom"
+        ],
+        "default": "endpoints",
+        "group": "Hit-or-miss",
+        "kind": "choice",
+        "label": "Hit-or-miss pattern",
+        "name": "pattern"
+      },
+      "initial": "endpoints",
+      "changed": "isolated",
+      "choices": [
+        "isolated",
+        "endpoints",
+        "corners",
+        "junctions",
+        "custom"
+      ],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "isolated",
+          "sha256": "2e99b2ee585708760049734f8630fe8a86407cd02039dd09680c6a396a3df297",
+          "info": {
+            "coverage": 0.0025,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/pattern-0.json"
+        },
+        {
+          "value": "endpoints",
+          "sha256": "62f9775ba39b93bfa2409220ebe49e03628c87a020123dd7a73ebbc1b78333fb",
+          "info": {
+            "coverage": 0.005,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/pattern-1.json"
+        },
+        {
+          "value": "corners",
+          "sha256": "09d07a4b7018277e713e6a42917cc3192bacc9f0404e2608304900ee2ff3e27f",
+          "info": {
+            "coverage": 0.015,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/pattern-2.json"
+        },
+        {
+          "value": "junctions",
+          "sha256": "9b0943e86a62f69a97f0fa61692c6ba0240bfa184401b20689ae189299227b94",
+          "info": {
+            "coverage": 0.03,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/pattern-3.json"
+        },
+        {
+          "value": "custom",
+          "sha256": "09d07a4b7018277e713e6a42917cc3192bacc9f0404e2608304900ee2ff3e27f",
+          "info": {
+            "coverage": 0.015,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/pattern-4.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "morphology.custom",
+      "schema": {
+        "default": "x00 011 x1x",
+        "group": "Hit-or-miss",
+        "kind": "string",
+        "label": "Custom 3x3 pattern",
+        "name": "custom"
+      },
+      "initial": "x00 011 x1x",
+      "changed": "111 111 111",
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": "111 111 111",
+          "sha256": "18f8f8fd7ad50f2f7b3358a7fc0620f273b6902c9000b114dc9794927b860d84",
+          "info": {
+            "coverage": 0.0225,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/custom-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "morphology.rotate",
+      "schema": {
+        "default": true,
+        "group": "Hit-or-miss",
+        "kind": "bool",
+        "label": "Also match 90° rotations",
+        "name": "rotate"
+      },
+      "initial": true,
+      "changed": false,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": false,
+          "sha256": "f885308aa2c10e76b346699668a22bfc25ee487f4a19170041a3d2f2d944cd44",
+          "info": {
+            "coverage": 0.005,
+            "height": 20,
+            "kind": "mask",
+            "width": 20
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              20,
+              20
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/morphology/rotate-0.json"
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

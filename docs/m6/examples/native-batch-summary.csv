@@ -1,0 +1,17 @@
+run,status,verdict,findings,seam_step_mm,paint_under_blocks_mm2,seconds
+'=local_width_mm=100_bridge_spacing=closest,ok,ready,1,-,-,0.1
+'=local_width_mm=100_bridge_spacing=spread,ok,ready,1,-,-,0.1
+'=local_width_mm=120_bridge_spacing=closest,ok,ready,1,-,-,0.1
+'=local_width_mm=120_bridge_spacing=spread,ok,ready,1,-,-,0.1
+broken_width_mm=100_bridge_spacing=closest,failed,-,0,-,-,0.2
+broken_width_mm=100_bridge_spacing=spread,failed,-,0,-,-,0.1
+broken_width_mm=120_bridge_spacing=closest,failed,-,0,-,-,0.1
+broken_width_mm=120_bridge_spacing=spread,failed,-,0,-,-,0.1
+"one,logo_width_mm=100_bridge_spacing=closest",ok,ready,1,-,-,0.2
+"one,logo_width_mm=100_bridge_spacing=spread",ok,ready,1,-,-,0.1
+"one,logo_width_mm=120_bridge_spacing=closest",ok,ready,1,-,-,0.2
+"one,logo_width_mm=120_bridge_spacing=spread",ok,ready,1,-,-,0.1
+pixel_width_mm=100_bridge_spacing=closest,ok,ready,1,-,-,0.1
+pixel_width_mm=100_bridge_spacing=spread,ok,ready,1,-,-,0.1
+pixel_width_mm=120_bridge_spacing=closest,ok,ready,1,-,-,0.1
+pixel_width_mm=120_bridge_spacing=spread,ok,ready,1,-,-,0.1

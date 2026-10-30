@@ -1,0 +1,24 @@
+{
+  "host": "Windows / Chromium, sequential local jobs",
+  "measurement_scope": "Observed process-tree samples sum shared pages; not unique physical RAM or separate WASM peak. Host load affects timing. UI frame intervals are an observation, not a real-time guarantee.",
+  "runs": {
+    "20": {
+      "milliseconds": 4243,
+      "observed_peak_sum_working_set_bytes": 424800256,
+      "max_frame_gap_ms": 16.670000000000073,
+      "verified_jobs": 20,
+      "independently_checked_stls": 20,
+      "archive_bytes": 51891,
+      "maximum_stl_triangles": 32
+    },
+    "128": {
+      "milliseconds": 20082,
+      "observed_peak_sum_working_set_bytes": 563900416,
+      "max_frame_gap_ms": 33.335000000000946,
+      "verified_jobs": 128,
+      "independently_checked_stls": 128,
+      "archive_bytes": 352572,
+      "maximum_stl_triangles": 32
+    }
+  }
+}

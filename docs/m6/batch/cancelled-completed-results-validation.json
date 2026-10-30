@@ -1,0 +1,418 @@
+{
+  "summary": {
+    "schema": 2,
+    "recipe": "M5 export",
+    "source": "source",
+    "options": {
+      "format": "zip",
+      "project": true,
+      "layouts": false,
+      "outlines": false,
+      "strict": false
+    },
+    "planned_jobs": 20,
+    "verified": 2,
+    "failed": 0,
+    "cancelled": 18,
+    "items": [
+      {
+        "id": "1-1",
+        "name": "cancel-0.svg",
+        "relativePath": "cancel-0.svg",
+        "overrides": [],
+        "status": "Verified",
+        "milliseconds": 173.67000000178814,
+        "metrics": {
+          "triangles": 32,
+          "components": 1,
+          "volumeMm3": 99942.40234374999,
+          "sizeMm": [
+            160,
+            108.80000305175781,
+            8
+          ],
+          "stlFiles": 1,
+          "seamStepMm": null,
+          "paintUnderBlocksMm2": null,
+          "bytes": 8212
+        },
+        "findings": [],
+        "output": "1-1-cancel-0.svg-manufacturing.zip"
+      },
+      {
+        "id": "2-1",
+        "name": "cancel-1.svg",
+        "relativePath": "cancel-1.svg",
+        "overrides": [],
+        "status": "Verified",
+        "milliseconds": 154.79500000178814,
+        "metrics": {
+          "triangles": 32,
+          "components": 1,
+          "volumeMm3": 99942.40234374999,
+          "sizeMm": [
+            160,
+            108.80000305175781,
+            8
+          ],
+          "stlFiles": 1,
+          "seamStepMm": null,
+          "paintUnderBlocksMm2": null,
+          "bytes": 8212
+        },
+        "findings": [],
+        "output": "2-1-cancel-1.svg-manufacturing.zip"
+      },
+      {
+        "id": "3-1",
+        "name": "cancel-2.svg",
+        "relativePath": "cancel-2.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "4-1",
+        "name": "cancel-3.svg",
+        "relativePath": "cancel-3.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "5-1",
+        "name": "cancel-4.svg",
+        "relativePath": "cancel-4.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "6-1",
+        "name": "cancel-5.svg",
+        "relativePath": "cancel-5.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "7-1",
+        "name": "cancel-6.svg",
+        "relativePath": "cancel-6.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "8-1",
+        "name": "cancel-7.svg",
+        "relativePath": "cancel-7.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "9-1",
+        "name": "cancel-8.svg",
+        "relativePath": "cancel-8.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "10-1",
+        "name": "cancel-9.svg",
+        "relativePath": "cancel-9.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "11-1",
+        "name": "cancel-10.svg",
+        "relativePath": "cancel-10.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "12-1",
+        "name": "cancel-11.svg",
+        "relativePath": "cancel-11.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "13-1",
+        "name": "cancel-12.svg",
+        "relativePath": "cancel-12.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "14-1",
+        "name": "cancel-13.svg",
+        "relativePath": "cancel-13.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "15-1",
+        "name": "cancel-14.svg",
+        "relativePath": "cancel-14.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "16-1",
+        "name": "cancel-15.svg",
+        "relativePath": "cancel-15.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "17-1",
+        "name": "cancel-16.svg",
+        "relativePath": "cancel-16.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "18-1",
+        "name": "cancel-17.svg",
+        "relativePath": "cancel-17.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "19-1",
+        "name": "cancel-18.svg",
+        "relativePath": "cancel-18.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      },
+      {
+        "id": "20-1",
+        "name": "cancel-19.svg",
+        "relativePath": "cancel-19.svg",
+        "overrides": [],
+        "status": "Cancelled",
+        "output": null
+      }
+    ]
+  },
+  "csv_rows": 20,
+  "verified_jobs": 2,
+  "independent_stl_count": 2,
+  "all_stls_valid": true,
+  "jobs": [
+    {
+      "entry": "1-1-cancel-0.svg/manufacturing.zip",
+      "files": [
+        {
+          "path": "assembly-1-test/stencil.stl",
+          "source": "test",
+          "assembly": "test",
+          "role": "Printable part",
+          "copies_to_print": null,
+          "bytes": 1684,
+          "sha256": "d38ab204ba7aa3f7f1d4711aeeedeb9f3ee7651b644e6c35314e83fc6be1184e",
+          "geometry": {
+            "triangles": 32,
+            "size": [
+              160,
+              108.80000305175781,
+              8
+            ],
+            "bounds": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                160,
+                108.80000305175781,
+                8
+              ]
+            ],
+            "vertices": 16,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 99942.40234374999,
+            "closed": true,
+            "milliseconds": 0.5999999940395355
+          },
+          "replaces_upstream_sources": [],
+          "also_used_by": []
+        },
+        {
+          "path": "original-project.json",
+          "source": "project",
+          "assembly": "Project",
+          "role": "Complete saved project with original artwork",
+          "copies_to_print": null,
+          "bytes": 4471,
+          "sha256": "e1cfb7c181064555e5e95210c914a662673be5d4e77df122e34be26dfbcbafb5",
+          "geometry": null,
+          "replaces_upstream_sources": [],
+          "also_used_by": []
+        }
+      ],
+      "assemblies": [
+        {
+          "id": "test/parts",
+          "name": "test",
+          "sources": [
+            {
+              "step": "test",
+              "kind": "parts",
+              "metadata": {},
+              "stats": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "entry": "2-1-cancel-1.svg/manufacturing.zip",
+      "files": [
+        {
+          "path": "assembly-1-test/stencil.stl",
+          "source": "test",
+          "assembly": "test",
+          "role": "Printable part",
+          "copies_to_print": null,
+          "bytes": 1684,
+          "sha256": "d38ab204ba7aa3f7f1d4711aeeedeb9f3ee7651b644e6c35314e83fc6be1184e",
+          "geometry": {
+            "triangles": 32,
+            "size": [
+              160,
+              108.80000305175781,
+              8
+            ],
+            "bounds": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                160,
+                108.80000305175781,
+                8
+              ]
+            ],
+            "vertices": 16,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 99942.40234374999,
+            "closed": true,
+            "milliseconds": 0.5350000113248825
+          },
+          "replaces_upstream_sources": [],
+          "also_used_by": []
+        },
+        {
+          "path": "original-project.json",
+          "source": "project",
+          "assembly": "Project",
+          "role": "Complete saved project with original artwork",
+          "copies_to_print": null,
+          "bytes": 4471,
+          "sha256": "6739c6007ce1e383bc15d1a72850115d29465230a0c092f652de019a01eda56f",
+          "geometry": null,
+          "replaces_upstream_sources": [],
+          "also_used_by": []
+        }
+      ],
+      "assemblies": [
+        {
+          "id": "test/parts",
+          "name": "test",
+          "sources": [
+            {
+              "step": "test",
+              "kind": "parts",
+              "metadata": {},
+              "stats": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "format": "binary STL",
+      "bytes": 1684,
+      "triangles": 32,
+      "vertices": 16,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          160,
+          108.80000305175781,
+          8
+        ]
+      ],
+      "size_mm": [
+        160,
+        108.80000305175781,
+        8
+      ],
+      "signed_volume_mm3": 99942.40234374999,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    {
+      "format": "binary STL",
+      "bytes": 1684,
+      "triangles": 32,
+      "vertices": 16,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          160,
+          108.80000305175781,
+          8
+        ]
+      ],
+      "size_mm": [
+        160,
+        108.80000305175781,
+        8
+      ],
+      "signed_volume_mm3": 99942.40234374999,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    }
+  ]
+}

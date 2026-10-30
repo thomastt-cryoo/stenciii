@@ -8,7 +8,9 @@ from exact_surface import compare
 from surface_deviation import certify
 from retain_discrepancies import retain
 start=time.monotonic();path=Path('docs/m6/manufacturing-modes.json');data=json.loads(path.read_text(encoding='utf-8'));assert data['completed_cases']==256 and data['all_structural_checks_passed']
-checks={};proofs={};rows=[];retained={};old=json.loads(Path('docs/m6/fixtures/m5-discrepancies/manifest.json').read_text(encoding='utf-8'))['entries']
+checks={};proofs={};rows=[];retained={};old={}
+for folder in ['m5-discrepancies','control-discrepancies']:
+    old.update(json.loads(Path(f'docs/m6/fixtures/{folder}/manifest.json').read_text(encoding='utf-8'))['entries'])
 for row in data['cases']:
     if row['out']!='parts' or row['expectedError']:continue
     with zipfile.ZipFile(row['native']['path']) as na,zipfile.ZipFile(row['st']['path']) as sa,zipfile.ZipFile(row['mt']['path']) as ma:
@@ -39,5 +41,5 @@ for row in data['cases']:
 new=retain(retained,Path('docs/m6/fixtures/current-discrepancies')) if retained else {}
 for row in rows:
     if 'retained_stl_entries' in row:row['retained_archives']=[old.get(n) or new[n] for n in row['retained_stl_entries']]
-summary={'field_fixtures':256,'part_fixtures':191,'bitmap_fixtures':64,'expected_constraints':1,'compared_file_pairs':len(rows),'unique_file_pairs':len(proofs),'independently_valid_unique_stls':len(checks),'categories':dict(Counter(r['category'] for r in rows)),'all_comparisons_classified':True,'all_required_stls_valid':True,'elapsed_seconds':time.monotonic()-start,'cases':rows}
+summary={'field_fixtures':256,'part_fixtures':191,'bitmap_fixtures':64,'expected_constraints':1,'compared_file_pairs':len(rows),'unique_file_pairs':len(proofs),'independently_valid_unique_stls':len(checks),'categories':dict(Counter(r['category'] for r in rows)),'all_comparisons_classified':True,'all_generated_stls_structurally_valid':True,'semantic_scope':'Structural validity includes intentionally unbridged raw negative fixtures; customer export eligibility is checked separately by disconnected-guard-validation.json','elapsed_seconds':time.monotonic()-start,'cases':rows}
 Path('docs/m6/current-engine-classification.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8');print(json.dumps({k:v for k,v in summary.items() if k!='cases'}))

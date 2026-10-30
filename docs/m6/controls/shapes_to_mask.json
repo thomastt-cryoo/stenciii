@@ -1,0 +1,51 @@
+{
+  "type": "shapes_to_mask",
+  "slots": 1,
+  "cases": [
+    {
+      "key": "shapes_to_mask.resolution",
+      "schema": {
+        "default": 1000,
+        "group": null,
+        "kind": "int",
+        "label": "Resolution (px)",
+        "max": 4000,
+        "min": 20,
+        "name": "resolution",
+        "step": 10
+      },
+      "initial": 1000,
+      "changed": 300,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 300,
+          "sha256": "9e88bfff921408477adde363cd391fa7e98a11f033b56984ed057f9fbff77f46",
+          "info": {
+            "coverage": 0.3091,
+            "height": 225,
+            "kind": "mask",
+            "width": 300
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              300,
+              225
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/shapes_to_mask/resolution-0.json"
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "archives": 17,
+  "retained_original_stls": 212,
+  "comparisons": 265,
+  "unique_pairs": 125,
+  "categories": {
+    "B": 263,
+    "C": 2
+  },
+  "all_proofs_reproduced": true,
+  "elapsed_seconds": 56.02997220000543
+}

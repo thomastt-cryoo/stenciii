@@ -1,0 +1,66 @@
+{
+  "before": {
+    "info": {
+      "format": "binary STL",
+      "bytes": 156484,
+      "triangles": 3128,
+      "vertices": 1538,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          100,
+          77,
+          2.5999999046325684
+        ]
+      ],
+      "size_mm": [
+        100,
+        77,
+        2.5999999046325684
+      ],
+      "signed_volume_mm3": 9429.286205799703,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "sha": "19a7cebd5a25dc229cc0294880294496093cc06fb5f1999ba419bd1169ccedca"
+  },
+  "after": {
+    "info": {
+      "format": "binary STL",
+      "bytes": 152284,
+      "triangles": 3044,
+      "vertices": 1504,
+      "bounds_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          100,
+          77,
+          2.5999999046325684
+        ]
+      ],
+      "size_mm": [
+        100,
+        77,
+        2.5999999046325684
+      ],
+      "signed_volume_mm3": 9723.842717533891,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "sha": "21ba9d9f4c09201f7520ebd5b65227cabbee0bedea0da42df442604fe7c8d2e5"
+  }
+}

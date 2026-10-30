@@ -1,0 +1,58 @@
+{
+  "corpora_overlap_do_not_sum_as_unique_fixtures": true,
+  "A_includes_byte_identical_files": true,
+  "comparisons": [
+    {
+      "evidence": "m5-discrepancy-classification.json",
+      "file_pairs": 265,
+      "A_same_exact_triangles": 0,
+      "B_exact_surface_different_triangles": 263,
+      "C_certified_numerical_surface_difference": 2,
+      "D_material_difference": 0,
+      "E_unresolved": 0,
+      "file_bytes_equal": 0,
+      "exact_triangles_equal": 0,
+      "exact_surfaces_equal": 263,
+      "largest_certified_surface_deviation_mm": 2.2023065593066144e-07
+    },
+    {
+      "evidence": "all-control-parity.json",
+      "file_pairs": 2232,
+      "A_same_exact_triangles": 2051,
+      "B_exact_surface_different_triangles": 178,
+      "C_certified_numerical_surface_difference": 3,
+      "D_material_difference": 0,
+      "E_unresolved": 0,
+      "file_bytes_equal": 1586,
+      "exact_triangles_equal": 2051,
+      "exact_surfaces_equal": 2229,
+      "largest_certified_surface_deviation_mm": 2.2023065593066144e-07
+    },
+    {
+      "evidence": "current-engine-classification.json",
+      "file_pairs": 3142,
+      "A_same_exact_triangles": 2954,
+      "B_exact_surface_different_triangles": 187,
+      "C_certified_numerical_surface_difference": 1,
+      "D_material_difference": 0,
+      "E_unresolved": 0,
+      "file_bytes_equal": 2371,
+      "exact_triangles_equal": 2954,
+      "exact_surfaces_equal": 3141,
+      "largest_certified_surface_deviation_mm": 2.2023065593066144e-07
+    },
+    {
+      "evidence": "tile-mode-validation.json",
+      "file_pairs": 350,
+      "A_same_exact_triangles": 350,
+      "B_exact_surface_different_triangles": 0,
+      "C_certified_numerical_surface_difference": 0,
+      "D_material_difference": 0,
+      "E_unresolved": 0,
+      "file_bytes_equal": 346,
+      "exact_triangles_equal": 350,
+      "exact_surfaces_equal": 350,
+      "largest_certified_surface_deviation_mm": 0
+    }
+  ]
+}

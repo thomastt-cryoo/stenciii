@@ -1,0 +1,53 @@
+{
+  "parts": [
+    {
+      "path": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+      "bytes": 1605563,
+      "sha256": "2e4d25953b5ddce3d9651df25f190aabf256ca829839c3737276320f3041f04c",
+      "entries": 23
+    },
+    {
+      "path": "docs/m6/fixtures/current-discrepancies/part-02.zip",
+      "bytes": 1226268,
+      "sha256": "a249f5b371145a4680220677913219608e689452bd53ae8e6b98d08636782954",
+      "entries": 12
+    }
+  ],
+  "entries": {
+    "01d9c50dd8f90ac17abe904ffb0ebdeaa4cf75420f61def55a54d646ff0b8dd5.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "0cb577affd59cb1ec4ab745e82f4edf397e4696075f5f36da347d68acd5719b3.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "12e9403b2019c4dd949852daf63e66e73491eaab2b1f8ae29b213dd3eb8c9279.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "1ad800cdc7d78bbb2c14f745d62fa9f6e65207dfd0800c0c40b8e62967a8a6f4.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "29358ae7bf0b0816efa8ba180d7b26bc2915c9d00f1481557dbe8b38eb330ee4.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "2fea9cefbf85869bd421536b62d46001e9ec7dafb486d1c6e1fe478a6a58ce09.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "347b1d1b0c73ecc81bd069c0352b65da8efecc7590f691f0db3fa5a6632d838d.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "388e4d423f579c2ad49df2a5bef2e0c4db6b6ab1b2162669a5037e4552c8089e.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "3890a7fdbe3b68d28b7baf5577e2d57390fba302b7381b3d60bfe0255ff899d1.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "3cbb02269c03b3b95567799460f3145262f404fbe0f97138ff39736738977d51.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "41619b8330b9246e7e62fc1f90884dfee1d05cd1d0c2574923ec46b3c20fd570.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "623ee60d6d0844a0bfa0e3b964aa1c95dfc40bd3f3671da3c3d1a7d3958f0197.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "666d405c7cff1e96fc86a0594ff98dd3b91c78fc2e47ef363131a15ddbe0bf10.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "6d910758806e99eba3ab977850e17b538b970220cbd51f19e0e03981f656ce20.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "72204cf9f3e7686e13aacc7eaaebb7acd5288b067953f3feee998aa1b8466946.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "874a0baecf4c463972948508424cfaa96173dda05e9b228ae8ae76eea5f4ec45.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "97ac59e40904a43a4552b1e8de078cf41871053821e4c1d33b87c9a342ecbc7d.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "9afc9097f234e48a7b13631d0910eeef72d4a695689b1a5150d9f7de35d23012.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "9dfdac87ae44fd5357110461c23b9fc093f225ed41a06875a1b170e032b7a54e.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "a190b08ee6d9534a5bb6ab342124039bc264724137c6014f1d264ed6c3fa0ad0.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "a9e016ae57e4423360847897d68ee4b4fc1ea1600f46639ed6eff6e2a35a2231.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "baaf7072b8574ae2f24e23423c739edbdb74a195f727d043229fce8bc490c5c4.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "c4e8777580b913cc3770ebfb581967637ca166f059eecd8f57d0dd6c2d3e6b31.stl": "docs/m6/fixtures/current-discrepancies/part-01.zip",
+    "c745d5716b9f60b327867c934aaa194e5e07af5f2bfc05fdf62b81e38fb3b6e3.stl": "docs/m6/fixtures/current-discrepancies/part-02.zip",
+    "cc6a13d35507b3fa4e0dd5026a8c834c3e892dde4324031d5438f5943229c956.stl": "docs/m6/fixtures/current-discrepancies/part-02.zip",
+    "d1b656669e93ae0dfe39c7f9ff323bd808d70be7200e6d237530b12c0d8b3f5d.stl": "docs/m6/fixtures/current-discrepancies/part-02.zip",
+    "e227897b182228b1a11a91bc3e4fa8b1a674cd53bc6d2d398810c2420ac34757.stl": "docs/m6/fixtures/current-discrepancies/part-02.zip",
+    "e2cc6377a59a2f1c60b856cf802f8eacb1e94df3eb6d9d60614cf1b5d2f4c324.stl": "docs/m6/fixtures/current-discrepancies/part-02.zip",
+    "e7176e339377846c6acb2548fb0c9df7fb98c630065e4fd63a1a53bd14aab3bf.stl": "docs/m6/fixtures/current-discrepancies/part-02.zip",
+    "e7cb50270053033af06634be58c1fce7cfcc22e9bbd33bf0224f5da0fdb8b163.stl": "docs/m6/fixtures/current-discrepancies/part-02.zip",
+    "edf3dc380a8ee3b71c969d0da5e03e3eae8e326260e7da38c025e916299bc7ef.stl": "docs/m6/fixtures/current-discrepancies/part-02.zip",
+    "eec399ba76be448337bfd3780ce8330c54db3cbf95ac628a71fc2ba4f6af824d.stl": "docs/m6/fixtures/current-discrepancies/part-02.zip",
+    "f17b626f0e3ae1e408555a8bbc579a72c3e13cf2b0709f05a52e7ce428c56a78.stl": "docs/m6/fixtures/current-discrepancies/part-02.zip",
+    "f34f105edb0a53ad1a7973896275ab1eaff9369a9cf9cf333287fc40e187abf8.stl": "docs/m6/fixtures/current-discrepancies/part-02.zip",
+    "fc0963e0fef169aa65e771ca2ea2f5cd95f554d84facf9ac6fc602aee184407f.stl": "docs/m6/fixtures/current-discrepancies/part-02.zip"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "lossless": true,
+  "executable": true,
+  "nativeExit": 0,
+  "nativeDiagnostic": "verified: 6 islands found, 0 remaining, watertight true, 3504 triangles\nwrote C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m6\\project-replay\\old-browser\\old-browser.stl in 656 ms\n",
+  "independent": {
+    "files": [
+      {
+        "file": "old-browser.stl",
+        "format": "binary STL",
+        "bytes": 175284,
+        "triangles": 3504,
+        "vertices": 1728,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            100,
+            77,
+            2.5999999046325684
+          ]
+        ],
+        "size_mm": [
+          100,
+          77,
+          2.5999999046325684
+        ],
+        "signed_volume_mm3": 9429.272557626588,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      }
+    ],
+    "all_valid": true
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "type": "reduce",
+  "slots": 2,
+  "cases": [
+    {
+      "key": "reduce.colours",
+      "schema": {
+        "default": 3,
+        "group": null,
+        "kind": "int",
+        "label": "Colours",
+        "max": 10,
+        "min": 2,
+        "name": "colours",
+        "step": 1
+      },
+      "initial": 3,
+      "changed": 5,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 5,
+          "sha256": "13076ec70ad702a05c22fedb8fd6535cce8110e3fbe2358e3b8b2ce228cbbde5",
+          "info": {
+            "height": 150,
+            "kind": "image",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              150
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/reduce/colours-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "reduce.smooth",
+      "schema": {
+        "default": 0,
+        "group": null,
+        "kind": "float",
+        "label": "Pre-blur (px)",
+        "max": 6,
+        "min": 0,
+        "name": "smooth",
+        "step": 0.5
+      },
+      "initial": 0,
+      "changed": 2,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 2,
+          "sha256": "c8b2b8a6f925bf6c0122cda6f25d4ca2b5018ab24fbde9de121390965f61d761",
+          "info": {
+            "height": 150,
+            "kind": "image",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              150
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/reduce/smooth-0.json"
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

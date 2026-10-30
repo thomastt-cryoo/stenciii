@@ -1,0 +1,137 @@
+{
+  "type": "split_colours",
+  "slots": 3,
+  "cases": [
+    {
+      "key": "split_colours.invert",
+      "schema": {
+        "default": false,
+        "group": null,
+        "kind": "bool",
+        "label": "Invert order",
+        "name": "invert"
+      },
+      "initial": false,
+      "changed": true,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": true,
+          "sha256": "115c932f0683a5ad73824834914afbacb8d643a790a59b9310e1a658b3018373",
+          "info": {
+            "coverage": 0.1,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/split_colours/invert-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "split_colours.colours",
+      "schema": {
+        "default": 10,
+        "group": null,
+        "kind": "int",
+        "label": "Most colours to keep",
+        "max": 10,
+        "min": 2,
+        "name": "colours",
+        "step": 1
+      },
+      "initial": 10,
+      "changed": 5,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 5,
+          "sha256": "d06015ee230bbfedab0df64bf529edab2183f1af0f966c5ed8a1faa16143dab2",
+          "info": {
+            "height": 40,
+            "kind": "image",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              40
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/split_colours/colours-0.json"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "key": "split_colours.min_area",
+      "schema": {
+        "default": 0,
+        "group": null,
+        "kind": "float",
+        "label": "Drop specks smaller than (% of image)",
+        "max": 5,
+        "min": 0,
+        "name": "min_area",
+        "step": 0.05
+      },
+      "initial": 0,
+      "changed": 1,
+      "choices": [],
+      "scope": true,
+      "reset": true,
+      "undo": true,
+      "redo": true,
+      "reopened": true,
+      "outputs": [
+        {
+          "value": 1,
+          "sha256": "ca06f051ebbc6f2ecd04f39dc357374aa3c192297932ef18de047f945035f20f",
+          "info": {
+            "coverage": 0.1,
+            "height": 120,
+            "kind": "mask",
+            "width": 200
+          },
+          "mime": "image/png",
+          "extension": "png",
+          "independent": {
+            "format": "PNG",
+            "size_px": [
+              200,
+              120
+            ]
+          },
+          "verified": true,
+          "project": "sandbox/m6/controls/split_colours/min_area-0.json"
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

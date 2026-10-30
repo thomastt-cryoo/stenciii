@@ -1,0 +1,32 @@
+{
+  "elapsedMs": 1820,
+  "independent": {
+    "format": "binary STL",
+    "bytes": 79284,
+    "triangles": 1584,
+    "vertices": 792,
+    "bounds_mm": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        200,
+        154,
+        5.199999809265137
+      ]
+    ],
+    "size_mm": [
+      200,
+      154,
+      5.199999809265137
+    ],
+    "signed_volume_mm3": 72899.12471176268,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true
+  }
+}

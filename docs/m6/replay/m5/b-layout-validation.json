@@ -1,0 +1,155 @@
+{
+  "numeric": true,
+  "keyboard": true,
+  "drag": true,
+  "pocket": true,
+  "invalid_refused": true,
+  "round_trip": true,
+  "validation": {
+    "format": "ZIP",
+    "bytes": 142922,
+    "entries": [
+      {
+        "name": "assembly-1-Stencil_plate/connector_hex_d3mm.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 3450284195,
+        "format": "binary STL",
+        "bytes": 1084,
+        "triangles": 20,
+        "vertices": 12,
+        "bounds_mm": [
+          [
+            -1.5,
+            -1.299038052558899,
+            0
+          ],
+          [
+            1.5,
+            1.299038052558899,
+            11
+          ]
+        ],
+        "size_mm": [
+          3,
+          2.598076105117798,
+          11
+        ],
+        "signed_volume_mm3": 64.3023836016655,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Stencil_plate/stencil_r1c1.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 3590903421,
+        "format": "binary STL",
+        "bytes": 76084,
+        "triangles": 1520,
+        "vertices": 762,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            93,
+            144,
+            6
+          ]
+        ],
+        "size_mm": [
+          93,
+          144,
+          6
+        ],
+        "signed_volume_mm3": 49973.129190575884,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "assembly-1-Stencil_plate/stencil_r1c2.stl",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 3108098053,
+        "format": "binary STL",
+        "bytes": 55684,
+        "triangles": 1112,
+        "vertices": 558,
+        "bounds_mm": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            87,
+            144,
+            6
+          ]
+        ],
+        "size_mm": [
+          87,
+          144,
+          6
+        ],
+        "signed_volume_mm3": 44615.21740651716,
+        "components": 1,
+        "edges_not_shared_twice": 0,
+        "inconsistent_edge_winding": 0,
+        "degenerate_faces": 0,
+        "closed_oriented_mesh": true
+      },
+      {
+        "name": "original-project.json",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 986159241
+      },
+      {
+        "name": "manufacturing-manifest.json",
+        "date_time": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "crc": 1220603360
+      }
+    ]
+  }
+}
