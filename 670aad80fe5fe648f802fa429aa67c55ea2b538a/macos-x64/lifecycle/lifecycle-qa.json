@@ -1,0 +1,13 @@
+{
+  "platform": "darwin",
+  "checks": [
+    "Six simultaneous launches produce one server and five duplicate refusals",
+    "Transient socket closure recovers the same live session instead of ending the document",
+    "Reload preserves the live session and exact saved project",
+    "Two projects save independently; closing one tab keeps the other alive",
+    "Quitting ends the old document and its main worker contexts",
+    "Launching from an updated folder preserves the origin and exact browser draft",
+    "Closing the last tab automatically ends launcher and server"
+  ],
+  "passed": true
+}
