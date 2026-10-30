@@ -35,6 +35,22 @@ Base thickness rounds to whole print layers; additional top layers increase fina
 In **3D → View Options**, use orbit/pan/zoom, camera reset and isometric/top/bottom/left/right/front/back presets, smooth/flat shading, wireframe, height colouring and full/reduced/automatic display detail. Height inspection clips the actual geometry below a chosen height or within one print-layer interval. Cutaways are uncapped inspection views, not a manufacturing slicer. Display options leave exported STL bytes unchanged. Automatic detail reduces the display during movement on dense models.
 
 Readiness is **Ready**, **Check** or **Blocked**. Current full-quality STLs are independently checked for finite coordinates, nonzero faces, closed consistently oriented edges, connected components, volume and bounds. A solid with disconnected components or invalid faces is blocked. Other operations' warnings remain available separately. Stale/draft results and intermediate selections are labelled. Verification runs off the UI thread; the current limit is two million triangles per STL. Reduce detail or optimize before exporting larger models. Geometry checks do not establish printer suitability, material strength or universal print success.
+## Local batches and variations
+
+Open **All Settings → Batch processing and diagnostics**. Use the current project or select a saved project without changing the main workspace. Choose the named original image to replace, then choose multiple images or a folder where supported. Without replacement files, runs use the recipe's embedded artwork. Other sources and unused originals stay intact.
+
+Add a parameter variation and choose its operation instance. Numeric settings accept start/end/increment or an explicit JSON list. Choice and on/off settings show their available values. Each combination runs once per selected image; the planned job count appears before starting. Inactive parameters keep their ordinary engine meaning. Fit-linked screw settings follow the saved project's linking rules.
+
+Choose complete manufacturing ZIPs, or single STL only when the recipe produces exactly one required printable file. Optional project/artwork, layout PNG and traced SVG attachments are available for applicable ZIP recipes. Strict checks require warning-free readiness. Each result must pass the ordinary independent mesh and complete-assembly rules. A failed item stays visible and does not stop later items.
+
+Cancel keeps verified earlier results. Collect completed results after cancellation, or download the final collection and CSV/JSON summaries. Sorting the results compares processing time, triangle count or seam metrics. Maximum part extents are reported by axis; they are not the dimensions of a packed assembly.
+
+Limits are 20 images, 128 MB combined input, 64 MB per image, 128 jobs, a 100 MB batch recipe file, 256 MB collected output and two million triangles per independently audited STL. Choose smaller groups or lower detail when a limit is reached. The browser can read only selected files. Jobs stop when this workspace, browser tab or application closes.
+
+**Presets and history** also exposes the six original starter workflows and jumpable session history. **Processing Steps → Copy processing steps** includes required inputs and original image bytes; pasted groups have independent identities. **Project screw-fit settings** links three matching hardware settings only after you choose the source values. Imported unequal fit values remain independent until linking is enabled.
+
+Image settings provide full metadata and **Save original image** with the original bytes. Mask inspection can overlay the aligned image input with adjustable opacity when working dimensions match. These display controls do not change the manufacturing output. Diagnostics shows engine/build identity, step timings and logs, the failed operation, storage status and explicitly labelled browser performance samples. Save Project remains available when persistent storage is blocked or full; keep the current window open until the file is saved.
+
 
 ## Colours, tiles and hardware
 

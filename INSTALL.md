@@ -112,3 +112,7 @@ Run the Rust workspace tests from the repository root:
 ```sh
 cargo test --release --workspace
 ```
+
+## Optional public hosting
+
+Pushes and pull requests run code verification without deploying a public site. The CI workflow exposes a separate `deploy_pages` checkbox for an explicitly requested manual deployment to Pages that is already configured. It defaults off. M6 does not enable hosting or change repository visibility.

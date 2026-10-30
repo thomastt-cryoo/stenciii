@@ -125,13 +125,13 @@ test('multiple image instances replace independently, reopen safely and preserve
   await page.reload();await expect(page.getByRole('button',{name:'Processing Steps',exact:true})).toBeEnabled();expect(await saved(page)).toEqual(got)
 })
 
-test('fourteen real preparation steps keep live output valid, SVGs inspectable, themes accessible and processing local',async({page})=>{
+test('fourteen real preparation steps keep live output valid, SVGs inspectable, themes accessible and processing local',async({page,baseURL})=>{
   const step=(id:string,type:string,params={})=>({id,type,params:{...Object.fromEntries(catalogue.find((t:any)=>t.id===type).params.map((p:any)=>[p.name,p.default])),...params}})
   const nodes=[step('input','source',{image_id:'original',resolution:240}),step('frame','transform'),step('reduce','reduce',{colours:3}),step('paint','threshold'),step('soft','smooth',{radius:.25,supersample:1}),step('open','morphology',{op:'open',radius:1}),step('close','morphology',{op:'close',radius:1}),step('trace','trace',{smooth:.3,corner_deg:30}),step('corners','round_corners',{radius:1,max_angle:100}),step('clean','remove_islands',{fill_holes:false,max_area:4}),step('pixels','shapes_to_mask',{resolution:300}),step('soft2','smooth',{radius:.25,supersample:1}),step('outlines','trace',{smooth:.3,corner_deg:30}),step('plate','vector_stencil',{width_mm:100,thickness_mm:2})]
   const edges=nodes.slice(0,-1).map((n,i)=>({from:[n.id,catalogue.find((t:any)=>t.id===n.type).outputs[0].name],to:[nodes[i+1].id,catalogue.find((t:any)=>t.id===nodes[i+1].type).inputs[0].name]}))
   const bytes=readFileSync(new URL('./corpus/simple-logo.svg',import.meta.url)),doc={version:2,graph:{nodes,edges},images:{original:{name:'Original.svg',base64:bytes.toString('base64')}},opaque:{keep:true}}
   mkdirSync('../sandbox/m6/replay/m3',{recursive:true});writeFileSync('../sandbox/m6/replay/m3/long-project.json',JSON.stringify(doc))
-  const outside:string[]=[];await page.route('**/*',route=>{const u=route.request().url();if(/^https?:/.test(u)&&!u.startsWith('http://localhost:5199')){outside.push(u);return route.abort()}return route.continue()})
+  const allowedOrigin=new URL(baseURL!).origin,outside:string[]=[];await page.route('**/*',route=>{const u=route.request().url();if(/^https?:/.test(u)&&new URL(u).origin!==allowedOrigin){outside.push(u);return route.abort()}return route.continue()})
   await page.goto('/');await page.setInputFiles('[aria-label="Open project file"]',{name:'long.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(doc))});await ready(page)
   const mesh=await downloadMesh(page,'long-chain');expect(mesh.degenerate_faces).toBe(0)
   await page.getByRole('combobox',{name:'Inspect artwork stage',exact:true}).selectOption('outlines/shapes');await expect(page.locator('.stage-image')).toHaveAttribute('data-ready','true')

@@ -1,8 +1,10 @@
-# Stencil Studio — M5 manufacturing
+# Stencil Studio — local stencil creation
 
-Drop an image or **Create from Text**, **Make Stencil**, customize and export. Standard, Smooth Vector and Crisp Raster retain live draft/full previews. Advanced sections now provide colour layers and registration, tone patterns, both tiling strategies, editable seam and connector layouts, mounting, expanded borders and real threaded hardware. All 217 original qualified settings have per-instance editors. Original artwork and imported project data remain intact. Processing stays local in both themes.
+Drop an image or **Create from Text**, **Make Stencil**, customize and export. Standard, Smooth Vector and Crisp Raster retain live draft/full previews. Advanced sections provide colour layers and registration, tone patterns, both tiling strategies, editable seams and connectors, mounting, expanded borders and real threaded hardware. All 217 original qualified settings have per-instance editors. Original artwork and imported project data stay in the saved project. Processing stays local in both themes.
 
-**Export options** collects selected assemblies with their upstream plates and auxiliary hardware, lists actual dimensions and validation, and builds a complete manufacturing ZIP with a manifest and original project. Local image batches reuse a saved recipe and isolate failures. Read [usage](USAGE.md), [M5 progress and evidence](docs/m5/WORK_LOG.md) and [manufacturing limits](docs/m5/KNOWN_LIMITS.md). Some complex raster tile configurations still fail geometry checks and remain blocked from export. Mesh checks do not guarantee print success.
+**Export options** collects selected assemblies with upstream plates and hardware, measured dimensions, independent file checks and a complete manufacturing manifest. **All Settings → Batch processing and diagnostics** runs multiple images, browser-selected folders or saved artwork with numeric ranges and explicit choices. It previews the Cartesian job count, runs sequentially, isolates failures, supports cancellation and exports individual results, a combined ZIP and CSV/JSON summaries. Keep the workspace open while jobs run.
+
+Use Settings search to find original workflow templates, presets, edit history, copied processing groups, project screw-fit settings and diagnostic reports. Read [usage](USAGE.md), [the M6 report](docs/M6_REPORT.md) and [supported limits](docs/m6/KNOWN_LIMITS.md). File validation does not certify physical printing or printer-specific fit.
 
 The engine remains based on upstream v2.9.4 (`5d8df15b798b859faf72248a35d156d6e9aaffc7`). Approved reports remain available for [M4](docs/M4_REPORT.md), [M3](docs/M3_REPORT.md), [M2](docs/M2_REPORT.md) and [M1](docs/M1_REPORT.md). `npm run build` produces the customer-only app; `npm run e2e` builds a separate harness for preserved original UI tests. Build instructions are in INSTALL.md. The original node-editor instructions below apply to that reference harness.
 
@@ -74,7 +76,7 @@ Drop an image, choose a style and press Make Stencil. Adjustments update automat
 | `crates/stencil-cli/` | `stencil` command-line application |
 | `crates/stencil-wasm/` | WebAssembly bindings |
 | `web/` | React node-graph studio and Web Worker |
-| `.github/workflows/ci.yml` | Tests, builds, and GitHub Pages deployment |
+| `.github/workflows/ci.yml` | Tests and builds; manual opt-in GitHub Pages deployment |
 
 The Python implementation remains available in the historical [`v1.0.0` release](https://github.com/filipealmeida/graffiti-stencil-maker/tree/v1.0.0).
 
