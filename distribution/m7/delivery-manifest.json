@@ -4,8 +4,8 @@
   "files": [
     {
       "file": "StencilStudio-Windows-x64.zip",
-      "bytes": 8253749,
-      "sha256": "97af52ecf2c527575286b3199ef068514e8087d05c698776a83eaa8435e6ebd3",
+      "bytes": 8242785,
+      "sha256": "bb8c5a8a14e6d2acaef36d5e0a39e8b3a1c179fefd3d16f9acd3b37825f935f5",
       "runtime_source_commit": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
       "tested_archive_sha256": "f675a8877673c2cf8925eb2dd1165c7ea9d1d8bfb2f8bf0a9e9aae27628eff09",
       "tested_archive_bytes": 8262443,
@@ -1913,8 +1913,8 @@
     },
     {
       "file": "StencilStudio-macOS-Apple-Silicon.zip",
-      "bytes": 7836477,
-      "sha256": "aa379e21e9a45c9e7f39d823162ee226d881dacc224b1c6041fb702cfe6e4240",
+      "bytes": 7832696,
+      "sha256": "c602b64f5894fea31b3e75511e61f3e6825074ed557e678573c0b5b09b23655a",
       "runtime_source_commit": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
       "tested_archive_sha256": "a58ca2840ae07ae6c9fb7dbdcd7bdc8a64056ab7a6296392d57dcd9be36a50ad",
       "tested_archive_bytes": 7845887,
@@ -3832,8 +3832,8 @@
     },
     {
       "file": "StencilStudio-macOS-Intel.zip",
-      "bytes": 8232144,
-      "sha256": "5f4fb79c821cd96cf8c09a51e7e6e2fdf4965f54472f1a569526618bfa00cb37",
+      "bytes": 8225479,
+      "sha256": "21298dcc72cbb397854989886cad2f942b0ba2320a1c2d8d85db4c186beb8d1c",
       "runtime_source_commit": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
       "tested_archive_sha256": "e632e643d64f3c152a4dd2f970866f14d6a3e94ba82b20e166cf034cdd6f96ee",
       "tested_archive_bytes": 8242918,
@@ -5757,7 +5757,7 @@
     {
       "file": "Read Me and Checksums.txt",
       "bytes": 700,
-      "sha256": "254055c303b76b4c09996a95b2ad63b65ec3c1a4bfeeecd10b816bfc3d14d504"
+      "sha256": "038b3a8c986e39520789bb112dfd4cb5f14d1e81b3e871c6dbba3c8a09f0ab88"
     }
   ]
 }

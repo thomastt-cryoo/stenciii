@@ -36,15 +36,15 @@ Windows: launcher, `Studio Support/`, `Read First.txt` and `Platform Test Record
 
 ## 7-8. Exact delivered sizes and SHA-256
 
-All three delivered runtimes use repaired source `670aad80fe5fe648f802fa429aa67c55ea2b538a`. The five final files and exact hashes are recorded in [delivery-manifest.json](../distribution/m7/delivery-manifest.json). Its per-member audit proves that adding the reviewed outer instructions did not change a tested runtime, signature, manifest, permission or license file. The checksum text hashes the other four deliverables; its own hash appears in the manifest/report to avoid a circular self-hash.
+All three delivered runtimes use repaired source `670aad80fe5fe648f802fa429aa67c55ea2b538a`. The five final files and exact hashes are recorded in [delivery-manifest.json](../distribution/m7/delivery-manifest.json). The canonical compressed bytes come from delivery assembly run [41134317606](https://github.com/thomastt-cryoo/stenciii/actions/runs/41134317606), source `a87c391e7ea3f059f525bbd63150842e5b3100c5`. Archive bytes differed between the local and CI Python environments; the final local files were replaced with the retained CI bytes and rehashed. All runtime/notice member hashes matched in both assemblies. Its per-member audit proves that adding the reviewed outer instructions did not change a tested runtime, signature, manifest, permission or license file. The checksum text hashes the other four deliverables; its own hash appears in the manifest/report to avoid a circular self-hash.
 
 | Final deliverable | Exact bytes | SHA-256 |
 |---|---:|---|
-| StencilStudio-Windows-x64.zip | 8,253,749 | `97af52ecf2c527575286b3199ef068514e8087d05c698776a83eaa8435e6ebd3` |
-| StencilStudio-macOS-Apple-Silicon.zip | 7,836,477 | `aa379e21e9a45c9e7f39d823162ee226d881dacc224b1c6041fb702cfe6e4240` |
-| StencilStudio-macOS-Intel.zip | 8,232,144 | `5f4fb79c821cd96cf8c09a51e7e6e2fdf4965f54472f1a569526618bfa00cb37` |
+| StencilStudio-Windows-x64.zip | 8,242,785 | `bb8c5a8a14e6d2acaef36d5e0a39e8b3a1c179fefd3d16f9acd3b37825f935f5` |
+| StencilStudio-macOS-Apple-Silicon.zip | 7,832,696 | `c602b64f5894fea31b3e75511e61f3e6825074ed557e678573c0b5b09b23655a` |
+| StencilStudio-macOS-Intel.zip | 8,225,479 | `21298dcc72cbb397854989886cad2f942b0ba2320a1c2d8d85db4c186beb8d1c` |
 | StencilStudio-Quick-Start.pdf | 43,171 | `89868c6d2cebf0684ee81591a603c457398744fd008269387e226ea8d38f6a03` |
-| Read Me and Checksums.txt | 700 | `254055c303b76b4c09996a95b2ad63b65ec3c1a4bfeeecd10b816bfc3d14d504` |
+| Read Me and Checksums.txt | 700 | `038b3a8c986e39520789bb112dfd4cb5f14d1e81b3e871c6dbba3c8a09f0ab88` |
 
 Final tested runtime ZIPs before the outer instruction update:
 
@@ -106,7 +106,7 @@ An independent empty canvas is checked before attributing an unavailable WebGL2 
 
 ## 12. Native UI screenshots
 
-The Windows screenshot above is the actual normal launcher. Actual [ARM](https://github.com/thomastt-cryoo/stenciii/blob/codex/m7-artifacts/670aad80fe5fe648f802fa429aa67c55ea2b538a/macos-arm64/actual-launcher.png) and [Intel](https://github.com/thomastt-cryoo/stenciii/blob/codex/m7-artifacts/670aad80fe5fe648f802fa429aa67c55ea2b538a/macos-x64/actual-launcher.png) native controller screenshots are retained under the platform directories on `codex/m7-artifacts`. ARM shows the controller in front of the local Safari editor; Intel shows the native controller. These prove native launcher rendering, not a native editor or interactive Finder/Gatekeeper walkthrough. Automated browser screenshots show actual generated 3D meshes.
+The Windows screenshot above is the actual normal launcher. Actual [ARM](https://github.com/thomastt-cryoo/stenciii/blob/codex/m7-artifacts/670aad80fe5fe648f802fa429aa67c55ea2b538a/macos-arm64/actual-launcher.png) and [Intel](https://github.com/thomastt-cryoo/stenciii/blob/codex/m7-artifacts/670aad80fe5fe648f802fa429aa67c55ea2b538a/macos-x64/actual-launcher.png) native controller screenshots are retained under the platform directories on `codex/m7-artifacts`. ARM shows the controller in front of the local Safari editor; Intel shows the native controller. Both current Mac screenshots were visually inspected. These prove native launcher rendering, not a native editor or interactive Finder/Gatekeeper walkthrough. Automated browser screenshots show actual generated 3D meshes.
 
 ## 13. Extraction, updates and removal
 
@@ -152,7 +152,7 @@ Windows executables are unsigned. The locally built normal launch showed no Smar
 | 41129672908 | Full preserved CI for repaired runtime | Passed 173 Rust + 248 browser tests; deploy skipped |
 | 41128683600 | Preserved standard CI after harness/workflow changes | Passed; not substituted for the repaired-source result above |
 
-Raw reports, generated exports, screenshots and exact candidate ZIPs are retained on [`codex/m7-artifacts`](https://github.com/thomastt-cryoo/stenciii/tree/codex/m7-artifacts), under each QA source SHA/platform. This avoids relying only on expiring Actions artifacts. Source and review are tracked in [PR 1](https://github.com/thomastt-cryoo/stenciii/pull/1). [Complete M7 CI run snapshot](m7/evidence/ci-runs.json) includes every run on the milestone branch, including skipped producer workflows and earlier failed attempts. No test failure is relabeled as a successful browser qualification. The final documentation/delivery assembly does not alter application source after the fully tested runtime commit.
+Raw reports, generated exports, screenshots and exact candidate ZIPs are retained on [`codex/m7-artifacts`](https://github.com/thomastt-cryoo/stenciii/tree/codex/m7-artifacts), under each QA source SHA/platform. This avoids relying only on expiring Actions artifacts. Source and review are tracked in [PR 1](https://github.com/thomastt-cryoo/stenciii/pull/1). [Complete M7 CI run snapshot](m7/evidence/ci-runs.json) includes every run on the milestone branch, including skipped producer workflows and earlier failed attempts. No test failure is relabeled as a successful browser qualification. Delivery assembly [41134317606](https://github.com/thomastt-cryoo/stenciii/actions/runs/41134317606) passed and retained the canonical five-file layout on the artifact branch. [Assembly evidence](m7/evidence/delivery-assembly.json) records all five canonical delivery hashes and their durable artifact commit. The final documentation/delivery assembly does not alter application source after the fully tested runtime commit.
 
 ## 20. Remaining limits
 
