@@ -1,0 +1,33 @@
+{
+  "platform": "darwin",
+  "arch": "x64",
+  "instance": {
+    "fallback": false,
+    "launcherPid": 13843,
+    "pid": 13844,
+    "port": 49450,
+    "preferredPort": 0,
+    "profile": "/Users/runner/work/stenciii/stenciii/out/firefox/profile",
+    "schema": 1,
+    "studio": "stencil-studio",
+    "temporarySession": false,
+    "url": "http://localhost:49450/",
+    "version": "2.9.4"
+  },
+  "browser": "firefox",
+  "channel": "",
+  "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+  "cases": [],
+  "outside": [],
+  "consoleErrors": [],
+  "consoleMessages": [],
+  "version": "157.0",
+  "initial_engine": {
+    "n": 2,
+    "why": "threaded",
+    "version": "2.9.4"
+  },
+  "passed": false,
+  "error": "page.reload: NS_BINDING_ABORTED\nCall log:\n  - waiting for navigation until \"load\"\n\n    at /Users/runner/work/stenciii/stenciii/scripts/m7/package-qa.mjs:57:14",
+  "failure_text": "Stencil Studio\nNew Project\nOpen Project\nSave Project\nExport options\nExport STL\nYOUR WORKSPACE\nSimple stencil\nReplace image\nOriginal\nStencil\nCompare\n3D\n−\n100%\n+\nFit\nInspect artwork\nCustomize artwork\nProcessing Steps\nView Options\nDrag to orbit · Scroll to zoom\n200.0 × 153.7 × 5.2 mm\nCheckStencil made · Review the notes\n\n4,980 triangles · 1 connected component · Closed, oriented mesh independently checked\n\nGeometry checks detect common mesh defects; they do not guarantee print success. Height cutaways are inspection views.\n\n1 print note to review\nQuick Adjustments\n\nA few choices. Your kind of stencil.\n\nStencil style\n\nPixel-defined edges for bold graphics and hard-edged artwork.\n\nArtwork\nDetail\nCustom\n\nControls the pixel resolution of the stencil edges. Exact settings\n\nAutomatic threshold\nInvert artwork\nArtwork tools\nSize & strength\nStencil width\nmm\nBase thickness\nmm\nBridge width\nmm\nBridge & layer settings\n\nBridges hold floating pieces in place. Final height includes the saved extra layers.\n\nMake Stencil\nAll Settings\n↗\nAdjustments update the preview automatically."
+}

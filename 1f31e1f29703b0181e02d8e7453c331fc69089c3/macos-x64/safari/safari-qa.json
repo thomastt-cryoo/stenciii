@@ -1,0 +1,41 @@
+{
+  "browser": "Safari",
+  "platform": "macOS",
+  "cases": [],
+  "export_method": "actual customer blob links, retrieved through WebDriver; disk downloads qualified separately in Chromium",
+  "capabilities": {
+    "safari:platformVersion": "15.7.9",
+    "safari:automaticInspection": false,
+    "webkit:WebRTC": {
+      "DisableICECandidateFiltering": false,
+      "DisableInsecureMediaCapture": false
+    },
+    "webkit:alwaysAllowAutoplay": false,
+    "browserVersion": "26.6",
+    "strictFileInteractability": false,
+    "browserName": "Safari",
+    "safari:useSimulator": false,
+    "safari:automaticProfiling": false,
+    "setWindowRect": true,
+    "acceptInsecureCerts": false,
+    "safari:platformBuildVersion": "24G830",
+    "safari:experimentalWebSocketUrl": false,
+    "platformName": "macOS",
+    "safari:diagnose": false
+  },
+  "instance": {
+    "fallback": false,
+    "launcherPid": 14292,
+    "pid": 14301,
+    "port": 49463,
+    "preferredPort": 0,
+    "profile": "/Users/runner/work/stenciii/stenciii/out/safari/profile",
+    "schema": 1,
+    "studio": "stencil-studio",
+    "temporarySession": false,
+    "url": "http://localhost:49463/",
+    "version": "2.9.4"
+  },
+  "passed": false,
+  "error": "Safari wait expired: return document.querySelector(\".mesh-preview\")?.dataset.ready===\"true\"\n\nStencil Studio\nNew Project\nOpen Project\nSave Project\n\n\n\nExport options\nExport STL\nYOUR WORKSPACE\nSimple stencil\nReplace image\nOriginal\nStencil\nCompare\n3D\n\u2212\n100%\n+\nFit\nInspect artwork\nCustomize artwork\nProcessing Steps\n3D rendering is unavailable. The verified STL remains downloadable.\nView Options\nDrag to orbit \u00b7 Scroll to zoom\n200.0 \u00d7 153.7 \u00d7 5.2 mm\nCheckStencil made \u00b7 Review the notes\n4,980 triangles \u00b7 1 connected component \u00b7 Closed, oriented mesh independently checked\nGeometry checks detect common mesh defects; they do not guarantee print success. Height cutaways are inspection views.\n1 print note to review\nQuick Adjustments\nA few choices. Your kind of stencil.\nStencil style\n\nPixel-defined edges for bold graphics and hard-edged artwork.\nArtwork\nDetail Custom\n\nControls the pixel resolution of the stencil edges. Exact settings\n\nAutomatic threshold\n\nInvert artwork\n\nArtwork tools\nSize & strength\nStencil width\n\nmm\nBase thickness\n\nmm\nBridge width\n\nmm\nBridge & layer settings\nBridges hold floating pieces in place. Final height includes the saved extra layers.\nMake Stencil\nAll Settings\n\u2197\nAdjustments update the preview automatically."
+}
