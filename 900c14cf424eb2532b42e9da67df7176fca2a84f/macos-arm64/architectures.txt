@@ -1,0 +1,2 @@
+extracted/Stencil Studio.app/Contents/MacOS/stencil-studio: Mach-O 64-bit executable arm64
+extracted/Stencil Studio.app/Contents/Resources/stencil:    Mach-O 64-bit executable arm64
