@@ -1,0 +1,124 @@
+name: qualify-browser-platform
+on:
+  workflow_call:
+    inputs:
+      runner: {type: string, required: true}
+      platform: {type: string, required: true}
+      expected_arch: {type: string, required: true}
+      assets_run: {type: string, required: true}
+permissions:
+  contents: write
+jobs:
+  package:
+    runs-on: ${{ inputs.runner }}
+    defaults:
+      run:
+        shell: bash
+    env:
+      MACOSX_DEPLOYMENT_TARGET: "13.3"
+      M7_PYTHON: python
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.99.0
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: browser-${{ inputs.platform }}
+          cache-on-failure: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26.3.0
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - uses: actions/download-artifact@v4
+        with:
+          name: production-assets
+          run-id: ${{ inputs.assets_run }}
+          github-token: ${{ github.token }}
+      - name: Build and package exact candidate
+        id: package
+        run: |
+          tar -xzf production-assets.tar.gz
+          test ! -e web/dist/legacy.html
+          npm --prefix web ci
+          target=$(rustc +1.99.0 -vV | sed -n 's/^host: //p')
+          if [ "$RUNNER_OS" = Windows ]; then
+            export CARGO_TARGET_X86_64_PC_WINDOWS_MSVC_RUSTFLAGS='-C target-feature=+crt-static -C strip=symbols'
+            exe=.exe
+          else
+            test "$(uname -m)" = '${{ inputs.expected_arch }}'
+            export RUSTFLAGS='-C strip=symbols'
+            exe=
+          fi
+          cargo +1.99.0 build --release --locked --target "$target" --target-dir target/m7 -p stencil-cli -p stencil-launcher --features studio
+          python scripts/m7/licenses.py --out notices
+          python scripts/m7/package.py --platform '${{ inputs.platform }}' --backend "target/m7/$target/release/stencil$exe" --launcher "target/m7/$target/release/stencil-studio$exe" --notices notices --out out --source "$GITHUB_SHA"
+          python -c "import hashlib,json,pathlib; p=pathlib.Path('production-assets.tar.gz'); pathlib.Path('out/assets-provenance.json').write_text(json.dumps({'workflow_run':'${{ inputs.assets_run }}','sha256':hashlib.sha256(p.read_bytes()).hexdigest()}))"
+      - name: Extract customer download
+        id: extract
+        if: steps.package.outcome == 'success'
+        run: |
+          mkdir -p extracted
+          if [ "$RUNNER_OS" = Windows ]; then
+            python -c "import zipfile; zipfile.ZipFile('out/StencilStudio-Windows-x64.zip').extractall('extracted')"
+            echo 'launcher=extracted/Stencil Studio.exe' >> "$GITHUB_OUTPUT"
+          else
+            archive=$(find out -name '*.zip' -maxdepth 1 | head -1)
+            ditto -x -k "$archive" extracted
+            codesign --verify --deep --strict 'extracted/Stencil Studio.app'
+            echo 'launcher=extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Managed host and lifecycle qualification
+        if: steps.extract.outcome == 'success'
+        run: python scripts/m7/host_qa.py '${{ steps.extract.outputs.launcher }}' out/host
+      - name: Real macOS GUI launcher
+        if: steps.extract.outcome == 'success' && runner.os == 'macOS'
+        run: |
+          sw_vers > out/os-version.txt
+          file 'extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' 'extracted/Stencil Studio.app/Contents/Resources/stencil' > out/architectures.txt
+          (spctl --assess --type execute --verbose=4 'extracted/Stencil Studio.app' > out/gatekeeper.txt 2>&1) || true
+          open -n 'extracted/Stencil Studio.app' --args --no-open --profile-dir "$PWD/gui-profile"
+          sleep 3
+          pgrep -x stencil-studio > out/gui-launch-pids.txt
+          screencapture -x out/actual-launcher.png
+          kill -TERM "$(cat out/gui-launch-pids.txt)"
+          sleep 3
+          if lsof -a -c stencil -iTCP -sTCP:LISTEN > out/after-gui-close.txt; then echo 'Orphaned server'; exit 1; fi
+      - name: Browser test binaries
+        if: steps.extract.outcome == 'success'
+        run: cd web && npx playwright install chromium firefox
+      - name: Complete representative Chromium package collection
+        if: steps.extract.outcome == 'success'
+        run: node scripts/m7/package-qa.mjs '${{ steps.extract.outputs.launcher }}' out/chromium chromium
+      - name: Installed Chrome
+        if: steps.extract.outcome == 'success'
+        env:
+          M7_CASES: simple,colours,mounted,old-browser
+        run: node scripts/m7/package-qa.mjs '${{ steps.extract.outputs.launcher }}' out/chrome chromium chrome
+      - name: Firefox engine
+        if: steps.extract.outcome == 'success'
+        env:
+          M7_CASES: simple,colours,mounted,old-browser
+        run: node scripts/m7/package-qa.mjs '${{ steps.extract.outputs.launcher }}' out/firefox firefox
+      - name: Installed Edge
+        if: steps.extract.outcome == 'success' && runner.os == 'Windows'
+        env:
+          M7_CASES: simple,colours,mounted,old-browser
+        run: node scripts/m7/package-qa.mjs '${{ steps.extract.outputs.launcher }}' out/edge chromium msedge
+      - name: Installed Safari (Apple WebDriver)
+        if: steps.extract.outcome == 'success' && runner.os == 'macOS'
+        run: |
+          sudo /usr/bin/safaridriver --enable
+          python scripts/m7/safari_qa.py '${{ steps.extract.outputs.launcher }}' out/safari
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qualified-${{ inputs.platform }}
+          path: out
+      - name: Retain exact artifacts without publishing a release
+        if: always()
+        run: python scripts/m7/archive-evidence.py out '${{ inputs.platform }}'

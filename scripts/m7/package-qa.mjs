@@ -30,7 +30,6 @@ try {
   const project=resolve(root,'docs/m7/acceptance',fixture.project),raw=JSON.parse(readFileSync(project))
   await page.goto(instance.url);await expect(page.getByRole('button',{name:'Choose Image',exact:true})).toBeEnabled({timeout:60000})
   await page.setInputFiles('[aria-label="Open project file"]',project)
-  const link=page.getByRole('link',{name:/^Export (STL|ZIP)$/}).filter({hasNot:page.locator('[aria-disabled="true"]')})
   // There is one primary printable result link; its disabled state tracks the current project.
   await expect(page.getByRole('link',{name:/^Export (STL|ZIP)$/})).toHaveAttribute('aria-disabled','false',{timeout:480000})
   const exportLink=page.getByRole('link',{name:/^Export (STL|ZIP)$/}),kind=(await exportLink.innerText()).includes('ZIP')?'zip':'stl'
@@ -38,7 +37,12 @@ try {
   const proof=prove(file,fixture.m6_output)
   await page.getByRole('tab',{name:'3D',exact:true}).click();await expect(page.locator('.mesh-preview')).toHaveAttribute('data-ready','true',{timeout:120000})
   const gl=await page.locator('.mesh-preview canvas').evaluate(canvas=>{const gl=canvas.getContext('webgl2')||canvas.getContext('webgl');return gl?{version:gl.getParameter(gl.VERSION),width:canvas.width,height:canvas.height}:null});assert(gl&&gl.width>0&&gl.height>0)
-  if(cases.length===0)await page.screenshot({path:resolve(out,'actual-3d-preview.png'),fullPage:true})
+  if(cases.length===0){
+   await page.screenshot({path:resolve(out,'actual-3d-preview.png'),fullPage:true})
+   await page.getByRole('button',{name:'All Settings',exact:true}).click();await page.getByRole('searchbox').fill('diagnostics');await page.getByRole('button',{name:'Engine diagnostics and processing reports',exact:true}).click();await page.locator('.engine-diagnostics>summary').click()
+   const diagnosticEvent=page.waitForEvent('download');await page.getByRole('button',{name:'Download diagnostic report JSON',exact:true}).click();const diagnosticFile=resolve(out,'initial-engine.json');await(await diagnosticEvent).saveAs(diagnosticFile);report.initial_engine=JSON.parse(readFileSync(diagnosticFile)).engine
+   await page.getByRole('button',{name:'Close settings',exact:true}).click()
+  }
   const saved=page.waitForEvent('download');await page.getByRole('button',{name:'Save Project',exact:true}).click();const savedFile=resolve(out,fixture.name+'-saved.json');await(await saved).saveAs(savedFile)
   assert.deepEqual(JSON.parse(readFileSync(savedFile)),raw)
   await page.reload();await expect(page.getByRole('button',{name:'All Settings',exact:true})).toBeEnabled({timeout:60000});assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('stencil-studio.project.v1'))),raw)
