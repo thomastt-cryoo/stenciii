@@ -1,0 +1,356 @@
+{
+  "platform": "win32",
+  "arch": "x64",
+  "instance": {
+    "fallback": false,
+    "launcherPid": 8084,
+    "pid": 2612,
+    "port": 52859,
+    "preferredPort": 0,
+    "profile": "D:\\a\\stenciii\\stenciii\\out\\chrome\\profile",
+    "schema": 1,
+    "studio": "stencil-studio",
+    "temporarySession": false,
+    "url": "http://localhost:52859/",
+    "version": "2.9.4"
+  },
+  "browser": "chromium",
+  "channel": "chrome",
+  "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+  "cases": [
+    {
+      "name": "simple",
+      "passed": true,
+      "elapsed_ms": 7444,
+      "webgl": {
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 1042,
+        "height": 513
+      },
+      "proof": {
+        "independent": {
+          "format": "binary STL",
+          "bytes": 249084,
+          "triangles": 4980,
+          "vertices": 2490,
+          "bounds_mm": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              200,
+              153.70370483398438,
+              5.199999809265137
+            ]
+          ],
+          "size_mm": [
+            200,
+            153.70370483398438,
+            5.199999809265137
+          ],
+          "signed_volume_mm3": 71470.04460015621,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        "normals": {
+          "simple.stl": {
+            "finite_unit_normals": 4980,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 1
+          }
+        },
+        "m6_equivalence": {
+          "simple.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "3db1d38e6e22f88ed068c30eea8f1828d911839ca8a7382322a0e6d825fd8384",
+              "3db1d38e6e22f88ed068c30eea8f1828d911839ca8a7382322a0e6d825fd8384"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              4980,
+              4980
+            ],
+            "shared_exact_triangles": 4980,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          }
+        }
+      },
+      "lossless_save_reopen": true
+    },
+    {
+      "name": "colours",
+      "passed": true,
+      "elapsed_ms": 6535,
+      "webgl": {
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 1042,
+        "height": 391
+      },
+      "proof": {
+        "independent": {
+          "format": "ZIP",
+          "bytes": 601052,
+          "entries": [
+            {
+              "name": "assembly-1-Register_colour_plates/colour_1.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 3128985397,
+              "format": "binary STL",
+              "bytes": 281084,
+              "triangles": 5620,
+              "vertices": 2804,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  79.16666412353516,
+                  5.199999809265137
+                ]
+              ],
+              "size_mm": [
+                100,
+                79.16666412353516,
+                5.199999809265137
+              ],
+              "signed_volume_mm3": 23213.70367228597,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Register_colour_plates/colour_2.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 3558357564,
+              "format": "binary STL",
+              "bytes": 277284,
+              "triangles": 5544,
+              "vertices": 2754,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  79.16666412353516,
+                  5.199999809265137
+                ]
+              ],
+              "size_mm": [
+                100,
+                79.16666412353516,
+                5.199999809265137
+              ],
+              "signed_volume_mm3": 31926.622641310845,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 1850354433,
+              "format": "binary STL",
+              "bytes": 28284,
+              "triangles": 564,
+              "vertices": 288,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  17.399999618530273,
+                  3.799999952316284,
+                  12
+                ]
+              ],
+              "size_mm": [
+                17.399999618530273,
+                3.799999952316284,
+                12
+              ],
+              "signed_volume_mm3": 407.116420441479,
+              "components": 3,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "original-project.json",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 1292928382
+            },
+            {
+              "name": "manufacturing-manifest.json",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 1325439591
+            }
+          ]
+        },
+        "normals": {
+          "assembly-1-Register_colour_plates/colour_1.stl": {
+            "finite_unit_normals": 5620,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999992
+          },
+          "assembly-1-Register_colour_plates/colour_2.stl": {
+            "finite_unit_normals": 5544,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999992
+          },
+          "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+            "finite_unit_normals": 564,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999994
+          }
+        },
+        "m6_equivalence": {
+          "assembly-1-Register_colour_plates/colour_1.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "92c79f38745cfb9cf767e369c879eeb016c96599b52edc2d73390025864ace9a",
+              "92c79f38745cfb9cf767e369c879eeb016c96599b52edc2d73390025864ace9a"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              5620,
+              5620
+            ],
+            "shared_exact_triangles": 5620,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Register_colour_plates/colour_2.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "7ecf80834a9ac81d7fdf2a24df6a19b3914b104cb47f188ecc2f640f0e9838a4",
+              "7ecf80834a9ac81d7fdf2a24df6a19b3914b104cb47f188ecc2f640f0e9838a4"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              5544,
+              5544
+            ],
+            "shared_exact_triangles": 5544,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "457eabc0702e354b1b836f2831f4c45e9559d8c9d156097aa9a807989022eb25",
+              "457eabc0702e354b1b836f2831f4c45e9559d8c9d156097aa9a807989022eb25"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              564,
+              564
+            ],
+            "shared_exact_triangles": 564,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          }
+        }
+      },
+      "lossless_save_reopen": true
+    }
+  ],
+  "outside": [],
+  "consoleErrors": [],
+  "version": "156.0.8078.48",
+  "initial_engine": {
+    "n": 2,
+    "why": "threaded",
+    "version": "2.9.4"
+  }
+}
