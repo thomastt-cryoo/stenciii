@@ -1,0 +1,308 @@
+{
+  "source": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
+  "reference": "Windows x64 Chromium output, not a new M6 reference",
+  "method": "unchanged M6 independent checks and exact oriented-surface A/B comparison",
+  "comparisons": [
+    {
+      "case": "simple",
+      "platform": "macos-arm64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "simple",
+      "platform": "macos-x64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "vector",
+      "platform": "macos-arm64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "vector",
+      "platform": "macos-x64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "tones",
+      "platform": "macos-arm64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "tones",
+      "platform": "macos-x64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "colours",
+      "platform": "macos-arm64",
+      "independent_checks_completed": true,
+      "mesh_count": 3,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "colours",
+      "platform": "macos-x64",
+      "independent_checks_completed": true,
+      "mesh_count": 3,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "first",
+      "platform": "macos-arm64",
+      "independent_checks_completed": true,
+      "mesh_count": 12,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "first",
+      "platform": "macos-x64",
+      "independent_checks_completed": true,
+      "mesh_count": 12,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "mounted",
+      "platform": "macos-arm64",
+      "independent_checks_completed": true,
+      "mesh_count": 12,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "mounted",
+      "platform": "macos-x64",
+      "independent_checks_completed": true,
+      "mesh_count": 12,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "old-browser",
+      "platform": "macos-arm64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "old-browser",
+      "platform": "macos-x64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "registered-colour-branches",
+      "platform": "macos-arm64",
+      "independent_checks_completed": true,
+      "mesh_count": 4,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "registered-colour-branches",
+      "platform": "macos-x64",
+      "independent_checks_completed": true,
+      "mesh_count": 4,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "layout-offsets",
+      "platform": "macos-arm64",
+      "independent_checks_completed": true,
+      "mesh_count": 3,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "layout-offsets",
+      "platform": "macos-x64",
+      "independent_checks_completed": true,
+      "mesh_count": 3,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "shared-hardware-and-multiple-images",
+      "platform": "macos-arm64",
+      "independent_checks_completed": true,
+      "mesh_count": 28,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "shared-hardware-and-multiple-images",
+      "platform": "macos-x64",
+      "independent_checks_completed": true,
+      "mesh_count": 28,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "detailed-logo",
+      "platform": "macos-arm64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "detailed-logo",
+      "platform": "macos-x64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "transparent",
+      "platform": "macos-arm64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "transparent",
+      "platform": "macos-x64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "photograph",
+      "platform": "macos-arm64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "photograph",
+      "platform": "macos-x64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "text",
+      "platform": "macos-arm64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "text",
+      "platform": "macos-x64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "smooth-vector",
+      "platform": "macos-arm64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    },
+    {
+      "case": "smooth-vector",
+      "platform": "macos-x64",
+      "independent_checks_completed": true,
+      "mesh_count": 1,
+      "categories": [
+        "A"
+      ],
+      "maximum_surface_deviation_mm": 0
+    }
+  ],
+  "passed": true
+}

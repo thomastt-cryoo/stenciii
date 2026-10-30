@@ -1,0 +1,254 @@
+{
+  "qa_source": "1f31e1f29703b0181e02d8e7453c331fc69089c3",
+  "workflow_run": 41119450234,
+  "outcome": "failed; see per-browser outcomes",
+  "platforms": {
+    "windows-x64": {
+      "browsers": {
+        "chromium": {
+          "passed": true,
+          "version": "156.0.8078.4",
+          "initial_engine": {
+            "n": 2,
+            "why": "threaded",
+            "version": "2.9.4"
+          },
+          "consoleErrors": [],
+          "error": null,
+          "cases_passed": [
+            "mounted",
+            "registered-colour-branches",
+            "smooth-vector"
+          ],
+          "batch_verified_jobs": 2,
+          "full_raw_report": "1f31e1f29703b0181e02d8e7453c331fc69089c3/windows-x64/chromium/package-qa.json"
+        },
+        "chrome": {
+          "passed": true,
+          "version": "156.0.8078.80",
+          "initial_engine": {
+            "n": 2,
+            "why": "threaded",
+            "version": "2.9.4"
+          },
+          "consoleErrors": [],
+          "error": null,
+          "cases_passed": [
+            "mounted",
+            "registered-colour-branches",
+            "smooth-vector"
+          ],
+          "batch_verified_jobs": 2,
+          "full_raw_report": "1f31e1f29703b0181e02d8e7453c331fc69089c3/windows-x64/chrome/package-qa.json"
+        },
+        "firefox": {
+          "passed": false,
+          "version": "157.0",
+          "initial_engine": null,
+          "consoleErrors": [],
+          "error": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('.mesh-preview')\nExpected: \"true\"\nReceived: \"false\"\nTimeout:  120000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('.mesh-preview') with timeout 120000ms\n  - waiting for locator('.mesh-preview')\n    224 \u00c3\u2014 locator resolved to <div data-cut=\"full\" data-ready=\"false\" data-detail=\"auto\" class=\"mesh-preview\" data-shading=\"smooth\" data-wireframe=\"false\" data-comparison=\"false\">\u00e2\u20ac\u00a6</div>\n        - unexpected value \"false\"\n\n    at captureRawStack (D:\\a\\stenciii\\stenciii\\web\\node_modules\\playwright-core\\lib\\coreBundle.js:9282:17)\n    at callMatcherAsStep (D:\\a\\stenciii\\stenciii\\web\\node_modules\\playwright\\lib\\matchers\\expect.js:13316:57)\n    at Object.toHaveAttribute (D:\\a\\stenciii\\stenciii\\web\\node_modules\\playwright\\lib\\matchers\\expect.js:13308:23)\n    at D:\\a\\stenciii\\stenciii\\scripts\\m7\\package-qa.mjs:47:106",
+          "cases_passed": [],
+          "batch_verified_jobs": null,
+          "full_raw_report": "1f31e1f29703b0181e02d8e7453c331fc69089c3/windows-x64/firefox/package-qa.json"
+        },
+        "edge": {
+          "passed": true,
+          "version": "156.0.4314.56",
+          "initial_engine": {
+            "n": 2,
+            "why": "threaded",
+            "version": "2.9.4"
+          },
+          "consoleErrors": [],
+          "error": null,
+          "cases_passed": [
+            "mounted",
+            "registered-colour-branches",
+            "smooth-vector"
+          ],
+          "batch_verified_jobs": 2,
+          "full_raw_report": "1f31e1f29703b0181e02d8e7453c331fc69089c3/windows-x64/edge/package-qa.json"
+        }
+      }
+    },
+    "macos-arm64": {
+      "browsers": {
+        "chromium": {
+          "passed": true,
+          "version": "156.0.8078.4",
+          "initial_engine": {
+            "n": 1,
+            "why": "too few cores to share with the page",
+            "version": "2.9.4"
+          },
+          "consoleErrors": [],
+          "error": null,
+          "cases_passed": [
+            "mounted",
+            "registered-colour-branches",
+            "smooth-vector"
+          ],
+          "batch_verified_jobs": 2,
+          "full_raw_report": "1f31e1f29703b0181e02d8e7453c331fc69089c3/macos-arm64/chromium/package-qa.json"
+        },
+        "chrome": {
+          "passed": true,
+          "version": "155.0.8059.40",
+          "initial_engine": {
+            "n": 1,
+            "why": "too few cores to share with the page",
+            "version": "2.9.4"
+          },
+          "consoleErrors": [],
+          "error": null,
+          "cases_passed": [
+            "mounted",
+            "registered-colour-branches",
+            "smooth-vector"
+          ],
+          "batch_verified_jobs": 2,
+          "full_raw_report": "1f31e1f29703b0181e02d8e7453c331fc69089c3/macos-arm64/chrome/package-qa.json"
+        },
+        "firefox": {
+          "passed": false,
+          "version": "157.0",
+          "initial_engine": {
+            "n": 1,
+            "why": "too few cores to share with the page",
+            "version": "2.9.4"
+          },
+          "consoleErrors": [],
+          "error": "page.reload: NS_BINDING_ABORTED\nCall log:\n  - waiting for navigation until \"load\"\n\n    at /Users/runner/work/stenciii/stenciii/scripts/m7/package-qa.mjs:57:14",
+          "cases_passed": [],
+          "batch_verified_jobs": null,
+          "full_raw_report": "1f31e1f29703b0181e02d8e7453c331fc69089c3/macos-arm64/firefox/package-qa.json"
+        },
+        "safari": {
+          "passed": false,
+          "capabilities": {
+            "safari:platformVersion": "26.6.2",
+            "safari:automaticInspection": false,
+            "webkit:WebRTC": {
+              "DisableICECandidateFiltering": false,
+              "DisableInsecureMediaCapture": false
+            },
+            "webkit:alwaysAllowAutoplay": false,
+            "browserVersion": "26.6.2",
+            "strictFileInteractability": false,
+            "browserName": "Safari",
+            "safari:useSimulator": false,
+            "safari:automaticProfiling": false,
+            "setWindowRect": true,
+            "acceptInsecureCerts": false,
+            "safari:platformBuildVersion": "25G83",
+            "safari:experimentalWebSocketUrl": false,
+            "platformName": "macOS",
+            "safari:diagnose": false
+          },
+          "error": "STL triangle count/length mismatch",
+          "cases_passed": [
+            "mounted"
+          ],
+          "full_raw_report": "1f31e1f29703b0181e02d8e7453c331fc69089c3/macos-arm64/safari/safari-qa.json"
+        }
+      },
+      "os-version.txt": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83\n",
+      "gatekeeper.txt": "extracted/Stencil Studio.app: rejected\n"
+    },
+    "macos-x64": {
+      "browsers": {
+        "chromium": {
+          "passed": true,
+          "version": "156.0.8078.4",
+          "initial_engine": {
+            "n": 2,
+            "why": "threaded",
+            "version": "2.9.4"
+          },
+          "consoleErrors": [],
+          "error": null,
+          "cases_passed": [
+            "simple",
+            "vector",
+            "tones",
+            "colours",
+            "first",
+            "mounted",
+            "old-browser",
+            "registered-colour-branches",
+            "layout-offsets",
+            "shared-hardware-and-multiple-images",
+            "detailed-logo",
+            "transparent",
+            "photograph",
+            "text",
+            "smooth-vector"
+          ],
+          "batch_verified_jobs": 2,
+          "full_raw_report": "1f31e1f29703b0181e02d8e7453c331fc69089c3/macos-x64/chromium/package-qa.json"
+        },
+        "chrome": {
+          "passed": true,
+          "version": "151.0.7922.174",
+          "initial_engine": {
+            "n": 2,
+            "why": "threaded",
+            "version": "2.9.4"
+          },
+          "consoleErrors": [],
+          "error": null,
+          "cases_passed": [
+            "simple",
+            "colours",
+            "mounted",
+            "old-browser"
+          ],
+          "batch_verified_jobs": 2,
+          "full_raw_report": "1f31e1f29703b0181e02d8e7453c331fc69089c3/macos-x64/chrome/package-qa.json"
+        },
+        "firefox": {
+          "passed": false,
+          "version": "157.0",
+          "initial_engine": {
+            "n": 2,
+            "why": "threaded",
+            "version": "2.9.4"
+          },
+          "consoleErrors": [],
+          "error": "page.reload: NS_BINDING_ABORTED\nCall log:\n  - waiting for navigation until \"load\"\n\n    at /Users/runner/work/stenciii/stenciii/scripts/m7/package-qa.mjs:57:14",
+          "cases_passed": [],
+          "batch_verified_jobs": null,
+          "full_raw_report": "1f31e1f29703b0181e02d8e7453c331fc69089c3/macos-x64/firefox/package-qa.json"
+        },
+        "safari": {
+          "passed": false,
+          "capabilities": {
+            "safari:platformVersion": "15.7.9",
+            "safari:automaticInspection": false,
+            "webkit:WebRTC": {
+              "DisableICECandidateFiltering": false,
+              "DisableInsecureMediaCapture": false
+            },
+            "webkit:alwaysAllowAutoplay": false,
+            "browserVersion": "26.6",
+            "strictFileInteractability": false,
+            "browserName": "Safari",
+            "safari:useSimulator": false,
+            "safari:automaticProfiling": false,
+            "setWindowRect": true,
+            "acceptInsecureCerts": false,
+            "safari:platformBuildVersion": "24G830",
+            "safari:experimentalWebSocketUrl": false,
+            "platformName": "macOS",
+            "safari:diagnose": false
+          },
+          "error": "Safari wait expired: return document.querySelector(\".mesh-preview\")?.dataset.ready===\"true\"\n\nStencil Studio\nNew Project\nOpen Project\nSave Project\n\n\n\nExport options\nExport STL\nYOUR WORKSPACE\nSimple stencil\nReplace image\nOriginal\nStencil\nCompare\n3D\n\u2212\n100%\n+\nFit\nInspect artwork\nCustomize artwork\nProcessing Steps\n3D rendering is unavailable. The verified STL remains downloadable.\nView Options\nDrag to orbit \u00b7 Scroll to zoom\n200.0 \u00d7 153.7 \u00d7 5.2 mm\nCheckStencil made \u00b7 Review the notes\n4,980 triangles \u00b7 1 connected component \u00b7 Closed, oriented mesh independently checked\nGeometry checks detect common mesh defects; they do not guarantee print success. Height cutaways are inspection views.\n1 print note to review\nQuick Adjustments\nA few choices. Your kind of stencil.\nStencil style\n\nPixel-defined edges for bold graphics and hard-edged artwork.\nArtwork\nDetail Custom\n\nControls the pixel resolution of the stencil edges. Exact settings\n\nAutomatic threshold\n\nInvert artwork\n\nArtwork tools\nSize & strength\nStencil width\n\nmm\nBase thickness\n\nmm\nBridge width\n\nmm\nBridge & layer settings\nBridges hold floating pieces in place. Final height includes the saved extra layers.\nMake Stencil\nAll Settings\n\u2197\nAdjustments update the preview automatically.",
+          "cases_passed": [],
+          "full_raw_report": "1f31e1f29703b0181e02d8e7453c331fc69089c3/macos-x64/safari/safari-qa.json"
+        }
+      },
+      "os-version.txt": "ProductName:\t\tmacOS\nProductVersion:\t\t15.7.9\nBuildVersion:\t\t24G830\n",
+      "gatekeeper.txt": "extracted/Stencil Studio.app: rejected\n"
+    }
+  }
+}

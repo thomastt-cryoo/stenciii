@@ -1,6 +1,6 @@
 # Installation
 
-M7 customer downloads use a graphical launcher for the offline browser editor on Windows and Mac. They require a supported installed browser, with no Rust, Node, Python or WebView runtime installation. The separate [Windows](docs/m7/customer/WINDOWS.txt) and [Mac](docs/m7/customer/MACOS.txt) instructions describe the portable package layout. Platform qualification remains in progress; these source-build instructions are for developers.
+M7 customer downloads use a graphical launcher for the offline browser editor on Windows and Mac. They require a supported installed browser, with no Rust, Node, Python or WebView runtime installation. The separate [Windows](docs/m7/customer/WINDOWS.txt) and [Mac](docs/m7/customer/MACOS.txt) instructions describe extraction and double-click launch. Read the [M7 report](docs/M7_REPORT.md) for tested systems, signing warnings and browser limits. The source-build instructions below are for developers; customers use the ready-made ZIPs.
 
 The current version is written in Rust, with a React/Vite web studio and a WebAssembly engine.
 

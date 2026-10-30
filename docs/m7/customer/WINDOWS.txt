@@ -1,4 +1,4 @@
-STENCIL STUDIO — OFFLINE BROWSER EDITION FOR WINDOWS
+STENCIL STUDIO - OFFLINE BROWSER EDITION FOR WINDOWS
 
 This package opens the complete editor in your normal web browser. It is not a
 native desktop editor. You do not need Rust, Node.js, Python or WebView2.
@@ -13,14 +13,19 @@ native desktop editor. You do not need Rust, Node.js, Python or WebView2.
    remain open; closing all Studio tabs stops the local launcher after a short
    delay. Quit Studio in the small launcher window stops it immediately.
 
-Use a current Chrome, Edge or Firefox browser. A browser must already be
-installed; this ZIP does not contain a browser installer. Initial download and
-any browser installation need internet. Processing, projects and exports work
-locally without internet afterward. Artwork is not uploaded to a service.
+Chrome and Edge are the recommended browsers. Consult Platform Test Record.txt
+for exact versions tested and Firefox graphics qualification limits.
+A browser must already be installed; this ZIP contains no browser installer.
+Initial download and browser installation need internet. Processing, projects
+and exports work locally without internet afterward. Artwork is not uploaded.
+If your default browser is not qualified, open Chrome or Edge and copy the local
+address shown in the small launcher window into its address bar.
 
 Keep downloaded project files as your own backups. The browser's draft belongs
 to that browser and local Studio address. Private browsing and unavailable or
 full browser storage do not provide a durable draft. Use Save Project.
+To move work from an older Studio version or local address, use Save Project
+there first, then Open Project in this edition. Drafts do not move automatically.
 
 The launcher is unsigned. Windows may display an unknown-publisher or reputation
 warning for an internet download. Do not disable antivirus or Windows security.
@@ -35,7 +40,8 @@ there, or close the other application and relaunch to return to your old draft.
 
 To update: save your project, quit Studio, and extract the new package into a new
 folder. Do not mix launchers and support files from different packages. Startup
-settings remain in your normal local application-data folder.
+settings remain in %LOCALAPPDATA%\Stencil Studio\Stencil Studio\data.
+Keep saved project files outside the application folder.
 
 To remove: quit Studio and delete its extracted folder. Your exported models and
 saved project files remain yours. Browser drafts are separate; use that browser's

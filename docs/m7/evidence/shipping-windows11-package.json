@@ -1,0 +1,59 @@
+{
+  "platform": "win32",
+  "arch": "x64",
+  "browser": "chromium",
+  "channel": "",
+  "version": "156.0.8078.4",
+  "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+  "initial_engine": {
+    "n": 4,
+    "why": "threaded",
+    "version": "2.9.4"
+  },
+  "passed": true,
+  "qualification": "passed",
+  "shutdown_document": true,
+  "tested_archive_sha256": "f675a8877673c2cf8925eb2dd1165c7ea9d1d8bfb2f8bf0a9e9aae27628eff09",
+  "source_commit": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
+  "cases": [
+    {
+      "name": "mounted",
+      "passed": true,
+      "webgl": {
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 1042,
+        "height": 406
+      },
+      "lossless_save_reopen": true
+    },
+    {
+      "name": "registered-colour-branches",
+      "passed": true,
+      "webgl": {
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 1042,
+        "height": 422
+      },
+      "lossless_save_reopen": true
+    },
+    {
+      "name": "smooth-vector",
+      "passed": true,
+      "webgl": {
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 1042,
+        "height": 482
+      },
+      "lossless_save_reopen": true
+    }
+  ],
+  "single_thread_passed": true,
+  "batch_verified_jobs": 2,
+  "batch_formats": {
+    "stl": 6,
+    "png": 2,
+    "svg": 2,
+    "json": 5,
+    "csv": 1
+  }
+}

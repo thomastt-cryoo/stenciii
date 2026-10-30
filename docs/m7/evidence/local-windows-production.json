@@ -1,0 +1,17 @@
+{
+  "stats": {
+    "startTime": "2026-10-30T20:00:52.215Z",
+    "duration": 604877.624,
+    "expected": 139,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "test_count": 139,
+  "unexpected": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "tested_archive_sha256": "f420f254389dcf3776cb20fdc408972fd8f7660bad904392642dc913bbb72240",
+  "suite": "unchanged scripts/m6/production.config.ts",
+  "hosting": "extracted Windows customer executable; M6_STUDIO_URL"
+}

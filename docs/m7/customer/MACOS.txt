@@ -1,7 +1,9 @@
-STENCIL STUDIO — OFFLINE BROWSER EDITION FOR MAC
+STENCIL STUDIO - OFFLINE BROWSER EDITION FOR MAC
 
-This application bundle is a launcher for the complete local browser editor;
-the editor runs in Safari, Chrome or Firefox. No development tools are required.
+This application bundle launches the complete local browser editor.
+Chrome is the recommended browser. Consult Platform Test Record.txt for the
+exact Safari and Firefox results and graphics requirements. No development
+tools are required.
 
 1. Extract the complete ZIP. Keep Stencil Studio.app intact. You can keep it in
    a normal user folder or move it to your own Applications folder.
@@ -12,10 +14,11 @@ the editor runs in Safari, Chrome or Firefox. No development tools are required.
 5. Finish and download batch results before quitting. Closing all Studio tabs
    stops the launcher after a short delay. Quit Studio in the small launcher
    window stops it immediately. Jobs do not continue after Studio closes.
+   If your default browser is not qualified, open Chrome and copy the local
+   address shown in the small launcher window into its address bar.
 
-The package filename identifies Apple Silicon, Intel or Universal. A Universal
-package contains both architectures. Consult the platform test record for the
-exact macOS/browser versions actually qualified. The native launcher's build
+The filename identifies Apple Silicon or Intel. Consult the test record for
+the exact macOS/browser versions actually qualified. The native launcher's build
 target is macOS 13.3 or newer; this does not certify every older OS/browser pair.
 
 The bundle is ad-hoc signed for integrity, not signed with a paid Apple Developer
@@ -34,6 +37,8 @@ for accounts, subscriptions or recurring licensing checks.
 Keep your own saved project files. Browser drafts belong to that browser and
 local Studio address. Private browsing, unavailable storage and full storage
 cannot provide a durable draft; use Save Project before closing.
+To move work from an older Studio version or local address, use Save Project
+there first, then Open Project in this edition. Drafts do not move automatically.
 
 If Studio does not open: check the package architecture, OS requirements, complete
 extraction and macOS's application-specific warning. Do not mix files from two
@@ -41,8 +46,10 @@ packages. A busy old draft address can use a temporary session; reopen a saved
 project there, or close the other application and relaunch for the old draft.
 
 To update: save your project, quit Studio and replace the application with the
-new complete bundle. Settings remain in your user Library application-data
-folder; exports and saved project files are not removed by replacing the app.
+new complete bundle. Settings remain in
+~/Library/Application Support/com.Stencil-Studio.Stencil-Studio.
+Keep saved project files outside the app's folder. Exports and separately saved
+project files are not removed by replacing the app.
 To remove: quit Studio and move its app bundle to Trash. Browser drafts remain
 separate; use the browser's site-data controls if you also want to erase them.
 
