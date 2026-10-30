@@ -8,7 +8,7 @@ permissions:
   contents: write
 jobs:
   apple-silicon:
-    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[m7-retest]')
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[m7-retest]') || contains(github.event.head_commit.message, '[m7-style-check]')
     uses: ./.github/workflows/m7-platform.yml
     with:
       runner: macos-26
@@ -16,8 +16,9 @@ jobs:
       expected_arch: arm64
       assets_run: '41100143518'
       package_source: '1561d8d22bcbc36e4f1325a7f632e52369358156'
+      case_filter: ${{ contains(github.event.head_commit.message, '[m7-style-check]') && 'smooth-vector,mounted,registered-colour-branches' || '' }}
   windows:
-    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[m7-windows-retest]')
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[m7-windows-retest]') || contains(github.event.head_commit.message, '[m7-style-check]')
     uses: ./.github/workflows/m7-platform.yml
     with:
       runner: windows-2025
@@ -25,8 +26,11 @@ jobs:
       expected_arch: x64
       assets_run: '41100143518'
       package_source: '1561d8d22bcbc36e4f1325a7f632e52369358156'
+      case_filter: ${{ contains(github.event.head_commit.message, '[m7-style-check]') && 'smooth-vector,mounted,registered-colour-branches' || '' }}
   intel:
-    needs: apple-silicon
+    # ARM's initial complete smoke collection passed in run 41100143518.
+    # An unavailable ARM retest pool need not block the first Intel build.
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[m7-intel]')
     uses: ./.github/workflows/m7-platform.yml
     with:
       runner: macos-15-intel

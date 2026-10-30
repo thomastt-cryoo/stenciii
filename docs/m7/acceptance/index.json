@@ -68,5 +68,10 @@
     "name": "text",
     "project": "text.json",
     "m6_output": null
+  },
+  {
+    "name": "smooth-vector",
+    "project": "smooth-vector.json",
+    "m6_output": "docs/m7/reference/smooth-vector.stl"
   }
 ]

@@ -7,6 +7,7 @@ on:
       expected_arch: {type: string, required: true}
       assets_run: {type: string, required: true}
       package_source: {type: string, required: false, default: ''}
+      case_filter: {type: string, required: false, default: ''}
 permissions:
   contents: write
 jobs:
@@ -109,24 +110,29 @@ jobs:
         run: cd web && npx playwright install chromium firefox
       - name: Complete representative Chromium package collection
         if: always() && steps.extract.outcome == 'success'
+        env:
+          M7_CASES: ${{ inputs.case_filter }}
         run: node scripts/m7/package-qa.mjs '${{ steps.extract.outputs.launcher }}' out/chromium chromium
       - name: Installed Chrome
         if: always() && steps.extract.outcome == 'success'
         env:
-          M7_CASES: simple,colours,mounted,old-browser
+          M7_CASES: ${{ inputs.case_filter || 'simple,colours,mounted,old-browser' }}
         run: node scripts/m7/package-qa.mjs '${{ steps.extract.outputs.launcher }}' out/chrome chromium chrome
       - name: Firefox engine
         if: always() && steps.extract.outcome == 'success'
         env:
-          M7_CASES: simple,colours,mounted,old-browser
+          M7_CASES: ${{ inputs.case_filter || 'simple,colours,mounted,old-browser' }}
+          M7_HEADFUL: '1'
         run: node scripts/m7/package-qa.mjs '${{ steps.extract.outputs.launcher }}' out/firefox firefox
       - name: Installed Edge
         if: always() && steps.extract.outcome == 'success' && runner.os == 'Windows'
         env:
-          M7_CASES: simple,colours,mounted,old-browser
+          M7_CASES: ${{ inputs.case_filter || 'simple,colours,mounted,old-browser' }}
         run: node scripts/m7/package-qa.mjs '${{ steps.extract.outputs.launcher }}' out/edge chromium msedge
       - name: Installed Safari (Apple WebDriver)
         if: always() && steps.extract.outcome == 'success' && runner.os == 'macOS'
+        env:
+          M7_CASES: ${{ inputs.case_filter }}
         run: |
           sudo /usr/bin/safaridriver --enable
           python scripts/m7/safari_qa.py '${{ steps.extract.outputs.launcher }}' out/safari

@@ -16,7 +16,8 @@ def prove(path,baseline=None):
     path=Path(path);validation=inspect(path);parts=validation.get('entries',[validation]);assert parts and all(p.get('closed_oriented_mesh',True)for p in parts),validation
     models=meshes(path);assert models;normal_checks={k:normals(v)for k,v in models.items()}
     comparisons={}
-    if baseline and Path(baseline).is_file():
+    if baseline:
+        assert Path(baseline).is_file(),f'Missing required equivalence reference: {baseline}'
         previous=meshes(Path(baseline));assert len(previous)==len(models)
         if path.suffix=='.stl':comparisons[path.name]=compare(next(iter(previous.values())),next(iter(models.values())))
         else:

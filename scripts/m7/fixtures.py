@@ -10,6 +10,7 @@ def generate():
         add(name,json.loads((ROOT/f'docs/m6/workflows/{name}.json').read_text()),f'docs/m6/workflows/{name}.'+('zip'if name in ['first','mounted','colours']else'stl'))
     for name in ['old-browser','registered-colour-branches','layout-offsets','shared-hardware-and-multiple-images']:
         add(name,json.loads((ROOT/f'docs/m6/projects/{name}.json').read_text()))
+    add('smooth-vector',json.loads((ROOT/'docs/m6/projects/style-banks.json').read_text()),'docs/m7/reference/smooth-vector.stl')
     source=json.loads((ROOT/'docs/m6/workflows/vector.json').read_text())
     for name,image in [('detailed-logo','detailed-logo.svg'),('transparent','transparent.png')]:
         doc=copy.deepcopy(source);key=next(n['params']['image_id']for n in doc['graph']['nodes']if n['type']=='source');doc['images'][key]={'name':image,'base64':base64.b64encode((ROOT/'web/e2e/corpus'/image).read_bytes()).decode()}

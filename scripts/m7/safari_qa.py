@@ -4,7 +4,7 @@ Import is dispatched through the customer file input. Export bytes are fetched
 from its actual blob link; Chrome acceptance separately exercises disk downloads.
 """
 from pathlib import Path
-import base64,json,socket,subprocess,sys,time,urllib.request
+import base64,json,os,socket,subprocess,sys,time,urllib.request
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts/m7'))
 from prove_export import prove
 launcher=Path(sys.argv[1]).resolve();out=Path(sys.argv[2]).resolve();out.mkdir(parents=True,exist_ok=True)
@@ -33,7 +33,9 @@ try:
     host=subprocess.Popen([str(launcher),'--automation','--no-open','--profile-dir',str(out/'profile'),'--port','0','--idle-timeout','0'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=(out/'launcher.log').open('wb'),text=True)
     ready=json.loads(host.stdout.readline());report['instance']=ready
     index=json.loads((ROOT/'docs/m7/acceptance/index.json').read_text())
-    for fixture in [r for r in index if r['name']in('simple','colours','mounted','old-browser')]:
+    selected=(os.environ.get('M7_CASES')or'simple,colours,mounted,old-browser').split(',')
+    fixtures=[r for r in index if r['name']in selected];assert len(fixtures)==len(selected)
+    for fixture in fixtures:
         command('POST',f'/session/{session}/url',{'url':ready['url']})
         # Each case needs an empty workspace. Safari's automation window keeps
         # origin storage across navigations; preserve/reopen is tested below,
