@@ -1,0 +1,1511 @@
+{
+  "schema": 1,
+  "app": {
+    "version": "2.9.4",
+    "build": 1,
+    "commit": "900c14c",
+    "time": "2026-10-30T17:40:31.173Z"
+  },
+  "engine": {
+    "n": 1,
+    "why": "too few cores to share with the page",
+    "version": "2.9.4"
+  },
+  "storage": {
+    "sessionBytes": 496,
+    "sessionLimitBytes": 134217728,
+    "persistentAvailable": true,
+    "error": null
+  },
+  "uiSamples": {
+    "perSecond": 0,
+    "maxGapMs": 0,
+    "pageHeapBytes": null
+  },
+  "worker": {
+    "workers": 1,
+    "busy": false
+  },
+  "generation": 2,
+  "status": "complete",
+  "quality": "full",
+  "outputMatchesCurrent": true,
+  "elapsedMs": 1987,
+  "error": null,
+  "failedStep": null,
+  "steps": {
+    "source-1": {
+      "cached": false,
+      "key": "4c2652e2b13f515f",
+      "ms": 21,
+      "outputs": {
+        "image": {
+          "available": true,
+          "type": "image"
+        }
+      },
+      "state": "done"
+    },
+    "threshold-2": {
+      "cached": false,
+      "key": "405d3ec52304f7f3",
+      "ms": 5,
+      "outputs": {
+        "mask": {
+          "available": true,
+          "type": "mask"
+        }
+      },
+      "state": "done"
+    },
+    "stencil-3": {
+      "cached": false,
+      "key": "f787754becf2566a",
+      "ms": 250,
+      "outputs": {
+        "parts": {
+          "available": false,
+          "type": "parts"
+        },
+        "solid": {
+          "available": true,
+          "type": "solid"
+        }
+      },
+      "state": "done"
+    },
+    "tiles-4": {
+      "cached": false,
+      "key": "bdcf41b1c4ae7cad",
+      "ms": 267,
+      "outputs": {
+        "parts": {
+          "available": true,
+          "type": "parts"
+        }
+      },
+      "state": "done"
+    },
+    "pads-5": {
+      "cached": false,
+      "key": "cad1d7ebbc39bfe0",
+      "ms": 817,
+      "outputs": {
+        "parts": {
+          "available": true,
+          "type": "parts"
+        }
+      },
+      "state": "done"
+    },
+    "hardware-6": {
+      "cached": false,
+      "key": "0382da3f5ce1d424",
+      "ms": 131,
+      "outputs": {
+        "parts": {
+          "available": true,
+          "type": "parts"
+        }
+      },
+      "state": "done"
+    }
+  },
+  "log": [
+    {
+      "ts": "2026-10-30T20:12:29.136",
+      "ms": 21,
+      "t": 0.02,
+      "level": "info",
+      "node": "source-1",
+      "type": "source",
+      "msg": "done"
+    },
+    {
+      "ts": "2026-10-30T20:12:29.160",
+      "ms": 5,
+      "t": 0.01,
+      "level": "info",
+      "node": "threshold-2",
+      "type": "threshold",
+      "msg": "done"
+    },
+    {
+      "ts": "2026-10-30T20:12:29.173",
+      "ms": 6,
+      "t": 0.062,
+      "level": "info",
+      "node": "stencil-3",
+      "type": "stencil",
+      "msg": "↳ prepare grid"
+    },
+    {
+      "ts": "2026-10-30T20:12:29.184",
+      "ms": 11,
+      "t": 0.073,
+      "level": "info",
+      "node": "stencil-3",
+      "type": "stencil",
+      "msg": "↳ find islands"
+    },
+    {
+      "ts": "2026-10-30T20:12:29.298",
+      "ms": 114,
+      "t": 0.187,
+      "level": "info",
+      "node": "stencil-3",
+      "type": "stencil",
+      "msg": "↳ bridge islands"
+    },
+    {
+      "ts": "2026-10-30T20:12:29.312",
+      "ms": 14,
+      "t": 0.201,
+      "level": "info",
+      "node": "stencil-3",
+      "type": "stencil",
+      "msg": "↳ layer map"
+    },
+    {
+      "ts": "2026-10-30T20:12:29.414",
+      "ms": 102,
+      "t": 0.303,
+      "level": "info",
+      "node": "stencil-3",
+      "type": "stencil",
+      "msg": "↳ build mesh"
+    },
+    {
+      "ts": "2026-10-30T20:12:29.417",
+      "ms": 3,
+      "t": 0.306,
+      "level": "info",
+      "node": "stencil-3",
+      "type": "stencil",
+      "msg": "↳ write STL"
+    },
+    {
+      "ts": "2026-10-30T20:12:29.417",
+      "ms": 250,
+      "t": 0.25,
+      "level": "info",
+      "node": "stencil-3",
+      "type": "stencil",
+      "msg": "done"
+    },
+    {
+      "ts": "2026-10-30T20:12:29.447",
+      "ms": 2,
+      "t": 0.336,
+      "level": "info",
+      "node": "tiles-4",
+      "type": "tiles",
+      "msg": "↳ read plate"
+    },
+    {
+      "ts": "2026-10-30T20:12:29.490",
+      "ms": 43,
+      "t": 0.379,
+      "level": "info",
+      "node": "tiles-4",
+      "type": "tiles",
+      "msg": "↳ place connector holes"
+    },
+    {
+      "ts": "2026-10-30T20:12:29.506",
+      "ms": 16,
+      "t": 0.395,
+      "level": "info",
+      "node": "tiles-4",
+      "type": "tiles",
+      "msg": "↳ drill holes"
+    },
+    {
+      "ts": "2026-10-30T20:12:29.709",
+      "ms": 203,
+      "t": 0.598,
+      "level": "info",
+      "node": "tiles-4",
+      "type": "tiles",
+      "msg": "↳ cut tiles"
+    },
+    {
+      "ts": "2026-10-30T20:12:29.713",
+      "ms": 267,
+      "t": 0.27,
+      "level": "info",
+      "node": "tiles-4",
+      "type": "tiles",
+      "msg": "done"
+    },
+    {
+      "ts": "2026-10-30T20:12:29.743",
+      "ms": 2,
+      "t": 0.632,
+      "level": "info",
+      "node": "pads-5",
+      "type": "pads",
+      "msg": "↳ lay out pads"
+    },
+    {
+      "ts": "2026-10-30T20:12:30.541",
+      "ms": 798,
+      "t": 1.43,
+      "level": "info",
+      "node": "pads-5",
+      "type": "pads",
+      "msg": "↳ fit pads"
+    },
+    {
+      "ts": "2026-10-30T20:12:30.558",
+      "ms": 817,
+      "t": 0.82,
+      "level": "info",
+      "node": "pads-5",
+      "type": "pads",
+      "msg": "done"
+    },
+    {
+      "ts": "2026-10-30T20:12:30.763",
+      "ms": 131,
+      "t": 0.13,
+      "level": "info",
+      "node": "hardware-6",
+      "type": "hardware",
+      "msg": "done"
+    }
+  ],
+  "lastOutputGeneration": 2,
+  "outputs": [
+    {
+      "step": "stencil-3",
+      "kind": "solid",
+      "info": {
+        "bytes": 249084,
+        "kind": "solid",
+        "stats": {
+          "bridge_material_pixels": 2800,
+          "bridge_mm": 1.6,
+          "bridge_pixels": 2800,
+          "bridge_routes_mm": [],
+          "bridge_strip_width_mm": 1.509433962264151,
+          "bridges_per_island": 1,
+          "construction": "raster",
+          "first_layer_islands": 6,
+          "first_layer_taper_mm": 1,
+          "flip": false,
+          "grid_h": 810,
+          "grid_w": 1060,
+          "height_mm": 305.66,
+          "islands_deleted": 0,
+          "islands_found": 6,
+          "islands_remaining": 0,
+          "layer_height_mm": 0.2,
+          "layers": 31,
+          "margin_mm": 12,
+          "min_first_layer_width_mm": 0,
+          "overhang_area_mm2": 398.72,
+          "overhang_check_deg": 45,
+          "plate_top_mm": 6.2,
+          "raised_bridges": true,
+          "stl_bytes": 249084,
+          "thickness_mm": 6,
+          "threshold": 0,
+          "triangles": 4980,
+          "watertight": true,
+          "width_mm": 400,
+          "z_bridging": "easy"
+        },
+        "tiles": []
+      },
+      "mesh": {
+        "triangles": 4980,
+        "size": [
+          400,
+          305.6603698730469,
+          6.199999809265137
+        ],
+        "bounds": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            400,
+            305.6603698730469,
+            6.199999809265137
+          ]
+        ],
+        "vertices": 2490,
+        "components": 1,
+        "degenerate": 0,
+        "edgesNotSharedTwice": 0,
+        "inconsistentWinding": 0,
+        "signedVolume": 318740.5792895442,
+        "closed": true,
+        "milliseconds": 17.889999999999418
+      },
+      "findings": [
+        {
+          "level": "warn",
+          "text": "overhang 399 mm²"
+        },
+        {
+          "level": "info",
+          "text": "6 islands bridged"
+        }
+      ],
+      "parts": []
+    },
+    {
+      "step": "tiles-4",
+      "kind": "parts",
+      "info": {
+        "files": {
+          "connector_hex_d3mm.stl": 1084,
+          "stencil_r1c1.stl": 135884,
+          "stencil_r1c2.stl": 108784,
+          "stencil_r2c1.stl": 10184,
+          "stencil_r2c2.stl": 14784
+        },
+        "kind": "parts",
+        "meta": {
+          "plate": {
+            "connectors": [
+              [
+                190,
+                10.135848744710287,
+                210,
+                15.335848744710287
+              ],
+              [
+                190,
+                86.55094121297202,
+                210,
+                91.75094121297201
+              ],
+              [
+                190,
+                112.02263870239258,
+                210,
+                117.22263870239257
+              ],
+              [
+                190,
+                290.3245211283366,
+                210,
+                295.52452112833663
+              ],
+              [
+                11.685714285714287,
+                142.83018493652344,
+                16.885714285714286,
+                162.83018493652344
+              ],
+              [
+                383.1142857142857,
+                142.83018493652344,
+                388.31428571428575,
+                162.83018493652344
+              ]
+            ],
+            "flip": false,
+            "h": 305.6603698730469,
+            "layer": 0.2,
+            "margin": 12,
+            "parts": [
+              {
+                "file": "stencil_r1c1.stl",
+                "origin": [
+                  0,
+                  152.83018493652344
+                ],
+                "role": "tile",
+                "size": [
+                  200,
+                  152.83018493652344
+                ]
+              },
+              {
+                "file": "stencil_r1c2.stl",
+                "origin": [
+                  200,
+                  152.83018493652344
+                ],
+                "role": "tile",
+                "size": [
+                  200,
+                  152.83018493652344
+                ]
+              },
+              {
+                "file": "stencil_r2c1.stl",
+                "origin": [
+                  0,
+                  0
+                ],
+                "role": "tile",
+                "size": [
+                  200,
+                  152.83018493652344
+                ]
+              },
+              {
+                "file": "stencil_r2c2.stl",
+                "origin": [
+                  200,
+                  0
+                ],
+                "role": "tile",
+                "size": [
+                  200,
+                  152.83018493652344
+                ]
+              }
+            ],
+            "seams": [
+              [
+                0,
+                200,
+                0,
+                152.83018493652344
+              ],
+              [
+                0,
+                200,
+                152.83018493652344,
+                305.6603698730469
+              ],
+              [
+                1,
+                152.83018493652344,
+                0,
+                200
+              ],
+              [
+                1,
+                152.83018493652344,
+                200,
+                400
+              ]
+            ],
+            "thickness": 6,
+            "top": 6.2,
+            "w": 400
+          },
+          "tiling": {
+            "added_material_mm3": 0,
+            "bridged_tiles": 2,
+            "connectors": 6,
+            "dropped_specks": 0,
+            "facet_cleanup": [
+              {
+                "file": "stencil_r1c2.stl",
+                "preserved_edge_subdivisions": 0,
+                "removed_collinear_faces": 4,
+                "surface_preserving_edge_collapses": 2
+              },
+              {
+                "file": "stencil_r2c2.stl",
+                "preserved_edge_subdivisions": 0,
+                "removed_collinear_faces": 4,
+                "surface_preserving_edge_collapses": 4
+              }
+            ],
+            "grid": [
+              2,
+              2
+            ],
+            "hole_depth_mm": 10,
+            "positions_without_room": 20,
+            "reinforced_seams": 0,
+            "rod_length_mm": 19,
+            "rows": 1,
+            "seam_angle_deg": 0,
+            "seam_gap_mm": 0,
+            "seams_shifted": 0,
+            "thin_wall_holes": 0,
+            "tiles": 4,
+            "welded_tiles": 0
+          }
+        }
+      },
+      "mesh": null,
+      "findings": [],
+      "parts": [
+        {
+          "name": "connector_hex_d3mm.stl",
+          "mesh": {
+            "triangles": 20,
+            "size": [
+              3,
+              2.598076105117798,
+              19
+            ],
+            "bounds": [
+              [
+                -1.5,
+                -1.299038052558899,
+                0
+              ],
+              [
+                1.5,
+                1.299038052558899,
+                19
+              ]
+            ],
+            "vertices": 12,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 111.06775349378586,
+            "closed": true,
+            "milliseconds": 0.944999999992433
+          }
+        },
+        {
+          "name": "stencil_r1c1.stl",
+          "mesh": {
+            "triangles": 2716,
+            "size": [
+              200,
+              152.83018493652344,
+              6.199999809265137
+            ],
+            "bounds": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                200,
+                152.83018493652344,
+                6.199999809265137
+              ]
+            ],
+            "vertices": 1360,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 89819.98901351198,
+            "closed": true,
+            "milliseconds": 6.019999999989523
+          }
+        },
+        {
+          "name": "stencil_r1c2.stl",
+          "mesh": {
+            "triangles": 2174,
+            "size": [
+              200,
+              152.83018493652344,
+              6.199999809265137
+            ],
+            "bounds": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                200,
+                152.83018493652344,
+                6.199999809265137
+              ]
+            ],
+            "vertices": 1089,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 75391.53058800862,
+            "closed": true,
+            "milliseconds": 2.9250000000029104
+          }
+        },
+        {
+          "name": "stencil_r2c1.stl",
+          "mesh": {
+            "triangles": 202,
+            "size": [
+              200,
+              152.83018493652344,
+              6.199999809265137
+            ],
+            "bounds": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                200,
+                152.83018493652344,
+                6.199999809265137
+              ]
+            ],
+            "vertices": 103,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 80378.42587927169,
+            "closed": true,
+            "milliseconds": 0.2450000000098953
+          }
+        },
+        {
+          "name": "stencil_r2c2.stl",
+          "mesh": {
+            "triangles": 294,
+            "size": [
+              200,
+              152.83018493652344,
+              6.199999809265137
+            ],
+            "bounds": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                200,
+                152.83018493652344,
+                6.199999809265137
+              ]
+            ],
+            "vertices": 149,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 72559.25390347933,
+            "closed": true,
+            "milliseconds": 0.33999999999650754
+          }
+        }
+      ]
+    },
+    {
+      "step": "pads-5",
+      "kind": "parts",
+      "info": {
+        "files": {
+          "connector_hex_d3mm.stl": 1084,
+          "extender_M4.stl": 52684,
+          "joiner_M4.stl": 32684,
+          "stencil_r1c1.stl": 1092084,
+          "stencil_r1c2.stl": 1943584,
+          "stencil_r2c1.stl": 966384,
+          "stencil_r2c2.stl": 1849584
+        },
+        "kind": "parts",
+        "meta": {
+          "pads": {
+            "hole_diameter_mm": 4.4,
+            "holes": 16,
+            "joins": 4,
+            "pad_diameter_mm": 8,
+            "pad_thread": "M4",
+            "pads": 6,
+            "thread_major_mm": 4,
+            "warnings": []
+          },
+          "plate": {
+            "connectors": [
+              [
+                190,
+                10.135848744710287,
+                210,
+                15.335848744710287
+              ],
+              [
+                190,
+                86.55094121297202,
+                210,
+                91.75094121297201
+              ],
+              [
+                190,
+                112.02263870239258,
+                210,
+                117.22263870239257
+              ],
+              [
+                190,
+                290.3245211283366,
+                210,
+                295.52452112833663
+              ],
+              [
+                11.685714285714287,
+                142.83018493652344,
+                16.885714285714286,
+                162.83018493652344
+              ],
+              [
+                383.1142857142857,
+                142.83018493652344,
+                388.31428571428575,
+                162.83018493652344
+              ]
+            ],
+            "flip": false,
+            "h": 305.6603698730469,
+            "holes": [
+              {
+                "r": 2.2,
+                "x": 174,
+                "y": 6
+              },
+              {
+                "r": 2.2,
+                "x": 226,
+                "y": 6
+              },
+              {
+                "r": 2.2,
+                "x": 174,
+                "y": 299.6603698730469
+              },
+              {
+                "r": 2.2,
+                "x": 226,
+                "y": 299.6603698730469
+              },
+              {
+                "r": 2.2,
+                "x": 6,
+                "y": 126.83018493652344
+              },
+              {
+                "r": 2.2,
+                "x": 6,
+                "y": 178.83018493652344
+              },
+              {
+                "r": 2.2,
+                "x": 394,
+                "y": 126.83018493652344
+              },
+              {
+                "r": 2.2,
+                "x": 394,
+                "y": 178.83018493652344
+              },
+              {
+                "r": 2.2,
+                "x": 110,
+                "y": 6
+              },
+              {
+                "r": 2.2,
+                "x": 304,
+                "y": 6
+              },
+              {
+                "r": 2.2,
+                "x": 110,
+                "y": 299.6603698730469
+              },
+              {
+                "r": 2.2,
+                "x": 304,
+                "y": 299.6603698730469
+              },
+              {
+                "r": 2.2,
+                "x": 6,
+                "y": 103.8867899576823
+              },
+              {
+                "r": 2.2,
+                "x": 6,
+                "y": 201.7735799153646
+              },
+              {
+                "r": 2.2,
+                "x": 394,
+                "y": 103.8867899576823
+              },
+              {
+                "r": 2.2,
+                "x": 394,
+                "y": 201.7735799153646
+              }
+            ],
+            "joins": [
+              {
+                "a": [
+                  174,
+                  6
+                ],
+                "axis": 0,
+                "b": [
+                  226,
+                  6
+                ]
+              },
+              {
+                "a": [
+                  174,
+                  299.6603698730469
+                ],
+                "axis": 0,
+                "b": [
+                  226,
+                  299.6603698730469
+                ]
+              },
+              {
+                "a": [
+                  6,
+                  126.83018493652344
+                ],
+                "axis": 1,
+                "b": [
+                  6,
+                  178.83018493652344
+                ]
+              },
+              {
+                "a": [
+                  394,
+                  126.83018493652344
+                ],
+                "axis": 1,
+                "b": [
+                  394,
+                  178.83018493652344
+                ]
+              }
+            ],
+            "layer": 0.2,
+            "margin": 12,
+            "mounting": {
+              "clearance": 0.4,
+              "offset": 26,
+              "screw": "M4",
+              "threaded": false
+            },
+            "pads": [
+              {
+                "r": 4,
+                "x": 6,
+                "y": 6
+              },
+              {
+                "r": 4,
+                "x": 394,
+                "y": 6
+              },
+              {
+                "r": 4,
+                "x": 6,
+                "y": 299.6603698730469
+              },
+              {
+                "r": 4,
+                "x": 394,
+                "y": 299.6603698730469
+              },
+              {
+                "r": 4,
+                "x": 214,
+                "y": 6
+              },
+              {
+                "r": 4,
+                "x": 214,
+                "y": 299.6603698730469
+              }
+            ],
+            "parts": [
+              {
+                "file": "stencil_r1c1.stl",
+                "origin": [
+                  0,
+                  152.83018493652344
+                ],
+                "role": "tile",
+                "size": [
+                  200,
+                  152.83018493652344
+                ]
+              },
+              {
+                "file": "stencil_r1c2.stl",
+                "origin": [
+                  200,
+                  152.83018493652344
+                ],
+                "role": "tile",
+                "size": [
+                  200,
+                  152.83018493652344
+                ]
+              },
+              {
+                "file": "stencil_r2c1.stl",
+                "origin": [
+                  0,
+                  0
+                ],
+                "role": "tile",
+                "size": [
+                  200,
+                  152.83018493652344
+                ]
+              },
+              {
+                "file": "stencil_r2c2.stl",
+                "origin": [
+                  200,
+                  0
+                ],
+                "role": "tile",
+                "size": [
+                  200,
+                  152.83018493652344
+                ]
+              }
+            ],
+            "seams": [
+              [
+                0,
+                200,
+                0,
+                152.83018493652344
+              ],
+              [
+                0,
+                200,
+                152.83018493652344,
+                305.6603698730469
+              ],
+              [
+                1,
+                152.83018493652344,
+                0,
+                200
+              ],
+              [
+                1,
+                152.83018493652344,
+                200,
+                400
+              ]
+            ],
+            "thickness": 6,
+            "top": 6.2,
+            "w": 400
+          },
+          "tiling": {
+            "added_material_mm3": 0,
+            "bridged_tiles": 2,
+            "connectors": 6,
+            "dropped_specks": 0,
+            "facet_cleanup": [
+              {
+                "file": "stencil_r1c2.stl",
+                "preserved_edge_subdivisions": 0,
+                "removed_collinear_faces": 4,
+                "surface_preserving_edge_collapses": 2
+              },
+              {
+                "file": "stencil_r2c2.stl",
+                "preserved_edge_subdivisions": 0,
+                "removed_collinear_faces": 4,
+                "surface_preserving_edge_collapses": 4
+              }
+            ],
+            "grid": [
+              2,
+              2
+            ],
+            "hole_depth_mm": 10,
+            "positions_without_room": 20,
+            "reinforced_seams": 0,
+            "rod_length_mm": 19,
+            "rows": 1,
+            "seam_angle_deg": 0,
+            "seam_gap_mm": 0,
+            "seams_shifted": 0,
+            "thin_wall_holes": 0,
+            "tiles": 4,
+            "welded_tiles": 0
+          }
+        }
+      },
+      "mesh": null,
+      "findings": [],
+      "parts": [
+        {
+          "name": "connector_hex_d3mm.stl",
+          "mesh": {
+            "triangles": 20,
+            "size": [
+              3,
+              2.598076105117798,
+              19
+            ],
+            "bounds": [
+              [
+                -1.5,
+                -1.299038052558899,
+                0
+              ],
+              [
+                1.5,
+                1.299038052558899,
+                19
+              ]
+            ],
+            "vertices": 12,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 111.06775349378586,
+            "closed": true,
+            "milliseconds": 0.6550000000133878
+          }
+        },
+        {
+          "name": "extender_M4.stl",
+          "mesh": {
+            "triangles": 1052,
+            "size": [
+              62,
+              35,
+              4
+            ],
+            "bounds": [
+              [
+                -31,
+                -5,
+                0
+              ],
+              [
+                31,
+                30,
+                4
+              ]
+            ],
+            "vertices": 520,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 8351.064091155293,
+            "closed": true,
+            "milliseconds": 3.720000000001164
+          }
+        },
+        {
+          "name": "joiner_M4.stl",
+          "mesh": {
+            "triangles": 652,
+            "size": [
+              62,
+              10,
+              4
+            ],
+            "bounds": [
+              [
+                -31,
+                -5,
+                0
+              ],
+              [
+                31,
+                5,
+                4
+              ]
+            ],
+            "vertices": 324,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 2272.3594823948415,
+            "closed": true,
+            "milliseconds": 4.764999999999418
+          }
+        },
+        {
+          "name": "stencil_r1c1.stl",
+          "mesh": {
+            "triangles": 21840,
+            "size": [
+              200,
+              152.83018493652344,
+              10.199999809265137
+            ],
+            "bounds": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                200,
+                152.83018493652344,
+                10.199999809265137
+              ]
+            ],
+            "vertices": 10912,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 90455.07365462901,
+            "closed": true,
+            "milliseconds": 20.375
+          }
+        },
+        {
+          "name": "stencil_r1c2.stl",
+          "mesh": {
+            "triangles": 38870,
+            "size": [
+              200,
+              152.83018493652344,
+              10.199999809265137
+            ],
+            "bounds": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                200,
+                152.83018493652344,
+                10.199999809265137
+              ]
+            ],
+            "vertices": 19425,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 76107.74273099219,
+            "closed": true,
+            "milliseconds": 43.66000000000349
+          }
+        },
+        {
+          "name": "stencil_r2c1.stl",
+          "mesh": {
+            "triangles": 19326,
+            "size": [
+              200,
+              152.83018493652344,
+              10.199999809265137
+            ],
+            "bounds": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                200,
+                152.83018493652344,
+                10.199999809265137
+              ]
+            ],
+            "vertices": 9655,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 81013.51064672832,
+            "closed": true,
+            "milliseconds": 18.570000000006985
+          }
+        },
+        {
+          "name": "stencil_r2c2.stl",
+          "mesh": {
+            "triangles": 36990,
+            "size": [
+              200,
+              152.83018493652344,
+              10.199999809265137
+            ],
+            "bounds": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                200,
+                152.83018493652344,
+                10.199999809265137
+              ]
+            ],
+            "vertices": 18485,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 73275.46625275699,
+            "closed": true,
+            "milliseconds": 47.20999999999185
+          }
+        }
+      ]
+    },
+    {
+      "step": "hardware-6",
+      "kind": "parts",
+      "info": {
+        "files": {
+          "bolt_M4x20.stl": 1109984,
+          "extender_M4.stl": 52684,
+          "fit_test_hex_d3mm.stl": 75784,
+          "joiner_M4.stl": 32684,
+          "joiner_plate_4holes_M4_30x25mm.stl": 52684,
+          "joiner_plate_M4_30mm.stl": 32684,
+          "nut_M4.stl": 202884
+        },
+        "kind": "parts",
+        "meta": {
+          "joiners": {
+            "screw": "M4",
+            "seams_joined": 4
+          }
+        }
+      },
+      "mesh": null,
+      "findings": [],
+      "parts": [
+        {
+          "name": "bolt_M4x20.stl",
+          "mesh": {
+            "triangles": 22198,
+            "size": [
+              7.390083312988281,
+              6.400000095367432,
+              22.799999237060547
+            ],
+            "bounds": [
+              [
+                -3.6950416564941406,
+                -3.200000047683716,
+                0
+              ],
+              [
+                3.6950416564941406,
+                3.200000047683716,
+                22.799999237060547
+              ]
+            ],
+            "vertices": 11101,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 275.1615151358435,
+            "closed": true,
+            "milliseconds": 17.955000000001746
+          }
+        },
+        {
+          "name": "extender_M4.stl",
+          "mesh": {
+            "triangles": 1052,
+            "size": [
+              62,
+              35,
+              4
+            ],
+            "bounds": [
+              [
+                -31,
+                -5,
+                0
+              ],
+              [
+                31,
+                30,
+                4
+              ]
+            ],
+            "vertices": 520,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 8351.064091155293,
+            "closed": true,
+            "milliseconds": 0.9600000000064028
+          }
+        },
+        {
+          "name": "fit_test_hex_d3mm.stl",
+          "mesh": {
+            "triangles": 1514,
+            "size": [
+              64,
+              12,
+              6.031088829040527
+            ],
+            "bounds": [
+              [
+                0,
+                -6,
+                0
+              ],
+              [
+                64,
+                6,
+                6.031088829040527
+              ]
+            ],
+            "vertices": 747,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 4120.407504078494,
+            "closed": true,
+            "milliseconds": 1.1549999999988358
+          }
+        },
+        {
+          "name": "joiner_M4.stl",
+          "mesh": {
+            "triangles": 652,
+            "size": [
+              62,
+              10,
+              4
+            ],
+            "bounds": [
+              [
+                -31,
+                -5,
+                0
+              ],
+              [
+                31,
+                5,
+                4
+              ]
+            ],
+            "vertices": 324,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 2272.3594823948415,
+            "closed": true,
+            "milliseconds": 0.6500000000087311
+          }
+        },
+        {
+          "name": "joiner_plate_4holes_M4_30x25mm.stl",
+          "mesh": {
+            "triangles": 1052,
+            "size": [
+              40,
+              35,
+              4
+            ],
+            "bounds": [
+              [
+                -20,
+                -5,
+                0
+              ],
+              [
+                20,
+                30,
+                4
+              ]
+            ],
+            "vertices": 520,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 5271.064095202302,
+            "closed": true,
+            "milliseconds": 0.7649999999994179
+          }
+        },
+        {
+          "name": "joiner_plate_M4_30mm.stl",
+          "mesh": {
+            "triangles": 652,
+            "size": [
+              40,
+              10,
+              4
+            ],
+            "bounds": [
+              [
+                -20,
+                -5,
+                0
+              ],
+              [
+                20,
+                5,
+                4
+              ]
+            ],
+            "vertices": 324,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 1392.359483688909,
+            "closed": true,
+            "milliseconds": 0.5200000000040745
+          }
+        },
+        {
+          "name": "nut_M4.stl",
+          "mesh": {
+            "triangles": 4056,
+            "size": [
+              7.390083312988281,
+              6.400000095367432,
+              3.200000047683716
+            ],
+            "bounds": [
+              [
+                -3.6950416564941406,
+                -3.200000047683716,
+                0
+              ],
+              [
+                3.6950416564941406,
+                3.200000047683716,
+                3.200000047683716
+              ]
+            ],
+            "vertices": 2028,
+            "components": 1,
+            "degenerate": 0,
+            "edgesNotSharedTwice": 0,
+            "inconsistentWinding": 0,
+            "signedVolume": 78.03963848374417,
+            "closed": true,
+            "milliseconds": 3.0900000000110595
+          }
+        }
+      ]
+    }
+  ]
+}

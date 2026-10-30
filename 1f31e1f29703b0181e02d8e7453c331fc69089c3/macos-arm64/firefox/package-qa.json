@@ -1,0 +1,33 @@
+{
+  "platform": "darwin",
+  "arch": "arm64",
+  "instance": {
+    "fallback": false,
+    "launcherPid": 2534,
+    "pid": 2578,
+    "port": 49300,
+    "preferredPort": 0,
+    "profile": "/Users/runner/work/stenciii/stenciii/out/firefox/profile",
+    "schema": 1,
+    "studio": "stencil-studio",
+    "temporarySession": false,
+    "url": "http://localhost:49300/",
+    "version": "2.9.4"
+  },
+  "browser": "firefox",
+  "channel": "",
+  "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+  "cases": [],
+  "outside": [],
+  "consoleErrors": [],
+  "consoleMessages": [],
+  "version": "157.0",
+  "initial_engine": {
+    "n": 1,
+    "why": "too few cores to share with the page",
+    "version": "2.9.4"
+  },
+  "passed": false,
+  "error": "page.reload: NS_BINDING_ABORTED\nCall log:\n  - waiting for navigation until \"load\"\n\n    at /Users/runner/work/stenciii/stenciii/scripts/m7/package-qa.mjs:57:14",
+  "failure_text": "Stencil Studio\nNew Project\nOpen Project\nSave Project\nExport options\nExport ZIP\nYOUR WORKSPACE\nTiles, pads and screws\nReplace image\nOriginal\nStencil\nCompare\n3D\n−\n100%\n+\nFit\nInspect artwork\nCustomize artwork\nProcessing Steps\nInspect assembled parts\nInspect printable file\nSave this STL\n\n7.39 × 6.40 × 22.80 mm · 22,198 triangles · 1 physical component(s). Independent files do not need to form one connected mesh together.\n\nView Options\nDrag to orbit · Scroll to zoom\nPreview output\nReadyStencil ready\n\n7 files in the selected output\n\nGeometry checks detect common mesh defects; they do not guarantee print success. Height cutaways are inspection views.\n\nNotes from other processing results\nQuick Adjustments\n\nA few choices. Your kind of stencil.\n\nCustom workflow\n\nAll 6 saved steps, artwork and settings are preserved. Choose a named pass in Processing Steps to edit artwork and inspect its results.\n\nCustomize artwork\n\nUse All Settings for geometry and mesh optimization. Colours, Tiles, Mounting and Hardware have their own sections.\n\nMake Stencil\nAll Settings\n↗\nUse Make Stencil to refresh this saved workflow."
+}
