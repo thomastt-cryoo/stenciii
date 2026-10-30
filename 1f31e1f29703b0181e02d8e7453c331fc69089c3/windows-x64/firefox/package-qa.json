@@ -1,0 +1,39 @@
+{
+  "platform": "win32",
+  "arch": "x64",
+  "instance": {
+    "fallback": false,
+    "launcherPid": 1824,
+    "pid": 4924,
+    "port": 57549,
+    "preferredPort": 0,
+    "profile": "D:\\a\\stenciii\\stenciii\\out\\firefox\\profile",
+    "schema": 1,
+    "studio": "stencil-studio",
+    "temporarySession": false,
+    "url": "http://localhost:57549/",
+    "version": "2.9.4"
+  },
+  "browser": "firefox",
+  "channel": "",
+  "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+  "cases": [],
+  "outside": [],
+  "consoleErrors": [],
+  "consoleMessages": [
+    "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()",
+    "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()",
+    "THREE.WebGLRenderer: Error creating WebGL context.",
+    "[JavaScript Warning: \"Failed to create WebGL context: WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()\" {file: \"http://localhost:57549/assets/BufferGeometryUtils-BYokyORa.js\" line: 3824}]",
+    "[JavaScript Warning: \"Failed to create WebGL context: WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()\" {file: \"http://localhost:57549/assets/BufferGeometryUtils-BYokyORa.js\" line: 3824}]",
+    "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()",
+    "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()",
+    "THREE.WebGLRenderer: Error creating WebGL context.",
+    "[JavaScript Warning: \"Failed to create WebGL context: WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()\" {file: \"http://localhost:57549/assets/BufferGeometryUtils-BYokyORa.js\" line: 3824}]",
+    "[JavaScript Warning: \"Failed to create WebGL context: WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()\" {file: \"http://localhost:57549/assets/BufferGeometryUtils-BYokyORa.js\" line: 3824}]"
+  ],
+  "version": "157.0",
+  "passed": false,
+  "error": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('.mesh-preview')\nExpected: \"true\"\nReceived: \"false\"\nTimeout:  120000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('.mesh-preview') with timeout 120000ms\n  - waiting for locator('.mesh-preview')\n    224 × locator resolved to <div data-cut=\"full\" data-ready=\"false\" data-detail=\"auto\" class=\"mesh-preview\" data-shading=\"smooth\" data-wireframe=\"false\" data-comparison=\"false\">…</div>\n        - unexpected value \"false\"\n\n    at captureRawStack (D:\\a\\stenciii\\stenciii\\web\\node_modules\\playwright-core\\lib\\coreBundle.js:9282:17)\n    at callMatcherAsStep (D:\\a\\stenciii\\stenciii\\web\\node_modules\\playwright\\lib\\matchers\\expect.js:13316:57)\n    at Object.toHaveAttribute (D:\\a\\stenciii\\stenciii\\web\\node_modules\\playwright\\lib\\matchers\\expect.js:13308:23)\n    at D:\\a\\stenciii\\stenciii\\scripts\\m7\\package-qa.mjs:47:106",
+  "failure_text": "Stencil Studio\nNew Project\nOpen Project\nSave Project\nExport options\nExport ZIP\nYOUR WORKSPACE\nTiles, pads and screws\nReplace image\nOriginal\nStencil\nCompare\n3D\n−\n100%\n+\nFit\nInspect artwork\nCustomize artwork\nProcessing Steps\nInspect assembled parts\nInspect printable file\nSave this STL\n\n7.39 × 6.40 × 22.80 mm · 22,198 triangles · 1 physical component(s). Independent files do not need to form one connected mesh together.\n\n3D rendering is unavailable. The verified STL remains downloadable.\n\nView Options\nDrag to orbit · Scroll to zoom\nPreview output\nReadyStencil ready\n\n7 files in the selected output\n\nGeometry checks detect common mesh defects; they do not guarantee print success. Height cutaways are inspection views.\n\nNotes from other processing results\nQuick Adjustments\n\nA few choices. Your kind of stencil.\n\nCustom workflow\n\nAll 6 saved steps, artwork and settings are preserved. Choose a named pass in Processing Steps to edit artwork and inspect its results.\n\nCustomize artwork\n\nUse All Settings for geometry and mesh optimization. Colours, Tiles, Mounting and Hardware have their own sections.\n\nMake Stencil\nAll Settings\n↗\nUse Make Stencil to refresh this saved workflow."
+}
