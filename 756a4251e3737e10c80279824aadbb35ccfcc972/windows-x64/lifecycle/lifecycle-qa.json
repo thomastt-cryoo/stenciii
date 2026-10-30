@@ -1,0 +1,11 @@
+{
+  "platform": "win32",
+  "checks": [
+    "Six simultaneous launches produce one server and five duplicate refusals",
+    "Two projects save independently; closing one tab keeps the other alive",
+    "Quitting ends the old document and its main worker contexts",
+    "Launching from an updated folder preserves the origin and exact browser draft",
+    "Closing the last tab automatically ends launcher and server"
+  ],
+  "passed": true
+}
