@@ -1,0 +1,245 @@
+{
+  "schema": 1,
+  "app": {
+    "version": "2.9.4",
+    "build": 1,
+    "commit": "900c14c",
+    "time": "2026-10-30T17:40:31.173Z"
+  },
+  "engine": {
+    "n": 2,
+    "why": "threaded",
+    "version": "2.9.4"
+  },
+  "storage": {
+    "sessionBytes": 496,
+    "sessionLimitBytes": 134217728,
+    "persistentAvailable": true,
+    "error": null
+  },
+  "uiSamples": {
+    "perSecond": 0,
+    "maxGapMs": 0,
+    "pageHeapBytes": null
+  },
+  "worker": {
+    "workers": 1,
+    "busy": false
+  },
+  "generation": 2,
+  "status": "complete",
+  "quality": "full",
+  "outputMatchesCurrent": true,
+  "elapsedMs": 710,
+  "error": null,
+  "failedStep": null,
+  "steps": {
+    "source-1": {
+      "cached": false,
+      "key": "4c2652e2b13f515f",
+      "ms": 38,
+      "outputs": {
+        "image": {
+          "available": true,
+          "type": "image"
+        }
+      },
+      "state": "done"
+    },
+    "threshold-2": {
+      "cached": false,
+      "key": "405d3ec52304f7f3",
+      "ms": 8,
+      "outputs": {
+        "mask": {
+          "available": true,
+          "type": "mask"
+        }
+      },
+      "state": "done"
+    },
+    "stencil-3": {
+      "cached": false,
+      "key": "b2142da62a9b91a5",
+      "ms": 453,
+      "outputs": {
+        "parts": {
+          "available": false,
+          "type": "parts"
+        },
+        "solid": {
+          "available": true,
+          "type": "solid"
+        }
+      },
+      "state": "done"
+    }
+  },
+  "log": [
+    {
+      "ts": "2026-10-30T21:13:24.305",
+      "ms": 38,
+      "t": 0.04,
+      "level": "info",
+      "node": "source-1",
+      "type": "source",
+      "msg": "done"
+    },
+    {
+      "ts": "2026-10-30T21:13:24.342",
+      "ms": 8,
+      "t": 0.01,
+      "level": "info",
+      "node": "threshold-2",
+      "type": "threshold",
+      "msg": "done"
+    },
+    {
+      "ts": "2026-10-30T21:13:24.362",
+      "ms": 9,
+      "t": 0.105,
+      "level": "info",
+      "node": "stencil-3",
+      "type": "stencil",
+      "msg": "↳ prepare grid"
+    },
+    {
+      "ts": "2026-10-30T21:13:24.380",
+      "ms": 18,
+      "t": 0.123,
+      "level": "info",
+      "node": "stencil-3",
+      "type": "stencil",
+      "msg": "↳ find islands"
+    },
+    {
+      "ts": "2026-10-30T21:13:24.586",
+      "ms": 205,
+      "t": 0.329,
+      "level": "info",
+      "node": "stencil-3",
+      "type": "stencil",
+      "msg": "↳ bridge islands"
+    },
+    {
+      "ts": "2026-10-30T21:13:24.631",
+      "ms": 46,
+      "t": 0.374,
+      "level": "info",
+      "node": "stencil-3",
+      "type": "stencil",
+      "msg": "↳ layer map"
+    },
+    {
+      "ts": "2026-10-30T21:13:24.799",
+      "ms": 168,
+      "t": 0.542,
+      "level": "info",
+      "node": "stencil-3",
+      "type": "stencil",
+      "msg": "↳ build mesh"
+    },
+    {
+      "ts": "2026-10-30T21:13:24.806",
+      "ms": 6,
+      "t": 0.549,
+      "level": "info",
+      "node": "stencil-3",
+      "type": "stencil",
+      "msg": "↳ write STL"
+    },
+    {
+      "ts": "2026-10-30T21:13:24.807",
+      "ms": 453,
+      "t": 0.45,
+      "level": "info",
+      "node": "stencil-3",
+      "type": "stencil",
+      "msg": "done"
+    }
+  ],
+  "lastOutputGeneration": 2,
+  "outputs": [
+    {
+      "step": "stencil-3",
+      "kind": "solid",
+      "info": {
+        "bytes": 249084,
+        "kind": "solid",
+        "stats": {
+          "bridge_material_pixels": 6318,
+          "bridge_mm": 1.6,
+          "bridge_pixels": 6318,
+          "bridge_routes_mm": [],
+          "bridge_strip_width_mm": 1.6666666666666665,
+          "bridges_per_island": 1,
+          "construction": "raster",
+          "first_layer_islands": 6,
+          "first_layer_taper_mm": 1,
+          "flip": false,
+          "grid_h": 830,
+          "grid_w": 1080,
+          "height_mm": 153.7,
+          "islands_deleted": 0,
+          "islands_found": 6,
+          "islands_remaining": 0,
+          "layer_height_mm": 0.2,
+          "layers": 26,
+          "margin_mm": 8,
+          "min_first_layer_width_mm": 0,
+          "overhang_area_mm2": 212.96,
+          "overhang_check_deg": 45,
+          "plate_top_mm": 5.2,
+          "raised_bridges": true,
+          "stl_bytes": 249084,
+          "thickness_mm": 5,
+          "threshold": 0,
+          "triangles": 4980,
+          "watertight": true,
+          "width_mm": 200,
+          "z_bridging": "easy"
+        },
+        "tiles": []
+      },
+      "mesh": {
+        "triangles": 4980,
+        "size": [
+          200,
+          153.70370483398438,
+          5.199999809265137
+        ],
+        "bounds": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            200,
+            153.70370483398438,
+            5.199999809265137
+          ]
+        ],
+        "vertices": 2490,
+        "components": 1,
+        "degenerate": 0,
+        "edgesNotSharedTwice": 0,
+        "inconsistentWinding": 0,
+        "signedVolume": 71470.04460015621,
+        "closed": true,
+        "milliseconds": 30.93499999999767
+      },
+      "findings": [
+        {
+          "level": "warn",
+          "text": "overhang 213 mm²"
+        },
+        {
+          "level": "info",
+          "text": "6 islands bridged"
+        }
+      ],
+      "parts": []
+    }
+  ]
+}

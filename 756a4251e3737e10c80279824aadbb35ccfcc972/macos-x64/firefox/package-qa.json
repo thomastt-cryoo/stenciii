@@ -1,0 +1,39 @@
+{
+  "platform": "darwin",
+  "arch": "x64",
+  "instance": {
+    "fallback": false,
+    "launcherPid": 11641,
+    "pid": 11642,
+    "port": 49367,
+    "preferredPort": 0,
+    "profile": "/Users/runner/work/stenciii/stenciii/out/firefox/profile",
+    "schema": 1,
+    "studio": "stencil-studio",
+    "temporarySession": false,
+    "url": "http://localhost:49367/",
+    "version": "2.9.4"
+  },
+  "browser": "firefox",
+  "channel": "",
+  "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+  "cases": [],
+  "outside": [],
+  "consoleErrors": [],
+  "consoleMessages": [
+    "[JavaScript Warning: \"WebGL context was lost.\" {file: \"debugger eval code line 370 > eval\" line: 1}]"
+  ],
+  "limitations": [],
+  "navigation_observer_errors": [
+    "Error: page.reload: NS_BINDING_ABORTED\nCall log:\n  - waiting for navigation until \"domcontentloaded\"\n"
+  ],
+  "version": "157.0",
+  "initial_engine": {
+    "n": 2,
+    "why": "threaded",
+    "version": "2.9.4"
+  },
+  "passed": false,
+  "error": "Error: expect(locator).toBeEnabled() failed\n\nLocator: getByRole('button', { name: 'All Settings', exact: true })\nExpected: enabled\nTimeout: 60000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeEnabled\" getByRole('button', { name: 'All Settings', exact: true }) with timeout 60000ms\n  - waiting for getByRole('button', { name: 'All Settings', exact: true })\n\n    at captureRawStack (/Users/runner/work/stenciii/stenciii/web/node_modules/playwright-core/lib/coreBundle.js:9282:17)\n    at callMatcherAsStep (/Users/runner/work/stenciii/stenciii/web/node_modules/playwright/lib/matchers/expect.js:13316:57)\n    at Object.toBeEnabled (/Users/runner/work/stenciii/stenciii/web/node_modules/playwright/lib/matchers/expect.js:13308:23)\n    at reloadDraft (/Users/runner/work/stenciii/stenciii/scripts/m7/package-qa.mjs:38:74)\n    at async file:///Users/runner/work/stenciii/stenciii/scripts/m7/package-qa.mjs:80:3",
+  "failure_text": "Stencil Studio is closed\n\nProcessing has stopped. You can close this tab. To continue, open the Stencil Studio launcher again. Your saved project files are unchanged. If browser storage was available, your most recent draft can be restored.\n\nReturn to Studio after reopening the launcher"
+}
