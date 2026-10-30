@@ -19,6 +19,7 @@ export async function installLocalHostLifecycle() {
   } catch { return }
   let failures = 0, busy = false, ended = false, leaving = false
   let timer: ReturnType<typeof setInterval> | undefined
+  let lease: WebSocket | undefined
   const closeDocument = () => {
     if (ended) return
     ended = true; clearInterval(timer)
@@ -39,19 +40,23 @@ export async function installLocalHostLifecycle() {
       const response = await request('/__studio/session')
       if (!response.ok || (await response.json()).session !== session) throw Error('The local Studio session ended')
       failures = 0
+      if (!lease || lease.readyState === WebSocket.CLOSED) connect()
     } catch { if (++failures >= 2) closeDocument() }
     finally { busy = false }
   }
-  const lease = new WebSocket(origin.replace(/^http/, 'ws') + '/__studio/lease?session=' + session)
-  let connected = false
-  lease.onopen = () => { connected = true }
-  lease.onclose = () => {
-    if (leaving) return
-    if (connected) closeDocument()
-    // Restricted browser policies may block WebSockets. Processing still works,
-    // with a visible launcher and a polling fallback for explicit shutdown.
-    else timer = setInterval(() => { void poll() }, 1000)
+  const connect = () => {
+    lease = new WebSocket(origin.replace(/^http/, 'ws') + '/__studio/lease?session=' + session)
+    lease.onopen = () => { failures = 0; clearInterval(timer); timer = undefined }
+    lease.onclose = () => {
+      if (leaving || ended) return
+      // Firefox closes the old document's WebSocket before pagehide during a
+      // reload. A closed socket alone therefore does not mean Studio stopped.
+      // Confirm session loss over HTTP; recover transient sockets while the
+      // same session is alive, and let pagehide cancel the old page's polling.
+      timer ??= setInterval(() => { void poll() }, 1000)
+    }
   }
-  addEventListener('pagehide', () => { leaving = true; clearInterval(timer); lease.close() })
+  connect()
+  addEventListener('pagehide', () => { leaving = true; clearInterval(timer); lease?.close() })
   addEventListener('pageshow', event => { if (event.persisted) location.reload() })
 }

@@ -67,7 +67,7 @@ jobs:
       contents: write
     uses: ./.github/workflows/m7-platform.yml
     with:
-      runner: macos-15
+      runner: macos-26
       platform: macos-arm64
       expected_arch: arm64
       assets_run: '${{ github.run_id }}'
