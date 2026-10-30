@@ -666,6 +666,7 @@ struct TileOut {
     fallback: Option<String>,
     top: f64,
     dropped: usize,
+    facet_cleanup: Option<Json>,
 }
 
 /// The whole plate, bridged as one: the printed mesh and what the build said about it.
@@ -855,6 +856,8 @@ fn build_tile(
     }
     mesh.quantize_f32();
     drop_slivers(&mut mesh);
+    let cleanup = mesh.repair_collinear_faces().map_err(fail)?;
+    let facet_cleanup = (!cleanup.is_empty()).then(|| cleanup.info(&format!("{name}.stl")));
     if !mesh.is_watertight() {
         return Err(fail("not watertight after drilling the pockets".into()));
     }
@@ -894,6 +897,7 @@ fn build_tile(
         fallback: out.fallback,
         top: out.stats.thickness_mm,
         dropped,
+        facet_cleanup,
     })
 }
 
@@ -1047,6 +1051,7 @@ pub fn build(l: &Layout, m: &Method) -> Result<Built, String> {
         "fallback_tiles": fallbacks,
         "tile_method": if matches!(m, Method::Cut(..)) { "cut_whole" } else { "per_tile" },
         "dropped_fragments": outs.iter().map(|o| o.dropped).sum::<usize>(),
+        "facet_cleanup": outs.iter().filter_map(|o|o.facet_cleanup.as_ref()).collect::<Vec<_>>(),
         "seam_step_mm": (seam_steps(l, &outs, p.flip, p.layer_height_mm) * 10.0).round() / 10.0,
         "hole_depth_mm": c.depth, "rod_length_mm": tiles::rod_length(c.depth),
         "paint_under_blocks_mm2": (l.paint_under_blocks_mm2() * 10.0).round() / 10.0,

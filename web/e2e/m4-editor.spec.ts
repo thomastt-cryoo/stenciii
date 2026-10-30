@@ -10,7 +10,7 @@ async function ready(page:Page){await expect(page.getByRole('link',{name:'Export
 async function open(page:Page,doc=geometryProject('vector_stencil','bridge_mm')){await page.goto('/');await expect(page.getByRole('button',{name:'Choose Image',exact:true})).toBeEnabled();await page.setInputFiles('[aria-label="Open project file"]',{name:'geometry.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(doc))});await ready(page)}
 async function settings(page:Page,category:string){await page.getByRole('button',{name:'All Settings',exact:true}).click();await page.getByRole('navigation',{name:'Settings categories'}).getByRole('button',{name:category,exact:true}).click()}
 async function saved(page:Page){const wait=page.waitForEvent('download');await page.getByRole('button',{name:'Save Project',exact:true}).click();return JSON.parse(readFileSync((await(await wait).path())!,'utf8'))}
-async function mesh(page:Page,name:string){mkdirSync('../sandbox/m4',{recursive:true});const wait=page.waitForEvent('download');await page.getByRole('link',{name:'Export STL',exact:true}).click();const path=resolve(`../sandbox/m4/${name}.stl`);await(await wait).saveAs(path);const data=readFileSync(path),info=JSON.parse(execFileSync('python',['../scripts/m2/inspect_mesh.py',path],{encoding:'utf8'}));expect(info.closed_oriented_mesh).toBe(true);return {info,sha:createHash('sha256').update(data).digest('hex')}}
+async function mesh(page:Page,name:string){mkdirSync('../sandbox/m6/replay/m4',{recursive:true});const wait=page.waitForEvent('download');await page.getByRole('link',{name:'Export STL',exact:true}).click();const path=resolve(`../sandbox/m6/replay/m4/${name}.stl`);await(await wait).saveAs(path);const data=readFileSync(path),info=JSON.parse(execFileSync('python',['../scripts/m2/inspect_mesh.py',path],{encoding:'utf8'}));expect(info.closed_oriented_mesh).toBe(true);return {info,sha:createHash('sha256').update(data).digest('hex')}}
 test('bridge strategy, physical layers, scoped editing, live preview, undo and save/open alter real verified STL',async({page})=>{
  await open(page);const before=await mesh(page,'bridges-before')
  await settings(page,'Bridges and stencil geometry');await page.locator('.geometry-group').filter({hasText:'Bridge placement'}).locator('summary').first().click()
@@ -19,7 +19,7 @@ test('bridge strategy, physical layers, scoped editing, live preview, undo and s
  const doc=await saved(page);expect(doc.graph.nodes.find((n:any)=>n.id==='test').params).toMatchObject({bridge_mm:2.5,bridge_spacing:'closest'});expect(doc.opaque).toEqual({preserve:[1,false,'M4']})
  await page.getByRole('button',{name:'Undo',exact:true}).click();await page.getByRole('button',{name:'Redo',exact:true}).click();await ready(page);expect(await saved(page)).toEqual(doc)
  await page.reload();await ready(page);expect((await mesh(page,'reopened')).sha).toBe(after.sha)
- mkdirSync('../docs/m5/replay/m4',{recursive:true});writeFileSync('../docs/m5/replay/m4/bridge-demo.json',JSON.stringify({before,after},null,2))
+ mkdirSync('../docs/m6/replay/m5/replay/m4',{recursive:true});writeFileSync('../docs/m6/replay/m5/replay/m4/bridge-demo.json',JSON.stringify({before,after},null,2))
 })
 test('optional remesh changes exported geometry, restores exact bypass and retains the last valid result on an invalid interval',async({page})=>{
  await open(page);const original=await mesh(page,'optimization-before');await settings(page,'Mesh optimization');await page.getByRole('button',{name:'Add mesh optimization',exact:true}).click()
@@ -33,7 +33,7 @@ test('optional remesh changes exported geometry, restores exact bypass and retai
  // Select the original solid explicitly; the optimized output is archived.
  expect((await mesh(page,'optimization-bypassed')).sha).toBe(original.sha)
  await settings(page,'Mesh optimization');await page.getByRole('button',{name:'Restore mesh optimization',exact:true}).click();await page.getByRole('button',{name:'Close settings',exact:true}).click();await ready(page);expect((await mesh(page,'optimization-restored')).sha).toBe(optimized.sha)
- writeFileSync('../docs/m5/replay/m4/remesh-demo.json',JSON.stringify({before:original,after:optimized},null,2))
+ writeFileSync('../docs/m6/replay/m5/replay/m4/remesh-demo.json',JSON.stringify({before:original,after:optimized},null,2))
 })
 test('all 3D display options change actual rendering and never change current export bytes',async({page})=>{
  await open(page);const original=await mesh(page,'viewer-reference');await page.getByRole('tab',{name:'3D',exact:true}).click();await expect(page.locator('.mesh-preview')).toHaveAttribute('data-ready','true');await page.locator('.view-options summary').click()

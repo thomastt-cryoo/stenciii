@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { api, type ImageInfo } from '../api'
 import { decodeBytes } from './project'
 import { useEditor } from './session'
+import {ImageInfoDetails} from '../ImageInfo'
+import {download,safeName} from './session'
 export default function SourceInformation({ id, resolution }: { id: string; resolution: number }) {
   const asset = useEditor(s => s.doc?.raw.images?.[id]), [info, setInfo] = useState<ImageInfo>()
   useEffect(() => {
@@ -13,5 +15,5 @@ export default function SourceInformation({ id, resolution }: { id: string; reso
     })().catch(() => { if (alive) setInfo(undefined) })
     return () => { alive = false }
   }, [id, resolution, asset?.base64])
-  return info ? <p className="file-information">{info.format.toUpperCase()} · {info.width} × {info.height} original pixels · {info.working.join(' × ')} working pixels</p> : null
+  return <>{info&&<><p className="file-information">{info.format.toUpperCase()} · {info.width} × {info.height} original pixels · {info.working.join(' × ')} working pixels</p><details className="source-properties"><summary>Image properties and analysis</summary><ImageInfoDetails info={info} name={String(asset?.name??'')}/></details></>}{asset&&<button className="text-button" onClick={()=>download(new Blob([decodeBytes(asset.base64)]),safeName(asset.name))}>Save original image</button>}</>
 }

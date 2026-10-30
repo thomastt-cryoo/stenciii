@@ -48,3 +48,15 @@ export function meshProblems(m:MeshCheck){
  if(m.signedVolume<=1e-12)out.push('zero volume or reversed orientation')
  return out
 }
+/** Several alignment pins and explicitly retained fragments are intentional
+ * separate bodies; other engine-produced printable files describe one body. */
+export function partMeshProblems(m:MeshCheck,name:string,info:Record<string,any>={}){
+ const problems=meshProblems(m),pins=/^pins_(\d+)x_/i.exec(name)
+ if(pins){const expected=Number(pins[1]);if(m.components!==expected)problems.push(`expected ${expected} separate alignment pins, found ${m.components} components`)}
+ else{
+  const fragments=Number(info.meta?.fragments?.keep??1),tile=/^stencil(?:_r\d+c\d+)?\.stl$/i.test(name)||info.meta?.plate?.parts?.some((p:any)=>p.file===name&&p.role==='tile')
+  const allowed=tile&&Number.isInteger(fragments)&&fragments>=1&&fragments<=20?fragments:1
+  if(m.components<1||m.components>allowed)problems.push(`${m.components} separate components; this file permits ${allowed}`)
+ }
+ return problems
+}

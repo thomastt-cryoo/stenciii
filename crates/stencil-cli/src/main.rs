@@ -709,6 +709,28 @@ fn child_args(argv: &[String]) -> Vec<String> {
     out
 }
 
+fn csv_run_name(value: &str) -> String {
+    // Filenames are user data. Preserve commas/newlines and prevent spreadsheet formulas.
+    let safe = if value.trim_start().starts_with(['=', '+', '-', '@']) {
+        format!("'{value}")
+    } else {
+        value.to_string()
+    };
+    if safe.contains([',', '"', '\n', '\r']) {
+        format!("\"{}\"", safe.replace('"', "\"\""))
+    } else {
+        safe
+    }
+}
+
+fn batch_run_component(value: &str) -> String {
+    let clean: String = value.chars().map(|c| {
+        if c.is_control() || matches!(c, '/' | '\\' | ':' | '*' | '?' | '"' | '<' | '>' | '|') { '-' } else { c }
+    }).take(120).collect();
+    let clean=clean.trim_end_matches(['.', ' ']);
+    if clean.is_empty() { "run".into() } else { clean.into() }
+}
+
 /// --batch and --sweep: one child run per picture and value, each in its own folder, then a summary.
 fn run_many(a: &Args, argv: &[String]) {
     let mut sweeps: Vec<(String, Vec<String>)> = Vec::new();
@@ -771,6 +793,7 @@ fn run_many(a: &Args, argv: &[String]) {
     let mut rows =
         vec!["run,status,verdict,findings,seam_step_mm,paint_under_blocks_mm2,seconds".to_string()];
     let mut failed = 0;
+    let mut used_names = std::collections::HashSet::new();
     let mut fewest_steps: Option<(f64, String)> = None;
     for pic in &pictures {
         for combo in &combos {
@@ -785,12 +808,9 @@ fn run_many(a: &Args, argv: &[String]) {
             for (t, v) in combo {
                 name.push(format!("{}={v}", t.rsplit('.').next().unwrap_or(t)));
             }
-            let name = name.join("_").replace(['/', '\\'], "-");
-            let name = if name.is_empty() {
-                "run".to_string()
-            } else {
-                name
-            };
+            let job_base = batch_run_component(&name.join("_"));
+            let mut name=job_base.clone();let mut suffix=2;
+            while !used_names.insert(name.to_lowercase()) {name=format!("{job_base}__{suffix}");suffix+=1;}
             let dir = root.join(&name);
             fs::create_dir_all(&dir)
                 .unwrap_or_else(|e| fail(&format!("cannot create {}: {e}", dir.display())));
@@ -825,7 +845,8 @@ fn run_many(a: &Args, argv: &[String]) {
                 }
             }
             rows.push(format!(
-                "{name},{},{},{},{},{},{:.1}",
+                "{},{},{},{},{},{},{:.1}",
+                csv_run_name(&name),
                 if ok { "ok" } else { "failed" },
                 report["verdict"].as_str().unwrap_or("-"),
                 report["findings"].as_array().map_or(0, Vec::len),

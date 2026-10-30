@@ -20,8 +20,11 @@ const budget = (cores: number) => Math.max(1, Math.min(Math.floor(cores / 2), co
 // The threaded build needs shared memory, which only a cross-origin isolated page may use; otherwise (or if the
 // pool cannot start) the single-threaded build runs the same engine.
 const ready = (async () => {
-  const n = self.name === 'artwork-preview' ? 1 : budget(navigator.hardwareConcurrency || 1)
-  if (n < 2) why = 'too few cores to share with the page'
+  const inspection=self.name==='artwork-preview',fallback=self.name==='studio-single-fallback'
+  const n = inspection||fallback ? 1 : budget(navigator.hardwareConcurrency || 1)
+  if(inspection)why='single-thread inspection and batch worker'
+  else if(fallback)why='threaded engine startup failed or timed out; using the single-thread engine'
+  else if (n < 2) why = 'too few cores to share with the page'
   else if (!self.crossOriginIsolated || typeof SharedArrayBuffer === 'undefined') why = 'page is not cross-origin isolated (needs COOP/COEP headers)'
   else {
     try {
@@ -43,6 +46,9 @@ const ready = (async () => {
   await st.default()
   engine = new st.Engine()
 })()
+// An explicit handshake distinguishes engine initialization from a long-running
+// first operation, so the main thread's startup watchdog cannot interrupt it.
+void ready.then(()=>self.postMessage({boot:true}),error=>self.postMessage({bootError:String(error?.message??error)}))
 
 interface Artifact { key: string; out: string; mime: string; bytes: Uint8Array; info: unknown; parts: Record<string, Uint8Array> }
 

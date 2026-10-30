@@ -2,6 +2,7 @@
 use boolmesh::prelude::*;
 use std::collections::HashMap;
 mod collinear;
+pub(crate) use collinear::RepairStats;
 
 #[derive(Clone, Default)]
 pub struct Mesh {
@@ -13,7 +14,7 @@ pub type P3 = [f64; 3];
 
 impl Mesh {
     /// A checked local repair for collinear facets created by tile bridge CSG.
-    pub(crate) fn repair_collinear_faces(&mut self) -> Result<usize,String> { collinear::repair(self) }
+    pub(crate) fn repair_collinear_faces(&mut self) -> Result<RepairStats,String> { collinear::repair_surface(self) }
     pub fn from_stl(b: &[u8]) -> Result<Mesh, String> {
         if b.len() < 84 {
             return Err("not a binary STL".into());
@@ -53,7 +54,11 @@ impl Mesh {
         out.extend_from_slice(&[0u8; 80]);
         out.extend_from_slice(&(self.t.len() as u32).to_le_bytes());
         for t in &self.t {
-            let (a, b, c) = (self.v[t[0]], self.v[t[1]], self.v[t[2]]);
+            // STL stores float32 positions. A very thin f64 triangle can change
+            // its cross-product direction when rounded; describe the actual
+            // stored vertices rather than writing a contradictory normal.
+            let stored = |p: P3| p.map(|coordinate| (coordinate as f32) as f64);
+            let (a, b, c) = (stored(self.v[t[0]]), stored(self.v[t[1]]), stored(self.v[t[2]]));
             let (u, w) = (
                 [b[0] - a[0], b[1] - a[1], b[2] - a[2]],
                 [c[0] - a[0], c[1] - a[1], c[2] - a[2]],

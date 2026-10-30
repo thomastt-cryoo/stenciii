@@ -11,8 +11,8 @@ test('two through ten colour reductions expose every real mask and complete regi
   for(let i=1;i<=n;i++){const mask=await prove(page,doc,'test',`colour_${i}`);expect(mask.extension).toBe('png');hashes.push(mask.sha256)}
   expect(new Set(hashes).size).toBe(n);rows.push({colours:n,palette_width:palette.info.width,masks:hashes})
  }
- mkdirSync('../docs/m5',{recursive:true});writeFileSync('../docs/m5/colour-mask-counts.json',JSON.stringify(rows,null,2))
+ mkdirSync('../docs/m6/replay/m5',{recursive:true});writeFileSync('../docs/m6/replay/m5/colour-mask-counts.json',JSON.stringify(rows,null,2))
  const doc=JSON.parse(readFileSync('../docs/m5/examples/ten-colour-project.json','utf8'))
  await page.setInputFiles('[aria-label="Open project file"]',{name:'ten-colours.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(doc))});await expect(page.getByRole('link',{name:'Export ZIP',exact:true})).toHaveAttribute('aria-disabled','false',{timeout:120000});await page.getByRole('button',{name:'Export options',exact:true}).click();const dialog=page.getByRole('dialog',{name:'Manufacturing export'});expect(await dialog.getByRole('checkbox',{name:/Include assembly .* parts/}).evaluateAll(es=>es.filter(e=>(e as HTMLInputElement).checked).length)).toBe(2);expect(await dialog.locator('tbody tr').filter({hasText:'Colour plate'}).count()).toBe(10)
- const download=page.waitForEvent('download');await dialog.getByRole('link',{name:'Download manufacturing ZIP',exact:true}).click();mkdirSync('../docs/m5/exports',{recursive:true});writeFileSync('../docs/m5/exports/ten-registered-colours.zip',readFileSync((await(await download).path())!))
+ const download=page.waitForEvent('download');await dialog.getByRole('link',{name:'Download manufacturing ZIP',exact:true}).click();mkdirSync('../docs/m6/replay/m5/exports',{recursive:true});writeFileSync('../docs/m6/replay/m5/exports/ten-registered-colours.zip',readFileSync((await(await download).path())!))
 })

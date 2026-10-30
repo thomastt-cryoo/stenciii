@@ -10,16 +10,23 @@ export class ArtworkPreviewClient {
   private pending = new Map<number, { resolve: (v: any) => void; reject: (e: Error) => void; artifacts: any[] }>()
   private images = new Map<string, string>()
   private imageVersions = new Map<string, string | null>()
+  private bootTimer:ReturnType<typeof setTimeout>
+  private startupError:Error|null=null
   constructor() {
     this.worker = new Worker(new URL('../engine.worker.ts', import.meta.url), { type: 'module', name: 'artwork-preview' })
+    const fail=(message:string)=>{clearTimeout(this.bootTimer);this.startupError=Error(message);this.worker.terminate();for(const p of this.pending.values())p.reject(this.startupError);this.pending.clear()}
+    this.bootTimer=setTimeout(()=>fail('The local inspection engine did not start within ten seconds. Retry this item or reload the workspace.'),10000)
     this.worker.onmessage = e => {
+      if(e.data.boot){clearTimeout(this.bootTimer);return}
+      if(e.data.bootError){fail(`The local inspection engine could not start: ${e.data.bootError}`);return}
       const p = this.pending.get(e.data.id); if (!p) return
       if (e.data.step) { p.artifacts.push(...(e.data.step.artifacts ?? [])); if (e.data.step.state?.state === 'error') { this.pending.delete(e.data.id); p.reject(Error(e.data.step.state.error)) }; return }
       this.pending.delete(e.data.id); e.data.error ? p.reject(Error(e.data.error)) : p.resolve({ ...e.data.ok, artifacts: p.artifacts })
     }
-    this.worker.onerror = e => { for (const p of this.pending.values()) p.reject(Error(e.message)); this.pending.clear() }
+    this.worker.onerror = e => fail(e.message||'The local inspection engine stopped.')
   }
   private call(message: Record<string, unknown>): Promise<any> {
+    if(this.startupError)return Promise.reject(this.startupError)
     const id = ++this.sequence
     return new Promise((resolve, reject) => { this.pending.set(id, { resolve, reject, artifacts: [] }); this.worker.postMessage({ id, ...message }) })
   }
@@ -46,5 +53,5 @@ export class ArtworkPreviewClient {
     const selected = await this.call({ op: 'inspect', graph: JSON.stringify(graph), target: step, out: port })
     return { url: URL.createObjectURL(new Blob([selected.bytes], { type: selected.mime })), info: selected.info }
   }
-  dispose() { this.worker.terminate(); for (const p of this.pending.values()) p.reject(Error('Preview closed')); this.pending.clear() }
+  dispose() { clearTimeout(this.bootTimer);this.startupError=Error('Preview closed');this.worker.terminate(); for (const p of this.pending.values()) p.reject(this.startupError); this.pending.clear() }
 }

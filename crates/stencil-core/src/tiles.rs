@@ -719,8 +719,8 @@ pub fn tile(solid: &Mesh, p: &TileParams) -> Result<Tiled, String> {
         m.translate([-xs[i], -ys[j], 0.0]);
         m.quantize_f32();
         match m.repair_collinear_faces() {
-            Ok(0) => {},
-            Ok(n) => facet_cleanup.lock().unwrap().push(serde_json::json!({"file":format!("stencil_r{}c{}.stl",ny-j,i+1),"surface_preserving_edge_collapses":n})),
+            Ok(note) if note.is_empty() => {},
+            Ok(note) => facet_cleanup.lock().unwrap().push(note.info(&format!("stencil_r{}c{}.stl",ny-j,i+1))),
             // Keep unrepairable files visible. The independent stored-STL
             // validators must reject them; never omit them from a part set.
             Err(error) => facet_cleanup.lock().unwrap().push(serde_json::json!({"file":format!("stencil_r{}c{}.stl",ny-j,i+1),"unresolved":error})),

@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test'
 import { mkdirSync } from 'node:fs'
 // Keep the approved M1 screenshots immutable; this replay also checks M2 presentation.
-const folder = '../docs/m5/replay/m4/screenshots/m1-replay'
+const folder = '../docs/m6/replay/m5/replay/m4/screenshots/m1-replay'
 test('capture actual empty light/dark, generated stencil/3D and settings workspace', async ({ page }) => {
   mkdirSync(folder, { recursive: true })
   await page.setViewportSize({ width: 1440, height: 960 })

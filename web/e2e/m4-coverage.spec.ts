@@ -22,7 +22,7 @@ async function prove(page:Page,doc:any,out:string){
  },{graph,images:doc.images,out,workerUrl})
 }
 test('all 48 qualified geometry controls persist, reset and execute suitable real solid or tiled fixtures',async({page})=>{
- test.setTimeout(900_000);mkdirSync('../docs/m5/replay/m4',{recursive:true});mkdirSync('../sandbox/m4/coverage',{recursive:true})
+ test.setTimeout(900_000);mkdirSync('../docs/m6/replay/m5/replay/m4',{recursive:true});mkdirSync('../sandbox/m6/replay/m4/coverage',{recursive:true})
  await page.goto('/');await expect(page.getByRole('button',{name:'Choose Image',exact:true})).toBeEnabled()
  const rows:any[]=[],types=process.env.M4_PROBE_TYPE?geometryTypes.filter(t=>t===process.env.M4_PROBE_TYPE):geometryTypes
  for(const type of types)for(const parameter of catalogue.find(t=>t.id===type)!.params.filter(p=>!process.env.M4_PROBE_KEY||p.name===process.env.M4_PROBE_KEY)){
@@ -37,7 +37,7 @@ test('all 48 qualified geometry controls persist, reset and execute suitable rea
   const changed=await page.evaluate(()=>JSON.parse(localStorage.getItem('stencil-studio.project.v1')!));expect(changed.graph.nodes.find((n:any)=>n.id==='test').params[parameter.name],key).toEqual(value)
   const after=await prove(page,changed,out)
   for(const [name,result,project]of [['before',before,doc],['after',after,changed]]as const){
-   const path=resolve(`../sandbox/m4/coverage/${stem}-${name}.${result.extension}`);writeFileSync(path,Buffer.from(result.base64,'base64'));writeFileSync(resolve(`../sandbox/m4/coverage/${stem}-${name}.json`),JSON.stringify(project))
+   const path=resolve(`../sandbox/m6/replay/m4/coverage/${stem}-${name}.${result.extension}`);writeFileSync(path,Buffer.from(result.base64,'base64'));writeFileSync(resolve(`../sandbox/m6/replay/m4/coverage/${stem}-${name}.json`),JSON.stringify(project))
    const check=JSON.parse(execFileSync('python',['../scripts/m2/inspect_mesh.py',path],{encoding:'utf8',maxBuffer:8*1024*1024}));(result as any).validation=check
    if(check.format==='ZIP')expect(check.entries.every((e:any)=>e.closed_oriented_mesh),key).toBe(true);else expect(check.closed_oriented_mesh,key).toBe(true)
    delete (result as any).base64
@@ -58,8 +58,8 @@ test('all 48 qualified geometry controls persist, reset and execute suitable rea
   if(constraint)for(const result of [before,after]){
    const r=result.info.stats.remesh;expect(r.skipped).toBeNull();expect(r.max_deviation_mm).toBeGreaterThan(0);expect(r.triangles_after_layers).toBeLessThan(r.triangles_before);expect(r.overhang_violation_mm2).toBeLessThanOrEqual(1e-6)
   }
-  rows.push({key,changed_to:value,reset_to:parameter.default,output_or_diagnostic_changed:effect,verified:effect||constraint,behavior:constraint?'Active reconstruction remains within the overhang constraint at both 10° and 85°; this fixture has identical output at both limits.':'Actual output geometry or applicable computed diagnostic changes.',before,after,project_before:`sandbox/m4/coverage/${stem}-before.json`,project_after:`sandbox/m4/coverage/${stem}-after.json`})
-  writeFileSync(`../docs/m5/replay/m4/${process.env.M4_PROBE_TYPE?'geometry-probe':'geometry-coverage'}.json`,JSON.stringify({slots:rows.length,cases:rows},null,2))
+  rows.push({key,changed_to:value,reset_to:parameter.default,output_or_diagnostic_changed:effect,verified:effect||constraint,behavior:constraint?'Active reconstruction remains within the overhang constraint at both 10° and 85°; this fixture has identical output at both limits.':'Actual output geometry or applicable computed diagnostic changes.',before,after,project_before:`sandbox/m6/replay/m4/coverage/${stem}-before.json`,project_after:`sandbox/m6/replay/m4/coverage/${stem}-after.json`})
+  writeFileSync(`../docs/m6/replay/m5/replay/m4/${process.env.M4_PROBE_TYPE?'geometry-probe':'geometry-coverage'}.json`,JSON.stringify({slots:rows.length,cases:rows},null,2))
  }
  expect(rows).toHaveLength(types.reduce((n,t)=>n+catalogue.find(c=>c.id===t)!.params.filter(p=>!process.env.M4_PROBE_KEY||p.name===process.env.M4_PROBE_KEY).length,0))
   const unverified=rows.filter(r=>!r.verified).map(r=>r.key);expect(unverified).toEqual([])

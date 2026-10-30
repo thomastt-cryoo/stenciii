@@ -90,7 +90,7 @@ test('real generation, quick parameters, original assets, STL export and rapid N
   execFileSync(cli, ['--project', project, '-o', native])
   expect(stl(readFileSync(native))).toBe(count)
   expect(canonicalTriangles(readFileSync(native))).toEqual(canonicalTriangles(readFileSync(file)))
-  const evidence = resolve('../sandbox/m1'); mkdirSync(evidence, { recursive: true })
+  const evidence = resolve('../sandbox/m6/replay/m1'); mkdirSync(evidence, { recursive: true })
   copyFileSync(file, resolve(evidence, 'browser-output.stl')); copyFileSync(native, resolve(evidence, 'native-output.stl')); copyFileSync(project, resolve(evidence, 'browser-saved-project.json'))
   writeFileSync(resolve(evidence, 'engine-equivalence.json'), JSON.stringify({ browser_triangles: count, native_triangles: stl(readFileSync(native)), canonical_triangles_match_at_mm: .0001, embedded_svg_bytes_preserved: true, rapid_identical_new_open_cycles: 3 }, null, 2))
 })

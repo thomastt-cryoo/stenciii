@@ -1,3 +1,4 @@
+import {frequentFirst,recordOperationUse} from './usage'
 import {isManufacturing} from './manufacturing'
 import { useState } from 'react'
 import type { ParameterRegistry } from './registry'
@@ -6,13 +7,14 @@ import { artworkNames, isArtwork, passList, canBypass, bypassArtwork, enableArtw
 import { editor } from './session'
 import { isGeometry, geometryType } from './geometry'
 import OperationEditor from './OperationEditor'
+import {StepCopyTools} from './WorkflowTools'
 
-export default function ProcessingSteps({ doc, registry }: { doc: ProjectDocument; registry: ParameterRegistry }) {
+export default function ProcessingSteps({ doc, registry,initialStep }: { doc: ProjectDocument; registry: ParameterRegistry;initialStep?:string }) {
   try { compileRecipe(doc) } catch { return <p className="section-note">This saved project contains an unavailable processing connection. Its complete data is preserved. Save a copy or review Compatibility before changing its steps.</p> }
-  return <ValidSteps doc={doc} registry={registry} />
+  return <ValidSteps doc={doc} registry={registry} initialStep={initialStep}/>
 }
-function ValidSteps({ doc, registry }: { doc: ProjectDocument; registry: ParameterRegistry }) {
-  const passes = passList(doc), [passId, setPass] = useState(''), [selected, setSelected] = useState(''), [newName, setNewName] = useState('')
+function ValidSteps({ doc, registry,initialStep }: { doc: ProjectDocument; registry: ParameterRegistry;initialStep?:string }) {
+  const passes = passList(doc), [passId, setPass] = useState(passes.find(p=>p.steps.some(s=>s.id===initialStep))?.id??''), [selected, setSelected] = useState(initialStep??''), [newName, setNewName] = useState('')
   const pass = passes.find(p => p.id === passId) ?? passes[0], catalogue = [...registry.types.values()], graph = compileRecipe(doc)
   if (!pass) return <p>This project has no output yet. Create artwork to begin.</p>
   const action = (label: string, update: (doc: ProjectDocument) => ProjectDocument) => editor.command(label, update)
@@ -30,9 +32,9 @@ function ValidSteps({ doc, registry }: { doc: ProjectDocument; registry: Paramet
         </div>
         {selected === op.id && <div className="step-body">
           {def?.inputs.map(input => {
-            const actual = graph.edges.find(e => e.to[0] === op.id && e.to[1] === input.name), choices = inputChoices(doc, op.id, input.name, catalogue), insert = insertionOptions(input.type, catalogue)
+            const actual = graph.edges.find(e => e.to[0] === op.id && e.to[1] === input.name), choices = inputChoices(doc, op.id, input.name, catalogue), insert = frequentFirst(insertionOptions(input.type, catalogue))
             return <div className="step-input" key={input.name}><label className="setting-choice"><span>{input.name === 'image' ? 'Use image from' : input.name === 'mask' ? 'Use paint from' : input.name === 'shapes' ? 'Use outlines from' : 'Saved input'}</span><select aria-label={`Input ${op.id}.${input.name}`} disabled={!editable && !['stencil','vector_stencil','remesh','complexity'].includes(op.type)} value={actual?.from.join('/') ?? ''} onChange={e => { const c = choices.find(c => c.from.join('/') === e.target.value); if (c) action('Choose artwork input', d => connectInput(d, op.id, input.name, c.from, catalogue)) }}><option value="">No input</option>{choices.map(c => <option key={c.from.join('/')} value={c.from.join('/')}>{c.label}</option>)}</select></label>
-              {actual && insert.length > 0 && <label className="setting-choice"><span>Add before this step</span><select aria-label={`Add before ${op.id}`} value="" onChange={e => { if (e.target.value) action('Add artwork processing', d => insertArtwork(d, op.id, input.name, e.target.value, catalogue)) }}><option value="">Choose an operation…</option>{insert.map(o => <option key={o.type} value={o.type}>{artworkNames[o.type]}{o.pair ? ` + ${artworkNames[o.pair].toLowerCase()}` : ''}</option>)}</select></label>}
+              {actual && insert.length > 0 && <label className="setting-choice"><span>Add before this step</span><select aria-label={`Add before ${op.id}`} value="" onChange={e => { if (e.target.value) action('Add artwork processing', d => {const next=insertArtwork(d, op.id, input.name, e.target.value, catalogue);recordOperationUse(e.target.value);return next}) }}><option value="">Choose an operation…</option>{insert.map(o => <option key={o.type} value={o.type}>{artworkNames[o.type]}{o.pair ? ` + ${artworkNames[o.pair].toLowerCase()}` : ''}</option>)}</select></label>}
             </div>
           })}
           {editable ? <OperationEditor op={op} registry={registry} /> : <p className="section-note">This saved output and all of its settings are preserved. This operation is unavailable in the current engine.</p>}
@@ -41,6 +43,7 @@ function ValidSteps({ doc, registry }: { doc: ProjectDocument; registry: Paramet
         </div>}
       </li>
     })}</ol>
+    <StepCopyTools doc={doc} registry={registry}/>
     {Object.entries<any>(doc.raw.stencilStudio?.disabled ?? {}).filter(([, saved]) => saved?.node && typeof saved.node === 'object').map(([id, saved]) => <div className="disabled-step" key={id}><span>{artworkNames[(saved.node.data ?? saved.node).type] ?? 'Saved operation'} · Disabled · settings retained</span><button aria-label={`Enable ${id}`} onClick={() => action('Enable artwork step', d => enableArtwork(d, id, catalogue))}>Enable step</button></div>)}
     <details className="reset-style"><summary>Restore a workflow template</summary><p>A style is a starting recipe. This replaces the current single artwork pass and keeps its complete previous project for undo and recovery. Operation presets only change the selected step.</p><button disabled={passes.length !== 1 || operations(doc).some(n => !isArtwork(n.type) && !['stencil','vector_stencil','remesh','complexity'].includes(n.type))} onClick={() => action('Restore original style recipe', d => resetStyle(d, catalogue))}>Restore original style recipe</button></details>
   </div>

@@ -1,3 +1,4 @@
+import {storeImage,readImage,imageKeys,imageStorageStatus} from './studio/imageStorage'
 export type Kind = 'image' | 'mask' | 'shapes' | 'tiles' | 'solid' | 'parts' | 'any'
 export type Stage = 'trace' | 'stencil' | 'post'
 
@@ -52,35 +53,45 @@ let active: { id: number; since: number | null } | null = null
 // after a restart the new worker must be given the pictures again before it can run anything
 let warm: Promise<unknown> | null = null
 
-function call<T>(msg: Record<string, unknown>, transfer: Transferable[] = [], step?: (s: any) => void): Promise<T> {
-  if (!worker) {
-    worker = new Worker(new URL('./engine.worker.ts', import.meta.url), { type: 'module' })
-    worker.onmessage = (ev) => {
-      const p = pending.get(ev.data.id)
-      if (!p) return
-      if (ev.data.step) {
-        const a = active as { id: number; since: number | null } | null
-        if (a && a.id === ev.data.id) a.since = ev.data.step.state?.state === 'running' ? Date.now() : null
-        return p.step?.(ev.data.step)
-      }
-      if (active?.id === ev.data.id) active = null
-      pending.delete(ev.data.id)
-      if (ev.data.error !== undefined) p.err(new Error(ev.data.error))
-      else p.ok(ev.data.ok)
-    }
-    worker.onerror = (event) => {
-      const failed = [...pending.values()]
-      pending.clear()
-      worker?.terminate(); worker = null; active = null
-      for (const p of failed) p.err(new Error(event.message || 'The processing worker stopped. Try Make Stencil again.'))
-    }
-  }
-  const id = ++seq
-  if (msg.op === 'run') active = { id, since: null }
-  return new Promise<T>((ok, err) => {
-    pending.set(id, { ok, err, step })
-    worker!.postMessage({ id, ...msg }, transfer)
-  })
+export const ENGINE_STARTUP_MS=10000
+let singleFallback=false,booted=false,bootTimer:ReturnType<typeof setTimeout>|null=null
+let bootQueue:{message:Record<string,unknown>;transfer:Transferable[]}[]=[]
+function failWorker(message:string){
+ if(bootTimer)clearTimeout(bootTimer);bootTimer=null;bootQueue=[]
+ const failed=[...pending.values()];pending.clear();worker?.terminate();worker=null;active=null
+ for(const p of failed)p.err(Error(message))
+}
+function fallbackBoot(reason:string){
+ if(singleFallback){failWorker(`The local processing engine could not start: ${reason}. Reload the workspace to retry.`);return}
+ const queued=bootQueue;worker?.terminate();worker=null;singleFallback=true;bootQueue=[]
+ ensureWorker()
+ for(const request of queued)if(request.message.op==='cancel'||pending.has(Number(request.message.id))){
+  try{sendEngine(request.message,request.transfer)}catch(error){const p=pending.get(Number(request.message.id));pending.delete(Number(request.message.id));p?.err(Error(String(error)))}
+ }
+}
+function ensureWorker():Worker{
+ if(worker)return worker
+ if(bootTimer)clearTimeout(bootTimer);booted=false;bootQueue=[]
+ const mine=new Worker(new URL('./engine.worker.ts',import.meta.url),{type:'module',name:singleFallback?'studio-single-fallback':'stencil-engine'});worker=mine
+ bootTimer=setTimeout(()=>{if(worker===mine&&!booted)fallbackBoot('initialization exceeded ten seconds')},ENGINE_STARTUP_MS)
+ mine.onmessage=ev=>{
+  if(worker!==mine)return
+  if(ev.data.boot){booted=true;bootQueue=[];if(bootTimer)clearTimeout(bootTimer);bootTimer=null;return}
+  if(ev.data.bootError){fallbackBoot(String(ev.data.bootError));return}
+  const p=pending.get(ev.data.id);if(!p)return
+  if(ev.data.step){const a=active;if(a&&a.id===ev.data.id)a.since=ev.data.step.state?.state==='running'?Date.now():null;return p.step?.(ev.data.step)}
+  if(active?.id===ev.data.id)active=null
+  pending.delete(ev.data.id);ev.data.error!==undefined?p.err(Error(ev.data.error)):p.ok(ev.data.ok)
+ }
+ mine.onerror=event=>{if(worker!==mine)return;if(!booted)fallbackBoot(event.message||'worker initialization failed');else failWorker(event.message||'The processing worker stopped. Try Make Stencil again.')}
+ return mine
+}
+function sendEngine(message:Record<string,unknown>,transfer:Transferable[]=[]){
+ const target=ensureWorker();if(!booted)bootQueue.push({message,transfer});target.postMessage(message,transfer)
+}
+function call<T>(msg:Record<string,unknown>,transfer:Transferable[]=[],step?:(s:any)=>void):Promise<T>{
+ const id=++seq;if(msg.op==='run')active={id,since:null}
+ return new Promise<T>((ok,err)=>{pending.set(id,{ok,err,step});try{sendEngine({id,...msg},transfer)}catch(error){pending.delete(id);err(error)}})
 }
 
 /** Stops the current run. A node caught mid-computation can't hear a message, so the worker is replaced instead. */
@@ -94,7 +105,7 @@ function stopRun() {
     pending.clear()
     for (const p of dead) p.err(new Error('superseded'))
     warm = api.restoreImages().finally(() => { warm = null })
-  } else worker.postMessage({ id: ++seq, op: 'cancel' })
+  } else sendEngine({ id: ++seq, op: 'cancel' })
 }
 
 /** What the engine worker is doing right now, for the performance overlay. */
@@ -115,24 +126,6 @@ function retain(key: string) {
   }
 }
 const infos = new Map<string, Info>()
-
-const IDB = 'stencil-studio'
-function db(): Promise<IDBDatabase> {
-  return new Promise((ok, err) => {
-    const r = indexedDB.open(IDB, 1)
-    r.onupgradeneeded = () => r.result.createObjectStore('images')
-    r.onsuccess = () => ok(r.result)
-    r.onerror = () => err(r.error)
-  })
-}
-async function idb<T>(mode: IDBTransactionMode, f: (s: IDBObjectStore) => IDBRequest<T>): Promise<T> {
-  const d = await db()
-  return new Promise((ok, err) => {
-    const r = f(d.transaction('images', mode).objectStore('images'))
-    r.onsuccess = () => ok(r.result)
-    r.onerror = () => err(r.error)
-  })
-}
 
 export interface ImageInfo {
   format: string; bytes: number; width: number; height: number; megapixels: number; aspect: number
@@ -160,12 +153,13 @@ const unb64 = (s: string) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0)).bu
 export const api = {
   nodeTypes: () => call<NodeType[]>({ op: 'types' }),
   threads: () => call<{ n: number; why: string; version: string }>({ op: 'threads' }),
+  storageStatus: imageStorageStatus,
   /** Load an original asset without changing a saved project's identity or JSON. */
   async loadImage(bytes: Uint8Array, name: string) {
     if (warm) await warm
     const buffer = bytes.slice().buffer
     const info = await call<{ id: string; width: number; height: number }>({ op: 'image', bytes: buffer })
-    await idb('readwrite', s => s.put({ name, bytes: buffer } satisfies StoredImage, info.id))
+    await storeImage(info.id,{name,bytes:buffer})
     return info
   },
   /** Explicit recovery also used by regression tests; all in-flight promises are settled. */
@@ -180,17 +174,17 @@ export const api = {
   async upload(f: File) {
     const bytes = await f.arrayBuffer()
     const info = await call<{ id: string; width: number; height: number }>({ op: 'image', bytes: bytes.slice(0) }, [])
-    await idb('readwrite', (s) => s.put({ name: f.name, bytes } satisfies StoredImage, info.id))
+    await storeImage(info.id,{name:f.name,bytes})
     return { ...info, name: f.name }
   },
   async storedImage(id: string) {
-    return (await idb('readonly', (s) => s.get(id))) as StoredImage | undefined
+    return await readImage(id)
   },
   /** Gives the engine every image kept from earlier sessions. */
   async restoreImages() {
-    const keys = (await idb('readonly', (s) => s.getAllKeys())) as string[]
+    const keys = await imageKeys()
     for (const k of keys) {
-      const img = (await idb('readonly', (s) => s.get(k))) as StoredImage | undefined
+      const img = await readImage(k)
       if (img) await call({ op: 'image', bytes: img.bytes.slice(0) })
     }
   },
@@ -230,7 +224,7 @@ export const api = {
     for (const n of (graph as any).nodes ?? []) if (n.data?.params?.image_id) used.add(String(n.data.params.image_id))
     const images: Record<string, { name: string; base64: string }> = {}
     for (const id of used) {
-      const img = (await idb('readonly', (s) => s.get(id))) as StoredImage | undefined
+      const img = await readImage(id)
       if (img) images[id] = { name: img.name, base64: b64(img.bytes) }
     }
     return { version: 2, graph, images }
@@ -241,7 +235,7 @@ export const api = {
       const bytes = unb64(img.base64)
       const got = await call<{ id: string }>({ op: 'image', bytes: bytes.slice(0) })
       remap.set(id, got.id)
-      await idb('readwrite', (s) => s.put({ name: img.name, bytes } satisfies StoredImage, got.id))
+      await storeImage(got.id,{name:img.name,bytes})
     }
     const g = p.graph as { nodes: any[]; edges: any[] }
     // older projects keep the picture ids of the engine that saved them

@@ -336,6 +336,10 @@ impl Engine {
             let infos: Vec<Json> = def
                 .outputs
                 .iter()
+                // An unused empty cleanup diagnostic means nothing was removed,
+                // not that the customer's primary artwork is empty. Connected
+                // diagnostic outputs still participate in readiness/strict checks.
+                .filter(|(port,_)| !matches!(*port,"removed"|"rounded") || graph["edges"].as_array().into_iter().flatten().any(|edge|edge["from"][0]==id&&edge["from"][1]==*port))
                 .filter_map(|(o, _)| self.value(key, o).map(Value::info))
                 .collect();
             let params = Json::Object(clean_params(def, node.get("params")).0);

@@ -18,7 +18,7 @@ async function saved(page: Page) { const wait=page.waitForEvent('download');awai
 async function ready(page: Page) { await expect(page.getByRole('link',{name:'Export STL',exact:true})).toHaveAttribute('aria-disabled','false',{timeout:90000}) }
 async function settings(page: Page, category: string) { await page.getByRole('button',{name:'All Settings',exact:true}).click();await page.getByRole('navigation',{name:'Settings categories'}).getByRole('button',{name:category,exact:true}).click() }
 async function downloadMesh(page: Page, name: string) {
-  mkdirSync('../sandbox/m3',{recursive:true});const wait=page.waitForEvent('download');await page.getByRole('link',{name:'Export STL',exact:true}).click();const path=resolve(`../sandbox/m3/${name}.stl`);await(await wait).saveAs(path)
+  mkdirSync('../sandbox/m6/replay/m3',{recursive:true});const wait=page.waitForEvent('download');await page.getByRole('link',{name:'Export STL',exact:true}).click();const path=resolve(`../sandbox/m6/replay/m3/${name}.stl`);await(await wait).saveAs(path)
   const mesh=JSON.parse(execFileSync('python',['../scripts/m2/inspect_mesh.py',path],{encoding:'utf8'}));expect(mesh.closed_oriented_mesh).toBe(true);return mesh
 }
 
@@ -34,11 +34,11 @@ test('multiline text, bundled fonts, actual artwork preview, bridged STL/SVG, CL
   await page.getByRole('button',{name:'Make Stencil',exact:true}).click();await ready(page)
   const doc=await saved(page);expect(doc.graph.nodes.find((n:any)=>n.type==='text').params).toMatchObject({text:'AOBR\nSTENCIL',font:'serif bold',size:120,line_spacing:1.35,padding:30});expect(doc.graph.nodes.some((n:any)=>n.type==='source')).toBe(false)
   const mesh=await downloadMesh(page,'text');expect(mesh.components).toBe(1)
-  const file=resolve('../sandbox/m3/text-project.json'),native=resolve('../sandbox/m3/text-native.stl');writeFileSync(file,JSON.stringify(doc))
+  const file=resolve('../sandbox/m6/replay/m3/text-project.json'),native=resolve('../sandbox/m6/replay/m3/text-native.stl');writeFileSync(file,JSON.stringify(doc))
   execFileSync(resolve(`../target/release/stencil${process.platform==='win32'?'.exe':''}`),['--project',file,'-o',native])
   const nativeMesh=JSON.parse(execFileSync('python',['../scripts/m2/inspect_mesh.py',native],{encoding:'utf8'}));expect(nativeMesh.triangles).toBe(mesh.triangles);expect(nativeMesh.size_mm).toEqual(mesh.size_mm)
-  const svgWait=page.waitForEvent('download');await page.getByRole('link',{name:/Save traced outlines SVG/}).click();const svgFile=resolve('../sandbox/m3/text-outlines.svg');await(await svgWait).saveAs(svgFile);const svg=JSON.parse(execFileSync('python',['../scripts/m2/inspect_mesh.py',svgFile],{encoding:'utf8'}));expect(svg.paths).toBeGreaterThan(0)
-  mkdirSync('../docs/m5/replay/m4',{recursive:true});writeFileSync('../docs/m5/replay/m4/text-validation.json',JSON.stringify({mesh,native:nativeMesh,svg},null,2))
+  const svgWait=page.waitForEvent('download');await page.getByRole('link',{name:/Save traced outlines SVG/}).click();const svgFile=resolve('../sandbox/m6/replay/m3/text-outlines.svg');await(await svgWait).saveAs(svgFile);const svg=JSON.parse(execFileSync('python',['../scripts/m2/inspect_mesh.py',svgFile],{encoding:'utf8'}));expect(svg.paths).toBeGreaterThan(0)
+  mkdirSync('../docs/m6/replay/m5/replay/m4',{recursive:true});writeFileSync('../docs/m6/replay/m5/replay/m4/text-validation.json',JSON.stringify({mesh,native:nativeMesh,svg},null,2))
   await page.getByRole('tab',{name:'3D',exact:true}).click();await expect(page.locator('.mesh-preview')).toHaveAttribute('data-ready','true')
   await page.reload();await ready(page);expect(await saved(page)).toEqual(doc)
 })
@@ -77,7 +77,7 @@ test('direct crop handles, zoom/pan, keyboard pixels, rotations and undo match a
   raw=await page.evaluate(()=>JSON.parse(localStorage.getItem('stencil-studio.project.v1')!));const crop=raw.graph.nodes.find((n:any)=>n.type==='transform').params;expect(Math.round(crop.crop_left*width/100)).toBe(Math.round(width*.2))
   await page.getByRole('dialog',{name:'Crop & rotate artwork'}).getByRole('button',{name:'Rotate 90°',exact:true}).click();await page.getByRole('dialog',{name:'Crop & rotate artwork'}).getByRole('button',{name:'Flip horizontally',exact:true}).click()
   await expect(page.locator('.crop-result .stage-image')).toHaveAttribute('data-ready','true');await expect(page.locator('.crop-result .stage-state')).toContainText(`${height} × ${width-Math.round(width*.2)} px`)
-  mkdirSync('../docs/m5/replay/m4/screenshots',{recursive:true});await page.screenshot({path:'../docs/m5/replay/m4/screenshots/03-visual-crop.png',fullPage:true})
+  mkdirSync('../docs/m6/replay/m5/replay/m4/screenshots',{recursive:true});await page.screenshot({path:'../docs/m6/replay/m5/replay/m4/screenshots/03-visual-crop.png',fullPage:true})
   await page.getByRole('button',{name:'Done',exact:true}).click();const doc=await saved(page);expect(Buffer.from(Object.values<any>(doc.images)[0].base64,'base64')).toEqual(image)
   await page.getByRole('button',{name:'Undo',exact:true}).click();await page.getByRole('button',{name:'Redo',exact:true}).click();expect(await saved(page)).toEqual(doc)
 })
@@ -130,12 +130,12 @@ test('fourteen real preparation steps keep live output valid, SVGs inspectable, 
   const nodes=[step('input','source',{image_id:'original',resolution:240}),step('frame','transform'),step('reduce','reduce',{colours:3}),step('paint','threshold'),step('soft','smooth',{radius:.25,supersample:1}),step('open','morphology',{op:'open',radius:1}),step('close','morphology',{op:'close',radius:1}),step('trace','trace',{smooth:.3,corner_deg:30}),step('corners','round_corners',{radius:1,max_angle:100}),step('clean','remove_islands',{fill_holes:false,max_area:4}),step('pixels','shapes_to_mask',{resolution:300}),step('soft2','smooth',{radius:.25,supersample:1}),step('outlines','trace',{smooth:.3,corner_deg:30}),step('plate','vector_stencil',{width_mm:100,thickness_mm:2})]
   const edges=nodes.slice(0,-1).map((n,i)=>({from:[n.id,catalogue.find((t:any)=>t.id===n.type).outputs[0].name],to:[nodes[i+1].id,catalogue.find((t:any)=>t.id===nodes[i+1].type).inputs[0].name]}))
   const bytes=readFileSync(new URL('./corpus/simple-logo.svg',import.meta.url)),doc={version:2,graph:{nodes,edges},images:{original:{name:'Original.svg',base64:bytes.toString('base64')}},opaque:{keep:true}}
-  mkdirSync('../sandbox/m3',{recursive:true});writeFileSync('../sandbox/m3/long-project.json',JSON.stringify(doc))
+  mkdirSync('../sandbox/m6/replay/m3',{recursive:true});writeFileSync('../sandbox/m6/replay/m3/long-project.json',JSON.stringify(doc))
   const outside:string[]=[];await page.route('**/*',route=>{const u=route.request().url();if(/^https?:/.test(u)&&!u.startsWith('http://localhost:5199')){outside.push(u);return route.abort()}return route.continue()})
   await page.goto('/');await page.setInputFiles('[aria-label="Open project file"]',{name:'long.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(doc))});await ready(page)
   const mesh=await downloadMesh(page,'long-chain');expect(mesh.degenerate_faces).toBe(0)
   await page.getByRole('combobox',{name:'Inspect artwork stage',exact:true}).selectOption('outlines/shapes');await expect(page.locator('.stage-image')).toHaveAttribute('data-ready','true')
-  const svgWait=page.waitForEvent('download');await page.getByRole('link',{name:'Save artwork preview',exact:true}).click();const path=resolve('../sandbox/m3/long-outlines.svg');await(await svgWait).saveAs(path);expect(JSON.parse(execFileSync('python',['../scripts/m2/inspect_mesh.py',path],{encoding:'utf8'})).paths).toBeGreaterThan(0)
+  const svgWait=page.waitForEvent('download');await page.getByRole('link',{name:'Save artwork preview',exact:true}).click();const path=resolve('../sandbox/m6/replay/m3/long-outlines.svg');await(await svgWait).saveAs(path);expect(JSON.parse(execFileSync('python',['../scripts/m2/inspect_mesh.py',path],{encoding:'utf8'})).paths).toBeGreaterThan(0)
   await settings(page,'Artwork and image cleanup');await page.getByRole('button',{name:'Cleanup',exact:true}).click()
   for(const mode of ['dark','light']){
     await page.getByRole('button',{name:'Close settings',exact:true}).click();const toggle=page.getByRole('button',{name:`Switch to ${mode} mode`,exact:true});if(await toggle.count())await toggle.click();await settings(page,'Artwork and image cleanup');await page.getByRole('button',{name:'Cleanup',exact:true}).click()
@@ -143,7 +143,7 @@ test('fourteen real preparation steps keep live output valid, SVGs inspectable, 
   }
   expect(outside).toEqual([]);expect(await page.locator('.react-flow').count()).toBe(0)
   await page.getByRole('button',{name:'Close settings',exact:true}).click();expect(await saved(page)).toEqual(doc)
-  mkdirSync('../docs/m5/replay/m4',{recursive:true});writeFileSync('../docs/m5/replay/m4/long-chain-validation.json',JSON.stringify({mesh,steps:nodes.length,external_requests:outside},null,2))
+  mkdirSync('../docs/m6/replay/m5/replay/m4',{recursive:true});writeFileSync('../docs/m6/replay/m5/replay/m4/long-chain-validation.json',JSON.stringify({mesh,steps:nodes.length,external_requests:outside},null,2))
 })
 
 test('wide transparent artwork survives repeated rotations, crop panning and undo with identical prepared bytes',async({page})=>{

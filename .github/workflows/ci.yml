@@ -7,6 +7,12 @@ on:
   pull_request:
     paths: ["Cargo.toml", "Cargo.lock", "crates/**", "web/**", "README.md", "INSTALL.md", "USAGE.md", ".github/workflows/**"]
   workflow_dispatch:
+    inputs:
+      deploy_pages:
+        description: 'Deploy publicly to already-configured GitHub Pages'
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: read
@@ -87,7 +93,8 @@ jobs:
           path: web/dist
 
   deploy:
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    # Hosting is a separate, explicit opt-in; ordinary code verification does not publish.
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.deploy_pages
     needs: web
     runs-on: ubuntu-latest
     permissions:

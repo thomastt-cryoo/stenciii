@@ -101,10 +101,11 @@ export function adjustmentRecipe(doc: ProjectDocument) {
 
 export interface Command { label: string; before: ProjectDocument; after: ProjectDocument }
 export class ProjectCommands {
+  private trimmed=0
   past: Command[] = []
   future: Command[] = []
   constructor(public current: ProjectDocument | null = null) {}
-  reset(doc: ProjectDocument | null) { this.current = doc; this.past = []; this.future = [] }
+  reset(doc: ProjectDocument | null) { this.current = doc; this.past = []; this.future = [];this.trimmed=0 }
   apply(label: string, update: (doc: ProjectDocument) => ProjectDocument, merge = false) {
     if (!this.current) return false
     const after = update(this.current)
@@ -112,11 +113,18 @@ export class ProjectCommands {
     const previous = this.past.at(-1)
     if (merge && previous?.label === label && !this.future.length) previous.after = after
     else this.past.push({ label, before: this.current, after })
-    this.past = this.past.slice(-100)
+    this.trimmed+=Math.max(0,this.past.length-100);this.past = this.past.slice(-100)
     this.future = []; this.current = after; return true
   }
   undo() { const c = this.past.pop(); if (!c) return false; this.future.push(c); this.current = c.before; return true }
   redo() { const c = this.future.pop(); if (!c) return false; this.past.push(c); this.current = c.after; return true }
+  timeline() { return [{label:this.trimmed?'Oldest retained state':'Starting project',current:this.past.length===0},...this.past.map((c,i)=>({label:c.label,current:i+1===this.past.length})),...[...this.future].reverse().map(c=>({label:c.label,current:false}))] }
+  jumpTo(index:number) {
+    if(!Number.isInteger(index)||index<0||index>this.past.length+this.future.length||index===this.past.length)return false
+    while(this.past.length>index)this.undo()
+    while(this.past.length<index)this.redo()
+    return true
+  }
 }
 
 export const encodeBytes = (bytes: ArrayBuffer) => {

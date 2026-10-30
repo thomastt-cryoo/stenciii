@@ -1,24 +1,26 @@
 import { cancelMeshAudit } from './meshAuditClient'
 import { create } from 'zustand'
 import { api } from '../api'
-import { captureArtifacts, releaseArtifacts, type ArtifactSet } from './artifacts'
+import { captureArtifacts, releaseArtifacts, projectFileBase, type ArtifactSet } from './artifacts'
 import { RunController, type RunState } from './runController'
 import { ParameterRegistry } from './registry'
 import { ProjectCommands, adjustmentRecipe, compileRecipe, copy, decodeBytes, editParameter, encodeBytes, object, openDocument, operations, projectName, quickRecipe, signature, type ProjectDocument } from './project'
 import { styleRecipe, switchStyle, setDetail, draftRecipe, pixelCleanup, type Style } from './recipes'
 import { LivePreview } from './livePreview'
+import {synchronizeFit} from './sharedFit'
+import {embedAvailableOriginals} from './availableOriginals'
 import type { Quality } from './runController'
 import { liveArtwork, textRecipe, editMany } from './artwork'
 
 export const AUTOSAVE = 'stencil-studio.project.v1'
 interface State {
   doc: ProjectDocument | null; registry: ParameterRegistry | null; run: RunState<ArtifactSet>
-  loading: boolean; error: string | null; notice: string | null; canUndo: boolean; canRedo: boolean
+  loading: boolean; error: string | null; notice: string | null; storedRecovery: string | null; canUndo: boolean; canRedo: boolean
   preview: { step: string; port: string } | null; cropStep: string | null; interacting: boolean
 }
 const commands = new ProjectCommands()
 export const controller = new RunController<ArtifactSet>({ cancel: () => { api.cancel(); cancelMeshAudit() }, run: (g, step) => api.run(g, undefined, step) }, run => useEditor.setState({ run }), releaseArtifacts)
-export const useEditor = create<State>(() => ({ doc: null, registry: null, run: controller.state, loading: true, error: null, notice: null, canUndo: false, canRedo: false, preview: null, cropStep: null, interacting: false }))
+export const useEditor = create<State>(() => ({ doc: null, registry: null, run: controller.state, loading: true, error: null, notice: null, storedRecovery:null, canUndo: false, canRedo: false, preview: null, cropStep: null, interacting: false }))
 let fileEpoch = 0
 let initialization: Promise<void> | null = null
 let gesture = false
@@ -27,8 +29,11 @@ const live = new LivePreview(quality => { void editor.make(quality, true) })
 function sync() {
   const doc = commands.current
   useEditor.setState({ doc, canUndo: !!commands.past.length, canRedo: !!commands.future.length })
+  let automatic=true
   try { if (doc) localStorage.setItem(AUTOSAVE, JSON.stringify(doc.raw)); else localStorage.removeItem(AUTOSAVE) }
-  catch { useEditor.setState({ notice: 'Automatic saving is unavailable. Use Save Project to keep your work.' }) }
+  catch { automatic=false }
+  if(!automatic||!api.storageStatus().persistentAvailable)useEditor.setState({notice:'Automatic saving or image storage is unavailable. Keep this window open and use Save Project to keep your work.'})
+  else if(useEditor.getState().notice?.startsWith('Automatic saving'))useEditor.setState({notice:null})
 }
 function invalidate(reset = false) { controller.invalidate(commands.current ? signature(commands.current) : '', reset); sync() }
 function error(e: unknown) { useEditor.setState({ error: String(e instanceof Error ? e.message : e) }) }
@@ -40,20 +45,31 @@ export const editor = {
       try {
         const catalogue = await api.nodeTypes()
         useEditor.setState({ registry: new ParameterRegistry(catalogue), loading: false })
-        const saved = localStorage.getItem(AUTOSAVE)
-        if (saved && !commands.current) await editor.open(JSON.parse(saved))
+        let saved:string|null=null
+        try{saved=localStorage.getItem(AUTOSAVE)}catch{useEditor.setState({notice:'Automatic saving is unavailable. Use Save Project to keep your work.'})}
+        if (saved && !commands.current) {
+          try{await editor.open(JSON.parse(saved))}
+          catch{useEditor.setState({storedRecovery:saved,error:'The automatic project copy could not be read. Save its recovery file, then open another project.'});return}
+        }
       } catch (e) { useEditor.setState({ loading: false }); error(e) }
     })()
     return initialization
   },
   newProject() { fileEpoch++; live.stop(true); gesture = false; commands.reset(null); useEditor.setState({ error: null, notice: null, loading: false, preview: null, cropStep: null, interacting: false }); invalidate(true) },
   async open(value: unknown) {
-    fileEpoch++
     const doc = openDocument(value)
-    live.stop(true)
-    gesture = false; commands.reset(doc); useEditor.setState({ error: null, notice: null, loading: false, preview: null, cropStep: null, interacting: false }); invalidate(true)
-    // Always run on open, including the exact same JSON after New. No signature-only deduplication.
-    await editor.make()
+    const mine=++fileEpoch
+    useEditor.setState({loading:true})
+    try{
+      // Original browser graphs may reference images held only in IndexedDB.
+      // Include available originals without rebuilding the imported workflow.
+      if(!await embedAvailableOriginals(doc,()=>mine===fileEpoch))return
+      if(mine!==fileEpoch)return
+      live.stop(true)
+      gesture = false; commands.reset(doc); useEditor.setState({ error: null, notice: null, loading: false, preview: null, cropStep: null, interacting: false }); invalidate(true)
+      // Always run on open, including the exact same JSON after New.
+      await editor.make()
+    }finally{if(mine===fileEpoch)useEditor.setState({loading:false})}
   },
   async importFile(file: File) {
     const mine = ++fileEpoch
@@ -93,7 +109,7 @@ export const editor = {
   },
   command(label: string, update: (doc: ProjectDocument) => ProjectDocument) {
     const before = commands.current && signature(commands.current)
-    try { if (commands.apply(label, update, gesture && gestureChanged)) { gestureChanged = true; if (commands.current && signature(commands.current) !== before) changed(); else sync() }; useEditor.setState({ error: null }) }
+    try { if (commands.apply(label, current=>{const next=update(current),registry=useEditor.getState().registry;return registry?synchronizeFit(current,next,registry):next}, gesture && gestureChanged)) { gestureChanged = true; if (commands.current && signature(commands.current) !== before) changed(); else sync() }; useEditor.setState({ error: null }) }
     catch (e) { error(e) }
   },
   parameters(id: string, values: Record<string, unknown>, label = 'Adjust artwork') {
@@ -120,7 +136,7 @@ export const editor = {
         const other = key === 'crop_left' ? 'crop_right' : key === 'crop_right' ? 'crop_left' : key === 'crop_top' ? 'crop_bottom' : 'crop_top'
         if (Number(value) + Number(op.params[other] ?? 0) >= 95) throw new Error('Keep at least 5% of the image when cropping.')
       }
-      if (commands.apply(`Adjust ${id}.${key}`, doc => editParameter(doc, id, key, value), gesture && gestureChanged)) { gestureChanged = true; changed() }
+      if (commands.apply(`Adjust ${id}.${key}`, doc => synchronizeFit(doc,editParameter(doc,id,key,value),state.registry!), gesture && gestureChanged)) { gestureChanged = true; changed() }
       useEditor.setState({ error: null })
     } catch (e) { error(e) }
   },
@@ -147,16 +163,28 @@ export const editor = {
     }); changed()
   },
   rename(name: string) {
-    commands.apply('Rename project', doc => {
+    if(useEditor.getState().loading||controller.state.status==='running')return
+    const before=commands.current&&projectFileBase(commands.current)
+    try{const changed=commands.apply('Rename project', doc => {
       const next = copy(doc)
       // Use an application-owned namespace without changing an imported namespace of another shape.
       if (next.raw.stencilStudio && !object(next.raw.stencilStudio)) throw new Error('The imported project name metadata uses an unsupported format.')
       next.raw.stencilStudio = { ...next.raw.stencilStudio, name }; return next
-    }); sync()
+    })
+    if(changed&&before&&commands.current&&controller.state.output){
+      const value=controller.state.output.value,after=projectFileBase(commands.current)
+      const files=new Set<{filename:string}>([...value.artifacts,...Object.values(value.outlines??{}),...(value.outline?[value.outline]:[])])
+      for(const file of files)if(file.filename.startsWith(before))file.filename=after+file.filename.slice(before.length)
+    }
+    sync()}catch(e){error(e)}
   },
   undo() { if (commands.undo()) changed() },
   redo() { if (commands.redo()) changed() },
   history: () => commands.past.map(c => c.label),
+  recoveryJSON: () => {if(commands.current)return JSON.stringify(commands.current.raw,null,2);try{return localStorage.getItem(AUTOSAVE)??'{}'}catch{return '{}'}},
+  downloadStoredRecovery(){const raw=useEditor.getState().storedRecovery;if(raw!==null)download(new Blob([raw],{type:'application/json'}),'stored-autosave-recovery.json')},
+  historyItems: () => commands.timeline(),
+  jumpHistory(index:number) { if(commands.jumpTo(index))changed() },
   cancel() { live.stop(); controller.cancel() },
   async make(quality: Quality = 'full', automatic = false) {
     const doc = commands.current

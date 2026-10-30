@@ -20,6 +20,9 @@ export default function ImageInfoPanel({ imageId, resolution }: { imageId: strin
   }, [imageId, resolution])
   if (err) return <p className="mut">{err}</p>
   if (!info) return null
+  return <ImageInfoDetails info={info} name={name}/>
+}
+export function ImageInfoDetails({info,name=''}:{info:ImageInfo;name?:string}){
   const rows: [string, string][] = [
     ...(name ? ([['File', name]] as [string, string][]) : []),
     ['Format', info.format],

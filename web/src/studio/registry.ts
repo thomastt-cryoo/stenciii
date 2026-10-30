@@ -36,6 +36,7 @@ export class ParameterRegistry {
   search(query: string, category?: string) {
     const text = query.toLowerCase().trim()
     const aliases: Record<string, string> = { 'smooth edges': 'smooth', 'remove small dots': 'remove_islands', 'remove specks': 'delete_specks', 'fill small holes': 'fill_holes', 'round tips': 'round_corners', 'thicken paint': 'morphology', 'font': 'text.font' }
+    Object.assign(aliases,{'complexity':'remesh','complexity reducer':'remesh','split volume':'tiles','tiles and mounting':'export','expand margin':'ring','add pads':'pads','make screws':'hardware','parameter sweep':'batch'})
     const words = (aliases[text] ?? text).split(/\s+/).filter(Boolean)
     const score = (s: Setting) => {
       const exact = [s.key, s.parameter.name, s.parameter.label, s.operationLabel].map(v => v.toLowerCase())

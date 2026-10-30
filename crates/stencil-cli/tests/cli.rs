@@ -2,6 +2,38 @@ use std::{fs, path::PathBuf, process::Command};
 
 const RING: &str = r##"<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><rect width="120" height="120" fill="#fff"/><circle cx="60" cy="60" r="48" fill="#000"/><circle cx="60" cy="60" r="28" fill="#fff"/><circle cx="60" cy="60" r="12" fill="#000"/></svg>"##;
 
+#[test]
+fn batch_summary_quotes_filenames_and_prevents_spreadsheet_formulas() {
+    let d = scratch("csv-filenames");
+    let path = tiled_project(&d);
+    let pics = d.join("pics");
+    fs::create_dir_all(&pics).unwrap();
+    fs::write(pics.join("logo,one.svg"), RING).unwrap();
+    fs::write(pics.join("=formula.svg"), RING).unwrap();
+    fs::write(pics.join(" =space.svg"), RING).unwrap();
+    let out = d.join("runs");
+    let result = bin().arg("--project").arg(path).arg("--batch").arg(pics).arg("-o").arg(&out).output().unwrap();
+    assert!(result.status.success(), "{}", String::from_utf8_lossy(&result.stderr));
+    let csv = fs::read_to_string(out.join("summary.csv")).unwrap();
+    assert!(csv.contains("\"logo,one\",ok,"), "{csv}");
+    assert!(csv.contains("'=formula,ok,"), "{csv}");
+    assert!(csv.contains("' =space,ok,"), "{csv}");
+    for name in ["logo,one", "=formula"] { assert!(out.join(name).join("report.json").exists()); }
+}
+
+#[test]
+fn batch_keeps_duplicate_stems_separate_and_dot_stems_inside_the_output_root() {
+    let d=scratch("unique-batch-paths");let project=tiled_project(&d);let pics=d.join("pics");fs::create_dir_all(&pics).unwrap();
+    fs::write(pics.join("a.svg"),RING).unwrap();
+    fs::write(pics.join("a.png"),include_bytes!("../../../web/e2e/corpus/transparent.png")).unwrap();
+    fs::write(pics.join("...svg"),RING).unwrap();
+    let out=d.join("runs");let result=bin().arg("--project").arg(project).arg("--batch").arg(pics).arg("-o").arg(&out).output().unwrap();
+    assert!(result.status.success(),"{}",String::from_utf8_lossy(&result.stderr));
+    for name in ["a","a__2","run"] {assert!(out.join(name).join("report.json").exists(),"{name}");}
+    assert!(!d.join("report.json").exists());
+    assert_eq!(fs::read_to_string(out.join("summary.csv")).unwrap().lines().count(),4);
+}
+
 fn bin() -> Command {
     Command::new(env!("CARGO_BIN_EXE_stencil"))
 }

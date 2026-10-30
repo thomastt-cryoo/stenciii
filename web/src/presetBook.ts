@@ -9,16 +9,16 @@ export const BUILT_IN: Book = {
 export function parseBook(raw: unknown): Book {
   const src = (raw as { presets?: unknown })?.presets
   if (!src || typeof src !== 'object' || Array.isArray(src)) throw new Error('no presets in it')
-  const out: Book = {}
+  const out: Book = Object.create(null)
   for (const [type, sets] of Object.entries(src)) {
     if (!sets || typeof sets !== 'object' || Array.isArray(sets)) throw new Error(`bad entry for ${type}`)
     for (const [name, params] of Object.entries(sets)) {
       if (!params || typeof params !== 'object' || Array.isArray(params)) throw new Error(`bad preset ${type}/${name}`)
-      const clean: Record<string, unknown> = {}
+      const clean: Record<string, unknown> = Object.create(null)
       for (const [k, v] of Object.entries(params)) {
         if (['string', 'number', 'boolean'].includes(typeof v)) clean[k] = v
       }
-      ;(out[type] ??= {})[name] = clean
+      ;(out[type] ??= Object.create(null))[name] = clean
     }
   }
   return out
@@ -30,8 +30,9 @@ export function mergeBook(have: Book, add: Book): { book: Book; added: number } 
   let added = 0
   for (const [type, sets] of Object.entries(add)) {
     for (const [name, params] of Object.entries(sets)) {
-      if (book[type]?.[name] || BUILT_IN[type]?.[name]) continue
-      ;(book[type] ??= {})[name] = params
+      if (Object.hasOwn(book,type)&&Object.hasOwn(book[type],name) || Object.hasOwn(BUILT_IN,type)&&Object.hasOwn(BUILT_IN[type],name)) continue
+      if(!Object.hasOwn(book,type))Object.defineProperty(book,type,{value:Object.create(null),enumerable:true,writable:true,configurable:true})
+      Object.defineProperty(book[type],name,{value:params,enumerable:true,writable:true,configurable:true})
       added++
     }
   }

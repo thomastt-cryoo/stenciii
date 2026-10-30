@@ -6,7 +6,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { styleRecipe, styles } from '../src/studio/recipes'
 import type { NodeType } from '../src/api'
-const root = resolve('..'), milestone = ['m3','m4','m5'].includes(process.env.STENCIL_AUDIT_MILESTONE??'') ? process.env.STENCIL_AUDIT_MILESTONE! : 'm2', out = resolve(root, `sandbox/${milestone}/corpus`)
+const root = resolve('..'), milestone = ['m3','m4','m5','m6'].includes(process.env.STENCIL_AUDIT_MILESTONE??'') ? process.env.STENCIL_AUDIT_MILESTONE! : 'm2', out = resolve(root, `sandbox/${milestone}/corpus`)
 const catalogue: NodeType[] = JSON.parse(readFileSync(resolve(root, 'docs/audit/runtime-catalogue.json'), 'utf8'))
 const manifest = JSON.parse(readFileSync(resolve(root, 'web/e2e/corpus/manifest.json'), 'utf8'))
 
@@ -35,7 +35,7 @@ test('measure all styles on every representative input and independently validat
     results.push(row)
     console.log(`${name}: ${row.status} · ${ms} ms`)
   }
-  writeFileSync(resolve(root, `docs/${milestone}/corpus-results.json`), JSON.stringify({ source_base: milestone === 'm5' ? '9c1992ebd761cc006585a9f5ae3e23f387ddc3ea' : milestone === 'm4' ? '6191ce7cd4476a0c45ed9f2c0047fa8fa1e2d1cf' : milestone === 'm3' ? '48490e778d88408c070a64c94261e3efe4ee33ce' : '61a98108b2cab1d248585ef9c465abcde9fd54e6', recipe: 'Balanced profile, engine defaults for physical dimensions; actual styleRecipe()', cases: results }, null, 2))
+  writeFileSync(resolve(root, `docs/${milestone}/corpus-results.json`), JSON.stringify({ source_base: milestone === 'm6' ? 'cb07659c1f650a76b220fb273e09e4e349e02b8b' : milestone === 'm5' ? '9c1992ebd761cc006585a9f5ae3e23f387ddc3ea' : milestone === 'm4' ? '6191ce7cd4476a0c45ed9f2c0047fa8fa1e2d1cf' : milestone === 'm3' ? '48490e778d88408c070a64c94261e3efe4ee33ce' : '61a98108b2cab1d248585ef9c465abcde9fd54e6', recipe: 'Balanced profile, engine defaults for physical dimensions; actual styleRecipe()', cases: results }, null, 2))
   expect(results).toHaveLength(manifest.length * 3)
   // Engine refusals are visible in the audit. An emitted invalid STL fails this check.
   expect(results.filter(r => r.status.startsWith('INVALID'))).toEqual([])

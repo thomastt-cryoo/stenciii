@@ -2,7 +2,7 @@ import { api, artifactUrl, partUrl, type NodeRun } from '../api'
 import { badgesFor, type Badge } from '../badges'
 import { compileRecipe, projectName, adjustmentRecipe as quickRecipe, type ProjectDocument } from './project'
 import { auditMesh } from './meshAuditClient'
-import { meshProblems, type MeshCheck } from './meshAudit'
+import { meshProblems,partMeshProblems, type MeshCheck } from './meshAudit'
 export { inspectStl } from './meshAudit'
 export type { MeshCheck } from './meshAudit'
 import { activeStyle } from './recipes'
@@ -17,6 +17,7 @@ export interface Artifact {
 export interface ArtworkComparison { url: string; width: number; height: number; marginX: number; marginY: number; flip: boolean }
 export interface Outline { url: string; filename: string }
 export interface ArtifactSet { artifacts: Artifact[]; findings: Badge[]; comparison?: ArtworkComparison; outline?: Outline; outlines?: Record<string, Outline>; stages?: PreviewStage[]; owned?:string[] }
+export const projectFileBase=(doc:ProjectDocument)=>projectName(doc).replace(/[^a-z0-9 ._-]/gi,'_').slice(0,80)||'stencil'
 export async function captureArtifacts(doc: ProjectDocument, runs: Record<string, NodeRun>): Promise<ArtifactSet> {
   const artifacts: Artifact[] = [], findings: Badge[] = []
   const result: ArtifactSet = { artifacts, findings, stages: [], outlines: {}, owned: [] }
@@ -25,7 +26,7 @@ export async function captureArtifacts(doc: ProjectDocument, runs: Record<string
   const textSources = graph.nodes.filter(n=>n.type==='text'), builders = graph.nodes.filter(n=>['stencil','vector_stencil'].includes(n.type))
   const compareBuilder = recipe?.build ?? (textSources.length === 1 && builders.length === 1 ? builders[0] : null)
   const compareSource = recipe ? graph.edges.find(e=>e.to[0]===recipe.threshold.id)?.from[0] : textSources.length === 1 ? textSources[0].id : null
-  const base = projectName(doc).replace(/[^a-z0-9 ._-]/gi, '_').slice(0, 80) || 'stencil'
+  const base = projectFileBase(doc)
   const name = `${base}-${recipe ? activeStyle(doc) : 'custom'}`
   try {
     for (const n of graph.nodes) {
@@ -78,7 +79,7 @@ export async function captureArtifacts(doc: ProjectDocument, runs: Record<string
           const part:PartArtifact={name:file,url,mesh:null};parts.push(part)
           if(/\.stl$/i.test(file))try{
             part.mesh=await auditMesh(await bytes.arrayBuffer())
-            if(meshProblems(part.mesh).length)throw Error(meshProblems(part.mesh).join('; '))
+            const problems=partMeshProblems(part.mesh,file,info);if(problems.length)throw Error(problems.join('; '))
           }catch(error){part.error=String(error instanceof Error?error.message:error);const bad:Badge={level:'error',text:`${file}: ${part.error}. This part blocks the complete export.`};checks.push(bad);findings.push(bad)}
         }
         if(mesh && ['stencil','vector_stencil','remesh'].includes(n.type) && mesh.components>1){const bad:Badge={level:'error',text:`${mesh.components} disconnected solid components found. Export is blocked.`};checks.push(bad);findings.push(bad)}

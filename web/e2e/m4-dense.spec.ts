@@ -19,5 +19,5 @@ test('dense exact topology audit stays off the UI, checks an analytic closed sol
  },workerUrl)
  expect(result.valid.ok.closed).toBe(true);expect(result.valid.ok.components).toBe(1);expect(result.valid.ok.triangles).toBe(1_769_472);expect(result.valid.ok.signedVolume).toBeCloseTo(1,5);expect(result.valid.ok.size).toEqual([1,1,1]);expect(result.blocked.error).toContain('two-million-triangle');expect(result.frames).toBeGreaterThan(10);expect(result.max_frame_gap_ms).toBeLessThan(1500)
  await expect(page.getByRole('link',{name:'Export STL',exact:true})).toHaveAttribute('aria-disabled','false')
- mkdirSync('../docs/m5/replay/m4',{recursive:true});writeFileSync('../docs/m5/replay/m4/dense-audit.json',JSON.stringify(result,null,2))
+ mkdirSync('../docs/m6/replay/m5/replay/m4',{recursive:true});writeFileSync('../docs/m6/replay/m5/replay/m4/dense-audit.json',JSON.stringify(result,null,2))
 })
