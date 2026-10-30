@@ -1,0 +1,33 @@
+name: Intel Safari viewer investigation
+on:
+  push:
+    branches: [codex/m7-safari-fix]
+permissions:
+  contents: write
+jobs:
+  diagnose:
+    runs-on: macos-15-intel
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: production-assets
+          run-id: '41129666851'
+          github-token: ${{ github.token }}
+      - name: Diagnose exact production viewer in genuine Intel Safari
+        run: |
+          tar -xzf production-assets.tar.gz
+          sw_vers
+          sudo /usr/bin/safaridriver --enable
+          python scripts/m7/safari_diagnose.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: intel-safari-diagnosis
+          path: out
+      - name: Retain diagnostic evidence
+        if: always()
+        run: python scripts/m7/archive-evidence.py out safari-diagnosis
