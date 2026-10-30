@@ -1,0 +1,16 @@
+{
+  "file": "StencilStudio-macOS-Apple-Silicon.zip",
+  "platform": "macos-arm64",
+  "source_commit": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
+  "bytes": 7845887,
+  "sha256": "a58ca2840ae07ae6c9fb7dbdcd7bdc8a64056ab7a6296392d57dcd9be36a50ad",
+  "etsy_limit_bytes": 20000000,
+  "fits_etsy_limit": true,
+  "signing": {
+    "developer_id_signed": false,
+    "notarized": false,
+    "ad_hoc_signed": true
+  },
+  "backend_bytes": 15350576,
+  "launcher_bytes": 569760
+}
