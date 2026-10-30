@@ -1,0 +1,251 @@
+{
+  "version": 2,
+  "graph": {
+    "nodes": [
+      {
+        "id": "source-1",
+        "type": "source",
+        "params": {
+          "image_id": "original",
+          "resolution": 300
+        }
+      },
+      {
+        "id": "threshold-2",
+        "type": "threshold",
+        "params": {
+          "threshold": 256,
+          "invert": false
+        }
+      },
+      {
+        "id": "trace-3",
+        "type": "trace",
+        "params": {
+          "smooth": 1.5,
+          "corner_deg": 60,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "vector_stencil-4",
+        "type": "vector_stencil",
+        "params": {
+          "detail": 5,
+          "width_mm": 200,
+          "thickness_mm": 5,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 1,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1,
+          "tile_method": "per_tile"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": [
+          "source-1",
+          "image"
+        ],
+        "to": [
+          "threshold-2",
+          "image"
+        ]
+      },
+      {
+        "from": [
+          "threshold-2",
+          "mask"
+        ],
+        "to": [
+          "trace-3",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "trace-3",
+          "shapes"
+        ],
+        "to": [
+          "vector_stencil-4",
+          "shapes"
+        ]
+      }
+    ]
+  },
+  "images": {
+    "original": {
+      "name": "transparent.png",
+      "base64": "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"
+    },
+    "unused": {
+      "name": "keep.svg",
+      "base64": "PHN2Zy8+"
+    }
+  },
+  "stencilStudio": {
+    "schema": 2,
+    "name": "Vector stencil",
+    "previousProject": {
+      "version": 2,
+      "stencilStudio": {
+        "schema": 1,
+        "name": "M5 tiles"
+      },
+      "opaque": {
+        "keep": [
+          17,
+          false,
+          "M5"
+        ]
+      },
+      "images": {
+        "original": {
+          "name": "tile-art.svg",
+          "base64": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNDAiIGhlaWdodD0iMTgwIj48cmVjdCB3aWR0aD0iMjQwIiBoZWlnaHQ9IjE4MCIgZmlsbD0id2hpdGUiLz48cmVjdCB4PSIxMiIgeT0iMTIiIHdpZHRoPSIyMTYiIGhlaWdodD0iMTU2IiBmaWxsPSJibGFjayIvPjxnIGZpbGw9IndoaXRlIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjYwIiByPSIxOCIvPjxjaXJjbGUgY3g9IjEwNSIgY3k9IjYyIiByPSIxNyIvPjxjaXJjbGUgY3g9IjE0NSIgY3k9IjU4IiByPSIxNCIvPjxjaXJjbGUgY3g9IjE4NSIgY3k9IjU1IiByPSIxMCIvPjxyZWN0IHg9IjMwIiB5PSIxMTAiIHdpZHRoPSIzNSIgaGVpZ2h0PSIyNSIvPjxyZWN0IHg9IjYzIiB5PSIxMjAiIHdpZHRoPSI0NSIgaGVpZ2h0PSIyIi8+PHJlY3QgeD0iMTA2IiB5PSIxMTAiIHdpZHRoPSI0NSIgaGVpZ2h0PSIyNSIvPjxjaXJjbGUgY3g9IjE5NSIgY3k9IjEzMCIgcj0iMS41Ii8+PC9nPjwvc3ZnPg=="
+        },
+        "unused": {
+          "name": "keep.svg",
+          "base64": "PHN2Zy8+"
+        }
+      },
+      "graph": {
+        "nodes": [
+          {
+            "id": "source",
+            "type": "source",
+            "params": {
+              "image_id": "original",
+              "resolution": 280
+            }
+          },
+          {
+            "id": "paint",
+            "type": "threshold",
+            "params": {
+              "threshold": 256,
+              "invert": false
+            }
+          },
+          {
+            "id": "trace",
+            "type": "trace",
+            "params": {
+              "smooth": 0,
+              "corner_deg": 60,
+              "tolerance": 0,
+              "min_area": 0
+            }
+          },
+          {
+            "id": "build",
+            "type": "vector_stencil",
+            "params": {
+              "detail": 2,
+              "width_mm": 180,
+              "thickness_mm": 6,
+              "margin_mm": 18,
+              "flip": false,
+              "bridge_mm": 1.6,
+              "bridges_per_island": 1,
+              "bridge_spacing": "closest",
+              "bridge_min_angle_deg": 45,
+              "bridge_max_length": 4,
+              "bridge_passes": 4,
+              "raised_bridges": false,
+              "z_bridging": "easy",
+              "layer_height_mm": 0.2,
+              "extra_top_layers": 0,
+              "max_overhang_deg": 0,
+              "min_island_mm2": 0,
+              "min_contact_mm": 0,
+              "min_first_layer_width_mm": 0,
+              "first_layer_taper_mm": 1,
+              "tile_method": "per_tile"
+            }
+          },
+          {
+            "id": "test",
+            "type": "tiles",
+            "params": {
+              "max_x": 110,
+              "max_y": 160,
+              "seam_shift": 0,
+              "seam_gap": 0,
+              "seam_angle_deg": 0,
+              "reinforce": false,
+              "connector": "hex",
+              "connector_d": "3",
+              "depth": 6,
+              "clearance": 0.2,
+              "segments": 48,
+              "bridge_islands": true,
+              "bridge_mm": 1.6,
+              "bridges_per_island": 1,
+              "raised_bridges": true,
+              "z_bridging": "easy"
+            }
+          }
+        ],
+        "edges": [
+          {
+            "from": [
+              "source",
+              "image"
+            ],
+            "to": [
+              "paint",
+              "image"
+            ]
+          },
+          {
+            "from": [
+              "paint",
+              "mask"
+            ],
+            "to": [
+              "trace",
+              "mask"
+            ]
+          },
+          {
+            "from": [
+              "trace",
+              "shapes"
+            ],
+            "to": [
+              "build",
+              "shapes"
+            ]
+          },
+          {
+            "from": [
+              "build",
+              "solid"
+            ],
+            "to": [
+              "test",
+              "solid"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
