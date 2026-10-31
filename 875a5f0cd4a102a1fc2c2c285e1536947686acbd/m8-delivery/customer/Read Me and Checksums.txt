@@ -1,0 +1,57 @@
+STENCIL STUDIO - OFFLINE BROWSER EDITION
+M8 customer review - 31 October 2026
+
+Start with StencilStudio-Quick-Start.pdf. It contains installation, security-
+warning guidance, saving, manufacturing, troubleshooting and product facts.
+Select the ZIP for your computer, extract it completely, then double-click
+the graphical launcher. The editor runs in your installed browser.
+
+Chrome is recommended. Edge is supported on tested Windows. Intel Safari
+uses the verified software 3D repair when WebGL is unusable. Large meshes
+can respond more slowly. Windows Firefox 3D remains unqualified.
+
+Measured runtime systems: Windows 11 Home 10.0.26300; Apple Silicon macOS
+26.6.2; Intel macOS 15.7.9. Mac first-download checks use the exact runner
+versions recorded in the M8 report. Windows 10, older macOS and physical
+Macs beyond CI are unverified. A build target is not an OS support claim.
+
+SECURITY AND FIRST DOWNLOAD
+Real Chrome downloads retained Internet-zone/quarantine metadata. Consumer Windows SmartScreen approval remains unverified: the Server runner is not a consumer PC, and the local PC already has SmartScreen disabled. Gatekeeper was enabled and blocked both quarantined Mac apps. Apple Silicon reached administrator authentication after two app-specific Open Anyway confirmations; authenticated launch and reopen were not completed. Intel approval and reopen remain unverified. No global security protection was disabled.
+
+Windows is unsigned. Macs are ad hoc signed without Developer ID/notarization.
+Follow only the app-specific OS approval described in the PDF if you trust
+the source. Stop for malware, damage or policy blocks. Do not disable
+SmartScreen, Smart App Control, Gatekeeper, antivirus or global protections.
+
+The three ZIPs are identical to the accepted M7 customer packages. Their
+dated Platform Test Record describes that qualification; the M8 PDF and
+report add the final customer/security review. No executable was rebuilt.
+
+Download/browser installation and OS approval checks may need internet.
+Artwork processing and exports run locally afterward. No cloud processing,
+account, subscription or recurring licence-server check is used.
+
+Use Save Project for portable backups; the automatic draft belongs to one
+browser/profile/address and is shared by its tabs. Save projects outside
+the application folder. Finish and download batch work before quitting.
+This software generates files; slicer, printer, material, fit/strength and
+physical calibration are separate. No physical items are included.
+
+SHA-256 (detects changed bytes; does not authenticate the publisher):
+
+StencilStudio-Windows-x64.zip
+8242951 bytes
+60acdaf946f14b2f6ac525772b7cc645240a53aa1a2831e698c7949998f850d6
+
+StencilStudio-macOS-Apple-Silicon.zip
+7832862 bytes
+d45b2086de195710e8ed3b471b22ac52a337bf3d8931651f5dbd98173defc63d
+
+StencilStudio-macOS-Intel.zip
+8229294 bytes
+1d9ff761a82dee967f16a9bd76a7165b5b1ac74459ee844e610099b47db87d7f
+
+StencilStudio-Quick-Start.pdf
+15856 bytes
+a010ad5a762aed7576587a3b0e6b6b284b9816816f4f753a84a09b092beacdaf
+

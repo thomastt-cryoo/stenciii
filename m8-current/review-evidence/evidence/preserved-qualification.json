@@ -1,0 +1,47 @@
+{
+  "accepted_regressions": {
+    "rust": 173,
+    "browser": 250,
+    "run": 41149380221,
+    "repeated_in_M8": false
+  },
+  "accepted_Intel_Safari": {
+    "run": 41149374597,
+    "source": "11819c3b87556ab152f28f351bcc0235bed4f3ea",
+    "projects": 4,
+    "result": "passed_with_software_rendering",
+    "repeated_in_M8": false
+  },
+  "engine_WASM_sources_unchanged_from_M6": true,
+  "runtime_sources_unchanged_from_accepted_viewer_fix": true,
+  "runtime_rebuilds": 0,
+  "accepted_M7_customer_files": [
+    {
+      "file": "StencilStudio-Windows-x64.zip",
+      "bytes": 8242951,
+      "sha256": "60acdaf946f14b2f6ac525772b7cc645240a53aa1a2831e698c7949998f850d6"
+    },
+    {
+      "file": "StencilStudio-macOS-Apple-Silicon.zip",
+      "bytes": 7832862,
+      "sha256": "d45b2086de195710e8ed3b471b22ac52a337bf3d8931651f5dbd98173defc63d"
+    },
+    {
+      "file": "StencilStudio-macOS-Intel.zip",
+      "bytes": 8229294,
+      "sha256": "1d9ff761a82dee967f16a9bd76a7165b5b1ac74459ee844e610099b47db87d7f"
+    },
+    {
+      "file": "StencilStudio-Quick-Start.pdf",
+      "bytes": 43171,
+      "sha256": "89868c6d2cebf0684ee81591a603c457398744fd008269387e226ea8d38f6a03"
+    },
+    {
+      "file": "Read Me and Checksums.txt",
+      "bytes": 700,
+      "sha256": "0ba438c28064392608a17ed99b77408fc46e51c85dc6cbd5b12a41d3175a975b"
+    }
+  ],
+  "M8_additional_customer_cases": 4,
+  "new_product_defects_found": 0
+}

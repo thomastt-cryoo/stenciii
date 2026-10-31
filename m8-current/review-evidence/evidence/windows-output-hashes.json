@@ -1,0 +1,81 @@
+{
+  "local_raw_output_directory": "C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m8\\customer-check",
+  "advanced_surface_references": "Accepted M6 workflows colours.zip, first.zip and mounted.zip; exact A/B equivalence independently checked in windows-customer-smoke.json",
+  "files": [
+    {
+      "file": "beginner-project.json",
+      "bytes": 3364,
+      "sha256": "91fb2e86af0fb66b451481ab229ba9e86e3f309de28f45d13e5b0d9d6fa854d5"
+    },
+    {
+      "file": "beginner-reload.json",
+      "bytes": 3364,
+      "sha256": "91fb2e86af0fb66b451481ab229ba9e86e3f309de28f45d13e5b0d9d6fa854d5"
+    },
+    {
+      "file": "beginner-reopened.json",
+      "bytes": 3364,
+      "sha256": "91fb2e86af0fb66b451481ab229ba9e86e3f309de28f45d13e5b0d9d6fa854d5"
+    },
+    {
+      "file": "beginner.png",
+      "bytes": 70492,
+      "sha256": "ccfcd3ce80bc95be5021c593f1529ebefb15288a53158887390b1b985f2dd71b"
+    },
+    {
+      "file": "beginner.stl",
+      "bytes": 130484,
+      "sha256": "6db01e3c899b1c00b178878d3122fa47ff6d46dd7c7b3d17d052578fd5ed4386"
+    },
+    {
+      "file": "colours-reopened.json",
+      "bytes": 7914,
+      "sha256": "aeb9d709aac3be55680fd57566783f5c16f24a35d39dcb2da82cc82c33a1f43d"
+    },
+    {
+      "file": "colours-saved.json",
+      "bytes": 7914,
+      "sha256": "aeb9d709aac3be55680fd57566783f5c16f24a35d39dcb2da82cc82c33a1f43d"
+    },
+    {
+      "file": "colours.zip",
+      "bytes": 601064,
+      "sha256": "6e7ec649def3544b0fcdabe693bac731e018082a22b05dec1e6f970c3ddf4cb1"
+    },
+    {
+      "file": "customer-smoke.json",
+      "bytes": 64800,
+      "sha256": "b89448b0d782dcea1a9b865f80757439127e7ad3179f69043d9d66d65a0b8a3e"
+    },
+    {
+      "file": "first-reopened.json",
+      "bytes": 8461,
+      "sha256": "11245c073824425f8d5b17287baa573dda37348156611d992931dc7618c928ae"
+    },
+    {
+      "file": "first-saved.json",
+      "bytes": 8461,
+      "sha256": "11245c073824425f8d5b17287baa573dda37348156611d992931dc7618c928ae"
+    },
+    {
+      "file": "first.zip",
+      "bytes": 7555990,
+      "sha256": "39a2112d18546fad95117edb7a9b6abc3d02438a6ae9f890a612d1a3c5c2ec4c"
+    },
+    {
+      "file": "mounted-reopened.json",
+      "bytes": 8441,
+      "sha256": "00c47f496a80829ecb18723798d6b5332cc79533c8f84834282eabcaeae2a59f"
+    },
+    {
+      "file": "mounted-saved.json",
+      "bytes": 8441,
+      "sha256": "00c47f496a80829ecb18723798d6b5332cc79533c8f84834282eabcaeae2a59f"
+    },
+    {
+      "file": "mounted.zip",
+      "bytes": 7449511,
+      "sha256": "bce2f1a42b97f8c52daa7344db5d8705a54a9a387b45d9efdb7f1432aab530d0"
+    }
+  ]
+}

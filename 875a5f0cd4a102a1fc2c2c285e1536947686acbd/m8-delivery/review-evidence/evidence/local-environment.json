@@ -1,0 +1,23 @@
+{
+  "system": "Windows 11 Home 10.0.26300",
+  "security_configuration_read_only": true,
+  "SmartScreenEnabled": "Off",
+  "policy_EnableSmartScreen": 0,
+  "Smart_App_Control_state": 0,
+  "changes_made": false,
+  "consumer_security_UI_exercised": false,
+  "limitation": "Existing user workstation has SmartScreen disabled by its existing policy; no change made and no consumer first-download pass claimed. No desktop UI automation used.",
+  "headless_download": {
+    "url": "https://raw.githubusercontent.com/thomastt-cryoo/stenciii/e2511ed68a0ec931b09c08f867f59a8f78100338/m7-current/customer/StencilStudio-Windows-x64.zip",
+    "method": "Installed Chrome, headed, native CDP download directory; no saveAs or origin stamping",
+    "file": "C:\\Users\\mazin\\Downloads\\stencil\\sandbox\\m8\\native-download\\StencilStudio-Windows-x64.zip",
+    "headless": true,
+    "browser": "151.0.7922.72",
+    "navigation": "Error: page.goto: Download is starting\nCall log:\n\u001b[2m  - navigating to \"https://raw.githubusercontent.com/thomastt-cryoo/stenciii/e2511ed68a0ec931b09c08f867f59a8f78100338/m7-current/customer/StencilStudio-Windows-x64.zip\", waiting until \"load\"\u001b[22m\n",
+    "suggestedFilename": "StencilStudio-Windows-x64.zip",
+    "bytes": 8242951,
+    "sha256": "60acdaf946f14b2f6ac525772b7cc645240a53aa1a2831e698c7949998f850d6",
+    "passed": true
+  },
+  "download_zone": "[ZoneTransfer]\nZoneId=3\nHostUrl=about:internet\n"
+}

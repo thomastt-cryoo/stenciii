@@ -1,0 +1,31 @@
+{
+  "initial_draft_all_six_pages_visually_inspected": true,
+  "final_changes": [
+    "page-2.png",
+    "page-5.png"
+  ],
+  "final_PNG_sha256": {
+    "page-1.png": "3c75675a7570db3dbd31b6a343a3f220b8977ca891d2e2d413d1cb523be85387",
+    "page-2.png": "0172f0372c83db9496a57e603523f78ea8e8c3ea532005eab7553beeb2aa9cd5",
+    "page-3.png": "bbec90347508f85d9a4209db3beb3a4e22570609868084f50749efd81be96148",
+    "page-4.png": "b34d28dc691351164c9c9e041be805a0f3b061b31a84afaf36aa3d1646c2bf9f",
+    "page-5.png": "6f07aa8fe2cfcc4e3b2422acc37c5b37d6f1c514dd9542742a85b3644158b3f0",
+    "page-6.png": "1691f356c293981d4d74fec99a855a713341b0032f7dab7eb7605fd8db62d60e"
+  },
+  "final_pages_visually_inspected": true,
+  "final_changed_pages_reinspected": [
+    2,
+    5
+  ],
+  "unchanged_pages_match_previously_inspected_PNGs": [
+    1,
+    3,
+    4,
+    6
+  ],
+  "page_count": 6,
+  "clipping_or_overlap_found": false,
+  "PDF_bytes": 15856,
+  "PDF_sha256": "a010ad5a762aed7576587a3b0e6b6b284b9816816f4f753a84a09b092beacdaf",
+  "reader": "pypdf and Poppler; local font fallback warnings did not produce visible missing glyphs"
+}
