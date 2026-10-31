@@ -1,0 +1,44 @@
+name: M8 actual download and customer checks
+on:
+  push:
+    branches: [codex/m8-customer-qa]
+permissions:
+  contents: write
+jobs:
+  download-security:
+    if: contains(github.event.head_commit.message, '[m8-security]')
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {runner: windows-2025, platform: windows-x64, name: StencilStudio-Windows-x64.zip}
+          - {runner: macos-15, platform: macos-arm64, name: StencilStudio-macOS-Apple-Silicon.zip}
+          - {runner: macos-15-intel, platform: macos-x64, name: StencilStudio-macOS-Intel.zip}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26.3.0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: npm --prefix web ci
+      - name: Actual browser download of exact reviewed customer ZIP
+        run: node scripts/m8/download.mjs '${{ matrix.name }}' work/download out/browser-download.json
+      - name: Windows shell extraction and security observations
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: ./scripts/m8/windows_security.ps1 -Archive 'work/download/${{ matrix.name }}' -Out out/security
+      - name: Mac Archive Utility extraction and Gatekeeper approval
+        if: runner.os == 'macOS'
+        run: python scripts/m8/mac_security.py 'work/download/${{ matrix.name }}' out/security
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: m8-first-download-${{ matrix.platform }}
+          path: out
+      - name: Retain evidence without a release or hosting
+        if: always()
+        run: python scripts/m7/archive-evidence.py out 'm8-security-${{ matrix.platform }}'
