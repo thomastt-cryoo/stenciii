@@ -1,0 +1,108 @@
+{
+  "archive": "/Users/runner/work/stenciii/stenciii/work/download/StencilStudio-macOS-Intel.zip",
+  "global_security_changes": false,
+  "quarantine_removed": false,
+  "app_specific_approval_verified": false,
+  "os": {
+    "code": 0,
+    "stdout": "ProductName:\t\tmacOS\nProductVersion:\t\t15.7.9\nBuildVersion:\t\t24G830",
+    "stderr": ""
+  },
+  "arch": {
+    "code": 0,
+    "stdout": "x86_64",
+    "stderr": ""
+  },
+  "gatekeeper_status": {
+    "code": 0,
+    "stdout": "assessments enabled",
+    "stderr": ""
+  },
+  "archive_quarantine": {
+    "code": 0,
+    "stdout": "0081;6ae56bbe;Chrome;",
+    "stderr": ""
+  },
+  "extraction": {
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "app": "/Users/runner/work/stenciii/stenciii/work/download/StencilStudio-macOS-Intel/Stencil Studio.app",
+  "app_quarantine": {
+    "code": 0,
+    "stdout": "0081;6ae56bbe;Chrome;",
+    "stderr": ""
+  },
+  "codesign": {
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "assessment": {
+    "code": 3,
+    "stdout": "",
+    "stderr": "/Users/runner/work/stenciii/stenciii/work/download/StencilStudio-macOS-Intel/Stencil Studio.app: rejected"
+  },
+  "initial_launch": {
+    "timeout": true,
+    "stdout": "",
+    "stderr": ""
+  },
+  "initial_ui": {
+    "code": 0,
+    "stdout": "Finderdownloadstencil-studio",
+    "stderr": ""
+  },
+  "initial_pids": {
+    "code": 0,
+    "stdout": "6744",
+    "stderr": ""
+  },
+  "dismiss_warning": {
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "dismiss_escape": {
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "dismiss_native": {
+    "code": 0,
+    "stdout": "[\"\uf8ffFinder File Edit View Go\",\"Window\",\"Help\",\"00 C\",\"\u2022 Recents\",\"\u00bc Applications\",\"\u2022 Desktop\",\"Documents\",\"\u00ae Downloads\",\"iCloud Drive\",\"\u2022 Red\",\"\u2022 Orange\",\"\u2022 Yellow\",\"\u2022 Green\",\"cownioac\",\"Stencil\",\"macOs-\",\"31\",\"\\\"Stencil Studio\\\" Not Opened\",\"pole could not verify \\\"Stencil Studio\\\"\",\"or compromise your privacy.\",\"Done\",\"Move to Trash\",\"Q = \u2022 Sat Oct 31 4:18AM\",\"88\",\"\uf8fftv\"]\nClicked verified app-specific button: Done",
+    "stderr": ""
+  },
+  "settings_open": {
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "settings_scroll": {
+    "code": 0,
+    "stdout": "Scrolled Privacy & Security pane only",
+    "stderr": ""
+  },
+  "settings_ui": {
+    "code": 0,
+    "stdout": "FinderdownloadSystem SettingsPrivacy & Security",
+    "stderr": ""
+  },
+  "open_anyway": {
+    "timeout": true,
+    "stdout": "",
+    "stderr": ""
+  },
+  "error": "KeyError('code')",
+  "cleanup": {
+    "code": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "remaining_launcher": {
+    "code": 1,
+    "stdout": "",
+    "stderr": ""
+  }
+}
