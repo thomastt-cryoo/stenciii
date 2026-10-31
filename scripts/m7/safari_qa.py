@@ -33,6 +33,9 @@ try:
         except Exception:time.sleep(.25)
     value=command('POST','/session',{'capabilities':{'alwaysMatch':{'browserName':'safari'}}});session=value['sessionId'];report['capabilities']=value['capabilities']
     command('POST',f'/session/{session}/timeouts',{'script':600000,'pageLoad':120000,'implicit':0})
+    if os.environ.get('M7_GL_MATRIX'):
+        command('POST',f'/session/{session}/url',{'url':os.environ['M7_SAFARI_URL']})
+        report['graphics_matrix']=execute('''const rows=[];for(const type of ['webgl2','webgl'])for(const antialias of [true,false])for(const alpha of [true,false])for(const powerPreference of ['default','low-power','high-performance']){const c=document.createElement('canvas'),errors=[];c.addEventListener('webglcontextcreationerror',e=>errors.push(e.statusMessage));const attributes={antialias,alpha,powerPreference},g=c.getContext(type,attributes);let pixel=null;if(g&&!g.isContextLost()){g.clearColor(.25,.5,.75,1);g.clear(g.COLOR_BUFFER_BIT);const p=new Uint8Array(4);g.readPixels(0,0,1,1,g.RGBA,g.UNSIGNED_BYTE,p);pixel=Array.from(p)}rows.push({type,attributes,object:!!g,lost:g?.isContextLost(),version:g?.getParameter(g.VERSION),precision:g?.getShaderPrecisionFormat(g.VERTEX_SHADER,g.HIGH_FLOAT)?.precision,pixel,errors});g?.getExtension('WEBGL_lose_context')?.loseContext()}return rows''')
     if os.environ.get('M7_SAFARI_URL'):
         ready={'url':os.environ['M7_SAFARI_URL']};report['hosting']='diagnostic production assets, not customer-package qualification'
     else:

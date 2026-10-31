@@ -18,7 +18,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.send_header('Cross-Origin-Opener-Policy','same-origin');self.send_header('Cross-Origin-Embedder-Policy','require-corp');self.send_header('Cache-Control','no-store');super().end_headers()
 server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(Handler,directory=str(dist)))
 threading.Thread(target=server.serve_forever,daemon=True).start()
-env={**os.environ,'M7_SAFARI_URL':f'http://localhost:{server.server_port}/','M7_CASES':'simple'}
+env={**os.environ,'M7_SAFARI_URL':f'http://localhost:{server.server_port}/','M7_CASES':'simple','M7_GL_MATRIX':'1'}
 try:
     code=subprocess.call([sys.executable,str(root/'scripts/m7/safari_qa.py'),'unused-diagnostic-launcher',str(out)],env=env)
     (out/'instrumentation.json').write_text(json.dumps({'source_assets_run':41129666851,'patched_error_handlers':patched,'production_application_source_changed':False,'purpose':'capture previously swallowed renderer exception'},indent=2)+'\n')
