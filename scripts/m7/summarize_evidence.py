@@ -16,7 +16,7 @@ def summarize(source,run,ref,out):
         for name in ['chromium','chrome','firefox','edge','safari']:
             suffix='safari-qa.json'if name=='safari'else'package-qa.json';path=f'{platform}/{name}/{suffix}';raw=read(path)
             if raw is None:continue
-            d=json.loads(raw);b={k:d[k]for k in ['passed','qualification','version','capabilities','initial_engine','limitations','error','failure_text','navigation_observer_errors','offline','resource_hosts','shutdown_document','consoleErrors']if k in d}
+            d=json.loads(raw);b={k:d[k]for k in ['passed','qualification','version','capabilities','initial_engine','limitations','error','failure_text','navigation_observer_errors','offline','resource_hosts','shutdown_document','consoleErrors','software_controls','last_capability','renderer_errors']if k in d}
             b['cases']=[]
             for case in d.get('cases',[]):
                 proof=case.get('proof',{});equivalence=proof.get('m6_equivalence',{})

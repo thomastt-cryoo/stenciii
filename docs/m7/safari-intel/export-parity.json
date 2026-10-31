@@ -1,0 +1,145 @@
+{
+  "before": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
+  "after": "11819c3b87556ab152f28f351bcc0235bed4f3ea",
+  "platform": "macos-x64",
+  "method": "unchanged M6 exact oriented-surface A/B checks; zero tolerance",
+  "passed": true,
+  "cases": [
+    {
+      "case": "simple",
+      "mesh_count": 1,
+      "byte_identical_meshes": 1,
+      "categories": [
+        "A"
+      ],
+      "surface_deviation_mm": 0
+    },
+    {
+      "case": "vector",
+      "mesh_count": 1,
+      "byte_identical_meshes": 1,
+      "categories": [
+        "A"
+      ],
+      "surface_deviation_mm": 0
+    },
+    {
+      "case": "tones",
+      "mesh_count": 1,
+      "byte_identical_meshes": 1,
+      "categories": [
+        "A"
+      ],
+      "surface_deviation_mm": 0
+    },
+    {
+      "case": "colours",
+      "mesh_count": 3,
+      "byte_identical_meshes": 3,
+      "categories": [
+        "A"
+      ],
+      "surface_deviation_mm": 0
+    },
+    {
+      "case": "first",
+      "mesh_count": 12,
+      "byte_identical_meshes": 8,
+      "categories": [
+        "A",
+        "B"
+      ],
+      "surface_deviation_mm": 0
+    },
+    {
+      "case": "mounted",
+      "mesh_count": 12,
+      "byte_identical_meshes": 8,
+      "categories": [
+        "A"
+      ],
+      "surface_deviation_mm": 0
+    },
+    {
+      "case": "old-browser",
+      "mesh_count": 1,
+      "byte_identical_meshes": 1,
+      "categories": [
+        "A"
+      ],
+      "surface_deviation_mm": 0
+    },
+    {
+      "case": "registered-colour-branches",
+      "mesh_count": 4,
+      "byte_identical_meshes": 4,
+      "categories": [
+        "A"
+      ],
+      "surface_deviation_mm": 0
+    },
+    {
+      "case": "layout-offsets",
+      "mesh_count": 3,
+      "byte_identical_meshes": 3,
+      "categories": [
+        "A"
+      ],
+      "surface_deviation_mm": 0
+    },
+    {
+      "case": "shared-hardware-and-multiple-images",
+      "mesh_count": 28,
+      "byte_identical_meshes": 24,
+      "categories": [
+        "A"
+      ],
+      "surface_deviation_mm": 0
+    },
+    {
+      "case": "detailed-logo",
+      "mesh_count": 1,
+      "byte_identical_meshes": 1,
+      "categories": [
+        "A"
+      ],
+      "surface_deviation_mm": 0
+    },
+    {
+      "case": "transparent",
+      "mesh_count": 1,
+      "byte_identical_meshes": 1,
+      "categories": [
+        "A"
+      ],
+      "surface_deviation_mm": 0
+    },
+    {
+      "case": "photograph",
+      "mesh_count": 1,
+      "byte_identical_meshes": 1,
+      "categories": [
+        "A"
+      ],
+      "surface_deviation_mm": 0
+    },
+    {
+      "case": "text",
+      "mesh_count": 1,
+      "byte_identical_meshes": 1,
+      "categories": [
+        "A"
+      ],
+      "surface_deviation_mm": 0
+    },
+    {
+      "case": "smooth-vector",
+      "mesh_count": 1,
+      "byte_identical_meshes": 1,
+      "categories": [
+        "A"
+      ],
+      "surface_deviation_mm": 0
+    }
+  ]
+}

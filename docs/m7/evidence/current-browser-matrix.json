@@ -1,0 +1,3142 @@
+{
+  "qa_source": "11819c3b87556ab152f28f351bcc0235bed4f3ea",
+  "workflow_run": 41129666851,
+  "artifact_ref": "origin/codex/m7-artifacts",
+  "platforms": {
+    "windows-x64": {
+      "browsers": {
+        "chromium": {
+          "passed": true,
+          "qualification": "passed",
+          "version": "156.0.8078.4",
+          "initial_engine": {
+            "n": 2,
+            "why": "threaded",
+            "version": "2.9.4"
+          },
+          "limitations": [],
+          "navigation_observer_errors": [],
+          "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+          "shutdown_document": true,
+          "consoleErrors": [],
+          "cases": [
+            {
+              "name": "simple",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 513
+              },
+              "m6_equivalence": {
+                "simple.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "vector",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 482
+              },
+              "m6_equivalence": {
+                "vector.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "tones",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 513
+              },
+              "m6_equivalence": {
+                "tones.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "colours",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 391
+              },
+              "m6_equivalence": {
+                "assembly-1-Register_colour_plates/colour_1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/colour_2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "first",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 406
+              },
+              "m6_equivalence": {
+                "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "mounted",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 406
+              },
+              "m6_equivalence": {
+                "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+                  "category": "B",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "old-browser",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 482
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "registered-colour-branches",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 422
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "layout-offsets",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 416
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "shared-hardware-and-multiple-images",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 406
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "detailed-logo",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 482
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "transparent",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 482
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "photograph",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 482
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "text",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 513
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "smooth-vector",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 482
+              },
+              "m6_equivalence": {
+                "smooth-vector.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            }
+          ],
+          "single_thread_passed": true,
+          "batch": {
+            "verified_jobs": 2,
+            "csv_rows": 2,
+            "independent_stl_count": 6,
+            "all_stls_valid": true
+          },
+          "batch_formats": {
+            "passed": true,
+            "counts": {
+              "stl": 6,
+              "png": 2,
+              "svg": 2,
+              "json": 5,
+              "csv": 1
+            }
+          },
+          "full_raw_report": "670aad80fe5fe648f802fa429aa67c55ea2b538a/windows-x64/chromium/package-qa.json"
+        },
+        "chrome": {
+          "passed": true,
+          "qualification": "passed",
+          "version": "156.0.8078.48",
+          "initial_engine": {
+            "n": 2,
+            "why": "threaded",
+            "version": "2.9.4"
+          },
+          "limitations": [],
+          "navigation_observer_errors": [],
+          "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+          "shutdown_document": true,
+          "consoleErrors": [],
+          "cases": [
+            {
+              "name": "simple",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 513
+              },
+              "m6_equivalence": {
+                "simple.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "colours",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 391
+              },
+              "m6_equivalence": {
+                "assembly-1-Register_colour_plates/colour_1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/colour_2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "mounted",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 406
+              },
+              "m6_equivalence": {
+                "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+                  "category": "B",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "old-browser",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 482
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            }
+          ],
+          "single_thread_passed": true,
+          "batch": {
+            "verified_jobs": 2,
+            "csv_rows": 2,
+            "independent_stl_count": 6,
+            "all_stls_valid": true
+          },
+          "batch_formats": {
+            "passed": true,
+            "counts": {
+              "stl": 6,
+              "png": 2,
+              "svg": 2,
+              "json": 5,
+              "csv": 1
+            }
+          },
+          "full_raw_report": "670aad80fe5fe648f802fa429aa67c55ea2b538a/windows-x64/chrome/package-qa.json"
+        },
+        "firefox": {
+          "passed": true,
+          "qualification": "passed_with_graphics_limit",
+          "version": "157.0",
+          "initial_engine": {
+            "n": 2,
+            "why": "threaded",
+            "version": "2.9.4"
+          },
+          "limitations": [
+            {
+              "case": "simple",
+              "feature": "3D preview",
+              "tested": false,
+              "reason": "An independent empty canvas also cannot create WebGL2",
+              "capability": {
+                "available": false,
+                "messages": [
+                  "WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()"
+                ]
+              }
+            },
+            {
+              "case": "colours",
+              "feature": "3D preview",
+              "tested": false,
+              "reason": "An independent empty canvas also cannot create WebGL2",
+              "capability": {
+                "available": false,
+                "messages": [
+                  "WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()"
+                ]
+              }
+            },
+            {
+              "case": "mounted",
+              "feature": "3D preview",
+              "tested": false,
+              "reason": "An independent empty canvas also cannot create WebGL2",
+              "capability": {
+                "available": false,
+                "messages": [
+                  "WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()"
+                ]
+              }
+            },
+            {
+              "case": "old-browser",
+              "feature": "3D preview",
+              "tested": false,
+              "reason": "An independent empty canvas also cannot create WebGL2",
+              "capability": {
+                "available": false,
+                "messages": [
+                  "WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()"
+                ]
+              }
+            }
+          ],
+          "navigation_observer_errors": [],
+          "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+          "shutdown_document": true,
+          "consoleErrors": [],
+          "cases": [
+            {
+              "name": "simple",
+              "passed": true,
+              "webgl": {
+                "tested": false,
+                "reason": "An independent empty canvas also cannot create WebGL2",
+                "capability": {
+                  "available": false,
+                  "messages": [
+                    "WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()"
+                  ]
+                }
+              },
+              "m6_equivalence": {
+                "simple.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "colours",
+              "passed": true,
+              "webgl": {
+                "tested": false,
+                "reason": "An independent empty canvas also cannot create WebGL2",
+                "capability": {
+                  "available": false,
+                  "messages": [
+                    "WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()"
+                  ]
+                }
+              },
+              "m6_equivalence": {
+                "assembly-1-Register_colour_plates/colour_1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/colour_2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "mounted",
+              "passed": true,
+              "webgl": {
+                "tested": false,
+                "reason": "An independent empty canvas also cannot create WebGL2",
+                "capability": {
+                  "available": false,
+                  "messages": [
+                    "WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()"
+                  ]
+                }
+              },
+              "m6_equivalence": {
+                "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+                  "category": "B",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "old-browser",
+              "passed": true,
+              "webgl": {
+                "tested": false,
+                "reason": "An independent empty canvas also cannot create WebGL2",
+                "capability": {
+                  "available": false,
+                  "messages": [
+                    "WebGL creation failed: \n* AllowWebgl2:false restricts context creation on this system. ()"
+                  ]
+                }
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            }
+          ],
+          "single_thread_passed": true,
+          "batch": {
+            "verified_jobs": 2,
+            "csv_rows": 2,
+            "independent_stl_count": 6,
+            "all_stls_valid": true
+          },
+          "batch_formats": {
+            "passed": true,
+            "counts": {
+              "stl": 6,
+              "png": 2,
+              "svg": 2,
+              "json": 5,
+              "csv": 1
+            }
+          },
+          "full_raw_report": "670aad80fe5fe648f802fa429aa67c55ea2b538a/windows-x64/firefox/package-qa.json"
+        },
+        "edge": {
+          "passed": true,
+          "qualification": "passed",
+          "version": "155.0.4283.62",
+          "initial_engine": {
+            "n": 2,
+            "why": "threaded",
+            "version": "2.9.4"
+          },
+          "limitations": [],
+          "navigation_observer_errors": [],
+          "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+          "shutdown_document": true,
+          "consoleErrors": [],
+          "cases": [
+            {
+              "name": "simple",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 513
+              },
+              "m6_equivalence": {
+                "simple.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "colours",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 391
+              },
+              "m6_equivalence": {
+                "assembly-1-Register_colour_plates/colour_1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/colour_2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "mounted",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 406
+              },
+              "m6_equivalence": {
+                "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+                  "category": "B",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "old-browser",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 482
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            }
+          ],
+          "single_thread_passed": true,
+          "batch": {
+            "verified_jobs": 2,
+            "csv_rows": 2,
+            "independent_stl_count": 6,
+            "all_stls_valid": true
+          },
+          "batch_formats": {
+            "passed": true,
+            "counts": {
+              "stl": 6,
+              "png": 2,
+              "svg": 2,
+              "json": 5,
+              "csv": 1
+            }
+          },
+          "full_raw_report": "670aad80fe5fe648f802fa429aa67c55ea2b538a/windows-x64/edge/package-qa.json"
+        }
+      },
+      "host/host-qa.json": {
+        "passed": true,
+        "platform": "nt",
+        "checks": [
+          "embedded HTTP assets",
+          "WASM MIME",
+          "COOP/COEP/CSP on successful and cached responses",
+          "gzip including q=0",
+          "HEAD",
+          "unsafe paths rejected",
+          "foreign Host/Origin rejected",
+          "read-only methods",
+          "production bundle excludes legacy editor",
+          "lease nonce/Origin guard",
+          "duplicate launch without second server",
+          "stdin EOF closes launcher and server",
+          "stable saved origin",
+          "atomic occupied-port fallback preserves old draft address",
+          "damaged settings refused without deletion",
+          "background connection survives idle grace",
+          "last tab disconnect automatically ends launcher and server"
+        ]
+      },
+      "lifecycle/lifecycle-qa.json": {
+        "platform": "win32",
+        "checks": [
+          "Six simultaneous launches produce one server and five duplicate refusals",
+          "Transient socket closure recovers the same live session instead of ending the document",
+          "Reload preserves the live session and exact saved project",
+          "Two projects save independently; closing one tab keeps the other alive",
+          "Quitting ends the old document and its main worker contexts",
+          "Launching from an updated folder preserves the origin and exact browser draft",
+          "Closing the last tab automatically ends launcher and server"
+        ],
+        "passed": true
+      },
+      "runtime_archive": {
+        "file": "StencilStudio-Windows-x64.zip",
+        "platform": "windows-x64",
+        "source_commit": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
+        "bytes": 8262443,
+        "sha256": "f675a8877673c2cf8925eb2dd1165c7ea9d1d8bfb2f8bf0a9e9aae27628eff09",
+        "etsy_limit_bytes": 20000000,
+        "fits_etsy_limit": true,
+        "signing": {
+          "developer_id_signed": false,
+          "notarized": false,
+          "ad_hoc_signed": false
+        },
+        "backend_bytes": 17279488,
+        "launcher_bytes": 596480
+      }
+    },
+    "macos-arm64": {
+      "browsers": {
+        "chromium": {
+          "passed": true,
+          "qualification": "passed",
+          "version": "156.0.8078.4",
+          "initial_engine": {
+            "n": 1,
+            "why": "too few cores to share with the page",
+            "version": "2.9.4"
+          },
+          "limitations": [],
+          "navigation_observer_errors": [],
+          "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+          "shutdown_document": true,
+          "consoleErrors": [],
+          "cases": [
+            {
+              "name": "simple",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 517
+              },
+              "m6_equivalence": {
+                "simple.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "vector",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {
+                "vector.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "tones",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 517
+              },
+              "m6_equivalence": {
+                "tones.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "colours",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 389
+              },
+              "m6_equivalence": {
+                "assembly-1-Register_colour_plates/colour_1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/colour_2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "first",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 415
+              },
+              "m6_equivalence": {
+                "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "mounted",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 415
+              },
+              "m6_equivalence": {
+                "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+                  "category": "B",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "old-browser",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "registered-colour-branches",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 420
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "layout-offsets",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 425
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "shared-hardware-and-multiple-images",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 415
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "detailed-logo",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "transparent",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "photograph",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "text",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 517
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "smooth-vector",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {
+                "smooth-vector.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            }
+          ],
+          "single_thread_passed": true,
+          "batch": {
+            "verified_jobs": 2,
+            "csv_rows": 2,
+            "independent_stl_count": 6,
+            "all_stls_valid": true
+          },
+          "batch_formats": {
+            "passed": true,
+            "counts": {
+              "stl": 6,
+              "png": 2,
+              "svg": 2,
+              "json": 5,
+              "csv": 1
+            }
+          },
+          "full_raw_report": "670aad80fe5fe648f802fa429aa67c55ea2b538a/macos-arm64/chromium/package-qa.json"
+        },
+        "chrome": {
+          "passed": true,
+          "qualification": "passed",
+          "version": "155.0.8059.40",
+          "initial_engine": {
+            "n": 1,
+            "why": "too few cores to share with the page",
+            "version": "2.9.4"
+          },
+          "limitations": [],
+          "navigation_observer_errors": [],
+          "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+          "shutdown_document": true,
+          "consoleErrors": [],
+          "cases": [
+            {
+              "name": "simple",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 517
+              },
+              "m6_equivalence": {
+                "simple.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "colours",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 389
+              },
+              "m6_equivalence": {
+                "assembly-1-Register_colour_plates/colour_1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/colour_2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "mounted",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 415
+              },
+              "m6_equivalence": {
+                "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+                  "category": "B",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "old-browser",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            }
+          ],
+          "single_thread_passed": true,
+          "batch": {
+            "verified_jobs": 2,
+            "csv_rows": 2,
+            "independent_stl_count": 6,
+            "all_stls_valid": true
+          },
+          "batch_formats": {
+            "passed": true,
+            "counts": {
+              "stl": 6,
+              "png": 2,
+              "svg": 2,
+              "json": 5,
+              "csv": 1
+            }
+          },
+          "full_raw_report": "670aad80fe5fe648f802fa429aa67c55ea2b538a/macos-arm64/chrome/package-qa.json"
+        },
+        "firefox": {
+          "passed": true,
+          "qualification": "passed",
+          "version": "157.0",
+          "initial_engine": {
+            "n": 1,
+            "why": "too few cores to share with the page",
+            "version": "2.9.4"
+          },
+          "limitations": [],
+          "navigation_observer_errors": [],
+          "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+          "shutdown_document": true,
+          "consoleErrors": [],
+          "cases": [
+            {
+              "name": "simple",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0",
+                "width": 1042,
+                "height": 518
+              },
+              "m6_equivalence": {
+                "simple.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "colours",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0",
+                "width": 1042,
+                "height": 388
+              },
+              "m6_equivalence": {
+                "assembly-1-Register_colour_plates/colour_1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/colour_2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "mounted",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0",
+                "width": 1042,
+                "height": 416
+              },
+              "m6_equivalence": {
+                "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+                  "category": "B",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "old-browser",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            }
+          ],
+          "single_thread_passed": true,
+          "batch": {
+            "verified_jobs": 2,
+            "csv_rows": 2,
+            "independent_stl_count": 6,
+            "all_stls_valid": true
+          },
+          "batch_formats": {
+            "passed": true,
+            "counts": {
+              "stl": 6,
+              "png": 2,
+              "svg": 2,
+              "json": 5,
+              "csv": 1
+            }
+          },
+          "full_raw_report": "670aad80fe5fe648f802fa429aa67c55ea2b538a/macos-arm64/firefox/package-qa.json"
+        },
+        "safari": {
+          "passed": true,
+          "qualification": "passed",
+          "capabilities": {
+            "safari:platformVersion": "26.6.2",
+            "safari:automaticInspection": false,
+            "webkit:WebRTC": {
+              "DisableICECandidateFiltering": false,
+              "DisableInsecureMediaCapture": false
+            },
+            "webkit:alwaysAllowAutoplay": false,
+            "browserVersion": "26.6.2",
+            "strictFileInteractability": false,
+            "browserName": "Safari",
+            "safari:useSimulator": false,
+            "safari:automaticProfiling": false,
+            "setWindowRect": true,
+            "acceptInsecureCerts": false,
+            "safari:platformBuildVersion": "25G83",
+            "safari:experimentalWebSocketUrl": false,
+            "platformName": "macOS",
+            "safari:diagnose": false
+          },
+          "limitations": [],
+          "resource_hosts": [
+            "localhost"
+          ],
+          "shutdown_document": true,
+          "cases": [
+            {
+              "name": "simple",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0",
+                "width": 645,
+                "height": 395
+              },
+              "m6_equivalence": {
+                "simple.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "colours",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0",
+                "width": 645,
+                "height": 300
+              },
+              "m6_equivalence": {
+                "assembly-1-Register_colour_plates/colour_1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/colour_2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "mounted",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0",
+                "width": 645,
+                "height": 300
+              },
+              "m6_equivalence": {
+                "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+                  "category": "B",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "old-browser",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0",
+                "width": 645,
+                "height": 395
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            }
+          ],
+          "full_raw_report": "670aad80fe5fe648f802fa429aa67c55ea2b538a/macos-arm64/safari/safari-qa.json"
+        }
+      },
+      "host/host-qa.json": {
+        "passed": true,
+        "platform": "posix",
+        "checks": [
+          "embedded HTTP assets",
+          "WASM MIME",
+          "COOP/COEP/CSP on successful and cached responses",
+          "gzip including q=0",
+          "HEAD",
+          "unsafe paths rejected",
+          "foreign Host/Origin rejected",
+          "read-only methods",
+          "production bundle excludes legacy editor",
+          "lease nonce/Origin guard",
+          "duplicate launch without second server",
+          "stdin EOF closes launcher and server",
+          "stable saved origin",
+          "atomic occupied-port fallback preserves old draft address",
+          "damaged settings refused without deletion",
+          "background connection survives idle grace",
+          "last tab disconnect automatically ends launcher and server"
+        ]
+      },
+      "lifecycle/lifecycle-qa.json": {
+        "platform": "darwin",
+        "checks": [
+          "Six simultaneous launches produce one server and five duplicate refusals",
+          "Transient socket closure recovers the same live session instead of ending the document",
+          "Reload preserves the live session and exact saved project",
+          "Two projects save independently; closing one tab keeps the other alive",
+          "Quitting ends the old document and its main worker contexts",
+          "Launching from an updated folder preserves the origin and exact browser draft",
+          "Closing the last tab automatically ends launcher and server"
+        ],
+        "passed": true
+      },
+      "os-version.txt": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83\n",
+      "gatekeeper.txt": "extracted/Stencil Studio.app: rejected\n",
+      "architectures.txt": "extracted/Stencil Studio.app/Contents/MacOS/stencil-studio: Mach-O 64-bit executable arm64\nextracted/Stencil Studio.app/Contents/Resources/stencil:    Mach-O 64-bit executable arm64\n",
+      "after-gui-close.txt": "",
+      "runtime_archive": {
+        "file": "StencilStudio-macOS-Apple-Silicon.zip",
+        "platform": "macos-arm64",
+        "source_commit": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
+        "bytes": 7845887,
+        "sha256": "a58ca2840ae07ae6c9fb7dbdcd7bdc8a64056ab7a6296392d57dcd9be36a50ad",
+        "etsy_limit_bytes": 20000000,
+        "fits_etsy_limit": true,
+        "signing": {
+          "developer_id_signed": false,
+          "notarized": false,
+          "ad_hoc_signed": true
+        },
+        "backend_bytes": 15350576,
+        "launcher_bytes": 569760
+      }
+    },
+    "macos-x64": {
+      "browsers": {
+        "chromium": {
+          "passed": true,
+          "qualification": "passed",
+          "version": "156.0.8078.4",
+          "initial_engine": {
+            "n": 2,
+            "why": "threaded",
+            "version": "2.9.4"
+          },
+          "limitations": [],
+          "navigation_observer_errors": [],
+          "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+          "shutdown_document": true,
+          "consoleErrors": [],
+          "cases": [
+            {
+              "name": "simple",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 517
+              },
+              "m6_equivalence": {
+                "simple.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "vector",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {
+                "vector.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "tones",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 517
+              },
+              "m6_equivalence": {
+                "tones.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "colours",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 389
+              },
+              "m6_equivalence": {
+                "assembly-1-Register_colour_plates/colour_1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/colour_2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "first",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 415
+              },
+              "m6_equivalence": {
+                "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+                  "category": "B",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "mounted",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 415
+              },
+              "m6_equivalence": {
+                "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+                  "category": "B",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "old-browser",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "registered-colour-branches",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 420
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "layout-offsets",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 425
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "shared-hardware-and-multiple-images",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 415
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "detailed-logo",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "transparent",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "photograph",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "text",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 517
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "smooth-vector",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {
+                "smooth-vector.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            }
+          ],
+          "single_thread_passed": true,
+          "batch": {
+            "verified_jobs": 2,
+            "csv_rows": 2,
+            "independent_stl_count": 6,
+            "all_stls_valid": true
+          },
+          "batch_formats": {
+            "passed": true,
+            "counts": {
+              "stl": 6,
+              "png": 2,
+              "svg": 2,
+              "json": 5,
+              "csv": 1
+            }
+          },
+          "full_raw_report": "11819c3b87556ab152f28f351bcc0235bed4f3ea/macos-x64/chromium/package-qa.json"
+        },
+        "chrome": {
+          "passed": true,
+          "qualification": "passed",
+          "version": "151.0.7922.174",
+          "initial_engine": {
+            "n": 2,
+            "why": "threaded",
+            "version": "2.9.4"
+          },
+          "limitations": [],
+          "navigation_observer_errors": [],
+          "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+          "shutdown_document": true,
+          "consoleErrors": [],
+          "cases": [
+            {
+              "name": "simple",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 517
+              },
+              "m6_equivalence": {
+                "simple.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "colours",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 389
+              },
+              "m6_equivalence": {
+                "assembly-1-Register_colour_plates/colour_1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/colour_2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "mounted",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 415
+              },
+              "m6_equivalence": {
+                "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+                  "category": "B",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "old-browser",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            }
+          ],
+          "single_thread_passed": true,
+          "batch": {
+            "verified_jobs": 2,
+            "csv_rows": 2,
+            "independent_stl_count": 6,
+            "all_stls_valid": true
+          },
+          "batch_formats": {
+            "passed": true,
+            "counts": {
+              "stl": 6,
+              "png": 2,
+              "svg": 2,
+              "json": 5,
+              "csv": 1
+            }
+          },
+          "full_raw_report": "11819c3b87556ab152f28f351bcc0235bed4f3ea/macos-x64/chrome/package-qa.json"
+        },
+        "firefox": {
+          "passed": true,
+          "qualification": "passed",
+          "version": "157.0",
+          "initial_engine": {
+            "n": 2,
+            "why": "threaded",
+            "version": "2.9.4"
+          },
+          "limitations": [],
+          "navigation_observer_errors": [],
+          "offline": "Browser requests to every non-loopback host blocked; not an OS-wide network disconnection",
+          "shutdown_document": true,
+          "consoleErrors": [],
+          "cases": [
+            {
+              "name": "simple",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0",
+                "width": 1042,
+                "height": 518
+              },
+              "m6_equivalence": {
+                "simple.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "colours",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0",
+                "width": 1042,
+                "height": 388
+              },
+              "m6_equivalence": {
+                "assembly-1-Register_colour_plates/colour_1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/colour_2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "mounted",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0",
+                "width": 1042,
+                "height": 416
+              },
+              "m6_equivalence": {
+                "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+                  "category": "B",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "old-browser",
+              "passed": true,
+              "webgl": {
+                "version": "WebGL 2.0",
+                "width": 1042,
+                "height": 488
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            }
+          ],
+          "single_thread_passed": true,
+          "batch": {
+            "verified_jobs": 2,
+            "csv_rows": 2,
+            "independent_stl_count": 6,
+            "all_stls_valid": true
+          },
+          "batch_formats": {
+            "passed": true,
+            "counts": {
+              "stl": 6,
+              "png": 2,
+              "svg": 2,
+              "json": 5,
+              "csv": 1
+            }
+          },
+          "full_raw_report": "11819c3b87556ab152f28f351bcc0235bed4f3ea/macos-x64/firefox/package-qa.json"
+        },
+        "safari": {
+          "passed": true,
+          "qualification": "passed_with_software_rendering",
+          "capabilities": {
+            "safari:platformVersion": "15.7.9",
+            "safari:automaticInspection": false,
+            "webkit:WebRTC": {
+              "DisableICECandidateFiltering": false,
+              "DisableInsecureMediaCapture": false
+            },
+            "webkit:alwaysAllowAutoplay": false,
+            "browserVersion": "26.6",
+            "strictFileInteractability": false,
+            "browserName": "Safari",
+            "safari:useSimulator": false,
+            "safari:automaticProfiling": false,
+            "setWindowRect": true,
+            "acceptInsecureCerts": false,
+            "safari:platformBuildVersion": "24G830",
+            "safari:experimentalWebSocketUrl": false,
+            "platformName": "macOS",
+            "safari:diagnose": false
+          },
+          "limitations": [],
+          "resource_hosts": [
+            "localhost"
+          ],
+          "shutdown_document": true,
+          "software_controls": {
+            "passed": true,
+            "actual_canvas_changes": {
+              "camera_top": "1b8afbfd49caf708de6b7216eb534a893dff9da59384767ae1e7aae9426035be",
+              "camera_iso": "747ebebabee827f6968ef6cc69cb0d1a226ee5c87b7991eebc918c114ad61fa9",
+              "wireframe": "871471d3d4da0edc712a9870c7a62541fa841016d13aeddda49d6409ad2e7462",
+              "height_cutaway": "ebf63216961db51839f61c3a873e3d6f432d24edc86f6036e7e79feb50e7fb20",
+              "pointer_orbit": "42dab86bcbe961d26ba94fb3dbb98e97761bf422001f52c55abdbf5888621048"
+            }
+          },
+          "last_capability": {
+            "messages": [],
+            "version": null,
+            "lost": true,
+            "available": false
+          },
+          "cases": [
+            {
+              "name": "simple",
+              "passed": true,
+              "webgl": {
+                "mode": "software",
+                "version": "Canvas 2D software rasterized 3D",
+                "colours": 3,
+                "height": 636,
+                "width": 911,
+                "painted_pixels": 78563
+              },
+              "m6_equivalence": {
+                "simple.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "colours",
+              "passed": true,
+              "webgl": {
+                "mode": "software",
+                "version": "Canvas 2D software rasterized 3D",
+                "colours": 106,
+                "height": 547,
+                "width": 911,
+                "painted_pixels": 81402
+              },
+              "m6_equivalence": {
+                "assembly-1-Register_colour_plates/colour_1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/colour_2.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "mounted",
+              "passed": true,
+              "webgl": {
+                "mode": "software",
+                "version": "Canvas 2D software rasterized 3D",
+                "colours": 137,
+                "height": 573,
+                "width": 911,
+                "painted_pixels": 30464
+              },
+              "m6_equivalence": {
+                "assembly-1-Screws__nuts___plates/bolt_M4x20.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/extender_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/fit_test_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_4holes_M4_30x25mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/joiner_plate_M4_30mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/nut_M4.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/connector_hex_d3mm.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r1c2.stl": {
+                  "category": "B",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c1.stl": {
+                  "category": "A",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                },
+                "assembly-1-Screws__nuts___plates/stencil_r2c2.stl": {
+                  "category": "B",
+                  "exact_surface_equal": true,
+                  "spatial_tolerance_mm": 0,
+                  "maximum_surface_deviation_mm": 0
+                }
+              },
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            },
+            {
+              "name": "old-browser",
+              "passed": true,
+              "webgl": {
+                "mode": "software",
+                "version": "Canvas 2D software rasterized 3D",
+                "colours": 163,
+                "height": 636,
+                "width": 911,
+                "painted_pixels": 84967
+              },
+              "m6_equivalence": {},
+              "independent_checks_completed": true,
+              "lossless_save_reopen": true
+            }
+          ],
+          "full_raw_report": "11819c3b87556ab152f28f351bcc0235bed4f3ea/macos-x64/safari/safari-qa.json"
+        }
+      },
+      "host/host-qa.json": {
+        "passed": true,
+        "platform": "posix",
+        "checks": [
+          "embedded HTTP assets",
+          "WASM MIME",
+          "COOP/COEP/CSP on successful and cached responses",
+          "gzip including q=0",
+          "HEAD",
+          "unsafe paths rejected",
+          "foreign Host/Origin rejected",
+          "read-only methods",
+          "production bundle excludes legacy editor",
+          "lease nonce/Origin guard",
+          "duplicate launch without second server",
+          "stdin EOF closes launcher and server",
+          "stable saved origin",
+          "atomic occupied-port fallback preserves old draft address",
+          "damaged settings refused without deletion",
+          "background connection survives idle grace",
+          "last tab disconnect automatically ends launcher and server"
+        ]
+      },
+      "lifecycle/lifecycle-qa.json": {
+        "platform": "darwin",
+        "checks": [
+          "Six simultaneous launches produce one server and five duplicate refusals",
+          "Transient socket closure recovers the same live session instead of ending the document",
+          "Reload preserves the live session and exact saved project",
+          "Two projects save independently; closing one tab keeps the other alive",
+          "Quitting ends the old document and its main worker contexts",
+          "Launching from an updated folder preserves the origin and exact browser draft",
+          "Closing the last tab automatically ends launcher and server"
+        ],
+        "passed": true
+      },
+      "os-version.txt": "ProductName:\t\tmacOS\nProductVersion:\t\t15.7.9\nBuildVersion:\t\t24G830\n",
+      "gatekeeper.txt": "extracted/Stencil Studio.app: rejected\n",
+      "architectures.txt": "extracted/Stencil Studio.app/Contents/MacOS/stencil-studio: Mach-O 64-bit executable x86_64\nextracted/Stencil Studio.app/Contents/Resources/stencil:    Mach-O 64-bit executable x86_64\n",
+      "after-gui-close.txt": "",
+      "runtime_archive": {
+        "file": "StencilStudio-macOS-Intel.zip",
+        "platform": "macos-x64",
+        "source_commit": "11819c3b87556ab152f28f351bcc0235bed4f3ea",
+        "bytes": 8247583,
+        "sha256": "770fc4fca1d4ca7222d389bbe1337a87fbce5ba16097c4083bdafc623518a86a",
+        "etsy_limit_bytes": 20000000,
+        "fits_etsy_limit": true,
+        "signing": {
+          "developer_id_signed": false,
+          "notarized": false,
+          "ad_hoc_signed": true
+        },
+        "backend_bytes": 16195792,
+        "launcher_bytes": 601968
+      }
+    }
+  },
+  "scope": "Current delivery combines qualified original Windows/ARM runtimes and the repaired Intel runtime. Each platform records its own runtime source.",
+  "regression_counts": {
+    "rust": 173,
+    "web": 250
+  },
+  "regression_run": 41149380221
+}

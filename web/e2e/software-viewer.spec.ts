@@ -39,3 +39,20 @@ test('an already-lost Safari-style context still has real orbitable, clipped, sh
 })
 
 test('a healthy WebGL context retains the accelerated renderer',async({page})=>{await open(page);await expect(page.locator('.mesh-preview canvas')).toHaveAttribute('data-renderer','webgl')})
+
+test('software assembly inspection retains perspective, hidden parts, wireframe and layout guides',async({page},testInfo)=>{
+ await page.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type:any,...args:any[]):any{return type==='webgl2'?null:(original as any).call(this,type,...args)}as any})
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(String(e)))
+ await page.goto('/');await page.setInputFiles('[aria-label="Open project file"]','../docs/m7/acceptance/layout-offsets.json');await expect(page.getByRole('link',{name:'Export ZIP',exact:true})).toHaveAttribute('aria-disabled','false',{timeout:90000})
+ await page.getByRole('tab',{name:'3D',exact:true}).click();await page.getByRole('button',{name:'Inspect assembled parts',exact:true}).click()
+ const canvas=page.locator('.viewer canvas'),picture=()=>canvas.evaluate(c=>(c as HTMLCanvasElement).toDataURL())
+ const colours=()=>canvas.evaluate(c=>{const v=c as HTMLCanvasElement,d=v.getContext('2d')!.getImageData(0,0,v.width,v.height).data,s=new Set();for(let i=0;i<d.length;i+=4)s.add(d[i]+','+d[i+1]+','+d[i+2]);return s.size})
+ await expect(canvas).toHaveAttribute('data-renderer','software');await expect(page.locator('.v3status')).toHaveCount(0);await expect(canvas).toHaveAttribute('data-render-frame',/^[1-9]/)
+ await expect.poll(colours).toBeGreaterThan(3)
+ await page.screenshot({path:testInfo.outputPath('software-assembly.png')})
+ const before=await picture();await page.locator('.v3options>summary').click();await page.locator('.v3').getByRole('button',{name:'Top',exact:true}).click();await expect.poll(picture).not.toBe(before)
+ const top=await picture();await page.locator('.v3').getByRole('checkbox',{name:'wireframe',exact:true}).check();await expect.poll(picture).not.toBe(top);await page.locator('.v3').getByRole('checkbox',{name:'wireframe',exact:true}).uncheck()
+ await page.locator('.v3parts').getByRole('button',{name:'none',exact:true}).click();await expect.poll(()=>canvas.evaluate(c=>{const v=c as HTMLCanvasElement,d=v.getContext('2d')!.getImageData(0,0,v.width,v.height).data;return d.some((a,i)=>i%4===3&&a!==255)})).toBe(false)
+ // Assembly scene has an opaque background; hiding all solids leaves one colour.
+ await expect.poll(colours).toBe(1);await page.locator('.v3parts').getByRole('button',{name:'all',exact:true}).click();await expect.poll(colours).toBeGreaterThan(3);expect(errors).toEqual([])
+})
