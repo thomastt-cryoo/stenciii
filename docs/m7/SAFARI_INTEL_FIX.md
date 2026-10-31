@@ -36,3 +36,5 @@ Actual Safari screenshot: [software 3D with native pointer orbit](https://github
 ## Delivery
 
 Only the Intel runtime ZIP is rebuilt for this follow-up. Windows and Apple Silicon retain their previously qualified runtime bytes; reviewed outer instructions and the checksum file identify each runtime revision. The Quick Start PDF is unchanged. Canonical review downloads remain on `codex/m7-artifacts/m7-current/customer`, with an audited five-file layout and every file below 20,000,000 bytes. Final SHA-256 values are in `distribution/m7/delivery-manifest.json`.
+
+Canonical Intel download: **8,229,294 bytes**, SHA-256 `1d9ff761a82dee967f16a9bd76a7165b5b1ac74459ee844e610099b47db87d7f`. Delivery assembly [41152315330](https://github.com/thomastt-cryoo/stenciii/actions/runs/41152315330) passed. Its member audit verifies all tested app, signature, manifest and notice bytes unchanged; only outer instructions differ.

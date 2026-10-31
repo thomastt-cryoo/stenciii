@@ -4,8 +4,8 @@
   "files": [
     {
       "file": "StencilStudio-Windows-x64.zip",
-      "bytes": 8242785,
-      "sha256": "bb8c5a8a14e6d2acaef36d5e0a39e8b3a1c179fefd3d16f9acd3b37825f935f5",
+      "bytes": 8242951,
+      "sha256": "60acdaf946f14b2f6ac525772b7cc645240a53aa1a2831e698c7949998f850d6",
       "runtime_source_commit": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
       "tested_archive_sha256": "f675a8877673c2cf8925eb2dd1165c7ea9d1d8bfb2f8bf0a9e9aae27628eff09",
       "tested_archive_bytes": 8262443,
@@ -1913,8 +1913,8 @@
     },
     {
       "file": "StencilStudio-macOS-Apple-Silicon.zip",
-      "bytes": 7832696,
-      "sha256": "c602b64f5894fea31b3e75511e61f3e6825074ed557e678573c0b5b09b23655a",
+      "bytes": 7832862,
+      "sha256": "d45b2086de195710e8ed3b471b22ac52a337bf3d8931651f5dbd98173defc63d",
       "runtime_source_commit": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
       "tested_archive_sha256": "a58ca2840ae07ae6c9fb7dbdcd7bdc8a64056ab7a6296392d57dcd9be36a50ad",
       "tested_archive_bytes": 7845887,
@@ -3832,11 +3832,11 @@
     },
     {
       "file": "StencilStudio-macOS-Intel.zip",
-      "bytes": 8225479,
-      "sha256": "21298dcc72cbb397854989886cad2f942b0ba2320a1c2d8d85db4c186beb8d1c",
-      "runtime_source_commit": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
-      "tested_archive_sha256": "e632e643d64f3c152a4dd2f970866f14d6a3e94ba82b20e166cf034cdd6f96ee",
-      "tested_archive_bytes": 8242918,
+      "bytes": 8229294,
+      "sha256": "1d9ff761a82dee967f16a9bd76a7165b5b1ac74459ee844e610099b47db87d7f",
+      "runtime_source_commit": "11819c3b87556ab152f28f351bcc0235bed4f3ea",
+      "tested_archive_sha256": "770fc4fca1d4ca7222d389bbe1337a87fbce5ba16097c4083bdafc623518a86a",
+      "tested_archive_bytes": 8247583,
       "unchanged_runtime_and_notice_files": [
         {
           "path": "Stencil Studio.app/Contents/Info.plist",
@@ -3846,12 +3846,12 @@
         {
           "path": "Stencil Studio.app/Contents/MacOS/stencil-studio",
           "bytes": 601968,
-          "sha256": "d7edc974594cf08a1be4f2db0a9f4c2cd5399a92fd637a6948cc256ab06ceda4"
+          "sha256": "acf533b243fbc83fa64bdfb96fbf6e8738fb89e64b1ac714dedaf991725f9c58"
         },
         {
           "path": "Stencil Studio.app/Contents/Resources/build-info.json",
           "bytes": 297,
-          "sha256": "55f25d7b90f60e6ea78184c22b0601c220996a5b30c3b230521aaeee609d57c9"
+          "sha256": "1d6d8112ca1bb87c14f334b80d0683ff2639103f25b4805a7670df77c55120d9"
         },
         {
           "path": "Stencil Studio.app/Contents/Resources/licenses/THIRD_PARTY_NOTICES.txt",
@@ -5731,17 +5731,17 @@
         {
           "path": "Stencil Studio.app/Contents/Resources/package-manifest.json",
           "bytes": 74897,
-          "sha256": "29500562d20316617cf3436395e063e829e27c5f527719d85351e879dec133e5"
+          "sha256": "1bf9c7abaddd7e07b8e2a86f3178f5589deb7a0c46afce0f45ef96bc25cd8546"
         },
         {
           "path": "Stencil Studio.app/Contents/Resources/stencil",
-          "bytes": 16187536,
-          "sha256": "74f7e430d4bfe6df803c94eac120f34afa77c9dc159de77b081c76d2e2575de8"
+          "bytes": 16195792,
+          "sha256": "98aebc8db32bf6661d8caefd022b4a13922829a07cbe16a6486c3cccccfbccf0"
         },
         {
           "path": "Stencil Studio.app/Contents/_CodeSignature/CodeResources",
           "bytes": 113048,
-          "sha256": "d5c62733ecaa155279fc246c79fd371dcbecb4e912cbc70e523cd434eb475ef2"
+          "sha256": "16bac80691994e1b99846f1486735896ef10864d2f2e17feedfc1d34c30aa5c5"
         }
       ],
       "changes": [
@@ -5757,7 +5757,7 @@
     {
       "file": "Read Me and Checksums.txt",
       "bytes": 700,
-      "sha256": "038b3a8c986e39520789bb112dfd4cb5f14d1e81b3e871c6dbba3c8a09f0ab88"
+      "sha256": "0ba438c28064392608a17ed99b77408fc46e51c85dc6cbd5b12a41d3175a975b"
     }
   ]
 }

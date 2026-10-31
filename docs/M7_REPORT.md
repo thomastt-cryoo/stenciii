@@ -36,15 +36,15 @@ Windows: launcher, `Studio Support/`, `Read First.txt` and `Platform Test Record
 
 ## 7-8. Exact delivered sizes and SHA-256
 
-Windows and Apple Silicon retain runtime source `670aad80fe5fe648f802fa429aa67c55ea2b538a`; the updated Intel runtime uses `11819c3b87556ab152f28f351bcc0235bed4f3ea`. The Intel follow-up and per-platform current records are in [the repair report](m7/SAFARI_INTEL_FIX.md). The five final files and exact hashes are recorded in [delivery-manifest.json](../distribution/m7/delivery-manifest.json). The canonical compressed bytes come from delivery assembly run [41134317606](https://github.com/thomastt-cryoo/stenciii/actions/runs/41134317606), source `a87c391e7ea3f059f525bbd63150842e5b3100c5`. Archive bytes differed between the local and CI Python environments; the final local files were replaced with the retained CI bytes and rehashed. All runtime/notice member hashes matched in both assemblies. Its per-member audit proves that adding the reviewed outer instructions did not change a tested runtime, signature, manifest, permission or license file. The checksum text hashes the other four deliverables; its own hash appears in the manifest/report to avoid a circular self-hash.
+Windows and Apple Silicon retain runtime source `670aad80fe5fe648f802fa429aa67c55ea2b538a`; the updated Intel runtime uses `11819c3b87556ab152f28f351bcc0235bed4f3ea`. The Intel follow-up and per-platform current records are in [the repair report](m7/SAFARI_INTEL_FIX.md). The five final files and exact hashes are recorded in [delivery-manifest.json](../distribution/m7/delivery-manifest.json). The canonical compressed bytes come from delivery assembly run [41152315330](https://github.com/thomastt-cryoo/stenciii/actions/runs/41152315330), source `c564527455367c855ae5517e7e6d8695c52a60ca`. Archive bytes differed between the local and CI Python environments; the final local files were replaced with the retained CI bytes and rehashed. All runtime/notice member hashes matched in both assemblies. Its per-member audit proves that adding the reviewed outer instructions did not change a tested runtime, signature, manifest, permission or license file. The checksum text hashes the other four deliverables; its own hash appears in the manifest/report to avoid a circular self-hash.
 
 | Final deliverable | Exact bytes | SHA-256 |
 |---|---:|---|
-| StencilStudio-Windows-x64.zip | 8,242,785 | `bb8c5a8a14e6d2acaef36d5e0a39e8b3a1c179fefd3d16f9acd3b37825f935f5` |
-| StencilStudio-macOS-Apple-Silicon.zip | 7,832,696 | `c602b64f5894fea31b3e75511e61f3e6825074ed557e678573c0b5b09b23655a` |
-| StencilStudio-macOS-Intel.zip | 8,225,479 | `21298dcc72cbb397854989886cad2f942b0ba2320a1c2d8d85db4c186beb8d1c` |
+| StencilStudio-Windows-x64.zip | 8,242,951 | `60acdaf946f14b2f6ac525772b7cc645240a53aa1a2831e698c7949998f850d6` |
+| StencilStudio-macOS-Apple-Silicon.zip | 7,832,862 | `d45b2086de195710e8ed3b471b22ac52a337bf3d8931651f5dbd98173defc63d` |
+| StencilStudio-macOS-Intel.zip | 8,229,294 | `1d9ff761a82dee967f16a9bd76a7165b5b1ac74459ee844e610099b47db87d7f` |
 | StencilStudio-Quick-Start.pdf | 43,171 | `89868c6d2cebf0684ee81591a603c457398744fd008269387e226ea8d38f6a03` |
-| Read Me and Checksums.txt | 700 | `038b3a8c986e39520789bb112dfd4cb5f14d1e81b3e871c6dbba3c8a09f0ab88` |
+| Read Me and Checksums.txt | 700 | `0ba438c28064392608a17ed99b77408fc46e51c85dc6cbd5b12a41d3175a975b` |
 
 Final tested runtime ZIPs before the outer instruction update:
 
@@ -52,7 +52,7 @@ Final tested runtime ZIPs before the outer instruction update:
 |---|---:|---|
 | windows-x64 | 8,262,443 | `f675a8877673c2cf8925eb2dd1165c7ea9d1d8bfb2f8bf0a9e9aae27628eff09` |
 | macos-arm64 | 7,845,887 | `a58ca2840ae07ae6c9fb7dbdcd7bdc8a64056ab7a6296392d57dcd9be36a50ad` |
-| macos-x64 | 8,242,918 | `e632e643d64f3c152a4dd2f970866f14d6a3e94ba82b20e166cf034cdd6f96ee` |
+| macos-x64 | 8,247,583 | `770fc4fca1d4ca7222d389bbe1337a87fbce5ba16097c4083bdafc623518a86a` |
 
 Historical candidates retained for provenance (not the final delivery):
 
@@ -152,7 +152,7 @@ Windows executables are unsigned. The locally built normal launch showed no Smar
 | 41129672908 | Full preserved CI for repaired runtime | Passed 173 Rust + 248 browser tests; deploy skipped |
 | 41128683600 | Preserved standard CI after harness/workflow changes | Passed; not substituted for the repaired-source result above |
 
-Raw reports, generated exports, screenshots and exact candidate ZIPs are retained on [`codex/m7-artifacts`](https://github.com/thomastt-cryoo/stenciii/tree/codex/m7-artifacts), under each QA source SHA/platform. This avoids relying only on expiring Actions artifacts. Source and review are tracked in [PR 1](https://github.com/thomastt-cryoo/stenciii/pull/1). [Complete M7 CI run snapshot](m7/evidence/ci-runs.json) includes every run on the milestone branch, including skipped producer workflows and earlier failed attempts. No test failure is relabeled as a successful browser qualification. Delivery assembly [41134317606](https://github.com/thomastt-cryoo/stenciii/actions/runs/41134317606) passed and retained the canonical five-file layout on the artifact branch. [Assembly evidence](m7/evidence/delivery-assembly.json) records all five canonical delivery hashes and their durable artifact commit. The final documentation/delivery assembly does not alter application source after the fully tested runtime commit.
+Raw reports, generated exports, screenshots and exact candidate ZIPs are retained on [`codex/m7-artifacts`](https://github.com/thomastt-cryoo/stenciii/tree/codex/m7-artifacts), under each QA source SHA/platform. This avoids relying only on expiring Actions artifacts. Source and review are tracked in [PR 1](https://github.com/thomastt-cryoo/stenciii/pull/1). [Complete M7 CI run snapshot](m7/evidence/ci-runs.json) includes every run on the milestone branch, including skipped producer workflows and earlier failed attempts. No test failure is relabeled as a successful browser qualification. Delivery assembly [41152315330](https://github.com/thomastt-cryoo/stenciii/actions/runs/41152315330) passed and retained the canonical five-file layout on the artifact branch. [Assembly evidence](m7/evidence/delivery-assembly.json) records all five canonical delivery hashes and their durable artifact commit. The final documentation/delivery assembly does not alter application source after the fully tested runtime commit.
 
 ## 20. Remaining limits
 

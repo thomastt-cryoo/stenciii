@@ -1,25 +1,29 @@
 {
-  "run": 41134317606,
+  "run": 41152315330,
   "conclusion": "success",
-  "assembly_source": "a87c391e7ea3f059f525bbd63150842e5b3100c5",
-  "runtime_source": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
-  "durable_artifact_commit": "0b3798a4a96a37917b795ab3db36d7d18e05bb83",
+  "assembly_source": "c564527455367c855ae5517e7e6d8695c52a60ca",
+  "runtime_sources": {
+    "windows-x64": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
+    "macos-arm64": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
+    "macos-x64": "11819c3b87556ab152f28f351bcc0235bed4f3ea"
+  },
+  "durable_artifact_commit": "e2511ed68a0ec931b09c08f867f59a8f78100338",
   "indexed_downloads": "https://github.com/thomastt-cryoo/stenciii/tree/codex/m7-artifacts/m7-current/customer",
   "files": [
     {
       "file": "StencilStudio-Windows-x64.zip",
-      "bytes": 8242785,
-      "sha256": "bb8c5a8a14e6d2acaef36d5e0a39e8b3a1c179fefd3d16f9acd3b37825f935f5"
+      "bytes": 8242951,
+      "sha256": "60acdaf946f14b2f6ac525772b7cc645240a53aa1a2831e698c7949998f850d6"
     },
     {
       "file": "StencilStudio-macOS-Apple-Silicon.zip",
-      "bytes": 7832696,
-      "sha256": "c602b64f5894fea31b3e75511e61f3e6825074ed557e678573c0b5b09b23655a"
+      "bytes": 7832862,
+      "sha256": "d45b2086de195710e8ed3b471b22ac52a337bf3d8931651f5dbd98173defc63d"
     },
     {
       "file": "StencilStudio-macOS-Intel.zip",
-      "bytes": 8225479,
-      "sha256": "21298dcc72cbb397854989886cad2f942b0ba2320a1c2d8d85db4c186beb8d1c"
+      "bytes": 8229294,
+      "sha256": "1d9ff761a82dee967f16a9bd76a7165b5b1ac74459ee844e610099b47db87d7f"
     },
     {
       "file": "StencilStudio-Quick-Start.pdf",
@@ -29,7 +33,7 @@
     {
       "file": "Read Me and Checksums.txt",
       "bytes": 700,
-      "sha256": "038b3a8c986e39520789bb112dfd4cb5f14d1e81b3e871c6dbba3c8a09f0ab88"
+      "sha256": "0ba438c28064392608a17ed99b77408fc46e51c85dc6cbd5b12a41d3175a975b"
     }
   ],
   "exact_runtime_and_notice_members_verified": true,
