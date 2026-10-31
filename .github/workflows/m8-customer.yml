@@ -85,6 +85,7 @@ jobs:
         with:
           ref: codex/m7-artifacts
           path: retained
+          sparse-checkout: m7-current/customer
       - name: Assemble and audit five files without changing tested ZIPs
         run: python scripts/m8/finalize_delivery.py --source retained/m7-current/customer --out out/customer
       - name: Require canonical manifest identity

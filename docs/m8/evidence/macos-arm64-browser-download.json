@@ -1,0 +1,12 @@
+{
+  "url": "https://raw.githubusercontent.com/thomastt-cryoo/stenciii/e2511ed68a0ec931b09c08f867f59a8f78100338/m7-current/customer/StencilStudio-macOS-Apple-Silicon.zip",
+  "method": "Installed Chrome, native CDP download directory; no saveAs or origin stamping",
+  "file": "/Users/runner/work/stenciii/stenciii/work/download/StencilStudio-macOS-Apple-Silicon.zip",
+  "headless": false,
+  "browser": "156.0.8078.74",
+  "navigation": "Error: page.goto: Download is starting\nCall log:\n  - navigating to \"https://raw.githubusercontent.com/thomastt-cryoo/stenciii/e2511ed68a0ec931b09c08f867f59a8f78100338/m7-current/customer/StencilStudio-macOS-Apple-Silicon.zip\", waiting until \"load\"\n",
+  "suggestedFilename": "StencilStudio-macOS-Apple-Silicon.zip",
+  "bytes": 7832862,
+  "sha256": "d45b2086de195710e8ed3b471b22ac52a337bf3d8931651f5dbd98173defc63d",
+  "passed": true
+}

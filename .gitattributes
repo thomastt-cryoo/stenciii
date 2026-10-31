@@ -1,0 +1,5 @@
+# Preserve delivery/evidence bytes across Windows and Unix checkouts.
+*.pdf binary
+*.png binary
+*.gz binary
+*.zip binary
