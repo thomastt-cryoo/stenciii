@@ -4,7 +4,7 @@ Use the browser-downloaded, byte-verified M7 ZIP. Preserve failures/limitations.
 No global security exception, spctl disable, xattr deletion, or re-signing.
 """
 from pathlib import Path
-import subprocess,json,sys,time,os
+import subprocess,json,sys,time,os,urllib.request
 archive=Path(sys.argv[1]).resolve();out=Path(sys.argv[2]).resolve();out.mkdir(parents=True,exist_ok=True)
 report={'archive':str(archive),'global_security_changes':False,'quarantine_removed':False,'app_specific_approval_verified':False}
 def run(*args,timeout=35):
@@ -13,6 +13,9 @@ def run(*args,timeout=35):
   return {'code':p.returncode,'stdout':p.stdout.strip(),'stderr':p.stderr.strip()}
  except subprocess.TimeoutExpired as e:return {'timeout':True,'stdout':str(e.stdout or ''),'stderr':str(e.stderr or '')}
 def apple(code):return run('osascript','-e',code)
+def screen_action(label,button,guard):
+ path=out/(label+'.png');run('screencapture','-x',str(path))
+ return run('swift','scripts/m8/mac_ui.swift',str(path),button,guard,timeout=70)
 def snapshot(label):
  run('screencapture','-x',str(out/(label+'.png')))
  return apple('''tell application "System Events"
@@ -64,20 +67,22 @@ if exists process "CoreServicesUIAgent" then
 end if
 end tell''')
   report['dismiss_escape']=apple('tell application "System Events" to key code 53')
+  report['dismiss_native']=screen_action('dismiss-observation','Done','Stencil Studio')
   report['settings_open']=run('open','x-apple.systempreferences:com.apple.preference.security?Privacy')
-  time.sleep(6);report['settings_ui']=snapshot('privacy-security')
+  time.sleep(6);report['settings_scroll']=run('swift','scripts/m8/mac_ui.swift','scroll',timeout=70)
+  time.sleep(2);report['settings_ui']=snapshot('privacy-security')
   # Require the app's name in the pane before selecting its exception button.
   report['open_anyway']=apple('''tell application "System Events" to tell process "System Settings"
 set frontmost to true
-set items to entire contents of window 1
+set uiElements to entire contents of window 1
 set matched to false
-repeat with e in items
+repeat with e in uiElements
  try
   if (name of e as text) contains "Stencil Studio" then set matched to true
  end try
 end repeat
 if not matched then error "No Stencil Studio-specific approval text in pane"
-repeat with e in items
+repeat with e in uiElements
  try
   if role of e is "AXButton" and name of e is "Open Anyway" then
    click e
@@ -87,7 +92,10 @@ repeat with e in items
 end repeat
 error "App-specific Open Anyway not available"
 end tell''')
+  if report['open_anyway']['code']!=0:
+   report['open_anyway_native']=screen_action('open-anyway-observation','Open Anyway','Stencil Studio')
   time.sleep(3);report['confirmation_ui']=snapshot('approval-confirmation')
+  report['confirm_native']=screen_action('confirm-observation','Open','Stencil Studio')
   # Confirmation/authentication can require a human. Do not enter credentials or
   # claim success merely because an Open Anyway button existed.
   report['confirm_open']=apple('''tell application "System Events"
@@ -109,7 +117,14 @@ end repeat
 end tell''')
   time.sleep(7);report['approved_pids']=run('pgrep','-x','stencil-studio');report['after_ui']=snapshot('after-approval')
   report['backend_listeners']=run('lsof','-a','-c','stencil','-iTCP','-sTCP:LISTEN')
-  report['app_specific_approval_verified']=report['open_anyway']['code']==0 and report['approved_pids']['code']==0 and report['backend_listeners']['code']==0
+  approved=report['open_anyway']['code']==0 or report.get('open_anyway_native',{}).get('code')==0
+  report['app_specific_approval_verified']=approved and report['approved_pids']['code']==0 and report['backend_listeners']['code']==0
+  startup=archive.parent/'security-profile/startup.json'
+  if report['app_specific_approval_verified'] and startup.exists():
+   port=json.loads(startup.read_text())['port']
+   with urllib.request.urlopen(f'http://localhost:{port}/',timeout=10)as response:
+    report['approved_HTTP']={'status':response.status,'editor_html':b'<html' in response.read()}
+   report['app_specific_approval_verified']=report['approved_HTTP']['status']==200 and report['approved_HTTP']['editor_html']
  else:
   report['limitation']='No blocked, quarantined assessment available for the approval walkthrough; no launch pass inferred from a process ID'
  report['quarantine_after']=run('xattr','-p','com.apple.quarantine',str(app))
