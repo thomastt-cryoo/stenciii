@@ -1,0 +1,24 @@
+{
+  "application_source": "11819c3b87556ab152f28f351bcc0235bed4f3ea",
+  "platform": "Windows 11 Home 10.0.26300",
+  "browser": "Playwright Chromium pinned by web/package-lock.json",
+  "results": [
+    {
+      "name": "already-lost context retains real mesh pixels, camera presets, orbit, smooth/flat shading, wireframe, cutaways and artwork comparison",
+      "passed": true,
+      "exported_STL_bytes_unchanged": true,
+      "page_errors": []
+    },
+    {
+      "name": "healthy WebGL retains accelerated renderer",
+      "passed": true
+    },
+    {
+      "name": "software perspective assembly, part hiding/restoration, wireframe and layout guides",
+      "passed": true,
+      "page_errors": [],
+      "hidden_scene_colours": 1
+    }
+  ],
+  "scope": "First two cases passed together in 13.5 seconds; strengthened assembly case passed in 10.5 seconds. These are local renderer regressions, not physical Intel GPU qualification."
+}

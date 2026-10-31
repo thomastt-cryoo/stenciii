@@ -2,7 +2,9 @@
 from pathlib import Path
 import json
 ROOT=Path(__file__).resolve().parents[2]
-matrix=json.loads((ROOT/'docs/m7/evidence/final-browser-matrix.json').read_text(encoding='utf-8'))
+matrix_file=ROOT/'docs/m7/evidence/current-browser-matrix.json'
+if not matrix_file.is_file():matrix_file=ROOT/'docs/m7/evidence/final-browser-matrix.json'
+matrix=json.loads(matrix_file.read_text(encoding='utf-8'))
 assert set(matrix['platforms'])=={'windows-x64','macos-arm64','macos-x64'}
 lines=['STENCIL STUDIO - M7 PLATFORM TEST RECORD','Review date: 31 October 2026','',
  'This is the offline browser edition. The small Windows/Mac app is its launcher;',
@@ -17,6 +19,7 @@ for platform,item in matrix['platforms'].items():
     for name,browser in item['browsers'].items():
         version=browser.get('version',browser.get('capabilities',{}).get('browserVersion','not recorded'))
         if not browser['passed']:status='PARTIAL / NOT QUALIFIED: actual 3D preview failed; use Chrome'
+        elif browser.get('qualification')=='passed_with_software_rendering':status='PASSED with software 3D rendering, including actual pixel/control checks'
         elif browser.get('limitations'):status='PARTIAL: generation/save/reload passed; 3D was unavailable on this runner'
         else:status='PASSED processing, exports, saved projects and actual 3D'
         lines.append(f'  {name}: {version} - {len(browser["cases"])} project(s). {status}.')
@@ -30,7 +33,10 @@ lines+=['WHAT THE RESULTS MEAN','',
  'Windows Firefox could not create WebGL2 even on an independent empty canvas',
  'on the hosted test system. Its 3D preview is not qualified there; Chrome/Edge',
  'passed the complete preview path. Browser graphics settings were not forced.',
- 'Safari on Intel did not pass its 3D preview check; use Chrome on Intel Mac.',
+ ('Intel Safari passed with software 3D rendering. If its graphics driver is not'if matrix['platforms']['macos-x64']['browsers']['safari']['passed']else'Safari on Intel did not pass its 3D preview check; use Chrome on Intel Mac.'),
+ ('usable, the viewer draws the same STL using a depth-buffered software path.'if matrix['platforms']['macos-x64']['browsers']['safari']['passed']else''),
+ ('Software preview uses CSS-pixel resolution and may rotate more slowly on large'if matrix['platforms']['macos-x64']['browsers']['safari']['passed']else''),
+ ('meshes. Exported models keep their original geometry and full resolution.'if matrix['platforms']['macos-x64']['browsers']['safari']['passed']else''),
  'Do not infer full browser support from a successful app launch alone.',
  '',
  'The exact Windows download also passed a Windows 11 package sample containing',
@@ -38,7 +44,7 @@ lines+=['WHAT THE RESULTS MEAN','',
  'downloads, lossless reopen, 3D, forced single-thread fallback and a two-job',
  'STL/PNG/SVG/JSON/CSV sweep. All 17 host checks and seven damage/removal checks',
  'passed there. A same-source local Windows build passed all 139 production tests.',
- 'Full shared CI for the repaired source passed 173 Rust and 248 browser tests.',
+ f"Shared CI for the viewer repair passed {matrix.get('regression_counts',{}).get('rust',173)} Rust and {matrix.get('regression_counts',{}).get('web',248)} browser tests.",
  '',
  'Windows 10, older macOS releases and corporate-managed browser/security policies',
  'were not exercised. The Mac build target is 13.3; that is not a test certificate',
@@ -76,7 +82,8 @@ lines+=['WHAT THE RESULTS MEAN','',
  'and required MPL source archives are included. Checksums detect damaged files;',
  'they are not publisher signing.',
  '',
- 'Runtime implementation and qualification source:',matrix['qa_source'],
+ 'Runtime implementation and qualification sources:',
+ *[platform+': '+item['runtime_archive']['source_commit']for platform,item in matrix['platforms'].items()],
  'Full technical report: docs/M7_REPORT.md in the source repository.',
  'No hosted editor, release tag, Etsy listing or M8 work was published.','']
 out=ROOT/'docs/m7/customer/PLATFORM_TEST_RECORD.txt';out.write_text('\n'.join(lines),encoding='utf-8',newline='\n');print(out)

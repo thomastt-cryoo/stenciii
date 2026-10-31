@@ -42,7 +42,7 @@ INTEL MAC - macOS 15.7.9 (24G830)
     Observed WASM workers: 2; reason: threaded.
   firefox: 157.0 - 4 project(s). PASSED processing, exports, saved projects and actual 3D.
     Observed WASM workers: 2; reason: threaded.
-  safari: 26.6 - 0 project(s). PARTIAL / NOT QUALIFIED: actual 3D preview failed; use Chrome.
+  safari: 26.6 - 4 project(s). PASSED with software 3D rendering, including actual pixel/control checks.
   Chromium covers 15 representative projects. Other browser counts are
   separate integration samples, not a claim that every control was clicked.
   Real single-thread fallback and a two-job manufacturing sweep were
@@ -53,7 +53,10 @@ WHAT THE RESULTS MEAN
 Windows Firefox could not create WebGL2 even on an independent empty canvas
 on the hosted test system. Its 3D preview is not qualified there; Chrome/Edge
 passed the complete preview path. Browser graphics settings were not forced.
-Safari on Intel did not pass its 3D preview check; use Chrome on Intel Mac.
+Intel Safari passed with software 3D rendering. If its graphics driver is not
+usable, the viewer draws the same STL using a depth-buffered software path.
+Software preview uses CSS-pixel resolution and may rotate more slowly on large
+meshes. Exported models keep their original geometry and full resolution.
 Do not infer full browser support from a successful app launch alone.
 
 The exact Windows download also passed a Windows 11 package sample containing
@@ -61,7 +64,7 @@ mounting/hardware, multiple colour branches and Smooth Vector; actual disk
 downloads, lossless reopen, 3D, forced single-thread fallback and a two-job
 STL/PNG/SVG/JSON/CSV sweep. All 17 host checks and seven damage/removal checks
 passed there. A same-source local Windows build passed all 139 production tests.
-Full shared CI for the repaired source passed 173 Rust and 248 browser tests.
+Shared CI for the viewer repair passed 173 Rust and 250 browser tests.
 
 Windows 10, older macOS releases and corporate-managed browser/security policies
 were not exercised. The Mac build target is 13.3; that is not a test certificate
@@ -103,7 +106,9 @@ still require physical calibration. Full third-party notices, font licenses
 and required MPL source archives are included. Checksums detect damaged files;
 they are not publisher signing.
 
-Runtime implementation and qualification source:
-670aad80fe5fe648f802fa429aa67c55ea2b538a
+Runtime implementation and qualification sources:
+windows-x64: 670aad80fe5fe648f802fa429aa67c55ea2b538a
+macos-arm64: 670aad80fe5fe648f802fa429aa67c55ea2b538a
+macos-x64: 11819c3b87556ab152f28f351bcc0235bed4f3ea
 Full technical report: docs/M7_REPORT.md in the source repository.
 No hosted editor, release tag, Etsy listing or M8 work was published.

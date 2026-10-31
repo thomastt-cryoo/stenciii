@@ -20,10 +20,11 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          import shutil
-          source=Path('retained/670aad80fe5fe648f802fa429aa67c55ea2b538a')
+          import shutil,json
+          sources=json.loads(Path('docs/m7/delivery-sources.json').read_text())
           target=Path('candidates');target.mkdir()
-          for platform in ['windows-x64','macos-arm64','macos-x64']:
+          for platform,revision in sources.items():
+              source=Path('retained')/revision
               archives=list((source/platform).glob('StencilStudio-*.zip'));assert len(archives)==1
               p=archives[0];shutil.copyfile(p,target/p.name);shutil.copyfile(p.with_suffix('.json'),target/p.with_suffix('.json').name)
           PY

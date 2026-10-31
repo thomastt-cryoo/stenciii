@@ -5,6 +5,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { toCreasedNormals } from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import type { ArtworkComparison } from './artifacts'
 import { reducedDisplay } from './displayMesh'
+import {createStudioRenderer,type StudioRenderer} from './renderer'
 type View='iso'|'top'|'bottom'|'left'|'right'|'front'|'back'
 type Options={view:View;wire:boolean;shading:string;detail:string;cut:string;height:number;heights:boolean}
 export default function MeshPreview({url,flat,zoom,fit,theme,onZoom,comparison,stats={}}:{url:string;flat:boolean;zoom:number;fit:number;theme:string;onZoom:(v:number)=>void;comparison?:ArtworkComparison;stats?:Record<string,any>}){
@@ -13,13 +14,14 @@ export default function MeshPreview({url,flat,zoom,fit,theme,onZoom,comparison,s
  const [options,setOptions]=useState<Options>({view:'iso',wire:false,shading:'smooth',detail:'auto',cut:'full',height:0,heights:false}),optionRef=useRef(options)
  const [bounds,setBounds]=useState({height:1,triangles:0}),[readyUrl,setReadyUrl]=useState(''),[error,setError]=useState('')
  const [ratio,setRatio]=useState(.5),ratioRef=useRef(.5),layer=Number(stats.layer_height_mm)||.2
+ const [software,setSoftware]=useState(false)
  const request=JSON.stringify([url,flat,fit,theme,comparison?.url,layer]),ready=readyUrl===request&&!error
  useEffect(()=>{optionRef.current=options;applyRef.current?.()},[options])
  useEffect(()=>{ratioRef.current=ratio},[ratio])
  useEffect(()=>{
-  const el=host.current!;let renderer:THREE.WebGLRenderer
+  const el=host.current!;let renderer:StudioRenderer
   setReadyUrl('');setError('')
-  try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:true})}catch{setError('3D rendering is unavailable. The verified STL remains downloadable.');return}
+  try{renderer=createStudioRenderer(true);setSoftware(renderer.mode==='software')}catch{setError('3D rendering is unavailable. The verified STL remains downloadable.');return}
   renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.localClippingEnabled=true
   const scene=new THREE.Scene(),artwork=new THREE.Scene(),camera=new THREE.OrthographicCamera(-1,1,1,-1,.01,100000),controls=new OrbitControls(camera,renderer.domElement)
   camera.zoom=zoom;cameraRef.current=camera;controls.enableRotate=!flat;controls.enableDamping=true;controls.minZoom=.25;controls.maxZoom=5
@@ -73,6 +75,7 @@ export default function MeshPreview({url,flat,zoom,fit,theme,onZoom,comparison,s
  const update=(p:Partial<Options>)=>setOptions(o=>({...o,...p}))
  return <div className="mesh-preview" ref={host} data-ready={ready} data-comparison={!!comparison} data-wireframe={options.wire} data-shading={options.shading} data-detail={options.detail} data-cut={options.cut}>
   {!ready&&!error&&<span className="view-message">Drawing your stencil…</span>}{error&&<p className="view-message" role="alert">{error}</p>}
+  {software&&!error&&<span className="software-renderer-note" role="status">Software 3D preview</span>}
   {!flat&&<details className="view-options"><summary>View Options</summary><div>
    <label>Camera<select aria-label="Camera view" value={options.view} onChange={e=>{const view=e.target.value as View;update({view});presetRef.current?.(view)}}>{(['iso','top','bottom','left','right','front','back'] as View[]).map(v=><option key={v} value={v}>{v==='iso'?'Isometric':v[0].toUpperCase()+v.slice(1)}</option>)}</select></label>
    <button onClick={()=>{presetRef.current?.('iso');update({view:'iso'});onZoom(1)}}>Reset camera</button>

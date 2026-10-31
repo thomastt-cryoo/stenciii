@@ -21,6 +21,9 @@ def wait(script,seconds=180):
     while time.monotonic()<until:
         value=execute(script)
         if value:return value
+        if '.mesh-preview'in script:
+            error=execute('return document.querySelector(".mesh-preview [role=alert]")?.textContent')
+            if error:raise AssertionError('Safari viewer error: '+error)
         time.sleep(.25)
     raise AssertionError('Safari wait expired: '+script+'\n'+str(execute('return document.body.innerText')))
 report={'browser':'Safari','platform':'macOS','cases':[],'limitations':[],'export_method':'actual customer blob links, retrieved through WebDriver; disk downloads qualified separately in Chromium'}
@@ -30,8 +33,15 @@ try:
         except Exception:time.sleep(.25)
     value=command('POST','/session',{'capabilities':{'alwaysMatch':{'browserName':'safari'}}});session=value['sessionId'];report['capabilities']=value['capabilities']
     command('POST',f'/session/{session}/timeouts',{'script':600000,'pageLoad':120000,'implicit':0})
-    host=subprocess.Popen([str(launcher),'--automation','--no-open','--profile-dir',str(out/'profile'),'--port','0','--idle-timeout','0'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=(out/'launcher.log').open('wb'),text=True)
-    ready=json.loads(host.stdout.readline());report['instance']=ready
+    if os.environ.get('M7_GL_MATRIX'):
+        command('POST',f'/session/{session}/url',{'url':os.environ['M7_SAFARI_URL']})
+        report['graphics_matrix']=execute('''const rows=[];for(const type of ['webgl2','webgl'])for(const antialias of [true,false])for(const alpha of [true,false])for(const powerPreference of ['default','low-power','high-performance']){const c=document.createElement('canvas'),errors=[];c.addEventListener('webglcontextcreationerror',e=>errors.push(e.statusMessage));const attributes={antialias,alpha,powerPreference},g=c.getContext(type,attributes);let pixel=null;if(g&&!g.isContextLost()){g.clearColor(.25,.5,.75,1);g.clear(g.COLOR_BUFFER_BIT);const p=new Uint8Array(4);g.readPixels(0,0,1,1,g.RGBA,g.UNSIGNED_BYTE,p);pixel=Array.from(p)}rows.push({type,attributes,object:!!g,lost:g?.isContextLost(),version:g?.getParameter(g.VERSION),precision:g?.getShaderPrecisionFormat(g.VERTEX_SHADER,g.HIGH_FLOAT)?.precision,pixel,errors});g?.getExtension('WEBGL_lose_context')?.loseContext()}return rows''')
+    if os.environ.get('M7_SAFARI_URL'):
+        ready={'url':os.environ['M7_SAFARI_URL']};report['hosting']='diagnostic production assets, not customer-package qualification'
+    else:
+        host=subprocess.Popen([str(launcher),'--automation','--no-open','--profile-dir',str(out/'profile'),'--port','0','--idle-timeout','0'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=(out/'launcher.log').open('wb'),text=True)
+        ready=json.loads(host.stdout.readline())
+    report['instance']=ready
     index=json.loads((ROOT/'docs/m7/acceptance/index.json').read_text())
     selected=(os.environ.get('M7_CASES')or'simple,colours,mounted,old-browser').split(',')
     fixtures=[r for r in index if r['name']in selected];assert len(fixtures)==len(selected)
@@ -43,6 +53,7 @@ try:
         execute('localStorage.removeItem("stencil-studio.project.v1")')
         command('POST',f'/session/{session}/refresh',{})
         wait('return !!Array.from(document.querySelectorAll("button")).find(e=>e.textContent==="Choose Image"&&!e.disabled)')
+        execute('globalThis.__m7RendererErrors=[];globalThis.__m7ConsoleErrors=[];const original=console.error;console.error=(...args)=>{globalThis.__m7ConsoleErrors.push(args.map(e=>String(e?.stack||e)).join(" "));original.apply(console,args)}')
         raw=json.loads((ROOT/'docs/m7/acceptance'/fixture['project']).read_text())
         execute('const input=document.querySelector("[aria-label=\\\"Open project file\\\"]"),dt=new DataTransfer();dt.items.add(new File([JSON.stringify(arguments[0])],"Safari project.json",{type:"application/json"}));input.files=dt.files;input.dispatchEvent(new Event("change",{bubbles:true}));',raw)
         href=wait('return Array.from(document.querySelectorAll("a")).find(e=>/^Export (STL|ZIP)$/.test(e.textContent)&&e.getAttribute("aria-disabled")==="false")?.href',480)
@@ -52,9 +63,19 @@ try:
         label=execute('return Array.from(document.querySelectorAll("a")).find(e=>e.href===arguments[0])?.textContent',href)
         assert label in('Export STL','Export ZIP')
         file=out/(fixture['name']+('.zip'if label=='Export ZIP'else'.stl'));file.write_bytes(base64.b64decode(data));proof=prove(file,ROOT/fixture['m6_output']if fixture['m6_output']else None)
-        capability=execute('const c=document.createElement("canvas"),messages=[];c.addEventListener("webglcontextcreationerror",e=>messages.push(e.statusMessage));const g=c.getContext("webgl2",{antialias:true,alpha:true});const r={available:!!g,messages,version:g?.getParameter(g.VERSION)};g?.getExtension("WEBGL_lose_context")?.loseContext();return r')
+        capability=execute('const c=document.createElement("canvas"),messages=[];c.addEventListener("webglcontextcreationerror",e=>messages.push(e.statusMessage));const g=c.getContext("webgl2",{antialias:true,alpha:true}),version=g?.getParameter(g.VERSION),precision=g?.getShaderPrecisionFormat(g.VERTEX_SHADER,g.HIGH_FLOAT);const r={available:!!g&&!g.isContextLost()&&!!version&&!!precision,messages,version,lost:g?.isContextLost()};g?.getExtension("WEBGL_lose_context")?.loseContext();return r')
+        report['last_capability']=capability
         execute('Array.from(document.querySelectorAll("[role=tab]")).find(e=>e.textContent==="3D").click()')
-        if capability['available']:
+        wait('return document.querySelector(".mesh-preview")?.dataset.ready==="true"')
+        mode=execute('return document.querySelector(".mesh-preview canvas")?.dataset.renderer')
+        if mode=='software':
+            wait('return document.querySelector(".mesh-preview")?.dataset.ready==="true"&&Number(document.querySelector(".mesh-preview canvas")?.dataset.renderFrame)>0')
+            gl=execute('const c=document.querySelector(".mesh-preview canvas"),p=c.getContext("2d").getImageData(0,0,c.width,c.height).data;let painted=0;const colours=new Set();for(let i=0;i<p.length;i+=4)if(p[i+3]){painted++;colours.add(p[i]+","+p[i+1]+","+p[i+2])}return {mode:"software",version:"Canvas 2D software rasterized 3D",width:c.width,height:c.height,painted_pixels:painted,colours:colours.size}')
+            assert gl['painted_pixels']>1000 and gl['colours']>2,gl
+            if not report['cases']:
+                from safari_viewer_checks import check_viewer
+                report['software_controls']=check_viewer(execute,command,session,out)
+        elif capability['available']:
             wait('return document.querySelector(".mesh-preview")?.dataset.ready==="true"')
             gl=execute('const c=document.querySelector(".mesh-preview canvas"),g=c?.getContext("webgl2")||c?.getContext("webgl");return g?{version:g.getParameter(g.VERSION),width:c.width,height:c.height}:null');assert gl
         else:
@@ -65,8 +86,16 @@ try:
         command('POST',f'/session/{session}/refresh',{});wait('return !!document.querySelector("[aria-label=\\\"Open project file\\\"]")');assert execute('return JSON.parse(localStorage.getItem("stencil-studio.project.v1"))')==raw
         report['cases'].append({'name':fixture['name'],'passed':True,'webgl':gl,'proof':proof,'draft_reopen':True});(out/'safari-qa.json').write_text(json.dumps(report,indent=2));print('PASS Safari',fixture['name'],flush=True)
     report['resource_hosts']=execute('return [...new Set(performance.getEntriesByType("resource").map(e=>{try{return new URL(e.name).hostname}catch{return ""}}))]');assert all(h in('localhost','127.0.0.1','')for h in report['resource_hosts'])
-    host.stdin.close();assert host.wait(timeout=10)==0;wait('return document.querySelector("h1")?.textContent==="Stencil Studio is closed"',15);report['shutdown_document']=True;report['passed']=True;report['qualification']='passed_with_graphics_limit'if report['limitations']else'passed'
-except Exception as e:report['passed']=False;report['error']=str(e);raise
+    if host:
+        host.stdin.close();assert host.wait(timeout=10)==0;wait('return document.querySelector("h1")?.textContent==="Stencil Studio is closed"',15);report['shutdown_document']=True
+    report['passed']=True;report['qualification']='passed_with_software_rendering'if any(c['webgl'].get('mode')=='software'for c in report['cases'])else'passed_with_graphics_limit'if report['limitations']else'passed'
+except Exception as e:
+    report['passed']=False;report['error']=str(e)
+    if session:
+        try:
+            report['renderer_errors']=execute('return globalThis.__m7RendererErrors||[]');report['console_errors']=execute('return globalThis.__m7ConsoleErrors||[]');report['failure_text']=execute('return document.body.innerText');(out/'failure.png').write_bytes(base64.b64decode(command('GET',f'/session/{session}/screenshot')))
+        except Exception:pass
+    raise
 finally:
     (out/'safari-qa.json').write_text(json.dumps(report,indent=2)+'\n')
     if session:

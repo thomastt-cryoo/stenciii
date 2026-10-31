@@ -1,0 +1,346 @@
+{
+  "source": "1f589e5e648ad0a85b00891788928e3a2cb599da",
+  "run": 41147868094,
+  "device": "Apple Paravirtualized Graphics Device, 64 MB VRAM, Metal 2",
+  "environment": "genuine macOS Intel hosted runner; virtual graphics",
+  "matrix": [
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl2",
+      "attributes": {
+        "alpha": true,
+        "powerPreference": "default",
+        "antialias": true
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl2",
+      "attributes": {
+        "alpha": true,
+        "powerPreference": "low-power",
+        "antialias": true
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl2",
+      "attributes": {
+        "alpha": true,
+        "powerPreference": "high-performance",
+        "antialias": true
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl2",
+      "attributes": {
+        "alpha": false,
+        "powerPreference": "default",
+        "antialias": true
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl2",
+      "attributes": {
+        "alpha": false,
+        "powerPreference": "low-power",
+        "antialias": true
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl2",
+      "attributes": {
+        "alpha": false,
+        "powerPreference": "high-performance",
+        "antialias": true
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl2",
+      "attributes": {
+        "alpha": true,
+        "powerPreference": "default",
+        "antialias": false
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl2",
+      "attributes": {
+        "alpha": true,
+        "powerPreference": "low-power",
+        "antialias": false
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl2",
+      "attributes": {
+        "alpha": true,
+        "powerPreference": "high-performance",
+        "antialias": false
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl2",
+      "attributes": {
+        "alpha": false,
+        "powerPreference": "default",
+        "antialias": false
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl2",
+      "attributes": {
+        "alpha": false,
+        "powerPreference": "low-power",
+        "antialias": false
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl2",
+      "attributes": {
+        "alpha": false,
+        "powerPreference": "high-performance",
+        "antialias": false
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl",
+      "attributes": {
+        "alpha": true,
+        "powerPreference": "default",
+        "antialias": true
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl",
+      "attributes": {
+        "alpha": true,
+        "powerPreference": "low-power",
+        "antialias": true
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl",
+      "attributes": {
+        "alpha": true,
+        "powerPreference": "high-performance",
+        "antialias": true
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl",
+      "attributes": {
+        "alpha": false,
+        "powerPreference": "default",
+        "antialias": true
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl",
+      "attributes": {
+        "alpha": false,
+        "powerPreference": "low-power",
+        "antialias": true
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl",
+      "attributes": {
+        "alpha": false,
+        "powerPreference": "high-performance",
+        "antialias": true
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl",
+      "attributes": {
+        "alpha": true,
+        "powerPreference": "default",
+        "antialias": false
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl",
+      "attributes": {
+        "alpha": true,
+        "powerPreference": "low-power",
+        "antialias": false
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl",
+      "attributes": {
+        "alpha": true,
+        "powerPreference": "high-performance",
+        "antialias": false
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl",
+      "attributes": {
+        "alpha": false,
+        "powerPreference": "default",
+        "antialias": false
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl",
+      "attributes": {
+        "alpha": false,
+        "powerPreference": "low-power",
+        "antialias": false
+      }
+    },
+    {
+      "object": true,
+      "errors": [],
+      "lost": true,
+      "pixel": null,
+      "precision": null,
+      "version": null,
+      "type": "webgl",
+      "attributes": {
+        "alpha": false,
+        "powerPreference": "high-performance",
+        "antialias": false
+      }
+    }
+  ],
+  "original_exception": "TypeError: null is not an object (evaluating 'e.getShaderPrecisionFormat(e.VERTEX_SHADER,e.HIGH_FLOAT).precision')",
+  "finding": "A returned WebGL object is not evidence of a usable rendering context. All 24 configurations were already lost before drawing."
+}

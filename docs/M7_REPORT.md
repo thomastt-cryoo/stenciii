@@ -2,7 +2,7 @@
 
 Review date: 31 October 2026. Scope follows the user's explicit change to a browser edition for Windows and Mac. No native editor, public hosting, commercial release or M8 work is included.
 
-**M7 browser delivery: qualified with documented limits for the measured Chrome/Edge configurations, with the additional browser results below.** Safari on Intel did not pass 3D qualification; Windows Firefox had no working WebGL2 on its test runner. Windows 10 and first-download OS approval UI are unverified. There is no blanket all-browser/all-OS certification. This report distinguishes a successful build, a real graphical launcher, browser integration and first-download OS security approval.
+**M7 browser delivery: qualified with documented limits for the measured configurations.** The [Intel Safari viewer repair](m7/SAFARI_INTEL_FIX.md) now provides tested software 3D on Safari 26.6. Windows Firefox in the unchanged Windows download had no working WebGL2 on its test runner. Windows 10 and first-download OS approval UI are unverified. There is no blanket all-browser/all-OS certification. This report distinguishes a successful build, a real graphical launcher, browser integration and first-download OS security approval.
 
 ## 1. Exact implementation and verification sources
 
@@ -36,15 +36,15 @@ Windows: launcher, `Studio Support/`, `Read First.txt` and `Platform Test Record
 
 ## 7-8. Exact delivered sizes and SHA-256
 
-All three delivered runtimes use repaired source `670aad80fe5fe648f802fa429aa67c55ea2b538a`. The five final files and exact hashes are recorded in [delivery-manifest.json](../distribution/m7/delivery-manifest.json). The canonical compressed bytes come from delivery assembly run [41134317606](https://github.com/thomastt-cryoo/stenciii/actions/runs/41134317606), source `a87c391e7ea3f059f525bbd63150842e5b3100c5`. Archive bytes differed between the local and CI Python environments; the final local files were replaced with the retained CI bytes and rehashed. All runtime/notice member hashes matched in both assemblies. Its per-member audit proves that adding the reviewed outer instructions did not change a tested runtime, signature, manifest, permission or license file. The checksum text hashes the other four deliverables; its own hash appears in the manifest/report to avoid a circular self-hash.
+Windows and Apple Silicon retain runtime source `670aad80fe5fe648f802fa429aa67c55ea2b538a`; the updated Intel runtime uses `11819c3b87556ab152f28f351bcc0235bed4f3ea`. The Intel follow-up and per-platform current records are in [the repair report](m7/SAFARI_INTEL_FIX.md). The five final files and exact hashes are recorded in [delivery-manifest.json](../distribution/m7/delivery-manifest.json). The canonical compressed bytes come from delivery assembly run [41152315330](https://github.com/thomastt-cryoo/stenciii/actions/runs/41152315330), source `c564527455367c855ae5517e7e6d8695c52a60ca`. Archive bytes differed between the local and CI Python environments; the final local files were replaced with the retained CI bytes and rehashed. All runtime/notice member hashes matched in both assemblies. Its per-member audit proves that adding the reviewed outer instructions did not change a tested runtime, signature, manifest, permission or license file. The checksum text hashes the other four deliverables; its own hash appears in the manifest/report to avoid a circular self-hash.
 
 | Final deliverable | Exact bytes | SHA-256 |
 |---|---:|---|
-| StencilStudio-Windows-x64.zip | 8,242,785 | `bb8c5a8a14e6d2acaef36d5e0a39e8b3a1c179fefd3d16f9acd3b37825f935f5` |
-| StencilStudio-macOS-Apple-Silicon.zip | 7,832,696 | `c602b64f5894fea31b3e75511e61f3e6825074ed557e678573c0b5b09b23655a` |
-| StencilStudio-macOS-Intel.zip | 8,225,479 | `21298dcc72cbb397854989886cad2f942b0ba2320a1c2d8d85db4c186beb8d1c` |
+| StencilStudio-Windows-x64.zip | 8,242,951 | `60acdaf946f14b2f6ac525772b7cc645240a53aa1a2831e698c7949998f850d6` |
+| StencilStudio-macOS-Apple-Silicon.zip | 7,832,862 | `d45b2086de195710e8ed3b471b22ac52a337bf3d8931651f5dbd98173defc63d` |
+| StencilStudio-macOS-Intel.zip | 8,229,294 | `1d9ff761a82dee967f16a9bd76a7165b5b1ac74459ee844e610099b47db87d7f` |
 | StencilStudio-Quick-Start.pdf | 43,171 | `89868c6d2cebf0684ee81591a603c457398744fd008269387e226ea8d38f6a03` |
-| Read Me and Checksums.txt | 700 | `038b3a8c986e39520789bb112dfd4cb5f14d1e81b3e871c6dbba3c8a09f0ab88` |
+| Read Me and Checksums.txt | 700 | `0ba438c28064392608a17ed99b77408fc46e51c85dc6cbd5b12a41d3175a975b` |
 
 Final tested runtime ZIPs before the outer instruction update:
 
@@ -52,7 +52,7 @@ Final tested runtime ZIPs before the outer instruction update:
 |---|---:|---|
 | windows-x64 | 8,262,443 | `f675a8877673c2cf8925eb2dd1165c7ea9d1d8bfb2f8bf0a9e9aae27628eff09` |
 | macos-arm64 | 7,845,887 | `a58ca2840ae07ae6c9fb7dbdcd7bdc8a64056ab7a6296392d57dcd9be36a50ad` |
-| macos-x64 | 8,242,918 | `e632e643d64f3c152a4dd2f970866f14d6a3e94ba82b20e166cf034cdd6f96ee` |
+| macos-x64 | 8,247,583 | `770fc4fca1d4ca7222d389bbe1337a87fbce5ba16097c4083bdafc623518a86a` |
 
 Historical candidates retained for provenance (not the final delivery):
 
@@ -77,7 +77,7 @@ Fresh hosted Windows Server 2025 package tests supplement this consumer Windows 
 
 ## 10. Mac actual launch and offline evidence
 
-The initial ARM runtime completed all 14 original projects on macOS 15 in run `41100143518`; that early ZIP is not delivered because its notices were incomplete. The final complete-notice ARM candidate subsequently ran on macOS 26.6.2 (25G83), with native launcher/default-Safari startup and actual Chrome/Chromium 3D and export tests. Intel ran on macOS 15.7.9 (24G830), with the native controller and all 15 Chromium projects. The repaired final ARM and Intel packages each passed all 15 Chromium projects, four Chrome projects, four Firefox projects, forced single-thread fallback, real two-job all-format sweeps, host checks and seven lifecycle checks. ARM Safari passed four projects with actual WebGL. Intel Safari failed 3D and is not qualified for the complete editor; use Chrome on Intel. [Final package matrix](m7/evidence/final-browser-matrix.json).
+The initial ARM runtime completed all 14 original projects on macOS 15 in run `41100143518`; that early ZIP is not delivered because its notices were incomplete. The final complete-notice ARM candidate subsequently ran on macOS 26.6.2 (25G83), with native launcher/default-Safari startup and actual Chrome/Chromium 3D and export tests. Intel ran on macOS 15.7.9 (24G830), with the native controller and all 15 Chromium projects. The repaired final ARM and Intel packages each passed all 15 Chromium projects, four Chrome projects, four Firefox projects, forced single-thread fallback, real two-job all-format sweeps, host checks and seven lifecycle checks. ARM Safari passed four projects with actual WebGL. The original Intel Safari attempt failed 3D; the [subsequent repaired Intel package](m7/SAFARI_INTEL_FIX.md) passed four Safari projects with real software-rasterized 3D and native pointer controls. [Final package matrix](m7/evidence/final-browser-matrix.json).
 
 Offline automation blocks every browser request to a non-loopback HTTP host during the Chromium/Firefox collection. The app still initializes real WASM, imports projects and produces independently valid exports. Safari additionally records resource hosts; this is not an OS-wide physical network disconnection. No claim is made that browser-vendor/OS background traffic was captured. Static asset/source review found no telemetry, accounts, external artwork upload, remote API or recurring license check.
 
@@ -98,9 +98,9 @@ Chrome is the recommended cross-platform browser; Edge is additionally tested on
 | macos-x64 | chromium 156.0.8078.4 | 15 | Passed |
 | macos-x64 | chrome 151.0.7922.174 | 4 | Passed |
 | macos-x64 | firefox 157.0 | 4 | Passed |
-| macos-x64 | safari 26.6 | 0 | Partial / 3D failed; use Chrome |
+| macos-x64 | safari 26.6 | 4 | Passed with software 3D in the Intel viewer follow-up |
 
-Chromium includes the complete 15-case collection. Each Chrome/Firefox run additionally exercises forced single-thread fallback and the two-job all-format sweep. Safari uses actual Apple WebDriver and retrieves real Blob export bytes; OS disk downloads are separately tested in Chromium. Safari thread mode was not recorded. Edge on Mac was not tested. A zero Safari Intel case count means the first case failed 3D after export validation; it is not a silent skip.
+Chromium includes the complete 15-case collection. Each Chrome/Firefox run additionally exercises forced single-thread fallback and the two-job all-format sweep. Safari uses actual Apple WebDriver and retrieves real Blob export bytes; OS disk downloads are separately tested in Chromium. Safari thread mode was not recorded. Edge on Mac was not tested. The archived original M7 matrix has zero Safari Intel completed cases because its first case failed 3D after export validation; the current Intel follow-up completed all four.
 
 An independent empty canvas is checked before attributing an unavailable WebGL2 context to the application. A browser that cannot create WebGL2 receives an explicit 3D-unavailable notice while verified STL export remains available. Such a result is recorded as a graphics limitation, never a 3D pass. A working empty context followed by an application rendering failure still fails qualification.
 
@@ -152,11 +152,11 @@ Windows executables are unsigned. The locally built normal launch showed no Smar
 | 41129672908 | Full preserved CI for repaired runtime | Passed 173 Rust + 248 browser tests; deploy skipped |
 | 41128683600 | Preserved standard CI after harness/workflow changes | Passed; not substituted for the repaired-source result above |
 
-Raw reports, generated exports, screenshots and exact candidate ZIPs are retained on [`codex/m7-artifacts`](https://github.com/thomastt-cryoo/stenciii/tree/codex/m7-artifacts), under each QA source SHA/platform. This avoids relying only on expiring Actions artifacts. Source and review are tracked in [PR 1](https://github.com/thomastt-cryoo/stenciii/pull/1). [Complete M7 CI run snapshot](m7/evidence/ci-runs.json) includes every run on the milestone branch, including skipped producer workflows and earlier failed attempts. No test failure is relabeled as a successful browser qualification. Delivery assembly [41134317606](https://github.com/thomastt-cryoo/stenciii/actions/runs/41134317606) passed and retained the canonical five-file layout on the artifact branch. [Assembly evidence](m7/evidence/delivery-assembly.json) records all five canonical delivery hashes and their durable artifact commit. The final documentation/delivery assembly does not alter application source after the fully tested runtime commit.
+Raw reports, generated exports, screenshots and exact candidate ZIPs are retained on [`codex/m7-artifacts`](https://github.com/thomastt-cryoo/stenciii/tree/codex/m7-artifacts), under each QA source SHA/platform. This avoids relying only on expiring Actions artifacts. Source and review are tracked in [PR 1](https://github.com/thomastt-cryoo/stenciii/pull/1). [Complete M7 CI run snapshot](m7/evidence/ci-runs.json) includes every run on the milestone branch, including skipped producer workflows and earlier failed attempts. No test failure is relabeled as a successful browser qualification. Delivery assembly [41152315330](https://github.com/thomastt-cryoo/stenciii/actions/runs/41152315330) passed and retained the canonical five-file layout on the artifact branch. [Assembly evidence](m7/evidence/delivery-assembly.json) records all five canonical delivery hashes and their durable artifact commit. The final documentation/delivery assembly does not alter application source after the fully tested runtime commit.
 
 ## 20. Remaining limits
 
-Only the exact exercised OS/browser configurations are qualified. Windows 10, older Mac versions, first-download quarantine/SmartScreen approval UI, managed corporate policies and every possible GPU/driver are untested. The Mac build target/Info.plist minimum 13.3 is not evidence that every macOS 13.3+ browser pair works. Physical print strength, fastener fit and material calibration retain M6's limits. Saved projects are the portable backup; browser storage can be unavailable. A browser that blocks local WebSockets needs the visible Quit Studio control. Offline browser-request isolation is not a packet capture of the whole OS. The two remaining browser limits are explicit: Windows Firefox 3D was unavailable on the hosted graphics setup; Intel Safari 3D failed even though an independent empty WebGL2 canvas could be created. The latter is not classified as an unavailable graphics API or a successful 3D test. Chrome on Intel passed. There is no further Safari Intel repair or compatibility claim in this milestone.
+Only the exact exercised OS/browser configurations are qualified. Windows 10, older Mac versions, first-download quarantine/SmartScreen approval UI, managed corporate policies and every possible GPU/driver are untested. The Mac build target/Info.plist minimum 13.3 is not evidence that every macOS 13.3+ browser pair works. Physical print strength, fastener fit and material calibration retain M6's limits. Saved projects are the portable backup; browser storage can be unavailable. A browser that blocks local WebSockets needs the visible Quit Studio control. Offline browser-request isolation is not a packet capture of the whole OS. The unchanged Windows runtime retains its Firefox graphics limitation. The Intel follow-up corrected the old availability check: the returned WebGL objects were already lost, so their existence did not establish a usable graphics API. The updated Intel runtime renders real interactive 3D through its software path in that environment. Software preview uses CSS-pixel resolution, may rotate more slowly on large models and does not claim identical PBR lighting or physical-GPU qualification.
 
 ## 21. Proposed Etsy layout
 
@@ -164,4 +164,4 @@ Exactly five files in `distribution/m7/customer/`: Windows x64 ZIP, Mac Apple Si
 
 ## 22. M8 readiness decision
 
-M7 technical browser delivery is complete for the documented recommended configurations, with the explicit browser/OS/signing limits above. The three customer runtime packages are genuinely built, launched and exercised on their target architectures, and all final runtime/notice members are preserved exactly through the reviewed instruction update. M8 may be considered for those qualified configurations after user review. Broad Windows 10, older-macOS or complete Safari Intel claims are not ready. Public hosting, tags, commercial release and M8 remain disabled until the user's next instructions.
+M7 technical browser delivery is complete for the documented recommended configurations, with the explicit browser/OS/signing limits above. The three customer runtime packages are genuinely built, launched and exercised on their target architectures, and all final runtime/notice members are preserved exactly through the reviewed instruction update. M8 may be considered for those qualified configurations after user review. Broad Windows 10 and older-macOS claims remain unverified. Intel Safari follow-up results and its software-rendering limits are explicit in the linked repair report. Public hosting, tags, commercial release and M8 remain disabled until the user's next instructions.
