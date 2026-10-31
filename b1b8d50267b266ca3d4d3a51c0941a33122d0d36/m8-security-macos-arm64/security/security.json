@@ -1,0 +1,160 @@
+{
+  "archive": "/Users/runner/work/stenciii/stenciii/work/download/StencilStudio-macOS-Apple-Silicon.zip",
+  "global_security_changes": false,
+  "quarantine_removed": false,
+  "app_specific_approval_verified": false,
+  "os": {
+    "code": 0,
+    "stdout": "ProductName:\t\tmacOS\nProductVersion:\t\t15.8.2\nBuildVersion:\t\t24H232",
+    "stderr": ""
+  },
+  "arch": {
+    "code": 0,
+    "stdout": "arm64",
+    "stderr": ""
+  },
+  "gatekeeper_status": {
+    "code": 0,
+    "stdout": "assessments enabled",
+    "stderr": ""
+  },
+  "archive_quarantine": {
+    "code": 0,
+    "stdout": "0081;6ae56c8b;Chrome;",
+    "stderr": ""
+  },
+  "extraction": {
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "app": "/Users/runner/work/stenciii/stenciii/work/download/StencilStudio-macOS-Apple-Silicon/Stencil Studio.app",
+  "app_quarantine": {
+    "code": 0,
+    "stdout": "0081;6ae56c8b;Chrome;",
+    "stderr": ""
+  },
+  "codesign": {
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "assessment": {
+    "code": 3,
+    "stdout": "",
+    "stderr": "/Users/runner/work/stenciii/stenciii/work/download/StencilStudio-macOS-Apple-Silicon/Stencil Studio.app: rejected"
+  },
+  "initial_launch": {
+    "timeout": true,
+    "stdout": "",
+    "stderr": ""
+  },
+  "initial_ui": {
+    "code": 0,
+    "stdout": "Finderdownloadstencil-studio",
+    "stderr": ""
+  },
+  "initial_pids": {
+    "code": 0,
+    "stdout": "17015",
+    "stderr": ""
+  },
+  "dismiss_warning": {
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "dismiss_escape": {
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "dismiss_native": {
+    "code": 0,
+    "stdout": "[\"\uf8ff Finder\",\"File Edit View\",\"Go\",\"Window\",\"Help\",\"download\",\"Favorites\",\"\u00a9 Recents\",\"A Applications\",\"= Desktop\",\"Documents\",\"Downloads\",\"Locations\",\"\u2022 iCloud Drive\",\"?\",\"StencilStudio-\",\"Stencil!\",\"macOS-.-Silicon\",\"macOS-.\",\"!\",\"\\\"Stencil Studio\\\" Not Opened\",\"Apple could not verify \\\"Stencil Studio\\\" is\",\"free of malware that may harm your Mac\",\"or compromise your privacy.\",\"Done\",\"Move to Trash\",\"Tags\",\"Red\",\"Orange\",\"Yellow\",\"\u2022 Green\",\"\u2022 Blue\",\"31\",\"\uf8fftv\",\"Q 8 \u2022 Sat Oct 31 4:21 AM\",\"88 \u20ac\"]\nClicked verified app-specific button: Done",
+    "stderr": "IOServiceMatchingfailed for: AppleM2ScalerParavirtDriver"
+  },
+  "settings_open": {
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "settings_scroll": {
+    "code": 0,
+    "stdout": "Scrolled Privacy & Security pane only",
+    "stderr": ""
+  },
+  "settings_ui": {
+    "code": 0,
+    "stdout": "FinderdownloadSystem SettingsPrivacy & Security",
+    "stderr": ""
+  },
+  "open_anyway": {
+    "code": 1,
+    "stdout": "",
+    "stderr": "551:591: execution error: App-specific Open Anyway not available (-2700)"
+  },
+  "open_anyway_native": {
+    "code": 0,
+    "stdout": "[\"System Settings\",\"Edit\",\"View Window\",\"Help\",\"Q\",\"Sat Oct 31 4:22 AM\",\"Favorites\",\"\u2022 Recents|\",\"A Applicatio\",\"Desktop\",\"Document\",\"Download!\",\"Locations\",\"\u2022 iCloud Drill\",\"Tags\",\"Red\",\"Orange\",\"Yellow\",\"Green\",\"Blue\",\"Q Search\",\"Sign in\",\"with your\",\"Apple Account\",\"Software Update\",\"Available\",\"Wi-Fi\",\"Bluetooth\",\"Network\",\"Energy\",\"General\",\"Accessibility\",\"Appearance\",\"Siri\",\"Control Center\",\"Desktop & Dock\",\"Displays\",\"Screen Saver\",\"Spotlight\",\"Privacy & Security\",\"Screen & System Audio Recording\",\"3 >\",\"Speech Recognition\",\"0 >\",\"Sensitive Content Warning\",\"Off >\",\"Analytics & Improvements\",\"Apple Advertising\",\"Security\",\"Allow applications from\",\"App Store & Known Developers \u20ac\",\"\\\"Stencil Studio\\\" was blocked to protect your Mac.\",\"Open Anyway\",\"Apple could not verify \\\"Stencil Studio\\\" is free of malware that may harm your Mac\",\"or compromise your privacy.\",\"FileVault\",\"Off \u203a\",\"Lockdown Mode\",\"Advanced...\",\"?\",\"Q\",\"31\",\"\uf8fftv\"]\nClicked verified app-specific button: Open Anyway",
+    "stderr": "IOServiceMatchingfailed for: AppleM2ScalerParavirtDriver"
+  },
+  "confirmation_ui": {
+    "code": 0,
+    "stdout": "FinderdownloadSystem SettingsPrivacy & Securitystencil-studio",
+    "stderr": ""
+  },
+  "confirm_native": {
+    "code": 3,
+    "stdout": "[\"System Settings\",\"Edit\",\"View Window\",\"Help\",\"Q\",\"\u2022 Sat Oct 31 4:22 AM\",\"Privacy & Security\",\"Screen & Svstem Audio Recording\",\"?\",\"Favorites\",\"\u2022 Recents|\",\"Applicatio\",\"Desktop\",\"Document\",\"Download!\",\"Locations\",\"\u2022 iCloud Drill\",\"Tags\",\"Red\",\"Orange\",\"Yellow\",\"Green\",\"Blue\",\"Q Search\",\"Sign in\",\"with your\",\"Apple Account\",\"Software Update\",\"Available\",\"Wi-Fi\",\"Bluetooth\",\"Network\",\"Energy\",\"General\",\"Accessibility\",\"Appearance\",\"Siri\",\"Control Center\",\"Desktop & Dock\",\"Displays\",\"Screen Saver\",\"Spotlight\",\"3 >\",\"0 >\",\"Off >\",\"Open \\\"Stencil Studio\\\"?\",\"Apple is not able to verify that it is free\",\"from malware that could harm your Mac\",\"or compromise your privacy. Don't open\",\"this unless you are certain it is from a\",\"trustworthy source.\",\"Move to Trash\",\"Open Anyway\",\"Done\",\"sp Store & Known Developers \u20ac\",\"\\\"Stencil Studio\\\" was blocked to protect your Mac.\",\"Open Anyway\",\"Apple could not verify \\\"Stencil Studio\\\" is free of malware that may harm your Mac\",\"or compromise your privacy.\",\"FileVault\",\"Off \u203a\",\"Lockdown Mode\",\"Advanced...\",\"31\",\"\uf8fftv\"]",
+    "stderr": "IOServiceMatchingfailed for: AppleM2ScalerParavirtDriver\nExpected button absent"
+  },
+  "confirm_anyway_native": {
+    "code": 0,
+    "stdout": "[\"System Settings\",\"Edit\",\"View Window\",\"Help\",\"Q\",\"Sat Oct 31 4:22 AM\",\"Privacy & Security\",\"Screen & Svstem Audio Recording\",\"?\",\"Favorites\",\"\u2022 Recents|\",\"Applicatio\",\"Desktop\",\"Document\",\"Download!\",\"Locations\",\"\u2022 iCloud Drill\",\"Tags\",\"Red\",\"Orange\",\"Yellow\",\"Green\",\"Blue\",\"Q Search\",\"Sign in\",\"with your\",\"Apple Account\",\"Software Update\",\"Available\",\"Wi-Fi\",\"Bluetooth\",\"Network\",\"Energy\",\"General\",\"Accessibility\",\"Appearance\",\"Siri\",\"Control Center\",\"Desktop & Dock\",\"Displays\",\"Screen Saver\",\"Spotlight\",\"3 >\",\"0 >\",\"Off >\",\"Open \\\"Stencil Studio\\\"?\",\"Apple is not able to verify that it is free\",\"from malware that could harm your Mac\",\"or compromise your privacy. Don't open\",\"this unless you are certain it is from a\",\"trustworthy source.\",\"Move to Trash\",\"Open Anyway\",\"Done\",\"sp Store & Known Developers \u20ac\",\"\\\"Stencil Studio\\\" was blocked to protect your Mac.\",\"Open Anyway\",\"Apple could not verify \\\"Stencil Studio\\\" is free of malware that may harm your Mac\",\"or compromise your privacy.\",\"FileVault\",\"Off \u203a\",\"Lockdown Mode\",\"Advanced...\",\"31\",\"\uf8fftv\"]\nClicked verified app-specific button: Open Anyway",
+    "stderr": "IOServiceMatchingfailed for: AppleM2ScalerParavirtDriver"
+  },
+  "confirm_open": {
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "approved_pids": {
+    "code": 0,
+    "stdout": "19875",
+    "stderr": ""
+  },
+  "after_ui": {
+    "code": 0,
+    "stdout": "FinderdownloadSystem SettingsPrivacy & Securitystencil-studio",
+    "stderr": ""
+  },
+  "backend_listeners": {
+    "code": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "quarantine_after": {
+    "code": 0,
+    "stdout": "0081;6ae56c8b;Chrome;",
+    "stderr": ""
+  },
+  "gatekeeper_status_after": {
+    "code": 0,
+    "stdout": "assessments enabled",
+    "stderr": ""
+  },
+  "actual_browser_download_quarantine": true,
+  "actual_extraction_quarantine": true,
+  "consumer_first_download_pass": false,
+  "cleanup": {
+    "code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "remaining_launcher": {
+    "code": 1,
+    "stdout": "",
+    "stderr": ""
+  }
+}
