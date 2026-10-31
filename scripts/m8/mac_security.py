@@ -96,6 +96,9 @@ end tell''')
    report['open_anyway_native']=screen_action('open-anyway-observation','Open Anyway','Stencil Studio')
   time.sleep(3);report['confirmation_ui']=snapshot('approval-confirmation')
   report['confirm_native']=screen_action('confirm-observation','Open','Stencil Studio')
+  if report['confirm_native']['code']!=0:
+   # Current macOS 15 labels the second, app-specific confirmation Open Anyway.
+   report['confirm_anyway_native']=screen_action('confirm-anyway-observation','Open Anyway','Stencil Studio')
   # Confirmation/authentication can require a human. Do not enter credentials or
   # claim success merely because an Open Anyway button existed.
   report['confirm_open']=apple('''tell application "System Events"
