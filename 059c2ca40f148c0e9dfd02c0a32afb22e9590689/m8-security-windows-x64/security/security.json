@@ -1,0 +1,105 @@
+{
+  "global_security_changes": false,
+  "origin_removed": false,
+  "app_specific_approval_verified": false,
+  "os": {
+    "Caption": "Microsoft Windows Server 2025 Datacenter",
+    "Version": "10.0.26100",
+    "BuildNumber": "26100"
+  },
+  "smart_screen": {
+    "SmartScreenEnabled": null
+  },
+  "policy": null,
+  "defender": {
+    "AntivirusEnabled": true,
+    "RealTimeProtectionEnabled": false,
+    "AMProductVersion": "4.18.26090.9",
+    "AntivirusSignatureVersion": "1.463.52.0"
+  },
+  "archive_zone": "[ZoneTransfer]\r\nZoneId=3\r\nHostUrl=about:internet\r\n",
+  "launcher_zone": "[ZoneTransfer]\r\nZoneId=3\r\nReferrerUrl=D:\\a\\stenciii\\stenciii\\work\\download\\StencilStudio-Windows-x64.zip\u0000",
+  "backend_zone": "[ZoneTransfer]\r\nZoneId=3\r\nReferrerUrl=D:\\a\\stenciii\\stenciii\\work\\download\\StencilStudio-Windows-x64.zip\u0000",
+  "launcher_signature": {
+    "Status": 2,
+    "StatusMessage": "The file D:\\a\\stenciii\\stenciii\\work\\download\\Extracted customer package\\Stencil Studio.exe is not digitally signed. You cannot run this script on the current system. For more information about running scripts and setting execution policy, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170"
+  },
+  "backend_signature": {
+    "Status": 2,
+    "StatusMessage": "The file D:\\a\\stenciii\\stenciii\\work\\download\\Extracted customer package\\Studio Support\\stencil.exe is not digitally signed. You cannot run this script on the current system. For more information about running scripts and setting execution policy, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170"
+  },
+  "initial_ui": [
+    {
+      "name": "",
+      "process": 7896,
+      "children": [
+        "Start",
+        "Search",
+        "Search",
+        "Task View",
+        "File Explorer pinned",
+        "Microsoft Edge pinned",
+        "Terminal - 1 running window",
+        "Show Hidden Icons",
+        "Azure Arc",
+        "Network Network\nInternet access\n\nEthernet 5\nNo internet access",
+        "Volume No audio device is installed",
+        "Clock 4:12 AM\n‎10/‎31/‎2026",
+        "Notifications No new notifications (Do not disturb on)",
+        "Show Desktop"
+      ]
+    },
+    {
+      "name": "C:\\ProgramData\\GitHub\\HostedComputeAgent\\hosted-compute-agent",
+      "process": 8988,
+      "children": [
+        "C:\\ProgramData\\GitHub\\HostedComputeAgent\\hosted-compute-agent",
+        "C:\\ProgramData\\GitHub\\HostedComputeAgent\\hosted-compute-agent",
+        "Close Tab",
+        "New Tab",
+        "Default",
+        "Vertical",
+        "Vertical Small Decrease",
+        "Vertical Large Decrease",
+        "Vertical Large Increase",
+        "Vertical Small Increase",
+        "C:\\ProgramData\\GitHub\\HostedComputeAgent\\hosted-compute-agent",
+        "System Menu Bar",
+        "System",
+        "Minimize",
+        "Maximize",
+        "Close"
+      ]
+    },
+    {
+      "name": "System Properties",
+      "process": 3688,
+      "children": [
+        "OK",
+        "Windows created a temporary paging file on your computer because of a problem that occurred with your paging file configuration when you started your computer.  The total paging file size for all disk drives may be somewhat larger than the size you specified.",
+        "System Properties",
+        "System Menu Bar",
+        "System",
+        "Close"
+      ]
+    },
+    {
+      "name": "Program Manager",
+      "process": 7896,
+      "children": [
+        "Desktop",
+        "Recycle Bin",
+        "Firefox",
+        "Google Chrome",
+        "Microsoft Edge",
+        "R 4.6.1",
+        "Unity Hub"
+      ]
+    }
+  ],
+  "initial_processes": [],
+  "warning_observed": false,
+  "consumer_first_download_pass": false,
+  "limitation": "Automated hosted Windows Server is not a fresh consumer Windows 11 installation. No consumer SmartScreen approval is inferred from an allowed launch.",
+  "remaining_backend": []
+}
