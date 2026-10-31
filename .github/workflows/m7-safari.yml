@@ -4,8 +4,12 @@ on:
     branches: [codex/m7-safari-fix]
 permissions:
   contents: write
+env:
+  M7_STABLE: "1.99.0"
+  M7_NIGHTLY: nightly-2026-10-28
 jobs:
   diagnose:
+    if: contains(github.event.head_commit.message, '[safari-diagnose]')
     runs-on: macos-15-intel
     steps:
       - uses: actions/checkout@v4
@@ -32,3 +36,54 @@ jobs:
       - name: Retain diagnostic evidence
         if: always()
         run: python scripts/m7/archive-evidence.py out safari-diagnosis
+
+  assets:
+    if: contains(github.event.head_commit.message, '[safari-verify]')
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.99.0
+          targets: wasm32-unknown-unknown
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: nightly-2026-10-28
+          targets: wasm32-unknown-unknown
+          components: rust-src
+      - uses: Swatinem/rust-cache@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26.3.0
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Fixed wasm-pack
+        run: |
+          curl --fail --location --retry 3 https://github.com/wasm-bindgen/wasm-pack/releases/download/v0.15.0/wasm-pack-v0.15.0-x86_64-unknown-linux-musl.tar.gz -o /tmp/wasm-pack.tgz
+          tar -xzf /tmp/wasm-pack.tgz -C /tmp
+          echo /tmp/wasm-pack-v0.15.0-x86_64-unknown-linux-musl >> "$GITHUB_PATH"
+      - name: Build both engines (mandatory)
+        working-directory: crates/stencil-wasm
+        run: |
+          rustup run "$M7_STABLE" wasm-pack build --release --target web --out-dir ../../web/pkg -- --locked
+          RUSTFLAGS='-C target-feature=+atomics,+bulk-memory,+mutable-globals -C link-args=--shared-memory -C link-args=--import-memory -C link-args=--max-memory=4294967296 -C link-args=--export=__wasm_init_tls -C link-args=--export=__tls_size -C link-args=--export=__tls_align -C link-args=--export=__tls_base' rustup run "$M7_NIGHTLY" wasm-pack build --release --target web --out-dir ../../web/public/pkg-mt --out-name stencil_wasm -- --locked --features threads -Z build-std=panic_abort,std
+      - name: Production assets only
+        run: |
+          node web/scripts/patch-mt-worker.mjs
+          npm --prefix web ci
+          npm --prefix web run build
+          test ! -e web/dist/legacy.html
+          tar -czf production-assets.tar.gz web/dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: production-assets
+          path: production-assets.tar.gz
+
+  intel:
+    needs: assets
+    uses: ./.github/workflows/m7-platform.yml
+    with:
+      runner: macos-15-intel
+      platform: macos-x64
+      expected_arch: x86_64
+      assets_run: '${{ github.run_id }}'

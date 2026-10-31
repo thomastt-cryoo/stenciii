@@ -63,10 +63,19 @@ try:
         label=execute('return Array.from(document.querySelectorAll("a")).find(e=>e.href===arguments[0])?.textContent',href)
         assert label in('Export STL','Export ZIP')
         file=out/(fixture['name']+('.zip'if label=='Export ZIP'else'.stl'));file.write_bytes(base64.b64decode(data));proof=prove(file,ROOT/fixture['m6_output']if fixture['m6_output']else None)
-        capability=execute('const c=document.createElement("canvas"),messages=[];c.addEventListener("webglcontextcreationerror",e=>messages.push(e.statusMessage));const g=c.getContext("webgl2",{antialias:true,alpha:true});const r={available:!!g,messages,version:g?.getParameter(g.VERSION)};g?.getExtension("WEBGL_lose_context")?.loseContext();return r')
+        capability=execute('const c=document.createElement("canvas"),messages=[];c.addEventListener("webglcontextcreationerror",e=>messages.push(e.statusMessage));const g=c.getContext("webgl2",{antialias:true,alpha:true}),version=g?.getParameter(g.VERSION),precision=g?.getShaderPrecisionFormat(g.VERTEX_SHADER,g.HIGH_FLOAT);const r={available:!!g&&!g.isContextLost()&&!!version&&!!precision,messages,version,lost:g?.isContextLost()};g?.getExtension("WEBGL_lose_context")?.loseContext();return r')
         report['last_capability']=capability
         execute('Array.from(document.querySelectorAll("[role=tab]")).find(e=>e.textContent==="3D").click()')
-        if capability['available']:
+        wait('return document.querySelector(".mesh-preview")?.dataset.ready==="true"')
+        mode=execute('return document.querySelector(".mesh-preview canvas")?.dataset.renderer')
+        if mode=='software':
+            wait('return document.querySelector(".mesh-preview")?.dataset.ready==="true"&&Number(document.querySelector(".mesh-preview canvas")?.dataset.renderFrame)>0')
+            gl=execute('const c=document.querySelector(".mesh-preview canvas"),p=c.getContext("2d").getImageData(0,0,c.width,c.height).data;let painted=0;const colours=new Set();for(let i=0;i<p.length;i+=4)if(p[i+3]){painted++;colours.add(p[i]+","+p[i+1]+","+p[i+2])}return {mode:"software",version:"Canvas 2D software rasterized 3D",width:c.width,height:c.height,painted_pixels:painted,colours:colours.size}')
+            assert gl['painted_pixels']>1000 and gl['colours']>2,gl
+            if not report['cases']:
+                from safari_viewer_checks import check_viewer
+                report['software_controls']=check_viewer(execute,command,session,out)
+        elif capability['available']:
             wait('return document.querySelector(".mesh-preview")?.dataset.ready==="true"')
             gl=execute('const c=document.querySelector(".mesh-preview canvas"),g=c?.getContext("webgl2")||c?.getContext("webgl");return g?{version:g.getParameter(g.VERSION),width:c.width,height:c.height}:null');assert gl
         else:
@@ -79,7 +88,7 @@ try:
     report['resource_hosts']=execute('return [...new Set(performance.getEntriesByType("resource").map(e=>{try{return new URL(e.name).hostname}catch{return ""}}))]');assert all(h in('localhost','127.0.0.1','')for h in report['resource_hosts'])
     if host:
         host.stdin.close();assert host.wait(timeout=10)==0;wait('return document.querySelector("h1")?.textContent==="Stencil Studio is closed"',15);report['shutdown_document']=True
-    report['passed']=True;report['qualification']='passed_with_graphics_limit'if report['limitations']else'passed'
+    report['passed']=True;report['qualification']='passed_with_software_rendering'if any(c['webgl'].get('mode')=='software'for c in report['cases'])else'passed_with_graphics_limit'if report['limitations']else'passed'
 except Exception as e:
     report['passed']=False;report['error']=str(e)
     if session:

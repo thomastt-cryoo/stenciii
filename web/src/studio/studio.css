@@ -101,6 +101,7 @@ h1 { font-size: 22px; line-height: 1.25; letter-spacing: -.6px; font-weight: 500
 .compatibility-note p { color: var(--muted); line-height: 1.8; font-size: 11px; margin-top: 12px; }
 .mesh-preview, .artwork-preview { position: relative; width: 100%; height: 100%; min-height: inherit; touch-action: none; }
 .mesh-preview canvas { width: 100%; height: 100%; position: absolute; inset: 0; }
+.software-renderer-note { position: absolute; left: 12px; bottom: 8px; z-index: 2; font-size: 11px; opacity: .65; pointer-events: none; }
 .view-message { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: var(--muted); font-size: 12px; text-align: center; max-width: 80%; }
 .artwork-preview { display: flex; align-items: center; justify-content: center; cursor: grab; overflow: hidden; }
 .artwork-preview:active { cursor: grabbing; }

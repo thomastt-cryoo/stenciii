@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js'
 import { toCreasedNormals } from 'three/examples/jsm/utils/BufferGeometryUtils.js'
+import {createStudioRenderer,type StudioRenderer} from './studio/renderer'
 
 export interface Part { name: string; url: string }
 /** The plate description a Tiles node (and Pads node) attaches to its parts. */
@@ -91,6 +92,7 @@ export default function Viewer3D({ parts, plate, compact=false, theme, allowDown
   const [clip, setClip] = useState(1)
   const [layout, setLayout] = useState(true)
   const [status, setStatus] = useState('loading…')
+  const [software,setSoftware]=useState(false)
   const [ready, setReady] = useState(0)
   const [dims, setDims] = useState<{ total: string; parts: Record<string, string> }>({ total: '', parts: {} })
   const urls = parts.map((p) => p.url).join('|')
@@ -103,9 +105,10 @@ export default function Viewer3D({ parts, plate, compact=false, theme, allowDown
 
   useEffect(() => {
     const el = host.current!
-    let renderer: THREE.WebGLRenderer
+    let renderer: StudioRenderer
     try {
-      renderer = new THREE.WebGLRenderer({ antialias: true })
+      renderer = createStudioRenderer()
+      setSoftware(renderer.mode==='software')
     } catch {
       setStatus('WebGL is unavailable in this browser: use the download buttons')
       return
@@ -399,6 +402,7 @@ export default function Viewer3D({ parts, plate, compact=false, theme, allowDown
       </details><div className="v3main">
         <div className="v3host">
           <div className="viewer" ref={host} />
+          {software&&<span className="software-renderer-note" role="status">Software 3D preview</span>}
           {status && <div className="v3status">{status}</div>}
           {dims.total && !status && <div className="v3dims" title="width × depth × height of the model">{tiled ? 'Assembled' : parts.length > 1 ? 'Overall' : 'Size'}: <b>{dims.total}</b></div>}
         </div>
