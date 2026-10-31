@@ -1,0 +1,8 @@
+{
+  "url": "https://raw.githubusercontent.com/thomastt-cryoo/stenciii/e2511ed68a0ec931b09c08f867f59a8f78100338/m7-current/customer/StencilStudio-macOS-Intel.zip",
+  "method": "Installed Chrome, headed, native CDP download directory; no saveAs or origin stamping",
+  "file": "/Users/runner/work/stenciii/stenciii/work/download/StencilStudio-macOS-Intel.zip",
+  "browser": "151.0.7922.174",
+  "passed": false,
+  "error": "Error: cdpSession.send: Protocol error (Browser.getBrowserContexts): 'Browser.getBrowserContexts' wasn't found"
+}
