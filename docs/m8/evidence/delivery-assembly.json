@@ -1,0 +1,44 @@
+{
+  "source_commit": "875a5f0cd4a102a1fc2c2c285e1536947686acbd",
+  "source_tree": "264e36981754dfa563929c26ff61b93dddd93aeb",
+  "workflow_run": 41169308213,
+  "workflow_job": 124443597832,
+  "result": "success",
+  "artifact_commit": "e598b35ea0b2e1c5ef33fe858628a9f0f5e37dbd",
+  "artifact_branch": "codex/m7-artifacts",
+  "customer_path": "m8-current/customer",
+  "exactly_five_files": true,
+  "all_below_20000000_bytes": true,
+  "three_ZIPs_identical_to_security_tested_M7_customer_files": true,
+  "runtime_rebuilds": 0,
+  "CI_manifest_cmp_passed": true,
+  "CI_all_ZIP_CRC_and_prior_runtime_notice_member_hashes_passed": true,
+  "files": [
+    {
+      "file": "Read Me and Checksums.txt",
+      "bytes": 3048,
+      "git_blob_sha": "01b1d46e9908998690ff9212388b9040cc7551bf"
+    },
+    {
+      "file": "StencilStudio-Quick-Start.pdf",
+      "bytes": 15856,
+      "git_blob_sha": "df1ea213c7a72ce55f5edaf426842d75a9c3e384"
+    },
+    {
+      "file": "StencilStudio-Windows-x64.zip",
+      "bytes": 8242951,
+      "git_blob_sha": "ed5e4c10c05d28c20deca5489ba93bc71275f919"
+    },
+    {
+      "file": "StencilStudio-macOS-Apple-Silicon.zip",
+      "bytes": 7832862,
+      "git_blob_sha": "cea8331d4af7df44ccfed41c8dd866b6e3a9d43c"
+    },
+    {
+      "file": "StencilStudio-macOS-Intel.zip",
+      "bytes": 8229294,
+      "git_blob_sha": "5678f340d70041fb9c96ac29042e330c597ef2cd"
+    }
+  ],
+  "local_delivery_SHA256_and_retained_Git_blob_identities_match": true
+}

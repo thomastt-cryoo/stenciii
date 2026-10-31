@@ -126,3 +126,5 @@ The TXT hashes the other four files; its own hash is recorded here and in the
 | StencilStudio-Quick-Start.pdf | 15,856 | `a010ad5a762aed7576587a3b0e6b6b284b9816816f4f753a84a09b092beacdaf` |
 | Read Me and Checksums.txt | 3,048 | `a331bdff45d4a6fbcefcef90a2a3d9f9e2c12785a63e9a5a906e429440f8d9fa` |
 
+
+Canonical assembly [41169308213](https://github.com/thomastt-cryoo/stenciii/actions/runs/41169308213) passed on source `875a5f0cd4a102a1fc2c2c285e1536947686acbd`. All five exact files and review evidence are committed on `codex/m7-artifacts` at `e598b35ea0b2e1c5ef33fe858628a9f0f5e37dbd`, under `m8-current/customer/` and the producer-specific snapshot. The local files match those retained Git blob identities and the independently rechecked SHA-256 values. [Assembly evidence](m8/evidence/delivery-assembly.json).
