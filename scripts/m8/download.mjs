@@ -7,13 +7,14 @@ const require=createRequire(resolve('web/package.json')),{chromium}=require('@pl
 const [name,directory,report]=process.argv.slice(2),folder=resolve(directory)
 mkdirSync(folder,{recursive:true});mkdirSync(resolve(report,'..'),{recursive:true})
 const url='https://raw.githubusercontent.com/thomastt-cryoo/stenciii/e2511ed68a0ec931b09c08f867f59a8f78100338/m7-current/customer/'+encodeURIComponent(name)
-const result={url,method:'Installed Chrome, headed, native CDP download directory; no saveAs or origin stamping',file:resolve(folder,name)}
+const result={url,method:'Installed Chrome, native CDP download directory; no saveAs or origin stamping',file:resolve(folder,name)}
 let browser
 try{
- browser=await chromium.launch({channel:'chrome',headless:false})
+ result.headless=process.env.M8_DOWNLOAD_HEADLESS==='1'
+ browser=await chromium.launch({channel:'chrome',headless:result.headless})
  result.browser=browser.version()
  const page=await browser.newPage(),cdp=await browser.newBrowserCDPSession()
- const {browserContextIds}=await cdp.send('Browser.getBrowserContexts')
+ const {browserContextIds}=await cdp.send('Target.getBrowserContexts')
  if(browserContextIds.length!==1)throw Error('Expected one isolated download browser context')
  await cdp.send('Browser.setDownloadBehavior',{behavior:'allow',browserContextId:browserContextIds[0],downloadPath:folder,eventsEnabled:true})
  const done=new Promise((ok,bad)=>{
