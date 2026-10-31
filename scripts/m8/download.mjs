@@ -13,7 +13,9 @@ try{
  browser=await chromium.launch({channel:'chrome',headless:false})
  result.browser=browser.version()
  const page=await browser.newPage(),cdp=await browser.newBrowserCDPSession()
- await cdp.send('Browser.setDownloadBehavior',{behavior:'allow',downloadPath:folder,eventsEnabled:true})
+ const {browserContextIds}=await cdp.send('Browser.getBrowserContexts')
+ if(browserContextIds.length!==1)throw Error('Expected one isolated download browser context')
+ await cdp.send('Browser.setDownloadBehavior',{behavior:'allow',browserContextId:browserContextIds[0],downloadPath:folder,eventsEnabled:true})
  const done=new Promise((ok,bad)=>{
   cdp.on('Browser.downloadWillBegin',e=>result.suggestedFilename=e.suggestedFilename)
   cdp.on('Browser.downloadProgress',e=>{if(e.state==='completed')ok();if(e.state==='canceled')bad(Error('Native browser download canceled'))})
