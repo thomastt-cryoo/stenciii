@@ -18,3 +18,5 @@ node_modules/
 
 # Generated review downloads are retained on codex/m7-artifacts.
 /distribution/m7/customer/
+/distribution/m8/customer/
+/tmp/pdfs/m8/

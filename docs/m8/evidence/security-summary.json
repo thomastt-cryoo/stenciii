@@ -1,0 +1,39 @@
+{
+  "review_date": "2026-10-31",
+  "customer_guide_summary": "Real Chrome downloads retained Internet-zone/quarantine metadata. Consumer Windows SmartScreen approval remains unverified: the Server runner is not a consumer PC, and the local PC already has SmartScreen disabled. Gatekeeper was enabled and blocked both quarantined Mac apps. Apple Silicon reached administrator authentication after two app-specific Open Anyway confirmations; authenticated launch and reopen were not completed. Intel approval and reopen remain unverified. No global security protection was disabled.",
+  "commercial_recommendation": "HOLD - complete consumer Windows and authenticated Mac first-download approval qualification before a general customer release",
+  "platform_decisions": {
+    "windows-x64": "HOLD - packaged workflows accepted; consumer SmartScreen launch/approval/reopen unverified",
+    "macos-arm64": "HOLD - packaged workflows accepted; first-download approval reached administrator authentication, not a running editor",
+    "macos-x64": "HOLD - repaired Safari and packaged workflows accepted; first-download approval/reopen incomplete"
+  },
+  "no_Developer_ID_or_notarization_requirement": true,
+  "scope": "Warnings and native UI steps are actual observations. A live PID or green Actions collector is not an approval pass.",
+  "sources": {
+    "windows": {
+      "commit": "059c2ca40f148c0e9dfd02c0a32afb22e9590689",
+      "run": 41167542168,
+      "job": 124438261599
+    },
+    "macos-arm64": {
+      "commit": "b1b8d50267b266ca3d4d3a51c0941a33122d0d36",
+      "run": 41168127844,
+      "job": 124440025123
+    },
+    "macos-x64": {
+      "commit": "b1b8d50267b266ca3d4d3a51c0941a33122d0d36",
+      "run": 41168127844,
+      "job": 124440024946
+    }
+  },
+  "compatibility_exclusions_not_release_blockers_if_excluded": [
+    "Windows 10",
+    "Older macOS",
+    "Physical retail Macs beyond hosted CI",
+    "Windows Firefox 3D in the unqualified environment"
+  ],
+  "global_security_changes": false,
+  "quarantine_or_MOTW_removed": false,
+  "authenticated_Mac_editor_launch_verified": false,
+  "consumer_Windows_SmartScreen_approval_verified": false
+}
