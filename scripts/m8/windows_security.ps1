@@ -44,13 +44,35 @@ try {
  $record.launcher_signature=Get-AuthenticodeSignature -LiteralPath $launcher | Select-Object Status,StatusMessage
  $record.backend_signature=Get-AuthenticodeSignature -LiteralPath $backend | Select-Object Status,StatusMessage
  # ShellExecute matches normal user launch. Never synthesize/remove MOTW.
- Start-Process -FilePath $launcher -ArgumentList @('--profile-dir',('"'+(Join-Path $extract 'security-profile')+'"')) -WindowStyle Normal
+ $helper=Start-Process -FilePath (Get-Process -Id $PID).Path -ArgumentList @('-NoProfile','-File',('"'+(Join-Path $PSScriptRoot 'shell_open.ps1')+'"'),'-Launcher',('"'+$launcher+'"'),'-Profile',('"'+(Join-Path $extract 'security-profile')+'"')) -WindowStyle Hidden -PassThru
  Start-Sleep -Seconds 10
  Capture 'first-open';$record.initial_ui=Windows
  $record.initial_processes=@(Get-CimInstance Win32_Process | Where-Object {$_.ExecutablePath -eq $launcher -or $_.ExecutablePath -eq $backend}|Select-Object ProcessId,ExecutablePath)
  # UI observations only: do not invoke broad security setting controls.
  $record.warning_observed=(@($record.initial_ui|Where-Object { $_.name -match 'Windows protected|SmartScreen' -or ($_.children -join ' ') -match 'Windows protected your PC' }).Count -gt 0)
- $record.app_specific_approval_verified=$false
+ # Only this exact known package's unrecognized-app dialog may be approved.
+ if($record.warning_observed) {
+  $root=[Windows.Automation.AutomationElement]::RootElement
+  $wins=$root.FindAll([Windows.Automation.TreeScope]::Children,[Windows.Automation.Condition]::TrueCondition)
+  foreach($w in $wins) {
+   $elements=$w.FindAll([Windows.Automation.TreeScope]::Descendants,[Windows.Automation.Condition]::TrueCondition)
+   $text=($elements|ForEach-Object {$_.Current.Name}) -join ' '
+   if($text -match 'Windows protected your PC') {
+    foreach($e in $elements){if($e.Current.Name -eq 'More info'){ $e.GetCurrentPattern([Windows.Automation.InvokePattern]::Pattern).Invoke() }}
+    Start-Sleep -Seconds 2
+    $elements=$w.FindAll([Windows.Automation.TreeScope]::Descendants,[Windows.Automation.Condition]::TrueCondition)
+    $text=($elements|ForEach-Object {$_.Current.Name}) -join ' '
+    $record.expanded_warning=$text
+    if($text -match 'Stencil Studio.exe' -and $text -match 'Unknown publisher') {
+     foreach($e in $elements){if($e.Current.Name -eq 'Run anyway'){ $e.GetCurrentPattern([Windows.Automation.InvokePattern]::Pattern).Invoke();$record.run_anyway_clicked=$true }}
+    }
+   }
+  }
+  Start-Sleep -Seconds 8
+  Capture 'after-approval';$record.after_ui=Windows
+  $record.approved_processes=@(Get-CimInstance Win32_Process|Where-Object {$_.ExecutablePath -eq $backend}|Select-Object ProcessId,ExecutablePath)
+  $record.app_specific_approval_verified=$record.run_anyway_clicked -and $record.approved_processes.Count -gt 0
+ }
  $record.consumer_first_download_pass=$false
  $record.limitation='Automated hosted Windows Server is not a fresh consumer Windows 11 installation. No consumer SmartScreen approval is inferred from an allowed launch.'
 } catch { $record.error=$_.Exception.ToString() }
@@ -60,6 +82,7 @@ finally {
   Start-Sleep -Seconds 3
   $record.remaining_backend=@(Get-CimInstance Win32_Process|Where-Object {$_.ExecutablePath -eq $backend}|Select-Object ProcessId,ExecutablePath)
  }
+ if($helper -and !$helper.HasExited){Stop-Process -Id $helper.Id -ErrorAction SilentlyContinue}
  $record | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath (Join-Path $Out 'security.json') -Encoding utf8
  $record | ConvertTo-Json -Depth 12
 }

@@ -48,7 +48,9 @@ try:
  time.sleep(7);report['initial_ui']=snapshot('first-open')
  report['initial_pids']=run('pgrep','-x','stencil-studio')
  # Only attempt the documented app-specific UI; never change the global policy.
- if report['initial_pids']['code']!=0:
+ # A blocked app can have a live process while Gatekeeper owns its modal alert.
+ # A PID must never be interpreted as successful launch/approval.
+ if report['assessment']['code']!=0 and report['app_quarantine']['code']==0:
   report['dismiss_warning']=apple('''tell application "System Events"
 if exists process "CoreServicesUIAgent" then
  tell process "CoreServicesUIAgent"
@@ -61,6 +63,7 @@ if exists process "CoreServicesUIAgent" then
  end tell
 end if
 end tell''')
+  report['dismiss_escape']=apple('tell application "System Events" to key code 53')
   report['settings_open']=run('open','x-apple.systempreferences:com.apple.preference.security?Privacy')
   time.sleep(6);report['settings_ui']=snapshot('privacy-security')
   # Require the app's name in the pane before selecting its exception button.
@@ -105,9 +108,10 @@ repeat with pname in {"CoreServicesUIAgent", "System Settings"}
 end repeat
 end tell''')
   time.sleep(7);report['approved_pids']=run('pgrep','-x','stencil-studio');report['after_ui']=snapshot('after-approval')
-  report['app_specific_approval_verified']=report['open_anyway']['code']==0 and report['approved_pids']['code']==0
+  report['backend_listeners']=run('lsof','-a','-c','stencil','-iTCP','-sTCP:LISTEN')
+  report['app_specific_approval_verified']=report['open_anyway']['code']==0 and report['approved_pids']['code']==0 and report['backend_listeners']['code']==0
  else:
-  report['limitation']='Initial quarantined launch was allowed on this runner; consumer approval warning not exercised'
+  report['limitation']='No blocked, quarantined assessment available for the approval walkthrough; no launch pass inferred from a process ID'
  report['quarantine_after']=run('xattr','-p','com.apple.quarantine',str(app))
  report['gatekeeper_status_after']=run('spctl','--status')
  report['actual_browser_download_quarantine']=report['archive_quarantine']['code']==0
