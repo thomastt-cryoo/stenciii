@@ -6,16 +6,16 @@ This is a technical review package; no commercial listing has been published.
 SHA-256 (checks corruption, not publisher identity):
 
 StencilStudio-Windows-x64.zip
-8242785 bytes
-bb8c5a8a14e6d2acaef36d5e0a39e8b3a1c179fefd3d16f9acd3b37825f935f5
+8242951 bytes
+60acdaf946f14b2f6ac525772b7cc645240a53aa1a2831e698c7949998f850d6
 
 StencilStudio-macOS-Apple-Silicon.zip
-7832696 bytes
-c602b64f5894fea31b3e75511e61f3e6825074ed557e678573c0b5b09b23655a
+7832862 bytes
+d45b2086de195710e8ed3b471b22ac52a337bf3d8931651f5dbd98173defc63d
 
 StencilStudio-macOS-Intel.zip
-8225479 bytes
-21298dcc72cbb397854989886cad2f942b0ba2320a1c2d8d85db4c186beb8d1c
+8229294 bytes
+1d9ff761a82dee967f16a9bd76a7165b5b1ac74459ee844e610099b47db87d7f
 
 StencilStudio-Quick-Start.pdf
 43171 bytes
