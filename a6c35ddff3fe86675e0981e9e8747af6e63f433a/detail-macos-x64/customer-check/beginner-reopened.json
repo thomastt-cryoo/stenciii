@@ -1,0 +1,147 @@
+{
+  "version": 2,
+  "stencilStudio": {
+    "schema": 2,
+    "name": "simple-logo",
+    "style": "standard"
+  },
+  "images": {
+    "44fcfa6c069b00d0": {
+      "name": "simple-logo.svg",
+      "base64": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjQwIiB2aWV3Qm94PSIwIDAgMzAwIDI0MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSIxNTAiIGN5PSIxMjAiIHI9Ijg1IiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjE0Ii8+PHBhdGggZD0iTTg1IDE0MyBRMTUwIDUzIDIxNSAxNDMgTTEwNiAxMTYgUTE1MCAxNzkgMTk0IDExNiIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIxNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iODAiIHI9IjEzIi8+PC9zdmc+"
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "artwork",
+        "type": "source",
+        "params": {
+          "image_id": "44fcfa6c069b00d0",
+          "resolution": 650
+        }
+      },
+      {
+        "id": "framing",
+        "type": "transform",
+        "params": {
+          "crop_left": 0,
+          "crop_top": 0,
+          "crop_right": 0,
+          "crop_bottom": 0,
+          "turn": "0",
+          "angle": 0,
+          "flip_h": false,
+          "flip_v": false
+        }
+      },
+      {
+        "id": "paint",
+        "type": "threshold",
+        "params": {
+          "threshold": 256,
+          "invert": false
+        }
+      },
+      {
+        "id": "outlines",
+        "type": "trace",
+        "params": {
+          "smooth": 1.5,
+          "corner_deg": 60,
+          "tolerance": 0.4,
+          "min_area": 4
+        }
+      },
+      {
+        "id": "cleanup",
+        "type": "remove_islands",
+        "params": {
+          "delete_specks": false,
+          "fill_holes": false,
+          "max_area": 50,
+          "keep_largest": 0
+        }
+      },
+      {
+        "id": "plate",
+        "type": "vector_stencil",
+        "params": {
+          "detail": 4,
+          "width_mm": 160,
+          "thickness_mm": 5,
+          "margin_mm": 8,
+          "flip": false,
+          "bridge_mm": 1.6,
+          "bridges_per_island": 1,
+          "bridge_spacing": "closest",
+          "bridge_min_angle_deg": 45,
+          "bridge_max_length": 4,
+          "bridge_passes": 4,
+          "raised_bridges": true,
+          "z_bridging": "easy",
+          "layer_height_mm": 0.2,
+          "extra_top_layers": 1,
+          "max_overhang_deg": 0,
+          "min_island_mm2": 0,
+          "min_contact_mm": 0,
+          "min_first_layer_width_mm": 0,
+          "first_layer_taper_mm": 1,
+          "tile_method": "per_tile"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": [
+          "artwork",
+          "image"
+        ],
+        "to": [
+          "framing",
+          "image"
+        ]
+      },
+      {
+        "from": [
+          "framing",
+          "image"
+        ],
+        "to": [
+          "paint",
+          "image"
+        ]
+      },
+      {
+        "from": [
+          "paint",
+          "mask"
+        ],
+        "to": [
+          "outlines",
+          "mask"
+        ]
+      },
+      {
+        "from": [
+          "outlines",
+          "shapes"
+        ],
+        "to": [
+          "cleanup",
+          "shapes"
+        ]
+      },
+      {
+        "from": [
+          "cleanup",
+          "shapes"
+        ],
+        "to": [
+          "plate",
+          "shapes"
+        ]
+      }
+    ]
+  }
+}

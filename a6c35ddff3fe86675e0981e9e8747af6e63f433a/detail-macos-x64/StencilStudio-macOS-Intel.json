@@ -1,0 +1,16 @@
+{
+  "file": "StencilStudio-macOS-Intel.zip",
+  "platform": "macos-x64",
+  "source_commit": "a6c35ddff3fe86675e0981e9e8747af6e63f433a",
+  "bytes": 8249303,
+  "sha256": "335d23d76c697f3d88ac9fb3bc3984b859578d157efcf9aa1ba1de87934f3d36",
+  "etsy_limit_bytes": 20000000,
+  "fits_etsy_limit": true,
+  "signing": {
+    "developer_id_signed": false,
+    "notarized": false,
+    "ad_hoc_signed": true
+  },
+  "backend_bytes": 16204048,
+  "launcher_bytes": 601968
+}
