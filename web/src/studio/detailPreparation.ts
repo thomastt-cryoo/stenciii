@@ -12,7 +12,7 @@ export function prepareFineArtwork(doc:ProjectDocument):ProjectDocument {
  // Avoid the doubled mask + strong curve blur that rounds off narrow whiskers.
  if(q.smoothing){set(q.smoothing.id,'radius',.4);set(q.smoothing.id,'supersample',1)}
  for(const [key,value] of Object.entries({smooth:1.25,corner_deg:60,tolerance:.35,min_area:2}))set(q.trace.id,key,value)
- let cleanup=q.cleanup
+ let cleanup=q.cleanup?.type==='remove_islands'?q.cleanup:undefined
  if(!cleanup){
   const graph=rawGraph(next);let id='fine-cleanup',i=1
   while(graph.nodes.some((n:any)=>n.id===id))id=`fine-cleanup-${i++}`
