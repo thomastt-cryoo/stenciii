@@ -79,3 +79,26 @@ updated frontend. Each is checked using its extracted graphical launcher,
 beginner/fine-preparation/manufacturing workflows, real exports, offline requests,
 project reopen and shutdown. Mac checks additionally exercise genuine Safari.
 Final source/run identities and file hashes are recorded here after collection.
+
+The exact Windows ZIP from source `bf8278fa9beac101b7ec21b7fdd89a1379f3ebca`
+has passed all five package checks on Windows 11 Home 10.0.26300, installed
+Chrome 151.0.7922.72: beginner upload/generation/customization, the fine-detail
+option and docked settings, colours, tiling and mounting/hardware. Actual STL/ZIP
+exports, offline operation, exact saved-project reopen and shutdown passed.
+The remote Windows run initially stopped on the independent Python tiled-STL
+comparison's 180-second harness timeout; the retained export independently passed
+locally in 6.12 seconds, and the exact extracted package subsequently completed
+the entire bounded collection locally. This is not relabeled as a passing CI
+job. All 17 hosted host/lifecycle/security-header checks also passed.
+
+- [Windows package checks](windows-package-checks.json)
+- [Independent retained tiled-export proof](windows-tiled-export.json)
+- [Hosted host checks](windows-host-checks.json)
+- [Local review download manifest](../../distribution/detail-update/delivery-manifest.json)
+
+The Windows ZIP is 8,266,183 bytes, SHA-256
+`e179261326cc8b3101f5d022f726d4459582211cf2e63b8f2b276a3d8823e6b1`.
+It is saved under `distribution/detail-update/customer/`. The original queued Mac
+jobs ended without running; a bounded retry using existing verified frontend
+assets is queued in run `41895409626`. No new Mac package is called qualified
+until those actual builds and checks complete.
