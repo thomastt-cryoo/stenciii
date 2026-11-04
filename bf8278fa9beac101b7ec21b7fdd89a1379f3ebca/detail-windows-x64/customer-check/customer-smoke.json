@@ -1,0 +1,355 @@
+{
+  "cases": [
+    {
+      "name": "beginner upload, generate, customize width, 3D, STL, save, reload and reopen",
+      "passed": true,
+      "proof": {
+        "independent": {
+          "format": "binary STL",
+          "bytes": 130484,
+          "triangles": 2608,
+          "vertices": 1300,
+          "bounds_mm": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              160,
+              131.1999969482422,
+              5.199999809265137
+            ]
+          ],
+          "size_mm": [
+            160,
+            131.1999969482422,
+            5.199999809265137
+          ],
+          "signed_volume_mm3": 94774.4803851569,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        "normals": {
+          "beginner.stl": {
+            "finite_unit_normals": 2608,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999991
+          }
+        },
+        "m6_equivalence": {}
+      }
+    },
+    {
+      "name": "fine-artwork preset, docked interactive settings and lossless reopen",
+      "passed": true,
+      "proof": {
+        "independent": {
+          "format": "binary STL",
+          "bytes": 289684,
+          "triangles": 5792,
+          "vertices": 2892,
+          "bounds_mm": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              160,
+              131.1999969482422,
+              5.199999809265137
+            ]
+          ],
+          "size_mm": [
+            160,
+            131.1999969482422,
+            5.199999809265137
+          ],
+          "signed_volume_mm3": 94834.47804142587,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        "normals": {
+          "fine-artwork.stl": {
+            "finite_unit_normals": 5792,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.999999999999999
+          }
+        },
+        "m6_equivalence": {}
+      }
+    },
+    {
+      "name": "colours",
+      "passed": true,
+      "proof": {
+        "independent": {
+          "format": "ZIP",
+          "bytes": 601063,
+          "entries": [
+            {
+              "name": "assembly-1-Register_colour_plates/colour_1.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 3128985397,
+              "format": "binary STL",
+              "bytes": 281084,
+              "triangles": 5620,
+              "vertices": 2804,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  79.16666412353516,
+                  5.199999809265137
+                ]
+              ],
+              "size_mm": [
+                100,
+                79.16666412353516,
+                5.199999809265137
+              ],
+              "signed_volume_mm3": 23213.70367228597,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Register_colour_plates/colour_2.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 141456711,
+              "format": "binary STL",
+              "bytes": 277284,
+              "triangles": 5544,
+              "vertices": 2754,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  79.16666412353516,
+                  5.199999809265137
+                ]
+              ],
+              "size_mm": [
+                100,
+                79.16666412353516,
+                5.199999809265137
+              ],
+              "signed_volume_mm3": 31926.622641310845,
+              "components": 1,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 1850354433,
+              "format": "binary STL",
+              "bytes": 28284,
+              "triangles": 564,
+              "vertices": 288,
+              "bounds_mm": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  17.399999618530273,
+                  3.799999952316284,
+                  12
+                ]
+              ],
+              "size_mm": [
+                17.399999618530273,
+                3.799999952316284,
+                12
+              ],
+              "signed_volume_mm3": 407.116420441479,
+              "components": 3,
+              "edges_not_shared_twice": 0,
+              "inconsistent_edge_winding": 0,
+              "degenerate_faces": 0,
+              "closed_oriented_mesh": true
+            },
+            {
+              "name": "original-project.json",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 1292928382
+            },
+            {
+              "name": "manufacturing-manifest.json",
+              "date_time": [
+                1980,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              "crc": 2585547294
+            }
+          ]
+        },
+        "normals": {
+          "assembly-1-Register_colour_plates/colour_1.stl": {
+            "finite_unit_normals": 5620,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999992
+          },
+          "assembly-1-Register_colour_plates/colour_2.stl": {
+            "finite_unit_normals": 5544,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999992
+          },
+          "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+            "finite_unit_normals": 564,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 0.9999999999999994
+          }
+        },
+        "m6_equivalence": {
+          "assembly-1-Register_colour_plates/colour_1.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "92c79f38745cfb9cf767e369c879eeb016c96599b52edc2d73390025864ace9a",
+              "92c79f38745cfb9cf767e369c879eeb016c96599b52edc2d73390025864ace9a"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              5620,
+              5620
+            ],
+            "shared_exact_triangles": 5620,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Register_colour_plates/colour_2.stl": {
+            "file_bytes_equal": false,
+            "file_sha256": [
+              "7ecf80834a9ac81d7fdf2a24df6a19b3914b104cb47f188ecc2f640f0e9838a4",
+              "1dd5b91da2d371d2957a1a44202b2b8eb57f9691c4b4465ae54209c2675d8a91"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              5544,
+              5544
+            ],
+            "shared_exact_triangles": 5544,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          },
+          "assembly-1-Register_colour_plates/pins_3x_d3.8mm.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "457eabc0702e354b1b836f2831f4c45e9559d8c9d156097aa9a807989022eb25",
+              "457eabc0702e354b1b836f2831f4c45e9559d8c9d156097aa9a807989022eb25"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              564,
+              564
+            ],
+            "shared_exact_triangles": 564,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          }
+        }
+      },
+      "lossless_reopen": true
+    }
+  ],
+  "outside_requests": [],
+  "page_errors": [],
+  "security_qualification": false,
+  "scope": "Exact extracted customer ZIP; owned headless installed Chrome profile, not first-download approval",
+  "instance": {
+    "fallback": false,
+    "launcherPid": 3896,
+    "pid": 3764,
+    "port": 63245,
+    "preferredPort": 0,
+    "profile": "D:\\a\\stenciii\\stenciii\\out\\customer-check\\profile",
+    "schema": 1,
+    "studio": "stencil-studio",
+    "temporarySession": false,
+    "url": "http://localhost:63245/",
+    "version": "2.9.4"
+  },
+  "browser": "156.0.8078.80",
+  "passed": false,
+  "error": "Error: spawnSync python ETIMEDOUT\n    at Object.spawnSync (node:internal/child_process:1127:20)\n    at spawnSync (node:child_process:912:24)\n    at execFileSync (node:child_process:955:15)\n    at prove (file:///D:/a/stenciii/stenciii/scripts/detail-update/customer-smoke.mjs:14:41)\n    at file:///D:/a/stenciii/stenciii/scripts/detail-update/customer-smoke.mjs:56:15"
+}
