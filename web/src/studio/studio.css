@@ -389,3 +389,34 @@ h1 { font-size: 22px; line-height: 1.25; letter-spacing: -.6px; font-weight: 500
 .project-details label { display: grid; gap: 8px; margin: 14px 0; }
 .project-details input { min-width: 0; width: 100%; padding: 8px; background: var(--input); color: var(--text); border: 1px solid var(--line); border-radius: 6px; }
 .project-details button { border: 1px solid var(--line); padding: 8px 10px; }
+
+/* All Settings shares the workspace: changing parameters never covers the model. */
+.fine-artwork-tools { margin: 20px 0; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.fine-artwork-tools summary { cursor: pointer; font-size: 12px; font-weight: 550; }
+.fine-artwork-tools p { color: var(--muted); font-size: 11px; line-height: 1.65; margin: 12px 0; }
+.fine-artwork-button { border: 1px solid var(--line); padding: 9px 12px; font-size: 12px; }
+.workspace-layout { grid-template-columns: minmax(0,1fr) var(--quick-width,312px); }
+.workspace-layout.settings-open { grid-template-columns: clamp(340px,29vw,460px) minmax(0,1fr) var(--quick-width,312px); }
+.settings-panel { position: sticky; top: 0; align-self: start; width: auto; min-width: 0; height: calc(100dvh - 12px); max-height: 1080px; margin: 0; display: flex; flex-direction: column; border: 0; border-right: 1px solid var(--line); border-radius: 0; box-shadow: none; }
+.settings-panel>header { padding: 22px 20px 16px; }
+.settings-panel>header p { line-height: 1.6; }
+.settings-panel .settings-search { flex-wrap: wrap; padding: 0 20px 16px; gap: 10px; }
+.settings-panel .settings-search>input { flex-basis: 100%; }
+.settings-panel .settings-body { display: flex; flex-direction: column; }
+.settings-panel .settings-body>nav { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); flex: 0 0 auto; max-height: 166px; overflow: auto; border-right: 0; border-bottom: 1px solid var(--line); padding: 8px 12px; gap: 4px; }
+.settings-panel .settings-body>nav button { width: 100%; min-width: 0; padding: 9px 10px; white-space: normal; font-size: 12px; }
+.settings-panel .settings-content { min-height: 0; padding: 20px; overflow-x: hidden; overflow-wrap: anywhere; }
+.settings-panel>footer { padding: 12px 20px; line-height: 1.6; }
+.settings-panel .artwork-groups { flex-wrap: wrap; }
+.settings-open .workspace { padding-left: 24px; padding-right: 24px; }
+@media (max-width:1250px) and (min-width:851px) {
+ .workspace-layout.settings-open { grid-template-columns: 340px minmax(0,1fr); }
+ .settings-open>.settings-panel { grid-row: 1 / span 2; }
+ .settings-open>.workspace,.settings-open>.quick-sidebar { grid-column: 2; }
+ .settings-open>.quick-sidebar { border-left: 0; border-top: 1px solid var(--line); }
+ .settings-open .sidebar-resize { display: none; }
+}
+@media (max-width:850px) {
+ .settings-panel { position: relative; width: 100%; height: min(60dvh,580px); max-height: none; border-right: 0; border-bottom: 1px solid var(--line); }
+ .settings-panel .settings-content { padding: 16px 20px; }
+}
