@@ -71,6 +71,9 @@ Customer examples are saved locally under `distribution/detail-update/examples/`
 settings; `Tiger-fine-detail.stl` is the actual verified export. The saved recipe
 also opens in the previous M7/M8 engine, because the update uses ordinary engine
 parameters, without a new file format or engine operation.
+This was exercised against the actual previous Windows customer package: opening
+the new project reproduced the 2,318,284-byte improved STL byte for byte and
+shutdown passed. [Previous-package parity](previous-package-parity.json).
 
 ## Review packages
 

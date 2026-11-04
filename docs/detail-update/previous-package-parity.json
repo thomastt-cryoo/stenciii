@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "package_source": "670aad80fe5fe648f802fa429aa67c55ea2b538a",
+  "new_recipe_replayed_in_previous_M8_customer_runtime": true,
+  "exported_STL_bytes_identical": true,
+  "bytes": 2318284,
+  "sha256": "953ce75212dd7f4b18cf2d5cd1d9acc7ea8a905de9937823a14932cb291c90d1",
+  "shutdown": true
+}
