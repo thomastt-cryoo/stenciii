@@ -11,7 +11,7 @@ const [launcher,output]=process.argv.slice(2),out=resolve(output);mkdirSync(out,
 const report={cases:[],outside_requests:[],page_errors:[],security_qualification:false,scope:'Exact extracted customer ZIP; owned headless installed Chrome profile, not first-download approval'}
 const child=spawn(resolve(launcher),['--automation','--no-open','--profile-dir',resolve(out,'profile'),'--port','0','--idle-timeout','0'],{stdio:['pipe','pipe','pipe'],windowsHide:true})
 let browser,errors='';child.stderr.on('data',b=>errors+=b)
-const prove=(file,baseline)=>JSON.parse(execFileSync('python',['scripts/m7/prove_export.py',file,...(baseline?[baseline]:[])],{encoding:'utf8',maxBuffer:32_000_000,timeout:180000}))
+const prove=(file,baseline)=>JSON.parse(execFileSync('python',['scripts/m7/prove_export.py',file,...(baseline?[baseline]:[])],{encoding:'utf8',maxBuffer:32_000_000,timeout:600000}))
 try{
  const line=await Promise.race([new Promise((ok,bad)=>{createInterface({input:child.stdout}).once('line',ok);child.on('exit',code=>bad(Error(`Launcher exited ${code}: ${errors}`)))}),new Promise((_,bad)=>setTimeout(()=>bad(Error('Startup timeout')),25000).unref())])
  const ready=JSON.parse(line);report.instance=ready

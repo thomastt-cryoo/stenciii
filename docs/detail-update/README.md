@@ -77,31 +77,44 @@ shutdown passed. [Previous-package parity](previous-package-parity.json).
 
 ## Review packages
 
-Windows x64, Apple Silicon and Intel review packages are being rebuilt from the
-updated frontend. Each is checked using its extracted graphical launcher,
-beginner/fine-preparation/manufacturing workflows, real exports, offline requests,
-project reopen and shutdown. Mac checks additionally exercise genuine Safari.
-Final source/run identities and file hashes are recorded here after collection.
+Two updated review packages are saved in `distribution/detail-update/customer/`.
+The [manifest](../../distribution/detail-update/delivery-manifest.json) records
+exact source identities, sizes and SHA-256 values. Both archives passed CRC/hash
+checks and are below 20,000,000 bytes. The previous five M8 delivery files retain
+all of their original hashes; their first-download/security restrictions remain.
 
-The exact Windows ZIP from source `bf8278fa9beac101b7ec21b7fdd89a1379f3ebca`
-has passed all five package checks on Windows 11 Home 10.0.26300, installed
-Chrome 151.0.7922.72: beginner upload/generation/customization, the fine-detail
-option and docked settings, colours, tiling and mounting/hardware. Actual STL/ZIP
-exports, offline operation, exact saved-project reopen and shutdown passed.
-The remote Windows run initially stopped on the independent Python tiled-STL
-comparison's 180-second harness timeout; the retained export independently passed
-locally in 6.12 seconds, and the exact extracted package subsequently completed
-the entire bounded collection locally. This is not relabeled as a passing CI
-job. All 17 hosted host/lifecycle/security-header checks also passed.
+| Updated package | Bytes | SHA-256 |
+|---|---:|---|
+| Windows x64 | 8,266,183 | `e179261326cc8b3101f5d022f726d4459582211cf2e63b8f2b276a3d8823e6b1` |
+| Intel Mac | 8,249,303 | `335d23d76c697f3d88ac9fb3bc3984b859578d157efcf9aa1ba1de87934f3d36` |
 
-- [Windows package checks](windows-package-checks.json)
-- [Independent retained tiled-export proof](windows-tiled-export.json)
-- [Hosted host checks](windows-host-checks.json)
-- [Local review download manifest](../../distribution/detail-update/delivery-manifest.json)
+**Windows:** exact ZIP source `bf8278fa9beac101b7ec21b7fdd89a1379f3ebca`
+passed all five customer workflows locally on Windows 11 Home 10.0.26300,
+installed Chrome 151.0.7922.72: beginner creation, fine preparation/docked
+settings, colours, tiling and mounting/hardware. Actual STL/ZIP exports, offline
+processing, lossless project reopen and shutdown passed. All 17 hosted host
+checks also passed. The CI job initially stopped when its independent Python
+comparison exceeded the harness's 180-second limit; that retained tiled export
+passed locally in 6.12 seconds, followed by the complete exact-package local
+collection. This is not relabeled as a passing CI job.
+[Package checks](windows-package-checks.json),
+[tiled-export proof](windows-tiled-export.json), [host](windows-host-checks.json).
+The independent proof harness now allows 600 seconds with every validity and
+exact-equivalence assertion retained. That harness adjustment needs no executable
+rebuild and is not presented as an executed CI retry.
 
-The Windows ZIP is 8,266,183 bytes, SHA-256
-`e179261326cc8b3101f5d022f726d4459582211cf2e63b8f2b276a3d8823e6b1`.
-It is saved under `distribution/detail-update/customer/`. The original queued Mac
-jobs ended without running; a bounded retry using existing verified frontend
-assets is queued in run `41895409626`. No new Mac package is called qualified
-until those actual builds and checks complete.
+**Intel Mac:** source `a6c35ddff3fe86675e0981e9e8747af6e63f433a`, using
+verified frontend assets from source `bf8278fa9beac101b7ec21b7fdd89a1379f3ebca`,
+passed all five packaged workflows in Chrome 151.0.7922.174, all 17 host checks
+and genuine Safari 26.6 software rendering on macOS 15.7.9. Safari checked
+actual camera/orbit/wireframe/cutaway pixels, exports, persistence and shutdown.
+[Package checks](intel-package-checks.json), [host](intel-host-checks.json),
+[Safari](intel-safari-checks.json). Collection run: `41895409626`.
+
+**Apple Silicon updated download remains pending:** both hosted attempts were
+cancelled while queued, before a runner was assigned. No new ARM binary or native
+qualification is claimed. The accepted M8 ARM ZIP is kept unchanged. The shared
+source implementation and ordinary fine-detail saved recipe are available, but
+an updated ARM package still needs a native build/spot check when capacity is
+available. This is a distribution limit, not an observed application defect.
+The user's pre-existing deleted historical log files were left untouched.

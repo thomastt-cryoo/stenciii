@@ -8,17 +8,6 @@ env:
   M7_STABLE: "1.99.0"
   M7_NIGHTLY: nightly-2026-10-28
 jobs:
-  cancel-obsolete-review:
-    if: contains(github.event.head_commit.message, '[detail-collect]')
-    runs-on: ubuntu-24.04
-    permissions:
-      actions: write
-      contents: read
-    steps:
-      - name: Cancel only the superseded review build from this task
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh run cancel 41873097546 --repo thomastt-cryoo/stenciii
   assets:
     if: contains(github.event.head_commit.message, '[detail-packages]')
     runs-on: ubuntu-24.04

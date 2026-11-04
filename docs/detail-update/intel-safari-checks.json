@@ -1,0 +1,140 @@
+{
+  "browser": "Safari",
+  "platform": "macOS",
+  "cases": [
+    {
+      "name": "simple",
+      "passed": true,
+      "webgl": {
+        "mode": "software",
+        "version": "Canvas 2D software rasterized 3D",
+        "colours": 3,
+        "height": 636,
+        "width": 911,
+        "painted_pixels": 78563
+      },
+      "proof": {
+        "independent": {
+          "format": "binary STL",
+          "bytes": 249084,
+          "triangles": 4980,
+          "vertices": 2490,
+          "bounds_mm": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              200,
+              153.70370483398438,
+              5.199999809265137
+            ]
+          ],
+          "size_mm": [
+            200,
+            153.70370483398438,
+            5.199999809265137
+          ],
+          "signed_volume_mm3": 71470.04460015621,
+          "components": 1,
+          "edges_not_shared_twice": 0,
+          "inconsistent_edge_winding": 0,
+          "degenerate_faces": 0,
+          "closed_oriented_mesh": true
+        },
+        "normals": {
+          "simple.stl": {
+            "finite_unit_normals": 4980,
+            "zero_or_opposed_normals": 0,
+            "minimum_normal_cross_cosine": 1
+          }
+        },
+        "m6_equivalence": {
+          "simple.stl": {
+            "file_bytes_equal": true,
+            "file_sha256": [
+              "3db1d38e6e22f88ed068c30eea8f1828d911839ca8a7382322a0e6d825fd8384",
+              "3db1d38e6e22f88ed068c30eea8f1828d911839ca8a7382322a0e6d825fd8384"
+            ],
+            "exact_oriented_triangles_equal": true,
+            "exact_surface_equal": true,
+            "category": "A",
+            "method": "exact float32 integer lattice, oriented plane-boundary interval chains",
+            "spatial_tolerance_mm": 0,
+            "maximum_surface_deviation_mm": 0,
+            "triangles": [
+              4980,
+              4980
+            ],
+            "shared_exact_triangles": 4980,
+            "residual_triangles": [
+              0,
+              0
+            ],
+            "residual_exact_planes": 0,
+            "unmatched_plane_boundary_lines": 0
+          }
+        }
+      },
+      "draft_reopen": true
+    }
+  ],
+  "limitations": [],
+  "export_method": "actual customer blob links, retrieved through WebDriver; disk downloads qualified separately in Chromium",
+  "capabilities": {
+    "safari:platformVersion": "15.7.9",
+    "safari:automaticInspection": false,
+    "webkit:WebRTC": {
+      "DisableICECandidateFiltering": false,
+      "DisableInsecureMediaCapture": false
+    },
+    "webkit:alwaysAllowAutoplay": false,
+    "browserVersion": "26.6",
+    "strictFileInteractability": false,
+    "browserName": "Safari",
+    "safari:useSimulator": false,
+    "safari:automaticProfiling": false,
+    "setWindowRect": true,
+    "acceptInsecureCerts": false,
+    "safari:platformBuildVersion": "24G830",
+    "safari:experimentalWebSocketUrl": false,
+    "platformName": "macOS",
+    "safari:diagnose": false
+  },
+  "instance": {
+    "fallback": false,
+    "launcherPid": 12681,
+    "pid": 12688,
+    "port": 49329,
+    "preferredPort": 0,
+    "profile": "/Users/runner/work/stenciii/stenciii/out/safari/profile",
+    "schema": 1,
+    "studio": "stencil-studio",
+    "temporarySession": false,
+    "url": "http://localhost:49329/",
+    "version": "2.9.4"
+  },
+  "last_capability": {
+    "messages": [],
+    "version": null,
+    "lost": true,
+    "available": false
+  },
+  "software_controls": {
+    "passed": true,
+    "actual_canvas_changes": {
+      "camera_top": "1b8afbfd49caf708de6b7216eb534a893dff9da59384767ae1e7aae9426035be",
+      "camera_iso": "747ebebabee827f6968ef6cc69cb0d1a226ee5c87b7991eebc918c114ad61fa9",
+      "wireframe": "871471d3d4da0edc712a9870c7a62541fa841016d13aeddda49d6409ad2e7462",
+      "height_cutaway": "ebf63216961db51839f61c3a873e3d6f432d24edc86f6036e7e79feb50e7fb20",
+      "pointer_orbit": "0fc6b40f8bfad8da7adb01aebdeb7522f92ffde2f221469d5bae535842f3f118"
+    }
+  },
+  "resource_hosts": [
+    "localhost"
+  ],
+  "shutdown_document": true,
+  "passed": true,
+  "qualification": "passed_with_software_rendering"
+}
