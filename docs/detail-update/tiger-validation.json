@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-04",
+  "customer_input": "Fierce Tiger Mascot Emblem-Photoroom.png",
+  "input_sha256": "97a78cea320e5e657e9b3f4709ae583fe2159de9e71e64446cac38fa2811fb97",
+  "original_export_reproduced_byte_for_byte": true,
+  "original_STL_bytes": 2161484,
+  "new_STL_bytes": 2318284,
+  "previous_trace_loops": 49,
+  "new_trace_loops": 39,
+  "intentional_whisker_dots_preserved": 10,
+  "same_physical_dimensions_mm": [
+    200,
+    200,
+    5.2
+  ],
+  "review": "Before/after crops show actual traced geometry before physical bridge additions. Some contour notches come from the source tonal selection and are not safely removable without changing artwork. No claim that every detail is reconstructed perfectly.",
+  "new_mesh": {
+    "independent": {
+      "format": "binary STL",
+      "bytes": 2318284,
+      "triangles": 46364,
+      "vertices": 23084,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          200.0,
+          200.0,
+          5.199999809265137
+        ]
+      ],
+      "size_mm": [
+        200.0,
+        200.0,
+        5.199999809265137
+      ],
+      "signed_volume_mm3": 155302.3734597007,
+      "components": 1,
+      "edges_not_shared_twice": 0,
+      "inconsistent_edge_winding": 0,
+      "degenerate_faces": 0,
+      "closed_oriented_mesh": true
+    },
+    "normals": {
+      "plate-solid.stl": {
+        "finite_unit_normals": 46364,
+        "zero_or_opposed_normals": 0,
+        "minimum_normal_cross_cosine": 0.999999999999999
+      }
+    },
+    "m6_equivalence": {}
+  },
+  "actual_saved_recipe": {
+    "artwork": {
+      "image_id": "054ba56ac87ac255",
+      "resolution": 1400
+    },
+    "soften": {
+      "radius": 0.4,
+      "supersample": 1
+    },
+    "outlines": {
+      "smooth": 1.25,
+      "corner_deg": 60,
+      "tolerance": 0.35,
+      "min_area": 2
+    },
+    "cleanup": {
+      "delete_specks": true,
+      "fill_holes": true,
+      "max_area": 64,
+      "keep_largest": 0
+    }
+  }
+}

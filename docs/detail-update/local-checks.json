@@ -1,0 +1,46 @@
+{
+  "application_source": "bf8278fa9beac101b7ec21b7fdd89a1379f3ebca",
+  "date": "2026-11-04",
+  "production_frontend_and_TypeScript": "passed",
+  "focused_browser_checks": {
+    "command": "npx playwright test e2e/detail-preparation.spec.ts e2e/editor.spec.ts e2e/software-viewer.spec.ts e2e/m3-editor.spec.ts --workers 1",
+    "passed": 18,
+    "failed": 0,
+    "scope": [
+      "fine artwork undo/redo and actual STL",
+      "left dock interaction and narrow layouts",
+      "existing beginner, offline, project and accessible workflows",
+      "text, crop, processing, long-chain and branched workflows",
+      "software and healthy-WebGL 3D"
+    ]
+  },
+  "final_guard_and_style_checks": {
+    "passed": 3,
+    "scope": [
+      "extended fine preparation test includes existing morphology preservation",
+      "left dock geometry",
+      "all three existing styles, independent geometry, undo, save and reopen"
+    ]
+  },
+  "light_dark_accessibility_and_responsiveness": {
+    "passed": 6,
+    "widths": [
+      1366,
+      1024,
+      390
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "axe_violations": 0,
+    "focus_return": "The actual invoking control; the old modal-only test expectation was updated accordingly."
+  },
+  "distinct_browser_checks": 25,
+  "core_WASM_source_changes": 0,
+  "known_limits": [
+    "Fine preparation is opt-in; marks below the cutoff can be intentional.",
+    "Remote package/browser results recorded separately.",
+    "Existing unsigned-app/first-download release restrictions remain."
+  ]
+}

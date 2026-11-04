@@ -28,6 +28,11 @@ test('fine preparation keeps artwork/print dimensions, is undoable, saves and pr
  const metadata=structuredClone(after);metadata.opaque={keep:['unknown',123]};const prepared=prepareFineArtwork(openDocument(metadata));expect(prepared.raw.opaque).toEqual(metadata.opaque)
  const noCleanup=openDocument(before),q=quickRecipe(noCleanup)!,g=noCleanup.raw.graph;g.nodes=g.nodes.filter((n:any)=>n.id!==q.cleanup!.id);g.edges=g.edges.filter((e:any)=>![e.from[0],e.to[0]].includes(q.cleanup!.id));g.edges.push({from:[q.trace!.id,'shapes'],to:[q.build.id,'shapes']})
  expect(quickRecipe(prepareFineArtwork(noCleanup))?.cleanup?.type).toBe('remove_islands')
+ const morphology=openDocument(noCleanup.raw),mg=morphology.raw.graph,recipe=quickRecipe(morphology)!
+ const smoothing=recipe.smoothing!.id;mg.nodes.splice(mg.nodes.findIndex((n:any)=>n.id===recipe.trace!.id),0,{id:'pixel-cleanup',type:'morphology',params:{op:'close',radius:2,iterations:1}})
+ mg.edges=mg.edges.filter((e:any)=>!(e.from[0]===smoothing&&e.to[0]===recipe.trace!.id));mg.edges.push({from:[smoothing,'mask'],to:['pixel-cleanup','mask']},{from:['pixel-cleanup','mask'],to:[recipe.trace!.id,'mask']})
+ const withCleanup=prepareFineArtwork(morphology);expect(quickRecipe(withCleanup)?.cleanup?.type).toBe('remove_islands');expect(withCleanup.raw.graph.nodes.find((n:any)=>n.id==='pixel-cleanup').params).toEqual({op:'close',radius:2,iterations:1})
+
  const custom=openDocument(after);custom.raw.graph.nodes.push({id:'unrelated',type:'source',params:{}});expect(()=>prepareFineArtwork(custom)).toThrow();expect(()=>cleanTinyMarks(custom,true)).toThrow()
 })
 

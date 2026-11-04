@@ -1,0 +1,15 @@
+{
+  "customer_input_stays_in_local_example_project": true,
+  "files": [
+    {
+      "file": "Tiger-fine-detail.stencil.json",
+      "bytes": 2343598,
+      "sha256": "f15b627ac015823e55654ff10321853341b997e787112a282c27e5b13e0161e5"
+    },
+    {
+      "file": "Tiger-fine-detail.stl",
+      "bytes": 2318284,
+      "sha256": "953ce75212dd7f4b18cf2d5cd1d9acc7ea8a905de9937823a14932cb291c90d1"
+    }
+  ]
+}
