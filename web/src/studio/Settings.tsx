@@ -19,15 +19,16 @@ import { artworkHelp } from './artwork'
 
 const readable = (s: string) => s.replace(/\bnodes?\b/gi, 'step').replace(/\bgraphs?\b/gi, 'workflow')
 export default function Settings({ registry, doc, close, initialCategory, initialQuery = '' }: { registry: ParameterRegistry; doc: ProjectDocument | null; close: () => void; initialCategory?: string; initialQuery?: string }) {
-  const dialog = useRef<HTMLDialogElement>(null)
+  const dialog = useRef<HTMLElement>(null)
+  const opener = useRef(document.activeElement as HTMLElement | null)
   const error = useEditor(s => s.error)
   const [query, setQuery] = useState(initialQuery), [category, setCategory] = useState<string>(initialCategory ?? categories[0]), [used, setUsed] = useState(false)
   const [reviewStep,setReviewStep]=useState<string|undefined>()
+  useEffect(()=>{setCategory(initialCategory??categories[0]);setQuery(initialQuery)},[initialCategory,initialQuery])
   const destinations=[{name:'Project name and saved project details',category:'Presets and history',words:'project name rename title'},{name:'Batch Processing and parameter sweeps',category:'Batch processing and diagnostics',words:'batch folder multiple images sweep variations ranges'},{name:'Engine diagnostics and processing reports',category:'Batch processing and diagnostics',words:'diagnostics logs report performance threads memory failed error'},{name:'Original workflow templates, presets and edit history',category:'Presets and history',words:'template presets starter history undo redo restore'},{name:'Copy and paste processing steps',category:'Processing steps',words:'copy paste group clipboard processing steps'}].filter(item=>query.trim()&&query.toLowerCase().trim().split(/\s+/).every(word=>`${item.name} ${item.words}`.toLowerCase().includes(word)))
   useEffect(() => {
-    const modal = dialog.current!, opener = document.querySelector<HTMLButtonElement>('.all-settings-button')
-    modal.showModal()
-    return () => { modal.close(); opener?.focus() }
+    const panel = dialog.current!
+    return () => { if (panel.contains(document.activeElement) || document.activeElement === document.body) opener.current?.isConnected && opener.current.focus() }
   }, [])
   useEffect(()=>{
     const modal=dialog.current,content=modal?.querySelector('.settings-content')
@@ -38,7 +39,7 @@ export default function Settings({ registry, doc, close, initialCategory, initia
   const layoutInputs = new Set<string>()
   if (doc) { try { for (const e of compileRecipe(doc).edges) if (e.to[1] === 'tiles') layoutInputs.add(e.to[0]) } catch { /* Compatibility view still saves malformed data. */ } }
   const results = registry.search(query, query.trim() ? undefined : category).filter(s => !used || registry.instances(s, ops).length).sort((a, b) => query ? 0 : Number(!registry.instances(a, ops).length) - Number(!registry.instances(b, ops).length))
-  return <dialog className="settings-dialog" ref={dialog} onCancel={e => { e.preventDefault(); close() }} onClick={e => { if (e.target === dialog.current) close() }} aria-labelledby="settings-title">
+  return <section className="settings-dialog settings-panel" ref={dialog} onKeyDown={e => { if(e.key==='Escape'){e.stopPropagation();close()} }} aria-labelledby="settings-title">
     <header><div><h2 id="settings-title">All Settings</h2><p>Find a setting. Understand what it changes.</p></div><button className="icon-button" onClick={close} aria-label="Close settings">×</button></header>
     <div className="settings-search"><input autoFocus type="search" placeholder="Search settings…" aria-label="Search all settings" value={query} onChange={e => setQuery(e.target.value)} /><label className="used-filter"><input type="checkbox" checked={used} onChange={e => setUsed(e.target.checked)} />In this project</label><span>{registry.settings.length} settings</span></div>
     {error && <p className="settings-error" role="alert">{error}</p>}
@@ -73,5 +74,5 @@ export default function Settings({ registry, doc, close, initialCategory, initia
       </section>
     </div>
     <footer>24 processing types · All original project data stays in your saved file.</footer>
-  </dialog>
+  </section>
 }

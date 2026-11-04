@@ -1,0 +1,85 @@
+name: Detailed artwork Mac review using verified assets
+on:
+  push:
+    branches: [codex/detail-quality-left-settings]
+permissions:
+  contents: write
+jobs:
+  mac-review:
+    if: contains(github.event.head_commit.message, '[detail-mac]')
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {runner: macos-15, platform: macos-arm64}
+          - {runner: macos-15-intel, platform: macos-x64}
+    runs-on: ${{ matrix.runner }}
+    defaults:
+      run:
+        shell: bash
+    env:
+      MACOSX_DEPLOYMENT_TARGET: '13.3'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.99.0
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: browser-${{ matrix.platform }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26.3.0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: npm --prefix web ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: production-assets
+          run-id: 41873236137
+          github-token: ${{ github.token }}
+      - name: Build browser launcher package with current embedded editor
+        id: build
+        run: |
+          tar -xzf production-assets.tar.gz
+          target=$(rustc +1.99.0 -vV | sed -n 's/^host: //p')
+          if [ "$RUNNER_OS" = Windows ]; then
+            export CARGO_TARGET_X86_64_PC_WINDOWS_MSVC_RUSTFLAGS='-C target-feature=+crt-static -C strip=symbols'
+            exe=.exe
+          else
+            export RUSTFLAGS='-C strip=symbols'
+            exe=
+          fi
+          cargo +1.99.0 build --release --locked --target "$target" --target-dir target/m7 -p stencil-cli -p stencil-launcher --features studio
+          python scripts/m7/licenses.py --out notices
+          python scripts/m7/package.py --platform '${{ matrix.platform }}' --backend "target/m7/$target/release/stencil$exe" --launcher "target/m7/$target/release/stencil-studio$exe" --notices notices --out out --source "$GITHUB_SHA"
+          mkdir extracted
+          if [ "$RUNNER_OS" = Windows ]; then
+            python -c "import zipfile;zipfile.ZipFile('out/StencilStudio-Windows-x64.zip').extractall('extracted')"
+            echo 'launcher=extracted/Stencil Studio.exe' >> "$GITHUB_OUTPUT"
+          else
+            ditto -x -k "$(find out -maxdepth 1 -name '*.zip' | head -1)" extracted
+            codesign --verify --deep --strict 'extracted/Stencil Studio.app'
+            echo 'launcher=extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Packaged beginner, fine preparation and manufacturing spot checks
+        run: node scripts/detail-update/customer-smoke.mjs '${{ steps.build.outputs.launcher }}' out/customer-check
+      - name: Host and shutdown checks
+        if: always() && steps.build.outcome == 'success'
+        run: python scripts/m7/host_qa.py '${{ steps.build.outputs.launcher }}' out/host
+      - name: Genuine Safari viewer regression
+        if: always() && steps.build.outcome == 'success' && runner.os == 'macOS'
+        env:
+          M7_CASES: simple
+        run: |
+          sudo /usr/bin/safaridriver --enable
+          python scripts/m7/safari_qa.py '${{ steps.build.outputs.launcher }}' out/safari
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: detail-review-${{ matrix.platform }}
+          path: out
+      - name: Retain review builds and evidence without a public release
+        if: always()
+        run: python scripts/m7/archive-evidence.py out 'detail-${{ matrix.platform }}'

@@ -1,0 +1,129 @@
+name: Detailed artwork and docked settings review packages
+on:
+  push:
+    branches: [codex/detail-quality-left-settings]
+permissions:
+  contents: write
+env:
+  M7_STABLE: "1.99.0"
+  M7_NIGHTLY: nightly-2026-10-28
+jobs:
+  assets:
+    if: contains(github.event.head_commit.message, '[detail-packages]')
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.99.0
+          targets: wasm32-unknown-unknown
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: nightly-2026-10-28
+          targets: wasm32-unknown-unknown
+          components: rust-src
+      - uses: Swatinem/rust-cache@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26.3.0
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Fixed wasm-pack
+        run: |
+          curl --fail --location --retry 3 https://github.com/wasm-bindgen/wasm-pack/releases/download/v0.15.0/wasm-pack-v0.15.0-x86_64-unknown-linux-musl.tar.gz -o /tmp/wasm-pack.tgz
+          tar -xzf /tmp/wasm-pack.tgz -C /tmp
+          echo /tmp/wasm-pack-v0.15.0-x86_64-unknown-linux-musl >> "$GITHUB_PATH"
+      - name: Build both engines (mandatory)
+        working-directory: crates/stencil-wasm
+        run: |
+          rustup run "$M7_STABLE" wasm-pack build --release --target web --out-dir ../../web/pkg -- --locked
+          RUSTFLAGS='-C target-feature=+atomics,+bulk-memory,+mutable-globals -C link-args=--shared-memory -C link-args=--import-memory -C link-args=--max-memory=4294967296 -C link-args=--export=__wasm_init_tls -C link-args=--export=__tls_size -C link-args=--export=__tls_align -C link-args=--export=__tls_base' rustup run "$M7_NIGHTLY" wasm-pack build --release --target web --out-dir ../../web/public/pkg-mt --out-name stencil_wasm -- --locked --features threads -Z build-std=panic_abort,std
+      - name: Production assets only
+        run: |
+          node web/scripts/patch-mt-worker.mjs
+          npm --prefix web ci
+          npm --prefix web run build
+          test ! -e web/dist/legacy.html
+          tar -czf production-assets.tar.gz web/dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: production-assets
+          path: production-assets.tar.gz
+
+  package:
+    needs: assets
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {runner: windows-2025, platform: windows-x64}
+          - {runner: macos-26, platform: macos-arm64}
+          - {runner: macos-15-intel, platform: macos-x64}
+    runs-on: ${{ matrix.runner }}
+    defaults:
+      run:
+        shell: bash
+    env:
+      MACOSX_DEPLOYMENT_TARGET: '13.3'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.99.0
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: browser-${{ matrix.platform }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26.3.0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: npm --prefix web ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: production-assets
+      - name: Build browser launcher package with current embedded editor
+        id: build
+        run: |
+          tar -xzf production-assets.tar.gz
+          target=$(rustc +1.99.0 -vV | sed -n 's/^host: //p')
+          if [ "$RUNNER_OS" = Windows ]; then
+            export CARGO_TARGET_X86_64_PC_WINDOWS_MSVC_RUSTFLAGS='-C target-feature=+crt-static -C strip=symbols'
+            exe=.exe
+          else
+            export RUSTFLAGS='-C strip=symbols'
+            exe=
+          fi
+          cargo +1.99.0 build --release --locked --target "$target" --target-dir target/m7 -p stencil-cli -p stencil-launcher --features studio
+          python scripts/m7/licenses.py --out notices
+          python scripts/m7/package.py --platform '${{ matrix.platform }}' --backend "target/m7/$target/release/stencil$exe" --launcher "target/m7/$target/release/stencil-studio$exe" --notices notices --out out --source "$GITHUB_SHA"
+          mkdir extracted
+          if [ "$RUNNER_OS" = Windows ]; then
+            python -c "import zipfile;zipfile.ZipFile('out/StencilStudio-Windows-x64.zip').extractall('extracted')"
+            echo 'launcher=extracted/Stencil Studio.exe' >> "$GITHUB_OUTPUT"
+          else
+            ditto -x -k "$(find out -maxdepth 1 -name '*.zip' | head -1)" extracted
+            codesign --verify --deep --strict 'extracted/Stencil Studio.app'
+            echo 'launcher=extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Packaged beginner, fine preparation and manufacturing spot checks
+        run: node scripts/detail-update/customer-smoke.mjs '${{ steps.build.outputs.launcher }}' out/customer-check
+      - name: Host and shutdown checks
+        if: always() && steps.build.outcome == 'success'
+        run: python scripts/m7/host_qa.py '${{ steps.build.outputs.launcher }}' out/host
+      - name: Genuine Safari viewer regression
+        if: always() && steps.build.outcome == 'success' && runner.os == 'macOS'
+        env:
+          M7_CASES: simple
+        run: |
+          sudo /usr/bin/safaridriver --enable
+          python scripts/m7/safari_qa.py '${{ steps.build.outputs.launcher }}' out/safari
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: detail-review-${{ matrix.platform }}
+          path: out
+      - name: Retain review builds and evidence without a public release
+        if: always()
+        run: python scripts/m7/archive-evidence.py out 'detail-${{ matrix.platform }}'

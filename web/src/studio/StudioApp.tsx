@@ -52,7 +52,7 @@ export default function StudioApp() {
   const exportName=result?.kind==='parts'&&doc?packageFilename(doc):result?.filename
   const canExport = current && !state.loading && !!result && !blocked&&!!exportUrl
   useEffect(() => { void editor.initialize() }, [])
-  useEffect(() => { if (state.preview) { if(state.preview.port==='solid'||registry?.types.get(allOps.find(o=>o.id===state.preview!.step)?.type??'')?.outputs.some(p=>p.name===state.preview!.port&&p.type==='parts')){setView('3d');setSelected(`${state.preview.step}/${state.preview.port}`)}else setView('stage'); setSettings(null) } }, [state.preview])
+  useEffect(() => { if (state.preview) { if(state.preview.port==='solid'||registry?.types.get(allOps.find(o=>o.id===state.preview!.step)?.type??'')?.outputs.some(p=>p.name===state.preview!.port&&p.type==='parts')){setView('3d');setSelected(`${state.preview.step}/${state.preview.port}`)}else setView('stage') } }, [state.preview])
   useEffect(() => { document.documentElement.dataset.theme = theme; try { localStorage.setItem('stencil-studio.theme', theme) } catch {} }, [theme])
   useEffect(() => {
     let url = ''
@@ -100,7 +100,9 @@ export default function StudioApp() {
         <a role="link" tabIndex={canExport ? 0 : -1} className={`export-button${!canExport ? ' disabled' : ''}`} aria-disabled={!canExport} href={canExport ? exportUrl : undefined} download={exportName} title={packaged.error??packaged.progress} onClick={e => { if (!canExport) e.preventDefault() }}>Export {result?.kind==='parts' ? 'ZIP' : 'STL'}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v9m-3-3 3 3 3-3M4 13v4h12v-4" /></svg></a>
       </div>
     </header>
-    <div className="workspace-layout" style={{gridTemplateColumns:`minmax(0,1fr) ${sidebarWidth}px`}}><main className="workspace">
+    <div className={`workspace-layout${settings&&registry?' settings-open':''}`} style={{'--quick-width':`${sidebarWidth}px`} as React.CSSProperties}>
+      {settings && registry && <Settings registry={registry} doc={doc} initialCategory={settings.category} initialQuery={settings.query} close={() => setSettings(null)} />}
+      <main className="workspace">
       <div className="workspace-heading"><div><div className="eyebrow">YOUR WORKSPACE</div><h1>{doc ? projectName(doc) : 'From artwork to stencil.'}</h1></div>{doc && <button className="replace-image" onClick={chooseImage} disabled={state.loading || sources.length !== 1}>Replace image</button>}</div>
       <div className="preview-toolbar"><div className="preview-tabs" role="tablist" aria-label="Preview views">{(['original', 'stencil', 'compare', '3d'] as const).map(v => <button key={v} role="tab" aria-selected={view === v} aria-controls="preview-surface" disabled={v !== 'original' && (!meshUrl || v === 'compare' && !comparison)} onClick={() => { setView(v); if (v === 'original' || v === '3d') { setZoom(1); setFit(f => f + 1) } }}>{v === '3d' ? '3D' : v === 'stencil' ? 'Stencil' : v === 'compare' ? 'Compare' : 'Original'}</button>)}</div>{doc && <div className="zoom-controls"><button aria-label="Zoom out" onClick={() => setZoom(z => Math.max(.25, z / 1.25))}>−</button><output aria-label="Zoom level">{Math.round(zoom * 100)}%</output><button aria-label="Zoom in" onClick={() => setZoom(z => Math.min(5, z * 1.25))}>+</button><button onClick={() => { setZoom(1); setFit(f => f + 1) }}>Fit</button></div>}</div>
       {doc && <div className="artwork-stage-toolbar"><label>Inspect artwork<select aria-label="Inspect artwork stage" value={view === 'stage' && state.preview ? `${state.preview.step}/${state.preview.port}` : ''} onChange={e => { const option = previewOptions.find(o => `${o.step}/${o.port}` === e.target.value); if (option) editor.preview(option.step, option.port) }}><option value="">Choose a preparation result…</option>{previewOptions.map(o => <option key={`${o.step}/${o.port}`} value={`${o.step}/${o.port}`}>{o.label}</option>)}</select></label><button onClick={() => setSettings({ category: 'Artwork and image cleanup' })}>Customize artwork</button><button onClick={() => setSettings({ category: 'Processing steps' })}>Processing Steps</button></div>}
@@ -140,6 +142,16 @@ export default function StudioApp() {
           {(recipe.cleanup || recipe.trace) && <button className="text-button" onClick={() => setSettings({ category: 'Artwork and image cleanup', query: recipe.cleanup?.type ?? 'trace' })}>Cleanup settings</button>}
           {recipe.transform && <button className="text-button" onClick={() => editor.crop(recipe.transform!.id)}>Visual crop</button>}<button className="text-button" onClick={() => setSettings({ category: 'Size and print settings', query: `${recipe.build.type}.margin_mm` })}>Adjust margin</button>{recipe.smoothing && <button className="text-button" onClick={() => setSettings({ category: 'Artwork and image cleanup', query: 'smooth.radius' })}>Image smoothing</button>}
         </details>}
+        {doc&&styleQuickRecipe(doc)?.vector&&<details className="fine-artwork-tools"><summary>Detailed artwork</summary>
+          <p>For dense illustrations with fine contours. Higher resolution and gentler smoothing preserve narrow features. Original artwork and print dimensions are kept.</p>
+          <button className="fine-artwork-button" disabled={state.loading||run.status==='running'} onClick={()=>editor.fineArtwork()}>Preserve fine detail</button>
+          <p>Also cleans tiny specks and pinholes. Undo restores your previous preparation. Inspect Compare before exporting; small intentional marks may need a lower cleanup area.</p>
+          {recipe?.cleanup?.type==='remove_islands'&&<>
+            <label className="toggle-field"><span>Remove tiny marks</span><input type="checkbox" aria-label="Remove tiny marks" checked={!!recipe.cleanup.params.delete_specks&&!!recipe.cleanup.params.fill_holes} onChange={e=>editor.cleanTinyMarks(e.target.checked)}/></label>
+            {number(recipe.cleanup.id,recipe.cleanup.type,'max_area','Cleanup area','px²',recipe.cleanup.params)}
+            <p>Shapes smaller than this area are removed. Lower it to keep dots, punctuation and letter counters. Bridges still hold floating pieces together.</p>
+          </>}
+        </details>}
         {recipe && <fieldset disabled={state.loading} className="quick-group"><legend>Size & strength</legend><>
           {number(recipe.build.id, recipe.build.type, 'width_mm', 'Stencil width', 'mm', recipe.build.params)}
           {number(recipe.build.id, recipe.build.type, 'thickness_mm', 'Base thickness', 'mm', recipe.build.params)}
@@ -150,7 +162,6 @@ export default function StudioApp() {
       </>}
       </div><div className="sidebar-actions"><button className="primary-button make-button" disabled={!doc || state.loading || run.status === 'running'} onClick={make}>{run.status === 'running' ? 'Making stencil…' : 'Make Stencil'}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" /></svg></button><button className="all-settings-button" onClick={() => setSettings({})} disabled={!registry}>All Settings <span aria-hidden="true">↗</span></button><small>{run.output ? doc && liveArtwork(doc) ? 'Adjustments update the preview automatically.' : 'Use Make Stencil to refresh this saved workflow.' : 'Everything stays on your device.'}</small></div>
     </aside></div>
-    {settings && registry && <Settings registry={registry} doc={doc} initialCategory={settings.category} initialQuery={settings.query} close={() => setSettings(null)} />}
     {doc && registry && state.cropStep && <CropEditor doc={doc} id={state.cropStep} registry={registry} />}
     {exportOpen&&doc&&run.output&&result&&<ExportPanel doc={doc} set={run.output.value} initial={result.id} current={current} close={()=>setExportOpen(false)}/>}
   </div>

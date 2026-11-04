@@ -1,0 +1,63 @@
+{
+  "review_date": "2026-11-04",
+  "frontend_source": "bf8278fa9beac101b7ec21b7fdd89a1379f3ebca",
+  "platforms": [
+    {
+      "platform": "windows-x64",
+      "file": "StencilStudio-Windows-x64.zip",
+      "bytes": 8266183,
+      "sha256": "e179261326cc8b3101f5d022f726d4459582211cf2e63b8f2b276a3d8823e6b1",
+      "source_commit": "bf8278fa9beac101b7ec21b7fdd89a1379f3ebca",
+      "application_checks_passed": 5,
+      "local_browser": "151.0.7922.72",
+      "first_download_approval": "Not qualified; M8 restrictions remain."
+    },
+    {
+      "platform": "macos-x64",
+      "file": "StencilStudio-macOS-Intel.zip",
+      "bytes": 8249303,
+      "sha256": "335d23d76c697f3d88ac9fb3bc3984b859578d157efcf9aa1ba1de87934f3d36",
+      "application_source": "a6c35ddff3fe86675e0981e9e8747af6e63f433a",
+      "workflow_run": 41895409626,
+      "browser": "151.0.7922.174",
+      "customer_cases": [
+        {
+          "name": "beginner upload, generate, customize width, 3D, STL, save, reload and reopen",
+          "passed": true
+        },
+        {
+          "name": "fine-artwork preset, docked interactive settings and lossless reopen",
+          "passed": true
+        },
+        {
+          "name": "colours",
+          "passed": true
+        },
+        {
+          "name": "first",
+          "passed": true
+        },
+        {
+          "name": "mounted",
+          "passed": true
+        }
+      ],
+      "offline_external_requests": 0,
+      "page_errors": 0,
+      "shutdown": true,
+      "host_checks": 17,
+      "safari": {
+        "version": "26.6",
+        "qualification": "passed_with_software_rendering",
+        "projects": 1
+      },
+      "retained_evidence": "https://raw.githubusercontent.com/thomastt-cryoo/stenciii/codex/m7-artifacts/a6c35ddff3fe86675e0981e9e8747af6e63f433a/detail-macos-x64/",
+      "first_download_security_approval": "Not requalified; prior M8 release limits remain"
+    }
+  ],
+  "pending_platforms": [
+    "macos-arm64"
+  ],
+  "prior_M8_delivery_untouched": true,
+  "public_release": false
+}
