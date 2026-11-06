@@ -9,9 +9,8 @@ native desktop editor. You do not need Rust, Node.js, Python or WebView2.
 3. Choose an image, then Make Stencil. Customize and preview before exporting.
    Save Project creates a portable file containing your artwork and settings.
 4. To continue later, open the launcher and use Open Project for a saved file.
-5. Finish and download batch results before closing. Jobs require Studio to
-   remain open; closing all Studio tabs stops the local launcher after a short
-   delay. Quit Studio in the small launcher window stops it immediately.
+5. Finish and download batch results before closing. Closing all Studio tabs
+   stops the local launcher after a short delay.
 
 Chrome and Edge are the recommended browsers. Consult Platform Test Record.txt
 for exact versions tested and Firefox graphics qualification limits.
@@ -19,7 +18,8 @@ A browser must already be installed; this ZIP contains no browser installer.
 Initial download and browser installation need internet. Processing, projects
 and exports work locally without internet afterward. Artwork is not uploaded.
 If your default browser is not qualified, open Chrome or Edge and copy the local
-address shown in the small launcher window into its address bar.
+address from the Studio browser tab into its address bar. Close the first Studio
+tab after the editor opens in the other browser.
 
 Keep downloaded project files as your own backups. The browser's draft belongs
 to that browser and local Studio address. Private browsing and unavailable or
@@ -34,9 +34,10 @@ it, consult the included technical test/requirements record or contact support.
 
 If Studio does not open: check that the entire ZIP was extracted, that Studio
 Support is present, that the package is not corrupt, and that a supported browser
-is installed. Close any previous Studio launcher and try again. If a saved draft
-address is busy, the launcher offers a temporary session; open a saved project
-there, or close the other application and relaunch to return to your old draft.
+is installed. Close any previous Studio tabs, wait a few seconds, and try again.
+If a saved draft address is busy, the launcher offers a temporary session; open
+a saved project there, or close the other application and relaunch to return to
+your old draft.
 
 To update: save your project, quit Studio, and extract the new package into a new
 folder. Do not mix launchers and support files from different packages. Startup

@@ -12,10 +12,10 @@ tools are required.
    Save Project keeps a portable copy of the project and its original artwork.
 4. Reopen the launcher later and use Open Project to continue a saved file.
 5. Finish and download batch results before quitting. Closing all Studio tabs
-   stops the launcher after a short delay. Quit Studio in the small launcher
-   window stops it immediately. Jobs do not continue after Studio closes.
+   stops the launcher after a short delay. Jobs do not continue after Studio closes.
    If your default browser is not qualified, open Chrome and copy the local
-   address shown in the small launcher window into its address bar.
+   address from the Studio browser tab into its address bar. Close the first
+   Studio tab after the editor opens in Chrome.
 
 The filename identifies Apple Silicon or Intel. Consult the test record for
 the exact macOS/browser versions actually qualified. The native launcher's build

@@ -115,7 +115,7 @@ fn start(backend:&Path,port:u16,idle:u16,log:&Path) -> Result<(Hosted,Value),Str
     std::thread::spawn(move || {
         let mut buffer=[0u8;1024];while let Ok(count)=remaining.read(&mut buffer) {if count==0 {break}}
         let code=child.lock().unwrap().wait().ok().and_then(|s|s.code()).unwrap_or(1);
-        // Also closes a visible launcher if all Studio tabs have closed.
+        // End the launcher when the local server shuts down.
         std::process::exit(code);
     });
     Ok((hosted,data))
@@ -171,13 +171,10 @@ pub(super) fn run() {
     if !options.no_open {if let Err(e)=open::that(url) {error(&format!("Studio is ready at {url}, but your browser could not open: {e}. Install or choose a supported browser and try again."),false)}}
     #[cfg(any(windows,target_os="macos"))]
     loop {
-        let description=format!("Studio is running locally in your browser at:\n{url}\n\nKeep this small window open while you work. Closing all Studio tabs stops the launcher after a short delay. Choose Quit Studio to stop immediately. Save Project keeps a portable copy of your artwork and settings.\n\nNo internet connection is needed to process your artwork.");
-        let action=rfd::MessageDialog::new().set_title("Stencil Studio — Browser Edition").set_description(description).set_buttons(rfd::MessageButtons::OkCancelCustom("Open Studio again".into(),"Quit Studio".into())).show();
-        if action!=rfd::MessageDialogResult::Custom("Open Studio again".into()) {break}
-        if let Err(e)=open::that(url) {error(&format!("Your browser could not open {url}: {e}"),false)}
+        // Keep the server's stdin and the profile lock open until the server
+        // exits on its own and the watcher ends the launcher.
+        std::thread::park();
     }
     #[cfg(not(any(windows,target_os="macos")))]
     {println!("Studio is running at {url}. Press Enter to stop.");let _=std::io::stdin().read_line(&mut String::new());}
-    drop(hosted);
-    drop(lock);
 }

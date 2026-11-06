@@ -1,0 +1,69 @@
+name: Mac launcher update
+on:
+  push:
+    branches: [codex/remove-launcher-popup]
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  package:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15-intel
+            platform: macos-x64
+          - runner: macos-15
+            platform: macos-arm64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 25
+    env:
+      MACOSX_DEPLOYMENT_TARGET: '13.3'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.99.0
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: browser-${{ matrix.platform }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26.3.0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: production-assets
+          run-id: 41873236137
+          github-token: ${{ github.token }}
+      - name: Package the current editor with the updated launcher
+        run: |
+          tar -xzf production-assets.tar.gz
+          target=$(rustc +1.99.0 -vV | sed -n 's/^host: //p')
+          case '${{ matrix.platform }}' in
+            macos-x64) test "$target" = x86_64-apple-darwin ;;
+            macos-arm64) test "$target" = aarch64-apple-darwin ;;
+          esac
+          RUSTFLAGS='-C strip=symbols' cargo +1.99.0 build --release --locked --target "$target" --target-dir target/m7 -p stencil-cli -p stencil-launcher --features studio
+          python scripts/m7/licenses.py --out notices
+          python scripts/m7/package.py --platform '${{ matrix.platform }}' --backend "target/m7/$target/release/stencil" --launcher "target/m7/$target/release/stencil-studio" --notices notices --out out --source "$GITHUB_SHA"
+          mkdir extracted
+          ditto -x -k "$(find out -maxdepth 1 -name '*.zip')" extracted
+          codesign --verify --deep --strict 'extracted/Stencil Studio.app'
+      - run: npm --prefix web ci
+      - name: Check normal launch, no window, and shutdown on the exact ZIP
+        run: node scripts/detail-update/mac-launcher-check.mjs 'extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' out/launcher.json
+      - name: Host checks
+        run: python scripts/m7/host_qa.py 'extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' out/host
+      - name: First check of the artwork and settings update on Apple Silicon
+        if: matrix.platform == 'macos-arm64'
+        run: node scripts/detail-update/customer-smoke.mjs 'extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' out/customer-check
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: launcher-update-${{ matrix.platform }}
+          path: out
