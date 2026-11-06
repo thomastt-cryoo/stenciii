@@ -35,26 +35,39 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
+      - run: npm --prefix web ci
       - uses: actions/download-artifact@v4
+        if: matrix.platform == 'macos-arm64'
         with:
           name: production-assets
           run-id: 41873236137
           github-token: ${{ github.token }}
       - name: Package the current editor with the updated launcher
         run: |
-          tar -xzf production-assets.tar.gz
           target=$(rustc +1.99.0 -vV | sed -n 's/^host: //p')
-          case '${{ matrix.platform }}' in
-            macos-x64) test "$target" = x86_64-apple-darwin ;;
-            macos-arm64) test "$target" = aarch64-apple-darwin ;;
-          esac
-          RUSTFLAGS='-C strip=symbols' cargo +1.99.0 build --release --locked --target "$target" --target-dir target/m7 -p stencil-cli -p stencil-launcher --features studio
-          python scripts/m7/licenses.py --out notices
-          python scripts/m7/package.py --platform '${{ matrix.platform }}' --backend "target/m7/$target/release/stencil" --launcher "target/m7/$target/release/stencil-studio" --notices notices --out out --source "$GITHUB_SHA"
+          export RUSTFLAGS='-C strip=symbols'
+          build_dir="target/m7/$target/release"
+          if [ '${{ matrix.platform }}' = macos-x64 ]; then
+            test "$target" = x86_64-apple-darwin
+            # Reuse the exact previously qualified Intel runtime and notices.
+            curl --fail --location --retry 3 -o intel.zip 'https://raw.githubusercontent.com/thomastt-cryoo/stenciii/codex/m7-artifacts/a6c35ddff3fe86675e0981e9e8747af6e63f433a/detail-macos-x64/StencilStudio-macOS-Intel.zip'
+            echo '335d23d76c697f3d88ac9fb3bc3984b859578d157efcf9aa1ba1de87934f3d36  intel.zip' | shasum -a 256 -c
+            ditto -x -k intel.zip prior
+            backend='prior/Stencil Studio.app/Contents/Resources/stencil'
+            notices='prior/Stencil Studio.app/Contents/Resources/licenses'
+            cargo +1.99.0 build --release --locked --target "$target" --target-dir target/m7 -p stencil-launcher
+          else
+            test "$target" = aarch64-apple-darwin
+            tar -xzf production-assets.tar.gz
+            cargo +1.99.0 build --release --locked --target "$target" --target-dir target/m7 -p stencil-cli -p stencil-launcher --features studio
+            python scripts/m7/licenses.py --out notices
+            backend="$build_dir/stencil"
+            notices=notices
+          fi
+          python scripts/m7/package.py --platform '${{ matrix.platform }}' --backend "$backend" --launcher "$build_dir/stencil-studio" --notices "$notices" --out out --source "$GITHUB_SHA"
           mkdir extracted
           ditto -x -k "$(find out -maxdepth 1 -name '*.zip')" extracted
           codesign --verify --deep --strict 'extracted/Stencil Studio.app'
-      - run: npm --prefix web ci
       - name: Check normal launch, no window, and shutdown on the exact ZIP
         run: node scripts/detail-update/mac-launcher-check.mjs 'extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' out/launcher.json
       - name: Host checks
