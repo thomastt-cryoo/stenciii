@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "browser": "151.0.7922.72",
+  "threshold": 110,
+  "resolution": 1400,
+  "draft_sha256": "607ec0fcf4bc16a0594102f3e1d34026e1a294ab3faa8a41a3ed9b0b53e9fba7",
+  "final_sha256": "607ec0fcf4bc16a0594102f3e1d34026e1a294ab3faa8a41a3ed9b0b53e9fba7",
+  "bytes": 2289684,
+  "triangles": 45792,
+  "draft_and_final_equal": true
+}

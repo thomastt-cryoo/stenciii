@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "browser": "151.0.7922.72",
+  "cases": [
+    {
+      "name": "beginner upload, generate, customize width, 3D, STL, save, reload and reopen",
+      "passed": true
+    },
+    {
+      "name": "fine-artwork preset, docked interactive settings and lossless reopen",
+      "passed": true
+    },
+    {
+      "name": "colours",
+      "passed": true
+    },
+    {
+      "name": "first",
+      "passed": true
+    },
+    {
+      "name": "mounted",
+      "passed": true
+    }
+  ],
+  "host_checks": [
+    "embedded HTTP assets",
+    "WASM MIME",
+    "COOP/COEP/CSP on successful and cached responses",
+    "gzip including q=0",
+    "HEAD",
+    "unsafe paths rejected",
+    "foreign Host/Origin rejected",
+    "read-only methods",
+    "production bundle excludes legacy editor",
+    "lease nonce/Origin guard",
+    "duplicate launch without second server",
+    "stdin EOF closes launcher and server",
+    "stable saved origin",
+    "atomic occupied-port fallback preserves old draft address",
+    "damaged settings refused without deletion",
+    "background connection survives idle grace",
+    "last tab disconnect automatically ends launcher and server"
+  ],
+  "outside_requests": [],
+  "page_errors": [],
+  "defaults": {
+    "source": {
+      "image_id": "44fcfa6c069b00d0",
+      "resolution": 1400
+    },
+    "threshold": {
+      "threshold": 110,
+      "invert": false
+    },
+    "trace": {
+      "smooth": 1.25,
+      "corner_deg": 60,
+      "tolerance": 0.35,
+      "min_area": 2
+    },
+    "remove_islands": {
+      "delete_specks": true,
+      "fill_holes": true,
+      "max_area": 64,
+      "keep_largest": 0
+    }
+  },
+  "shutdown_document": true
+}

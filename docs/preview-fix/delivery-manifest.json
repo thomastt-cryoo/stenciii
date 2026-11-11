@@ -1,0 +1,49 @@
+{
+  "review_date": "2026-11-11",
+  "frontend_source": "4e0f487f494cfddc559530cb001daeab8e847eab",
+  "native_mac_workflow_run": 42933431625,
+  "files": [
+    {
+      "file": "StencilStudio-Windows-x64.zip",
+      "platform": "windows-x64",
+      "bytes": 8435626,
+      "sha256": "b9d9ca51f591da808d4f78d1dcc64b26b6ec4eead52a21f1230a2c52eecfada4",
+      "source_commit": "d16e26d0c8ee51415ea67b9f68f79d5c5dacb9af"
+    },
+    {
+      "file": "StencilStudio-macOS-Apple-Silicon.zip",
+      "platform": "macos-arm64",
+      "bytes": 7923776,
+      "sha256": "ad233d1fef494da82a969f0e7a9482b27b9042ee40f1303c00e5713f7583b11b",
+      "source_commit": "61a45d2ee4ed882902e034da946f3558dd9756b4"
+    },
+    {
+      "file": "StencilStudio-macOS-Intel.zip",
+      "platform": "macos-x64",
+      "bytes": 8247742,
+      "sha256": "5386a413287d7663f5bac33d9149b6282fed00e4ee40aae6b9a9530ed2f3ca16",
+      "source_commit": "61a45d2ee4ed882902e034da946f3558dd9756b4"
+    }
+  ],
+  "examples": [
+    {
+      "file": "Tiger-clean-result.stencil.json",
+      "bytes": 2340107,
+      "sha256": "ef41e16e3031ce9daffefb5b1e3e863128ea2339e183f25e6fc8b54b1942bf87"
+    },
+    {
+      "file": "Tiger-clean-result.stl",
+      "bytes": 2289684,
+      "sha256": "607ec0fcf4bc16a0594102f3e1d34026e1a294ab3faa8a41a3ed9b0b53e9fba7"
+    }
+  ],
+  "engine_provenance": "Exact accepted M6 engine binaries from docs/m6/source-provenance.json; core and WASM source are unchanged since the accepted M7 package. Later CI rebuilds have different binary hashes.",
+  "engine_sha256": {
+    "web/pkg/stencil_wasm_bg.wasm": "74b9720e65978a7a59f576ff2221d2f8923e02dc458aea9cc74f67080c0e55ec",
+    "web/public/pkg-mt/stencil_wasm_bg.wasm": "43e1c1691f7cf40a127388eea9cdc53c001d4b8d6c97783745f85bba180cbdb8"
+  },
+  "new_project_defaults_verified_on_all_platforms": true,
+  "security_qualification": "Prior M8 first-download qualification limits still apply.",
+  "mac_qualification": "Native hosted macOS CI",
+  "public_release": false
+}

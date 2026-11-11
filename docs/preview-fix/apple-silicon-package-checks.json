@@ -1,0 +1,56 @@
+{
+  "file": "StencilStudio-macOS-Apple-Silicon.zip",
+  "platform": "macos-arm64",
+  "source_commit": "61a45d2ee4ed882902e034da946f3558dd9756b4",
+  "bytes": 7923776,
+  "sha256": "ad233d1fef494da82a969f0e7a9482b27b9042ee40f1303c00e5713f7583b11b",
+  "etsy_limit_bytes": 20000000,
+  "fits_etsy_limit": true,
+  "signing": {
+    "developer_id_signed": false,
+    "notarized": false,
+    "ad_hoc_signed": true
+  },
+  "backend_bytes": 15456752,
+  "launcher_bytes": 573008,
+  "launcher": {
+    "passed": true,
+    "macos": "15.8.2",
+    "arch": "arm64",
+    "chrome": "157.0.8103.39",
+    "visible_launcher_windows": 0,
+    "second_tab_survived": true,
+    "reload_reconnected": true,
+    "last_tab_stopped_server": true
+  },
+  "host_checks": 17,
+  "customer_cases": [
+    "beginner upload, generate, customize width, 3D, STL, save, reload and reopen",
+    "fine-artwork preset, docked interactive settings and lossless reopen",
+    "colours",
+    "first",
+    "mounted"
+  ],
+  "verified_new_project_defaults": {
+    "source": {
+      "image_id": "44fcfa6c069b00d0",
+      "resolution": 1400
+    },
+    "threshold": {
+      "threshold": 110,
+      "invert": false
+    },
+    "trace": {
+      "smooth": 1.25,
+      "corner_deg": 60,
+      "tolerance": 0.35,
+      "min_area": 2
+    },
+    "remove_islands": {
+      "delete_specks": true,
+      "fill_holes": true,
+      "max_area": 64,
+      "keep_largest": 0
+    }
+  }
+}
