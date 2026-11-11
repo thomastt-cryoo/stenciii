@@ -63,11 +63,32 @@ test('detail profiles distinguish raster pixels from vector precision; drafts ne
     const doc = setDetail(styleRecipe('i', 'x', catalogue, id), 2), before = copy(doc)
     expect(detailLevel(doc)).toBe(2)
     const full = compileRecipe(doc), draft = draftRecipe(full)
-    expect(draft.nodes[0].params.resolution).toBe(200)
+    expect(draft).toEqual(full)
     expect(full.nodes[0].params.resolution).toBeGreaterThan(800)
     expect(doc).toEqual(before)
-    if (id !== 'crisp') expect(draft.nodes.at(-1)!.params.detail).toBe(2)
+    if (id !== 'crisp') expect(draft.nodes.at(-1)!.params.detail).toBe(6)
   }
+})
+
+test('Detail keeps the cleanup area proportional and never lowers a finer custom image when choosing Fine', () => {
+  let doc = styleRecipe('i', 'x', catalogue, 'smooth')
+  const q = quickRecipe(doc)!
+  doc = editParameter(doc, q.source.id, 'resolution', 1400)
+  doc = editParameter(doc, q.build.id, 'detail', 6)
+  doc = editParameter(doc, q.cleanup!.id, 'max_area', 64)
+  doc = editParameter(doc, q.cleanup!.id, 'fill_holes', true)
+  expect(detailLevel(doc)).toBe(2)
+  expect(setDetail(doc, 2)).toEqual(doc)
+  const balanced = setDetail(doc, 1), b = quickRecipe(balanced)!
+  expect(b.source.params.resolution).toBe(700)
+  expect(b.cleanup!.params.max_area).toBe(16)
+  expect(b.cleanup!.params.fill_holes).toBe(true)
+  expect(quickRecipe(doc)!.cleanup!.params.max_area).toBe(64)
+  const full = compileRecipe(doc)
+  rawGraph(doc).nodes.find((n:any) => n.type === 'vector_stencil').params.z_bridging = 'steps'
+  const stepped = compileRecipe(doc), draft = draftRecipe(stepped)
+  expect(draft.nodes.slice(0, -1)).toEqual(full.nodes.slice(0, -1))
+  expect(draft.nodes.at(-1)!.params).toEqual({...stepped.nodes.at(-1)!.params, z_bridging:'easy'})
 })
 test('live scheduler throttles drafts, debounces final work, pauses while dragging and cancels queued runs', () => {
   let now = 0, id = 0

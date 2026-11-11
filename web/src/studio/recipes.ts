@@ -68,13 +68,27 @@ export function switchStyle(doc: ProjectDocument, style: Style, catalogue: NodeT
 }
 export function setDetail(doc: ProjectDocument, level: number) {
   const q = adjustmentRecipe(doc); if (!q) return doc
-  let next = editParameter(doc, q.source.id, 'resolution', resolutions[activeStyle(doc)][level])
+  const preset = resolutions[activeStyle(doc)][level]
+  const previous = Number(q.source.params.resolution)
+  const resolution = level === 2 ? Math.max(preset, previous || preset) : preset
+  let next = editParameter(doc, q.source.id, 'resolution', resolution)
+  // Cleanup is measured in input pixels squared. Keep the same artwork area
+  // when the Detail control changes the source size.
+  if (q.cleanup?.type === 'remove_islands' && previous > 0 && resolution !== previous) {
+    const area = Number(q.cleanup.params.max_area)
+    if (Number.isFinite(area)) {
+      const scaled = Math.round(area * (resolution / previous) ** 2 * 100) / 100
+      next = editParameter(next, q.cleanup.id, 'max_area', Math.max(1, Math.min(100000, scaled)))
+    }
+  }
   if (q.vector) next = editParameter(next, q.build.id, 'detail', [2, 4, 6][level])
   return next
 }
 export function detailLevel(doc: ProjectDocument): number | null {
   const q = adjustmentRecipe(doc); if (!q) return null
-  const level = resolutions[activeStyle(doc)].indexOf(Number(q.source.params.resolution))
+  const levels = resolutions[activeStyle(doc)]
+  const resolution = Number(q.source.params.resolution)
+  const level = resolution >= levels[2] ? 2 : levels.indexOf(resolution)
   return level >= 0 && (!q.vector || Number(q.build.params.detail) === [2, 4, 6][level]) ? level : null
 }
 
@@ -106,21 +120,14 @@ export function pixelCleanup(doc: ProjectDocument, enabled: boolean, catalogue: 
   if (!quickRecipe(next)) throw new Error('The cleanup change could not be connected safely. Your workflow is unchanged.')
   return next
 }
-/** Coarsening is execution-only. Saved parameters and the final recipe never change. */
+/** Keep artwork and contour topology identical while interacting. Reducing the
+ * source or curve detail can hide small regions and change automatic bridges.
+ * Only later manufacturing passes may use a cheaper, explicitly marked draft. */
 export function draftRecipe(graph: GraphJson): GraphJson {
   const draft = copy(graph)
   for (const n of draft.nodes) {
-    if (n.type === 'source') n.params.resolution = Math.min(Number(n.params.resolution ?? 1000), 200)
-    if (n.type === 'vector_stencil') n.params.detail = Math.min(Number(n.params.detail ?? 5), 2)
     if (n.type === 'stencil' || n.type === 'vector_stencil') n.params.z_bridging = 'easy'
     if (n.type === 'remesh') { n.params.decimate = false; n.params.smoothing = 0 }
-    if (n.type === 'smooth') n.params.supersample = 1
-    if (n.type === 'shapes_to_mask') n.params.resolution = Math.min(Number(n.params.resolution ?? 1000), 200)
-    if (n.type === 'text') {
-      const scale = Math.min(1, 100 / Number(n.params.size ?? 160))
-      n.params.size = Math.max(20, Math.round(Number(n.params.size ?? 160) * scale))
-      n.params.padding = Math.round(Number(n.params.padding ?? 20) * scale)
-    }
   }
   return draft
 }

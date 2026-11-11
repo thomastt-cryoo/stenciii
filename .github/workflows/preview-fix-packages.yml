@@ -1,0 +1,82 @@
+name: Artwork preview correction packages
+on:
+  push:
+    branches: [codex/faithful-live-preview]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  mac:
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {runner: macos-15-intel, platform: macos-x64, archive: Intel, hash: 624834212276dd7974d8a41a71d89db12320f04ef24a6bd449a188a26ba1a0a7}
+          - {runner: macos-15, platform: macos-arm64, archive: Apple-Silicon, hash: a4e6d1999264f11c38c5011d62c2f868841d2bbb9b232082381dfa068f6330b5}
+    runs-on: ${{ matrix.runner }}
+    env:
+      MACOSX_DEPLOYMENT_TARGET: '13.3'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with: {toolchain: 1.99.0}
+      - uses: Swatinem/rust-cache@v2
+        with: {key: 'browser-${{ matrix.platform }}'}
+      - uses: actions/setup-node@v4
+        with: {node-version: 26.3.0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.13'}
+      - uses: actions/download-artifact@v4
+        with:
+          name: launcher-update-${{ matrix.platform }}
+          run-id: 42313627024
+          github-token: ${{ github.token }}
+          path: prior-download
+      - name: Use the verified frontend build and existing native launcher
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import base64, hashlib, json, os, tarfile, urllib.request
+          from pathlib import Path
+          info=json.loads(Path('docs/preview-fix/production-assets.json').read_text())
+          request=urllib.request.Request('https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/git/blobs/'+info['blob'],headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+          with urllib.request.urlopen(request) as response:
+              content=base64.b64decode(json.load(response)['content'])
+          assert len(content)==info['bytes'] and hashlib.sha256(content).hexdigest()==info['sha256']
+          Path('production-assets.tar.gz').write_bytes(content)
+          with tarfile.open('production-assets.tar.gz') as tar:
+              tar.extractall(filter='data')
+          PY
+          archive='prior-download/StencilStudio-macOS-${{ matrix.archive }}.zip'
+          echo '${{ matrix.hash }}  '"$archive" | shasum -a 256 -c
+          ditto -x -k "$archive" prior
+          codesign --verify --deep --strict 'prior/Stencil Studio.app'
+      - name: Embed the corrected frontend and package
+        run: |
+          target=$(rustc +1.99.0 -vV | sed -n 's/^host: //p')
+          export RUSTFLAGS='-C strip=symbols'
+          cargo +1.99.0 build --release --locked --target "$target" --target-dir target/m7 -p stencil-cli --features studio
+          python scripts/m7/package.py --platform '${{ matrix.platform }}' --backend "target/m7/$target/release/stencil" --launcher 'prior/Stencil Studio.app/Contents/MacOS/stencil-studio' --notices 'prior/Stencil Studio.app/Contents/Resources/licenses' --out out --source "$GITHUB_SHA"
+          mkdir extracted
+          ditto -x -k "out/StencilStudio-macOS-${{ matrix.archive }}.zip" extracted
+          codesign --verify --deep --strict 'extracted/Stencil Studio.app'
+      - run: npm --prefix web ci
+      - name: Verify customer creation, settings and manufacturing
+        run: node scripts/detail-update/customer-smoke.mjs 'extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' out/customer-check
+      - name: Verify launcher and tab shutdown
+        run: node scripts/detail-update/mac-launcher-check.mjs 'extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' out/launcher.json
+      - name: Verify local hosting
+        run: python scripts/m7/host_qa.py 'extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' out/host
+      - name: Verify Intel Safari 3D
+        if: matrix.platform == 'macos-x64'
+        env: {M7_CASES: simple}
+        run: |
+          sudo /usr/bin/safaridriver --enable
+          python scripts/m7/safari_qa.py 'extracted/Stencil Studio.app/Contents/MacOS/stencil-studio' out/safari
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: preview-fix-${{ matrix.platform }}
+          path: out

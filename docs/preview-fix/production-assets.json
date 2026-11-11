@@ -1,0 +1,7 @@
+{
+  "frontend_source": "cc571d7396c3a8175a7693d6975027d8bf462596",
+  "blob": "6dc4812e563d8d370f1ee68806fece293f0ec2fc",
+  "bytes": 3893077,
+  "sha256": "d082b6247e8f240587752012861843ab24fb982479f72c226d0602bc98995d2d",
+  "engine": "Previously verified single-thread and multi-thread WASM builds, unchanged"
+}
