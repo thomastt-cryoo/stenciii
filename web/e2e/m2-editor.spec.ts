@@ -82,7 +82,7 @@ test('live edits show draft, retain the last preview and finish full quality wit
   const metrics = await page.evaluate(() => ({ runs: (window as any).m2Runs, max_frame_gap_ms: Math.max(...(window as any).m2FrameGaps) }))
   // A draft must use an actual selected resolution, preserving small regions
   // instead of substituting a misleading 200 px image while dragging.
-  expect(metrics.runs.every((r: any) => [300,650,1000].includes(r.resolution))).toBe(true)
+  expect(metrics.runs.every((r: any) => [300,650,1400].includes(r.resolution))).toBe(true)
   expect(metrics.runs.some((r: any) => r.resolution === 300)).toBe(true)
   expect(metrics.runs.at(-1).resolution).toBe(650)
   mkdirSync('../docs/m6/replay/m5/replay/m4/m2-replay', { recursive: true }); writeFileSync('../docs/m6/replay/m5/replay/m4/m2-replay/live-performance.json', JSON.stringify(metrics, null, 2))

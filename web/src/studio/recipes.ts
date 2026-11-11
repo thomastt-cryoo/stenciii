@@ -15,7 +15,7 @@ export function activeStyle(doc: ProjectDocument): Style {
   return q?.vector ? q.smoothing ? 'smooth' : 'standard' : 'crisp'
 }
 export const detailLevels = ['Quick', 'Balanced', 'Fine'] as const
-const resolutions: Record<Style, number[]> = { standard: [300, 650, 1000], smooth: [350, 700, 1100], crisp: [250, 500, 850] }
+const resolutions: Record<Style, number[]> = { standard: [300, 650, 1400], smooth: [350, 700, 1100], crisp: [250, 500, 850] }
 
 /** Every style is an ordinary engine recipe, also replayable by the native CLI. */
 export function styleRecipe(imageId: string, name: string, catalogue: NodeType[], style: Style = 'standard'): ProjectDocument {
@@ -23,10 +23,12 @@ export function styleRecipe(imageId: string, name: string, catalogue: NodeType[]
   const defs = new Map(catalogue.map(t => [t.id, t]))
   const node = (id: string, type: string, overrides = {}) => ({ id, type, params: { ...Object.fromEntries(defs.get(type)!.params.map(p => [p.name, p.default])), ...overrides } })
   const original = rawGraph(doc).nodes
-  const source = original[0]; source.params.resolution = resolutions[style][1]
+  const source = original[0]; source.params.resolution = resolutions[style][style === 'standard' ? 2 : 1]
+  original[1].params.threshold = 110
+  if (style === 'standard') Object.assign(original[2].params, { smooth: 1.25, corner_deg: 60, tolerance: .35, min_area: 2 })
   const build = style === 'crisp' ? node('plate', 'stencil') : original[3]
-  if (style !== 'crisp') build.params.detail = 4
-  const chain = [source, node('framing', 'transform'), original[1], ...(style === 'smooth' ? [node('soften', 'smooth', { radius: .8, supersample: 2 })] : []), ...(style === 'crisp' ? [] : [style === 'smooth' ? node('outlines', 'trace', { smooth: 2, corner_deg: 100, tolerance: .25, min_area: 2 }) : original[2], node('cleanup', 'remove_islands', { delete_specks: false, fill_holes: false })]), build]
+  if (style !== 'crisp') build.params.detail = style === 'standard' ? 6 : 4
+  const chain = [source, node('framing', 'transform'), original[1], ...(style === 'smooth' ? [node('soften', 'smooth', { radius: .8, supersample: 2 })] : []), ...(style === 'crisp' ? [] : [style === 'smooth' ? node('outlines', 'trace', { smooth: 2, corner_deg: 100, tolerance: .25, min_area: 2 }) : original[2], node('cleanup', 'remove_islands', { delete_specks: style === 'standard', fill_holes: style === 'standard', ...(style === 'standard' ? {max_area:64} : {}) })]), build]
   rawGraph(doc).nodes = chain
   rawGraph(doc).edges = chain.slice(0, -1).map((n, i) => {
     const port = ['source', 'transform'].includes(n.type) ? 'image' : ['trace', 'remove_islands'].includes(n.type) ? 'shapes' : 'mask'

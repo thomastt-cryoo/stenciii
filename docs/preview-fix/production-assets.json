@@ -1,7 +1,7 @@
 {
-  "frontend_source": "cc571d7396c3a8175a7693d6975027d8bf462596",
-  "blob": "6dc4812e563d8d370f1ee68806fece293f0ec2fc",
-  "bytes": 3893077,
-  "sha256": "d082b6247e8f240587752012861843ab24fb982479f72c226d0602bc98995d2d",
+  "frontend_source": "4e0f487f494cfddc559530cb001daeab8e847eab",
+  "blob": "92677ed5e89e4b94c3895ec1e22a1facf53d0711",
+  "bytes": 3892441,
+  "sha256": "c62b9d4bf585e264a59d08aaaf7b779b6e2d460846608d41f4fe779af47fe2af",
   "engine": "Previously verified single-thread and multi-thread WASM builds, unchanged"
 }
