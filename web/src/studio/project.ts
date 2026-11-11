@@ -72,14 +72,14 @@ export function quickRecipe(doc: ProjectDocument) {
   try { graph = compileRecipe(doc) } catch { return null }
   const types = graph.nodes.map(n => n.type)
   const vector = types.includes('vector_stencil')
-  const expected = ['source', ...(types.includes('transform') ? ['transform'] : []), 'threshold', ...(types.includes('smooth') ? ['smooth'] : []), ...(types.includes('morphology') ? ['morphology'] : []), ...(vector ? ['trace', ...(types.includes('remove_islands') ? ['remove_islands'] : []), 'vector_stencil'] : ['stencil'])]
+  const expected = ['source', ...(types.includes('transform') ? ['transform'] : []), ...(types.includes('reduce') ? ['reduce'] : []), 'threshold', ...(types.includes('smooth') ? ['smooth'] : []), ...(types.includes('morphology') ? ['morphology'] : []), ...(vector ? ['trace', ...(types.includes('remove_islands') ? ['remove_islands'] : []), 'vector_stencil'] : ['stencil'])]
   if (graph.nodes.length !== expected.length || expected.some(t => types.filter(x => x === t).length !== 1)) return null
   const chain = expected.map(t => graph.nodes.find(n => n.type === t)!)
   if (graph.edges.length !== chain.length - 1) return null
-  const ports = chain.slice(0, -1).map(n => n.type === 'source' || n.type === 'transform' ? 'image' : ['trace', 'remove_islands'].includes(n.type) ? 'shapes' : 'mask')
+  const ports = chain.slice(0, -1).map(n => ['source', 'transform', 'reduce'].includes(n.type) ? 'image' : ['trace', 'remove_islands'].includes(n.type) ? 'shapes' : 'mask')
   if (ports.some((p, i) => !graph.edges.some(e => e.from[0] === chain[i].id && e.from[1] === p && e.to[0] === chain[i + 1].id && e.to[1] === p))) return null
   const find = (type: string) => chain.find(n => n.type === type)
-  return { source: chain[0], threshold: find('threshold')!, build: chain.at(-1)!, vector, transform: find('transform'), smoothing: find('smooth'), cleanup: find('remove_islands') ?? find('morphology'), trace: find('trace') }
+  return { source: chain[0], threshold: find('threshold')!, build: chain.at(-1)!, vector, transform: find('transform'), colourReduction: find('reduce'), smoothing: find('smooth'), cleanup: find('remove_islands') ?? find('morphology'), trace: find('trace') }
 }
 
 /** Everyday controls for a single linear image pass with extra artwork steps.
@@ -96,7 +96,7 @@ export function adjustmentRecipe(doc: ProjectDocument) {
   while (n) { if (seen.has(n.id)) return null; seen.add(n.id); chain.unshift(n); const inputs = graph.edges.filter(e => e.to[0] === n.id); if (inputs.length > 1) return null; n = graph.nodes.find(n => n.id === inputs[0]?.from[0])! }
   if (seen.size !== graph.nodes.length || chain[0].id !== sources[0].id) return null
   const find = (type: string) => chain.find(n => n.type === type)
-  return { source: sources[0], threshold: paints[0], build: builds[0], vector: builds[0].type === 'vector_stencil', transform: find('transform'), smoothing: find('smooth'), cleanup: find('remove_islands') ?? find('morphology'), trace: find('trace') }
+  return { source: sources[0], threshold: paints[0], build: builds[0], vector: builds[0].type === 'vector_stencil', transform: find('transform'), colourReduction: find('reduce'), smoothing: find('smooth'), cleanup: find('remove_islands') ?? find('morphology'), trace: find('trace') }
 }
 
 export interface Command { label: string; before: ProjectDocument; after: ProjectDocument }

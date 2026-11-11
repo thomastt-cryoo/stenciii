@@ -150,7 +150,7 @@ export const editor = {
     catch (e) { error(e) }
   },
   detail(level: number) { if (commands.apply('Adjust detail', doc => setDetail(doc, level), gesture && gestureChanged)) { gestureChanged = true; changed() } },
-  fineArtwork() { editor.command('Preserve fine artwork and clean tiny marks',prepareFineArtwork) },
+  fineArtwork() { editor.command('Clean shaded artwork',doc=>prepareFineArtwork(doc,[...useEditor.getState().registry!.types.values()])) },
   cleanTinyMarks(enabled:boolean) { editor.command(enabled?'Remove tiny marks':'Keep tiny marks',doc=>cleanTinyMarks(doc,enabled)) },
   pixelCleanup(enabled: boolean) {
     try { if (commands.apply(enabled ? 'Enable pixel cleanup' : 'Bypass pixel cleanup', doc => pixelCleanup(doc, enabled, [...useEditor.getState().registry!.types.values()]))) changed(); useEditor.setState({ error: null }) }

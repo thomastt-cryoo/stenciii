@@ -1,7 +1,7 @@
 name: Artwork preview correction packages
 on:
   push:
-    branches: [codex/faithful-live-preview]
+    branches: [codex/faithful-live-preview, codex/clean-shaded-artwork]
 permissions:
   contents: read
   actions: read
@@ -17,6 +17,7 @@ jobs:
     runs-on: ${{ matrix.runner }}
     env:
       MACOSX_DEPLOYMENT_TARGET: '13.3'
+      STUDIO_ASSET_MANIFEST: ${{ github.ref_name == 'codex/clean-shaded-artwork' && 'docs/contour-repair/production-assets.json' || 'docs/preview-fix/production-assets.json' }}
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@master
@@ -40,7 +41,7 @@ jobs:
           python - <<'PY'
           import base64, hashlib, json, os, tarfile, urllib.request
           from pathlib import Path
-          info=json.loads(Path('docs/preview-fix/production-assets.json').read_text())
+          info=json.loads(Path(os.environ['STUDIO_ASSET_MANIFEST']).read_text())
           request=urllib.request.Request('https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/git/blobs/'+info['blob'],headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
           with urllib.request.urlopen(request) as response:
               content=base64.b64decode(json.load(response)['content'])

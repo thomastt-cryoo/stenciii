@@ -137,6 +137,7 @@ export default function StudioApp() {
           {Number(recipe.threshold.params.threshold ?? 256) !== 256 && <label className="threshold-field"><span>Threshold <output>{String(recipe.threshold.params.threshold)}</output></span><input type="range" aria-label="Threshold" min={0} max={255} step={1} value={Number(recipe.threshold.params.threshold)} onPointerDown={() => editor.begin()} onPointerUp={() => editor.end()} onPointerCancel={() => editor.end()} onBlur={() => editor.end()} onChange={e => editor.edit(recipe.threshold.id, 'threshold', Number(e.target.value))} /></label>}
           {Number(recipe.threshold.params.threshold ?? 256) !== 256 && <p className="field-hint">Raise Threshold to include lighter shades. Lower it if shading creates unwanted cutouts. Invert artwork reverses the selection.</p>}
           <label className="toggle-field"><span>Invert artwork</span><input aria-label="Invert artwork" type="checkbox" checked={!!recipe.threshold.params.invert} onChange={e => editor.edit(recipe.threshold.id, 'invert', e.target.checked)} /></label>
+          {!recipe.colourReduction && doc && styleQuickRecipe(doc)?.vector && <button className="fine-artwork-button" disabled={run.status==='running'} onClick={()=>editor.fineArtwork()}>Clean shaded artwork</button>}
         </></fieldset>}
         {recipe && <details className="artwork-tools"><summary>Artwork tools</summary>
           {recipe.transform ? <><p>Crop → flip → rotate. Your original image is kept.</p><div><button onClick={() => setSettings({ category: 'Artwork and image cleanup', query: 'transform' })}>Crop & rotate</button><button onClick={() => editor.edit(recipe.transform!.id, 'turn', String((Number(recipe.transform!.params.turn ?? 0) + 90) % 360))}>Rotate 90°</button><button aria-pressed={!!recipe.transform.params.flip_h} onClick={() => editor.edit(recipe.transform!.id, 'flip_h', !recipe.transform!.params.flip_h)}>Flip horizontally</button></div></> : <p>This imported recipe has no framing step. Its processing is preserved.</p>}
@@ -147,7 +148,8 @@ export default function StudioApp() {
         {doc&&styleQuickRecipe(doc)?.vector&&<details className="fine-artwork-tools"><summary>Detailed artwork</summary>
           <p>For dense illustrations with fine contours. Higher resolution and gentler smoothing preserve narrow features. Original artwork and print dimensions are kept.</p>
           <button className="fine-artwork-button" disabled={state.loading||run.status==='running'} onClick={()=>editor.fineArtwork()}>Preserve fine detail</button>
-          <p>Also cleans tiny specks and pinholes. Undo restores your previous preparation. Inspect Compare before exporting; small intentional marks may need a lower cleanup area.</p>
+          <p>Flattens shaded colours before selecting paint and cleans tiny specks and pinholes. Use Compare to review the result.</p>
+          {recipe?.colourReduction && number(recipe.colourReduction.id,recipe.colourReduction.type,'colours','Artwork colours','',recipe.colourReduction.params)}
           {recipe?.cleanup?.type==='remove_islands'&&<>
             <label className="toggle-field"><span>Remove tiny marks</span><input type="checkbox" aria-label="Remove tiny marks" checked={!!recipe.cleanup.params.delete_specks&&!!recipe.cleanup.params.fill_holes} onChange={e=>editor.cleanTinyMarks(e.target.checked)}/></label>
             {number(recipe.cleanup.id,recipe.cleanup.type,'max_area','Cleanup area','px²',recipe.cleanup.params)}

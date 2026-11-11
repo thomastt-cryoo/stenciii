@@ -1,0 +1,7 @@
+{
+  "frontend_source": "4409db34fd9f0098abedc3587b35b8f3e192c780",
+  "blob": "cbe0e3de27eb736c91f8f406341ad2a7832a87ce",
+  "bytes": 3893346,
+  "sha256": "1c71ad3f68da12d5b45f0dc3ea5ec34615085d98a4d9bbff176b61632c33f5e1",
+  "engine": "Previously verified M6 WASM binaries, shared by all packages"
+}

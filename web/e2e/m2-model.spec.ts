@@ -12,7 +12,7 @@ test('three actual style recipes satisfy every engine input port and differ in p
   for (const { id } of styles) {
     const doc = styleRecipe('image', 'Example.png', catalogue, id), graph = compileRecipe(doc)
     expect(activeStyle(doc)).toBe(id); expect(detailLevel(doc)).toBe(id === 'standard' ? 2 : 1); expect(quickRecipe(doc)).toBeTruthy()
-    expect(graph.nodes.map(n => n.type)).toEqual(id === 'crisp' ? ['source', 'transform', 'threshold', 'stencil'] : ['source', 'transform', 'threshold', ...(id === 'smooth' ? ['smooth'] : []), 'trace', 'remove_islands', 'vector_stencil'])
+    expect(graph.nodes.map(n => n.type)).toEqual(id === 'crisp' ? ['source', 'transform', 'threshold', 'stencil'] : ['source', 'transform', ...(id === 'standard' ? ['reduce'] : []), 'threshold', ...(id === 'smooth' ? ['smooth'] : []), 'trace', 'remove_islands', 'vector_stencil'])
     for (const n of graph.nodes) {
       const def = catalogue.find(t => t.id === n.type)!
       for (const port of def.inputs.filter(p => p.required)) {
@@ -30,6 +30,7 @@ test('new image projects start with the verified fine artwork settings', () => {
   const doc = styleRecipe('i', 'Tiger.png', catalogue), q = quickRecipe(doc)!
   expect(q.source.params.resolution).toBe(1400)
   expect(q.threshold.params.threshold).toBe(110)
+  expect(q.colourReduction?.params).toEqual({colours:6,smooth:0})
   expect(q.trace!.params).toMatchObject({smooth:1.25,corner_deg:60,tolerance:.35,min_area:2})
   expect(q.build.params.detail).toBe(6)
   expect(q.cleanup!.params).toMatchObject({delete_specks:true,fill_holes:true,max_area:64,keep_largest:0})

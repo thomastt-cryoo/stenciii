@@ -15,6 +15,7 @@ export function activeStyle(doc: ProjectDocument): Style {
   return q?.vector ? q.smoothing ? 'smooth' : 'standard' : 'crisp'
 }
 export const detailLevels = ['Quick', 'Balanced', 'Fine'] as const
+export const illustrationPalette = { colours: 6, smooth: 0 }
 const resolutions: Record<Style, number[]> = { standard: [300, 650, 1400], smooth: [350, 700, 1100], crisp: [250, 500, 850] }
 
 /** Every style is an ordinary engine recipe, also replayable by the native CLI. */
@@ -28,10 +29,18 @@ export function styleRecipe(imageId: string, name: string, catalogue: NodeType[]
   if (style === 'standard') Object.assign(original[2].params, { smooth: 1.25, corner_deg: 60, tolerance: .35, min_area: 2 })
   const build = style === 'crisp' ? node('plate', 'stencil') : original[3]
   if (style !== 'crisp') build.params.detail = style === 'standard' ? 6 : 4
-  const chain = [source, node('framing', 'transform'), original[1], ...(style === 'smooth' ? [node('soften', 'smooth', { radius: .8, supersample: 2 })] : []), ...(style === 'crisp' ? [] : [style === 'smooth' ? node('outlines', 'trace', { smooth: 2, corner_deg: 100, tolerance: .25, min_area: 2 }) : original[2], node('cleanup', 'remove_islands', { delete_specks: style === 'standard', fill_holes: style === 'standard', ...(style === 'standard' ? {max_area:64} : {}) })]), build]
+  const chain = [source, node('framing', 'transform')]
+  if (style === 'standard') chain.push(node('flat-colours', 'reduce', illustrationPalette))
+  chain.push(original[1])
+  if (style === 'smooth') chain.push(node('soften', 'smooth', { radius: .8, supersample: 2 }))
+  if (style !== 'crisp') {
+    chain.push(style === 'smooth' ? node('outlines', 'trace', { smooth: 2, corner_deg: 100, tolerance: .25, min_area: 2 }) : original[2])
+    chain.push(node('cleanup', 'remove_islands', { delete_specks: style === 'standard', fill_holes: style === 'standard', ...(style === 'standard' ? { max_area: 64 } : {}) }))
+  }
+  chain.push(build)
   rawGraph(doc).nodes = chain
   rawGraph(doc).edges = chain.slice(0, -1).map((n, i) => {
-    const port = ['source', 'transform'].includes(n.type) ? 'image' : ['trace', 'remove_islands'].includes(n.type) ? 'shapes' : 'mask'
+    const port = ['source', 'transform', 'reduce'].includes(n.type) ? 'image' : ['trace', 'remove_islands'].includes(n.type) ? 'shapes' : 'mask'
     return { from: [n.id, port], to: [chain[i + 1].id, port] }
   })
   doc.raw.stencilStudio = { ...doc.raw.stencilStudio, schema: 2, style }

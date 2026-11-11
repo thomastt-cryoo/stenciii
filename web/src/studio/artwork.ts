@@ -164,7 +164,7 @@ export function moveArtwork(doc: ProjectDocument, id: string, direction: -1 | 1,
 }
 export function textRecipe(catalogue: NodeType[]): ProjectDocument {
   const doc = styleRecipe('', 'Text stencil', catalogue), g = rawGraph(doc)
-  g.nodes = g.nodes.filter((n: any) => !['source', 'transform', 'threshold'].includes(n.type))
+  g.nodes = g.nodes.filter((n: any) => !['source', 'transform', 'reduce', 'threshold'].includes(n.type))
   const type = catalogue.find(t => t.id === 'text')!
   g.nodes.unshift({ id: 'text-artwork', type: 'text', params: Object.fromEntries(type.params.map(p => [p.name, p.default])) })
   g.edges = g.edges.filter((e: any) => g.nodes.some((n: any) => n.id === e.from[0]) && g.nodes.some((n: any) => n.id === e.to[0])); g.edges.unshift(edge(['text-artwork', 'mask'], ['outlines', 'mask']))

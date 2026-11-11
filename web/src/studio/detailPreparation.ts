@@ -1,12 +1,21 @@
 import {copy,editParameter,quickRecipe,rawGraph,type ProjectDocument} from './project'
+import {insertArtwork} from './artwork'
+import {illustrationPalette} from './recipes'
+import type {NodeType} from '../api'
 
 /** Opt-in preparation for dense illustrations. An ordinary saved recipe: the
  * native engine, batch runner and reopened project execute the same settings. */
-export function prepareFineArtwork(doc:ProjectDocument):ProjectDocument {
+export function prepareFineArtwork(doc:ProjectDocument,catalogue:NodeType[]):ProjectDocument {
  const q=quickRecipe(doc)
  if(!q?.vector||!q.trace)throw Error('Fine artwork preparation needs a simple vector image workflow. This project is unchanged.')
  let next=copy(doc)
  const set=(id:string,key:string,value:unknown)=>{next=editParameter(next,id,key,value)}
+ if(!q.colourReduction){
+  next=insertArtwork(next,q.threshold.id,'image','reduce',catalogue)
+  const reduction=quickRecipe(next)!.colourReduction!
+  set(reduction.id,'colours',illustrationPalette.colours)
+  set(reduction.id,'smooth',illustrationPalette.smooth)
+ }
  const resolution=Math.max(1400,Number(q.source.params.resolution)||0)
  set(q.source.id,'resolution',resolution);set(q.build.id,'detail',6)
  // Avoid the doubled mask + strong curve blur that rounds off narrow whiskers.
