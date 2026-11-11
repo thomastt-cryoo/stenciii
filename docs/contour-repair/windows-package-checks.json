@@ -1,0 +1,40 @@
+{
+  "browser": "151.0.7922.72",
+  "passed": true,
+  "cases": [
+    "beginner upload, generate, customize width, 3D, STL, save, reload and reopen",
+    "fine-artwork preset, docked interactive settings and lossless reopen",
+    "colours",
+    "first",
+    "mounted"
+  ],
+  "host_checks": 17,
+  "outside_requests": [],
+  "page_errors": [],
+  "defaults": {
+    "source": {
+      "image_id": "44fcfa6c069b00d0",
+      "resolution": 1400
+    },
+    "reduce": {
+      "colours": 6,
+      "smooth": 0
+    },
+    "threshold": {
+      "threshold": 110,
+      "invert": false
+    },
+    "trace": {
+      "smooth": 1.25,
+      "corner_deg": 60,
+      "tolerance": 0.35,
+      "min_area": 2
+    },
+    "remove_islands": {
+      "delete_specks": true,
+      "fill_holes": true,
+      "max_area": 64,
+      "keep_largest": 0
+    }
+  }
+}

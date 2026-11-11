@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "browser": "151.0.7922.72",
+  "original_sha256": "3917efcfb41fb72f0d5269fbc83d35596e66ad5d13e28a6be4fe7eb2251e9380",
+  "repaired_sha256": "83fd9e8924756ca3d784fc9043276d7d7897dd4c6322521f232d322eba76747b",
+  "images_preserved": true,
+  "all_manufacturing_settings_preserved": true,
+  "automatic_threshold_preserved": true,
+  "undo_redo_verified": true,
+  "new_upload_produces_same_export": true,
+  "original": {
+    "triangles": 35024,
+    "islands_found": 28,
+    "islands_remaining": 0,
+    "bridge_mm": 1.6,
+    "bridge_strips": 28,
+    "width_mm": 200,
+    "height_mm": 200,
+    "plate_top_mm": 5.2
+  },
+  "repaired": {
+    "triangles": 45896,
+    "islands_found": 12,
+    "islands_remaining": 0,
+    "bridge_mm": 1.6,
+    "bridge_strips": 12,
+    "width_mm": 200,
+    "height_mm": 200,
+    "plate_top_mm": 5.2
+  },
+  "submitted_project_sha256": "65a1b5a659e2a178ac65b883534115f28dfc0be708d8b87928ee145c0d26068d",
+  "native_export_matches": true,
+  "independent_mesh": {
+    "format": "binary STL",
+    "bytes": 2294884,
+    "triangles": 45896,
+    "vertices": 22864,
+    "bounds_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        200.0,
+        200.0,
+        5.199999809265137
+      ]
+    ],
+    "size_mm": [
+      200.0,
+      200.0,
+      5.199999809265137
+    ],
+    "signed_volume_mm3": 156313.65628368268,
+    "components": 1,
+    "edges_not_shared_twice": 0,
+    "inconsistent_edge_winding": 0,
+    "degenerate_faces": 0,
+    "closed_oriented_mesh": true
+  },
+  "previous_windows_package": {
+    "passed": true,
+    "sha256": "83fd9e8924756ca3d784fc9043276d7d7897dd4c6322521f232d322eba76747b",
+    "browser": "151.0.7922.72"
+  }
+}

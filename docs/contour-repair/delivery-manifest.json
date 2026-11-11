@@ -1,0 +1,42 @@
+{
+  "review_date": "2026-11-11",
+  "frontend_source": "4409db34fd9f0098abedc3587b35b8f3e192c780",
+  "native_mac_workflow_run": 42943666309,
+  "files": [
+    {
+      "file": "StencilStudio-Windows-x64.zip",
+      "platform": "windows-x64",
+      "bytes": 8436069,
+      "sha256": "5854643819894e958cdf82cb9054d0ccd5f886cc05cbd708277ee548f72af1ce",
+      "source_commit": "6b81e6ea2dd35eabda129b0431bff657d6a7c890"
+    },
+    {
+      "file": "StencilStudio-macOS-Intel.zip",
+      "platform": "macos-x64",
+      "bytes": 8248394,
+      "sha256": "fe647966740b5962544fb0669bd06caa159a1fa4b8f300af49cccd928a36a444",
+      "source_commit": "a04204de61d1203933bd33fa61e00a06b22a0c32"
+    },
+    {
+      "file": "StencilStudio-macOS-Apple-Silicon.zip",
+      "platform": "macos-arm64",
+      "bytes": 7924472,
+      "sha256": "e425c0b395cec594e7ad5b2b5b34f8804a7b2815297bcba8fc321a12289f681d",
+      "source_commit": "a04204de61d1203933bd33fa61e00a06b22a0c32"
+    }
+  ],
+  "examples": [
+    {
+      "file": "Tiger-repaired.stencil.json",
+      "bytes": 2852652,
+      "sha256": "7999fc0a3a6461786c25a58f937d783c743a6e8015be64c7ee0925beb11d0a8c"
+    },
+    {
+      "file": "Tiger-repaired.stl",
+      "bytes": 2294884,
+      "sha256": "83fd9e8924756ca3d784fc9043276d7d7897dd4c6322521f232d322eba76747b"
+    }
+  ],
+  "security_qualification": "Prior M8 first-download qualification limits still apply.",
+  "public_release": false
+}

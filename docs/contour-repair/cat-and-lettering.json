@@ -1,0 +1,14 @@
+[
+  {
+    "name": "cat",
+    "triangles": 53232,
+    "components": 1,
+    "closed": true
+  },
+  {
+    "name": "lettering",
+    "triangles": 5908,
+    "components": 1,
+    "closed": true
+  }
+]

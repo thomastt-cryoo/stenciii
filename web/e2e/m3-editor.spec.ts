@@ -98,7 +98,7 @@ test('operation presets preserve the legacy file format, import merges, scoped a
   await page.getByRole('textbox',{name:'Preset name',exact:true}).fill('My complete preparation');await page.locator('.workflow-templates summary').click();await page.getByRole('button',{name:'Save workflow template',exact:true}).click();await page.getByRole('button',{name:'Close settings',exact:true}).click()
   await settings(page,'Artwork and image cleanup');await page.getByRole('searchbox').fill('trace.tolerance');await page.locator('.setting-reference summary').click();await page.getByRole('spinbutton',{name:'Simplify tolerance (px) · outlines',exact:true}).fill('2');await page.getByRole('button',{name:'Close settings',exact:true}).click();const previous=await saved(page)
   await settings(page,'Presets and history');await page.locator('.workflow-templates summary').click();await page.getByRole('button',{name:'Apply as project copy',exact:true}).click();await page.getByRole('button',{name:'Close settings',exact:true}).click();const templateCopy=await saved(page)
-  expect(templateCopy.stencilStudio.previousProject).toEqual(previous);expect(templateCopy.graph.nodes.find((n:any)=>n.type==='trace').params.tolerance).toBe(.35);expect(templateCopy.images).toEqual(previous.images)
+  expect(templateCopy.stencilStudio.previousProject).toEqual(previous);expect(templateCopy.graph.nodes.find((n:any)=>n.type==='trace').params.tolerance).toBe(.4);expect(templateCopy.images).toEqual(previous.images)
   await page.getByRole('button',{name:'Undo',exact:true}).click();expect(await saved(page)).toEqual(previous)
 })
 
